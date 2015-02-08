@@ -1,0 +1,12 @@
+*.user
+*.suo
+*.cache
+[Bb]in
+[Dd]ebug*/
+obj/
+[Rr]elease*/
+TestResults
+*.log
+*.VisualState.xml
+TestResult.xml
+/packages/

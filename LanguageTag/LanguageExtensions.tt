@@ -1,0 +1,91 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".generated.cs" #>
+<#@ include file="Registry.tt" #>
+using System;
+using System.Globalization;
+
+namespace AbbyyLS.Globalization
+{
+	public static partial class LanguageExtensions
+	{
+		public static Language? GetMacrolanguage(this Language language)
+		{
+			switch(language)
+			{
+<#foreach(var entry in prlangs.Where(_ => _.Macrolanguage != null))
+{ #>
+				case Language.<#= entry.Subtag.ToUpper() #>: return Language.<#= entry.Macrolanguage.ToUpper() #>;
+<# } #>
+				default: return null;
+			}
+		}
+
+		public static LanguageScope? GetScope(this Language language)
+		{
+			switch(language)
+			{
+<#foreach(var entry in prlangs.Where(_ => _.Scope != null))
+{
+	var code = char.ToUpper(entry.Scope[0]) + entry.Scope.Substring(1);
+#>
+				case Language.<#= entry.Subtag.ToUpper() #>: return LanguageScope.<#= code #>;
+<# } #>
+				default: return null;
+			}
+		}
+
+		public static Language GetPreferredValue(this Language v)
+		{
+			switch(v)
+			{
+<#foreach(var entry in prlangs.Where(_ => _.PreferredValue != null))
+{ #>
+				case Language.<#= entry.Subtag.ToUpper() #>: return Language.<#= entry.PreferredValue.ToUpper() #>;
+<# } #>
+				default: return v;
+			}
+		}
+
+		public static Script? GetSupressScript(this Language language)
+		{
+			switch(language)
+			{
+<#foreach(var entry in prlangs.Where(_ => _.SuppressScript != null))
+{ #>
+				case Language.<#= entry.Subtag.ToUpper() #>: return Script.<#= entry.SuppressScript #>;
+<# } #>
+				default: return null;
+			}
+		}
+
+		public static string ToText(this Language v)
+		{
+			switch (v)
+			{
+<#foreach(var entry in prlangs)
+{ #>
+				case Language.<#= entry.Subtag.ToUpper() #>: return "<#= entry.Subtag #>";
+<# } #>
+				default:
+					throw new NotImplementedException("unexpected language '" + v + "'");
+			}
+		}
+
+		public static Language? TryParseFromLanguage(this string text)
+		{
+			switch (text.ToLower(CultureInfo.InvariantCulture))
+			{
+<#foreach(var entry in prlangs)
+{ #>
+				case "<#= entry.Subtag.ToLower()#>": return Language.<#= entry.Subtag.ToUpper() #>;
+<# } #>
+				default: return null;
+			}
+		}
+	}
+}

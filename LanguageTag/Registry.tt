@@ -1,0 +1,117 @@
+﻿<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+	string registryFile = Host.ResolvePath(@"..\doc\language-subtag-registry");
+	var entries = File.ReadAllText(registryFile)
+		.Split(new string[]{"\n%%\n"}, StringSplitOptions.RemoveEmptyEntries)
+		.Select(_ => _.Replace("\n  ", " "))
+		.Skip(1)
+		.Select(_ => new RegEntry(_))
+		.ToArray();
+
+	var prlangs = entries.Where(_ => _.Type == "language" && _.Subtag != "qaa..qtz");
+	var extlangs = entries.Where(_ => _.Type == "extlang");
+	var scripts = entries.Where(_ => _.Type == "script" && _.Subtag != "Qaaa..Qabx");
+	var regions = entries.Where(_ => _.Type == "region" && _.Subtag != "QM..QZ" && _.Subtag != "XA..XZ");
+	var variants = entries.Where(_ => _.Type == "variant");
+	var grandfathered = entries.Where(_ => _.Type == "grandfathered");
+#><#+
+	public static class CodeStyle
+	{
+		public static string ToVariantCode(string text)
+		{
+			if(text == null)
+				return null;
+				
+			if(char.IsDigit(text[0]))
+				return "V" + text;
+
+			return char.ToUpper(text[0]) + text.Substring(1);
+		}
+	}
+
+	public class RegEntry
+	{
+		public string Type;
+		public string Subtag;
+		public string Description;
+		public string Added;
+		public string Prefix;
+		public string Comments;
+		public string SuppressScript;
+		public string Scope;
+		public string Macrolanguage;
+		public string Deprecated;
+		public string PreferredValue;
+		public string Tag;
+
+		private List<string> _usedFields = new List<string>();
+
+		public RegEntry(string text)
+		{
+			foreach(var line in text.Split('\n'))
+			{
+				if(string.IsNullOrEmpty(line)) continue;
+				if(Set(line, "Type: ", ref Type)) continue;
+				if(Set(line, "Subtag: ", ref Subtag)) continue;
+				if(Set(line, "Added: ", ref Added)) continue;
+				if(Set(line, "Prefix: ", ref Prefix)) continue;
+				if(Set(line, "Suppress-Script: ", ref SuppressScript)) continue;
+				if(Set(line, "Comments: ", ref Comments)) continue;
+				if(Set(line, "Scope: ", ref Scope)) continue;
+				if(Set(line, "Macrolanguage: ", ref Macrolanguage)) continue;
+				if(Set(line, "Deprecated: ", ref Deprecated)) continue;
+				if(Set(line, "Preferred-Value: ", ref PreferredValue)) continue;
+				if(Set(line, "Tag: ", ref Tag)) continue;
+
+				if(line.StartsWith("Description: "))
+				{
+					_usedFields.Add("Description");
+					if(Description == null)
+						Description = line.Substring(13);
+					else
+						Description += " " + line.Substring(13);
+					continue;
+				}
+
+				throw new Exception("unexpected line: " + line);
+			}
+		}
+
+		private bool Set(string line, string prefix, ref string field)
+		{
+			if(!line.StartsWith(prefix))
+				return false;
+
+			_usedFields.Add(prefix.Substring(0, prefix.Length - 2));
+			field = line.Substring(prefix.Length);
+			return true;
+		}
+
+		public IEnumerable<string> UsedFields
+		{
+			get
+			{
+				return _usedFields;
+			}
+		}
+
+		public string AsRegionCode
+		{
+			get
+			{
+				if(Subtag == null || Type != "region")
+					return null;
+
+				if(char.IsDigit(Subtag[0]))
+					return "M" + Subtag;
+
+				return Subtag;
+			}
+		}
+	}
+#>
+

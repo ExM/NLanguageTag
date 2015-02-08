@@ -1,0 +1,62 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+<#@ include file="Registry.tt" #>
+using System;
+using System.Globalization;
+
+namespace AbbyyLS.Globalization
+{
+	public static class RegionExtensions
+	{
+		public static Region GetPreferredValue(this Region v)
+		{
+			switch(v)
+			{
+<#foreach(var entry in regions.Where(_ => _.PreferredValue != null))
+{ #>
+				case Region.<#= entry.Subtag.ToUpper() #>: return Region.<#= entry.PreferredValue.ToUpper() #>;
+<# } #>
+				default: return v;
+			}
+		}
+
+		public static string ToText(this Region v)
+		{
+			switch (v)
+			{
+<#foreach(var entry in regions)
+{ #>
+				case Region.<#= entry.AsRegionCode #>: return "<#= entry.Subtag #>";
+<# } #>
+				default:
+					throw new NotImplementedException("unexpected value '" + v + "'");
+			}
+		}
+		
+		public static Region ParseFromRegion(this string text)
+		{
+			var result = text.TryParseFromRegion();
+			if (result.HasValue)
+				return result.Value;
+			
+			throw new FormatException("unexpected region '" + text + "'");
+		}
+
+		public static Region? TryParseFromRegion(this string text)
+		{
+			switch (text.ToLower(CultureInfo.InvariantCulture))
+			{
+<#foreach(var entry in regions)
+{ #>
+				case "<#= entry.Subtag.ToLower()#>": return Region.<#= entry.AsRegionCode #>;
+<# } #>
+				default: return null;
+			}
+		}
+	}
+}
