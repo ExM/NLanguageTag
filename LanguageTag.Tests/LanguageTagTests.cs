@@ -10,17 +10,22 @@ namespace AbbyyLS.Globalization
 	[TestFixture]
 	public class LanguageTagTests
 	{
-		[TestCase("en", Language.EN)]
-		[TestCase("afb", Language.AFB)]
-		[TestCase("ar-afb", Language.AFB)]
-		[TestCase("yue", Language.YUE)]
-		[TestCase("zh-yue", Language.YUE)]
-		public void ParseLanguageOnly(string text, Language expected)
+		[TestCase("", null, null, null)]
+		[TestCase("en", Language.EN, null, null)]
+		[TestCase("afb", Language.AFB, null, null)]
+		[TestCase("ar-afb", Language.AFB, null, null)]
+		[TestCase("yue", Language.YUE, null, null)]
+		[TestCase("zh-yue", Language.YUE, null, null)]
+		[TestCase("ru-Latn", Language.RU, Script.Latn, null)]
+		[TestCase("zh-Hans", Language.ZH, Script.Hans, null)]
+		[TestCase("zh-TW", Language.ZH, null, Region.TW)]
+		[TestCase("zh-Hans-TW", Language.ZH, Script.Hans, Region.TW)]
+		public void ParseLanguage(string text, Language? langEx, Script? scrEx, Region? regionEx)
 		{
 			var tag = LanguageTag.Parse(text);
-			Assert.That(tag.Language, Is.EqualTo(expected));
-			Assert.That(tag.Script, Is.Null);
-			Assert.That(tag.Region, Is.Null);
+			Assert.That(tag.Language, Is.EqualTo(langEx));
+			Assert.That(tag.Script, Is.EqualTo(scrEx));
+			Assert.That(tag.Region, Is.EqualTo(regionEx));
 			Assert.That(tag.Variant, Is.Empty);
 			Assert.That(tag.Extensions, Is.Empty);
 			Assert.That(tag.PrivateUse, Is.Empty);

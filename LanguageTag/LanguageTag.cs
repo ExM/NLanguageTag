@@ -86,6 +86,12 @@ namespace AbbyyLS.Globalization
 
 		private Exception InternalParse(string text)
 		{
+			if (text == null)
+				throw new ArgumentNullException("text");
+
+			if (text.Length == 0)
+				return null;
+
 			var gf = Grandfathered.GetPreferredValue(text);
 			if (gf != null)
 				text = gf;
@@ -96,7 +102,7 @@ namespace AbbyyLS.Globalization
 			int tokenIndex;
 			Language = text.TryParseFromLanguageToken(out tokenIndex);
 
-			if(!Language.HasValue)
+			if (!Language.HasValue)
 				return new FormatException("unexpected language '" + text.Substring(0, tokenIndex - 1) + "'");
 
 			if (text.Length == tokenIndex)
@@ -104,6 +110,11 @@ namespace AbbyyLS.Globalization
 
 			Script = text.TryParseFromScriptToken(ref tokenIndex);
 			
+			if (text.Length == tokenIndex)
+				return null;
+
+			Region = text.TryParseFromRegionToken(ref tokenIndex);
+
 			if (text.Length == tokenIndex)
 				return null;
 

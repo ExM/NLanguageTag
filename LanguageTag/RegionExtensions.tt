@@ -4,14 +4,14 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-<#@ output extension=".cs" #>
+<#@ output extension=".generated.cs" #>
 <#@ include file="Registry.tt" #>
 using System;
 using System.Globalization;
 
 namespace AbbyyLS.Globalization
 {
-	public static class RegionExtensions
+	public static partial class RegionExtensions
 	{
 		public static string ToText(this Region v)
 		{
@@ -24,15 +24,6 @@ namespace AbbyyLS.Globalization
 				default:
 					throw new NotImplementedException("unexpected value '" + v + "'");
 			}
-		}
-		
-		public static Region ParseFromRegion(this string text)
-		{
-			var result = text.TryParseFromRegion();
-			if (result.HasValue)
-				return result.Value;
-			
-			throw new FormatException("unexpected region '" + text + "'");
 		}
 
 		public static Region? TryParseFromRegion(this string text)

@@ -68,7 +68,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Region.tt</DependentUpon>
     </Compile>
-    <Compile Include="RegionExtensions.cs">
+    <Compile Include="RegionExtensions.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RegionExtensions.tt</DependentUpon>
@@ -78,6 +78,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Script.tt</DependentUpon>
     </Compile>
+    <Compile Include="RegionExtensions.cs" />
     <Compile Include="ScriptExtensions.cs" />
     <Compile Include="ScriptExtensions.generated.cs">
       <AutoGen>True</AutoGen>
@@ -118,7 +119,7 @@
     </None>
     <None Include="RegionExtensions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RegionExtensions.cs</LastGenOutput>
+      <LastGenOutput>RegionExtensions.generated.cs</LastGenOutput>
     </None>
     <None Include="Registry.tt" />
     <None Include="Script.tt">
