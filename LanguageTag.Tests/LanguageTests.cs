@@ -14,9 +14,20 @@ namespace AbbyyLS.Globalization
 		[TestCase("ar-afb", Language.AFB)]
 		[TestCase("yue", Language.YUE)]
 		[TestCase("zh-yue", Language.YUE)]
+		[TestCase("ccq", Language.RKI)]
+		[TestCase("iw", Language.HE)]
 		public void ParseFromLanguage(string text, Language expected)
 		{
 			Assert.AreEqual(expected, text.ParseFromLanguage());
+		}
+
+		[TestCase(Language.AFB, "afb")]
+		[TestCase(Language.YUE, "yue")]
+		[TestCase(Language.RKI, "rki")]
+		[TestCase(Language.HE, "he")]
+		public void ParseFromLanguage(Language lang, string expected)
+		{
+			Assert.AreEqual(expected, lang.ToText());
 		}
 
 		[TestCase("afb", Language.AFB, 3)]

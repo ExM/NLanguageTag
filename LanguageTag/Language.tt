@@ -12,7 +12,7 @@ namespace AbbyyLS.Globalization
 {
 	public enum Language
 	{
-<#foreach(var entry in prlangs)
+<#foreach(var entry in prlangs.Where(_ => _.PreferredValue == null))
 { #>
 		/// <summary>
 		/// <#= entry.Description #>

@@ -355,11 +355,6 @@ namespace AbbyyLS.Globalization
 		IK,
 
 		/// <summary>
-		/// Indonesian
-		/// </summary>
-		IN,
-
-		/// <summary>
 		/// Ido
 		/// </summary>
 		IO,
@@ -380,30 +375,14 @@ namespace AbbyyLS.Globalization
 		IU,
 
 		/// <summary>
-		/// Hebrew
-		/// </summary>
-		IW,
-
-		/// <summary>
 		/// Japanese
 		/// </summary>
 		JA,
 
 		/// <summary>
-		/// Yiddish
-		/// </summary>
-		JI,
-
-		/// <summary>
 		/// Javanese
 		/// </summary>
 		JV,
-
-		/// <summary>
-		/// Javanese
-		/// published by error in Table 1 of ISO 639:1988
-		/// </summary>
-		JW,
 
 		/// <summary>
 		/// Georgian
@@ -554,11 +533,6 @@ namespace AbbyyLS.Globalization
 		/// Mongolian
 		/// </summary>
 		MN,
-
-		/// <summary>
-		/// Moldavian Moldovan
-		/// </summary>
-		MO,
 
 		/// <summary>
 		/// Marathi
@@ -3483,11 +3457,6 @@ namespace AbbyyLS.Globalization
 		AYU,
 
 		/// <summary>
-		/// Ayi (China)
-		/// </summary>
-		AYX,
-
-		/// <summary>
 		/// Tayabas Ayta
 		/// </summary>
 		AYY,
@@ -4683,11 +4652,6 @@ namespace AbbyyLS.Globalization
 		/// Bariji
 		/// </summary>
 		BJC,
-
-		/// <summary>
-		/// Bandjigali
-		/// </summary>
-		BJD,
 
 		/// <summary>
 		/// Biao-Jiao Mien
@@ -7069,11 +7033,6 @@ namespace AbbyyLS.Globalization
 		CCP,
 
 		/// <summary>
-		/// Chaungtha
-		/// </summary>
-		CCQ,
-
-		/// <summary>
 		/// Cacaopera
 		/// </summary>
 		CCR,
@@ -7449,11 +7408,6 @@ namespace AbbyyLS.Globalization
 		CJP,
 
 		/// <summary>
-		/// Chorotega
-		/// </summary>
-		CJR,
-
-		/// <summary>
 		/// Shor
 		/// </summary>
 		CJS,
@@ -7467,11 +7421,6 @@ namespace AbbyyLS.Globalization
 		/// Jinyu Chinese
 		/// </summary>
 		CJY,
-
-		/// <summary>
-		/// Khumi Awa Chin
-		/// </summary>
-		CKA,
 
 		/// <summary>
 		/// Central Kurdish
@@ -7642,11 +7591,6 @@ namespace AbbyyLS.Globalization
 		/// Emberá-Chamí
 		/// </summary>
 		CMI,
-
-		/// <summary>
-		/// Chimakum
-		/// </summary>
-		CMK,
 
 		/// <summary>
 		/// Campalagian
@@ -9528,11 +9472,6 @@ namespace AbbyyLS.Globalization
 		DRG,
 
 		/// <summary>
-		/// Darkhat
-		/// </summary>
-		DRH,
-
-		/// <summary>
 		/// C'lela
 		/// </summary>
 		DRI,
@@ -9576,11 +9515,6 @@ namespace AbbyyLS.Globalization
 		/// Rukai
 		/// </summary>
 		DRU,
-
-		/// <summary>
-		/// Darwazi
-		/// </summary>
-		DRW,
 
 		/// <summary>
 		/// Darai
@@ -11078,11 +11012,6 @@ namespace AbbyyLS.Globalization
 		/// Mudhili Gadaba
 		/// </summary>
 		GAU,
-
-		/// <summary>
-		/// Gabutamon
-		/// </summary>
-		GAV,
 
 		/// <summary>
 		/// Nobonob
@@ -13343,11 +13272,6 @@ namespace AbbyyLS.Globalization
 		HRP,
 
 		/// <summary>
-		/// Horuru
-		/// </summary>
-		HRR,
-
-		/// <summary>
 		/// Hértevin
 		/// </summary>
 		HRT,
@@ -13636,11 +13560,6 @@ namespace AbbyyLS.Globalization
 		/// Ibanag
 		/// </summary>
 		IBG,
-
-		/// <summary>
-		/// Ibilo
-		/// </summary>
-		IBI,
 
 		/// <summary>
 		/// Ibaloi
@@ -13996,11 +13915,6 @@ namespace AbbyyLS.Globalization
 		/// Ilue
 		/// </summary>
 		ILV,
-
-		/// <summary>
-		/// Talur
-		/// </summary>
-		ILW,
 
 		/// <summary>
 		/// Mala Malasar
@@ -15884,11 +15798,6 @@ namespace AbbyyLS.Globalization
 		/// Kusunda
 		/// </summary>
 		KGG,
-
-		/// <summary>
-		/// Upper Tanudan Kalinga
-		/// </summary>
-		KGH,
 
 		/// <summary>
 		/// Selangor Sign Language
@@ -19375,11 +19284,6 @@ namespace AbbyyLS.Globalization
 		LML,
 
 		/// <summary>
-		/// Lamam
-		/// </summary>
-		LMM,
-
-		/// <summary>
 		/// Lambadi
 		/// </summary>
 		LMN,
@@ -20558,11 +20462,6 @@ namespace AbbyyLS.Globalization
 		/// Megam
 		/// </summary>
 		MEF,
-
-		/// <summary>
-		/// Mea
-		/// </summary>
-		MEG,
 
 		/// <summary>
 		/// Southwestern Tlaxiaco Mixtec
@@ -22363,11 +22262,6 @@ namespace AbbyyLS.Globalization
 		MSS,
 
 		/// <summary>
-		/// Cataelano Mandaya
-		/// </summary>
-		MST,
-
-		/// <summary>
 		/// Musom
 		/// </summary>
 		MSU,
@@ -23112,11 +23006,6 @@ namespace AbbyyLS.Globalization
 		/// Mesmes
 		/// </summary>
 		MYS,
-
-		/// <summary>
-		/// Sangab Mandaya
-		/// </summary>
-		MYT,
 
 		/// <summary>
 		/// Mundurukú
@@ -26846,11 +26735,6 @@ namespace AbbyyLS.Globalization
 		PCP,
 
 		/// <summary>
-		/// Panang
-		/// </summary>
-		PCR,
-
-		/// <summary>
 		/// Pyapun
 		/// </summary>
 		PCW,
@@ -27818,11 +27702,6 @@ namespace AbbyyLS.Globalization
 		PPQ,
 
 		/// <summary>
-		/// Piru
-		/// </summary>
-		PPR,
-
-		/// <summary>
 		/// San Luís Temalacayuca Popoloca
 		/// </summary>
 		PPS,
@@ -28236,11 +28115,6 @@ namespace AbbyyLS.Globalization
 		/// Purisimeño
 		/// </summary>
 		PUY,
-
-		/// <summary>
-		/// Purum Naga
-		/// </summary>
-		PUZ,
 
 		/// <summary>
 		/// Pawaia
@@ -29653,11 +29527,6 @@ namespace AbbyyLS.Globalization
 		/// Sara Kaba
 		/// </summary>
 		SBZ,
-
-		/// <summary>
-		/// Sansu
-		/// </summary>
-		SCA,
 
 		/// <summary>
 		/// Chut
@@ -32829,11 +32698,6 @@ namespace AbbyyLS.Globalization
 		TID,
 
 		/// <summary>
-		/// Tingal
-		/// </summary>
-		TIE,
-
-		/// <summary>
 		/// Tifal
 		/// </summary>
 		TIF,
@@ -33014,11 +32878,6 @@ namespace AbbyyLS.Globalization
 		TKG,
 
 		/// <summary>
-		/// Takpa
-		/// </summary>
-		TKK,
-
-		/// <summary>
 		/// Tokelau
 		/// </summary>
 		TKL,
@@ -33189,11 +33048,6 @@ namespace AbbyyLS.Globalization
 		TLV,
 
 		/// <summary>
-		/// South Wemale
-		/// </summary>
-		TLW,
-
-		/// <summary>
 		/// Khehek
 		/// </summary>
 		TLX,
@@ -33352,11 +33206,6 @@ namespace AbbyyLS.Globalization
 		/// Tinoc Kallahan
 		/// </summary>
 		TNE,
-
-		/// <summary>
-		/// Tangshewi
-		/// </summary>
-		TNF,
 
 		/// <summary>
 		/// Tobanga
@@ -37230,11 +37079,6 @@ namespace AbbyyLS.Globalization
 		XHV,
 
 		/// <summary>
-		/// Xiandao
-		/// </summary>
-		XIA,
-
-		/// <summary>
 		/// Iberian
 		/// </summary>
 		XIB,
@@ -38470,11 +38314,6 @@ namespace AbbyyLS.Globalization
 		YBB,
 
 		/// <summary>
-		/// Yangbye
-		/// </summary>
-		YBD,
-
-		/// <summary>
 		/// West Yugur
 		/// </summary>
 		YBE,
@@ -38927,11 +38766,6 @@ namespace AbbyyLS.Globalization
 		YLY,
 
 		/// <summary>
-		/// Yamphe
-		/// </summary>
-		YMA,
-
-		/// <summary>
 		/// Yambes
 		/// </summary>
 		YMB,
@@ -39120,11 +38954,6 @@ namespace AbbyyLS.Globalization
 		/// Yongkom
 		/// </summary>
 		YON,
-
-		/// <summary>
-		/// Yos
-		/// </summary>
-		YOS,
 
 		/// <summary>
 		/// Yotti
@@ -39405,11 +39234,6 @@ namespace AbbyyLS.Globalization
 		/// Yopno
 		/// </summary>
 		YUT,
-
-		/// <summary>
-		/// Yugh
-		/// </summary>
-		YUU,
 
 		/// <summary>
 		/// Yau (Morobe Province)

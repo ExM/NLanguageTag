@@ -186,11 +186,6 @@ namespace AbbyyLS.Globalization
 		BT,
 
 		/// <summary>
-		/// Burma
-		/// </summary>
-		BU,
-
-		/// <summary>
 		/// Bouvet Island
 		/// </summary>
 		BV,
@@ -317,11 +312,6 @@ namespace AbbyyLS.Globalization
 		CZ,
 
 		/// <summary>
-		/// German Democratic Republic
-		/// </summary>
-		DD,
-
-		/// <summary>
 		/// Germany
 		/// </summary>
 		DE,
@@ -430,11 +420,6 @@ namespace AbbyyLS.Globalization
 		/// France
 		/// </summary>
 		FR,
-
-		/// <summary>
-		/// Metropolitan France
-		/// </summary>
-		FX,
 
 		/// <summary>
 		/// Gabon
@@ -1203,11 +1188,6 @@ namespace AbbyyLS.Globalization
 		TO,
 
 		/// <summary>
-		/// East Timor
-		/// </summary>
-		TP,
-
-		/// <summary>
 		/// Turkey
 		/// </summary>
 		TR,
@@ -1308,11 +1288,6 @@ namespace AbbyyLS.Globalization
 		WS,
 
 		/// <summary>
-		/// Democratic Yemen
-		/// </summary>
-		YD,
-
-		/// <summary>
 		/// Yemen
 		/// </summary>
 		YE,
@@ -1337,11 +1312,6 @@ namespace AbbyyLS.Globalization
 		/// Zambia
 		/// </summary>
 		ZM,
-
-		/// <summary>
-		/// Zaire
-		/// </summary>
-		ZR,
 
 		/// <summary>
 		/// Zimbabwe

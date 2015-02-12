@@ -5,20 +5,6 @@ namespace AbbyyLS.Globalization
 {
 	public static class RegionExtensions
 	{
-		public static Region GetPreferredValue(this Region v)
-		{
-			switch(v)
-			{
-				case Region.BU: return Region.MM;
-				case Region.DD: return Region.DE;
-				case Region.FX: return Region.FR;
-				case Region.TP: return Region.TL;
-				case Region.YD: return Region.YE;
-				case Region.ZR: return Region.CD;
-				default: return v;
-			}
-		}
-
 		public static string ToText(this Region v)
 		{
 			switch (v)
@@ -59,7 +45,6 @@ namespace AbbyyLS.Globalization
 				case Region.BR: return "BR";
 				case Region.BS: return "BS";
 				case Region.BT: return "BT";
-				case Region.BU: return "BU";
 				case Region.BV: return "BV";
 				case Region.BW: return "BW";
 				case Region.BY: return "BY";
@@ -85,7 +70,6 @@ namespace AbbyyLS.Globalization
 				case Region.CX: return "CX";
 				case Region.CY: return "CY";
 				case Region.CZ: return "CZ";
-				case Region.DD: return "DD";
 				case Region.DE: return "DE";
 				case Region.DG: return "DG";
 				case Region.DJ: return "DJ";
@@ -108,7 +92,6 @@ namespace AbbyyLS.Globalization
 				case Region.FM: return "FM";
 				case Region.FO: return "FO";
 				case Region.FR: return "FR";
-				case Region.FX: return "FX";
 				case Region.GA: return "GA";
 				case Region.GB: return "GB";
 				case Region.GD: return "GD";
@@ -262,7 +245,6 @@ namespace AbbyyLS.Globalization
 				case Region.TM: return "TM";
 				case Region.TN: return "TN";
 				case Region.TO: return "TO";
-				case Region.TP: return "TP";
 				case Region.TR: return "TR";
 				case Region.TT: return "TT";
 				case Region.TV: return "TV";
@@ -283,13 +265,11 @@ namespace AbbyyLS.Globalization
 				case Region.VU: return "VU";
 				case Region.WF: return "WF";
 				case Region.WS: return "WS";
-				case Region.YD: return "YD";
 				case Region.YE: return "YE";
 				case Region.YT: return "YT";
 				case Region.YU: return "YU";
 				case Region.ZA: return "ZA";
 				case Region.ZM: return "ZM";
-				case Region.ZR: return "ZR";
 				case Region.ZW: return "ZW";
 				case Region.ZZ: return "ZZ";
 				case Region.M001: return "001";
@@ -376,7 +356,7 @@ namespace AbbyyLS.Globalization
 				case "br": return Region.BR;
 				case "bs": return Region.BS;
 				case "bt": return Region.BT;
-				case "bu": return Region.BU;
+				case "bu": return Region.MM;
 				case "bv": return Region.BV;
 				case "bw": return Region.BW;
 				case "by": return Region.BY;
@@ -402,7 +382,7 @@ namespace AbbyyLS.Globalization
 				case "cx": return Region.CX;
 				case "cy": return Region.CY;
 				case "cz": return Region.CZ;
-				case "dd": return Region.DD;
+				case "dd": return Region.DE;
 				case "de": return Region.DE;
 				case "dg": return Region.DG;
 				case "dj": return Region.DJ;
@@ -425,7 +405,7 @@ namespace AbbyyLS.Globalization
 				case "fm": return Region.FM;
 				case "fo": return Region.FO;
 				case "fr": return Region.FR;
-				case "fx": return Region.FX;
+				case "fx": return Region.FR;
 				case "ga": return Region.GA;
 				case "gb": return Region.GB;
 				case "gd": return Region.GD;
@@ -579,7 +559,7 @@ namespace AbbyyLS.Globalization
 				case "tm": return Region.TM;
 				case "tn": return Region.TN;
 				case "to": return Region.TO;
-				case "tp": return Region.TP;
+				case "tp": return Region.TL;
 				case "tr": return Region.TR;
 				case "tt": return Region.TT;
 				case "tv": return Region.TV;
@@ -600,13 +580,13 @@ namespace AbbyyLS.Globalization
 				case "vu": return Region.VU;
 				case "wf": return Region.WF;
 				case "ws": return Region.WS;
-				case "yd": return Region.YD;
+				case "yd": return Region.YE;
 				case "ye": return Region.YE;
 				case "yt": return Region.YT;
 				case "yu": return Region.YU;
 				case "za": return Region.ZA;
 				case "zm": return Region.ZM;
-				case "zr": return Region.ZR;
+				case "zr": return Region.CD;
 				case "zw": return Region.ZW;
 				case "zz": return Region.ZZ;
 				case "001": return Region.M001;

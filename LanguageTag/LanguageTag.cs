@@ -107,7 +107,6 @@ namespace AbbyyLS.Globalization
 			if (text.Length == tokenIndex)
 				return null;
 
-
 			//TODO parse tail
 			throw new NotImplementedException();
 		}

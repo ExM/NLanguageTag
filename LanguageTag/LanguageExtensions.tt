@@ -17,7 +17,7 @@ namespace AbbyyLS.Globalization
 		{
 			switch(language)
 			{
-<#foreach(var entry in prlangs.Where(_ => _.Macrolanguage != null))
+<#foreach(var entry in prlangs.Where(_ => _.PreferredValue == null && _.Macrolanguage != null))
 { #>
 				case Language.<#= entry.Subtag.ToUpper() #>: return Language.<#= entry.Macrolanguage.ToUpper() #>;
 <# } #>
@@ -39,23 +39,11 @@ namespace AbbyyLS.Globalization
 			}
 		}
 
-		public static Language GetPreferredValue(this Language v)
-		{
-			switch(v)
-			{
-<#foreach(var entry in prlangs.Where(_ => _.PreferredValue != null))
-{ #>
-				case Language.<#= entry.Subtag.ToUpper() #>: return Language.<#= entry.PreferredValue.ToUpper() #>;
-<# } #>
-				default: return v;
-			}
-		}
-
 		public static Script? GetSupressScript(this Language language)
 		{
 			switch(language)
 			{
-<#foreach(var entry in prlangs.Where(_ => _.SuppressScript != null))
+<#foreach(var entry in prlangs.Where(_ => _.PreferredValue == null && _.SuppressScript != null))
 { #>
 				case Language.<#= entry.Subtag.ToUpper() #>: return Script.<#= entry.SuppressScript #>;
 <# } #>
@@ -67,7 +55,7 @@ namespace AbbyyLS.Globalization
 		{
 			switch (v)
 			{
-<#foreach(var entry in prlangs)
+<#foreach(var entry in prlangs.Where(_ => _.PreferredValue == null))
 { #>
 				case Language.<#= entry.Subtag.ToUpper() #>: return "<#= entry.Subtag #>";
 <# } #>
@@ -82,7 +70,7 @@ namespace AbbyyLS.Globalization
 			{
 <#foreach(var entry in prlangs)
 { #>
-				case "<#= entry.Subtag.ToLower()#>": return Language.<#= entry.Subtag.ToUpper() #>;
+				case "<#= entry.Subtag.ToLower()#>": return Language.<#= (entry.PreferredValue??entry.Subtag).ToUpper() #>;
 <# } #>
 				default: return null;
 			}

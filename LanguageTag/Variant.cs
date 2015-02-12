@@ -143,12 +143,6 @@ namespace AbbyyLS.Globalization
 		Hepburn,
 
 		/// <summary>
-		/// Hepburn romanization, Library of Congress method
-		/// Preferred tag is ja-Latn-alalc97
-		/// </summary>
-		Heploc,
-
-		/// <summary>
 		/// Norwegian in Høgnorsk (High Norwegian) orthography
 		/// Norwegian following Ivar Aasen's orthographical principles, including modern usage.
 		/// </summary>

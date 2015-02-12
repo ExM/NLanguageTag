@@ -13,23 +13,11 @@ namespace AbbyyLS.Globalization
 {
 	public static class VariantExtensions
 	{
-		public static Variant GetPreferredValue(this Variant v)
-		{
-			switch(v)
-			{
-<#foreach(var entry in variants.Where(_ => _.PreferredValue != null))
-{ #>
-				case Variant.<#= CodeStyle.ToVariantCode(entry.Subtag) #>: return Variant.<#= CodeStyle.ToVariantCode(entry.PreferredValue) #>;
-<# } #>
-				default: return v;
-			}
-		}
-
 		public static string GetPrefix(this Variant v)
 		{
 			switch(v)
 			{
-<#foreach(var entry in variants.Where(_ => _.Prefix != null))
+<#foreach(var entry in variants.Where(_ => _.PreferredValue == null && _.Prefix != null))
 { #>
 				case Variant.<#= CodeStyle.ToVariantCode(entry.Subtag) #>: return "<#= entry.Prefix #>";
 <# } #>
@@ -41,9 +29,9 @@ namespace AbbyyLS.Globalization
 		{
 			switch (v)
 			{
-<#foreach(var entry in variants)
+<#foreach(var entry in variants.Where(_ => _.PreferredValue == null))
 { #>
-				case Variant.<#= CodeStyle.ToVariantCode(entry.Subtag) #>: return "<#= entry.Subtag#>";
+				case Variant.<#= CodeStyle.ToVariantCode(entry.Subtag) #>: return "<#= entry.Subtag #>";
 <# } #>
 				default:
 					throw new NotImplementedException("unexpected value: " + v);
@@ -65,7 +53,7 @@ namespace AbbyyLS.Globalization
 			{
 <#foreach(var entry in variants)
 { #>
-				case "<#= entry.Subtag.ToLower()#>": return Variant.<#= CodeStyle.ToVariantCode(entry.Subtag) #>;
+				case "<#= entry.Subtag.ToLower()#>": return Variant.<#= CodeStyle.ToVariantCode(entry.PreferredValue??entry.Subtag) #>;
 <# } #>
 				default: return null;
 			}

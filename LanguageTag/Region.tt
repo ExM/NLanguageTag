@@ -12,7 +12,7 @@ namespace AbbyyLS.Globalization
 {
 	public enum Region
 	{
-<#foreach(var entry in regions)
+<#foreach(var entry in regions.Where(_ => _.PreferredValue == null))
 { #>
 		/// <summary>
 		/// <#= entry.Description #>

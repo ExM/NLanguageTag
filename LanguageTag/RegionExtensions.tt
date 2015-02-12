@@ -13,23 +13,11 @@ namespace AbbyyLS.Globalization
 {
 	public static class RegionExtensions
 	{
-		public static Region GetPreferredValue(this Region v)
-		{
-			switch(v)
-			{
-<#foreach(var entry in regions.Where(_ => _.PreferredValue != null))
-{ #>
-				case Region.<#= entry.Subtag.ToUpper() #>: return Region.<#= entry.PreferredValue.ToUpper() #>;
-<# } #>
-				default: return v;
-			}
-		}
-
 		public static string ToText(this Region v)
 		{
 			switch (v)
 			{
-<#foreach(var entry in regions)
+<#foreach(var entry in regions.Where(_ => _.PreferredValue == null))
 { #>
 				case Region.<#= entry.AsRegionCode #>: return "<#= entry.Subtag #>";
 <# } #>
@@ -53,7 +41,7 @@ namespace AbbyyLS.Globalization
 			{
 <#foreach(var entry in regions)
 { #>
-				case "<#= entry.Subtag.ToLower()#>": return Region.<#= entry.AsRegionCode #>;
+				case "<#= entry.Subtag.ToLower()#>": return Region.<#= entry.PreferredValue??entry.AsRegionCode #>;
 <# } #>
 				default: return null;
 			}

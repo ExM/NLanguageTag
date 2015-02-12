@@ -5,15 +5,6 @@ namespace AbbyyLS.Globalization
 {
 	public static class VariantExtensions
 	{
-		public static Variant GetPreferredValue(this Variant v)
-		{
-			switch(v)
-			{
-				case Variant.Heploc: return Variant.Alalc97;
-				default: return v;
-			}
-		}
-
 		public static string GetPrefix(this Variant v)
 		{
 			switch(v)
@@ -39,7 +30,6 @@ namespace AbbyyLS.Globalization
 				case Variant.Ekavsk: return "sr-Cyrl";
 				case Variant.Emodeng: return "en";
 				case Variant.Hepburn: return "ja-Latn";
-				case Variant.Heploc: return "ja-Latn-hepburn";
 				case Variant.Hognorsk: return "nn";
 				case Variant.Ijekavsk: return "sr-Cyrl";
 				case Variant.Itihasa: return "sa";
@@ -114,7 +104,6 @@ namespace AbbyyLS.Globalization
 				case Variant.Fonupa: return "fonupa";
 				case Variant.Fonxsamp: return "fonxsamp";
 				case Variant.Hepburn: return "hepburn";
-				case Variant.Heploc: return "heploc";
 				case Variant.Hognorsk: return "hognorsk";
 				case Variant.Ijekavsk: return "ijekavsk";
 				case Variant.Itihasa: return "itihasa";
@@ -199,7 +188,7 @@ namespace AbbyyLS.Globalization
 				case "fonupa": return Variant.Fonupa;
 				case "fonxsamp": return Variant.Fonxsamp;
 				case "hepburn": return Variant.Hepburn;
-				case "heploc": return Variant.Heploc;
+				case "heploc": return Variant.Alalc97;
 				case "hognorsk": return Variant.Hognorsk;
 				case "ijekavsk": return Variant.Ijekavsk;
 				case "itihasa": return Variant.Itihasa;
