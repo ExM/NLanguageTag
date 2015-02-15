@@ -25,8 +25,8 @@ namespace AbbyyLS.Globalization
 { #>
 				case "<#= entry.Tag.ToLower() #>": throw new NotSupportedException("grandfathered code '" + text + "' not supported");
 <# } #>
-				case "zh-CHS": return "zh-Hans";
-				case "zh-CHT": return "zh-Hant";
+				case "zh-chs": return "zh-Hans";
+				case "zh-cht": return "zh-Hant";
 				default: return null;
 			}
 		}

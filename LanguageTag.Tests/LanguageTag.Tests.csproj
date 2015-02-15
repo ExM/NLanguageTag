@@ -39,6 +39,7 @@
   <ItemGroup>
     <Compile Include="LanguageTagTests.cs" />
     <Compile Include="RegionTests.cs" />
+    <Compile Include="VariantTests.cs" />
     <Compile Include="ScriptTests.cs" />
     <Compile Include="LanguageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

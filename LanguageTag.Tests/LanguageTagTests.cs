@@ -20,15 +20,28 @@ namespace AbbyyLS.Globalization
 		[TestCase("zh-Hans", Language.ZH, Script.Hans, null)]
 		[TestCase("zh-TW", Language.ZH, null, Region.TW)]
 		[TestCase("zh-Hans-TW", Language.ZH, Script.Hans, Region.TW)]
-		public void ParseLanguage(string text, Language? langEx, Script? scrEx, Region? regionEx)
+		public void SimpleParse(string text, Language? langEx, Script? scrEx, Region? regionEx)
 		{
 			var tag = LanguageTag.Parse(text);
 			Assert.That(tag.Language, Is.EqualTo(langEx));
 			Assert.That(tag.Script, Is.EqualTo(scrEx));
 			Assert.That(tag.Region, Is.EqualTo(regionEx));
-			Assert.That(tag.Variant, Is.Empty);
+			Assert.That(tag.Variants, Is.Empty);
 			Assert.That(tag.Extensions, Is.Empty);
 			Assert.That(tag.PrivateUse, Is.Empty);
+		}
+
+		[TestCase("en", new Variant[]{})]
+		[TestCase("en-scotland", new Variant[] { Variant.Scotland })]
+		[TestCase("en-GB-scotland", new Variant[] { Variant.Scotland })]
+		[TestCase("sl-rozaj", new Variant[] { Variant.Rozaj })]
+		[TestCase("sl-rozaj-biske", new Variant[] { Variant.Rozaj, Variant.Biske })]
+		[TestCase("sl-rozaj-biske-1994", new Variant[] { Variant.Rozaj, Variant.Biske, Variant.V1994 })]
+		[TestCase("sl-rozaj-1994", new Variant[] { Variant.Rozaj, Variant.V1994 })]
+		public void ParseWithVariants(string text, Variant[] variantsEx)
+		{
+			var tag = LanguageTag.Parse(text);
+			Assert.That(tag.Variants, Is.EqualTo(new VariantCollection(variantsEx)));
 		}
 
 		[TestCase("xxx")]
@@ -40,6 +53,8 @@ namespace AbbyyLS.Globalization
 		[TestCase("afb-xxx")]
 		[TestCase("ar-afb-")]
 		[TestCase("ar-afb-xxx")]
+		[TestCase("sl-rozaj-biske-1996")]
+		[TestCase("sl-1994")]
 		[ExpectedException(typeof(FormatException))]
 		public void Parse_Fail(string text)
 		{

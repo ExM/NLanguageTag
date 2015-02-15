@@ -39,7 +39,7 @@
 		public string Subtag;
 		public string Description;
 		public string Added;
-		public string Prefix;
+		public List<string> Prefix = new List<string>();
 		public string Comments;
 		public string SuppressScript;
 		public string Scope;
@@ -58,7 +58,6 @@
 				if(Set(line, "Type: ", ref Type)) continue;
 				if(Set(line, "Subtag: ", ref Subtag)) continue;
 				if(Set(line, "Added: ", ref Added)) continue;
-				if(Set(line, "Prefix: ", ref Prefix)) continue;
 				if(Set(line, "Suppress-Script: ", ref SuppressScript)) continue;
 				if(Set(line, "Comments: ", ref Comments)) continue;
 				if(Set(line, "Scope: ", ref Scope)) continue;
@@ -66,6 +65,13 @@
 				if(Set(line, "Deprecated: ", ref Deprecated)) continue;
 				if(Set(line, "Preferred-Value: ", ref PreferredValue)) continue;
 				if(Set(line, "Tag: ", ref Tag)) continue;
+				
+				if(line.StartsWith("Prefix: "))
+				{
+					_usedFields.Add("Prefix");
+					Prefix.Add(line.Substring(8));
+					continue;
+				}
 
 				if(line.StartsWith("Description: "))
 				{

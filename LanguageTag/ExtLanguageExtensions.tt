@@ -17,7 +17,7 @@ namespace AbbyyLS.Globalization
 		{
 			switch(language)
 			{
-<#foreach(var code in extlangs.Select(_ => _.Prefix.ToUpper()).Distinct())
+<#foreach(var code in extlangs.Select(_ => _.Prefix.First().ToUpper()).Distinct())
 { #>
 				case Language.<#= code #>:
 <# } #>
@@ -33,7 +33,7 @@ namespace AbbyyLS.Globalization
 			{
 <#foreach(var entry in extlangs)
 { #>
-				case Language.<#= entry.PreferredValue.ToUpper() #>: return Language.<#= entry.Prefix.ToUpper() #>;
+				case Language.<#= entry.PreferredValue.ToUpper() #>: return Language.<#= entry.Prefix.First().ToUpper() #>;
 <# } #>
 				default:
 					return null;
@@ -44,12 +44,12 @@ namespace AbbyyLS.Globalization
 		{
 			switch(prefix)
 			{
-<#foreach(var lang in extlangs.Select(_ => _.Prefix).Distinct())
+<#foreach(var lang in extlangs.Select(_ => _.Prefix.First()).Distinct())
 { #>
 				case Language.<#= lang.ToUpper() #>:
 					switch (text.ToLower(CultureInfo.InvariantCulture))
 					{
-<#foreach(var entry in extlangs.Where(_ => _.Prefix == lang))
+<#foreach(var entry in extlangs.Where(_ => _.Prefix.First() == lang))
 { #>
 						case "<#= entry.Subtag.ToLower()#>": return Language.<#= entry.PreferredValue.ToUpper() #>;
 <# } #>

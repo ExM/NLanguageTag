@@ -4,24 +4,26 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-<#@ output extension=".cs" #>
+<#@ output extension=".generated.cs" #>
 <#@ include file="Registry.tt" #>
 using System;
 using System.Globalization;
 
 namespace AbbyyLS.Globalization
 {
-	public static class VariantExtensions
+	public static partial class VariantExtensions
 	{
-		public static string GetPrefix(this Variant v)
+		private static string[] GetTextPrefixes(this Variant v)
 		{
 			switch(v)
 			{
-<#foreach(var entry in variants.Where(_ => _.PreferredValue == null && _.Prefix != null))
-{ #>
-				case Variant.<#= CodeStyle.ToVariantCode(entry.Subtag) #>: return "<#= entry.Prefix #>";
+<#foreach(var entry in variants.Where(_ => _.PreferredValue == null))
+{
+	var tags = string.Join(", ", entry.Prefix.Select(_ => "\"" + _ + "\"")); #>
+				case Variant.<#= CodeStyle.ToVariantCode(entry.Subtag) #>: return new string[] { <#= tags #> };
 <# } #>
-				default: return null;
+				default:
+					throw new NotImplementedException("unexpected value: " + v);
 			}
 		}
 
@@ -36,15 +38,6 @@ namespace AbbyyLS.Globalization
 				default:
 					throw new NotImplementedException("unexpected value: " + v);
 			}
-		}
-		
-		public static Variant ParseFromVariant(this string text)
-		{
-			var result = text.TryParseFromVariant();
-			if (result.HasValue)
-				return result.Value;
-			
-			throw new FormatException("unexpected variant code '" + text + "'");
 		}
 
 		public static Variant? TryParseFromVariant(this string text)
