@@ -12,6 +12,8 @@ namespace AbbyyLS.Globalization
 	{
 		[TestCase("", null, null, null)]
 		[TestCase("en", Language.EN, null, null)]
+		[TestCase("en-Latn", Language.EN, null, null)]
+		[TestCase("ru-Latn", Language.RU, Script.Latn, null)]
 		[TestCase("afb", Language.AFB, null, null)]
 		[TestCase("ar-afb", Language.AFB, null, null)]
 		[TestCase("yue", Language.YUE, null, null)]

@@ -16,18 +16,66 @@ namespace AbbyyLS.Globalization
 
 		public LanguageTagField Fields { get; private set; }
 
-		public Language? Language { get; private set; }
-		public Script? Script { get; private set; }
-		public Region? Region { get; private set; }
+		private Language? _language;
+
+		public Language? Language
+		{
+			get { return _language; }
+			private set
+			{
+				if (!value.HasValue) return;
+				_language = value;
+				Fields |= LanguageTagField.Language;
+			}
+		}
+
+		private Script? _script;
+
+		public Script? Script
+		{
+			get { return _script; }
+			private set
+			{
+				if (!value.HasValue) return;
+				
+				if (Language.HasValue &&
+					Language.Value.GetSupressScript() == value)
+					return;
+
+				_script = value;
+				Fields |= LanguageTagField.Script;
+			}
+		}
+
+		private Region? _region;
+
+		public Region? Region
+		{
+			get { return _region; }
+			private set
+			{
+				if (!value.HasValue) return;
+				_region = value;
+				Fields |= LanguageTagField.Region;
+			}
+		}
 
 		private VariantCollection _variants;
 
-		public VariantCollection Variants
+		public VariantCollection Variants { get { return _variants ?? VariantCollection.Empty; } }
+
+		private void Set(Variant variant)
 		{
-			get
+			if(!this.IsPrefixFor(variant))
+				throw new FormatException("variant subtag '" + variant + "' is unacceptable");
+
+			if (_variants == null)
 			{
-				return _variants ?? VariantCollection.Empty;
+				_variants = new VariantCollection();
+				Fields |= LanguageTagField.Variant;
 			}
+
+			_variants.Append(variant);
 		}
 
 		private IReadOnlyDictionary<Char, ISet<string>> _extensions;
@@ -53,46 +101,32 @@ namespace AbbyyLS.Globalization
 		public LanguageTag(Language lang)
 			: this()
 		{
-			Fields = LanguageTagField.Language;
 			Language = lang;
 		}
 
-		public LanguageTag(Language lang, Script script)
-			: this()
+		public LanguageTag(Language lang, Script? script)
+			: this(lang)
 		{
-			Fields = LanguageTagField.Language | LanguageTagField.Script;
-			Language = lang;
 			Script = script;
 		}
 
-		public LanguageTag(Language lang, Region region)
-			: this()
+		public LanguageTag(Language lang, Region? region)
+			: this(lang)
 		{
-			Fields = LanguageTagField.Language | LanguageTagField.Region;
-			Language = lang;
 			Region = region;
 		}
 
-		public LanguageTag(Language lang, Script script, Region region)
-			: this()
+		public LanguageTag(Language lang, Script? script, Region? region)
+			: this(lang, script)
 		{
-			Fields = LanguageTagField.Language | LanguageTagField.Script | LanguageTagField.Region;
-			Language = lang;
-			Script = script;
 			Region = region;
 		}
 
 		public LanguageTag(Language lang, Script script, Region region, IEnumerable<Variant> variants)
-			: this()
+			: this(lang, script, region)
 		{
-			Fields = LanguageTagField.Language | LanguageTagField.Script | LanguageTagField.Region;
-			Language = lang;
-			Script = script;
-			Region = region;
-
-			_variants = new VariantCollection(variants); //TODO: verify prefix
-			if (_variants.Any())
-				Fields |= LanguageTagField.Variant;
+			foreach (var v in variants)
+				Set(v);
 		}
 
 
@@ -144,47 +178,27 @@ namespace AbbyyLS.Globalization
 			int tokenIndex;
 			Language = text.TryParseFromLanguageToken(out tokenIndex);
 
-			if (Language.HasValue)
-				Fields = LanguageTagField.Language;
-			else
+			if (!Language.HasValue)
 				return new FormatException("unexpected language '" + text.Substring(0, tokenIndex - 1) + "'");
 
 			if (text.Length == tokenIndex)
 				return null;
 
 			Script = text.TryParseFromScriptToken(ref tokenIndex);
-			if (Script.HasValue)
-				Fields |= LanguageTagField.Script;
 
 			if (text.Length == tokenIndex)
 				return null;
 
 			Region = text.TryParseFromRegionToken(ref tokenIndex);
-			if (Region.HasValue)
-				Fields |= LanguageTagField.Region;
 
 			if (text.Length == tokenIndex)
 				return null;
 
 			var variant = text.TryParseFromVariantToken(ref tokenIndex);
-			if (variant.HasValue)
+			while (variant.HasValue)
 			{
-				if (!this.IsPrefixFor(variant.Value))
-					throw new FormatException("variant subtag '" + variant.Value + "' is unacceptable");
-
-				_variants = new VariantCollection();
-				_variants.Append(variant.Value);
-				Fields |= LanguageTagField.Variant;
+				Set(variant.Value);
 				variant = text.TryParseFromVariantToken(ref tokenIndex);
-
-				while (variant.HasValue)
-				{
-					if (!this.IsPrefixFor(variant.Value))
-						throw new FormatException("variant subtag '" + variant.Value + "' is unacceptable");
-
-					_variants.Append(variant.Value);
-					variant = text.TryParseFromVariantToken(ref tokenIndex);
-				}
 			}
 
 			if (text.Length == tokenIndex)
@@ -216,7 +230,7 @@ namespace AbbyyLS.Globalization
 				return false;
 
 			if ((checking & LanguageTagField.Variant) == LanguageTagField.Variant &&
-				Variants != other.Variants) //TODO: equal variants
+				Variants != other.Variants)
 				return false;
 
 			//TODO: check Extension and PrivateUse
