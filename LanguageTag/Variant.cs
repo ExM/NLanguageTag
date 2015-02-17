@@ -8,367 +8,367 @@ namespace AbbyyLS.Globalization
 		/// Late Middle French (to 1606)
 		/// 16th century French as in Jean Nicot, "Thresor de la langue francoyse", 1606, but also including some French similar to that of Rabelais
 		/// </summary>
-		V1606nict,
+		V1606nict = 0,
 
 		/// <summary>
 		/// Early Modern French
 		/// 17th century French, as catalogued in the "Dictionnaire de l'académie françoise", 4eme ed. 1694; frequently includes elements of Middle French, as this is a transitional period
 		/// </summary>
-		V1694acad,
+		V1694acad = 1,
 
 		/// <summary>
 		/// Traditional German orthography
 		/// </summary>
-		V1901,
+		V1901 = 2,
 
 		/// <summary>
 		/// "Academic" ("governmental") variant of Belarusian as codified in 1959
 		/// </summary>
-		V1959acad,
+		V1959acad = 3,
 
 		/// <summary>
 		/// Standardized Resian orthography
 		/// For standardized Resian an orthography was published in 1994.
 		/// </summary>
-		V1994,
+		V1994 = 4,
 
 		/// <summary>
 		/// German orthography of 1996
 		/// </summary>
-		V1996,
+		V1996 = 5,
 
 		/// <summary>
 		/// ALA-LC Romanization, 1997 edition
 		/// Romanizations recommended by the American Library Association and the Library of Congress, in "ALA-LC Romanization Tables: Transliteration Schemes for Non-Roman Scripts" (1997), ISBN 978-0-8444-0940-5.
 		/// </summary>
-		Alalc97,
+		Alalc97 = 6,
 
 		/// <summary>
 		/// Aluku dialect Boni dialect
 		/// Aluku dialect of the "Busi Nenge Tongo" English-based Creole continuum in Eastern Suriname and Western French Guiana
 		/// </summary>
-		Aluku,
+		Aluku = 7,
 
 		/// <summary>
 		/// Eastern Armenian
 		/// </summary>
-		Arevela,
+		Arevela = 8,
 
 		/// <summary>
 		/// Western Armenian
 		/// </summary>
-		Arevmda,
+		Arevmda = 9,
 
 		/// <summary>
 		/// Unified Turkic Latin Alphabet (Historical)
 		/// Denotes alphabet used in Turkic republics/regions of the former USSR in late 1920s, and throughout 1930s, which aspired to represent equivalent phonemes in a unified fashion. Also known as: New Turkic Alphabet; Birlәşdirilmiş Jeni Tyrk Әlifbasь (Birlesdirilmis Jeni Tyrk Elifbasi); Jaŋalif (Janalif).
 		/// </summary>
-		Baku1926,
+		Baku1926 = 10,
 
 		/// <summary>
 		/// The Balanka dialect of Anii
 		/// Balanka is one of 19 Anii dialects.
 		/// </summary>
-		Balanka,
+		Balanka = 11,
 
 		/// <summary>
 		/// The Barlavento dialect group of Kabuverdianu
 		/// Barlavento is one of the two main dialect groups of Kabuverdianu.
 		/// </summary>
-		Barla,
+		Barla = 12,
 
 		/// <summary>
 		/// Buddhist Hybrid Sanskrit
 		/// </summary>
-		Bauddha,
+		Bauddha = 13,
 
 		/// <summary>
 		/// Biscayan dialect of Basque
 		/// </summary>
-		Biscayan,
+		Biscayan = 14,
 
 		/// <summary>
 		/// The San Giorgio dialect of Resian The Bila dialect of Resian
 		/// The dialect of San Giorgio/Bila is one of the four major local dialects of Resian
 		/// </summary>
-		Biske,
+		Biske = 15,
 
 		/// <summary>
 		/// Slovene in Bohorič alphabet
 		/// The subtag represents the alphabet codified by Adam Bohorič in 1584 and used from the first printed Slovene book and up to the mid-19th century.
 		/// </summary>
-		Bohoric,
+		Bohoric = 16,
 
 		/// <summary>
 		/// Boontling
 		/// Jargon embedded in American English
 		/// </summary>
-		Boont,
+		Boont = 17,
 
 		/// <summary>
 		/// Slovene in Dajnko alphabet
 		/// The subtag represents the alphabet codified by Peter Dajnko and used from 1824 to 1839 mostly in Styria (in what is now Eastern Slovenia).
 		/// </summary>
-		Dajnko,
+		Dajnko = 18,
 
 		/// <summary>
 		/// Serbian with Ekavian pronunciation
 		/// </summary>
-		Ekavsk,
+		Ekavsk = 19,
 
 		/// <summary>
 		/// Early Modern English (1500-1700)
 		/// </summary>
-		Emodeng,
+		Emodeng = 20,
 
 		/// <summary>
 		/// International Phonetic Alphabet
 		/// </summary>
-		Fonipa,
+		Fonipa = 21,
 
 		/// <summary>
 		/// Uralic Phonetic Alphabet
 		/// </summary>
-		Fonupa,
+		Fonupa = 22,
 
 		/// <summary>
 		/// X-SAMPA transcription
 		/// Indicates that the content is transcribed according to X-SAMPA
 		/// </summary>
-		Fonxsamp,
+		Fonxsamp = 23,
 
 		/// <summary>
 		/// Hepburn romanization
 		/// </summary>
-		Hepburn,
+		Hepburn = 24,
 
 		/// <summary>
 		/// Norwegian in Høgnorsk (High Norwegian) orthography
 		/// Norwegian following Ivar Aasen's orthographical principles, including modern usage.
 		/// </summary>
-		Hognorsk,
+		Hognorsk = 25,
 
 		/// <summary>
 		/// Serbian with Ijekavian pronunciation
 		/// </summary>
-		Ijekavsk,
+		Ijekavsk = 26,
 
 		/// <summary>
 		/// Epic Sanskrit
 		/// </summary>
-		Itihasa,
+		Itihasa = 27,
 
 		/// <summary>
 		/// Jauer dialect of Romansh
 		/// The spoken dialect of the Val Müstair, which has no written standard.
 		/// </summary>
-		Jauer,
+		Jauer = 28,
 
 		/// <summary>
 		/// Jyutping Cantonese Romanization
 		/// Jyutping romanization of Cantonese
 		/// </summary>
-		Jyutping,
+		Jyutping = 29,
 
 		/// <summary>
 		/// Common Cornish orthography of Revived Cornish
 		/// </summary>
-		Kkcor,
+		Kkcor = 30,
 
 		/// <summary>
 		/// Standard Cornish orthography of Revived Cornish Kernowek Standard
 		/// </summary>
-		Kscor,
+		Kscor = 31,
 
 		/// <summary>
 		/// Classical Sanskrit
 		/// </summary>
-		Laukika,
+		Laukika = 32,
 
 		/// <summary>
 		/// The Lipovaz dialect of Resian The Lipovec dialect of Resian
 		/// The dialect of Lipovaz/Lipovec is one of the minor local dialects of Resian
 		/// </summary>
-		Lipaw,
+		Lipaw = 33,
 
 		/// <summary>
 		/// Post-1917 Russian orthography
 		/// Russian orthography as established by the 1917/1918 orthographic reforms
 		/// </summary>
-		Luna1918,
+		Luna1918 = 34,
 
 		/// <summary>
 		/// Slovene in Metelko alphabet
 		/// The subtag represents the alphabet codified by Franc Serafin Metelko and used from 1825 to 1833.
 		/// </summary>
-		Metelko,
+		Metelko = 35,
 
 		/// <summary>
 		/// Monotonic Greek
 		/// </summary>
-		Monoton,
+		Monoton = 36,
 
 		/// <summary>
 		/// Ndyuka dialect Aukan dialect
 		/// Ndyuka dialect of the "Busi Nenge Tongo" English-based Creole continuum in Eastern Suriname and Western French Guiana
 		/// </summary>
-		Ndyuka,
+		Ndyuka = 37,
 
 		/// <summary>
 		/// Natisone dialect Nadiza dialect
 		/// </summary>
-		Nedis,
+		Nedis = 38,
 
 		/// <summary>
 		/// The Gniva dialect of Resian The Njiva dialect of Resian
 		/// The dialect of Gniva/Njiva is one of the four major local dialects of Resian
 		/// </summary>
-		Njiva,
+		Njiva = 39,
 
 		/// <summary>
 		/// Volapük nulik Volapük perevidöl Volapük nulädik de Jong's Volapük New Volapük Revised Volapük Modern Volapük
 		/// </summary>
-		Nulik,
+		Nulik = 40,
 
 		/// <summary>
 		/// The Oseacco dialect of Resian The Osojane dialect of Resian
 		/// The dialect of Oseacco/Osojane is one of the four major local dialects of Resian
 		/// </summary>
-		Osojs,
+		Osojs = 41,
 
 		/// <summary>
 		/// Pamaka dialect
 		/// Pamaka dialect of the "Busi Nenge Tongo" English-based Creole continuum in Eastern Suriname and Western French Guiana
 		/// </summary>
-		Pamaka,
+		Pamaka = 42,
 
 		/// <summary>
 		/// Petrine orthography
 		/// Russian orthography from the Petrine orthographic reforms of 1708 to the 1917 orthographic reform
 		/// </summary>
-		Petr1708,
+		Petr1708 = 43,
 
 		/// <summary>
 		/// Pinyin romanization
 		/// </summary>
-		Pinyin,
+		Pinyin = 44,
 
 		/// <summary>
 		/// Polytonic Greek
 		/// </summary>
-		Polyton,
+		Polyton = 45,
 
 		/// <summary>
 		/// Puter idiom of Romansh
 		/// Puter is one of the five traditional written standards or "idioms" of the Romansh language.
 		/// </summary>
-		Puter,
+		Puter = 46,
 
 		/// <summary>
 		/// Volapük rigik Schleyer's Volapük Original Volapük Classic Volapük
 		/// </summary>
-		Rigik,
+		Rigik = 47,
 
 		/// <summary>
 		/// Resian Resianic Rezijan
 		/// </summary>
-		Rozaj,
+		Rozaj = 48,
 
 		/// <summary>
 		/// Rumantsch Grischun
 		/// Supraregional Romansh written standard
 		/// </summary>
-		Rumgr,
+		Rumgr = 49,
 
 		/// <summary>
 		/// Scottish Standard English
 		/// </summary>
-		Scotland,
+		Scotland = 50,
 
 		/// <summary>
 		/// Scouse
 		/// English Liverpudlian dialect known as 'Scouse'
 		/// </summary>
-		Scouse,
+		Scouse = 51,
 
 		/// <summary>
 		/// The Stolvizza dialect of Resian The Solbica dialect of Resian
 		/// The dialect of Stolvizza/Solbica is one of the four major local dialects of Resian
 		/// </summary>
-		Solba,
+		Solba = 52,
 
 		/// <summary>
 		/// The Sotavento dialect group of Kabuverdianu
 		/// Sotavento is one of the two main dialect groups of Kabuverdianu.
 		/// </summary>
-		Sotav,
+		Sotav = 53,
 
 		/// <summary>
 		/// Surmiran idiom of Romansh
 		/// Surmiran is one of the five traditional written standards or "idioms" of the Romansh language.
 		/// </summary>
-		Surmiran,
+		Surmiran = 54,
 
 		/// <summary>
 		/// Sursilvan idiom of Romansh
 		/// Sursilvan is one of the five traditional written standards or "idioms" of the Romansh language.
 		/// </summary>
-		Sursilv,
+		Sursilv = 55,
 
 		/// <summary>
 		/// Sutsilvan idiom of Romansh
 		/// Sutsilvan is one of the five traditional written standards or "idioms" of the Romansh language.
 		/// </summary>
-		Sutsilv,
+		Sutsilv = 56,
 
 		/// <summary>
 		/// Belarusian in Taraskievica orthography
 		/// The subtag represents Branislau Taraskievic's Belarusian orthography as published in "Bielaruski klasycny pravapis" by Juras Buslakou, Vincuk Viacorka, Zmicier Sanko, and Zmicier Sauka (Vilnia- Miensk 2005).
 		/// </summary>
-		Tarask,
+		Tarask = 57,
 
 		/// <summary>
 		/// Unified Cornish orthography of Revived Cornish
 		/// </summary>
-		Uccor,
+		Uccor = 58,
 
 		/// <summary>
 		/// Unified Cornish Revised orthography of Revived Cornish
 		/// </summary>
-		Ucrcor,
+		Ucrcor = 59,
 
 		/// <summary>
 		/// Ulster dialect of Scots
 		/// </summary>
-		Ulster,
+		Ulster = 60,
 
 		/// <summary>
 		/// Unifon phonetic alphabet
 		/// </summary>
-		Unifon,
+		Unifon = 61,
 
 		/// <summary>
 		/// Vedic Sanskrit
 		/// The most ancient dialect of Sanskrit used in verse and prose composed until about the 4th century B.C.E.
 		/// </summary>
-		Vaidika,
+		Vaidika = 62,
 
 		/// <summary>
 		/// Valencian
 		/// Variety spoken in the "Comunidad Valenciana" region of Spain, where it is co-official with Spanish.
 		/// </summary>
-		Valencia,
+		Valencia = 63,
 
 		/// <summary>
 		/// Vallader idiom of Romansh
 		/// Vallader is one of the five traditional written standards or "idioms" of the Romansh language.
 		/// </summary>
-		Vallader,
+		Vallader = 64,
 
 		/// <summary>
 		/// Wade-Giles romanization
 		/// </summary>
-		Wadegile,
+		Wadegile = 65,
 
 	}
 }

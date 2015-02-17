@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace AbbyyLS.Globalization
 {
-	public class VariantCollection : IList<Variant>
+	public class VariantCollection : IEnumerable<Variant>
 	{
 		public static readonly VariantCollection Empty = new VariantCollection();
 
-		private List<Variant> _list = new List<Variant>();
+		private List<Variant> _prefix = new List<Variant>();
+		private List<Variant> _options = new List<Variant>();
 
 		public VariantCollection()
 		{
@@ -29,13 +31,8 @@ namespace AbbyyLS.Globalization
 			if (object.ReferenceEquals(this, other))
 				return true;
 
-			if (Count != other.Count)
-				return false;
-
-			var contain = new HashSet<Variant>(_list);
-			contain.ExceptWith(other);
-
-			return !contain.Any();
+			return _prefix.IsEquivalent(other._prefix) &&
+				_options.IsEquivalent(other._options);
 		}
 
 		public static bool operator ==(VariantCollection a, VariantCollection b)
@@ -54,95 +51,46 @@ namespace AbbyyLS.Globalization
 		public override int GetHashCode()
 		{
 			var result = 0;
-			foreach (var v in _list)
+			foreach (var v in _prefix)
+				result ^= v.GetHashCode();
+			foreach (var v in _options)
 				result ^= v.GetHashCode();
 			return result;
 		}
 
-		public VariantCollection(IEnumerable<Variant> variants)
+		internal void Append(Variant item, bool restrictive)
 		{
-			foreach (var v in variants)
-				Append(v);
-		}
-
-		internal void Append(Variant item)
-		{
-			if (_list.Contains(item))
-				return;
-
-			_list.Add(item);
-		}
-
-		public int IndexOf(Variant item)
-		{
-			return _list.IndexOf(item);
-		}
-
-		public void Insert(int index, Variant item)
-		{
-			throw new NotSupportedException("this is readonly collection");
-		}
-
-		public void RemoveAt(int index)
-		{
-			throw new NotSupportedException("this is readonly collection");
-		}
-
-		public Variant this[int index]
-		{
-			get
+			if (restrictive)
 			{
-				return _list[index];
+				if (_prefix.Contains(item))
+					return;
+
+				_prefix.Add(item);
 			}
-			set
+			else
 			{
-				throw new NotSupportedException("this is readonly collection");
+				var index = _options.BinarySearch(item);
+				if (index < 0)
+				{
+					_options.Insert(~index, item);
+				}
 			}
-		}
-
-		public void Add(Variant item)
-		{
-			throw new NotSupportedException("this is readonly collection");
-		}
-
-		public void Clear()
-		{
-			throw new NotSupportedException("this is readonly collection");
 		}
 
 		public bool Contains(Variant item)
 		{
-			return _list.Contains(item);
-		}
-
-		public void CopyTo(Variant[] array, int arrayIndex)
-		{
-			_list.CopyTo(array, arrayIndex);
-		}
-
-		public int Count
-		{
-			get { return _list.Count; }
-		}
-
-		public bool IsReadOnly
-		{
-			get { return true; }
-		}
-
-		public bool Remove(Variant item)
-		{
-			throw new NotSupportedException("this is readonly collection");
+			return _prefix.Contains(item) ||
+				_options.Contains(item);
 		}
 
 		public IEnumerator<Variant> GetEnumerator()
 		{
-			return _list.GetEnumerator();
+			return _prefix.Union(_options).GetEnumerator();
 		}
 
 		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
 		{
-			return ((System.Collections.IEnumerable)_list).GetEnumerator();
+			return ((System.Collections.IEnumerable)_prefix.Union(_options)).GetEnumerator();
 		}
 	}
 }

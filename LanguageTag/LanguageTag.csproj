@@ -49,6 +49,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Grandfathered.tt</DependentUpon>
     </Compile>
+    <Compile Include="InternalExtensions.cs" />
     <Compile Include="LanguageExtensions.cs" />
     <Compile Include="LanguageExtensions.generated.cs">
       <AutoGen>True</AutoGen>

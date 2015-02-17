@@ -39,17 +39,20 @@ namespace AbbyyLS.Globalization
 
 		[TestCase("sr", Variant.Ekavsk, true)]
 		[TestCase("sr-Cyrl", Variant.Ekavsk, true)]
-		[TestCase("sr-Hans", Variant.Ekavsk, false)]
-		[TestCase("en", Variant.Ekavsk, false)]
-		[TestCase("sr", Variant.Fonipa, true)]
-		[TestCase("sr-Cyrl", Variant.Fonipa, true)]
-		[TestCase("sr-Hans", Variant.Fonipa, true)]
+		[TestCase("sr-Hans", Variant.Ekavsk, null)]
+		[TestCase("en", Variant.Ekavsk, null)]
+		[TestCase("sr", Variant.Fonipa, false)]
+		[TestCase("sr-Cyrl", Variant.Fonipa, false)]
+		[TestCase("sr-Hans", Variant.Fonipa, false)]
 		[TestCase("az", Variant.Baku1926, true)]
-		[TestCase("en", Variant.Baku1926, false)]
-		[TestCase("sl", Variant.V1994, false)]
-		public void IsPrefixFor(string tag, Variant variant, bool expected)
+		[TestCase("en", Variant.Baku1926, null)]
+		[TestCase("sl", Variant.V1994, null)]
+		[TestCase("en-scotland", Variant.Fonipa, false)]
+		[TestCase("sl-rozaj-biske-fonipa", Variant.V1994, null)]
+		[TestCase("sl-rozaj-biske", Variant.V1994, true)]
+		public void IsRestrictivePrefixFor(string tag, Variant variant, bool? expected)
 		{
-			Assert.AreEqual(expected, new LanguageTag(tag).IsPrefixFor(variant));
+			Assert.AreEqual(expected, new LanguageTag(tag).IsRestrictivePrefixFor(variant));
 		}
 	}
 }

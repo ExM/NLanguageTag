@@ -40,10 +40,19 @@ namespace AbbyyLS.Globalization
 		[TestCase("sl-rozaj-biske", new Variant[] { Variant.Rozaj, Variant.Biske })]
 		[TestCase("sl-rozaj-biske-1994", new Variant[] { Variant.Rozaj, Variant.Biske, Variant.V1994 })]
 		[TestCase("sl-rozaj-1994", new Variant[] { Variant.Rozaj, Variant.V1994 })]
+		[TestCase("sl-rozaj-biske-1994-fonipa", new Variant[] { Variant.Rozaj, Variant.Biske, Variant.V1994, Variant.Fonipa })]
 		public void ParseWithVariants(string text, Variant[] variantsEx)
 		{
 			var tag = LanguageTag.Parse(text);
-			Assert.That(tag.Variants, Is.EqualTo(new VariantCollection(variantsEx)));
+			Assert.That(tag.Variants, Is.EquivalentTo(variantsEx));
+		}
+
+		[TestCase("en-scotland", "en", true)]
+		[TestCase("sl-US-rozaj-biske-1994-fonipa", "sl-rozaj-biske-1994", true)]
+		[TestCase("en-GB", "en-scotland", false)]
+		public void Contains(string x, string y, bool expected)
+		{
+			Assert.That(LanguageTag.Parse(x).Contains(LanguageTag.Parse(y)), Is.EqualTo(expected));
 		}
 
 		[TestCase("xxx")]
@@ -57,6 +66,7 @@ namespace AbbyyLS.Globalization
 		[TestCase("ar-afb-xxx")]
 		[TestCase("sl-rozaj-biske-1996")]
 		[TestCase("sl-1994")]
+		[TestCase("sl-rozaj-fonipa-biske-1994")]
 		[ExpectedException(typeof(FormatException))]
 		public void Parse_Fail(string text)
 		{
@@ -87,6 +97,17 @@ namespace AbbyyLS.Globalization
 		public void NotSupportedGrandfathered(string grandfathered)
 		{
 			LanguageTag.Parse(grandfathered);
+		}
+
+		[TestCase("", "")]
+		[TestCase("zh-CHS", "zh-Hans")]
+		[TestCase("sl-rozaj-biske-1994-fonipa", "sl-rozaj-biske-1994-fonipa")]
+		[TestCase("SL-rozaj-fonipa-alalc97", "sl-rozaj-alalc97-fonipa")]
+		[TestCase("EN-LATN-GB", "en-GB")]
+		[TestCase("Ru-Cyrl-ru", "ru-RU")]
+		public void ToString(string source, string expected)
+		{
+			Assert.AreEqual(expected, LanguageTag.Parse(source).ToString());
 		}
 	}
 }

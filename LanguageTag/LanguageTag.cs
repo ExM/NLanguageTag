@@ -64,18 +64,27 @@ namespace AbbyyLS.Globalization
 
 		public VariantCollection Variants { get { return _variants ?? VariantCollection.Empty; } }
 
-		private void Set(Variant variant)
+		private Exception TrySet(Variant variant)
 		{
-			if(!this.IsPrefixFor(variant))
-				throw new FormatException("variant subtag '" + variant + "' is unacceptable");
+			var restrictive = this.IsRestrictivePrefixFor(variant);
+			if (!restrictive.HasValue)
+				return new FormatException("variant subtag '" + variant + "' is unacceptable");
 
 			if (_variants == null)
 			{
 				_variants = new VariantCollection();
-				Fields |= LanguageTagField.Variant;
+				Fields |= LanguageTagField.Variants;
 			}
 
-			_variants.Append(variant);
+			_variants.Append(variant, restrictive.Value);
+			return null;
+		}
+
+		private void Set(Variant variant)
+		{
+			var ex = TrySet(variant);
+			if (ex != null)
+				throw ex;
 		}
 
 		private IReadOnlyDictionary<Char, ISet<string>> _extensions;
@@ -122,13 +131,12 @@ namespace AbbyyLS.Globalization
 			Region = region;
 		}
 
-		public LanguageTag(Language lang, Script script, Region region, IEnumerable<Variant> variants)
+		public LanguageTag(Language lang, Script? script, Region? region, IEnumerable<Variant> variants)
 			: this(lang, script, region)
 		{
 			foreach (var v in variants)
 				Set(v);
 		}
-
 
 		public LanguageTag(string text)
 			: this()
@@ -137,7 +145,6 @@ namespace AbbyyLS.Globalization
 			if(ex != null)
 				throw new FormatException("unexpected language tag '" + text + "'", ex);
 		}
-
 
 		public static LanguageTag Parse(string text)
 		{
@@ -197,7 +204,9 @@ namespace AbbyyLS.Globalization
 			var variant = text.TryParseFromVariantToken(ref tokenIndex);
 			while (variant.HasValue)
 			{
-				Set(variant.Value);
+				var ex = TrySet(variant.Value);
+				if (ex != null)
+					return ex;
 				variant = text.TryParseFromVariantToken(ref tokenIndex);
 			}
 
@@ -215,6 +224,26 @@ namespace AbbyyLS.Globalization
 			throw new NotImplementedException();
 		}
 
+		public bool Contains(LanguageTag other)
+		{
+			if (other.Language.HasValue && other.Language != Language)
+				return false;
+
+			if (other.Script.HasValue && other.Script != Script)
+				return false;
+
+			if (other.Region.HasValue && other.Region != Region)
+				return false;
+
+			if (other.Variants.Except(Variants).Any())
+				return false;
+
+
+			//TODO: check Extension and PrivateUse
+
+			return true;
+		}
+
 		public bool Equals(LanguageTag other, LanguageTagField checking)
 		{
 			if ((checking & LanguageTagField.Language) == LanguageTagField.Language &&
@@ -229,13 +258,35 @@ namespace AbbyyLS.Globalization
 				Region != other.Region)
 				return false;
 
-			if ((checking & LanguageTagField.Variant) == LanguageTagField.Variant &&
+			if ((checking & LanguageTagField.Variants) == LanguageTagField.Variants &&
 				Variants != other.Variants)
 				return false;
 
 			//TODO: check Extension and PrivateUse
 
 			return true;
+		}
+
+		private IEnumerable<string> SubtagsAsText()
+		{
+			if (Language.HasValue)
+				yield return Language.Value.ToText();
+
+			if (Script.HasValue)
+				yield return Script.Value.ToText();
+
+			if (Region.HasValue)
+				yield return Region.Value.ToText();
+
+			foreach (var v in Variants)
+				yield return v.ToText();
+
+			//TODO: check Extension and PrivateUse
+		}
+
+		public override string ToString()
+		{
+			return string.Join(TagSeparator.ToString(), SubtagsAsText());
 		}
 	}
 }

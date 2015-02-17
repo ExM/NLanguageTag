@@ -13,8 +13,12 @@ namespace AbbyyLS.Globalization
 		Language = 0x01,
 		Script = 0x02,
 		Region = 0x04,
-		Variant = 0x08,
-		Extension = 0x10,
-		PrivateUse = 0x20
+		Variants = 0x08,
+		Extensions = 0x10,
+		PrivateUse = 0x20,
+
+		Primary = Language | Script | Region,
+		Published = Primary | Variants,
+		All = Published | Extensions | PrivateUse
 	}
 }

@@ -49,20 +49,20 @@ namespace AbbyyLS.Globalization
 			return v.GetTextPrefixes().Select(_ => LanguageTag.Parse(_)).ToArray();
 		}
 
-		private static readonly ConcurrentDictionary<Variant, Func<LanguageTag, bool>> _isPrefixForCache = new ConcurrentDictionary<Variant, Func<LanguageTag, bool>>();
+		private static readonly ConcurrentDictionary<Variant, Func<LanguageTag, bool?>> _isPrefixForCache = new ConcurrentDictionary<Variant, Func<LanguageTag, bool?>>();
 
-		private static readonly Func<Variant, Func<LanguageTag, bool>> _isPrefixForCreater = IsPrefixForCreater;
+		private static readonly Func<Variant, Func<LanguageTag, bool?>> _isPrefixForCreater = PrefixForCreater;
 
-		public static bool IsPrefixFor(this LanguageTag tag, Variant v)
+		public static bool? IsRestrictivePrefixFor(this LanguageTag tag, Variant v)
 		{
 			return _isPrefixForCache.GetOrAdd(v, _isPrefixForCreater)(tag);
 		}
 
-		private static Func<LanguageTag, bool> IsPrefixForCreater(Variant v)
+		private static Func<LanguageTag, bool?> PrefixForCreater(Variant v)
 		{
 			var tags = v.GetPrefixes();
 			if(!tags.Any())
-				return _ => true;
+				return _ => false;
 
 			var checkingFields = LanguageTagField.None;
 			foreach (var tag in tags)
@@ -73,7 +73,8 @@ namespace AbbyyLS.Globalization
 				foreach (var tag in tags)
 					if (candidate.Equals(tag, checkingFields))
 						return true;
-				return false;
+
+				return null;
 			};
 		}
 	}

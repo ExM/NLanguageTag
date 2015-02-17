@@ -12,15 +12,16 @@ namespace AbbyyLS.Globalization
 {
 	public enum Variant
 	{
-<#foreach(var entry in variants.Where(_ => _.PreferredValue == null))
-{ #>
+<# var num = 0;
+foreach(var entry in variants.Where(_ => _.PreferredValue == null).OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+{#>
 		/// <summary>
 		/// <#= entry.Description #>
 <#if(entry.Comments != null)
 { #>		/// <#= entry.Comments #>
 <# } #>
 		/// </summary>
-		<#= CodeStyle.ToVariantCode(entry.Subtag) #>,
+		<#= CodeStyle.ToVariantCode(entry.Subtag) #> = <#= num++ #>,
 
 <# } #>
 	}
