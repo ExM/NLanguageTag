@@ -9,10 +9,12 @@ namespace AbbyyLS.Globalization
 		{
 			switch (v)
 			{
+				case Script.Adlm: return "Adlm";
 				case Script.Afak: return "Afak";
 				case Script.Aghb: return "Aghb";
 				case Script.Ahom: return "Ahom";
 				case Script.Arab: return "Arab";
+				case Script.Aran: return "Aran";
 				case Script.Armi: return "Armi";
 				case Script.Armn: return "Armn";
 				case Script.Avst: return "Avst";
@@ -75,6 +77,8 @@ namespace AbbyyLS.Globalization
 				case Script.Khar: return "Khar";
 				case Script.Khmr: return "Khmr";
 				case Script.Khoj: return "Khoj";
+				case Script.Kitl: return "Kitl";
+				case Script.Kits: return "Kits";
 				case Script.Knda: return "Knda";
 				case Script.Kore: return "Kore";
 				case Script.Kpel: return "Kpel";
@@ -95,6 +99,7 @@ namespace AbbyyLS.Globalization
 				case Script.Mahj: return "Mahj";
 				case Script.Mand: return "Mand";
 				case Script.Mani: return "Mani";
+				case Script.Marc: return "Marc";
 				case Script.Maya: return "Maya";
 				case Script.Mend: return "Mend";
 				case Script.Merc: return "Merc";
@@ -116,6 +121,7 @@ namespace AbbyyLS.Globalization
 				case Script.Olck: return "Olck";
 				case Script.Orkh: return "Orkh";
 				case Script.Orya: return "Orya";
+				case Script.Osge: return "Osge";
 				case Script.Osma: return "Osma";
 				case Script.Palm: return "Palm";
 				case Script.Pauc: return "Pauc";
@@ -185,10 +191,12 @@ namespace AbbyyLS.Globalization
 		{
 			switch (text.ToLower(CultureInfo.InvariantCulture))
 			{
+				case "adlm": return Script.Adlm;
 				case "afak": return Script.Afak;
 				case "aghb": return Script.Aghb;
 				case "ahom": return Script.Ahom;
 				case "arab": return Script.Arab;
+				case "aran": return Script.Aran;
 				case "armi": return Script.Armi;
 				case "armn": return Script.Armn;
 				case "avst": return Script.Avst;
@@ -251,6 +259,8 @@ namespace AbbyyLS.Globalization
 				case "khar": return Script.Khar;
 				case "khmr": return Script.Khmr;
 				case "khoj": return Script.Khoj;
+				case "kitl": return Script.Kitl;
+				case "kits": return Script.Kits;
 				case "knda": return Script.Knda;
 				case "kore": return Script.Kore;
 				case "kpel": return Script.Kpel;
@@ -271,6 +281,7 @@ namespace AbbyyLS.Globalization
 				case "mahj": return Script.Mahj;
 				case "mand": return Script.Mand;
 				case "mani": return Script.Mani;
+				case "marc": return Script.Marc;
 				case "maya": return Script.Maya;
 				case "mend": return Script.Mend;
 				case "merc": return Script.Merc;
@@ -292,6 +303,7 @@ namespace AbbyyLS.Globalization
 				case "olck": return Script.Olck;
 				case "orkh": return Script.Orkh;
 				case "orya": return Script.Orya;
+				case "osge": return Script.Osge;
 				case "osma": return Script.Osma;
 				case "palm": return Script.Palm;
 				case "pauc": return Script.Pauc;

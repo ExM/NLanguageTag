@@ -176,199 +176,205 @@ namespace AbbyyLS.Globalization
 		Kkcor = 30,
 
 		/// <summary>
+		/// The Kociewie dialect of Polish
+		/// The dialect of Kociewie is spoken in the region around Starogard Gdański, Tczew and Świecie in northern Poland.
+		/// </summary>
+		Kociewie = 31,
+
+		/// <summary>
 		/// Standard Cornish orthography of Revived Cornish Kernowek Standard
 		/// </summary>
-		Kscor = 31,
+		Kscor = 32,
 
 		/// <summary>
 		/// Classical Sanskrit
 		/// </summary>
-		Laukika = 32,
+		Laukika = 33,
 
 		/// <summary>
 		/// The Lipovaz dialect of Resian The Lipovec dialect of Resian
 		/// The dialect of Lipovaz/Lipovec is one of the minor local dialects of Resian
 		/// </summary>
-		Lipaw = 33,
+		Lipaw = 34,
 
 		/// <summary>
 		/// Post-1917 Russian orthography
 		/// Russian orthography as established by the 1917/1918 orthographic reforms
 		/// </summary>
-		Luna1918 = 34,
+		Luna1918 = 35,
 
 		/// <summary>
 		/// Slovene in Metelko alphabet
 		/// The subtag represents the alphabet codified by Franc Serafin Metelko and used from 1825 to 1833.
 		/// </summary>
-		Metelko = 35,
+		Metelko = 36,
 
 		/// <summary>
 		/// Monotonic Greek
 		/// </summary>
-		Monoton = 36,
+		Monoton = 37,
 
 		/// <summary>
 		/// Ndyuka dialect Aukan dialect
 		/// Ndyuka dialect of the "Busi Nenge Tongo" English-based Creole continuum in Eastern Suriname and Western French Guiana
 		/// </summary>
-		Ndyuka = 37,
+		Ndyuka = 38,
 
 		/// <summary>
 		/// Natisone dialect Nadiza dialect
 		/// </summary>
-		Nedis = 38,
+		Nedis = 39,
 
 		/// <summary>
 		/// The Gniva dialect of Resian The Njiva dialect of Resian
 		/// The dialect of Gniva/Njiva is one of the four major local dialects of Resian
 		/// </summary>
-		Njiva = 39,
+		Njiva = 40,
 
 		/// <summary>
 		/// Volapük nulik Volapük perevidöl Volapük nulädik de Jong's Volapük New Volapük Revised Volapük Modern Volapük
 		/// </summary>
-		Nulik = 40,
+		Nulik = 41,
 
 		/// <summary>
 		/// The Oseacco dialect of Resian The Osojane dialect of Resian
 		/// The dialect of Oseacco/Osojane is one of the four major local dialects of Resian
 		/// </summary>
-		Osojs = 41,
+		Osojs = 42,
 
 		/// <summary>
 		/// Pamaka dialect
 		/// Pamaka dialect of the "Busi Nenge Tongo" English-based Creole continuum in Eastern Suriname and Western French Guiana
 		/// </summary>
-		Pamaka = 42,
+		Pamaka = 43,
 
 		/// <summary>
 		/// Petrine orthography
 		/// Russian orthography from the Petrine orthographic reforms of 1708 to the 1917 orthographic reform
 		/// </summary>
-		Petr1708 = 43,
+		Petr1708 = 44,
 
 		/// <summary>
 		/// Pinyin romanization
 		/// </summary>
-		Pinyin = 44,
+		Pinyin = 45,
 
 		/// <summary>
 		/// Polytonic Greek
 		/// </summary>
-		Polyton = 45,
+		Polyton = 46,
 
 		/// <summary>
 		/// Puter idiom of Romansh
 		/// Puter is one of the five traditional written standards or "idioms" of the Romansh language.
 		/// </summary>
-		Puter = 46,
+		Puter = 47,
 
 		/// <summary>
 		/// Volapük rigik Schleyer's Volapük Original Volapük Classic Volapük
 		/// </summary>
-		Rigik = 47,
+		Rigik = 48,
 
 		/// <summary>
 		/// Resian Resianic Rezijan
 		/// </summary>
-		Rozaj = 48,
+		Rozaj = 49,
 
 		/// <summary>
 		/// Rumantsch Grischun
 		/// Supraregional Romansh written standard
 		/// </summary>
-		Rumgr = 49,
+		Rumgr = 50,
 
 		/// <summary>
 		/// Scottish Standard English
 		/// </summary>
-		Scotland = 50,
+		Scotland = 51,
 
 		/// <summary>
 		/// Scouse
 		/// English Liverpudlian dialect known as 'Scouse'
 		/// </summary>
-		Scouse = 51,
+		Scouse = 52,
 
 		/// <summary>
 		/// The Stolvizza dialect of Resian The Solbica dialect of Resian
 		/// The dialect of Stolvizza/Solbica is one of the four major local dialects of Resian
 		/// </summary>
-		Solba = 52,
+		Solba = 53,
 
 		/// <summary>
 		/// The Sotavento dialect group of Kabuverdianu
 		/// Sotavento is one of the two main dialect groups of Kabuverdianu.
 		/// </summary>
-		Sotav = 53,
+		Sotav = 54,
 
 		/// <summary>
 		/// Surmiran idiom of Romansh
 		/// Surmiran is one of the five traditional written standards or "idioms" of the Romansh language.
 		/// </summary>
-		Surmiran = 54,
+		Surmiran = 55,
 
 		/// <summary>
 		/// Sursilvan idiom of Romansh
 		/// Sursilvan is one of the five traditional written standards or "idioms" of the Romansh language.
 		/// </summary>
-		Sursilv = 55,
+		Sursilv = 56,
 
 		/// <summary>
 		/// Sutsilvan idiom of Romansh
 		/// Sutsilvan is one of the five traditional written standards or "idioms" of the Romansh language.
 		/// </summary>
-		Sutsilv = 56,
+		Sutsilv = 57,
 
 		/// <summary>
 		/// Belarusian in Taraskievica orthography
 		/// The subtag represents Branislau Taraskievic's Belarusian orthography as published in "Bielaruski klasycny pravapis" by Juras Buslakou, Vincuk Viacorka, Zmicier Sanko, and Zmicier Sauka (Vilnia- Miensk 2005).
 		/// </summary>
-		Tarask = 57,
+		Tarask = 58,
 
 		/// <summary>
 		/// Unified Cornish orthography of Revived Cornish
 		/// </summary>
-		Uccor = 58,
+		Uccor = 59,
 
 		/// <summary>
 		/// Unified Cornish Revised orthography of Revived Cornish
 		/// </summary>
-		Ucrcor = 59,
+		Ucrcor = 60,
 
 		/// <summary>
 		/// Ulster dialect of Scots
 		/// </summary>
-		Ulster = 60,
+		Ulster = 61,
 
 		/// <summary>
 		/// Unifon phonetic alphabet
 		/// </summary>
-		Unifon = 61,
+		Unifon = 62,
 
 		/// <summary>
 		/// Vedic Sanskrit
 		/// The most ancient dialect of Sanskrit used in verse and prose composed until about the 4th century B.C.E.
 		/// </summary>
-		Vaidika = 62,
+		Vaidika = 63,
 
 		/// <summary>
 		/// Valencian
 		/// Variety spoken in the "Comunidad Valenciana" region of Spain, where it is co-official with Spanish.
 		/// </summary>
-		Valencia = 63,
+		Valencia = 64,
 
 		/// <summary>
 		/// Vallader idiom of Romansh
 		/// Vallader is one of the five traditional written standards or "idioms" of the Romansh language.
 		/// </summary>
-		Vallader = 64,
+		Vallader = 65,
 
 		/// <summary>
 		/// Wade-Giles romanization
 		/// </summary>
-		Wadegile = 65,
+		Wadegile = 66,
 
 	}
 }

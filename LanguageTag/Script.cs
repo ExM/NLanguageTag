@@ -5,6 +5,11 @@ namespace AbbyyLS.Globalization
 	public enum Script
 	{
 		/// <summary>
+		/// Adlam
+		/// </summary>
+		Adlm,
+
+		/// <summary>
 		/// Afaka
 		/// </summary>
 		Afak,
@@ -23,6 +28,11 @@ namespace AbbyyLS.Globalization
 		/// Arabic
 		/// </summary>
 		Arab,
+
+		/// <summary>
+		/// Arabic (Nastaliq variant)
+		/// </summary>
+		Aran,
 
 		/// <summary>
 		/// Imperial Aramaic
@@ -335,6 +345,16 @@ namespace AbbyyLS.Globalization
 		Khoj,
 
 		/// <summary>
+		/// Khitan large script
+		/// </summary>
+		Kitl,
+
+		/// <summary>
+		/// Khitan small script
+		/// </summary>
+		Kits,
+
+		/// <summary>
 		/// Kannada
 		/// </summary>
 		Knda,
@@ -433,6 +453,11 @@ namespace AbbyyLS.Globalization
 		/// Manichaean
 		/// </summary>
 		Mani,
+
+		/// <summary>
+		/// Marchen
+		/// </summary>
+		Marc,
 
 		/// <summary>
 		/// Mayan hieroglyphs
@@ -538,6 +563,11 @@ namespace AbbyyLS.Globalization
 		/// Oriya
 		/// </summary>
 		Orya,
+
+		/// <summary>
+		/// Osage
+		/// </summary>
+		Osge,
 
 		/// <summary>
 		/// Osmanya

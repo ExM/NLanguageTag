@@ -40,6 +40,7 @@ namespace AbbyyLS.Globalization
 				case Variant.Jauer: return new string[] { "rm" };
 				case Variant.Jyutping: return new string[] { "yue" };
 				case Variant.Kkcor: return new string[] { "kw" };
+				case Variant.Kociewie: return new string[] { "pl" };
 				case Variant.Kscor: return new string[] { "kw" };
 				case Variant.Laukika: return new string[] { "sa" };
 				case Variant.Lipaw: return new string[] { "sl-rozaj" };
@@ -115,6 +116,7 @@ namespace AbbyyLS.Globalization
 				case Variant.Jauer: return "jauer";
 				case Variant.Jyutping: return "jyutping";
 				case Variant.Kkcor: return "kkcor";
+				case Variant.Kociewie: return "kociewie";
 				case Variant.Kscor: return "kscor";
 				case Variant.Laukika: return "laukika";
 				case Variant.Lipaw: return "lipaw";
@@ -191,6 +193,7 @@ namespace AbbyyLS.Globalization
 				case "jauer": return Variant.Jauer;
 				case "jyutping": return Variant.Jyutping;
 				case "kkcor": return Variant.Kkcor;
+				case "kociewie": return Variant.Kociewie;
 				case "kscor": return Variant.Kscor;
 				case "laukika": return Variant.Laukika;
 				case "lipaw": return Variant.Lipaw;

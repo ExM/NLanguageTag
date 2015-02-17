@@ -105,6 +105,7 @@ namespace AbbyyLS.Globalization
 		[TestCase("SL-rozaj-fonipa-alalc97", "sl-rozaj-alalc97-fonipa")]
 		[TestCase("EN-LATN-GB", "en-GB")]
 		[TestCase("Ru-Cyrl-ru", "ru-RU")]
+		[TestCase("en-BU", "en-MM")]
 		public void ToString(string source, string expected)
 		{
 			Assert.AreEqual(expected, LanguageTag.Parse(source).ToString());
