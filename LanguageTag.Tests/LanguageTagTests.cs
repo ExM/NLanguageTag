@@ -47,6 +47,15 @@ namespace AbbyyLS.Globalization
 			Assert.That(tag.Variants, Is.EquivalentTo(variantsEx));
 		}
 
+		[TestCase("sl-rozaj-a-bbb-ccc", new char[]{ 'a'})]
+		[TestCase("sl-rozaj-a-bbb-ccc-b-aaa", new char[] { 'a', 'b' })]
+		[TestCase("sl-rozaj-b-bbb-ccc-a-aaa", new char[] { 'a', 'b' })]
+		public void ParseWithExtensions(string text, char[] singletones)
+		{
+			var tag = LanguageTag.Parse(text);
+			Assert.That(tag.Extensions.Select(_ => _.Singleton), Is.EquivalentTo(singletones));
+		}
+
 		[TestCase("en-scotland", "en", true)]
 		[TestCase("sl-US-rozaj-biske-1994-fonipa", "sl-rozaj-biske-1994", true)]
 		[TestCase("en-GB", "en-scotland", false)]
@@ -67,6 +76,11 @@ namespace AbbyyLS.Globalization
 		[TestCase("sl-rozaj-biske-1996")]
 		[TestCase("sl-1994")]
 		[TestCase("sl-rozaj-fonipa-biske-1994")]
+		[TestCase("sl-rozaj-a")]
+		[TestCase("sl-rozaj-a-")]
+		[TestCase("sl-rozaj-a-b")]
+		[TestCase("sl-rozaj-a-aaa-b")]
+		[TestCase("sl-rozaj-a-aaa-a-bbb")]
 		[ExpectedException(typeof(FormatException))]
 		public void Parse_Fail(string text)
 		{
@@ -106,6 +120,10 @@ namespace AbbyyLS.Globalization
 		[TestCase("EN-LATN-GB", "en-GB")]
 		[TestCase("Ru-Cyrl-ru", "ru-RU")]
 		[TestCase("en-BU", "en-MM")]
+		[TestCase("en-BU", "en-MM")]
+		[TestCase("en-R-Extended-SEQUENCE", "en-r-extended-sequence")]
+		[TestCase("en-a-aaa-b-bbb", "en-a-aaa-b-bbb")]
+		[TestCase("en-b-bbb-a-aaa", "en-a-aaa-b-bbb")]
 		public void ToString(string source, string expected)
 		{
 			Assert.AreEqual(expected, LanguageTag.Parse(source).ToString());

@@ -1,5 +1,5 @@
 * Tags for Identifying Languages:
-	http://www.rfc-editor.org/rfc/bcp/bcp47.txt
+	https://tools.ietf.org/html/bcp47 (http://www.rfc-editor.org/rfc/bcp/bcp47.txt)
 
 * Language tags in HTML and XML:
 	http://www.w3.org/International/articles/language-tags

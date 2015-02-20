@@ -11,7 +11,6 @@ namespace AbbyyLS.Globalization
 	{
 		internal const char TagSeparator = '-';
 
-		private static readonly IReadOnlyDictionary<Char, ISet<string>> _emptyExtensions = new Dictionary<Char, ISet<string>>(); //TODO implement read only collection
 		private static readonly ISet<string> _emptyPrivateUse = new HashSet<string>(); //TODO implement read only collection
 
 		public LanguageTagField Fields { get; private set; }
@@ -64,11 +63,11 @@ namespace AbbyyLS.Globalization
 
 		public VariantCollection Variants { get { return _variants ?? VariantCollection.Empty; } }
 
-		private Exception TrySet(Variant variant)
+		private void Set(Variant variant)
 		{
 			var restrictive = this.IsRestrictivePrefixFor(variant);
 			if (!restrictive.HasValue)
-				return new FormatException("variant subtag '" + variant + "' is unacceptable");
+				throw new FormatException("variant subtag '" + variant + "' is unacceptable");
 
 			if (_variants == null)
 			{
@@ -77,24 +76,16 @@ namespace AbbyyLS.Globalization
 			}
 
 			_variants.Append(variant, restrictive.Value);
-			return null;
 		}
 
-		private void Set(Variant variant)
-		{
-			var ex = TrySet(variant);
-			if (ex != null)
-				throw ex;
-		}
+		private ExtensionSubtagCollection _extensions;
 
-		private IReadOnlyDictionary<Char, ISet<string>> _extensions;
+		public ExtensionSubtagCollection Extensions { get { return _extensions; } }
 
-		public IReadOnlyDictionary<Char, ISet<string>> Extensions
+		private void Set(ExtensionSubtag extSubtag)
 		{
-			get
-			{
-				return _extensions ?? _emptyExtensions;
-			}
+			_extensions.Append(extSubtag);
+			Fields |= LanguageTagField.Extensions;
 		}
 
 		private ISet<string> _privateUse;
@@ -141,9 +132,14 @@ namespace AbbyyLS.Globalization
 		public LanguageTag(string text)
 			: this()
 		{
-			var ex = InternalParse(text);
-			if(ex != null)
+			try
+			{
+				InternalParse(text);
+			}
+			catch (FormatException ex)
+			{
 				throw new FormatException("unexpected language tag '" + text + "'", ex);
+			}
 		}
 
 		public static LanguageTag Parse(string text)
@@ -154,70 +150,94 @@ namespace AbbyyLS.Globalization
 		public static bool TryParse(string text, out LanguageTag result)
 		{
 			result = new LanguageTag();
-			return result.InternalParse(text) == null;
+			try
+			{
+				result.InternalParse(text);
+				return true;
+			}
+			catch (FormatException)
+			{
+				return false;
+			}
+
 		}
 
 		public static LanguageTag? TryParse(string text)
 		{
 			var result = new LanguageTag();
 
-			if (result.InternalParse(text) == null)
+			try
+			{
+				result.InternalParse(text);
 				return result;
-			else
+			}
+			catch(FormatException)
+			{
 				return null;
+			}
 		}
 
-		private Exception InternalParse(string text)
+		private void InternalParse(string text)
 		{
 			if (text == null)
 				throw new ArgumentNullException("text");
 
 			if (text.Length == 0)
-				return null;
+				return;
 
 			var gf = Grandfathered.GetPreferredValue(text);
 			if (gf != null)
 				text = gf;
 
 			if (text.StartsWith("x-", StringComparison.Ordinal))
-				return ParsePrivateUse(text, 2);
+			{
+				ParsePrivateUse(text, 0);
+				return;
+			}
 
 			int tokenIndex;
 			Language = text.TryParseFromLanguageToken(out tokenIndex);
 
 			if (!Language.HasValue)
-				return new FormatException("unexpected language '" + text.Substring(0, tokenIndex - 1) + "'");
+				throw new FormatException("unexpected language '" + text.Substring(0, tokenIndex - 1) + "'");
 
 			if (text.Length == tokenIndex)
-				return null;
+				return;
 
 			Script = text.TryParseFromScriptToken(ref tokenIndex);
 
 			if (text.Length == tokenIndex)
-				return null;
+				return;
 
 			Region = text.TryParseFromRegionToken(ref tokenIndex);
 
 			if (text.Length == tokenIndex)
-				return null;
+				return;
 
 			var variant = text.TryParseFromVariantToken(ref tokenIndex);
 			while (variant.HasValue)
 			{
-				var ex = TrySet(variant.Value);
-				if (ex != null)
-					return ex;
+				Set(variant.Value);
 				variant = text.TryParseFromVariantToken(ref tokenIndex);
 			}
 
 			if (text.Length == tokenIndex)
-				return null;
+				return;
 
-			//TODO parse tail
-			throw new NotImplementedException();
+			var extSubtag = text.TryParseFromExtensionSubtagToken(ref tokenIndex);
+			while(extSubtag.HasValue)
+			{
+				Set(extSubtag.Value);
+				extSubtag = text.TryParseFromExtensionSubtagToken(ref tokenIndex);
+			}
+
+			if (text.Length == tokenIndex)
+				return;
+
+			ParsePrivateUse(text, tokenIndex);
 		}
 
-		private Exception ParsePrivateUse(string text, int nextToken)
+		private void ParsePrivateUse(string text, int nextToken)
 		{
 
 			//TODO ParsePrivateUse
@@ -246,23 +266,27 @@ namespace AbbyyLS.Globalization
 
 		public bool Equals(LanguageTag other, LanguageTagField checking)
 		{
-			if ((checking & LanguageTagField.Language) == LanguageTagField.Language &&
+			if (checking.IsSet(LanguageTagField.Language) &&
 				Language != other.Language)
 				return false;
 
-			if ((checking & LanguageTagField.Script) == LanguageTagField.Script &&
+			if (checking.IsSet(LanguageTagField.Script) &&
 				Script != other.Script)
 				return false;
 
-			if ((checking & LanguageTagField.Region) == LanguageTagField.Region &&
+			if (checking.IsSet(LanguageTagField.Region) &&
 				Region != other.Region)
 				return false;
 
-			if ((checking & LanguageTagField.Variants) == LanguageTagField.Variants &&
+			if (checking.IsSet(LanguageTagField.Variants) &&
 				Variants != other.Variants)
 				return false;
 
-			//TODO: check Extension and PrivateUse
+			if (checking.IsSet(LanguageTagField.Extensions) &&
+				Extensions != other.Extensions)
+				return false;
+			
+			//TODO: check PrivateUse
 
 			return true;
 		}
@@ -281,7 +305,11 @@ namespace AbbyyLS.Globalization
 			foreach (var v in Variants)
 				yield return v.ToText();
 
-			//TODO: check Extension and PrivateUse
+			foreach (var ext in _extensions)
+				foreach(var subtag in ext.SubtagElements())
+					yield return subtag;
+
+			//TODO: check PrivateUse
 		}
 
 		public override string ToString()

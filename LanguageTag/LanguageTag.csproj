@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExtensionSubtagExtensions.cs" />
+    <Compile Include="ExtensionSubtag.cs" />
     <Compile Include="ExtLanguageExtensions.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -92,6 +94,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Variant.tt</DependentUpon>
     </Compile>
+    <Compile Include="ExtensionSubtagCollection.cs" />
     <Compile Include="VariantCollection.cs" />
     <Compile Include="VariantExtensions.cs" />
     <Compile Include="VariantExtensions.generated.cs">

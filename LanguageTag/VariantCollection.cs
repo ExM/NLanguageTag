@@ -50,12 +50,8 @@ namespace AbbyyLS.Globalization
 
 		public override int GetHashCode()
 		{
-			var result = 0;
-			foreach (var v in _prefix)
-				result ^= v.GetHashCode();
-			foreach (var v in _options)
-				result ^= v.GetHashCode();
-			return result;
+			return _prefix.GetHashCodeOfSequence() ^
+				_options.GetHashCodeOfSequence();
 		}
 
 		internal void Append(Variant item, bool restrictive)
