@@ -124,6 +124,8 @@ namespace AbbyyLS.Globalization
 		[TestCase("en-R-Extended-SEQUENCE", "en-r-extended-sequence")]
 		[TestCase("en-a-aaa-b-bbb", "en-a-aaa-b-bbb")]
 		[TestCase("en-b-bbb-a-aaa", "en-a-aaa-b-bbb")]
+		[TestCase("en-x-AAA", "en-x-aaa")]
+		[TestCase("X-AaA", "x-aaa")]
 		public void ToString(string source, string expected)
 		{
 			Assert.AreEqual(expected, LanguageTag.Parse(source).ToString());

@@ -37,7 +37,7 @@ namespace AbbyyLS.Globalization
 
 			ValidateElement(tokenSequence.Token);
 
-			var result = new ExtensionSubtag(singletone, tokenSequence.Token.ToLowerInvariant());
+			var result = new ExtensionSubtag(singletone, tokenSequence.Token);
 			tokenIndex = tokenSequence.NextTokenPosition;
 
 			while (tokenSequence.MoveNext()) // get remaining elements
@@ -46,7 +46,7 @@ namespace AbbyyLS.Globalization
 					break;
 
 				ValidateElement(tokenSequence.Token);
-				result.Append(tokenSequence.Token.ToLowerInvariant());
+				result.Append(tokenSequence.Token);
 				tokenIndex = tokenSequence.NextTokenPosition;
 			}
 

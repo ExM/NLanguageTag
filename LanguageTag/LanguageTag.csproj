@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PrivateUseSubtags.cs" />
     <Compile Include="ExtensionSubtagExtensions.cs" />
     <Compile Include="ExtensionSubtag.cs" />
     <Compile Include="ExtLanguageExtensions.cs">

@@ -8,8 +8,6 @@ namespace AbbyyLS.Globalization
 {
 	public struct ExtensionSubtag : IEquatable<ExtensionSubtag>
 	{
-		public static readonly List<string> _empty = new List<string>(0);
-
 		private List<string> _sequence;
 
 		public Char Singleton { get; private set; }
@@ -18,7 +16,10 @@ namespace AbbyyLS.Globalization
 		{
 			get
 			{
-				return (_sequence ?? _empty).AsEnumerable();
+				if (_sequence == null)
+					return Enumerable.Empty<string>();
+				else
+					return _sequence.AsEnumerable();
 			}
 		}
 
@@ -27,7 +28,7 @@ namespace AbbyyLS.Globalization
 		{
 			Singleton = singleton;
 			_sequence = new List<string>();
-			_sequence.Add(firstSubtag);
+			Append(firstSubtag);
 		}
 
 		public ExtensionSubtag(Char singleton, params string[] subtags)
@@ -35,12 +36,14 @@ namespace AbbyyLS.Globalization
 		{
 			Singleton = singleton;
 			_sequence = new List<string>();
-			_sequence.AddRange(subtags);
+
+			foreach (var s in subtags)
+				Append(s);
 		}
 
 		internal void Append(string subtag)
 		{
-			_sequence.Add(subtag);
+			_sequence.Add(subtag.ToLowerInvariant());
 		}
 
 		public bool Equals(ExtensionSubtag other)
@@ -51,7 +54,7 @@ namespace AbbyyLS.Globalization
 
 		public override int GetHashCode()
 		{
-			return Singleton.GetHashCode() ^ Sequence.GetHashCodeOfSequence();
+			return Singleton.GetHashCode() ^ _sequence.GetHashCodeOfSequence();
 		}
 
 		public override bool Equals(object obj)
@@ -72,9 +75,12 @@ namespace AbbyyLS.Globalization
 
 		public IEnumerable<string> SubtagElements()
 		{
+			if (_sequence == null)
+				yield break;
+
 			yield return Singleton.ToString();
 
-			foreach (var el in Sequence)
+			foreach (var el in _sequence)
 				yield return el;
 		}
 

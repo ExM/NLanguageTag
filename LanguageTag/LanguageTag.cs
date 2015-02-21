@@ -11,8 +11,6 @@ namespace AbbyyLS.Globalization
 	{
 		internal const char TagSeparator = '-';
 
-		private static readonly ISet<string> _emptyPrivateUse = new HashSet<string>(); //TODO implement read only collection
-
 		public LanguageTagField Fields { get; private set; }
 
 		private Language? _language;
@@ -88,13 +86,18 @@ namespace AbbyyLS.Globalization
 			Fields |= LanguageTagField.Extensions;
 		}
 
-		private ISet<string> _privateUse;
+		private PrivateUseSubtags _privateUse;
 
-		public ISet<string> PrivateUse
+		public PrivateUseSubtags PrivateUse
 		{
-			get
+			get { return _privateUse; }
+			private set
 			{
-				return _privateUse ?? _emptyPrivateUse;
+				if (value.IsEmpty)
+					return;
+
+				_privateUse = value;
+				Fields |= LanguageTagField.PrivateUse;
 			}
 		}
 
@@ -159,7 +162,6 @@ namespace AbbyyLS.Globalization
 			{
 				return false;
 			}
-
 		}
 
 		public static LanguageTag? TryParse(string text)
@@ -189,9 +191,9 @@ namespace AbbyyLS.Globalization
 			if (gf != null)
 				text = gf;
 
-			if (text.StartsWith("x-", StringComparison.Ordinal))
+			if (text.StartsWith("x-", StringComparison.InvariantCultureIgnoreCase))
 			{
-				ParsePrivateUse(text, 0);
+				PrivateUse = PrivateUseSubtags.Parse(text);
 				return;
 			}
 
@@ -234,14 +236,7 @@ namespace AbbyyLS.Globalization
 			if (text.Length == tokenIndex)
 				return;
 
-			ParsePrivateUse(text, tokenIndex);
-		}
-
-		private void ParsePrivateUse(string text, int nextToken)
-		{
-
-			//TODO ParsePrivateUse
-			throw new NotImplementedException();
+			PrivateUse = PrivateUseSubtags.Parse(text, tokenIndex);
 		}
 
 		public bool Contains(LanguageTag other)
@@ -258,8 +253,10 @@ namespace AbbyyLS.Globalization
 			if (other.Variants.Except(Variants).Any())
 				return false;
 
+			//TODO: check Extension
 
-			//TODO: check Extension and PrivateUse
+			if (!other.PrivateUse.IsEmpty && other.PrivateUse != PrivateUse)
+				return false;
 
 			return true;
 		}
@@ -285,8 +282,10 @@ namespace AbbyyLS.Globalization
 			if (checking.IsSet(LanguageTagField.Extensions) &&
 				Extensions != other.Extensions)
 				return false;
-			
-			//TODO: check PrivateUse
+
+			if (checking.IsSet(LanguageTagField.PrivateUse) &&
+				PrivateUse != other.PrivateUse)
+				return false;
 
 			return true;
 		}
@@ -309,7 +308,8 @@ namespace AbbyyLS.Globalization
 				foreach(var subtag in ext.SubtagElements())
 					yield return subtag;
 
-			//TODO: check PrivateUse
+			foreach (var subtag in PrivateUse.SubtagElements())
+					yield return subtag;
 		}
 
 		public override string ToString()

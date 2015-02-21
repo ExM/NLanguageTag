@@ -9,8 +9,6 @@ namespace AbbyyLS.Globalization
 {
 	public struct ExtensionSubtagCollection : IEnumerable<ExtensionSubtag>, IEquatable<ExtensionSubtagCollection>
 	{
-		public static readonly List<ExtensionSubtag> _empty = new List<ExtensionSubtag>(0);
-
 		private List<ExtensionSubtag> _sortedList;
 
 		public override bool Equals(object obj)
@@ -48,17 +46,20 @@ namespace AbbyyLS.Globalization
 
 		public override int GetHashCode()
 		{
-			return (_sortedList ?? _empty).GetHashCodeOfSequence();
+			return _sortedList.GetHashCodeOfSequence();
 		}
 
 		public IEnumerator<ExtensionSubtag> GetEnumerator()
 		{
-			return (_sortedList ?? _empty).GetEnumerator();
+			if (_sortedList == null)
+				return Enumerable.Empty<ExtensionSubtag>().GetEnumerator();
+			else
+				return _sortedList.GetEnumerator();
 		}
 
 		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
 		{
-			return ((System.Collections.IEnumerable)(_sortedList ?? _empty)).GetEnumerator();
+			return GetEnumerator();
 		}
 	}
 }
