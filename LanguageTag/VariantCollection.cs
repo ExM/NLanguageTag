@@ -7,39 +7,51 @@ using System.Threading.Tasks;
 
 namespace AbbyyLS.Globalization
 {
-	public class VariantCollection : IEnumerable<Variant>
+	public struct VariantCollection : IEnumerable<Variant>, IEquatable<VariantCollection>
 	{
-		public static readonly VariantCollection Empty = new VariantCollection();
+		private Variant[] _variants;
 
-		private List<Variant> _prefix = new List<Variant>();
-		private List<Variant> _options = new List<Variant>();
-
-		public VariantCollection()
+		public VariantCollection(params Variant[] variants)
+			:this()
 		{
+			if (variants.Length != 0)
+				_variants = variants;
 		}
 
-		public override bool Equals(object obj)
+		public bool IsEmpty
 		{
-			return Equals(obj as VariantCollection);
+			get
+			{
+				return _variants == null;
+			}
+		}
+
+		public override bool Equals(object other)
+		{
+			return other is VariantCollection &&
+				Equals((VariantCollection)other);
 		}
 
 		public bool Equals(VariantCollection other)
 		{
-			if (object.ReferenceEquals(null, other))
+			if (_variants == null)
+				return other._variants == null;
+
+			if (other._variants == null)
 				return false;
 
-			if (object.ReferenceEquals(this, other))
-				return true;
+			if (_variants.Length != other._variants.Length)
+				return false;
 
-			return _prefix.IsEquivalent(other._prefix) &&
-				_options.IsEquivalent(other._options);
+			for (int i = 0; i < _variants.Length; i++)
+				if (_variants[i] != other._variants[i])
+					return false;
+
+			return true;
 		}
 
 		public static bool operator ==(VariantCollection a, VariantCollection b)
 		{
-			if (object.ReferenceEquals(null, a))
-				return object.ReferenceEquals(null, b);
-
 			return a.Equals(b);
 		}
 
@@ -50,43 +62,83 @@ namespace AbbyyLS.Globalization
 
 		public override int GetHashCode()
 		{
-			return _prefix.GetHashCodeOfSequence() ^
-				_options.GetHashCodeOfSequence();
-		}
-
-		internal void Append(Variant item, bool restrictive)
-		{
-			if (restrictive)
-			{
-				if (_prefix.Contains(item))
-					return;
-
-				_prefix.Add(item);
-			}
-			else
-			{
-				var index = _options.BinarySearch(item);
-				if (index < 0)
-				{
-					_options.Insert(~index, item);
-				}
-			}
+			return _variants.GetHashCodeOfSequence();
 		}
 
 		public bool Contains(Variant item)
 		{
-			return _prefix.Contains(item) ||
-				_options.Contains(item);
+			if (_variants == null)
+				return false;
+			return _variants.Contains(item);
 		}
 
 		public IEnumerator<Variant> GetEnumerator()
 		{
-			return _prefix.Union(_options).GetEnumerator();
+			if (_variants == null)
+				return Enumerable.Empty<Variant>().GetEnumerator();
+			return _variants.AsEnumerable().GetEnumerator();
 		}
 
 		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
 		{
-			return ((System.Collections.IEnumerable)_prefix.Union(_options)).GetEnumerator();
+			return GetEnumerator();
+		}
+
+		internal class Builder: IEnumerable<Variant>
+		{
+			private List<Variant> _prefix = new List<Variant>();
+			private List<Variant> _options = new List<Variant>();
+
+			public Builder()
+			{
+			}
+
+			public void Append(Language? lang, Script? script, Variant item)
+			{
+				var restrictive = item.RestrictiveAcceptableFor(lang, script, this);
+				if (!restrictive.HasValue)
+					throw new FormatException("variant subtag '" + item + "' is unacceptable");
+
+				if (restrictive.Value)
+				{
+					if (_prefix.Contains(item))
+						return;
+
+					_prefix.Add(item);
+				}
+				else
+				{
+					var index = _options.BinarySearch(item);
+					if (index < 0)
+					{
+						_options.Insert(~index, item);
+					}
+				}
+			}
+
+			public IEnumerator<Variant> GetEnumerator()
+			{
+				return _prefix.Union(_options).GetEnumerator();
+			}
+
+			public VariantCollection ToCollection()
+			{
+				var count = _prefix.Count + _options.Count;
+				if (count == 0)
+					return new VariantCollection();
+
+				var variants = new Variant[count];
+
+				_prefix.CopyTo(variants);
+				_options.CopyTo(variants, _prefix.Count);
+				
+				return new VariantCollection(variants);
+			}
+
+			IEnumerator IEnumerable.GetEnumerator()
+			{
+				return GetEnumerator();
+			}
 		}
 	}
 }

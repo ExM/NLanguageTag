@@ -13,7 +13,7 @@ namespace AbbyyLS.Globalization
 		public PrivateUseSubtags(params string[] subtags)
 			: this()
 		{
-			if (subtags.Length == 0)
+			if (subtags == null || subtags.Length == 0)
 				return;
 
 			_subtags = new string[subtags.Length];
@@ -91,6 +91,14 @@ namespace AbbyyLS.Globalization
 			{
 				return _subtags == null;
 			}
+		}
+
+		public bool Contains(string subtag)
+		{
+			if (_subtags == null)
+				return false;
+
+			return _subtags.Contains(subtag, StringComparer.OrdinalIgnoreCase);
 		}
 
 		public bool Equals(PrivateUseSubtags other)

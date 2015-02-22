@@ -59,21 +59,15 @@ namespace AbbyyLS.Globalization
 
 		private VariantCollection _variants;
 
-		public VariantCollection Variants { get { return _variants ?? VariantCollection.Empty; } }
-
-		private void Set(Variant variant)
+		public VariantCollection Variants
 		{
-			var restrictive = this.IsRestrictivePrefixFor(variant);
-			if (!restrictive.HasValue)
-				throw new FormatException("variant subtag '" + variant + "' is unacceptable");
-
-			if (_variants == null)
+			get { return _variants; }
+			private set
 			{
-				_variants = new VariantCollection();
+				if (value.IsEmpty) return;
+				_variants = value;
 				Fields |= LanguageTagField.Variants;
 			}
-
-			_variants.Append(variant, restrictive.Value);
 		}
 
 		private ExtensionSubtagCollection _extensions;
@@ -128,8 +122,11 @@ namespace AbbyyLS.Globalization
 		public LanguageTag(Language lang, Script? script, Region? region, IEnumerable<Variant> variants)
 			: this(lang, script, region)
 		{
+			var builder = new VariantCollection.Builder();
 			foreach (var v in variants)
-				Set(v);
+				builder.Append(Language, Script, v);
+
+			Variants = builder.ToCollection();
 		}
 
 		public LanguageTag(string text)
@@ -216,11 +213,28 @@ namespace AbbyyLS.Globalization
 			if (text.Length == tokenIndex)
 				return;
 
+			//var variant = text.TryParseFromVariantToken(ref tokenIndex);
+			//while (variant.HasValue)
+			//{
+			//	Set(variant.Value);
+			//	variant = text.TryParseFromVariantToken(ref tokenIndex);
+			//}
+
+			//Variants = TryParseVariants(text, ref tokenIndex);
+
 			var variant = text.TryParseFromVariantToken(ref tokenIndex);
-			while (variant.HasValue)
+			if (variant.HasValue)
 			{
-				Set(variant.Value);
-				variant = text.TryParseFromVariantToken(ref tokenIndex);
+				var builder = new VariantCollection.Builder();
+
+				do
+				{
+					builder.Append(Language, Script, variant.Value);
+					variant = text.TryParseFromVariantToken(ref tokenIndex);
+				}
+				while (variant.HasValue);
+
+				Variants = builder.ToCollection();
 			}
 
 			if (text.Length == tokenIndex)

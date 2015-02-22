@@ -50,9 +50,10 @@ namespace AbbyyLS.Globalization
 		[TestCase("en-scotland", Variant.Fonipa, false)]
 		[TestCase("sl-rozaj-biske-fonipa", Variant.V1994, null)]
 		[TestCase("sl-rozaj-biske", Variant.V1994, true)]
-		public void IsRestrictivePrefixFor(string tag, Variant variant, bool? expected)
+		public void RestrictiveAcceptableFor(string tagText, Variant variant, bool? expected)
 		{
-			Assert.AreEqual(expected, new LanguageTag(tag).IsRestrictivePrefixFor(variant));
+			var tag = new LanguageTag(tagText);
+			Assert.AreEqual(expected, variant.RestrictiveAcceptableFor(tag.Language, tag.Script, tag.Variants));
 		}
 	}
 }

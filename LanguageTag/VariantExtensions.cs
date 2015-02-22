@@ -49,33 +49,52 @@ namespace AbbyyLS.Globalization
 			return v.GetTextPrefixes().Select(_ => LanguageTag.Parse(_)).ToArray();
 		}
 
-		private static readonly ConcurrentDictionary<Variant, Func<LanguageTag, bool?>> _isPrefixForCache = new ConcurrentDictionary<Variant, Func<LanguageTag, bool?>>();
+		private static readonly ConcurrentDictionary<Variant, Func<Language?, Script?, IEnumerable<Variant>, bool?>> _isPrefixForCache = new ConcurrentDictionary<Variant, Func<Language?, Script?, IEnumerable<Variant>, bool?>>();
 
-		private static readonly Func<Variant, Func<LanguageTag, bool?>> _isPrefixForCreater = PrefixForCreater;
+		private static readonly Func<Variant, Func<Language?, Script?, IEnumerable<Variant>, bool?>> _isPrefixForCreater = PrefixForCreater;
 
-		public static bool? IsRestrictivePrefixFor(this LanguageTag tag, Variant v)
+		public static bool? RestrictiveAcceptableFor(this Variant v, Language? lang, Script? script, IEnumerable<Variant> variants)
 		{
-			return _isPrefixForCache.GetOrAdd(v, _isPrefixForCreater)(tag);
+			return _isPrefixForCache.GetOrAdd(v, _isPrefixForCreater)(lang, script, variants);
 		}
 
-		private static Func<LanguageTag, bool?> PrefixForCreater(Variant v)
+		private static Func<Language?, Script?, IEnumerable<Variant>, bool?> PrefixForCreater(Variant variant)
 		{
-			var tags = v.GetPrefixes();
+			var tags = variant.GetPrefixes();
 			if(!tags.Any())
-				return _ => false;
+				return (l,s,vs) => false;
 
 			var checkingFields = LanguageTagField.None;
 			foreach (var tag in tags)
 				checkingFields |= tag.Fields;
 
-			return candidate =>
+			return (l, s, vs) =>
 			{
 				foreach (var tag in tags)
-					if (candidate.Equals(tag, checkingFields))
+				{
+					if (PrefixEquals(l, s, vs, tag, checkingFields))
 						return true;
+				}
 
 				return null;
 			};
+		}
+
+		private static bool PrefixEquals(Language? lang, Script? script, IEnumerable<Variant> variants, LanguageTag prefix, LanguageTagField checking)
+		{
+			if (checking.IsSet(LanguageTagField.Language) &&
+				lang != prefix.Language)
+				return false;
+
+			if (checking.IsSet(LanguageTagField.Script) &&
+				script != prefix.Script)
+				return false;
+
+			if (checking.IsSet(LanguageTagField.Variants) &&
+				!variants.IsEquivalent(prefix.Variants))
+				return false;
+
+			return true;
 		}
 	}
 }

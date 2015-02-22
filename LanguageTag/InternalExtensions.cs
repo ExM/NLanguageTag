@@ -47,6 +47,24 @@ namespace AbbyyLS.Globalization
 			return true;
 		}
 
+		public static bool IsEquivalent(this IEnumerable<Variant> x, IEnumerable<Variant> y)
+		{
+			var xEn = x.GetEnumerator();
+			var yEn = y.GetEnumerator();
+
+			while (true)
+			{
+				if(!xEn.MoveNext())
+					return !yEn.MoveNext();
+
+				if(!yEn.MoveNext())
+					return false;
+
+				if(xEn.Current != yEn.Current)
+					return false;
+			}
+		}
+
 		public static bool IsEquivalent(this IList<Variant> x, IList<Variant> y)
 		{
 			if (x == null)
