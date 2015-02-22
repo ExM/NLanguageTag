@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AbbyyLS.Globalization
 {
-	public struct LanguageTag
+	public struct LanguageTag : IEquatable<LanguageTag>
 	{
 		internal const char TagSeparator = '-';
 
@@ -195,10 +195,7 @@ namespace AbbyyLS.Globalization
 			}
 
 			int tokenIndex;
-			Language = text.TryParseFromLanguageToken(out tokenIndex);
-
-			if (!Language.HasValue)
-				throw new FormatException("unexpected language '" + text.Substring(0, tokenIndex - 1) + "'");
+			Language = text.ParseFromLanguageToken(out tokenIndex);
 
 			if (text.Length == tokenIndex)
 				return;
@@ -212,15 +209,6 @@ namespace AbbyyLS.Globalization
 
 			if (text.Length == tokenIndex)
 				return;
-
-			//var variant = text.TryParseFromVariantToken(ref tokenIndex);
-			//while (variant.HasValue)
-			//{
-			//	Set(variant.Value);
-			//	variant = text.TryParseFromVariantToken(ref tokenIndex);
-			//}
-
-			//Variants = TryParseVariants(text, ref tokenIndex);
 
 			var variant = text.TryParseFromVariantToken(ref tokenIndex);
 			if (variant.HasValue)
@@ -275,35 +263,6 @@ namespace AbbyyLS.Globalization
 			return true;
 		}
 
-		public bool Equals(LanguageTag other, LanguageTagField checking)
-		{
-			if (checking.IsSet(LanguageTagField.Language) &&
-				Language != other.Language)
-				return false;
-
-			if (checking.IsSet(LanguageTagField.Script) &&
-				Script != other.Script)
-				return false;
-
-			if (checking.IsSet(LanguageTagField.Region) &&
-				Region != other.Region)
-				return false;
-
-			if (checking.IsSet(LanguageTagField.Variants) &&
-				Variants != other.Variants)
-				return false;
-
-			if (checking.IsSet(LanguageTagField.Extensions) &&
-				Extensions != other.Extensions)
-				return false;
-
-			if (checking.IsSet(LanguageTagField.PrivateUse) &&
-				PrivateUse != other.PrivateUse)
-				return false;
-
-			return true;
-		}
-
 		private IEnumerable<string> SubtagsAsText()
 		{
 			if (Language.HasValue)
@@ -329,6 +288,42 @@ namespace AbbyyLS.Globalization
 		public override string ToString()
 		{
 			return string.Join(TagSeparator.ToString(), SubtagsAsText());
+		}
+
+		public bool Equals(LanguageTag other)
+		{
+			return Language == other.Language &&
+				Script == other.Script &&
+				Region == other.Region &&
+				Variants == other.Variants &&
+				Extensions == other.Extensions &&
+				PrivateUse == other.PrivateUse;
+		}
+
+		public override bool Equals(object obj)
+		{
+			return obj is LanguageTag &&
+				Equals((LanguageTag)obj);
+		}
+
+		public override int GetHashCode()
+		{
+			return Language.GetHashCode() ^
+				Script.GetHashCode() ^
+				Region.GetHashCode() ^
+				Variants.GetHashCode() ^
+				Extensions.GetHashCode() ^
+				PrivateUse.GetHashCode();
+		}
+
+		public static bool operator ==(LanguageTag a, LanguageTag b)
+		{
+			return a.Equals(b);
+		}
+
+		public static bool operator !=(LanguageTag a, LanguageTag b)
+		{
+			return !(a == b);
 		}
 	}
 }

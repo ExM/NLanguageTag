@@ -10,6 +10,18 @@ namespace AbbyyLS.Globalization
 	[TestFixture]
 	public class VariantTests
 	{
+		[TestCaseSource("allVariants")]
+		public void ToString_Parse(Variant variant)
+		{
+			var text = variant.ToText();
+			Assert.AreEqual(variant, text.ParseFromVariant());
+		}
+
+		private IEnumerable<Variant> allVariants()
+		{
+			return Enum.GetValues(typeof(Variant)).Cast<Variant>();
+		}
+
 		[TestCase("aluku", Variant.Aluku)]
 		[TestCase("1901", Variant.V1901)]
 		public void ParseFromVariant(string text, Variant expected)

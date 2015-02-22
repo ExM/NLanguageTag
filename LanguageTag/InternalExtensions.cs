@@ -65,24 +65,6 @@ namespace AbbyyLS.Globalization
 			}
 		}
 
-		public static bool IsEquivalent(this IList<Variant> x, IList<Variant> y)
-		{
-			if (x == null)
-				return y == null;
-
-			if (y == null)
-				return false;
-
-			if (x.Count != y.Count)
-				return false;
-
-			for (int i = 0; i < x.Count; i++)
-				if (x[i] != y[i])
-					return false;
-
-			return true;
-		}
-
 		public static LanguageTagTokenEnumerator GetTokenSequense(this string text, int start)
 		{
 			return new LanguageTagTokenEnumerator(text, start);

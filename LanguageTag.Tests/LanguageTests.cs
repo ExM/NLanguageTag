@@ -10,6 +10,23 @@ namespace AbbyyLS.Globalization
 	[TestFixture]
 	public class LanguageTests
 	{
+		[TestCaseSource("allLanguages")]
+		public void ToString_Parse(Language lang)
+		{
+			lang.GetSupressScript();
+			lang.GetMacrolanguage();
+			lang.GetSupressScript();
+			lang.GetPrefix();
+
+			var text = lang.ToText();
+			Assert.AreEqual(lang, text.ParseFromLanguage());
+		}
+
+		private IEnumerable<Language> allLanguages()
+		{
+			return Enum.GetValues(typeof(Language)).Cast<Language>();
+		}
+
 		[TestCase("afb", Language.AFB)]
 		[TestCase("ar-afb", Language.AFB)]
 		[TestCase("yue", Language.YUE)]
@@ -40,7 +57,7 @@ namespace AbbyyLS.Globalization
 		public void TryParseFromLanguageToken(string text, Language expected, int expNextToken)
 		{
 			int nextToken;
-			Assert.AreEqual(expected, text.TryParseFromLanguageToken(out nextToken));
+			Assert.AreEqual(expected, text.ParseFromLanguageToken(out nextToken));
 			Assert.AreEqual(expNextToken, nextToken);
 		}
 

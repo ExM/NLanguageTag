@@ -20,33 +20,37 @@ namespace AbbyyLS.Globalization
 		public static Language ParseFromLanguage(this string text)
 		{
 			int nextToken;
-			var result = text.TryParseFromLanguageToken(out nextToken);
-			if (result.HasValue && text.Length == nextToken)
-				return result.Value;
+			var result = text.ParseFromLanguageToken(out nextToken);
+			if(text.Length == nextToken)
+				return result;
 
 			throw new FormatException("unexpected language '" + text + "'");
 		}
 
-		public static Language? TryParseFromLanguageToken(this string text, out int nextToken)
+		public static Language ParseFromLanguageToken(this string text, out int nextToken)
 		{
 			int pos = text.IndexOf(LanguageTag.TagSeparator);
 			if (pos == -1)
 			{
 				nextToken = text.Length;
-				return text.TryParseFromLanguage();
+				var result = text.TryParseFromLanguage();
+				if (!result.HasValue)
+					throw new FormatException("unexpected language '" + text + "'");
+
+				return result.Value;
 			}
 
 			nextToken = pos + 1;
 			if (nextToken == text.Length)
-				return null;
+				throw new FormatException("unexpected language '" + text + "'");
 
 			var firstToken = text.Substring(0, pos);
 			var lang = firstToken.TryParseFromLanguage();
 			if(lang == null)
-				return null;
+				throw new FormatException("unexpected language '" + text + "'");
 
 			if(!lang.Value.ExtLanguageAvailable())
-				return lang;
+				return lang.Value;
 
 			pos = text.IndexOf(LanguageTag.TagSeparator, nextToken);
 
@@ -56,19 +60,19 @@ namespace AbbyyLS.Globalization
 
 			var extLang = extLangText.TryParseFromExtLanguage(lang.Value);
 			if (extLang == null)
-				return lang;
+				return lang.Value;
 
 			if (pos == -1)
 			{
 				nextToken = text.Length;
-				return extLang;
+				return extLang.Value;
 			}
 
 			nextToken = pos + 1;
 			if (nextToken == text.Length)
-				return null;
+				throw new FormatException("unexpected language '" + text + "'");
 
-			return extLang;
+			return extLang.Value;
 		}
 	}
 }
