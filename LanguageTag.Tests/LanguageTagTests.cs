@@ -87,15 +87,6 @@ namespace AbbyyLS.Globalization
 			LanguageTag.Parse(text);
 		}
 
-		[TestCase("i-klingon", Language.TLH)]
-		[TestCase("zh-min-nan", Language.NAN)]
-		[TestCase("zh-xiang", Language.HSN)]
-		[TestCase("art-lojban", Language.JBO)]
-		public void ParseGrandfathered(string text, Language expected)
-		{
-			Assert.AreEqual(new LanguageTag(expected), new LanguageTag(text));
-		}
-
 		[TestCase("zh-CHS", "zh-Hans")]
 		[TestCase("zh-CHT", "zh-Hant")]
 		public void ParseAdditionalGrandfathered(string text, string expected)
@@ -103,12 +94,15 @@ namespace AbbyyLS.Globalization
 			Assert.AreEqual(new LanguageTag(expected), new LanguageTag(text));
 		}
 
-		[TestCase("en-GB-oed")]
-		[TestCase("i-default")]
-		[TestCase("cel-gaulish")]
-		[TestCase("zh-min")]
+		[TestCaseSource(typeof(TestContent), "GetGrandfathered")]
+		public void ParseGrandfathered(string grandfathered)
+		{
+			Assert.True(new LanguageTag(grandfathered).Language.HasValue);
+		}
+
+		[TestCaseSource(typeof(TestContent), "GetGrandfatheredNotSupported")]
 		[ExpectedException(typeof(NotSupportedException))]
-		public void NotSupportedGrandfathered(string grandfathered)
+		public void GrandfatheredNotSupported(string grandfathered)
 		{
 			LanguageTag.Parse(grandfathered);
 		}
@@ -130,5 +124,6 @@ namespace AbbyyLS.Globalization
 		{
 			Assert.AreEqual(expected, LanguageTag.Parse(source).ToString());
 		}
+
 	}
 }

@@ -37,6 +37,11 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TestContent.cs">
+      <DependentUpon>TestContent.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="LanguageTagTests.cs" />
     <Compile Include="RegionTests.cs" />
     <Compile Include="ExtensionSubtagTests.cs" />
@@ -46,9 +51,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="TestContent.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TestContent.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
@@ -56,6 +66,37 @@
       <Project>{00ab57af-a66d-4902-9442-3149e5830fa0}</Project>
       <Name>LanguageTag</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Languages.txt">
+      <DependentUpon>TestContent.tt</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Grandfathered.txt">
+      <DependentUpon>TestContent.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GrandfatheredNotSupported.txt">
+      <DependentUpon>TestContent.tt</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Regions.txt">
+      <DependentUpon>TestContent.tt</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts.txt">
+      <DependentUpon>TestContent.tt</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Variants.txt">
+      <DependentUpon>TestContent.tt</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExtLanguages.txt">
+      <DependentUpon>TestContent.tt</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

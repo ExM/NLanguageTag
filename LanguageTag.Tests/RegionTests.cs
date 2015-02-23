@@ -10,16 +10,15 @@ namespace AbbyyLS.Globalization
 	[TestFixture]
 	public class RegionTests
 	{
-		[TestCaseSource("allRegions")]
-		public void ToString_Parse(Region region)
+		[Test]
+		public void CheckSwitches()
 		{
-			var text = region.ToText();
-			Assert.AreEqual(region, text.ParseFromRegion());
-		}
-
-		private IEnumerable<Region> allRegions()
-		{
-			return Enum.GetValues(typeof(Region)).Cast<Region>();
+			foreach (var text in TestContent.GetRegions())
+			{
+				var region = text.ParseFromRegion();
+				
+				Assert.NotNull(region.ToText());
+			}
 		}
 
 		[TestCase("RU", Region.RU)]

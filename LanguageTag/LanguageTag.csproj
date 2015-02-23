@@ -39,116 +39,66 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExtLanguageExtensions.cs">
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Grandfathered.cs">
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Language.cs">
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LanguageExtensions.generated.cs">
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
+    </Compile>
     <Compile Include="PrivateUseSubtags.cs" />
     <Compile Include="ExtensionSubtagExtensions.cs" />
     <Compile Include="ExtensionSubtag.cs" />
-    <Compile Include="ExtLanguageExtensions.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ExtLanguageExtensions.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Grandfathered.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Grandfathered.tt</DependentUpon>
-    </Compile>
     <Compile Include="InternalExtensions.cs" />
     <Compile Include="LanguageExtensions.cs" />
-    <Compile Include="LanguageExtensions.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LanguageExtensions.tt</DependentUpon>
-    </Compile>
     <Compile Include="LanguageScope.cs" />
     <Compile Include="LanguageTag.cs" />
-    <Compile Include="Language.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Language.tt</DependentUpon>
-    </Compile>
     <Compile Include="LanguageTagField.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Region.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Region.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RegionExtensions.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RegionExtensions.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Script.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Script.tt</DependentUpon>
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
     </Compile>
     <Compile Include="RegionExtensions.cs" />
+    <Compile Include="RegionExtensions.generated.cs">
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Script.cs">
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
+    </Compile>
     <Compile Include="ScriptExtensions.cs" />
+    <Compile Include="ExtensionSubtagCollection.cs" />
     <Compile Include="ScriptExtensions.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ScriptExtensions.tt</DependentUpon>
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
     </Compile>
     <Compile Include="Variant.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Variant.tt</DependentUpon>
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
     </Compile>
-    <Compile Include="ExtensionSubtagCollection.cs" />
     <Compile Include="VariantCollection.cs" />
     <Compile Include="VariantExtensions.cs" />
     <Compile Include="VariantExtensions.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VariantExtensions.tt</DependentUpon>
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ExtLanguageExtensions.tt">
+    <None Include="RegistryGenerator.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ExtLanguageExtensions.cs</LastGenOutput>
-    </None>
-    <None Include="Grandfathered.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Grandfathered.cs</LastGenOutput>
-    </None>
-    <None Include="Language.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Language.cs</LastGenOutput>
-    </None>
-    <None Include="LanguageExtensions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>LanguageExtensions.generated.cs</LastGenOutput>
-    </None>
-    <None Include="Region.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Region.cs</LastGenOutput>
-    </None>
-    <None Include="RegionExtensions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RegionExtensions.generated.cs</LastGenOutput>
-    </None>
-    <None Include="Registry.tt" />
-    <None Include="Script.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Script.cs</LastGenOutput>
-    </None>
-    <None Include="ScriptExtensions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ScriptExtensions.generated.cs</LastGenOutput>
-    </None>
-    <None Include="Variant.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Variant.cs</LastGenOutput>
-    </None>
-    <None Include="VariantExtensions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>VariantExtensions.generated.cs</LastGenOutput>
+      <LastGenOutput>RegistryGenerator.statistic.txt</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RegistryGenerator.statistic.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

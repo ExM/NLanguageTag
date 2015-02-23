@@ -10,16 +10,15 @@ namespace AbbyyLS.Globalization
 	[TestFixture]
 	public class VariantTests
 	{
-		[TestCaseSource("allVariants")]
-		public void ToString_Parse(Variant variant)
+		[Test]
+		public void CheckSwitches()
 		{
-			var text = variant.ToText();
-			Assert.AreEqual(variant, text.ParseFromVariant());
-		}
-
-		private IEnumerable<Variant> allVariants()
-		{
-			return Enum.GetValues(typeof(Variant)).Cast<Variant>();
+			foreach (var text in TestContent.GetVariants())
+			{
+				var variant = text.ParseFromVariant();
+				variant.GetPrefixes();
+				Assert.NotNull(variant.ToText());
+			}
 		}
 
 		[TestCase("aluku", Variant.Aluku)]

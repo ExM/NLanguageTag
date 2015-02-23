@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 
 namespace AbbyyLS.Globalization
@@ -233,5 +233,4 @@ namespace AbbyyLS.Globalization
 			}
 		}
 	}
-
 }

@@ -13,6 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageTag", "LanguageTag\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageTag.Tests", "LanguageTag.Tests\LanguageTag.Tests.csproj", "{80541052-474B-4F1F-800A-5F77CE328630}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "T4Templates", "T4Templates", "{B36A2CA5-115C-451F-9628-0033761FD9E5}"
+	ProjectSection(SolutionItems) = preProject
+		T4Templates\MultipleOutputHelper.ttinclude = T4Templates\MultipleOutputHelper.ttinclude
+		T4Templates\Registry.ttinclude = T4Templates\Registry.ttinclude
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -10,16 +10,15 @@ namespace AbbyyLS.Globalization
 	[TestFixture]
 	public class ScriptTests
 	{
-		[TestCaseSource("allScripts")]
-		public void ToString_Parse(Script script)
+		[Test]
+		public void CheckSwitches()
 		{
-			var text = script.ToText();
-			Assert.AreEqual(script, text.ParseFromScript());
-		}
+			foreach (var text in TestContent.GetScripts())
+			{
+				var script = text.ParseFromScript();
 
-		private IEnumerable<Script> allScripts()
-		{
-			return Enum.GetValues(typeof(Script)).Cast<Script>();
+				Assert.NotNull(script.ToText());
+			}
 		}
 
 		[TestCase("Hant", Script.Hant)]
