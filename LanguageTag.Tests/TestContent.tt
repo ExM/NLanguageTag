@@ -7,37 +7,23 @@
 <#@ include file="..\T4Templates\Registry.ttinclude" #>
 <#@ include file="..\T4Templates\MultipleOutputHelper.ttinclude"#>
 <# var manager = Manager.Create(Host, GenerationEnvironment); #>
-
 <# var resources = new []
 {
 	new { Name = "Languages", Lines = prlangs.Select(_ => _.Subtag) },
 	new { Name = "Grandfathered", Lines = grandfathered.Where(_ => _.PreferredValue != null).Select(_ => _.Tag) },
-	new { Name = "GrandfatheredNotSupported", Lines = grandfathered.Where(_ => _.PreferredValue != null).Select(_ => _.Tag) },
+	new { Name = "GrandfatheredNotSupported", Lines = grandfathered.Where(_ => _.PreferredValue == null).Select(_ => _.Tag) },
 	new { Name = "Regions", Lines = regions.Select(_ => _.Subtag) },
 	new { Name = "Scripts", Lines = scripts.Select(_ => _.Subtag) },
 	new { Name = "Variants", Lines = variants.Select(_ => _.Subtag) },
 	new { Name = "ExtLanguages", Lines = extlangs.Select(_ => _.Prefix.First() + "-" + _.Subtag) },
 
 }; #>
-
-<# manager.StartNewFile("Grandfathered.txt"); #>
-<# foreach(var entry in grandfathered.Where(_ => _.PreferredValue != null)) { #>
-<#= entry.Tag #>
-<# } #>
-<# manager.EndBlock(); #>
-//file 2
-<# manager.StartNewFile("GrandfatheredNotSupported.txt"); #>
-<# foreach(var entry in grandfathered.Where(_ => _.PreferredValue == null)) { #>
-<#= entry.Tag #>
-<# } #>
-<# manager.EndBlock(); #>
-
 using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace AbbyyLS.Globalization
+namespace AbbyyLS.Globalization.Bcp47
 {
 	public static class TestContent
 	{
@@ -45,7 +31,7 @@ namespace AbbyyLS.Globalization
 		public static IEnumerable<string> Get<#= resource.Name #>()
 		{
 			var assembly = typeof(TestContent).Assembly;
-			var resourceName = "AbbyyLS.Globalization.<#= resource.Name #>.txt";
+			var resourceName = "AbbyyLS.Globalization.Bcp47.<#= resource.Name #>.txt";
 
 			using (Stream stream = assembly.GetManifestResourceStream(resourceName))
 			using (StreamReader reader = new StreamReader(stream))

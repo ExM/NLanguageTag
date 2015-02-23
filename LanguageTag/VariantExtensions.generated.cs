@@ -1,9 +1,9 @@
 using System;
 using System.Globalization;
 
-namespace AbbyyLS.Globalization
+namespace AbbyyLS.Globalization.Bcp47
 {
-	public static partial class VariantExtensions
+	public static partial class LanguageTagExtensions
 	{
 		private static string[] GetTextPrefixes(this Variant v)
 		{

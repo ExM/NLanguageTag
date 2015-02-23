@@ -1,9 +1,9 @@
 using System;
 using System.Globalization;
 
-namespace AbbyyLS.Globalization
+namespace AbbyyLS.Globalization.Bcp47
 {
-	public static partial class LanguageExtensions
+	public static partial class LanguageTagExtensions
 	{
 		public static Language? GetMacrolanguage(this Language language)
 		{

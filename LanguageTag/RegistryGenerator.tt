@@ -12,9 +12,9 @@
 using System;
 using System.Globalization;
 
-namespace AbbyyLS.Globalization
+namespace AbbyyLS.Globalization.Bcp47
 {
-	public static class ExtLanguageExtensions
+	public static partial class LanguageTagExtensions
 	{
 		public static bool ExtLanguageAvailable(this Language language)
 		{
@@ -70,7 +70,7 @@ namespace AbbyyLS.Globalization
 using System;
 using System.Globalization;
 
-namespace AbbyyLS.Globalization
+namespace AbbyyLS.Globalization.Bcp47
 {
 	public static class Grandfathered
 	{
@@ -97,7 +97,7 @@ namespace AbbyyLS.Globalization
 <# manager.StartNewFile("Language.cs"); #>
 using System;
 
-namespace AbbyyLS.Globalization
+namespace AbbyyLS.Globalization.Bcp47
 {
 	public enum Language
 	{
@@ -119,9 +119,9 @@ namespace AbbyyLS.Globalization
 using System;
 using System.Globalization;
 
-namespace AbbyyLS.Globalization
+namespace AbbyyLS.Globalization.Bcp47
 {
-	public static partial class LanguageExtensions
+	public static partial class LanguageTagExtensions
 	{
 		public static Language? GetMacrolanguage(this Language language)
 		{
@@ -191,7 +191,7 @@ namespace AbbyyLS.Globalization
 <# manager.StartNewFile("Region.cs"); #>
 using System;
 
-namespace AbbyyLS.Globalization
+namespace AbbyyLS.Globalization.Bcp47
 {
 	public enum Region
 	{
@@ -213,9 +213,9 @@ namespace AbbyyLS.Globalization
 using System;
 using System.Globalization;
 
-namespace AbbyyLS.Globalization
+namespace AbbyyLS.Globalization.Bcp47
 {
-	public static partial class RegionExtensions
+	public static partial class LanguageTagExtensions
 	{
 		public static string ToText(this Region v)
 		{
@@ -247,7 +247,7 @@ namespace AbbyyLS.Globalization
 <# manager.StartNewFile("Script.cs"); #>
 using System;
 
-namespace AbbyyLS.Globalization
+namespace AbbyyLS.Globalization.Bcp47
 {
 	public enum Script
 	{
@@ -269,9 +269,9 @@ namespace AbbyyLS.Globalization
 using System;
 using System.Globalization;
 
-namespace AbbyyLS.Globalization
+namespace AbbyyLS.Globalization.Bcp47
 {
-	public static partial class ScriptExtensions
+	public static partial class LanguageTagExtensions
 	{
 		public static string ToText(this Script v)
 		{
@@ -303,7 +303,7 @@ namespace AbbyyLS.Globalization
 <# manager.StartNewFile("Variant.cs"); #>
 using System;
 
-namespace AbbyyLS.Globalization
+namespace AbbyyLS.Globalization.Bcp47
 {
 	public enum Variant
 	{
@@ -326,9 +326,9 @@ foreach(var entry in variants.Where(_ => _.PreferredValue == null).OrderBy(_ => 
 using System;
 using System.Globalization;
 
-namespace AbbyyLS.Globalization
+namespace AbbyyLS.Globalization.Bcp47
 {
-	public static partial class VariantExtensions
+	public static partial class LanguageTagExtensions
 	{
 		private static string[] GetTextPrefixes(this Variant v)
 		{

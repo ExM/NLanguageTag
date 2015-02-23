@@ -1,9 +1,9 @@
 using System;
 using System.Globalization;
 
-namespace AbbyyLS.Globalization
+namespace AbbyyLS.Globalization.Bcp47
 {
-	public static partial class RegionExtensions
+	public static partial class LanguageTagExtensions
 	{
 		public static string ToText(this Region v)
 		{

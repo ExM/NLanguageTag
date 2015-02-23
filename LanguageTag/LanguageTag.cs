@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AbbyyLS.Globalization
+namespace AbbyyLS.Globalization.Bcp47
 {
 	public struct LanguageTag : IEquatable<LanguageTag>
 	{
 		internal const char TagSeparator = '-';
 
-		public LanguageTagField Fields { get; private set; }
+		public Field Fields { get; private set; }
 
 		private Language? _language;
 
@@ -22,7 +22,7 @@ namespace AbbyyLS.Globalization
 			{
 				if (!value.HasValue) return;
 				_language = value;
-				Fields |= LanguageTagField.Language;
+				Fields |= Field.Language;
 			}
 		}
 
@@ -40,7 +40,7 @@ namespace AbbyyLS.Globalization
 					return;
 
 				_script = value;
-				Fields |= LanguageTagField.Script;
+				Fields |= Field.Script;
 			}
 		}
 
@@ -53,7 +53,7 @@ namespace AbbyyLS.Globalization
 			{
 				if (!value.HasValue) return;
 				_region = value;
-				Fields |= LanguageTagField.Region;
+				Fields |= Field.Region;
 			}
 		}
 
@@ -66,7 +66,7 @@ namespace AbbyyLS.Globalization
 			{
 				if (value.IsEmpty) return;
 				_variants = value;
-				Fields |= LanguageTagField.Variants;
+				Fields |= Field.Variants;
 			}
 		}
 
@@ -77,7 +77,7 @@ namespace AbbyyLS.Globalization
 		private void Set(ExtensionSubtag extSubtag)
 		{
 			_extensions.Append(extSubtag);
-			Fields |= LanguageTagField.Extensions;
+			Fields |= Field.Extensions;
 		}
 
 		private PrivateUseSubtags _privateUse;
@@ -91,7 +91,7 @@ namespace AbbyyLS.Globalization
 					return;
 
 				_privateUse = value;
-				Fields |= LanguageTagField.PrivateUse;
+				Fields |= Field.PrivateUse;
 			}
 		}
 
@@ -324,6 +324,22 @@ namespace AbbyyLS.Globalization
 		public static bool operator !=(LanguageTag a, LanguageTag b)
 		{
 			return !(a == b);
+		}
+
+		[Flags]
+		public enum Field : byte
+		{
+			None = 0x00,
+			Language = 0x01,
+			Script = 0x02,
+			Region = 0x04,
+			Variants = 0x08,
+			Extensions = 0x10,
+			PrivateUse = 0x20,
+
+			Primary = Language | Script | Region,
+			Published = Primary | Variants,
+			All = Published | Extensions | PrivateUse
 		}
 	}
 }

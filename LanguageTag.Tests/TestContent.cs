@@ -1,20 +1,16 @@
-﻿
-
-//file 2
-
-using System;
+﻿using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace AbbyyLS.Globalization
+namespace AbbyyLS.Globalization.Bcp47
 {
 	public static class TestContent
 	{
 		public static IEnumerable<string> GetLanguages()
 		{
 			var assembly = typeof(TestContent).Assembly;
-			var resourceName = "AbbyyLS.Globalization.Languages.txt";
+			var resourceName = "AbbyyLS.Globalization.Bcp47.Languages.txt";
 
 			using (Stream stream = assembly.GetManifestResourceStream(resourceName))
 			using (StreamReader reader = new StreamReader(stream))
@@ -33,7 +29,7 @@ namespace AbbyyLS.Globalization
 		public static IEnumerable<string> GetGrandfathered()
 		{
 			var assembly = typeof(TestContent).Assembly;
-			var resourceName = "AbbyyLS.Globalization.Grandfathered.txt";
+			var resourceName = "AbbyyLS.Globalization.Bcp47.Grandfathered.txt";
 
 			using (Stream stream = assembly.GetManifestResourceStream(resourceName))
 			using (StreamReader reader = new StreamReader(stream))
@@ -52,7 +48,7 @@ namespace AbbyyLS.Globalization
 		public static IEnumerable<string> GetGrandfatheredNotSupported()
 		{
 			var assembly = typeof(TestContent).Assembly;
-			var resourceName = "AbbyyLS.Globalization.GrandfatheredNotSupported.txt";
+			var resourceName = "AbbyyLS.Globalization.Bcp47.GrandfatheredNotSupported.txt";
 
 			using (Stream stream = assembly.GetManifestResourceStream(resourceName))
 			using (StreamReader reader = new StreamReader(stream))
@@ -71,7 +67,7 @@ namespace AbbyyLS.Globalization
 		public static IEnumerable<string> GetRegions()
 		{
 			var assembly = typeof(TestContent).Assembly;
-			var resourceName = "AbbyyLS.Globalization.Regions.txt";
+			var resourceName = "AbbyyLS.Globalization.Bcp47.Regions.txt";
 
 			using (Stream stream = assembly.GetManifestResourceStream(resourceName))
 			using (StreamReader reader = new StreamReader(stream))
@@ -90,7 +86,7 @@ namespace AbbyyLS.Globalization
 		public static IEnumerable<string> GetScripts()
 		{
 			var assembly = typeof(TestContent).Assembly;
-			var resourceName = "AbbyyLS.Globalization.Scripts.txt";
+			var resourceName = "AbbyyLS.Globalization.Bcp47.Scripts.txt";
 
 			using (Stream stream = assembly.GetManifestResourceStream(resourceName))
 			using (StreamReader reader = new StreamReader(stream))
@@ -109,7 +105,7 @@ namespace AbbyyLS.Globalization
 		public static IEnumerable<string> GetVariants()
 		{
 			var assembly = typeof(TestContent).Assembly;
-			var resourceName = "AbbyyLS.Globalization.Variants.txt";
+			var resourceName = "AbbyyLS.Globalization.Bcp47.Variants.txt";
 
 			using (Stream stream = assembly.GetManifestResourceStream(resourceName))
 			using (StreamReader reader = new StreamReader(stream))
@@ -128,7 +124,7 @@ namespace AbbyyLS.Globalization
 		public static IEnumerable<string> GetExtLanguages()
 		{
 			var assembly = typeof(TestContent).Assembly;
-			var resourceName = "AbbyyLS.Globalization.ExtLanguages.txt";
+			var resourceName = "AbbyyLS.Globalization.Bcp47.ExtLanguages.txt";
 
 			using (Stream stream = assembly.GetManifestResourceStream(resourceName))
 			using (StreamReader reader = new StreamReader(stream))

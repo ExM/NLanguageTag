@@ -1,6 +1,6 @@
 using System;
 
-namespace AbbyyLS.Globalization
+namespace AbbyyLS.Globalization.Bcp47
 {
 	public enum Region
 	{

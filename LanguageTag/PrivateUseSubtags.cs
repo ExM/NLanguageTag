@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AbbyyLS.Globalization
+namespace AbbyyLS.Globalization.Bcp47
 {
 	public struct PrivateUseSubtags : IEnumerable<string>, IEquatable<PrivateUseSubtags>
 	{
