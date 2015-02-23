@@ -255,12 +255,23 @@ namespace AbbyyLS.Globalization.Bcp47
 			if (other.Variants.Except(Variants).Any())
 				return false;
 
-			//TODO: check Extension
+			if (other.Extensions.Except(Extensions).Any())
+				return false;
 
 			if (!other.PrivateUse.IsEmpty && other.PrivateUse != PrivateUse)
 				return false;
 
 			return true;
+		}
+
+		public static bool operator >=(LanguageTag a, LanguageTag b)
+		{
+			return a.Contains(b);
+		}
+
+		public static bool operator <=(LanguageTag a, LanguageTag b)
+		{
+			return b.Contains(a);
 		}
 
 		private IEnumerable<string> SubtagsAsText()

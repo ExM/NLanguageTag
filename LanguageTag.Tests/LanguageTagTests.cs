@@ -59,9 +59,20 @@ namespace AbbyyLS.Globalization.Bcp47
 		[TestCase("en-scotland", "en", true)]
 		[TestCase("sl-US-rozaj-biske-1994-fonipa", "sl-rozaj-biske-1994", true)]
 		[TestCase("en-GB", "en-scotland", false)]
+		[TestCase("en-GB", "it", false)]
+		[TestCase("en-a-aaa-b-bbb", "en-a-aaa", true)]
+		[TestCase("en-a-aaa-b-bbb", "en-b-bbb", true)]
+		[TestCase("en-a-aaa-b-bbb", "en-a-aaa-b-bbb", true)]
+		[TestCase("en-b-bbb", "en-a-aaa-b-bbb", false)]
+		[TestCase("en-a-aaa-b-ccc", "en-a-aaa-b-bbb", false)]
 		public void Contains(string x, string y, bool expected)
 		{
-			Assert.That(LanguageTag.Parse(x).Contains(LanguageTag.Parse(y)), Is.EqualTo(expected));
+			var xTag = LanguageTag.Parse(x);
+			var yTag = LanguageTag.Parse(y);
+
+			Assert.That(xTag.Contains(yTag), Is.EqualTo(expected));
+			if (expected)
+				Assert.That(xTag >= yTag, Is.True);
 		}
 
 		[TestCase("xxx")]
