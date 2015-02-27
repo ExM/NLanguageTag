@@ -176,6 +176,8 @@ namespace AbbyyLS.Globalization.Bcp47
 			}
 		}
 
+		private static readonly string _prefixOfPrivateUseSubtag = PrivateUseSubtags.Singleton + TagSeparator;
+
 		private void InternalParse(string text)
 		{
 			if (text == null)
@@ -188,7 +190,7 @@ namespace AbbyyLS.Globalization.Bcp47
 			if (gf != null)
 				text = gf;
 
-			if (text.StartsWith("x-", StringComparison.InvariantCultureIgnoreCase))
+			if (text.StartsWith(_prefixOfPrivateUseSubtag, StringComparison.InvariantCultureIgnoreCase))
 			{
 				PrivateUse = PrivateUseSubtags.Parse(text);
 				return;

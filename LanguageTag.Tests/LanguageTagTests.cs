@@ -71,8 +71,73 @@ namespace AbbyyLS.Globalization.Bcp47
 			var yTag = LanguageTag.Parse(y);
 
 			Assert.That(xTag.Contains(yTag), Is.EqualTo(expected));
-			if (expected)
-				Assert.That(xTag >= yTag, Is.True);
+		}
+
+		[TestCase("en-scotland", ">=", "en", true)]
+		[TestCase("en-scotland", "<=", "en", false)]
+		[TestCase("en-scotland", "==", "en", false)]
+		[TestCase("en-scotland", "!=", "en", true)]
+		[TestCase("en", ">=", "en", true)]
+		[TestCase("en", "<=", "en", true)]
+		[TestCase("en", "==", "en", true)]
+		[TestCase("en", "!=", "en", false)]
+		[TestCase("sl-US-rozaj-biske-1994-fonipa", ">=", "sl-rozaj-biske-1994", true)]
+		[TestCase("sl-US-rozaj-biske-1994-fonipa", "<=", "sl-rozaj-biske-1994", false)]
+		[TestCase("sl-US-rozaj-biske-1994-fonipa", "==", "sl-rozaj-biske-1994", false)]
+		[TestCase("sl-US-rozaj-biske-1994-fonipa", "!=", "sl-rozaj-biske-1994", true)]
+		[TestCase("en-GB", "!=", "en-scotland", true)]
+		[TestCase("en-GB", "==", "en-scotland", false)]
+		[TestCase("en-GB", ">=", "en-scotland", false)]
+		[TestCase("en-GB", "<=", "en-scotland", false)]
+		[TestCase("en-GB", "!=", "it", true)]
+		[TestCase("en-a-aaa-b-bbb", ">=", "en-b-bbb", true)]
+		[TestCase("x-aaa", "<=", "en-x-aaa", true)]
+		[TestCase("x-aaa", ">=", "en-x-aaa", false)]
+		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa", "==", "ru-Latn-RU-Petr1708-a-aaa-x-aaa", true)]
+		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa", "!=", "ru-Latn-RU-Petr1708-a-aaa-x-bbb", true)]
+		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa", "<=", "ru-Latn-RU-Petr1708-a-aaa-x-bbb", false)]
+		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa", ">=", "ru-Latn-RU-Petr1708-a-aaa-x-bbb", false)]
+		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa", "!=", "ru-Latn-RU-Petr1708-a-aaa", true)]
+		[TestCase("ru-Latn-RU-Petr1708-a-aaa", "==", "ru-Latn-RU-Petr1708-a-aaa", true)]
+		[TestCase("ru-Latn-RU-Petr1708-a-aaa", "!=", "ru-Latn-RU-Petr1708-a-bbb", true)]
+		[TestCase("ru-Latn-RU-Petr1708-a-aaa", "!=", "ru-Latn-RU-Petr1708", true)]
+		[TestCase("ru-Latn-RU-Petr1708", "==", "ru-Latn-RU-Petr1708", true)]
+		[TestCase("ru-Latn-RU-Petr1708", "!=", "ru-Latn-RU-Luna1918", true)]
+		[TestCase("ru-Latn-RU-Petr1708", "!=", "ru-Latn-RU", true)]
+		[TestCase("ru-Latn-RU", "==", "ru-Latn-RU", true)]
+		[TestCase("ru-Latn-RU", "!=", "ru-Latn-US", true)]
+		[TestCase("ru-Latn-RU", "<=", "ru-Latn-US", false)]
+		[TestCase("ru-Latn-RU", ">=", "ru-Latn-US", false)]
+		[TestCase("ru-Latn-RU", "!=", "ru-Latn", true)]
+		[TestCase("ru-Latn", "==", "ru-Latn", true)]
+		[TestCase("ru-Latn", "!=", "ru-Zzzz", true)]
+		[TestCase("ru-Latn", "<=", "ru-Zzzz", false)]
+		[TestCase("ru-Latn", ">=", "ru-Zzzz", false)]
+		[TestCase("ru-Latn", "!=", "ru", true)]
+		[TestCase("ru-Latn", ">=", "ru", true)]
+		[TestCase("ru-Latn", "<=", "ru", false)]
+		public void Operators(string xText, string operatorText, string yText, bool expected)
+		{
+			var x = LanguageTag.Parse(xText);
+			var y = LanguageTag.Parse(yText);
+
+			switch(operatorText)
+			{
+				case ">=":
+					Assert.That(x >= y, Is.EqualTo(expected));
+					break;
+				case "<=":
+					Assert.That(x <= y, Is.EqualTo(expected));
+					break;
+				case "==":
+					Assert.That(x == y, Is.EqualTo(expected));
+					break;
+				case "!=":
+					Assert.That(x != y, Is.EqualTo(expected));
+					break;
+				default:
+					throw new NotImplementedException();
+			}
 		}
 
 		[TestCase("xxx")]
@@ -92,10 +157,44 @@ namespace AbbyyLS.Globalization.Bcp47
 		[TestCase("sl-rozaj-a-b")]
 		[TestCase("sl-rozaj-a-aaa-b")]
 		[TestCase("sl-rozaj-a-aaa-a-bbb")]
+		[TestCase("x-aaa-")]
+		[TestCase("x-aaa-?")]
+		[TestCase("en-x-aaa-")]
+		[TestCase("en-x-aaa-?")]
 		[ExpectedException(typeof(FormatException))]
 		public void Parse_Fail(string text)
 		{
 			LanguageTag.Parse(text);
+		}
+
+		[Test]
+		public void TryParse_Success()
+		{
+			LanguageTag? tag1 = LanguageTag.TryParse("en-GB");
+
+			LanguageTag tag2;
+			var result = LanguageTag.TryParse("en-GB", out tag2);
+
+			Assert.That(result, Is.True);
+			Assert.That(tag1, Is.EqualTo(tag2));
+		}
+
+		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa-", "ru-Latn-RU-Petr1708-a-aaa")]
+		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa-?", "ru-Latn-RU-Petr1708-a-aaa")]
+		[TestCase("ru-Latn-RU-Petr1708-a-aaa-b-?", "ru-Latn-RU-Petr1708-a-aaa")]
+		[TestCase("ru-Latn-RU-Petr1708-?", "ru-Latn-RU-Petr1708")]
+		[TestCase("ru-Latn-RU-?", "ru-Latn-RU")]
+		[TestCase("ru-Latn-?", "ru-Latn")]
+		[TestCase("ru-?", "ru")]
+		public void TryParse_Fail(string text, string expected)
+		{
+			Assert.That(LanguageTag.TryParse(text).HasValue, Is.False);
+
+			LanguageTag tag;
+			var result = LanguageTag.TryParse(text, out tag);
+
+			Assert.That(result, Is.False);
+			Assert.That(tag, Is.EqualTo(LanguageTag.Parse(expected)));
 		}
 
 		[TestCase("zh-CHS", "zh-Hans")]
@@ -134,6 +233,28 @@ namespace AbbyyLS.Globalization.Bcp47
 		public void ToString(string source, string expected)
 		{
 			Assert.AreEqual(expected, LanguageTag.Parse(source).ToString());
+		}
+
+		[Test]
+		public void EqualsAndHashCode()
+		{
+			var tag1 = LanguageTag.Parse("ru-Latn-RU-Petr1708-a-aaa-x-aaa");
+			var tag1c = tag1;
+
+			var tag2 = LanguageTag.Parse("x-bbb");
+
+
+			Assert.That(tag1, Is.EqualTo(tag1));
+			Assert.That(tag1, Is.EqualTo(tag1c));
+			Assert.That(tag1.Equals((object)tag1), Is.True);
+
+			Assert.That(tag1, Is.Not.EqualTo(tag2));
+			Assert.That(tag1.Equals((object)tag2), Is.False);
+			Assert.That(tag1.Equals(null), Is.False);
+
+			Assert.That(tag1.GetHashCode(), Is.EqualTo(tag1.GetHashCode()));
+			Assert.That(tag1.GetHashCode(), Is.EqualTo(tag1c.GetHashCode()));
+			Assert.That(tag1.GetHashCode(), Is.Not.EqualTo(tag2.GetHashCode()));
 		}
 
 	}

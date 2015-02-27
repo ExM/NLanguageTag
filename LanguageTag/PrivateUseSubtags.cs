@@ -10,6 +10,8 @@ namespace AbbyyLS.Globalization.Bcp47
 	{
 		private string[] _subtags;
 
+		public static readonly string Singleton = "x";
+
 		public PrivateUseSubtags(params string[] subtags)
 			: this()
 		{
@@ -32,7 +34,7 @@ namespace AbbyyLS.Globalization.Bcp47
 			if (!tokenSequence.MoveNext()) // get singletone
 				return result;
 
-			if (!string.Equals(tokenSequence.Token, "x", StringComparison.InvariantCultureIgnoreCase))
+			if (!string.Equals(tokenSequence.Token, Singleton, StringComparison.InvariantCultureIgnoreCase))
 				throw new FormatException("unexpected subtag '" + tokenSequence.Token + "'");
 
 			var subtags = new List<string>();
@@ -132,7 +134,7 @@ namespace AbbyyLS.Globalization.Bcp47
 			if (_subtags == null)
 				yield break;
 
-			yield return "x";
+			yield return Singleton;
 
 			foreach (var el in _subtags)
 				yield return el;

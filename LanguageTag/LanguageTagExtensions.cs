@@ -246,7 +246,7 @@ namespace AbbyyLS.Globalization.Bcp47
 			ValidateExtensionSubtagElement(tokenSequence.Token);
 
 			var result = new ExtensionSubtag(singletone, tokenSequence.Token);
-			tokenIndex = tokenSequence.NextTokenPosition;
+			tokenIndex = tokenSequence.NextTokenPosition ?? text.Length;
 
 			while (tokenSequence.MoveNext()) // get remaining elements
 			{
@@ -255,7 +255,7 @@ namespace AbbyyLS.Globalization.Bcp47
 
 				ValidateExtensionSubtagElement(tokenSequence.Token);
 				result.Append(tokenSequence.Token);
-				tokenIndex = tokenSequence.NextTokenPosition;
+				tokenIndex = tokenSequence.NextTokenPosition ?? text.Length;
 			}
 
 			return result;
@@ -347,25 +347,25 @@ namespace AbbyyLS.Globalization.Bcp47
 
 			public int CurrentTokenPosition { get; private set; }
 
-			public int NextTokenPosition { get; private set; }
+			public int? NextTokenPosition { get; private set; }
 
 			public bool MoveNext()
 			{
-				if (NextTokenPosition == _text.Length)
+				if (!NextTokenPosition.HasValue)
 					return false;
 
-				int pos = _text.IndexOf(LanguageTag.TagSeparator, NextTokenPosition);
+				int pos = _text.IndexOf(LanguageTag.TagSeparator, NextTokenPosition.Value);
 
-				CurrentTokenPosition = NextTokenPosition;
+				CurrentTokenPosition = NextTokenPosition.Value;
 
 				if(pos == -1)
 				{
-					Token = _text.Substring(NextTokenPosition);
-					NextTokenPosition = _text.Length;
+					Token = _text.Substring(NextTokenPosition.Value);
+					NextTokenPosition = null;
 				}
 				else
 				{
-					Token = _text.Substring(NextTokenPosition, pos - NextTokenPosition);
+					Token = _text.Substring(NextTokenPosition.Value, pos - NextTokenPosition.Value);
 					NextTokenPosition = pos + 1;
 				}
 				return true;
