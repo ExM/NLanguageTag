@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace AbbyyLS.Globalization.Bcp47
 {
 	[TestFixture]
-	public class LanguageTagTests
+	public partial class LanguageTagTests
 	{
 		[TestCase("", null, null, null)]
 		[TestCase("en", Language.EN, null, null)]
@@ -257,5 +257,19 @@ namespace AbbyyLS.Globalization.Bcp47
 			Assert.That(tag1.GetHashCode(), Is.Not.EqualTo(tag2.GetHashCode()));
 		}
 
+		[Test]
+		public void Constructor_Pr()
+		{
+			var tag = new LanguageTag(new PrivateUseSubtags("aaa"));
+			var expected = LanguageTag.Parse("x-aaa");
+			Assert.That(tag, Is.EqualTo(expected));
+		}
+
+		[Test]
+		[ExpectedException(typeof(ArgumentNullException))]
+		public void ConstructorString_ArgumentNullException()
+		{
+			new LanguageTag((string)null);
+		}
 	}
 }

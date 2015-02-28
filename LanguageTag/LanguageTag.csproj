@@ -46,6 +46,11 @@
     <Compile Include="LanguageExtensions.generated.cs">
       <DependentUpon>RegistryGenerator.tt</DependentUpon>
     </Compile>
+    <Compile Include="LanguageTag.ctors.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LanguageTag.ctors.tt</DependentUpon>
+    </Compile>
     <Compile Include="PrivateUseSubtags.cs" />
     <Compile Include="ExtensionSubtag.cs" />
     <Compile Include="LanguageTagExtensions.cs" />
@@ -74,6 +79,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="LanguageTag.ctors.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>LanguageTag.ctors.cs</LastGenOutput>
+    </None>
     <None Include="RegistryGenerator.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RegistryGenerator.statistic.txt</LastGenOutput>

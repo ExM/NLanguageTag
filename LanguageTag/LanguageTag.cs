@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AbbyyLS.Globalization.Bcp47
 {
-	public struct LanguageTag : IEquatable<LanguageTag>
+	public partial struct LanguageTag : IEquatable<LanguageTag>
 	{
 		internal const char TagSeparator = '-';
 
@@ -20,7 +20,6 @@ namespace AbbyyLS.Globalization.Bcp47
 			get { return _language; }
 			private set
 			{
-				if (!value.HasValue) return;
 				_language = value;
 				Fields |= Field.Language;
 			}
@@ -34,11 +33,7 @@ namespace AbbyyLS.Globalization.Bcp47
 			private set
 			{
 				if (!value.HasValue) return;
-				
-				if (Language.HasValue &&
-					Language.Value.GetSupressScript() == value)
-					return;
-
+				if (Language.Value.GetSupressScript() == value) return;
 				_script = value;
 				Fields |= Field.Script;
 			}
@@ -95,38 +90,10 @@ namespace AbbyyLS.Globalization.Bcp47
 			}
 		}
 
-		public LanguageTag(Language lang)
+		public LanguageTag(PrivateUseSubtags privateUseSubtags)
 			: this()
 		{
-			Language = lang;
-		}
-
-		public LanguageTag(Language lang, Script? script)
-			: this(lang)
-		{
-			Script = script;
-		}
-
-		public LanguageTag(Language lang, Region? region)
-			: this(lang)
-		{
-			Region = region;
-		}
-
-		public LanguageTag(Language lang, Script? script, Region? region)
-			: this(lang, script)
-		{
-			Region = region;
-		}
-
-		public LanguageTag(Language lang, Script? script, Region? region, IEnumerable<Variant> variants)
-			: this(lang, script, region)
-		{
-			var builder = new VariantCollection.Builder();
-			foreach (var v in variants)
-				builder.Append(Language, Script, v);
-
-			Variants = builder.ToCollection();
+			PrivateUse = privateUseSubtags;
 		}
 
 		public LanguageTag(string text)

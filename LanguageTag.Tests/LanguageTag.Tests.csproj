@@ -37,6 +37,12 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LanguageTagTests.ctors.cs">
+      <DependentUpon>LanguageTagTests.ctors.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="PrivateUseSubtagsTests.cs" />
     <Compile Include="TestContent.cs">
       <DependentUpon>TestContent.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -51,6 +57,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="LanguageTagTests.ctors.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>LanguageTagTests.ctors.cs</LastGenOutput>
+    </None>
     <None Include="TestContent.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>TestContent.cs</LastGenOutput>
