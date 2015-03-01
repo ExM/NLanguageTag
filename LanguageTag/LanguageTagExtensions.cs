@@ -339,8 +339,9 @@ namespace AbbyyLS.Globalization.Bcp47
 			public LanguageTagTokenEnumerator(string text, int start)
 			{
 				_text = text;
-				NextTokenPosition = start;
 				CurrentTokenPosition = start;
+				if(!string.IsNullOrEmpty(text))
+					NextTokenPosition = start;
 			}
 
 			public string Token { get; private set; }

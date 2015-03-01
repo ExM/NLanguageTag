@@ -21,6 +21,22 @@ namespace AbbyyLS.Globalization.Bcp47
 			}
 		}
 
+		[Test]
+		[ExpectedException(typeof(NotImplementedException))]
+		public void GetPrefixesFail()
+		{
+			var variant = (Variant)(-1);
+			variant.GetPrefixes();
+		}
+
+		[Test]
+		[ExpectedException(typeof(NotImplementedException))]
+		public void ToTextFail()
+		{
+			var variant = (Variant)(-1);
+			variant.ToText();
+		}
+
 		[TestCase("aluku", Variant.Aluku)]
 		[TestCase("1901", Variant.V1901)]
 		public void ParseFromVariant(string text, Variant expected)
@@ -65,6 +81,42 @@ namespace AbbyyLS.Globalization.Bcp47
 		{
 			var tag = new LanguageTag(tagText);
 			Assert.AreEqual(expected, variant.RestrictiveAcceptableFor(tag.Language, tag.Script, tag.Variants));
+		}
+
+		[Test]
+		public void Equals()
+		{
+			var vc1 = new VariantCollection();
+			var vc2 = new VariantCollection();
+
+			var vc3 = new VariantCollection(Variant.Alalc97, Variant.Aluku);
+			var vc4 = new VariantCollection(Variant.Alalc97, Variant.Aluku);
+
+			var vc5 = new VariantCollection(Variant.Alalc97);
+
+			Assert.IsFalse(vc1.Equals(null));
+			Assert.IsTrue(vc1.Equals((object)vc2));
+			Assert.AreEqual(vc1, vc1);
+			Assert.AreEqual(vc1, vc2);
+			Assert.AreNotEqual(vc1, vc3);
+			Assert.AreEqual(vc3, vc3);
+			Assert.AreEqual(vc3, vc4);
+			Assert.AreNotEqual(vc4, vc5);
+
+			Assert.IsTrue(vc1 == vc2);
+			Assert.IsFalse(vc1 != vc2);
+
+			Assert.IsTrue(vc3 != vc5);
+			Assert.IsFalse(vc3 == vc5);
+		}
+
+		[TestCase(new Variant[] { }, Variant.Alalc97, false)]
+		[TestCase(new Variant[] { Variant.Aluku }, Variant.Alalc97, false)]
+		[TestCase(new Variant[] { Variant.Aluku }, Variant.Aluku, true)]
+		[TestCase(new Variant[] { Variant.Aluku, Variant.Alalc97 }, Variant.Alalc97, true)]
+		public void Contains(Variant[] variants, Variant tag, bool expected)
+		{
+			Assert.That(new VariantCollection(variants).Contains(tag), Is.EqualTo(expected));
 		}
 	}
 }

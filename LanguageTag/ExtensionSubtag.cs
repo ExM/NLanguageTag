@@ -6,24 +6,13 @@ using System.Threading.Tasks;
 
 namespace AbbyyLS.Globalization.Bcp47
 {
-	public struct ExtensionSubtag : IEquatable<ExtensionSubtag>
+	public struct ExtensionSubtag : IEquatable<ExtensionSubtag>, IEnumerable<string>
 	{
 		private List<string> _sequence;
 
 		public Char Singleton { get; private set; }
 
-		public IEnumerable<string> Sequence
-		{
-			get
-			{
-				if (_sequence == null)
-					return Enumerable.Empty<string>();
-				else
-					return _sequence.AsEnumerable();
-			}
-		}
-
-		public ExtensionSubtag(Char singleton, string firstSubtag)
+		internal ExtensionSubtag(Char singleton, string firstSubtag)
 			:this()
 		{
 			Singleton = singleton;
@@ -35,10 +24,27 @@ namespace AbbyyLS.Globalization.Bcp47
 			: this()
 		{
 			Singleton = singleton;
-			_sequence = new List<string>();
 
-			foreach (var s in subtags)
-				Append(s);
+			if (subtags.Length > 0)
+			{
+				_sequence = new List<string>();
+
+				foreach (var s in subtags)
+					Append(s);
+			}
+		}
+
+		public IEnumerator<string> GetEnumerator()
+		{
+			if (_sequence == null)
+				return Enumerable.Empty<string>().GetEnumerator();
+			else
+				return _sequence.AsEnumerable().GetEnumerator();
+		}
+
+		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+		{
+			return GetEnumerator();
 		}
 
 		internal void Append(string subtag)

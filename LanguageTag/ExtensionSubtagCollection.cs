@@ -11,6 +11,15 @@ namespace AbbyyLS.Globalization.Bcp47
 	{
 		private List<ExtensionSubtag> _sortedList;
 
+		public ExtensionSubtagCollection(params ExtensionSubtag[] subtags)
+			:this()
+		{
+			foreach(var tag in subtags)
+			{
+				Append(tag);
+			}
+		}
+
 		public override bool Equals(object obj)
 		{
 			return obj is ExtensionSubtagCollection &&

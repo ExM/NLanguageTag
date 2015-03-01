@@ -31,6 +31,16 @@ namespace AbbyyLS.Globalization.Bcp47
 
 				Assert.AreEqual(text, lang.ToExtLanguage());
 			}
+
+			Assert.IsFalse("xxx".TryParseFromExtLanguage((Language)(-1)).HasValue);
+		}
+
+		[Test]
+		[ExpectedException(typeof(NotImplementedException))]
+		public void ToTextFail()
+		{
+			var en = (Language)(-1);
+			en.ToText();
 		}
 
 		[TestCase("afb", Language.AFB)]
@@ -76,6 +86,14 @@ namespace AbbyyLS.Globalization.Bcp47
 		[TestCase("afb-xxx")]
 		[TestCase("ar-afb-")]
 		[TestCase("ar-afb-xxx")]
+		[TestCase("sgn-xxx")]
+		[TestCase("ms-xxx")]
+		[TestCase("zh-xxx")]
+		[TestCase("kok-xxx")]
+		[TestCase("lv-xxx")]
+		[TestCase("sw-xxx")]
+		[TestCase("uz-xxx")]
+		[TestCase("en-xxx")]
 		[ExpectedException(typeof(FormatException))]
 		public void ParseFromLanguage_Fail(string text)
 		{

@@ -21,6 +21,14 @@ namespace AbbyyLS.Globalization.Bcp47
 			}
 		}
 
+		[Test]
+		[ExpectedException(typeof(NotImplementedException))]
+		public void ToTextFail()
+		{
+			var en = (Script)(-1);
+			en.ToText();
+		}
+
 		[TestCase("Hant", Script.Hant)]
 		[TestCase("Hans", Script.Hans)]
 		public void ParseFromScript(string text, Script expected)

@@ -41,6 +41,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		[TestCase("sl-rozaj-biske-1994", new Variant[] { Variant.Rozaj, Variant.Biske, Variant.V1994 })]
 		[TestCase("sl-rozaj-1994", new Variant[] { Variant.Rozaj, Variant.V1994 })]
 		[TestCase("sl-rozaj-biske-1994-fonipa", new Variant[] { Variant.Rozaj, Variant.Biske, Variant.V1994, Variant.Fonipa })]
+		[TestCase("sl-rozaj-biske-1994-fonipa-fonipa", new Variant[] { Variant.Rozaj, Variant.Biske, Variant.V1994, Variant.Fonipa })]
 		public void ParseWithVariants(string text, Variant[] variantsEx)
 		{
 			var tag = LanguageTag.Parse(text);

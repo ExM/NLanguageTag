@@ -21,6 +21,14 @@ namespace AbbyyLS.Globalization.Bcp47
 			}
 		}
 
+		[Test]
+		[ExpectedException(typeof(NotImplementedException))]
+		public void ToTextFail()
+		{
+			var en = (Region)(-1);
+			en.ToText();
+		}
+
 		[TestCase("RU", Region.RU)]
 		[TestCase("gb", Region.GB)]
 		public void ParseFromRegion(string text, Region expected)

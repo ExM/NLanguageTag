@@ -101,9 +101,6 @@ namespace AbbyyLS.Globalization.Bcp47
 
 				if (restrictive.Value)
 				{
-					if (_prefix.Contains(item))
-						return;
-
 					_prefix.Add(item);
 				}
 				else
