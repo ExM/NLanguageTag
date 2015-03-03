@@ -26,23 +26,21 @@ namespace AbbyyLS.Globalization.Bcp47
 			}
 		}
 
-		public static PrivateUseSubtags Parse(string text, int start = 0)
+		internal static PrivateUseSubtags Parse(LanguageTag.TokenEnumerator tokens)
 		{
 			var result = new PrivateUseSubtags();
 
-			var tokenSequence = text.GetTokenSequense(start);
-			if (!tokenSequence.MoveNext()) // get singletone
-				return result;
-
-			if (!string.Equals(tokenSequence.Token, Singleton, StringComparison.InvariantCultureIgnoreCase))
-				throw new FormatException("unexpected subtag '" + tokenSequence.Token + "'");
+			if (!tokens.TokenIs(Singleton))
+				throw new FormatException("unexpected subtag '" + tokens.Token + "'");
 
 			var subtags = new List<string>();
 
-			while (tokenSequence.MoveNext()) // get all subtags
+			while (tokens.NextTokenAvailable) // get all subtags
 			{
-				ValidateSubtag(tokenSequence.Token);
-				subtags.Add(tokenSequence.Token.ToLowerInvariant());
+				tokens.ToNextToken();
+
+				ValidateSubtag(tokens.Token);
+				subtags.Add(tokens.Token.ToLowerInvariant());
 			}
 
 			if (subtags.Count == 0)
@@ -52,11 +50,16 @@ namespace AbbyyLS.Globalization.Bcp47
 			return result;
 		}
 
-		public static bool TryParse(string text, out PrivateUseSubtags result, int start = 0)
+		public static PrivateUseSubtags Parse(string text)
+		{
+			return Parse(new LanguageTag.TokenEnumerator(text));
+		}
+
+		public static bool TryParse(string text, out PrivateUseSubtags result)
 		{
 			try
 			{
-				result = Parse(text, start);
+				result = Parse(text);
 				return true;
 			}
 			catch (FormatException)
@@ -66,11 +69,11 @@ namespace AbbyyLS.Globalization.Bcp47
 			}
 		}
 
-		public static PrivateUseSubtags? TryParse(string text, int start = 0)
+		public static PrivateUseSubtags? TryParse(string text)
 		{
 			try
 			{
-				return Parse(text, start);
+				return Parse(text);
 			}
 			catch (FormatException)
 			{

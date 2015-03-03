@@ -15,7 +15,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		{
 			foreach (var text in TestContent.GetRegions())
 			{
-				var region = text.ParseFromRegion();
+				var region = text.TryParseFromRegion().Value;
 				
 				Assert.NotNull(region.ToText());
 			}
@@ -29,31 +29,12 @@ namespace AbbyyLS.Globalization.Bcp47
 			en.ToText();
 		}
 
+		[TestCase("xxx", null)]
 		[TestCase("RU", Region.RU)]
 		[TestCase("gb", Region.GB)]
-		public void ParseFromRegion(string text, Region expected)
+		public void ParseFromRegion(string text, Region? expected)
 		{
-			Assert.AreEqual(expected, text.ParseFromRegion());
-		}
-
-		[TestCase("xxx")]
-		[TestCase("xxx-xxx")]
-		[TestCase("xxx-")]
-		[ExpectedException(typeof(FormatException))]
-		public void ParseFromRegion_Fail(string text)
-		{
-			text.ParseFromRegion();
-		}
-
-		[TestCase("???-xxx-xx", 4, null, 4)]
-		[TestCase("???-GB", 4, Region.GB, 6)]
-		[TestCase("???-gb-", 4, Region.GB, 7)]
-		[TestCase("???-GB-xx", 4, Region.GB, 7)]
-		public void TryParseFromRegionToken(string text, int begin, Region? expected, int expNextToken)
-		{
-			int nextToken = begin;
-			Assert.AreEqual(expected, text.TryParseFromRegionToken(ref nextToken));
-			Assert.AreEqual(expNextToken, nextToken);
+			Assert.AreEqual(expected, text.TryParseFromRegion());
 		}
 	}
 }

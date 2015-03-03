@@ -143,8 +143,6 @@ namespace AbbyyLS.Globalization.Bcp47
 			}
 		}
 
-		private static readonly string _prefixOfPrivateUseSubtag = PrivateUseSubtags.Singleton + TagSeparator;
-
 		private void InternalParse(string text)
 		{
 			if (text == null)
@@ -157,29 +155,30 @@ namespace AbbyyLS.Globalization.Bcp47
 			if (gf != null)
 				text = gf;
 
-			if (text.StartsWith(_prefixOfPrivateUseSubtag, StringComparison.InvariantCultureIgnoreCase))
+			var tokens = new TokenEnumerator(text);
+
+			if (tokens.TokenIs(PrivateUseSubtags.Singleton))
 			{
-				PrivateUse = PrivateUseSubtags.Parse(text);
+				PrivateUse = PrivateUseSubtags.Parse(tokens);
 				return;
 			}
 
-			int tokenIndex;
-			Language = text.ParseFromLanguageToken(out tokenIndex);
+			Language = tokens.ParseLanguage();
 
-			if (text.Length == tokenIndex)
+			if(!tokens.CurrentTokenAvailable)
 				return;
 
-			Script = text.TryParseFromScriptToken(ref tokenIndex);
+			Script = tokens.TryParseScript();
 
-			if (text.Length == tokenIndex)
+			if (!tokens.CurrentTokenAvailable)
 				return;
 
-			Region = text.TryParseFromRegionToken(ref tokenIndex);
+			Region = tokens.TryParseRegion();
 
-			if (text.Length == tokenIndex)
+			if (!tokens.CurrentTokenAvailable)
 				return;
 
-			var variant = text.TryParseFromVariantToken(ref tokenIndex);
+			var variant = tokens.TryParseVariant();
 			if (variant.HasValue)
 			{
 				var builder = new VariantCollection.Builder();
@@ -187,27 +186,27 @@ namespace AbbyyLS.Globalization.Bcp47
 				do
 				{
 					builder.Append(Language, Script, variant.Value);
-					variant = text.TryParseFromVariantToken(ref tokenIndex);
+					variant = tokens.TryParseVariant();
 				}
-				while (variant.HasValue);
+				while(variant.HasValue);
 
 				Variants = builder.ToCollection();
 			}
 
-			if (text.Length == tokenIndex)
+			if (!tokens.CurrentTokenAvailable)
 				return;
 
-			var extSubtag = text.TryParseFromExtensionSubtagToken(ref tokenIndex);
+			var extSubtag = tokens.TryParseExtensionSubtag();
 			while(extSubtag.HasValue)
 			{
 				Set(extSubtag.Value);
-				extSubtag = text.TryParseFromExtensionSubtagToken(ref tokenIndex);
+				extSubtag = tokens.TryParseExtensionSubtag();
 			}
 
-			if (text.Length == tokenIndex)
+			if (!tokens.CurrentTokenAvailable)
 				return;
 
-			PrivateUse = PrivateUseSubtags.Parse(text, tokenIndex);
+			PrivateUse = PrivateUseSubtags.Parse(tokens);
 		}
 
 		public bool Contains(LanguageTag other)
@@ -320,6 +319,68 @@ namespace AbbyyLS.Globalization.Bcp47
 			Primary = Language | Script | Region,
 			Published = Primary | Variants,
 			All = Published | Extensions | PrivateUse
+		}
+
+		internal class TokenEnumerator
+		{
+			public TokenEnumerator(string text)
+			{
+				Source = text;
+				CurrentTokenPosition = 0;
+
+				if (string.IsNullOrEmpty(text))
+				{
+					Token = string.Empty;
+					NextTokenPosition = null;
+				}
+				else
+				{
+					NextTokenPosition = 0;
+					ToNextToken();
+				}
+			}
+
+			public string Source { get; private set; }
+
+			public string Token { get; private set; }
+
+			public bool TokenIs(string token)
+			{
+				return string.Equals(Token, token, StringComparison.OrdinalIgnoreCase);
+			}
+
+			public int CurrentTokenPosition { get; private set; }
+
+			public int? NextTokenPosition { get; private set; }
+
+			public bool NextTokenAvailable { get { return NextTokenPosition.HasValue; } }
+
+			public bool CurrentTokenAvailable { get { return Token != null; } }
+
+			public void ToNextToken()
+			{
+				if (!NextTokenPosition.HasValue)
+				{
+					Token = null;
+					CurrentTokenPosition = Source.Length;
+					return;
+				}
+
+				int pos = Source.IndexOf(LanguageTag.TagSeparator, NextTokenPosition.Value);
+
+				CurrentTokenPosition = NextTokenPosition.Value;
+
+				if (pos == -1)
+				{
+					Token = Source.Substring(NextTokenPosition.Value);
+					NextTokenPosition = null;
+				}
+				else
+				{
+					Token = Source.Substring(NextTokenPosition.Value, pos - NextTokenPosition.Value);
+					NextTokenPosition = pos + 1;
+				}
+			}
 		}
 	}
 }

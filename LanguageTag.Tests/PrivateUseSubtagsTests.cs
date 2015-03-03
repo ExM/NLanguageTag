@@ -19,16 +19,17 @@ namespace AbbyyLS.Globalization.Bcp47
 			Assert.That(new PrivateUseSubtags(args).ToString(), Is.EqualTo(expected));
 		}
 
-		[TestCase("", "aaa", false)]
+		[TestCase(null, "aaa", false)]
+		[TestCase("x-aaa-bbb", null, false)]
 		[TestCase("x-aaa-bbb", "x", false)]
 		[TestCase("x-aaa-bbb", "aaa", true)]
 		[TestCase("x-aaa-bbb", "bbb", true)]
 		public void Contains(string subtagText, string tag, bool expected)
 		{
-			Assert.That(PrivateUseSubtags.Parse(subtagText).Contains(tag), Is.EqualTo(expected));
+			var pu = subtagText == null ? new PrivateUseSubtags() : PrivateUseSubtags.Parse(subtagText);
+			Assert.That(pu.Contains(tag), Is.EqualTo(expected));
 		}
 
-		[TestCase("", new string[] {})]
 		[TestCase("x-aaa", new string[] { "aaa" })]
 		[TestCase("x-aaa-bbb", new string[] { "aaa", "bbb" })]
 		public void TryParse(string text, string[] subtags)
@@ -62,17 +63,16 @@ namespace AbbyyLS.Globalization.Bcp47
 		public void Equals()
 		{
 			var tag1 = new PrivateUseSubtags();
-			var tag2 = PrivateUseSubtags.Parse("");
+			var tag2 = (object)tag1;
 
 			var tag3 = PrivateUseSubtags.Parse("x-aaa");
-			var tag4 = PrivateUseSubtags.Parse("x-aaa");
+			var tag4 = (object)PrivateUseSubtags.Parse("x-aaa");
 
 			var tag5 = PrivateUseSubtags.Parse("x-aaa-bbb");
 
 			Assert.IsFalse(tag1.Equals(null));
-			Assert.IsTrue(tag1.Equals((object)tag2));
+			Assert.IsTrue(tag1.Equals(tag2));
 			Assert.AreEqual(tag1, tag1);
-			Assert.AreEqual(tag1, tag2);
 			Assert.AreNotEqual(tag1, tag3);
 			Assert.AreEqual(tag3, tag3);
 			Assert.AreEqual(tag3, tag4);

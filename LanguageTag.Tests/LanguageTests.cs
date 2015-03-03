@@ -15,7 +15,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		{
 			foreach (var text in TestContent.GetLanguages())
 			{
-				var lang = text.ParseFromLanguage();
+				var lang = text.ParseAsLanguage();
 
 				lang.GetSupressScript();
 				lang.GetMacrolanguage();
@@ -27,7 +27,7 @@ namespace AbbyyLS.Globalization.Bcp47
 
 			foreach (var text in TestContent.GetExtLanguages())
 			{
-				var lang = text.ParseFromLanguage();
+				var lang = text.ParseAsLanguage();
 
 				Assert.AreEqual(text, lang.ToExtLanguage());
 			}
@@ -51,7 +51,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		[TestCase("iw", Language.HE)]
 		public void ParseFromLanguage(string text, Language expected)
 		{
-			Assert.AreEqual(expected, text.ParseFromLanguage());
+			Assert.AreEqual(expected, text.ParseAsLanguage());
 		}
 
 		[TestCase(Language.AFB, "afb")]
@@ -63,21 +63,9 @@ namespace AbbyyLS.Globalization.Bcp47
 			Assert.AreEqual(expected, lang.ToText());
 		}
 
-		[TestCase("afb", Language.AFB, 3)]
-		[TestCase("en-GB", Language.EN, 3)]
-		[TestCase("ar-afb", Language.AFB, 6)]
-		[TestCase("yue", Language.YUE, 3)]
-		[TestCase("yue-GB", Language.YUE, 4)]
-		[TestCase("zh-yue", Language.YUE, 6)]
-		[TestCase("zh-yue-Hans", Language.YUE, 7)]
-		public void TryParseFromLanguageToken(string text, Language expected, int expNextToken)
-		{
-			int nextToken;
-			Assert.AreEqual(expected, text.ParseFromLanguageToken(out nextToken));
-			Assert.AreEqual(expNextToken, nextToken);
-		}
-
+		[TestCase("")]
 		[TestCase("xxx")]
+		[TestCase("-xxx")]
 		[TestCase("xxx-")]
 		[TestCase("ar-")]
 		[TestCase("ar-xxx")]
@@ -94,10 +82,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		[TestCase("sw-xxx")]
 		[TestCase("uz-xxx")]
 		[TestCase("en-xxx")]
+		[TestCase("zh-yue-Hans")]
 		[ExpectedException(typeof(FormatException))]
 		public void ParseFromLanguage_Fail(string text)
 		{
-			text.ParseFromLanguage();
+			text.ParseAsLanguage();
 		}
 
 		[TestCase(Language.AFB, "ar-afb")]

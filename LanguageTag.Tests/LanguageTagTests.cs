@@ -157,6 +157,8 @@ namespace AbbyyLS.Globalization.Bcp47
 		[TestCase("sl-rozaj-a-")]
 		[TestCase("en-fonipa-")]
 		[TestCase("en-GB-")]
+		[TestCase("-en-GB")]
+		[TestCase("-x-aaa")]
 		[TestCase("en-Latn-")]
 		[TestCase("sl-rozaj-a-b")]
 		[TestCase("sl-rozaj-a-aaa-b")]
