@@ -16,14 +16,11 @@ namespace AbbyyLS.Globalization.Bcp47
 			: this()
 		{
 			if (subtags == null || subtags.Length == 0)
-				return;
+				throw new FormatException("private use subtags not contain elements");
 
 			_subtags = new string[subtags.Length];
 			for (int i = 0; i < subtags.Length; i++)
-			{
-				ValidateSubtag(subtags[i]);
-				_subtags[i] = subtags[i].ToLowerInvariant();
-			}
+				_subtags[i] = ValidateSubtag(subtags[i]);
 		}
 
 		internal static PrivateUseSubtags Parse(LanguageTag.TokenEnumerator tokens)
@@ -38,9 +35,7 @@ namespace AbbyyLS.Globalization.Bcp47
 			while (tokens.NextTokenAvailable) // get all subtags
 			{
 				tokens.ToNextToken();
-
-				ValidateSubtag(tokens.Token);
-				subtags.Add(tokens.Token.ToLowerInvariant());
+				subtags.Add(ValidateSubtag(tokens.Token));
 			}
 
 			if (subtags.Count == 0)
@@ -81,13 +76,15 @@ namespace AbbyyLS.Globalization.Bcp47
 			}
 		}
 
-		private static void ValidateSubtag(string text)
+		private static string ValidateSubtag(string text)
 		{
 			if (text.Length < 1 || 8 < text.Length)
 				throw new FormatException("private use subtag must be from 1 to 8 characters");
 
 			if (!text.All(ch => Char.IsLetterOrDigit(ch) && (int)ch < 127))
 				throw new FormatException("private use subtag must consist only of numbers or letters in ASCII");
+
+			return text.ToLowerInvariant();
 		}
 
 		public bool IsEmpty

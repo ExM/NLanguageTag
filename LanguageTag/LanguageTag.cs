@@ -196,11 +196,11 @@ namespace AbbyyLS.Globalization.Bcp47
 			if (!tokens.CurrentTokenAvailable)
 				return;
 
-			var extSubtag = tokens.TryParseExtensionSubtag();
-			while(extSubtag.HasValue)
+			var extSubtag = ExtensionSubtag.TryParse(tokens);
+			while (extSubtag.HasValue)
 			{
 				Set(extSubtag.Value);
-				extSubtag = tokens.TryParseExtensionSubtag();
+				extSubtag = ExtensionSubtag.TryParse(tokens);
 			}
 
 			if (!tokens.CurrentTokenAvailable)

@@ -161,58 +161,11 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		public static ExtensionSubtag ParseFromExtensionSubtag(this string text)
 		{
-			var result = new LanguageTag.TokenEnumerator(text).TryParseExtensionSubtag();
+			var result = ExtensionSubtag.TryParse(new LanguageTag.TokenEnumerator(text));
 			if (result.HasValue)
 				return result.Value;
 
 			throw new FormatException("unexpected extension subtag '" + text + "'");
-		}
-
-		internal static ExtensionSubtag? TryParseExtensionSubtag(this LanguageTag.TokenEnumerator tokens)
-		{
-			if (!tokens.CurrentTokenAvailable) // get singletone
-				return null;
-
-			if (tokens.Token.Length != 1)
-				return null;
-
-			if (tokens.TokenIs(PrivateUseSubtags.Singleton))
-				return null;
-
-			char singletone = Char.ToLowerInvariant(tokens.Token[0]);
-
-			if (!tokens.NextTokenAvailable)
-				throw new FormatException("extension subtag '" + singletone + "' not contain elements");
-
-			tokens.ToNextToken();
-
-			ValidateExtensionSubtagElement(tokens.Token);
-
-			var result = new ExtensionSubtag(singletone, tokens.Token);
-
-			tokens.ToNextToken(); // get remaining elements
-
-			while (tokens.CurrentTokenAvailable) 
-			{
-				if (tokens.Token.Length == 1) // next extension subtag or private use
-					break;
-
-				ValidateExtensionSubtagElement(tokens.Token);
-				result.Append(tokens.Token);
-
-				tokens.ToNextToken();
-			}
-
-			return result;
-		}
-
-		private static void ValidateExtensionSubtagElement(string text)
-		{
-			if (text.Length < 2 || 8 < text.Length)
-				throw new FormatException("extension subtag must be from 2 to 8 characters");
-
-			if (!text.All(ch => Char.IsLetterOrDigit(ch) && (int)ch < 127))
-				throw new FormatException("element must consist only of numbers or letters in ASCII");
 		}
 
 		internal static bool IsSet(this LanguageTag.Field checking, LanguageTag.Field test)

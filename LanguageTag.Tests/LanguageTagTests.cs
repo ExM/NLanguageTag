@@ -167,6 +167,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		[TestCase("x-aaa-?")]
 		[TestCase("en-x-aaa-")]
 		[TestCase("en-x-aaa-?")]
+		[TestCase("en-?-aaa")]
 		[ExpectedException(typeof(FormatException))]
 		public void Parse_Fail(string text)
 		{

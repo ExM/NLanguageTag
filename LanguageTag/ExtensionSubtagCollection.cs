@@ -14,9 +14,26 @@ namespace AbbyyLS.Globalization.Bcp47
 		public ExtensionSubtagCollection(params ExtensionSubtag[] subtags)
 			:this()
 		{
-			foreach(var tag in subtags)
+			if (subtags == null || subtags.Length == 0)
+				return;
+
+			_sortedList = new List<ExtensionSubtag>(subtags.Length);
+
+			foreach (var extSubtag in subtags)
 			{
-				Append(tag);
+				var index = _sortedList.BinarySearch(extSubtag, ExtensionSubtag.SingletonComparer);
+				if (index >= 0)
+					throw new FormatException("duplicate extenson subtag with singletone `" + extSubtag.Singleton + "'");
+
+				_sortedList.Insert(~index, extSubtag);
+			}
+		}
+
+		public bool IsEmpty
+		{
+			get
+			{
+				return _sortedList == null;
 			}
 		}
 

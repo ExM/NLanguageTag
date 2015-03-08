@@ -10,8 +10,23 @@ namespace AbbyyLS.Globalization.Bcp47
 	[TestFixture]
 	public class PrivateUseSubtagsTests
 	{
-		[TestCase(null, "")]
-		[TestCase(new string[] {}, "")]
+		[TestCase(null)]
+		[TestCase((object)(new string[0]))]
+		[ExpectedException(typeof(FormatException))]
+		public void EmptyCtor(string[] sequence)
+		{
+			new PrivateUseSubtags(sequence);
+		}
+
+		[Test]
+		public void Empty()
+		{
+			var empty = new PrivateUseSubtags();
+			Assert.IsTrue(empty.IsEmpty);
+			Assert.AreEqual("", empty.ToString());
+			Assert.That(empty.ToArray(), Is.Empty);
+		}
+
 		[TestCase(new string[] { "aaa" }, "x-aaa")]
 		[TestCase(new string[] { "aaa", "bbb" }, "x-aaa-bbb")]
 		public void ToText(string[] args, string expected)

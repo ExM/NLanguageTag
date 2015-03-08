@@ -10,6 +10,23 @@ namespace AbbyyLS.Globalization.Bcp47
 	[TestFixture]
 	public class ExtensionSubtagTests
 	{
+		[TestCase(null)]
+		[TestCase((object)(new string[0]))]
+		[ExpectedException(typeof(FormatException))]
+		public void EmptyCtor(string[] sequence)
+		{
+			new ExtensionSubtag('a', sequence);
+		}
+
+		[Test]
+		public void Empty()
+		{
+			var empty = new ExtensionSubtag();
+			Assert.IsTrue(empty.IsEmpty);
+			Assert.AreEqual("", empty.ToString());
+			Assert.That(empty.ToArray(), Is.Empty);
+		}
+
 		[TestCase("a-bbb", 'a', new string[] { "bbb" })]
 		[TestCase("a-bbb-ccc", 'a', new string[] { "bbb", "ccc" })]
 		public void ParseFromExtensionSubtag(string text, char singleton, string[] subtags)
@@ -31,7 +48,6 @@ namespace AbbyyLS.Globalization.Bcp47
 			text.ParseFromExtensionSubtag();
 		}
 
-		[TestCase(new string[] { }, "")]
 		[TestCase(new string[] { "aaa" }, "a-aaa")]
 		[TestCase(new string[] { "aaa", "bbb" }, "a-aaa-bbb")]
 		public void ToString(string[] subtags, string expected)
@@ -40,7 +56,6 @@ namespace AbbyyLS.Globalization.Bcp47
 			Assert.AreEqual(expected, ext.ToString());
 		}
 
-		[TestCase((object)new string[] { })]
 		[TestCase((object)new string[] { "aaa" })]
 		[TestCase((object)new string[] { "aaa", "bbb" })]
 		public void Enumerate(string[] subtags)
