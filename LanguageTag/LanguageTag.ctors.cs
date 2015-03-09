@@ -27,16 +27,14 @@ namespace AbbyyLS.Globalization.Bcp47
 			: this()
 		{
 			Language = lang;
-			foreach(var extSubtag in extSubtags)
-				Set(extSubtag);
+			Extensions = new ExtensionSubtagCollection(extSubtags);
 		}
 
 		public LanguageTag(Language lang, IEnumerable<ExtensionSubtag> extSubtags, PrivateUseSubtags privateUseSubtags)
 			: this()
 		{
 			Language = lang;
-			foreach(var extSubtag in extSubtags)
-				Set(extSubtag);
+			Extensions = new ExtensionSubtagCollection(extSubtags);
 			PrivateUse = privateUseSubtags;
 		}
 
@@ -44,20 +42,14 @@ namespace AbbyyLS.Globalization.Bcp47
 			: this()
 		{
 			Language = lang;
-			var builder = new VariantCollection.Builder();
-			foreach (var v in variants)
-				builder.Append(Language, Script, v);
-			Variants = builder.ToCollection();
+			Variants = VariantCollection.Create(Language, Script, variants);
 		}
 
 		public LanguageTag(Language lang, IEnumerable<Variant> variants, PrivateUseSubtags privateUseSubtags)
 			: this()
 		{
 			Language = lang;
-			var builder = new VariantCollection.Builder();
-			foreach (var v in variants)
-				builder.Append(Language, Script, v);
-			Variants = builder.ToCollection();
+			Variants = VariantCollection.Create(Language, Script, variants);
 			PrivateUse = privateUseSubtags;
 		}
 
@@ -65,24 +57,16 @@ namespace AbbyyLS.Globalization.Bcp47
 			: this()
 		{
 			Language = lang;
-			var builder = new VariantCollection.Builder();
-			foreach (var v in variants)
-				builder.Append(Language, Script, v);
-			Variants = builder.ToCollection();
-			foreach(var extSubtag in extSubtags)
-				Set(extSubtag);
+			Variants = VariantCollection.Create(Language, Script, variants);
+			Extensions = new ExtensionSubtagCollection(extSubtags);
 		}
 
 		public LanguageTag(Language lang, IEnumerable<Variant> variants, IEnumerable<ExtensionSubtag> extSubtags, PrivateUseSubtags privateUseSubtags)
 			: this()
 		{
 			Language = lang;
-			var builder = new VariantCollection.Builder();
-			foreach (var v in variants)
-				builder.Append(Language, Script, v);
-			Variants = builder.ToCollection();
-			foreach(var extSubtag in extSubtags)
-				Set(extSubtag);
+			Variants = VariantCollection.Create(Language, Script, variants);
+			Extensions = new ExtensionSubtagCollection(extSubtags);
 			PrivateUse = privateUseSubtags;
 		}
 
@@ -106,8 +90,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		{
 			Language = lang;
 			Region = region;
-			foreach(var extSubtag in extSubtags)
-				Set(extSubtag);
+			Extensions = new ExtensionSubtagCollection(extSubtags);
 		}
 
 		public LanguageTag(Language lang, Region? region, IEnumerable<ExtensionSubtag> extSubtags, PrivateUseSubtags privateUseSubtags)
@@ -115,8 +98,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		{
 			Language = lang;
 			Region = region;
-			foreach(var extSubtag in extSubtags)
-				Set(extSubtag);
+			Extensions = new ExtensionSubtagCollection(extSubtags);
 			PrivateUse = privateUseSubtags;
 		}
 
@@ -125,10 +107,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		{
 			Language = lang;
 			Region = region;
-			var builder = new VariantCollection.Builder();
-			foreach (var v in variants)
-				builder.Append(Language, Script, v);
-			Variants = builder.ToCollection();
+			Variants = VariantCollection.Create(Language, Script, variants);
 		}
 
 		public LanguageTag(Language lang, Region? region, IEnumerable<Variant> variants, PrivateUseSubtags privateUseSubtags)
@@ -136,10 +115,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		{
 			Language = lang;
 			Region = region;
-			var builder = new VariantCollection.Builder();
-			foreach (var v in variants)
-				builder.Append(Language, Script, v);
-			Variants = builder.ToCollection();
+			Variants = VariantCollection.Create(Language, Script, variants);
 			PrivateUse = privateUseSubtags;
 		}
 
@@ -148,12 +124,8 @@ namespace AbbyyLS.Globalization.Bcp47
 		{
 			Language = lang;
 			Region = region;
-			var builder = new VariantCollection.Builder();
-			foreach (var v in variants)
-				builder.Append(Language, Script, v);
-			Variants = builder.ToCollection();
-			foreach(var extSubtag in extSubtags)
-				Set(extSubtag);
+			Variants = VariantCollection.Create(Language, Script, variants);
+			Extensions = new ExtensionSubtagCollection(extSubtags);
 		}
 
 		public LanguageTag(Language lang, Region? region, IEnumerable<Variant> variants, IEnumerable<ExtensionSubtag> extSubtags, PrivateUseSubtags privateUseSubtags)
@@ -161,12 +133,8 @@ namespace AbbyyLS.Globalization.Bcp47
 		{
 			Language = lang;
 			Region = region;
-			var builder = new VariantCollection.Builder();
-			foreach (var v in variants)
-				builder.Append(Language, Script, v);
-			Variants = builder.ToCollection();
-			foreach(var extSubtag in extSubtags)
-				Set(extSubtag);
+			Variants = VariantCollection.Create(Language, Script, variants);
+			Extensions = new ExtensionSubtagCollection(extSubtags);
 			PrivateUse = privateUseSubtags;
 		}
 
@@ -190,8 +158,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		{
 			Language = lang;
 			Script = script;
-			foreach(var extSubtag in extSubtags)
-				Set(extSubtag);
+			Extensions = new ExtensionSubtagCollection(extSubtags);
 		}
 
 		public LanguageTag(Language lang, Script? script, IEnumerable<ExtensionSubtag> extSubtags, PrivateUseSubtags privateUseSubtags)
@@ -199,8 +166,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		{
 			Language = lang;
 			Script = script;
-			foreach(var extSubtag in extSubtags)
-				Set(extSubtag);
+			Extensions = new ExtensionSubtagCollection(extSubtags);
 			PrivateUse = privateUseSubtags;
 		}
 
@@ -209,10 +175,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		{
 			Language = lang;
 			Script = script;
-			var builder = new VariantCollection.Builder();
-			foreach (var v in variants)
-				builder.Append(Language, Script, v);
-			Variants = builder.ToCollection();
+			Variants = VariantCollection.Create(Language, Script, variants);
 		}
 
 		public LanguageTag(Language lang, Script? script, IEnumerable<Variant> variants, PrivateUseSubtags privateUseSubtags)
@@ -220,10 +183,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		{
 			Language = lang;
 			Script = script;
-			var builder = new VariantCollection.Builder();
-			foreach (var v in variants)
-				builder.Append(Language, Script, v);
-			Variants = builder.ToCollection();
+			Variants = VariantCollection.Create(Language, Script, variants);
 			PrivateUse = privateUseSubtags;
 		}
 
@@ -232,12 +192,8 @@ namespace AbbyyLS.Globalization.Bcp47
 		{
 			Language = lang;
 			Script = script;
-			var builder = new VariantCollection.Builder();
-			foreach (var v in variants)
-				builder.Append(Language, Script, v);
-			Variants = builder.ToCollection();
-			foreach(var extSubtag in extSubtags)
-				Set(extSubtag);
+			Variants = VariantCollection.Create(Language, Script, variants);
+			Extensions = new ExtensionSubtagCollection(extSubtags);
 		}
 
 		public LanguageTag(Language lang, Script? script, IEnumerable<Variant> variants, IEnumerable<ExtensionSubtag> extSubtags, PrivateUseSubtags privateUseSubtags)
@@ -245,12 +201,8 @@ namespace AbbyyLS.Globalization.Bcp47
 		{
 			Language = lang;
 			Script = script;
-			var builder = new VariantCollection.Builder();
-			foreach (var v in variants)
-				builder.Append(Language, Script, v);
-			Variants = builder.ToCollection();
-			foreach(var extSubtag in extSubtags)
-				Set(extSubtag);
+			Variants = VariantCollection.Create(Language, Script, variants);
+			Extensions = new ExtensionSubtagCollection(extSubtags);
 			PrivateUse = privateUseSubtags;
 		}
 
@@ -277,8 +229,7 @@ namespace AbbyyLS.Globalization.Bcp47
 			Language = lang;
 			Script = script;
 			Region = region;
-			foreach(var extSubtag in extSubtags)
-				Set(extSubtag);
+			Extensions = new ExtensionSubtagCollection(extSubtags);
 		}
 
 		public LanguageTag(Language lang, Script? script, Region? region, IEnumerable<ExtensionSubtag> extSubtags, PrivateUseSubtags privateUseSubtags)
@@ -287,8 +238,7 @@ namespace AbbyyLS.Globalization.Bcp47
 			Language = lang;
 			Script = script;
 			Region = region;
-			foreach(var extSubtag in extSubtags)
-				Set(extSubtag);
+			Extensions = new ExtensionSubtagCollection(extSubtags);
 			PrivateUse = privateUseSubtags;
 		}
 
@@ -298,10 +248,7 @@ namespace AbbyyLS.Globalization.Bcp47
 			Language = lang;
 			Script = script;
 			Region = region;
-			var builder = new VariantCollection.Builder();
-			foreach (var v in variants)
-				builder.Append(Language, Script, v);
-			Variants = builder.ToCollection();
+			Variants = VariantCollection.Create(Language, Script, variants);
 		}
 
 		public LanguageTag(Language lang, Script? script, Region? region, IEnumerable<Variant> variants, PrivateUseSubtags privateUseSubtags)
@@ -310,10 +257,7 @@ namespace AbbyyLS.Globalization.Bcp47
 			Language = lang;
 			Script = script;
 			Region = region;
-			var builder = new VariantCollection.Builder();
-			foreach (var v in variants)
-				builder.Append(Language, Script, v);
-			Variants = builder.ToCollection();
+			Variants = VariantCollection.Create(Language, Script, variants);
 			PrivateUse = privateUseSubtags;
 		}
 
@@ -323,12 +267,8 @@ namespace AbbyyLS.Globalization.Bcp47
 			Language = lang;
 			Script = script;
 			Region = region;
-			var builder = new VariantCollection.Builder();
-			foreach (var v in variants)
-				builder.Append(Language, Script, v);
-			Variants = builder.ToCollection();
-			foreach(var extSubtag in extSubtags)
-				Set(extSubtag);
+			Variants = VariantCollection.Create(Language, Script, variants);
+			Extensions = new ExtensionSubtagCollection(extSubtags);
 		}
 
 		public LanguageTag(Language lang, Script? script, Region? region, IEnumerable<Variant> variants, IEnumerable<ExtensionSubtag> extSubtags, PrivateUseSubtags privateUseSubtags)
@@ -337,12 +277,8 @@ namespace AbbyyLS.Globalization.Bcp47
 			Language = lang;
 			Script = script;
 			Region = region;
-			var builder = new VariantCollection.Builder();
-			foreach (var v in variants)
-				builder.Append(Language, Script, v);
-			Variants = builder.ToCollection();
-			foreach(var extSubtag in extSubtags)
-				Set(extSubtag);
+			Variants = VariantCollection.Create(Language, Script, variants);
+			Extensions = new ExtensionSubtagCollection(extSubtags);
 			PrivateUse = privateUseSubtags;
 		}
 	}

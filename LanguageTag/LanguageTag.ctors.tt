@@ -37,13 +37,9 @@ foreach(var p in new bool[]{false, true})
 <# }; if(r) {
 #>			Region = region;
 <# }; if(v) {
-#>			var builder = new VariantCollection.Builder();
-			foreach (var v in variants)
-				builder.Append(Language, Script, v);
-			Variants = builder.ToCollection();
+#>			Variants = VariantCollection.Create(Language, Script, variants);
 <# }; if(e) {
-#>			foreach(var extSubtag in extSubtags)
-				Set(extSubtag);
+#>			Extensions = new ExtensionSubtagCollection(extSubtags);
 <# }; if(p) {
 #>			PrivateUse = privateUseSubtags;
 <# } #>

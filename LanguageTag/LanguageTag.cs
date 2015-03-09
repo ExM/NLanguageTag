@@ -67,12 +67,17 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		private ExtensionSubtagCollection _extensions;
 
-		public ExtensionSubtagCollection Extensions { get { return _extensions; } }
-
-		private void Set(ExtensionSubtag extSubtag)
+		public ExtensionSubtagCollection Extensions
 		{
-			_extensions.Append(extSubtag);
-			Fields |= Field.Extensions;
+			get { return _extensions; }
+			private set
+			{
+				if (value.IsEmpty)
+					return;
+
+				_extensions = value;
+				Fields |= Field.Extensions;
+			}
 		}
 
 		private PrivateUseSubtags _privateUse;
@@ -178,30 +183,12 @@ namespace AbbyyLS.Globalization.Bcp47
 			if (!tokens.CurrentTokenAvailable)
 				return;
 
-			var variant = tokens.TryParseVariant();
-			if (variant.HasValue)
-			{
-				var builder = new VariantCollection.Builder();
-
-				do
-				{
-					builder.Append(Language, Script, variant.Value);
-					variant = tokens.TryParseVariant();
-				}
-				while(variant.HasValue);
-
-				Variants = builder.ToCollection();
-			}
+			Variants = VariantCollection.TryParse(Language, Script, tokens);
 
 			if (!tokens.CurrentTokenAvailable)
 				return;
 
-			var extSubtag = ExtensionSubtag.TryParse(tokens);
-			while (extSubtag.HasValue)
-			{
-				Set(extSubtag.Value);
-				extSubtag = ExtensionSubtag.TryParse(tokens);
-			}
+			Extensions = ExtensionSubtagCollection.TryParse(tokens);
 
 			if (!tokens.CurrentTokenAvailable)
 				return;

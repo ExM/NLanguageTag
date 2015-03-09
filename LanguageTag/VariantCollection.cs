@@ -18,6 +18,20 @@ namespace AbbyyLS.Globalization.Bcp47
 				_variants = variants;
 		}
 
+		public static VariantCollection Create(Language? lang, Script? script, IEnumerable<Variant> variants)
+		{
+			VariantCollection.Builder builder = null;
+			foreach(var variant in variants)
+			{
+				if (builder == null)
+					builder = new VariantCollection.Builder(lang, script);
+				
+				builder.Append(variant);
+			}
+
+			return (builder == null) ? new VariantCollection() : builder.ToCollection();
+		}
+
 		public bool IsEmpty
 		{
 			get
@@ -84,18 +98,41 @@ namespace AbbyyLS.Globalization.Bcp47
 			return GetEnumerator();
 		}
 
-		internal class Builder: IEnumerable<Variant>
+		internal static VariantCollection TryParse(Language? lang, Script? script, LanguageTag.TokenEnumerator tokens)
 		{
+			var variant = tokens.TryParseVariant();
+			if (!variant.HasValue)
+				return new VariantCollection();
+			
+			var builder = new VariantCollection.Builder(lang, script);
+
+			do
+			{
+				builder.Append(variant.Value);
+				variant = tokens.TryParseVariant();
+			}
+			while (variant.HasValue);
+
+			return builder.ToCollection();
+		}
+
+		private class Builder: IEnumerable<Variant>
+		{
+			private Language? _lang;
+			private Script? _script;
+
 			private List<Variant> _prefix = new List<Variant>();
 			private List<Variant> _options = new List<Variant>();
 
-			public Builder()
+			public Builder(Language? lang, Script? script)
 			{
+				_lang = lang;
+				_script = script;
 			}
 
-			public void Append(Language? lang, Script? script, Variant item)
+			public void Append(Variant item)
 			{
-				var restrictive = item.RestrictiveAcceptableFor(lang, script, this);
+				var restrictive = item.RestrictiveAcceptableFor(_lang, _script, this);
 				if (!restrictive.HasValue)
 					throw new FormatException("variant subtag '" + item + "' is unacceptable");
 
@@ -121,9 +158,6 @@ namespace AbbyyLS.Globalization.Bcp47
 			public VariantCollection ToCollection()
 			{
 				var count = _prefix.Count + _options.Count;
-				if (count == 0)
-					return new VariantCollection();
-
 				var variants = new Variant[count];
 
 				_prefix.CopyTo(variants);

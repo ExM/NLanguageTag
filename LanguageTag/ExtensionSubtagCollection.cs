@@ -18,15 +18,13 @@ namespace AbbyyLS.Globalization.Bcp47
 				return;
 
 			_sortedList = new List<ExtensionSubtag>(subtags.Length);
-
 			foreach (var extSubtag in subtags)
-			{
-				var index = _sortedList.BinarySearch(extSubtag, ExtensionSubtag.SingletonComparer);
-				if (index >= 0)
-					throw new FormatException("duplicate extenson subtag with singletone `" + extSubtag.Singleton + "'");
+				Append(extSubtag);
+		}
 
-				_sortedList.Insert(~index, extSubtag);
-			}
+		public ExtensionSubtagCollection(IEnumerable<ExtensionSubtag> subtags)
+			: this(subtags.ToArray())
+		{
 		}
 
 		public bool IsEmpty
@@ -43,11 +41,8 @@ namespace AbbyyLS.Globalization.Bcp47
 				Equals((ExtensionSubtagCollection)obj);
 		}
 
-		internal void Append(ExtensionSubtag extSubtag)
+		private void Append(ExtensionSubtag extSubtag)
 		{
-			if (_sortedList == null)
-				_sortedList = new List<ExtensionSubtag>();
-
 			var index = _sortedList.BinarySearch(extSubtag, ExtensionSubtag.SingletonComparer);
 			if (index >= 0)
 				throw new FormatException("duplicate extenson subtag with singletone `" + extSubtag.Singleton + "'");
@@ -86,6 +81,25 @@ namespace AbbyyLS.Globalization.Bcp47
 		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
 		{
 			return GetEnumerator();
+		}
+
+		internal static ExtensionSubtagCollection TryParse(LanguageTag.TokenEnumerator tokens)
+		{
+			var result = new ExtensionSubtagCollection();
+			var subtag = ExtensionSubtag.TryParse(tokens);
+
+			if (subtag.HasValue)
+			{
+				result._sortedList = new List<ExtensionSubtag>();
+				do
+				{
+					result.Append(subtag.Value);
+					subtag = ExtensionSubtag.TryParse(tokens);
+				}
+				while (subtag.HasValue);
+			}
+
+			return result;
 		}
 	}
 }

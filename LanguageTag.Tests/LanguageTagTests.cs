@@ -188,7 +188,7 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa-", "ru-Latn-RU-Petr1708-a-aaa")]
 		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa-?", "ru-Latn-RU-Petr1708-a-aaa")]
-		[TestCase("ru-Latn-RU-Petr1708-a-aaa-b-?", "ru-Latn-RU-Petr1708-a-aaa")]
+		[TestCase("ru-Latn-RU-Petr1708-a-aaa-b-?", "ru-Latn-RU-Petr1708")]
 		[TestCase("ru-Latn-RU-Petr1708-?", "ru-Latn-RU-Petr1708")]
 		[TestCase("ru-Latn-RU-?", "ru-Latn-RU")]
 		[TestCase("ru-Latn-?", "ru-Latn")]
