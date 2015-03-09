@@ -305,6 +305,10 @@ using System;
 
 namespace AbbyyLS.Globalization.Bcp47
 {
+	/// <summary>
+	/// Variant subtags are used to indicate additional, well-recognized variations that define a
+	/// language or its dialects that are not covered by other available subtags.
+	/// </summary>
 	public enum Variant
 	{
 <# var num = 0;
