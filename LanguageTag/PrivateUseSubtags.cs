@@ -103,16 +103,25 @@ namespace AbbyyLS.Globalization.Bcp47
 			return _subtags.Contains(subtag, StringComparer.OrdinalIgnoreCase);
 		}
 
+		/// <summary>
+		/// Indicates whether the current object is equal to another object of the same type.
+		/// </summary>
 		public bool Equals(PrivateUseSubtags other)
 		{
 			return _subtags.IsEquivalent(other._subtags);
 		}
 
+		/// <summary>
+		/// Returns the hash code for this instance.
+		/// </summary>
 		public override int GetHashCode()
 		{
 			return _subtags.GetHashCodeOfSequence();
 		}
 
+		/// <summary>
+		/// Returns a value indicating whether this instance is equal to a specified object.
+		/// </summary>
 		public override bool Equals(object obj)
 		{
 			return obj is PrivateUseSubtags &&
@@ -145,6 +154,9 @@ namespace AbbyyLS.Globalization.Bcp47
 			return string.Join(LanguageTag.TagSeparator.ToString(), SubtagElements());
 		}
 
+		/// <summary>
+		/// Returns an enumerator that iterates through the collection.
+		/// </summary>
 		public IEnumerator<string> GetEnumerator()
 		{
 			if (_subtags == null)

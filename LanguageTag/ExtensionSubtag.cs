@@ -25,6 +25,9 @@ namespace AbbyyLS.Globalization.Bcp47
 				_sequence[i] = ValidateElement(sequence[i]);
 		}
 
+		/// <summary>
+		/// Returns an enumerator that iterates through the collection.
+		/// </summary>
 		public IEnumerator<string> GetEnumerator()
 		{
 			if (_sequence == null)
@@ -46,17 +49,26 @@ namespace AbbyyLS.Globalization.Bcp47
 			return GetEnumerator();
 		}
 
+		/// <summary>
+		/// Indicates whether the current object is equal to another object of the same type.
+		/// </summary>
 		public bool Equals(ExtensionSubtag other)
 		{
 			return Singleton == other.Singleton &&
 				_sequence.IsEquivalent(other._sequence);
 		}
 
+		/// <summary>
+		/// Returns the hash code for this instance.
+		/// </summary>
 		public override int GetHashCode()
 		{
 			return Singleton.GetHashCode() ^ _sequence.GetHashCodeOfSequence();
 		}
 
+		/// <summary>
+		/// Returns a value indicating whether this instance is equal to a specified object.
+		/// </summary>
 		public override bool Equals(object obj)
 		{
 			return obj is ExtensionSubtag &&

@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace AbbyyLS.Globalization.Bcp47
 {
+	/// <summary>
+	/// Language tags are used to help identify languages, whether spoken, written, signed, or otherwise signaled, for the purpose of communication.
+	/// Language tag syntax is defined by the IETF's BCP 47 (https://tools.ietf.org/html/bcp47) 
+	/// and corresponds to the IANA Language Subtag Registry (http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) of 2014-12-17
+	/// </summary>
 	public partial struct LanguageTag : IEquatable<LanguageTag>
 	{
 		internal const char TagSeparator = '-';
@@ -251,11 +256,17 @@ namespace AbbyyLS.Globalization.Bcp47
 					yield return subtag;
 		}
 
+		/// <summary>
+		/// Returns a string that represents the current language tag.
+		/// </summary>
 		public override string ToString()
 		{
 			return string.Join(TagSeparator.ToString(), SubtagsAsText());
 		}
 
+		/// <summary>
+		/// Indicates whether the current object is equal to another object of the same type.
+		/// </summary>
 		public bool Equals(LanguageTag other)
 		{
 			return Language == other.Language &&
@@ -266,12 +277,18 @@ namespace AbbyyLS.Globalization.Bcp47
 				PrivateUse == other.PrivateUse;
 		}
 
+		/// <summary>
+		/// Returns a value indicating whether this instance is equal to a specified object.
+		/// </summary>
 		public override bool Equals(object obj)
 		{
 			return obj is LanguageTag &&
 				Equals((LanguageTag)obj);
 		}
 
+		/// <summary>
+		/// Returns the hash code for this instance.
+		/// </summary>
 		public override int GetHashCode()
 		{
 			return Language.GetHashCode() ^

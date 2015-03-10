@@ -35,6 +35,9 @@ namespace AbbyyLS.Globalization.Bcp47
 			}
 		}
 
+		/// <summary>
+		/// Returns a value indicating whether this instance is equal to a specified object.
+		/// </summary>
 		public override bool Equals(object obj)
 		{
 			return obj is ExtensionSubtagCollection &&
@@ -50,6 +53,9 @@ namespace AbbyyLS.Globalization.Bcp47
 			_sortedList.Insert(~index, extSubtag);
 		}
 
+		/// <summary>
+		/// Indicates whether the current object is equal to another object of the same type.
+		/// </summary>
 		public bool Equals(ExtensionSubtagCollection other)
 		{
 			return _sortedList.IsEquivalent(other._sortedList);
@@ -65,6 +71,9 @@ namespace AbbyyLS.Globalization.Bcp47
 			return !(a == b);
 		}
 
+		/// <summary>
+		/// Returns the hash code for this instance.
+		/// </summary>
 		public override int GetHashCode()
 		{
 			return _sortedList.GetHashCodeOfSequence();

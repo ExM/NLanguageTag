@@ -40,12 +40,18 @@ namespace AbbyyLS.Globalization.Bcp47
 			}
 		}
 
+		/// <summary>
+		/// Returns a value indicating whether this instance is equal to a specified object.
+		/// </summary>
 		public override bool Equals(object other)
 		{
 			return other is VariantCollection &&
 				Equals((VariantCollection)other);
 		}
 
+		/// <summary>
+		/// Indicates whether the current object is equal to another object of the same type.
+		/// </summary>
 		public bool Equals(VariantCollection other)
 		{
 			if (_variants == null)
@@ -74,6 +80,9 @@ namespace AbbyyLS.Globalization.Bcp47
 			return !(a == b);
 		}
 
+		/// <summary>
+		/// Returns the hash code for this instance.
+		/// </summary>
 		public override int GetHashCode()
 		{
 			return _variants.GetHashCodeOfSequence();
@@ -86,6 +95,9 @@ namespace AbbyyLS.Globalization.Bcp47
 			return _variants.Contains(item);
 		}
 
+		/// <summary>
+		/// Returns an enumerator that iterates through the collection.
+		/// </summary>
 		public IEnumerator<Variant> GetEnumerator()
 		{
 			if (_variants == null)
@@ -152,7 +164,11 @@ namespace AbbyyLS.Globalization.Bcp47
 
 			public IEnumerator<Variant> GetEnumerator()
 			{
-				return _prefix.Union(_options).GetEnumerator();
+				foreach (var v in _prefix)
+					yield return v;
+
+				foreach (var v in _options)
+					yield return v;
 			}
 
 			public VariantCollection ToCollection()
