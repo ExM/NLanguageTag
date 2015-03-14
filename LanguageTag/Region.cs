@@ -2,6 +2,10 @@ using System;
 
 namespace AbbyyLS.Globalization.Bcp47
 {
+	/// <summary>
+	/// Region subtags are used to indicate linguistic variations associated
+	/// with or appropriate to a specific country, territory, or region.
+	/// </summary>
 	public enum Region
 	{
 		/// <summary>

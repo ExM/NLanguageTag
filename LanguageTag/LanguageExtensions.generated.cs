@@ -784,6 +784,9 @@ namespace AbbyyLS.Globalization.Bcp47
 			}
 		}
 
+		/// <summary>
+		/// Converts the value to its equivalent string representation.
+		/// </summary>
 		public static string ToText(this Language v)
 		{
 			switch (v)

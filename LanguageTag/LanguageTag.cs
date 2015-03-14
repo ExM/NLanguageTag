@@ -16,10 +16,16 @@ namespace AbbyyLS.Globalization.Bcp47
 	{
 		internal const char TagSeparator = '-';
 
+		/// <summary>
+		/// Assigned properties of language subtag
+		/// </summary>
 		public Field Fields { get; private set; }
 
 		private Language? _language;
 
+		/// <summary>
+		/// The primary language subtag is the first subtag in a language tag.
+		/// </summary>
 		public Language? Language
 		{
 			get { return _language; }
@@ -31,7 +37,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		}
 
 		private Script? _script;
-
+		
+		/// <summary>
+		/// Script subtags are used to indicate the script or writing system variations
+		/// that distinguish the written forms of a language or its dialects
+		/// </summary>
 		public Script? Script
 		{
 			get { return _script; }
@@ -46,6 +56,10 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		private Region? _region;
 
+		/// <summary>
+		/// Region subtags are used to indicate linguistic variations associated
+		/// with or appropriate to a specific country, territory, or region.
+		/// </summary>
 		public Region? Region
 		{
 			get { return _region; }
@@ -59,6 +73,10 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		private VariantCollection _variants;
 
+		/// <summary>
+		/// Variant subtags are used to indicate additional, well-recognized variations that define a
+		/// language or its dialects that are not covered by other available subtags.
+		/// </summary>
 		public VariantCollection Variants
 		{
 			get { return _variants; }
@@ -72,6 +90,9 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		private ExtensionSubtagCollection _extensions;
 
+		/// <summary>
+		/// Extensions provide a mechanism for extending language tags for use in various applications.
+		/// </summary>
 		public ExtensionSubtagCollection Extensions
 		{
 			get { return _extensions; }
@@ -87,6 +108,10 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		private PrivateUseSubtags _privateUse;
 
+		/// <summary>
+		/// Private use subtags are used to indicate distinctions in language
+		/// that are important in a given context by private agreement.
+		/// </summary>
 		public PrivateUseSubtags PrivateUse
 		{
 			get { return _privateUse; }
@@ -201,7 +226,7 @@ namespace AbbyyLS.Globalization.Bcp47
 			PrivateUse = PrivateUseSubtags.Parse(tokens);
 		}
 
-		public bool Contains(LanguageTag other)
+		public bool Included(LanguageTag other)
 		{
 			if (other.Language.HasValue && other.Language != Language)
 				return false;
@@ -226,12 +251,12 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		public static bool operator >=(LanguageTag a, LanguageTag b)
 		{
-			return a.Contains(b);
+			return a.Included(b);
 		}
 
 		public static bool operator <=(LanguageTag a, LanguageTag b)
 		{
-			return b.Contains(a);
+			return b.Included(a);
 		}
 
 		private IEnumerable<string> SubtagsAsText()
@@ -299,30 +324,77 @@ namespace AbbyyLS.Globalization.Bcp47
 				PrivateUse.GetHashCode();
 		}
 
+		/// <summary>
+		/// Equality operator
+		/// </summary>
 		public static bool operator ==(LanguageTag a, LanguageTag b)
 		{
 			return a.Equals(b);
 		}
 
+		/// <summary>
+		/// Not equality operator
+		/// </summary>
 		public static bool operator !=(LanguageTag a, LanguageTag b)
 		{
 			return !(a == b);
 		}
 
+		/// <summary>
+		/// Assigned properties of language subtag
+		/// </summary>
 		[Flags]
 		public enum Field : byte
 		{
+			/// <summary>
+			/// Nothing
+			/// </summary>
 			None = 0x00,
+
+			/// <summary>
+			/// Primary language subtag
+			/// </summary>
 			Language = 0x01,
+
+			/// <summary>
+			/// Script subtag
+			/// </summary>
 			Script = 0x02,
+
+			/// <summary>
+			/// Region subtag
+			/// </summary>
 			Region = 0x04,
+
+			/// <summary>
+			/// Variant subtags
+			/// </summary>
 			Variants = 0x08,
+
+			/// <summary>
+			/// Extension subtags
+			/// </summary>
 			Extensions = 0x10,
+
+			/// <summary>
+			/// Private use subtags
+			/// </summary>
 			PrivateUse = 0x20,
 
+			/// <summary>
+			/// Most commonly used (Language, Script, Region)
+			/// </summary>
 			Primary = Language | Script | Region,
-			Published = Primary | Variants,
-			All = Published | Extensions | PrivateUse
+
+			/// <summary>
+			/// Subtags enumerated in the BCP47 (Language, Script, Region, Variants)
+			/// </summary>
+			Enumerated = Primary | Variants,
+
+			/// <summary>
+			/// All subtags
+			/// </summary>
+			All = Enumerated | Extensions | PrivateUse
 		}
 
 		internal class TokenEnumerator

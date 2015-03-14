@@ -7,10 +7,16 @@ using System.Threading.Tasks;
 
 namespace AbbyyLS.Globalization.Bcp47
 {
+	/// <summary>
+	/// Collection of variant subtags
+	/// </summary>
 	public struct VariantCollection : IEnumerable<Variant>, IEquatable<VariantCollection>
 	{
 		private Variant[] _variants;
 
+		/// <summary>
+		/// Create collection of variant subtags
+		/// </summary>
 		public VariantCollection(params Variant[] variants)
 			:this()
 		{
@@ -32,6 +38,9 @@ namespace AbbyyLS.Globalization.Bcp47
 			return (builder == null) ? new VariantCollection() : builder.ToCollection();
 		}
 
+		/// <summary>
+		/// This collection not contain elements
+		/// </summary>
 		public bool IsEmpty
 		{
 			get
@@ -70,11 +79,17 @@ namespace AbbyyLS.Globalization.Bcp47
 			return true;
 		}
 
+		/// <summary>
+		/// Equality operator
+		/// </summary>
 		public static bool operator ==(VariantCollection a, VariantCollection b)
 		{
 			return a.Equals(b);
 		}
 
+		/// <summary>
+		/// Not equality operator
+		/// </summary>
 		public static bool operator !=(VariantCollection a, VariantCollection b)
 		{
 			return !(a == b);
@@ -88,6 +103,9 @@ namespace AbbyyLS.Globalization.Bcp47
 			return _variants.GetHashCodeOfSequence();
 		}
 
+		/// <summary>
+		/// Determines whether a sequence contains a specified element
+		/// </summary>
 		public bool Contains(Variant item)
 		{
 			if (_variants == null)

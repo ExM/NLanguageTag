@@ -23,7 +23,21 @@ foreach(var e in new bool[]{false, true})
 foreach(var p in new bool[]{false, true})
 { #>
 
-		public LanguageTag(Language lang<#
+		/// <summary>
+		/// Create the LanguageTag instance
+		/// </summary>
+		/// <param name="lang">primary language</param>
+<# if(s) {
+#>		/// <param name="script">script subtag</param>
+<# }; if(r) {
+#>		/// <param name="region">region subtag</param>
+<# }; if(v) {
+#>		/// <param name="variants">enumarate of variant subtags</param>
+<# }; if(e) {
+#>		/// <param name="extSubtags">enumarate of extensions subtags</param>
+<# }; if(p) {
+#>		/// <param name="privateUseSubtags">private use subtag</param>
+<# } #>		public LanguageTag(Language lang<#
 		if(s) {#>, Script? script<# }; 
 		if(r) {#>, Region? region<# }; 
 		if(v) {#>, IEnumerable<Variant> variants<# }; 

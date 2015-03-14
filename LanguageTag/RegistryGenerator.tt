@@ -5,7 +5,7 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ output extension=".statistic.txt" #>
-<#@ include file="..\T4Templates\Registry.ttinclude" #>
+<#@ include file="..\T4Templates\Registry.ttinclude" #>F
 <#@ include file="..\T4Templates\MultipleOutputHelper.ttinclude"#>
 <# var manager = Manager.Create(Host, GenerationEnvironment); #>
 <# manager.StartNewFile("ExtLanguageExtensions.cs"); #>
@@ -14,8 +14,15 @@ using System.Globalization;
 
 namespace AbbyyLS.Globalization.Bcp47
 {
+	/// <summary>
+	/// Мethods for the components of language tag
+	/// </summary>
 	public static partial class LanguageTagExtensions
 	{
+		/// <summary>
+		/// Determines the possible presence of extlang subtag
+		/// </summary>
+		/// <param name="language">primary language subtag</param>
 		public static bool ExtLanguageAvailable(this Language language)
 		{
 			switch(language)
@@ -30,6 +37,10 @@ namespace AbbyyLS.Globalization.Bcp47
 			}
 		}
 
+		/// <summary>
+		/// specifies the language that must precede the extlang subtag
+		/// </summary>
+		/// <param name="language">primary language subtag</param>
 		public static Language? GetPrefix(this Language language)
 		{
 			switch(language)
@@ -72,9 +83,9 @@ using System.Globalization;
 
 namespace AbbyyLS.Globalization.Bcp47
 {
-	public static class Grandfathered
+	internal static class Grandfathered
 	{
-		public static string GetPreferredValue(string text)
+		internal static string GetPreferredValue(string text)
 		{
 			switch(text.ToLower())
 			{
@@ -99,6 +110,9 @@ using System;
 
 namespace AbbyyLS.Globalization.Bcp47
 {
+	/// <summary>
+	/// The primary language subtag is the first subtag in a language tag.
+	/// </summary>
 	public enum Language
 	{
 <#foreach(var entry in prlangs.Where(_ => _.PreferredValue == null))
@@ -161,6 +175,9 @@ namespace AbbyyLS.Globalization.Bcp47
 			}
 		}
 
+		/// <summary>
+		/// Converts the value to its equivalent string representation.
+		/// </summary>
 		public static string ToText(this Language v)
 		{
 			switch (v)
@@ -193,6 +210,10 @@ using System;
 
 namespace AbbyyLS.Globalization.Bcp47
 {
+	/// <summary>
+	/// Region subtags are used to indicate linguistic variations associated
+	/// with or appropriate to a specific country, territory, or region.
+	/// </summary>
 	public enum Region
 	{
 <#foreach(var entry in regions.Where(_ => _.PreferredValue == null))
@@ -217,6 +238,9 @@ namespace AbbyyLS.Globalization.Bcp47
 {
 	public static partial class LanguageTagExtensions
 	{
+		/// <summary>
+		/// Converts the value to its equivalent string representation.
+		/// </summary>
 		public static string ToText(this Region v)
 		{
 			switch (v)
@@ -249,6 +273,10 @@ using System;
 
 namespace AbbyyLS.Globalization.Bcp47
 {
+	/// <summary>
+	/// Script subtags are used to indicate the script or writing system variations
+	/// that distinguish the written forms of a language or its dialects
+	/// </summary>
 	public enum Script
 	{
 <#foreach(var entry in scripts)
@@ -273,6 +301,10 @@ namespace AbbyyLS.Globalization.Bcp47
 {
 	public static partial class LanguageTagExtensions
 	{
+
+		/// <summary>
+		/// Converts the value to its equivalent string representation.
+		/// </summary>
 		public static string ToText(this Script v)
 		{
 			switch (v)
@@ -348,6 +380,9 @@ namespace AbbyyLS.Globalization.Bcp47
 			}
 		}
 
+		/// <summary>
+		/// Converts the value to its equivalent string representation.
+		/// </summary>
 		public static string ToText(this Variant v)
 		{
 			switch (v)

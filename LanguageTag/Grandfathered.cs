@@ -3,9 +3,9 @@ using System.Globalization;
 
 namespace AbbyyLS.Globalization.Bcp47
 {
-	public static class Grandfathered
+	internal static class Grandfathered
 	{
-		public static string GetPreferredValue(string text)
+		internal static string GetPreferredValue(string text)
 		{
 			switch(text.ToLower())
 			{

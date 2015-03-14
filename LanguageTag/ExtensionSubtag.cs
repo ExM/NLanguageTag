@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace AbbyyLS.Globalization.Bcp47
 {
+	/// <summary>
+	/// Extensions provide a mechanism for extending language tags for use in various applications.
+	/// </summary>
 	public struct ExtensionSubtag : IEquatable<ExtensionSubtag>, IEnumerable<string>
 	{
 		private string[] _sequence;
@@ -36,6 +39,9 @@ namespace AbbyyLS.Globalization.Bcp47
 				return _sequence.AsEnumerable().GetEnumerator();
 		}
 
+		/// <summary>
+		/// This collection not contain elements
+		/// </summary>
 		public bool IsEmpty
 		{
 			get
@@ -75,11 +81,17 @@ namespace AbbyyLS.Globalization.Bcp47
 				Equals((ExtensionSubtag)obj);
 		}
 
+		/// <summary>
+		/// Equality operator
+		/// </summary>
 		public static bool operator ==(ExtensionSubtag x, ExtensionSubtag y)
 		{
 			return x.Equals(y);
 		}
 
+		/// <summary>
+		/// Not equality operator
+		/// </summary>
 		public static bool operator !=(ExtensionSubtag x, ExtensionSubtag y)
 		{
 			return !(x == y);
@@ -96,19 +108,13 @@ namespace AbbyyLS.Globalization.Bcp47
 				yield return el;
 		}
 
+		/// <summary>
+		/// Converts the value of this instance to its equivalent string representation.
+		/// </summary>
+		/// <returns></returns>
 		public override string ToString()
 		{
 			return string.Join(LanguageTag.TagSeparator.ToString(), SubtagElements());
-		}
-
-		public static readonly IComparer<ExtensionSubtag> SingletonComparer = new SingletonComparerImpl();
-
-		private class SingletonComparerImpl: IComparer<ExtensionSubtag>
-		{
-			public int Compare(ExtensionSubtag x, ExtensionSubtag y)
-			{
-				return x.Singleton.CompareTo(y.Singleton);
-			}
 		}
 
 		internal static ExtensionSubtag? TryParse(LanguageTag.TokenEnumerator tokens)

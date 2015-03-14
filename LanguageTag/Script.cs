@@ -2,6 +2,10 @@ using System;
 
 namespace AbbyyLS.Globalization.Bcp47
 {
+	/// <summary>
+	/// Script subtags are used to indicate the script or writing system variations
+	/// that distinguish the written forms of a language or its dialects
+	/// </summary>
 	public enum Script
 	{
 		/// <summary>

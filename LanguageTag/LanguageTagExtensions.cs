@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace AbbyyLS.Globalization.Bcp47
 {
+	/// <summary>
+	/// 
+	/// </summary>
 	public static partial class LanguageTagExtensions
 	{
 		internal static Script? TryParseScript(this LanguageTag.TokenEnumerator tokens)
@@ -113,7 +116,7 @@ namespace AbbyyLS.Globalization.Bcp47
 			return prefix.Value.ToText() + LanguageTag.TagSeparator + lang.ToText();
 		}
 
-		public static Language ParseAsLanguage(this string text)
+		public static Language ParseFromLanguage(this string text)
 		{
 			try
 			{

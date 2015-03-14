@@ -3,8 +3,15 @@ using System.Globalization;
 
 namespace AbbyyLS.Globalization.Bcp47
 {
+	/// <summary>
+	/// Мethods for the components of language tag
+	/// </summary>
 	public static partial class LanguageTagExtensions
 	{
+		/// <summary>
+		/// Determines the possible presence of extlang subtag
+		/// </summary>
+		/// <param name="language">primary language subtag</param>
 		public static bool ExtLanguageAvailable(this Language language)
 		{
 			switch(language)
@@ -23,6 +30,10 @@ namespace AbbyyLS.Globalization.Bcp47
 			}
 		}
 
+		/// <summary>
+		/// specifies the language that must precede the extlang subtag
+		/// </summary>
+		/// <param name="language">primary language subtag</param>
 		public static Language? GetPrefix(this Language language)
 		{
 			switch(language)

@@ -66,12 +66,12 @@ namespace AbbyyLS.Globalization.Bcp47
 		[TestCase("en-a-aaa-b-bbb", "en-a-aaa-b-bbb", true)]
 		[TestCase("en-b-bbb", "en-a-aaa-b-bbb", false)]
 		[TestCase("en-a-aaa-b-ccc", "en-a-aaa-b-bbb", false)]
-		public void Contains(string x, string y, bool expected)
+		public void Included(string x, string y, bool expected)
 		{
 			var xTag = LanguageTag.Parse(x);
 			var yTag = LanguageTag.Parse(y);
 
-			Assert.That(xTag.Contains(yTag), Is.EqualTo(expected));
+			Assert.That(xTag.Included(yTag), Is.EqualTo(expected));
 		}
 
 		[TestCase("en-scotland", ">=", "en", true)]

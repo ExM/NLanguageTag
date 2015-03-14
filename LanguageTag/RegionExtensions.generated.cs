@@ -5,6 +5,9 @@ namespace AbbyyLS.Globalization.Bcp47
 {
 	public static partial class LanguageTagExtensions
 	{
+		/// <summary>
+		/// Converts the value to its equivalent string representation.
+		/// </summary>
 		public static string ToText(this Region v)
 		{
 			switch (v)

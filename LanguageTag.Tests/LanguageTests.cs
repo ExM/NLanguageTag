@@ -15,7 +15,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		{
 			foreach (var text in TestContent.GetLanguages())
 			{
-				var lang = text.ParseAsLanguage();
+				var lang = text.ParseFromLanguage();
 
 				lang.GetSupressScript();
 				lang.GetMacrolanguage();
@@ -27,7 +27,7 @@ namespace AbbyyLS.Globalization.Bcp47
 
 			foreach (var text in TestContent.GetExtLanguages())
 			{
-				var lang = text.ParseAsLanguage();
+				var lang = text.ParseFromLanguage();
 
 				Assert.AreEqual(text, lang.ToExtLanguage());
 			}
@@ -51,7 +51,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		[TestCase("iw", Language.HE)]
 		public void ParseFromLanguage(string text, Language expected)
 		{
-			Assert.AreEqual(expected, text.ParseAsLanguage());
+			Assert.AreEqual(expected, text.ParseFromLanguage());
 		}
 
 		[TestCase(Language.AFB, "afb")]
@@ -86,7 +86,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		[ExpectedException(typeof(FormatException))]
 		public void ParseFromLanguage_Fail(string text)
 		{
-			text.ParseAsLanguage();
+			text.ParseFromLanguage();
 		}
 
 		[TestCase(Language.AFB, "ar-afb")]

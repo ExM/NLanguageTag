@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AbbyyLS.Globalization.Bcp47
 {
+	/// <summary>
+	/// Private use subtags are used to indicate distinctions in language
+	/// that are important in a given context by private agreement.
+	/// </summary>
 	public struct PrivateUseSubtags : IEnumerable<string>, IEquatable<PrivateUseSubtags>
 	{
 		private string[] _subtags;
@@ -45,11 +49,18 @@ namespace AbbyyLS.Globalization.Bcp47
 			return result;
 		}
 
+		/// <summary>
+		/// Converts the string representation of a private use subtags
+		/// </summary>
 		public static PrivateUseSubtags Parse(string text)
 		{
 			return Parse(new LanguageTag.TokenEnumerator(text));
 		}
 
+		/// <summary>
+		/// Converts the string representation of a private use subtags
+		/// </summary>
+		/// <returns>true if s was converted successfully; otherwise, false.</returns>
 		public static bool TryParse(string text, out PrivateUseSubtags result)
 		{
 			try
@@ -64,6 +75,9 @@ namespace AbbyyLS.Globalization.Bcp47
 			}
 		}
 
+		/// <summary>
+		/// Converts the string representation of a private use subtags
+		/// </summary>
 		public static PrivateUseSubtags? TryParse(string text)
 		{
 			try
@@ -87,6 +101,9 @@ namespace AbbyyLS.Globalization.Bcp47
 			return text.ToLowerInvariant();
 		}
 
+		/// <summary>
+		/// This collection not contain elements
+		/// </summary>
 		public bool IsEmpty
 		{
 			get
@@ -95,6 +112,9 @@ namespace AbbyyLS.Globalization.Bcp47
 			}
 		}
 
+		/// <summary>
+		/// Determines whether a sequence contains a specified element
+		/// </summary>
 		public bool Contains(string subtag)
 		{
 			if (_subtags == null)
@@ -128,11 +148,17 @@ namespace AbbyyLS.Globalization.Bcp47
 				Equals((PrivateUseSubtags)obj);
 		}
 
+		/// <summary>
+		/// Equality operator
+		/// </summary>
 		public static bool operator ==(PrivateUseSubtags x, PrivateUseSubtags y)
 		{
 			return x.Equals(y);
 		}
 
+		/// <summary>
+		/// Not equality operator
+		/// </summary>
 		public static bool operator !=(PrivateUseSubtags x, PrivateUseSubtags y)
 		{
 			return !(x == y);
@@ -149,6 +175,9 @@ namespace AbbyyLS.Globalization.Bcp47
 				yield return el;
 		}
 
+		/// <summary>
+		/// Converts the value of this instance to its equivalent string representation.
+		/// </summary>
 		public override string ToString()
 		{
 			return string.Join(LanguageTag.TagSeparator.ToString(), SubtagElements());

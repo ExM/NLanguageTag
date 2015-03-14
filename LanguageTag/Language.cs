@@ -2,6 +2,9 @@ using System;
 
 namespace AbbyyLS.Globalization.Bcp47
 {
+	/// <summary>
+	/// The primary language subtag is the first subtag in a language tag.
+	/// </summary>
 	public enum Language
 	{
 		/// <summary>

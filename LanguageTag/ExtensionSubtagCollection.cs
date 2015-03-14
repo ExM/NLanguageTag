@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace AbbyyLS.Globalization.Bcp47
 {
+	/// <summary>
+	/// Collection of extension subtags
+	/// </summary>
 	public struct ExtensionSubtagCollection : IEnumerable<ExtensionSubtag>, IEquatable<ExtensionSubtagCollection>
 	{
 		private List<ExtensionSubtag> _sortedList;
@@ -27,6 +30,9 @@ namespace AbbyyLS.Globalization.Bcp47
 		{
 		}
 
+		/// <summary>
+		/// This collection not contain elements
+		/// </summary>
 		public bool IsEmpty
 		{
 			get
@@ -46,11 +52,21 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		private void Append(ExtensionSubtag extSubtag)
 		{
-			var index = _sortedList.BinarySearch(extSubtag, ExtensionSubtag.SingletonComparer);
+			var index = _sortedList.BinarySearch(extSubtag, _singletonComparer);
 			if (index >= 0)
 				throw new FormatException("duplicate extenson subtag with singletone `" + extSubtag.Singleton + "'");
 			
 			_sortedList.Insert(~index, extSubtag);
+		}
+
+		private static readonly IComparer<ExtensionSubtag> _singletonComparer = new SingletonComparerImpl();
+
+		private class SingletonComparerImpl : IComparer<ExtensionSubtag>
+		{
+			public int Compare(ExtensionSubtag x, ExtensionSubtag y)
+			{
+				return x.Singleton.CompareTo(y.Singleton);
+			}
 		}
 
 		/// <summary>
@@ -61,11 +77,17 @@ namespace AbbyyLS.Globalization.Bcp47
 			return _sortedList.IsEquivalent(other._sortedList);
 		}
 
+		/// <summary>
+		/// Equality operator
+		/// </summary>
 		public static bool operator ==(ExtensionSubtagCollection a, ExtensionSubtagCollection b)
 		{
 			return a.Equals(b);
 		}
 
+		/// <summary>
+		/// Not equality operator
+		/// </summary>
 		public static bool operator !=(ExtensionSubtagCollection a, ExtensionSubtagCollection b)
 		{
 			return !(a == b);
