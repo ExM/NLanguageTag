@@ -45,24 +45,33 @@ namespace AbbyyLS.Globalization.Bcp47
 			Assert.AreEqual(expected, text.TryParseFromVariant());
 		}
 
-		[TestCase("sr", Variant.Ekavsk, true)]
-		[TestCase("sr-Cyrl", Variant.Ekavsk, true)]
-		[TestCase("sr-Hans", Variant.Ekavsk, null)]
-		[TestCase("en", Variant.Ekavsk, null)]
-		[TestCase("sr", Variant.Fonipa, false)]
-		[TestCase("sr-Cyrl", Variant.Fonipa, false)]
-		[TestCase("sr-Hans", Variant.Fonipa, false)]
-		[TestCase("az", Variant.Baku1926, true)]
-		[TestCase("en", Variant.Baku1926, null)]
-		[TestCase("en-fonipa", Variant.Scotland, true)]
-		[TestCase("sl", Variant.V1994, null)]
-		[TestCase("en-scotland", Variant.Fonipa, false)]
-		[TestCase("sl-rozaj-biske-fonipa", Variant.V1994, null)]
-		[TestCase("sl-rozaj-biske", Variant.V1994, true)]
-		public void RestrictiveAcceptableFor(string tagText, Variant variant, bool? expected)
+		[TestCase("sr-ekavsk")]
+		[TestCase("sr-Cyrl-ekavsk")]
+		[TestCase("sr-fonipa")]
+		[TestCase("sr-Cyrl-fonipa")]
+		[TestCase("sr-Hans-fonipa")]
+		[TestCase("az-Baku1926")]
+		[TestCase("en-fonipa-Scotland")]
+		[TestCase("en-scotland-fonipa")]
+		[TestCase("sl-rozaj-biske")]
+		public void VariantCollectionCreate(string tagText)
 		{
 			var tag = new LanguageTag(tagText);
-			Assert.AreEqual(expected, variant.RestrictiveAcceptableFor(tag.Language, tag.Script, tag.Variants));
+			var variants = VariantCollection.Create(tag.Language, tag.Script, tag.Variants);
+
+			Assert.That(variants, Is.EqualTo(tag.Variants));
+		}
+
+		[TestCase("en",  Variant.Ekavsk)]
+		[TestCase("sr-Hans", Variant.Ekavsk)]
+		[TestCase("sl", Variant.V1994)]
+		[TestCase("en", Variant.Baku1926)]
+		[TestCase("sl-rozaj-biske-fonipa", Variant.V1994)]
+		[ExpectedException(typeof(FormatException))]
+		public void VariantCollectionCreate(string tagText, Variant appendVariant)
+		{
+			var tag = new LanguageTag(tagText);
+			VariantCollection.Create(tag.Language, tag.Script, tag.Variants.Union(new Variant[] { appendVariant }));
 		}
 
 		[Test]

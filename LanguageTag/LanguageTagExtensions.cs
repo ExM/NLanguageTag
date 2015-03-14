@@ -63,7 +63,7 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		private static readonly Func<Variant, Func<Language?, Script?, IEnumerable<Variant>, bool?>> _isPrefixForCreater = PrefixForCreater;
 
-		public static bool? RestrictiveAcceptableFor(this Variant v, Language? lang, Script? script, IEnumerable<Variant> variants)
+		internal static bool? RestrictiveAcceptableFor(this Variant v, Language? lang, Script? script, IEnumerable<Variant> variants)
 		{
 			return _isPrefixForCache.GetOrAdd(v, _isPrefixForCreater)(lang, script, variants);
 		}
