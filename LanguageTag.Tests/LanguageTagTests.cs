@@ -74,6 +74,20 @@ namespace AbbyyLS.Globalization.Bcp47
 			Assert.That(xTag.Included(yTag), Is.EqualTo(expected));
 		}
 
+		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa", LanguageTag.Field.All ^ LanguageTag.Field.PrivateUse, "ru-Latn-RU-Petr1708-a-aaa")]
+		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa", LanguageTag.Field.Primary, "ru-Latn-RU")]
+		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa", LanguageTag.Field.Language, "ru")]
+		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa", LanguageTag.Field.Language | LanguageTag.Field.Region, "ru-RU")]
+		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa", LanguageTag.Field.Enumerated, "ru-Latn-RU-Petr1708")]
+		[TestCase("x-aaa", LanguageTag.Field.PrivateUse, "x-aaa")]
+		[TestCase("x-aaa", LanguageTag.Field.Language, "")]
+		[TestCase("en-x-aaa", LanguageTag.Field.PrivateUse, "x-aaa")]
+		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa", (byte)255, "")]
+		public void Take(string tagSource, LanguageTag.Field fields, string expected)
+		{
+			Assert.That(LanguageTag.Parse(tagSource).Take(fields), Is.EqualTo(LanguageTag.Parse(expected)));
+		}
+
 		[TestCase("en-scotland", ">=", "en", true)]
 		[TestCase("en-scotland", "<=", "en", false)]
 		[TestCase("en-scotland", "==", "en", false)]

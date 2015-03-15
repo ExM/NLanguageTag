@@ -59,5 +59,44 @@ foreach(var p in new bool[]{false, true})
 <# } #>
 		}
 <# } #>
+
+		public LanguageTag Take(Field fields)
+		{
+			if(!Language.HasValue)
+			{
+				if(fields.IsSet(Field.PrivateUse))
+					return new LanguageTag(PrivateUse);
+				else
+					return new LanguageTag();
+			}
+
+			switch(fields)
+			{
+<#
+foreach(var s in new bool[]{false, true})
+foreach(var r in new bool[]{false, true})
+foreach(var v in new bool[]{false, true})
+foreach(var e in new bool[]{false, true})
+foreach(var p in new bool[]{false, true})
+{ #>
+				case Field.Language<#
+		if(s) {#>| Field.Script<# }; 
+		if(r) {#>| Field.Region<# }; 
+		if(v) {#>| Field.Variants<# }; 
+		if(e) {#>| Field.Extensions<# }; 
+		if(p) {#>| Field.PrivateUse<# } #>:
+					return new LanguageTag(Language.Value<#
+		if(s) {#>, Script<# }; 
+		if(r) {#>, Region<# }; 
+		if(v) {#>, Variants<# }; 
+		if(e) {#>, Extensions<# }; 
+		if(p) {#>, PrivateUse<# } #>);
+<# } #>
+				case Field.PrivateUse:
+					return new LanguageTag(PrivateUse);
+				default:
+					return new LanguageTag();
+			}
+		}
 	}
 }

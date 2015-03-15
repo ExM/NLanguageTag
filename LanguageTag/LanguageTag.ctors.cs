@@ -489,5 +489,88 @@ namespace AbbyyLS.Globalization.Bcp47
 			Extensions = new ExtensionSubtagCollection(extSubtags);
 			PrivateUse = privateUseSubtags;
 		}
+
+		public LanguageTag Take(Field fields)
+		{
+			if(!Language.HasValue)
+			{
+				if(fields.IsSet(Field.PrivateUse))
+					return new LanguageTag(PrivateUse);
+				else
+					return new LanguageTag();
+			}
+
+			switch(fields)
+			{
+				case Field.Language:
+					return new LanguageTag(Language.Value);
+				case Field.Language| Field.PrivateUse:
+					return new LanguageTag(Language.Value, PrivateUse);
+				case Field.Language| Field.Extensions:
+					return new LanguageTag(Language.Value, Extensions);
+				case Field.Language| Field.Extensions| Field.PrivateUse:
+					return new LanguageTag(Language.Value, Extensions, PrivateUse);
+				case Field.Language| Field.Variants:
+					return new LanguageTag(Language.Value, Variants);
+				case Field.Language| Field.Variants| Field.PrivateUse:
+					return new LanguageTag(Language.Value, Variants, PrivateUse);
+				case Field.Language| Field.Variants| Field.Extensions:
+					return new LanguageTag(Language.Value, Variants, Extensions);
+				case Field.Language| Field.Variants| Field.Extensions| Field.PrivateUse:
+					return new LanguageTag(Language.Value, Variants, Extensions, PrivateUse);
+				case Field.Language| Field.Region:
+					return new LanguageTag(Language.Value, Region);
+				case Field.Language| Field.Region| Field.PrivateUse:
+					return new LanguageTag(Language.Value, Region, PrivateUse);
+				case Field.Language| Field.Region| Field.Extensions:
+					return new LanguageTag(Language.Value, Region, Extensions);
+				case Field.Language| Field.Region| Field.Extensions| Field.PrivateUse:
+					return new LanguageTag(Language.Value, Region, Extensions, PrivateUse);
+				case Field.Language| Field.Region| Field.Variants:
+					return new LanguageTag(Language.Value, Region, Variants);
+				case Field.Language| Field.Region| Field.Variants| Field.PrivateUse:
+					return new LanguageTag(Language.Value, Region, Variants, PrivateUse);
+				case Field.Language| Field.Region| Field.Variants| Field.Extensions:
+					return new LanguageTag(Language.Value, Region, Variants, Extensions);
+				case Field.Language| Field.Region| Field.Variants| Field.Extensions| Field.PrivateUse:
+					return new LanguageTag(Language.Value, Region, Variants, Extensions, PrivateUse);
+				case Field.Language| Field.Script:
+					return new LanguageTag(Language.Value, Script);
+				case Field.Language| Field.Script| Field.PrivateUse:
+					return new LanguageTag(Language.Value, Script, PrivateUse);
+				case Field.Language| Field.Script| Field.Extensions:
+					return new LanguageTag(Language.Value, Script, Extensions);
+				case Field.Language| Field.Script| Field.Extensions| Field.PrivateUse:
+					return new LanguageTag(Language.Value, Script, Extensions, PrivateUse);
+				case Field.Language| Field.Script| Field.Variants:
+					return new LanguageTag(Language.Value, Script, Variants);
+				case Field.Language| Field.Script| Field.Variants| Field.PrivateUse:
+					return new LanguageTag(Language.Value, Script, Variants, PrivateUse);
+				case Field.Language| Field.Script| Field.Variants| Field.Extensions:
+					return new LanguageTag(Language.Value, Script, Variants, Extensions);
+				case Field.Language| Field.Script| Field.Variants| Field.Extensions| Field.PrivateUse:
+					return new LanguageTag(Language.Value, Script, Variants, Extensions, PrivateUse);
+				case Field.Language| Field.Script| Field.Region:
+					return new LanguageTag(Language.Value, Script, Region);
+				case Field.Language| Field.Script| Field.Region| Field.PrivateUse:
+					return new LanguageTag(Language.Value, Script, Region, PrivateUse);
+				case Field.Language| Field.Script| Field.Region| Field.Extensions:
+					return new LanguageTag(Language.Value, Script, Region, Extensions);
+				case Field.Language| Field.Script| Field.Region| Field.Extensions| Field.PrivateUse:
+					return new LanguageTag(Language.Value, Script, Region, Extensions, PrivateUse);
+				case Field.Language| Field.Script| Field.Region| Field.Variants:
+					return new LanguageTag(Language.Value, Script, Region, Variants);
+				case Field.Language| Field.Script| Field.Region| Field.Variants| Field.PrivateUse:
+					return new LanguageTag(Language.Value, Script, Region, Variants, PrivateUse);
+				case Field.Language| Field.Script| Field.Region| Field.Variants| Field.Extensions:
+					return new LanguageTag(Language.Value, Script, Region, Variants, Extensions);
+				case Field.Language| Field.Script| Field.Region| Field.Variants| Field.Extensions| Field.PrivateUse:
+					return new LanguageTag(Language.Value, Script, Region, Variants, Extensions, PrivateUse);
+				case Field.PrivateUse:
+					return new LanguageTag(PrivateUse);
+				default:
+					return new LanguageTag();
+			}
+		}
 	}
 }
