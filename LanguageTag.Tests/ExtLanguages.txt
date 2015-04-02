@@ -95,6 +95,7 @@ sgn-hsh
 sgn-hsl
 zh-hsn
 sgn-icl
+sgn-iks
 sgn-ils
 sgn-inl
 sgn-ins
@@ -217,7 +218,6 @@ sgn-xki
 sgn-xml
 ms-xmm
 sgn-xms
-sgn-yds
 sgn-ygs
 sgn-ysl
 zh-yue

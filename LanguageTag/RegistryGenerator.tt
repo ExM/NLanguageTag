@@ -46,9 +46,9 @@ namespace AbbyyLS.Globalization.Bcp47
 			switch(language)
 			{
 <#foreach(var entry in extlangs)
-{ #>
+{ if(entry.PreferredValue != null) {#>
 				case Language.<#= entry.PreferredValue.ToUpper() #>: return Language.<#= entry.Prefix.First().ToUpper() #>;
-<# } #>
+<#} } #>
 				default:
 					return null;
 			}
@@ -63,7 +63,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.<#= lang.ToUpper() #>:
 					switch (text.ToLower(CultureInfo.InvariantCulture))
 					{
-<#foreach(var entry in extlangs.Where(_ => _.Prefix.First() == lang))
+<#foreach(var entry in extlangs.Where(_ => _.Prefix.First() == lang && _.PreferredValue != null))
 { #>
 						case "<#= entry.Subtag.ToLower()#>": return Language.<#= entry.PreferredValue.ToUpper() #>;
 <# } #>

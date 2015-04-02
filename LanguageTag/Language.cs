@@ -989,11 +989,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		AAL,
 
 		/// <summary>
-		/// Aramanik
-		/// </summary>
-		AAM,
-
-		/// <summary>
 		/// Anambé
 		/// </summary>
 		AAN,
@@ -1344,11 +1339,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		ADO,
 
 		/// <summary>
-		/// Adap
-		/// </summary>
-		ADP,
-
-		/// <summary>
 		/// Adangbe
 		/// </summary>
 		ADQ,
@@ -1414,7 +1404,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		AED,
 
 		/// <summary>
-		/// Northeast Pashayi
+		/// Northeast Pashai Northeast Pashayi
 		/// </summary>
 		AEE,
 
@@ -2485,7 +2475,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		AOS,
 
 		/// <summary>
-		/// A'tong
+		/// Atong A'tong
 		/// </summary>
 		AOT,
 
@@ -3068,11 +3058,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Anuta
 		/// </summary>
 		AUD,
-
-		/// <summary>
-		/// =/Kx'au//'ein
-		/// </summary>
-		AUE,
 
 		/// <summary>
 		/// Arauan languages
@@ -6939,6 +6924,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Izora
 		/// </summary>
 		CBO,
+
+		/// <summary>
+		/// Tsucuba Cuba
+		/// </summary>
+		CBQ,
 
 		/// <summary>
 		/// Cashibo-Cacataibo
@@ -11408,11 +11398,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		GFT,
 
 		/// <summary>
-		/// Mangetti Dune !Xung
-		/// </summary>
-		GFX,
-
-		/// <summary>
 		/// Gao
 		/// </summary>
 		GGA,
@@ -11685,6 +11670,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		GKP,
 
 		/// <summary>
+		/// ǂUngkue =/Ungkue
+		/// </summary>
+		GKU,
+
+		/// <summary>
 		/// Bon Gula
 		/// </summary>
 		GLC,
@@ -11695,7 +11685,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		GLD,
 
 		/// <summary>
-		/// Northwest Pashayi
+		/// Northwest Pashai Northwest Pashayi
 		/// </summary>
 		GLH,
 
@@ -11865,7 +11855,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		GNI,
 
 		/// <summary>
-		/// //Gana
+		/// //Gana ǁGana
 		/// </summary>
 		GNK,
 
@@ -12240,11 +12230,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		GTA,
 
 		/// <summary>
-		/// Gbati-ri
-		/// </summary>
-		GTI,
-
-		/// <summary>
 		/// Aghu-Tharnggala
 		/// </summary>
 		GTU,
@@ -12475,7 +12460,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		GWI,
 
 		/// <summary>
-		/// /Gwi
+		/// /Gwi ǀGwi
 		/// </summary>
 		GWJ,
 
@@ -12795,7 +12780,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		HEM,
 
 		/// <summary>
-		/// Hai//om
+		/// Hai//om Haiǁom
 		/// </summary>
 		HGM,
 
@@ -13095,7 +13080,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		HNE,
 
 		/// <summary>
-		/// //Ani
+		/// //Ani ǁAni
 		/// </summary>
 		HNH,
 
@@ -13355,7 +13340,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		HUB,
 
 		/// <summary>
-		/// =/Hua
+		/// =/Hua ǂHua
 		/// </summary>
 		HUC,
 
@@ -13843,6 +13828,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Ikaranggal
 		/// </summary>
 		IKR,
+
+		/// <summary>
+		/// Inuit Sign Language
+		/// </summary>
+		IKS,
 
 		/// <summary>
 		/// Inuinnaqtun Western Canadian Inuktitut
@@ -14700,6 +14690,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Buyuan Jinuo
 		/// </summary>
 		JIY,
+
+		/// <summary>
+		/// Jejueo
+		/// </summary>
+		JJE,
 
 		/// <summary>
 		/// Bankal
@@ -16234,6 +16229,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		KJU,
 
 		/// <summary>
+		/// Kaikavian Literary Language
+		/// </summary>
+		KJV,
+
+		/// <summary>
 		/// Ramopa
 		/// </summary>
 		KJX,
@@ -16802,11 +16802,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Komi-Permyak
 		/// </summary>
 		KOI,
-
-		/// <summary>
-		/// Sara Dunjo
-		/// </summary>
-		KOJ,
 
 		/// <summary>
 		/// Konkani (macrolanguage)
@@ -17510,7 +17505,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		KTY,
 
 		/// <summary>
-		/// Ju/'hoan
+		/// Ju/'hoan Juǀʼhoan
 		/// </summary>
 		KTZ,
 
@@ -17530,7 +17525,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		KUD,
 
 		/// <summary>
-		/// Kuman
+		/// Kuman (Papua New Guinea)
 		/// </summary>
 		KUE,
 
@@ -17845,11 +17840,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		KWP,
 
 		/// <summary>
-		/// Kwak
-		/// </summary>
-		KWQ,
-
-		/// <summary>
 		/// Kwer
 		/// </summary>
 		KWR,
@@ -17913,11 +17903,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Brunei
 		/// </summary>
 		KXD,
-
-		/// <summary>
-		/// Kakihum
-		/// </summary>
-		KXE,
 
 		/// <summary>
 		/// Manumanaw Karen Manumanaw
@@ -18930,11 +18915,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Lihir
 		/// </summary>
 		LIH,
-
-		/// <summary>
-		/// Lingkhim
-		/// </summary>
-		LII,
 
 		/// <summary>
 		/// Ligurian
@@ -22706,11 +22686,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		MWI,
 
 		/// <summary>
-		/// Maligo
-		/// </summary>
-		MWJ,
-
-		/// <summary>
 		/// Kita Maninkakan
 		/// </summary>
 		MWK,
@@ -23246,7 +23221,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		NAP,
 
 		/// <summary>
-		/// Nama (Namibia)
+		/// Khoekhoe Nama (Namibia)
 		/// </summary>
 		NAQ,
 
@@ -23261,7 +23236,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		NAS,
 
 		/// <summary>
-		/// Hungworo
+		/// Ca̱hungwa̱rya̱ Hungworo
 		/// </summary>
 		NAT,
 
@@ -23818,7 +23793,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		NGG,
 
 		/// <summary>
-		/// N/u
+		/// N/u Nǀu
 		/// </summary>
 		NGH,
 
@@ -24516,7 +24491,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		NMM,
 
 		/// <summary>
-		/// !Xóõ
+		/// !Xóõ ǃXóõ
 		/// </summary>
 		NMN,
 
@@ -24561,7 +24536,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		NMV,
 
 		/// <summary>
-		/// Nimoa
+		/// Nimoa Rifao
 		/// </summary>
 		NMW,
 
@@ -24689,11 +24664,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Southern Nuni
 		/// </summary>
 		NNW,
-
-		/// <summary>
-		/// Ngong
-		/// </summary>
-		NNX,
 
 		/// <summary>
 		/// Nyangga
@@ -24930,6 +24900,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Southern Rengma Naga
 		/// </summary>
 		NRE,
+
+		/// <summary>
+		/// Jèrriais Guernésiais
+		/// </summary>
+		NRF,
 
 		/// <summary>
 		/// Narango
@@ -25431,6 +25406,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Ngawun
 		/// </summary>
 		NXN,
+
+		/// <summary>
+		/// Ndambomo
+		/// </summary>
+		NXO,
 
 		/// <summary>
 		/// Naxi
@@ -26413,11 +26393,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		OUM,
 
 		/// <summary>
-		/// !O!ung
-		/// </summary>
-		OUN,
-
-		/// <summary>
 		/// Owiniga
 		/// </summary>
 		OWI,
@@ -26653,7 +26628,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		PBV,
 
 		/// <summary>
-		/// Pyu
+		/// Pyu (Papua New Guinea)
 		/// </summary>
 		PBY,
 
@@ -26896,6 +26871,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Sudanese Creole Arabic
 		/// </summary>
 		PGA,
+
+		/// <summary>
+		/// Gāndhārī
+		/// </summary>
+		PGD,
 
 		/// <summary>
 		/// Pangwali
@@ -27283,7 +27263,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		PLR,
 
 		/// <summary>
-		/// San Marcos Tlalcoyalco Popoloca
+		/// San Marcos Tlacoyalco Popoloca San Marcos Tlalcoyalco Popoloca
 		/// </summary>
 		PLS,
 
@@ -27406,11 +27386,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Tuamotuan
 		/// </summary>
 		PMT,
-
-		/// <summary>
-		/// Mirpur Panjabi
-		/// </summary>
-		PMU,
 
 		/// <summary>
 		/// Plains Miwok
@@ -27885,12 +27860,12 @@ namespace AbbyyLS.Globalization.Bcp47
 		PSG,
 
 		/// <summary>
-		/// Southwest Pashayi
+		/// Southwest Pashai Southwest Pashayi
 		/// </summary>
 		PSH,
 
 		/// <summary>
-		/// Southeast Pashayi
+		/// Southeast Pashai Southeast Pashayi
 		/// </summary>
 		PSI,
 
@@ -29151,6 +29126,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		RTM,
 
 		/// <summary>
+		/// Yurats
+		/// </summary>
+		RTS,
+
+		/// <summary>
 		/// Rathawi
 		/// </summary>
 		RTW,
@@ -29427,7 +29407,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		SBE,
 
 		/// <summary>
-		/// Shabo
+		/// Chabu Shabo
 		/// </summary>
 		SBF,
 
@@ -30393,7 +30373,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		SKQ,
 
 		/// <summary>
-		/// Seraiki
+		/// Saraiki Seraiki
 		/// </summary>
 		SKR,
 
@@ -31795,6 +31775,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		SYW,
 
 		/// <summary>
+		/// Samay
+		/// </summary>
+		SYX,
+
+		/// <summary>
 		/// Al-Sayyid Bedouin Sign Language
 		/// </summary>
 		SYY,
@@ -32669,11 +32654,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Thudam
 		/// </summary>
 		THW,
-
-		/// <summary>
-		/// The
-		/// </summary>
-		THX,
 
 		/// <summary>
 		/// Tha
@@ -33736,11 +33716,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		TSE,
 
 		/// <summary>
-		/// Southwestern Tamang
-		/// </summary>
-		TSF,
-
-		/// <summary>
 		/// Tausug
 		/// </summary>
 		TSG,
@@ -34274,6 +34249,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Ikpeng
 		/// </summary>
 		TXI,
+
+		/// <summary>
+		/// Tarjumo
+		/// </summary>
+		TXJ,
 
 		/// <summary>
 		/// Tomini
@@ -34827,11 +34807,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		UNZ,
 
 		/// <summary>
-		/// Uokha
-		/// </summary>
-		UOK,
-
-		/// <summary>
 		/// Umeda
 		/// </summary>
 		UPI,
@@ -35097,7 +35072,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		VAI,
 
 		/// <summary>
-		/// Vasekela Bushman
+		/// Sekele Northwestern !Kung Northwestern ǃKung Vasekele
 		/// </summary>
 		VAJ,
 
@@ -36687,7 +36662,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		XAL,
 
 		/// <summary>
-		/// /Xam
+		/// /Xam ǀXam
 		/// </summary>
 		XAM,
 
@@ -36937,7 +36912,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		XED,
 
 		/// <summary>
-		/// //Xegwi
+		/// //Xegwi ǁXegwi
 		/// </summary>
 		XEG,
 
@@ -37775,11 +37750,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Sio
 		/// </summary>
 		XSI,
-
-		/// <summary>
-		/// Subi
-		/// </summary>
-		XSJ,
 
 		/// <summary>
 		/// South Slavey
@@ -38847,11 +38817,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Mysian
 		/// </summary>
 		YMS,
-
-		/// <summary>
-		/// Mator-Taygi-Karagas
-		/// </summary>
-		YMT,
 
 		/// <summary>
 		/// Northern Muji

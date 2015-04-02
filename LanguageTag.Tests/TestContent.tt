@@ -15,7 +15,7 @@
 	new { Name = "Regions", Lines = regions.Select(_ => _.Subtag) },
 	new { Name = "Scripts", Lines = scripts.Select(_ => _.Subtag) },
 	new { Name = "Variants", Lines = variants.Select(_ => _.Subtag) },
-	new { Name = "ExtLanguages", Lines = extlangs.Select(_ => _.Prefix.First() + "-" + _.Subtag) },
+	new { Name = "ExtLanguages", Lines = extlangs.Where(_ => _.PreferredValue != null).Select(_ => _.Prefix.First() + "-" + _.Subtag) },
 
 }; #>
 using System;
