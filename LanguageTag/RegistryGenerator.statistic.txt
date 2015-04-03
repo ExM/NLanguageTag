@@ -1,5 +1,4 @@
-﻿F
-Total entries: 8957
+﻿Total entries: 8957
 Types:
 * language - 8092
 	use fields: Type, Subtag, Description, Added, Suppress-Script, Scope, Macrolanguage, Deprecated, Preferred-Value, Comments

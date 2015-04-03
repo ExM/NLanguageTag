@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AbbyyLS.Globalization.Bcp47</RootNamespace>
-    <AssemblyName>AbbyyLS.Globalization.Bcp47.LanguageTag</AssemblyName>
+    <AssemblyName>AbbyyLS.LanguageTag</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,7 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\AbbyyLS.Globalization.Bcp47.LanguageTag.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\AbbyyLS.LanguageTag.xml</DocumentationFile>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <NoWarn>1591</NoWarn>
   </PropertyGroup>
@@ -88,6 +88,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>LanguageTag.ctors.cs</LastGenOutput>
     </None>
+    <None Include="LanguageTag.nuspec" />
     <None Include="RegistryGenerator.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RegistryGenerator.statistic.txt</LastGenOutput>
@@ -97,11 +98,11 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="RegistryGenerator.statistic.txt">
+    <None Include="RegistryGenerator.statistic.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RegistryGenerator.tt</DependentUpon>
-    </Content>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

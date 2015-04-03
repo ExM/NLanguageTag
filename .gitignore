@@ -10,3 +10,4 @@ TestResults
 *.VisualState.xml
 TestResult.xml
 /packages/
+*.nupkg

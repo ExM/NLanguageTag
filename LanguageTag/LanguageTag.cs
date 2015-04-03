@@ -10,7 +10,7 @@ namespace AbbyyLS.Globalization.Bcp47
 	/// <summary>
 	/// Language tags are used to help identify languages, whether spoken, written, signed, or otherwise signaled, for the purpose of communication.
 	/// Language tag syntax is defined by the IETF's BCP 47 (https://tools.ietf.org/html/bcp47) 
-	/// and corresponds to the IANA Language Subtag Registry (http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) of 2014-12-17
+	/// and corresponds to the IANA Language Subtag Registry (http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) of 2015-03-06
 	/// </summary>
 	public partial struct LanguageTag : IEquatable<LanguageTag>
 	{

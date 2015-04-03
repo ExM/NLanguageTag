@@ -5,7 +5,7 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ output extension=".statistic.txt" #>
-<#@ include file="..\T4Templates\Registry.ttinclude" #>F
+<#@ include file="..\T4Templates\Registry.ttinclude" #>
 <#@ include file="..\T4Templates\MultipleOutputHelper.ttinclude"#>
 <# var manager = Manager.Create(Host, GenerationEnvironment); #>
 <# manager.StartNewFile("ExtLanguageExtensions.cs"); #>

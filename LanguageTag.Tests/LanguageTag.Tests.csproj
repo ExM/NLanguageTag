@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AbbyyLS.Globalization.Bcp47</RootNamespace>
-    <AssemblyName>AbbyyLS.Globalization.Bcp47.LanguageTag.Tests</AssemblyName>
+    <AssemblyName>AbbyyLS.LanguageTag.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata>
+		<id>AbbyyLS.LanguageTag</id>
+		<version>$version$</version>
+		<title>AbbyyLS.LanguageTag</title>
+		<authors>Anatoliy Koperin</authors>
+		<owners />
+		<licenseUrl>https://github.com/ExM/LanguageTag/raw/master/LICENSE</licenseUrl>
+		<projectUrl>https://github.com/ExM/LanguageTag</projectUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Language tags are used to help identify languages, whether spoken, written, signed, or otherwise signaled, for the purpose of communication.
+Language tag syntax is defined by the IETF's BCP 47 (https://tools.ietf.org/html/bcp47)
+		</description>
+		<summary />
+		<tags>
+			bcp47 languagetag iso639
+		</tags>
+	</metadata>
+	<files>
+		<file src="bin\$configuration$\*.pdb" target="lib\net45" />
+	</files>
+</package>
