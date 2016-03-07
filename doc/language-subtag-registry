@@ -1,4 +1,4 @@
-File-Date: 2015-03-06
+File-Date: 2016-02-10
 %%
 Type: language
 Subtag: aa
@@ -2740,7 +2740,7 @@ Added: 2009-07-29
 %%
 Type: language
 Subtag: aot
-Description: Atong
+Description: Atong (India)
 Description: A'tong
 Added: 2009-07-29
 %%
@@ -3264,7 +3264,7 @@ Added: 2009-07-29
 %%
 Type: language
 Subtag: ato
-Description: Atong
+Description: Atong (Cameroon)
 Added: 2009-07-29
 %%
 Type: language
@@ -15549,6 +15549,11 @@ Type: language
 Subtag: jod
 Description: Wojenaka
 Added: 2009-07-29
+%%
+Type: language
+Subtag: jog
+Description: Jogi
+Added: 2015-05-27
 %%
 Type: language
 Subtag: jor
@@ -39868,6 +39873,11 @@ Description: Hlepho Phowa
 Added: 2009-07-29
 %%
 Type: language
+Subtag: yhs
+Description: Yan-nhaŋu Sign Language
+Added: 2015-04-17
+%%
+Type: language
 Subtag: yia
 Description: Yinggarda
 Added: 2009-07-29
@@ -43383,6 +43393,13 @@ Preferred-Value: ygs
 Prefix: sgn
 %%
 Type: extlang
+Subtag: yhs
+Description: Yan-nhaŋu Sign Language
+Added: 2015-04-17
+Preferred-Value: yhs
+Prefix: sgn
+%%
+Type: extlang
 Subtag: ysl
 Description: Yugoslavian Sign Language
 Added: 2009-07-29
@@ -43506,6 +43523,11 @@ Type: script
 Subtag: Beng
 Description: Bengali
 Added: 2005-10-16
+%%
+Type: script
+Subtag: Bhks
+Description: Bhaiksuki
+Added: 2015-07-24
 %%
 Type: script
 Subtag: Blis
@@ -43673,6 +43695,11 @@ Description: Gurmukhi
 Added: 2005-10-16
 %%
 Type: script
+Subtag: Hanb
+Description: Han with Bopomofo (alias for Han + Bopomofo)
+Added: 2016-02-08
+%%
+Type: script
 Subtag: Hang
 Description: Hangul
 Description: Hangŭl
@@ -43751,6 +43778,11 @@ Type: script
 Subtag: Ital
 Description: Old Italic (Etruscan, Oscan, etc.)
 Added: 2005-10-16
+%%
+Type: script
+Subtag: Jamo
+Description: Jamo (alias for Jamo subset of Hangul)
+Added: 2016-02-08
 %%
 Type: script
 Subtag: Java
@@ -43847,6 +43879,11 @@ Type: script
 Subtag: Latn
 Description: Latin
 Added: 2005-10-16
+%%
+Type: script
+Subtag: Leke
+Description: Leke
+Added: 2015-07-24
 %%
 Type: script
 Subtag: Lepc
@@ -43991,6 +44028,14 @@ Description: Nabataean
 Added: 2010-04-10
 %%
 Type: script
+Subtag: Newa
+Description: Newa
+Description: Newar
+Description: Newari
+Description: Nepāla lipi
+Added: 2016-01-04
+%%
+Type: script
 Subtag: Nkgb
 Description: Nakhi Geba
 Description: 'Na-'Khi ²Ggŏ-¹baw
@@ -44081,6 +44126,11 @@ Type: script
 Subtag: Phnx
 Description: Phoenician
 Added: 2005-10-16
+%%
+Type: script
+Subtag: Piqd
+Description: Klingon (KLI pIqaD)
+Added: 2016-01-04
 %%
 Type: script
 Subtag: Plrd
@@ -44336,6 +44386,11 @@ Type: script
 Subtag: Zmth
 Description: Mathematical notation
 Added: 2007-12-05
+%%
+Type: script
+Subtag: Zsye
+Description: Symbols (Emoji variant)
+Added: 2016-01-04
 %%
 Type: script
 Subtag: Zsym
@@ -45938,6 +45993,15 @@ Added: 2005-10-16
 Prefix: de
 %%
 Type: variant
+Subtag: abl1943
+Description: Orthographic formulation of 1943 - Official in Brazil
+  (Formulário Ortográfico de 1943 - Oficial no Brasil)
+Added: 2015-05-06
+Prefix: pt-BR
+Comments: Denotes conventions established by the Academia Brasileira de
+  Letras in 1943 and generally used in Brazil until 2009
+%%
+Type: variant
 Subtag: alalc97
 Description: ALA-LC Romanization, 1997 edition
 Added: 2009-12-09
@@ -45954,6 +46018,16 @@ Added: 2009-09-05
 Prefix: djk
 Comments: Aluku dialect of the "Busi Nenge Tongo" English-based Creole
   continuum in Eastern Suriname and Western French Guiana
+%%
+Type: variant
+Subtag: ao1990
+Description: Portuguese Language Orthographic Agreement of 1990 (Acordo
+  Ortográfico da Língua Portuguesa de 1990)
+Added: 2015-05-06
+Prefix: pt
+Prefix: gl
+Comments: Portuguese orthography conventions established in 1990 but
+  not brought into effect until 2009
 %%
 Type: variant
 Subtag: arevela
@@ -46004,6 +46078,12 @@ Comments: Barlavento is one of the two main dialect groups of
 Added: 2013-12-10
 %%
 Type: variant
+Subtag: basiceng
+Description: Basic English
+Added: 2015-12-29
+Prefix: en
+%%
+Type: variant
 Subtag: bauddha
 Description: Buddhist Hybrid Sanskrit
 Added: 2010-07-28
@@ -46039,6 +46119,24 @@ Description: Boontling
 Added: 2006-09-18
 Prefix: en
 Comments: Jargon embedded in American English
+%%
+Type: variant
+Subtag: colb1945
+Description: Portuguese-Brazilian Orthographic Convention of 1945
+  (Convenção Ortográfica Luso-Brasileira de 1945)
+Added: 2015-05-06
+Prefix: pt
+Comments: Portuguese orthography conventions established in 1945,
+  generally in effect until 2009. This reform was not ratified in
+  Brazil.
+%%
+Type: variant
+Subtag: cornu
+Description: Cornu-English
+Description: Cornish English
+Description: Anglo-Cornish
+Added: 2015-12-07
+Prefix: en
 %%
 Type: variant
 Subtag: dajnko
@@ -46206,6 +46304,12 @@ Added: 2005-10-16
 Prefix: sl
 %%
 Type: variant
+Subtag: newfound
+Description: Newfoundland English
+Added: 2015-11-25
+Prefix: en-CA
+%%
+Type: variant
 Subtag: njiva
 Description: The Gniva dialect of Resian
 Description: The Njiva dialect of Resian
@@ -46234,6 +46338,12 @@ Added: 2007-07-05
 Prefix: sl-rozaj
 Comments: The dialect of Oseacco/Osojane is one of the four major local
   dialects of Resian
+%%
+Type: variant
+Subtag: oxendict
+Description: Oxford English Dictionary spelling
+Added: 2015-04-17
+Prefix: en
 %%
 Type: variant
 Subtag: pamaka
@@ -46308,6 +46418,11 @@ Description: Scouse
 Added: 2006-09-18
 Prefix: en
 Comments: English Liverpudlian dialect known as 'Scouse'
+%%
+Type: variant
+Subtag: simple
+Description: Simplified form
+Added: 2015-12-29
 %%
 Type: variant
 Subtag: solba
@@ -46429,11 +46544,15 @@ Type: grandfathered
 Tag: cel-gaulish
 Description: Gaulish
 Added: 2001-05-25
+Deprecated: 2015-03-29
+Comments: see xcg, xga, xtg
 %%
 Type: grandfathered
 Tag: en-GB-oed
 Description: English, Oxford English Dictionary spelling
 Added: 2003-07-09
+Deprecated: 2015-04-17
+Preferred-Value: en-GB-oxendict
 %%
 Type: grandfathered
 Tag: i-ami
@@ -46458,6 +46577,7 @@ Type: grandfathered
 Tag: i-enochian
 Description: Enochian
 Added: 2002-07-03
+Deprecated: 2015-03-29
 %%
 Type: grandfathered
 Tag: i-hak
@@ -46574,6 +46694,7 @@ Tag: zh-min
 Description: Min, Fuzhou, Hokkien, Amoy, or Taiwanese
 Added: 1999-12-18
 Deprecated: 2009-07-29
+Comments: see cdo, cpx, czo, mnp, nan
 %%
 Type: grandfathered
 Tag: zh-min-nan

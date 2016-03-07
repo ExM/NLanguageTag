@@ -27,6 +27,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Script.Bass: return "Bass";
 				case Script.Batk: return "Batk";
 				case Script.Beng: return "Beng";
+				case Script.Bhks: return "Bhks";
 				case Script.Blis: return "Blis";
 				case Script.Bopo: return "Bopo";
 				case Script.Brah: return "Brah";
@@ -59,6 +60,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Script.Grek: return "Grek";
 				case Script.Gujr: return "Gujr";
 				case Script.Guru: return "Guru";
+				case Script.Hanb: return "Hanb";
 				case Script.Hang: return "Hang";
 				case Script.Hani: return "Hani";
 				case Script.Hano: return "Hano";
@@ -73,6 +75,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Script.Hung: return "Hung";
 				case Script.Inds: return "Inds";
 				case Script.Ital: return "Ital";
+				case Script.Jamo: return "Jamo";
 				case Script.Java: return "Java";
 				case Script.Jpan: return "Jpan";
 				case Script.Jurc: return "Jurc";
@@ -92,6 +95,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Script.Latf: return "Latf";
 				case Script.Latg: return "Latg";
 				case Script.Latn: return "Latn";
+				case Script.Leke: return "Leke";
 				case Script.Lepc: return "Lepc";
 				case Script.Limb: return "Limb";
 				case Script.Lina: return "Lina";
@@ -118,6 +122,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Script.Mymr: return "Mymr";
 				case Script.Narb: return "Narb";
 				case Script.Nbat: return "Nbat";
+				case Script.Newa: return "Newa";
 				case Script.Nkgb: return "Nkgb";
 				case Script.Nkoo: return "Nkoo";
 				case Script.Nshu: return "Nshu";
@@ -135,6 +140,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Script.Phlp: return "Phlp";
 				case Script.Phlv: return "Phlv";
 				case Script.Phnx: return "Phnx";
+				case Script.Piqd: return "Piqd";
 				case Script.Plrd: return "Plrd";
 				case Script.Prti: return "Prti";
 				case Script.Rjng: return "Rjng";
@@ -182,6 +188,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Script.Yiii: return "Yiii";
 				case Script.Zinh: return "Zinh";
 				case Script.Zmth: return "Zmth";
+				case Script.Zsye: return "Zsye";
 				case Script.Zsym: return "Zsym";
 				case Script.Zxxx: return "Zxxx";
 				case Script.Zyyy: return "Zyyy";
@@ -209,6 +216,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "bass": return Script.Bass;
 				case "batk": return Script.Batk;
 				case "beng": return Script.Beng;
+				case "bhks": return Script.Bhks;
 				case "blis": return Script.Blis;
 				case "bopo": return Script.Bopo;
 				case "brah": return Script.Brah;
@@ -241,6 +249,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "grek": return Script.Grek;
 				case "gujr": return Script.Gujr;
 				case "guru": return Script.Guru;
+				case "hanb": return Script.Hanb;
 				case "hang": return Script.Hang;
 				case "hani": return Script.Hani;
 				case "hano": return Script.Hano;
@@ -255,6 +264,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "hung": return Script.Hung;
 				case "inds": return Script.Inds;
 				case "ital": return Script.Ital;
+				case "jamo": return Script.Jamo;
 				case "java": return Script.Java;
 				case "jpan": return Script.Jpan;
 				case "jurc": return Script.Jurc;
@@ -274,6 +284,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "latf": return Script.Latf;
 				case "latg": return Script.Latg;
 				case "latn": return Script.Latn;
+				case "leke": return Script.Leke;
 				case "lepc": return Script.Lepc;
 				case "limb": return Script.Limb;
 				case "lina": return Script.Lina;
@@ -300,6 +311,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "mymr": return Script.Mymr;
 				case "narb": return Script.Narb;
 				case "nbat": return Script.Nbat;
+				case "newa": return Script.Newa;
 				case "nkgb": return Script.Nkgb;
 				case "nkoo": return Script.Nkoo;
 				case "nshu": return Script.Nshu;
@@ -317,6 +329,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "phlp": return Script.Phlp;
 				case "phlv": return Script.Phlv;
 				case "phnx": return Script.Phnx;
+				case "piqd": return Script.Piqd;
 				case "plrd": return Script.Plrd;
 				case "prti": return Script.Prti;
 				case "rjng": return Script.Rjng;
@@ -364,6 +377,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "yiii": return Script.Yiii;
 				case "zinh": return Script.Zinh;
 				case "zmth": return Script.Zmth;
+				case "zsye": return Script.Zsye;
 				case "zsym": return Script.Zsym;
 				case "zxxx": return Script.Zxxx;
 				case "zyyy": return Script.Zyyy;

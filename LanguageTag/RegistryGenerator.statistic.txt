@@ -1,16 +1,16 @@
-﻿Total entries: 8957
+﻿Total entries: 8975
 Types:
-* language - 8092
+* language - 8094
 	use fields: Type, Subtag, Description, Added, Suppress-Script, Scope, Macrolanguage, Deprecated, Preferred-Value, Comments
-* extlang - 229
+* extlang - 230
 	use fields: Type, Subtag, Description, Added, Preferred-Value, Prefix, Macrolanguage, Deprecated
-* script - 174
+* script - 181
 	use fields: Type, Subtag, Description, Added, Comments
 * region - 301
 	use fields: Type, Subtag, Description, Added, Deprecated, Comments, Preferred-Value
-* variant - 68
+* variant - 76
 	use fields: Type, Subtag, Description, Added, Prefix, Comments, Deprecated, Preferred-Value
 * grandfathered - 26
-	use fields: Type, Tag, Description, Added, Deprecated, Preferred-Value
+	use fields: Type, Tag, Description, Added, Deprecated, Preferred-Value, Comments
 * redundant - 67
 	use fields: Type, Tag, Description, Added, Deprecated, Preferred-Value

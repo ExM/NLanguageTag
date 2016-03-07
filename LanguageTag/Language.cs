@@ -2475,7 +2475,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		AOS,
 
 		/// <summary>
-		/// Atong A'tong
+		/// Atong (India) A'tong
 		/// </summary>
 		AOT,
 
@@ -2980,7 +2980,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		ATN,
 
 		/// <summary>
-		/// Atong
+		/// Atong (Cameroon)
 		/// </summary>
 		ATO,
 
@@ -14835,6 +14835,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Wojenaka
 		/// </summary>
 		JOD,
+
+		/// <summary>
+		/// Jogi
+		/// </summary>
+		JOG,
 
 		/// <summary>
 		/// Jorá
@@ -38516,6 +38521,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Hlepho Phowa
 		/// </summary>
 		YHL,
+
+		/// <summary>
+		/// Yan-nhaŋu Sign Language
+		/// </summary>
+		YHS,
 
 		/// <summary>
 		/// Yinggarda

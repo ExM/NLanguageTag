@@ -79,6 +79,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		Beng,
 
 		/// <summary>
+		/// Bhaiksuki
+		/// </summary>
+		Bhks,
+
+		/// <summary>
 		/// Blissymbols
 		/// </summary>
 		Blis,
@@ -239,6 +244,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		Guru,
 
 		/// <summary>
+		/// Han with Bopomofo (alias for Han + Bopomofo)
+		/// </summary>
+		Hanb,
+
+		/// <summary>
 		/// Hangul Hangŭl Hangeul
 		/// </summary>
 		Hang,
@@ -307,6 +317,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Old Italic (Etruscan, Oscan, etc.)
 		/// </summary>
 		Ital,
+
+		/// <summary>
+		/// Jamo (alias for Jamo subset of Hangul)
+		/// </summary>
+		Jamo,
 
 		/// <summary>
 		/// Javanese
@@ -402,6 +417,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Latin
 		/// </summary>
 		Latn,
+
+		/// <summary>
+		/// Leke
+		/// </summary>
+		Leke,
 
 		/// <summary>
 		/// Lepcha Róng
@@ -534,6 +554,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		Nbat,
 
 		/// <summary>
+		/// Newa Newar Newari Nepāla lipi
+		/// </summary>
+		Newa,
+
+		/// <summary>
 		/// Nakhi Geba 'Na-'Khi ²Ggŏ-¹baw Naxi Geba
 		/// </summary>
 		Nkgb,
@@ -617,6 +642,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Phoenician
 		/// </summary>
 		Phnx,
+
+		/// <summary>
+		/// Klingon (KLI pIqaD)
+		/// </summary>
+		Piqd,
 
 		/// <summary>
 		/// Miao Pollard
@@ -853,6 +883,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Mathematical notation
 		/// </summary>
 		Zmth,
+
+		/// <summary>
+		/// Symbols (Emoji variant)
+		/// </summary>
+		Zsye,
 
 		/// <summary>
 		/// Symbols

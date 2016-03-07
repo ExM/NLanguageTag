@@ -343,8 +343,7 @@ namespace AbbyyLS.Globalization.Bcp47
 	/// </summary>
 	public enum Variant
 	{
-<# var num = 0;
-foreach(var entry in variants.Where(_ => _.PreferredValue == null).OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+<#foreach(var entry in variants.Where(_ => _.PreferredValue == null).OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
 {#>
 		/// <summary>
 		/// <#= entry.Description #>
@@ -352,7 +351,7 @@ foreach(var entry in variants.Where(_ => _.PreferredValue == null).OrderBy(_ => 
 { #>		/// <#= entry.Comments #>
 <# } #>
 		/// </summary>
-		<#= CodeStyle.ToVariantCode(entry.Subtag) #> = <#= num++ #>,
+		<#= CodeStyle.ToVariantCode(entry.Subtag) #>,
 
 <# } #>
 	}

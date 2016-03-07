@@ -3752,6 +3752,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.JNS: return "jns";
 				case Language.JOB: return "job";
 				case Language.JOD: return "jod";
+				case Language.JOG: return "jog";
 				case Language.JOR: return "jor";
 				case Language.JOS: return "jos";
 				case Language.JOW: return "jow";
@@ -8482,6 +8483,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.YHA: return "yha";
 				case Language.YHD: return "yhd";
 				case Language.YHL: return "yhl";
+				case Language.YHS: return "yhs";
 				case Language.YIA: return "yia";
 				case Language.YIF: return "yif";
 				case Language.YIG: return "yig";
@@ -11821,6 +11823,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "jns": return Language.JNS;
 				case "job": return Language.JOB;
 				case "jod": return Language.JOD;
+				case "jog": return Language.JOG;
 				case "jor": return Language.JOR;
 				case "jos": return Language.JOS;
 				case "jow": return Language.JOW;
@@ -16578,6 +16581,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "yha": return Language.YHA;
 				case "yhd": return Language.YHD;
 				case "yhl": return Language.YHL;
+				case "yhs": return Language.YHS;
 				case "yia": return Language.YIA;
 				case "yif": return Language.YIF;
 				case "yig": return Language.YIG;

@@ -259,6 +259,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.XMM: return Language.MS;
 				case Language.XMS: return Language.SGN;
 				case Language.YGS: return Language.SGN;
+				case Language.YHS: return Language.SGN;
 				case Language.YSL: return Language.SGN;
 				case Language.YUE: return Language.ZH;
 				case Language.ZIB: return Language.SGN;
@@ -451,6 +452,7 @@ namespace AbbyyLS.Globalization.Bcp47
 						case "xml": return Language.XML;
 						case "xms": return Language.XMS;
 						case "ygs": return Language.YGS;
+						case "yhs": return Language.YHS;
 						case "ysl": return Language.YSL;
 						case "zib": return Language.ZIB;
 						case "zsl": return Language.ZSL;

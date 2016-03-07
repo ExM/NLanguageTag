@@ -10,6 +10,7 @@ namespace AbbyyLS.Globalization.Bcp47
 			switch(text.ToLower())
 			{
 				case "art-lojban": return "jbo";
+				case "en-gb-oed": return "en-GB-oxendict";
 				case "i-ami": return "ami";
 				case "i-bnn": return "bnn";
 				case "i-hak": return "hak";
@@ -30,7 +31,6 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "zh-min-nan": return "nan";
 				case "zh-xiang": return "hsn";
 				case "cel-gaulish": throw new NotSupportedException("grandfathered code '" + text + "' not supported");
-				case "en-gb-oed": throw new NotSupportedException("grandfathered code '" + text + "' not supported");
 				case "i-default": throw new NotSupportedException("grandfathered code '" + text + "' not supported");
 				case "i-enochian": throw new NotSupportedException("grandfathered code '" + text + "' not supported");
 				case "i-mingo": throw new NotSupportedException("grandfathered code '" + text + "' not supported");
