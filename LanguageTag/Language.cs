@@ -628,7 +628,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		OM,
 
 		/// <summary>
-		/// Oriya (macrolanguage)
+		/// Oriya (macrolanguage) Odia (macrolanguage)
 		/// </summary>
 		OR,
 
@@ -3786,7 +3786,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		BCF,
 
 		/// <summary>
-		/// Baga Binari
+		/// Baga Pokur
 		/// </summary>
 		BCG,
 
@@ -4309,11 +4309,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Bo (Laos)
 		/// </summary>
 		BGL,
-
-		/// <summary>
-		/// Baga Mboteni
-		/// </summary>
-		BGM,
 
 		/// <summary>
 		/// Western Balochi
@@ -7641,7 +7636,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		CNG,
 
 		/// <summary>
-		/// Haka Chin
+		/// Hakha Chin Haka Chin
 		/// </summary>
 		CNH,
 
@@ -7796,11 +7791,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		COX,
 
 		/// <summary>
-		/// Coyaima
-		/// </summary>
-		COY,
-
-		/// <summary>
 		/// Chochotec
 		/// </summary>
 		COZ,
@@ -7879,11 +7869,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Chuanqiandian Cluster Miao
 		/// </summary>
 		CQD,
-
-		/// <summary>
-		/// Chilean Quechua
-		/// </summary>
-		CQU,
 
 		/// <summary>
 		/// Chara
@@ -8853,7 +8838,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		DHD,
 
 		/// <summary>
-		/// Dhangu Djangu
+		/// Dhangu-Djangu Dhangu Djangu
 		/// </summary>
 		DHG,
 
@@ -9590,12 +9575,17 @@ namespace AbbyyLS.Globalization.Bcp47
 		DTM,
 
 		/// <summary>
+		/// Daatsʼíin
+		/// </summary>
+		DTN,
+
+		/// <summary>
 		/// Tommo So Dogon
 		/// </summary>
 		DTO,
 
 		/// <summary>
-		/// Central Dusun
+		/// Kadazan Dusun Central Dusun
 		/// </summary>
 		DTP,
 
@@ -9671,6 +9661,7 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		/// <summary>
 		/// Dhuwal
+		/// see dwu, dwy
 		/// </summary>
 		DUJ,
 
@@ -9745,7 +9736,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		DUY,
 
 		/// <summary>
-		/// Duli
+		/// Duli-Gey
 		/// </summary>
 		DUZ,
 
@@ -9776,9 +9767,19 @@ namespace AbbyyLS.Globalization.Bcp47
 		DWS,
 
 		/// <summary>
+		/// Dhuwal
+		/// </summary>
+		DWU,
+
+		/// <summary>
 		/// Dawawa
 		/// </summary>
 		DWW,
+
+		/// <summary>
+		/// Dhuwaya
+		/// </summary>
+		DWY,
 
 		/// <summary>
 		/// Dyan
@@ -10302,6 +10303,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		ESE,
 
 		/// <summary>
+		/// Aheri Gondi
+		/// </summary>
+		ESG,
+
+		/// <summary>
 		/// Eshtehardi
 		/// </summary>
 		ESH,
@@ -10685,6 +10691,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Far Western Muria
 		/// </summary>
 		FMU,
+
+		/// <summary>
+		/// Fanbak
+		/// </summary>
+		FNB,
 
 		/// <summary>
 		/// Fanagalo
@@ -11338,7 +11349,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		GEJ,
 
 		/// <summary>
-		/// Yiwom
+		/// Ywom
 		/// </summary>
 		GEK,
 
@@ -11433,12 +11444,8 @@ namespace AbbyyLS.Globalization.Bcp47
 		GGL,
 
 		/// <summary>
-		/// Eastern Gurung
-		/// </summary>
-		GGN,
-
-		/// <summary>
 		/// Southern Gondi
+		/// see esg, wsg
 		/// </summary>
 		GGO,
 
@@ -11638,6 +11645,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Gonja
 		/// </summary>
 		GJN,
+
+		/// <summary>
+		/// Gurindji Kriol
+		/// </summary>
+		GJR,
 
 		/// <summary>
 		/// Gujari
@@ -12200,7 +12212,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		GSM,
 
 		/// <summary>
-		/// Gusan
+		/// Nema Gusan
 		/// </summary>
 		GSN,
 
@@ -12335,11 +12347,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		GUU,
 
 		/// <summary>
-		/// Gey
-		/// </summary>
-		GUV,
-
-		/// <summary>
 		/// Gun
 		/// </summary>
 		GUW,
@@ -12405,7 +12412,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		GVP,
 
 		/// <summary>
-		/// Western Gurung
+		/// Gurung
 		/// </summary>
 		GVR,
 
@@ -13886,13 +13893,24 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		/// <summary>
 		/// Iranun
+		/// see ilm, ilp
 		/// </summary>
 		ILL,
+
+		/// <summary>
+		/// Iranun (Malaysia)
+		/// </summary>
+		ILM,
 
 		/// <summary>
 		/// Iloko
 		/// </summary>
 		ILO,
+
+		/// <summary>
+		/// Iranun (Philippines)
+		/// </summary>
+		ILP,
 
 		/// <summary>
 		/// International Sign
@@ -14193,6 +14211,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Italic languages
 		/// </summary>
 		ITC,
+
+		/// <summary>
+		/// Southern Tidung
+		/// </summary>
+		ITD,
 
 		/// <summary>
 		/// Itene
@@ -14702,6 +14725,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		JJR,
 
 		/// <summary>
+		/// Kaera
+		/// </summary>
+		JKA,
+
+		/// <summary>
 		/// Mobwa Karen
 		/// </summary>
 		JKM,
@@ -15077,7 +15105,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		KAJ,
 
 		/// <summary>
-		/// Kayapa Kallahan
+		/// Kalanguya Kayapa Kallahan
 		/// </summary>
 		KAK,
 
@@ -15723,7 +15751,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		KFQ,
 
 		/// <summary>
-		/// Kachchi
+		/// Kachhi Kutchi
 		/// </summary>
 		KFR,
 
@@ -15776,11 +15804,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Kawe
 		/// </summary>
 		KGB,
-
-		/// <summary>
-		/// Kasseng
-		/// </summary>
-		KGC,
 
 		/// <summary>
 		/// Kataang
@@ -17470,11 +17493,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		KTQ,
 
 		/// <summary>
-		/// Kota Marudu Tinagas
-		/// </summary>
-		KTR,
-
-		/// <summary>
 		/// South Muyu
 		/// </summary>
 		KTS,
@@ -17723,11 +17741,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Kerinci
 		/// </summary>
 		KVR,
-
-		/// <summary>
-		/// Kunggara
-		/// </summary>
-		KVS,
 
 		/// <summary>
 		/// Lahta Karen Lahta
@@ -18186,11 +18199,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		KZI,
 
 		/// <summary>
-		/// Coastal Kadazan
-		/// </summary>
-		KZJ,
-
-		/// <summary>
 		/// Kazukuru
 		/// </summary>
 		KZK,
@@ -18234,11 +18242,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Sugut Dusun
 		/// </summary>
 		KZS,
-
-		/// <summary>
-		/// Tambunan Dusun
-		/// </summary>
-		KZT,
 
 		/// <summary>
 		/// Kayupulau
@@ -18511,7 +18514,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		LCD,
 
 		/// <summary>
-		/// Loncong
+		/// Loncong Sekak
 		/// </summary>
 		LCE,
 
@@ -19497,7 +19500,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		LOT,
 
 		/// <summary>
-		/// Louisiana Creole French
+		/// Louisiana Creole
 		/// </summary>
 		LOU,
 
@@ -21056,6 +21059,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Mahei
 		/// </summary>
 		MJA,
+
+		/// <summary>
+		/// Makalero
+		/// </summary>
+		MJB,
 
 		/// <summary>
 		/// San Juan Colorado Mixtec
@@ -23161,11 +23169,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		NAC,
 
 		/// <summary>
-		/// Nijadali
-		/// </summary>
-		NAD,
-
-		/// <summary>
 		/// Naka'ela
 		/// </summary>
 		NAE,
@@ -25092,6 +25095,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		NSZ,
 
 		/// <summary>
+		/// Northern Tidung
+		/// </summary>
+		NTD,
+
+		/// <summary>
 		/// Nathembo
 		/// </summary>
 		NTE,
@@ -25135,11 +25143,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Delo
 		/// </summary>
 		NTR,
-
-		/// <summary>
-		/// Natagaimas
-		/// </summary>
-		NTS,
 
 		/// <summary>
 		/// Natügu
@@ -25933,6 +25936,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		OLT,
 
 		/// <summary>
+		/// Kuvale
+		/// </summary>
+		OLU,
+
+		/// <summary>
 		/// Omaha-Ponca
 		/// </summary>
 		OMA,
@@ -26228,7 +26236,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		ORX,
 
 		/// <summary>
-		/// Oriya (individual language)
+		/// Odia (individual language) Oriya (individual language)
 		/// </summary>
 		ORY,
 
@@ -26923,6 +26931,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		PGY,
 
 		/// <summary>
+		/// Papua New Guinean Sign Language
+		/// </summary>
+		PGZ,
+
+		/// <summary>
 		/// Pa-Hng
 		/// </summary>
 		PHA,
@@ -27313,11 +27326,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		PMB,
 
 		/// <summary>
-		/// Palumata
-		/// </summary>
-		PMC,
-
-		/// <summary>
 		/// Pallanganmiddang
 		/// </summary>
 		PMD,
@@ -27635,11 +27643,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		POZ,
 
 		/// <summary>
-		/// Pao
-		/// </summary>
-		PPA,
-
-		/// <summary>
 		/// Papi
 		/// </summary>
 		PPE,
@@ -27828,11 +27831,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Purik
 		/// </summary>
 		PRX,
-
-		/// <summary>
-		/// Pray 3
-		/// </summary>
-		PRY,
 
 		/// <summary>
 		/// Providencia Sign Language
@@ -29116,6 +29114,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		RSL,
 
 		/// <summary>
+		/// Miriwoong Sign Language
+		/// </summary>
+		RSM,
+
+		/// <summary>
 		/// Rungtu Chin
 		/// </summary>
 		RTC,
@@ -29264,6 +29267,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Central Okinawan
 		/// </summary>
 		RYU,
+
+		/// <summary>
+		/// Rāziḥī
+		/// </summary>
+		RZH,
 
 		/// <summary>
 		/// Saba
@@ -32265,6 +32273,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		TDL,
 
 		/// <summary>
+		/// Taruma
+		/// </summary>
+		TDM,
+
+		/// <summary>
 		/// Tondano
 		/// </summary>
 		TDN,
@@ -32293,11 +32306,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Tetun Dili
 		/// </summary>
 		TDT,
-
-		/// <summary>
-		/// Tempasuk Dusun
-		/// </summary>
-		TDU,
 
 		/// <summary>
 		/// Toro
@@ -32571,11 +32579,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		TGZ,
 
 		/// <summary>
-		/// Tai Hang Tong
-		/// </summary>
-		THC,
-
-		/// <summary>
 		/// Thayore
 		/// </summary>
 		THD,
@@ -32682,6 +32685,7 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		/// <summary>
 		/// Tidong
+		/// see itd, ntd
 		/// </summary>
 		TID,
 
@@ -33021,7 +33025,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		TLS,
 
 		/// <summary>
-		/// Teluti
+		/// Sou Nama Teluti
 		/// </summary>
 		TLT,
 
@@ -33121,11 +33125,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		TMO,
 
 		/// <summary>
-		/// Tai Mène
-		/// </summary>
-		TMP,
-
-		/// <summary>
 		/// Tumleo
 		/// </summary>
 		TMQ,
@@ -33189,11 +33188,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Angosturas Tunebo
 		/// </summary>
 		TND,
-
-		/// <summary>
-		/// Tinoc Kallahan
-		/// </summary>
-		TNE,
 
 		/// <summary>
 		/// Tobanga
@@ -33286,7 +33280,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		TNY,
 
 		/// <summary>
-		/// Tonga (Thailand)
+		/// Ten'edn
 		/// </summary>
 		TNZ,
 
@@ -34331,7 +34325,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		TYI,
 
 		/// <summary>
-		/// Tai Do
+		/// Tai Do Tai Yo
 		/// </summary>
 		TYJ,
 
@@ -35865,7 +35859,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		WGY,
 
 		/// <summary>
-		/// Manusela
+		/// Sou Upaa Manusela
 		/// </summary>
 		WHA,
 
@@ -36432,6 +36426,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		WSA,
 
 		/// <summary>
+		/// Adilabad Gondi
+		/// </summary>
+		WSG,
+
+		/// <summary>
 		/// Wusi
 		/// </summary>
 		WSI,
@@ -36662,6 +36661,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		XAJ,
 
 		/// <summary>
+		/// Máku
+		/// </summary>
+		XAK,
+
+		/// <summary>
 		/// Kalmyk Oirat
 		/// </summary>
 		XAL,
@@ -36725,11 +36729,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Kayan Mahakam
 		/// </summary>
 		XAY,
-
-		/// <summary>
-		/// Kamba (Brazil)
-		/// </summary>
-		XBA,
 
 		/// <summary>
 		/// Lower Burdekin
@@ -37150,11 +37149,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Kagoro
 		/// </summary>
 		XKG,
-
-		/// <summary>
-		/// Karahawyana
-		/// </summary>
-		XKH,
 
 		/// <summary>
 		/// Kenyan Sign Language
@@ -39039,6 +39033,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		YRN,
 
 		/// <summary>
+		/// Yaroamë
+		/// </summary>
+		YRO,
+
+		/// <summary>
 		/// Yarsun
 		/// </summary>
 		YRS,
@@ -39349,7 +39348,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		ZAA,
 
 		/// <summary>
-		/// San Juan Guelavía Zapotec
+		/// Western Tlacolula Valley Zapotec San Juan Guelavía Zapotec
 		/// </summary>
 		ZAB,
 

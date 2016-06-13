@@ -22,19 +22,23 @@ namespace AbbyyLS.Globalization.Bcp47
 		}
 
 		[Test]
-		[ExpectedException(typeof(NotImplementedException))]
 		public void GetPrefixesFail()
 		{
-			var variant = (Variant)(-1);
-			variant.GetPrefixes();
+			Assert.Throws<NotImplementedException>(() =>
+			{
+				var variant = (Variant)(-1);
+				variant.GetPrefixes();
+			});
 		}
 
 		[Test]
-		[ExpectedException(typeof(NotImplementedException))]
 		public void ToTextFail()
 		{
-			var variant = (Variant)(-1);
-			variant.ToText();
+			Assert.Throws<NotImplementedException>(() =>
+			{
+				var variant = (Variant)(-1);
+				variant.ToText();
+			});
 		}
 
 		[TestCase("xxx", null)]
@@ -67,11 +71,13 @@ namespace AbbyyLS.Globalization.Bcp47
 		[TestCase("sl", Variant.V1994)]
 		[TestCase("en", Variant.Baku1926)]
 		[TestCase("sl-rozaj-biske-fonipa", Variant.V1994)]
-		[ExpectedException(typeof(FormatException))]
 		public void VariantCollectionCreate(string tagText, Variant appendVariant)
 		{
-			var tag = new LanguageTag(tagText);
-			VariantCollection.Create(tag.Language, tag.Script, tag.Variants.Union(new Variant[] { appendVariant }));
+			Assert.Throws<FormatException>(() =>
+			{
+				var tag = new LanguageTag(tagText);
+				VariantCollection.Create(tag.Language, tag.Script, tag.Variants.Union(new Variant[] { appendVariant }));
+			});
 		}
 
 		[Test]

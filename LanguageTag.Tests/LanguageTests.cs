@@ -36,11 +36,13 @@ namespace AbbyyLS.Globalization.Bcp47
 		}
 
 		[Test]
-		[ExpectedException(typeof(NotImplementedException))]
 		public void ToTextFail()
 		{
-			var en = (Language)(-1);
-			en.ToText();
+			Assert.Throws<NotImplementedException>(() =>
+			{
+				var en = (Language)(-1);
+				en.ToText();
+			});
 		}
 
 		[TestCase("afb", Language.AFB)]
@@ -83,10 +85,9 @@ namespace AbbyyLS.Globalization.Bcp47
 		[TestCase("uz-xxx")]
 		[TestCase("en-xxx")]
 		[TestCase("zh-yue-Hans")]
-		[ExpectedException(typeof(FormatException))]
 		public void ParseFromLanguage_Fail(string text)
 		{
-			text.ParseFromLanguage();
+			Assert.Throws<FormatException>(() => text.ParseFromLanguage());
 		}
 
 		[TestCase(Language.AFB, "ar-afb")]

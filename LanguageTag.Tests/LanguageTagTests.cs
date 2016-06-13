@@ -182,10 +182,9 @@ namespace AbbyyLS.Globalization.Bcp47
 		[TestCase("en-x-aaa-")]
 		[TestCase("en-x-aaa-?")]
 		[TestCase("en-?-aaa")]
-		[ExpectedException(typeof(FormatException))]
 		public void Parse_Fail(string text)
 		{
-			LanguageTag.Parse(text);
+			Assert.Throws<FormatException>(() => LanguageTag.Parse(text));
 		}
 
 		[Test]
@@ -232,10 +231,9 @@ namespace AbbyyLS.Globalization.Bcp47
 		}
 
 		[TestCaseSource(typeof(TestContent), "GetGrandfatheredNotSupported")]
-		[ExpectedException(typeof(NotSupportedException))]
 		public void GrandfatheredNotSupported(string grandfathered)
 		{
-			LanguageTag.Parse(grandfathered);
+			Assert.Throws<NotSupportedException>(() => LanguageTag.Parse(grandfathered));
 		}
 
 		[TestCase("", "")]
@@ -287,10 +285,9 @@ namespace AbbyyLS.Globalization.Bcp47
 		}
 
 		[Test]
-		[ExpectedException(typeof(ArgumentNullException))]
 		public void ConstructorString_ArgumentNullException()
 		{
-			new LanguageTag((string)null);
+			Assert.Throws<ArgumentNullException>(() => new LanguageTag((string)null));
 		}
 	}
 }

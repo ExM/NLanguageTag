@@ -160,6 +160,7 @@ ms-orn
 ms-ors
 ms-pel
 ar-pga
+sgn-pgz
 sgn-pks
 sgn-prl
 sgn-prz
@@ -175,6 +176,7 @@ sgn-pys
 sgn-rms
 sgn-rsi
 sgn-rsl
+sgn-rsm
 sgn-sdl
 sgn-sfb
 sgn-sfs
@@ -219,6 +221,7 @@ sgn-xml
 ms-xmm
 sgn-xms
 sgn-ygs
+sgn-yhs
 sgn-ysl
 zh-yue
 sgn-zib

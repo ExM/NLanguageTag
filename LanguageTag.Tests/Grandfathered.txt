@@ -1,4 +1,5 @@
 art-lojban
+en-GB-oed
 i-ami
 i-bnn
 i-hak

@@ -200,6 +200,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.ORS: return Language.MS;
 				case Language.PEL: return Language.MS;
 				case Language.PGA: return Language.AR;
+				case Language.PGZ: return Language.SGN;
 				case Language.PKS: return Language.SGN;
 				case Language.PRL: return Language.SGN;
 				case Language.PRZ: return Language.SGN;
@@ -215,6 +216,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.RMS: return Language.SGN;
 				case Language.RSI: return Language.SGN;
 				case Language.RSL: return Language.SGN;
+				case Language.RSM: return Language.SGN;
 				case Language.SDL: return Language.SGN;
 				case Language.SFB: return Language.SGN;
 				case Language.SFS: return Language.SGN;
@@ -406,6 +408,7 @@ namespace AbbyyLS.Globalization.Bcp47
 						case "nsr": return Language.NSR;
 						case "nzs": return Language.NZS;
 						case "okl": return Language.OKL;
+						case "pgz": return Language.PGZ;
 						case "pks": return Language.PKS;
 						case "prl": return Language.PRL;
 						case "prz": return Language.PRZ;
@@ -420,6 +423,7 @@ namespace AbbyyLS.Globalization.Bcp47
 						case "rms": return Language.RMS;
 						case "rsi": return Language.RSI;
 						case "rsl": return Language.RSL;
+						case "rsm": return Language.RSM;
 						case "sdl": return Language.SDL;
 						case "sfb": return Language.SFB;
 						case "sfs": return Language.SFS;

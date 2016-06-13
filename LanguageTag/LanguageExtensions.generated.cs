@@ -84,7 +84,6 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.COA: return Language.MS;
 				case Language.CPX: return Language.ZH;
 				case Language.CQD: return Language.HMN;
-				case Language.CQU: return Language.QU;
 				case Language.CRJ: return Language.CR;
 				case Language.CRK: return Language.CR;
 				case Language.CRL: return Language.CR;
@@ -108,6 +107,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.EKK: return Language.ET;
 				case Language.EMK: return Language.MAN;
 				case Language.ENB: return Language.KLN;
+				case Language.ESG: return Language.GON;
 				case Language.ESI: return Language.IK;
 				case Language.ESK: return Language.IK;
 				case Language.EYO: return Language.KLN;
@@ -130,7 +130,6 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.GBQ: return Language.GBA;
 				case Language.GDA: return Language.RAJ;
 				case Language.GEC: return Language.GRB;
-				case Language.GGO: return Language.GON;
 				case Language.GJU: return Language.RAJ;
 				case Language.GKP: return Language.KPE;
 				case Language.GMM: return Language.GBA;
@@ -361,6 +360,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.VRO: return Language.ET;
 				case Language.WBR: return Language.RAJ;
 				case Language.WRY: return Language.MWR;
+				case Language.WSG: return Language.GON;
 				case Language.WUU: return Language.ZH;
 				case Language.XHE: return Language.LAH;
 				case Language.XMM: return Language.MS;
@@ -1650,7 +1650,6 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.BGJ: return "bgj";
 				case Language.BGK: return "bgk";
 				case Language.BGL: return "bgl";
-				case Language.BGM: return "bgm";
 				case Language.BGN: return "bgn";
 				case Language.BGO: return "bgo";
 				case Language.BGP: return "bgp";
@@ -2346,7 +2345,6 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.COV: return "cov";
 				case Language.COW: return "cow";
 				case Language.COX: return "cox";
-				case Language.COY: return "coy";
 				case Language.COZ: return "coz";
 				case Language.CPA: return "cpa";
 				case Language.CPB: return "cpb";
@@ -2363,7 +2361,6 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.CPX: return "cpx";
 				case Language.CPY: return "cpy";
 				case Language.CQD: return "cqd";
-				case Language.CQU: return "cqu";
 				case Language.CRA: return "cra";
 				case Language.CRB: return "crb";
 				case Language.CRC: return "crc";
@@ -2704,6 +2701,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.DTI: return "dti";
 				case Language.DTK: return "dtk";
 				case Language.DTM: return "dtm";
+				case Language.DTN: return "dtn";
 				case Language.DTO: return "dto";
 				case Language.DTP: return "dtp";
 				case Language.DTR: return "dtr";
@@ -2741,7 +2739,9 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.DWL: return "dwl";
 				case Language.DWR: return "dwr";
 				case Language.DWS: return "dws";
+				case Language.DWU: return "dwu";
 				case Language.DWW: return "dww";
+				case Language.DWY: return "dwy";
 				case Language.DYA: return "dya";
 				case Language.DYB: return "dyb";
 				case Language.DYD: return "dyd";
@@ -2846,6 +2846,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.ERT: return "ert";
 				case Language.ERW: return "erw";
 				case Language.ESE: return "ese";
+				case Language.ESG: return "esg";
 				case Language.ESH: return "esh";
 				case Language.ESI: return "esi";
 				case Language.ESK: return "esk";
@@ -2923,6 +2924,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.FLY: return "fly";
 				case Language.FMP: return "fmp";
 				case Language.FMU: return "fmu";
+				case Language.FNB: return "fnb";
 				case Language.FNG: return "fng";
 				case Language.FNI: return "fni";
 				case Language.FOD: return "fod";
@@ -3072,7 +3074,6 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.GGG: return "ggg";
 				case Language.GGK: return "ggk";
 				case Language.GGL: return "ggl";
-				case Language.GGN: return "ggn";
 				case Language.GGO: return "ggo";
 				case Language.GGR: return "ggr";
 				case Language.GGT: return "ggt";
@@ -3113,6 +3114,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.GJK: return "gjk";
 				case Language.GJM: return "gjm";
 				case Language.GJN: return "gjn";
+				case Language.GJR: return "gjr";
 				case Language.GJU: return "gju";
 				case Language.GKA: return "gka";
 				case Language.GKE: return "gke";
@@ -3252,7 +3254,6 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.GUS: return "gus";
 				case Language.GUT: return "gut";
 				case Language.GUU: return "guu";
-				case Language.GUV: return "guv";
 				case Language.GUW: return "guw";
 				case Language.GUX: return "gux";
 				case Language.GUZ: return "guz";
@@ -3563,7 +3564,9 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.ILI: return "ili";
 				case Language.ILK: return "ilk";
 				case Language.ILL: return "ill";
+				case Language.ILM: return "ilm";
 				case Language.ILO: return "ilo";
+				case Language.ILP: return "ilp";
 				case Language.ILS: return "ils";
 				case Language.ILU: return "ilu";
 				case Language.ILV: return "ilv";
@@ -3624,6 +3627,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.ISU: return "isu";
 				case Language.ITB: return "itb";
 				case Language.ITC: return "itc";
+				case Language.ITD: return "itd";
 				case Language.ITE: return "ite";
 				case Language.ITI: return "iti";
 				case Language.ITK: return "itk";
@@ -3725,6 +3729,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.JIY: return "jiy";
 				case Language.JJE: return "jje";
 				case Language.JJR: return "jjr";
+				case Language.JKA: return "jka";
 				case Language.JKM: return "jkm";
 				case Language.JKO: return "jko";
 				case Language.JKP: return "jkp";
@@ -3940,7 +3945,6 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.KFZ: return "kfz";
 				case Language.KGA: return "kga";
 				case Language.KGB: return "kgb";
-				case Language.KGC: return "kgc";
 				case Language.KGD: return "kgd";
 				case Language.KGE: return "kge";
 				case Language.KGF: return "kgf";
@@ -4278,7 +4282,6 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.KTO: return "kto";
 				case Language.KTP: return "ktp";
 				case Language.KTQ: return "ktq";
-				case Language.KTR: return "ktr";
 				case Language.KTS: return "kts";
 				case Language.KTT: return "ktt";
 				case Language.KTU: return "ktu";
@@ -4329,7 +4332,6 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.KVP: return "kvp";
 				case Language.KVQ: return "kvq";
 				case Language.KVR: return "kvr";
-				case Language.KVS: return "kvs";
 				case Language.KVT: return "kvt";
 				case Language.KVU: return "kvu";
 				case Language.KVV: return "kvv";
@@ -4421,7 +4423,6 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.KZG: return "kzg";
 				case Language.KZH: return "kzh";
 				case Language.KZI: return "kzi";
-				case Language.KZJ: return "kzj";
 				case Language.KZK: return "kzk";
 				case Language.KZL: return "kzl";
 				case Language.KZM: return "kzm";
@@ -4431,7 +4432,6 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.KZQ: return "kzq";
 				case Language.KZR: return "kzr";
 				case Language.KZS: return "kzs";
-				case Language.KZT: return "kzt";
 				case Language.KZU: return "kzu";
 				case Language.KZV: return "kzv";
 				case Language.KZW: return "kzw";
@@ -4995,6 +4995,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.MIY: return "miy";
 				case Language.MIZ: return "miz";
 				case Language.MJA: return "mja";
+				case Language.MJB: return "mjb";
 				case Language.MJC: return "mjc";
 				case Language.MJD: return "mjd";
 				case Language.MJE: return "mje";
@@ -5415,7 +5416,6 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.NAA: return "naa";
 				case Language.NAB: return "nab";
 				case Language.NAC: return "nac";
-				case Language.NAD: return "nad";
 				case Language.NAE: return "nae";
 				case Language.NAF: return "naf";
 				case Language.NAG: return "nag";
@@ -5800,6 +5800,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.NSX: return "nsx";
 				case Language.NSY: return "nsy";
 				case Language.NSZ: return "nsz";
+				case Language.NTD: return "ntd";
 				case Language.NTE: return "nte";
 				case Language.NTG: return "ntg";
 				case Language.NTI: return "nti";
@@ -5809,7 +5810,6 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.NTO: return "nto";
 				case Language.NTP: return "ntp";
 				case Language.NTR: return "ntr";
-				case Language.NTS: return "nts";
 				case Language.NTU: return "ntu";
 				case Language.NTW: return "ntw";
 				case Language.NTX: return "ntx";
@@ -5968,6 +5968,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.OLO: return "olo";
 				case Language.OLR: return "olr";
 				case Language.OLT: return "olt";
+				case Language.OLU: return "olu";
 				case Language.OMA: return "oma";
 				case Language.OMB: return "omb";
 				case Language.OMC: return "omc";
@@ -6166,6 +6167,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.PGS: return "pgs";
 				case Language.PGU: return "pgu";
 				case Language.PGY: return "pgy";
+				case Language.PGZ: return "pgz";
 				case Language.PHA: return "pha";
 				case Language.PHD: return "phd";
 				case Language.PHG: return "phg";
@@ -6244,7 +6246,6 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.PLZ: return "plz";
 				case Language.PMA: return "pma";
 				case Language.PMB: return "pmb";
-				case Language.PMC: return "pmc";
 				case Language.PMD: return "pmd";
 				case Language.PME: return "pme";
 				case Language.PMF: return "pmf";
@@ -6308,7 +6309,6 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.POX: return "pox";
 				case Language.POY: return "poy";
 				case Language.POZ: return "poz";
-				case Language.PPA: return "ppa";
 				case Language.PPE: return "ppe";
 				case Language.PPI: return "ppi";
 				case Language.PPK: return "ppk";
@@ -6347,7 +6347,6 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.PRU: return "pru";
 				case Language.PRW: return "prw";
 				case Language.PRX: return "prx";
-				case Language.PRY: return "pry";
 				case Language.PRZ: return "prz";
 				case Language.PSA: return "psa";
 				case Language.PSC: return "psc";
@@ -6604,6 +6603,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.RSB: return "rsb";
 				case Language.RSI: return "rsi";
 				case Language.RSL: return "rsl";
+				case Language.RSM: return "rsm";
 				case Language.RTC: return "rtc";
 				case Language.RTH: return "rth";
 				case Language.RTM: return "rtm";
@@ -6634,6 +6634,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.RYN: return "ryn";
 				case Language.RYS: return "rys";
 				case Language.RYU: return "ryu";
+				case Language.RZH: return "rzh";
 				case Language.SAA: return "saa";
 				case Language.SAB: return "sab";
 				case Language.SAC: return "sac";
@@ -7233,13 +7234,13 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.TDJ: return "tdj";
 				case Language.TDK: return "tdk";
 				case Language.TDL: return "tdl";
+				case Language.TDM: return "tdm";
 				case Language.TDN: return "tdn";
 				case Language.TDO: return "tdo";
 				case Language.TDQ: return "tdq";
 				case Language.TDR: return "tdr";
 				case Language.TDS: return "tds";
 				case Language.TDT: return "tdt";
-				case Language.TDU: return "tdu";
 				case Language.TDV: return "tdv";
 				case Language.TDX: return "tdx";
 				case Language.TDY: return "tdy";
@@ -7294,7 +7295,6 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.TGX: return "tgx";
 				case Language.TGY: return "tgy";
 				case Language.TGZ: return "tgz";
-				case Language.THC: return "thc";
 				case Language.THD: return "thd";
 				case Language.THE: return "the";
 				case Language.THF: return "thf";
@@ -7404,7 +7404,6 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.TMM: return "tmm";
 				case Language.TMN: return "tmn";
 				case Language.TMO: return "tmo";
-				case Language.TMP: return "tmp";
 				case Language.TMQ: return "tmq";
 				case Language.TMR: return "tmr";
 				case Language.TMS: return "tms";
@@ -7418,7 +7417,6 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.TNB: return "tnb";
 				case Language.TNC: return "tnc";
 				case Language.TND: return "tnd";
-				case Language.TNE: return "tne";
 				case Language.TNG: return "tng";
 				case Language.TNH: return "tnh";
 				case Language.TNI: return "tni";
@@ -8065,6 +8063,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.WRY: return "wry";
 				case Language.WRZ: return "wrz";
 				case Language.WSA: return "wsa";
+				case Language.WSG: return "wsg";
 				case Language.WSI: return "wsi";
 				case Language.WSK: return "wsk";
 				case Language.WSR: return "wsr";
@@ -8111,6 +8110,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.XAG: return "xag";
 				case Language.XAI: return "xai";
 				case Language.XAJ: return "xaj";
+				case Language.XAK: return "xak";
 				case Language.XAL: return "xal";
 				case Language.XAM: return "xam";
 				case Language.XAN: return "xan";
@@ -8124,7 +8124,6 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.XAV: return "xav";
 				case Language.XAW: return "xaw";
 				case Language.XAY: return "xay";
-				case Language.XBA: return "xba";
 				case Language.XBB: return "xbb";
 				case Language.XBC: return "xbc";
 				case Language.XBD: return "xbd";
@@ -8209,7 +8208,6 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.XKE: return "xke";
 				case Language.XKF: return "xkf";
 				case Language.XKG: return "xkg";
-				case Language.XKH: return "xkh";
 				case Language.XKI: return "xki";
 				case Language.XKJ: return "xkj";
 				case Language.XKK: return "xkk";
@@ -8586,6 +8584,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.YRL: return "yrl";
 				case Language.YRM: return "yrm";
 				case Language.YRN: return "yrn";
+				case Language.YRO: return "yro";
 				case Language.YRS: return "yrs";
 				case Language.YRW: return "yrw";
 				case Language.YRY: return "yry";
@@ -9708,7 +9707,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "bgj": return Language.BGJ;
 				case "bgk": return Language.BGK;
 				case "bgl": return Language.BGL;
-				case "bgm": return Language.BGM;
+				case "bgm": return Language.BCG;
 				case "bgn": return Language.BGN;
 				case "bgo": return Language.BGO;
 				case "bgp": return Language.BGP;
@@ -10409,7 +10408,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "cov": return Language.COV;
 				case "cow": return Language.COW;
 				case "cox": return Language.COX;
-				case "coy": return Language.COY;
+				case "coy": return Language.PIJ;
 				case "coz": return Language.COZ;
 				case "cpa": return Language.CPA;
 				case "cpb": return Language.CPB;
@@ -10426,7 +10425,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "cpx": return Language.CPX;
 				case "cpy": return Language.CPY;
 				case "cqd": return Language.CQD;
-				case "cqu": return Language.CQU;
+				case "cqu": return Language.QUH;
 				case "cra": return Language.CRA;
 				case "crb": return Language.CRB;
 				case "crc": return Language.CRC;
@@ -10769,6 +10768,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "dti": return Language.DTI;
 				case "dtk": return Language.DTK;
 				case "dtm": return Language.DTM;
+				case "dtn": return Language.DTN;
 				case "dto": return Language.DTO;
 				case "dtp": return Language.DTP;
 				case "dtr": return Language.DTR;
@@ -10806,7 +10806,9 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "dwl": return Language.DWL;
 				case "dwr": return Language.DWR;
 				case "dws": return Language.DWS;
+				case "dwu": return Language.DWU;
 				case "dww": return Language.DWW;
+				case "dwy": return Language.DWY;
 				case "dya": return Language.DYA;
 				case "dyb": return Language.DYB;
 				case "dyd": return Language.DYD;
@@ -10911,6 +10913,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "ert": return Language.ERT;
 				case "erw": return Language.ERW;
 				case "ese": return Language.ESE;
+				case "esg": return Language.ESG;
 				case "esh": return Language.ESH;
 				case "esi": return Language.ESI;
 				case "esk": return Language.ESK;
@@ -10988,6 +10991,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "fly": return Language.FLY;
 				case "fmp": return Language.FMP;
 				case "fmu": return Language.FMU;
+				case "fnb": return Language.FNB;
 				case "fng": return Language.FNG;
 				case "fni": return Language.FNI;
 				case "fod": return Language.FOD;
@@ -11139,7 +11143,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "ggg": return Language.GGG;
 				case "ggk": return Language.GGK;
 				case "ggl": return Language.GGL;
-				case "ggn": return Language.GGN;
+				case "ggn": return Language.GVR;
 				case "ggo": return Language.GGO;
 				case "ggr": return Language.GGR;
 				case "ggt": return Language.GGT;
@@ -11180,6 +11184,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "gjk": return Language.GJK;
 				case "gjm": return Language.GJM;
 				case "gjn": return Language.GJN;
+				case "gjr": return Language.GJR;
 				case "gju": return Language.GJU;
 				case "gka": return Language.GKA;
 				case "gke": return Language.GKE;
@@ -11320,7 +11325,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "gus": return Language.GUS;
 				case "gut": return Language.GUT;
 				case "guu": return Language.GUU;
-				case "guv": return Language.GUV;
+				case "guv": return Language.DUZ;
 				case "guw": return Language.GUW;
 				case "gux": return Language.GUX;
 				case "guz": return Language.GUZ;
@@ -11633,7 +11638,9 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "ili": return Language.ILI;
 				case "ilk": return Language.ILK;
 				case "ill": return Language.ILL;
+				case "ilm": return Language.ILM;
 				case "ilo": return Language.ILO;
+				case "ilp": return Language.ILP;
 				case "ils": return Language.ILS;
 				case "ilu": return Language.ILU;
 				case "ilv": return Language.ILV;
@@ -11695,6 +11702,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "isu": return Language.ISU;
 				case "itb": return Language.ITB;
 				case "itc": return Language.ITC;
+				case "itd": return Language.ITD;
 				case "ite": return Language.ITE;
 				case "iti": return Language.ITI;
 				case "itk": return Language.ITK;
@@ -11796,6 +11804,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "jiy": return Language.JIY;
 				case "jje": return Language.JJE;
 				case "jjr": return Language.JJR;
+				case "jka": return Language.JKA;
 				case "jkm": return Language.JKM;
 				case "jko": return Language.JKO;
 				case "jkp": return Language.JKP;
@@ -12011,7 +12020,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "kfz": return Language.KFZ;
 				case "kga": return Language.KGA;
 				case "kgb": return Language.KGB;
-				case "kgc": return Language.KGC;
+				case "kgc": return Language.TDF;
 				case "kgd": return Language.KGD;
 				case "kge": return Language.KGE;
 				case "kgf": return Language.KGF;
@@ -12351,7 +12360,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "kto": return Language.KTO;
 				case "ktp": return Language.KTP;
 				case "ktq": return Language.KTQ;
-				case "ktr": return Language.KTR;
+				case "ktr": return Language.DTP;
 				case "kts": return Language.KTS;
 				case "ktt": return Language.KTT;
 				case "ktu": return Language.KTU;
@@ -12402,7 +12411,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "kvp": return Language.KVP;
 				case "kvq": return Language.KVQ;
 				case "kvr": return Language.KVR;
-				case "kvs": return Language.KVS;
+				case "kvs": return Language.GDJ;
 				case "kvt": return Language.KVT;
 				case "kvu": return Language.KVU;
 				case "kvv": return Language.KVV;
@@ -12496,7 +12505,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "kzg": return Language.KZG;
 				case "kzh": return Language.KZH;
 				case "kzi": return Language.KZI;
-				case "kzj": return Language.KZJ;
+				case "kzj": return Language.DTP;
 				case "kzk": return Language.KZK;
 				case "kzl": return Language.KZL;
 				case "kzm": return Language.KZM;
@@ -12506,7 +12515,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "kzq": return Language.KZQ;
 				case "kzr": return Language.KZR;
 				case "kzs": return Language.KZS;
-				case "kzt": return Language.KZT;
+				case "kzt": return Language.DTP;
 				case "kzu": return Language.KZU;
 				case "kzv": return Language.KZV;
 				case "kzw": return Language.KZW;
@@ -13073,6 +13082,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "miy": return Language.MIY;
 				case "miz": return Language.MIZ;
 				case "mja": return Language.MJA;
+				case "mjb": return Language.MJB;
 				case "mjc": return Language.MJC;
 				case "mjd": return Language.MJD;
 				case "mje": return Language.MJE;
@@ -13496,7 +13506,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "naa": return Language.NAA;
 				case "nab": return Language.NAB;
 				case "nac": return Language.NAC;
-				case "nad": return Language.NAD;
+				case "nad": return Language.XNY;
 				case "nae": return Language.NAE;
 				case "naf": return Language.NAF;
 				case "nag": return Language.NAG;
@@ -13882,6 +13892,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "nsx": return Language.NSX;
 				case "nsy": return Language.NSY;
 				case "nsz": return Language.NSZ;
+				case "ntd": return Language.NTD;
 				case "nte": return Language.NTE;
 				case "ntg": return Language.NTG;
 				case "nti": return Language.NTI;
@@ -13891,7 +13902,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "nto": return Language.NTO;
 				case "ntp": return Language.NTP;
 				case "ntr": return Language.NTR;
-				case "nts": return Language.NTS;
+				case "nts": return Language.PIJ;
 				case "ntu": return Language.NTU;
 				case "ntw": return Language.NTW;
 				case "ntx": return Language.NTX;
@@ -14050,6 +14061,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "olo": return Language.OLO;
 				case "olr": return Language.OLR;
 				case "olt": return Language.OLT;
+				case "olu": return Language.OLU;
 				case "oma": return Language.OMA;
 				case "omb": return Language.OMB;
 				case "omc": return Language.OMC;
@@ -14250,6 +14262,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "pgs": return Language.PGS;
 				case "pgu": return Language.PGU;
 				case "pgy": return Language.PGY;
+				case "pgz": return Language.PGZ;
 				case "pha": return Language.PHA;
 				case "phd": return Language.PHD;
 				case "phg": return Language.PHG;
@@ -14328,7 +14341,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "plz": return Language.PLZ;
 				case "pma": return Language.PMA;
 				case "pmb": return Language.PMB;
-				case "pmc": return Language.PMC;
+				case "pmc": return Language.HUW;
 				case "pmd": return Language.PMD;
 				case "pme": return Language.PME;
 				case "pmf": return Language.PMF;
@@ -14393,7 +14406,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "pox": return Language.POX;
 				case "poy": return Language.POY;
 				case "poz": return Language.POZ;
-				case "ppa": return Language.PPA;
+				case "ppa": return Language.BFY;
 				case "ppe": return Language.PPE;
 				case "ppi": return Language.PPI;
 				case "ppk": return Language.PPK;
@@ -14433,7 +14446,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "pru": return Language.PRU;
 				case "prw": return Language.PRW;
 				case "prx": return Language.PRX;
-				case "pry": return Language.PRY;
+				case "pry": return Language.PRT;
 				case "prz": return Language.PRZ;
 				case "psa": return Language.PSA;
 				case "psc": return Language.PSC;
@@ -14691,6 +14704,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "rsb": return Language.RSB;
 				case "rsi": return Language.RSI;
 				case "rsl": return Language.RSL;
+				case "rsm": return Language.RSM;
 				case "rtc": return Language.RTC;
 				case "rth": return Language.RTH;
 				case "rtm": return Language.RTM;
@@ -14721,6 +14735,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "ryn": return Language.RYN;
 				case "rys": return Language.RYS;
 				case "ryu": return Language.RYU;
+				case "rzh": return Language.RZH;
 				case "saa": return Language.SAA;
 				case "sab": return Language.SAB;
 				case "sac": return Language.SAC;
@@ -15321,13 +15336,14 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "tdj": return Language.TDJ;
 				case "tdk": return Language.TDK;
 				case "tdl": return Language.TDL;
+				case "tdm": return Language.TDM;
 				case "tdn": return Language.TDN;
 				case "tdo": return Language.TDO;
 				case "tdq": return Language.TDQ;
 				case "tdr": return Language.TDR;
 				case "tds": return Language.TDS;
 				case "tdt": return Language.TDT;
-				case "tdu": return Language.TDU;
+				case "tdu": return Language.DTP;
 				case "tdv": return Language.TDV;
 				case "tdx": return Language.TDX;
 				case "tdy": return Language.TDY;
@@ -15382,7 +15398,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "tgx": return Language.TGX;
 				case "tgy": return Language.TGY;
 				case "tgz": return Language.TGZ;
-				case "thc": return Language.THC;
+				case "thc": return Language.TPO;
 				case "thd": return Language.THD;
 				case "the": return Language.THE;
 				case "thf": return Language.THF;
@@ -15496,7 +15512,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "tmm": return Language.TMM;
 				case "tmn": return Language.TMN;
 				case "tmo": return Language.TMO;
-				case "tmp": return Language.TMP;
+				case "tmp": return Language.TYJ;
 				case "tmq": return Language.TMQ;
 				case "tmr": return Language.TMR;
 				case "tms": return Language.TMS;
@@ -15510,7 +15526,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "tnb": return Language.TNB;
 				case "tnc": return Language.TNC;
 				case "tnd": return Language.TND;
-				case "tne": return Language.TNE;
+				case "tne": return Language.KAK;
 				case "tnf": return Language.PRS;
 				case "tng": return Language.TNG;
 				case "tnh": return Language.TNH;
@@ -16160,6 +16176,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "wry": return Language.WRY;
 				case "wrz": return Language.WRZ;
 				case "wsa": return Language.WSA;
+				case "wsg": return Language.WSG;
 				case "wsi": return Language.WSI;
 				case "wsk": return Language.WSK;
 				case "wsr": return Language.WSR;
@@ -16206,6 +16223,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "xag": return Language.XAG;
 				case "xai": return Language.XAI;
 				case "xaj": return Language.XAJ;
+				case "xak": return Language.XAK;
 				case "xal": return Language.XAL;
 				case "xam": return Language.XAM;
 				case "xan": return Language.XAN;
@@ -16219,7 +16237,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "xav": return Language.XAV;
 				case "xaw": return Language.XAW;
 				case "xay": return Language.XAY;
-				case "xba": return Language.XBA;
+				case "xba": return Language.CAX;
 				case "xbb": return Language.XBB;
 				case "xbc": return Language.XBC;
 				case "xbd": return Language.XBD;
@@ -16305,7 +16323,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "xke": return Language.XKE;
 				case "xkf": return Language.XKF;
 				case "xkg": return Language.XKG;
-				case "xkh": return Language.XKH;
+				case "xkh": return Language.WAW;
 				case "xki": return Language.XKI;
 				case "xkj": return Language.XKJ;
 				case "xkk": return Language.XKK;
@@ -16687,6 +16705,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "yrl": return Language.YRL;
 				case "yrm": return Language.YRM;
 				case "yrn": return Language.YRN;
+				case "yro": return Language.YRO;
 				case "yrs": return Language.YRS;
 				case "yrw": return Language.YRW;
 				case "yry": return Language.YRY;

@@ -1,8 +1,8 @@
-﻿Total entries: 8975
+﻿Total entries: 8997
 Types:
-* language - 8094
+* language - 8114
 	use fields: Type, Subtag, Description, Added, Suppress-Script, Scope, Macrolanguage, Deprecated, Preferred-Value, Comments
-* extlang - 230
+* extlang - 232
 	use fields: Type, Subtag, Description, Added, Preferred-Value, Prefix, Macrolanguage, Deprecated
 * script - 181
 	use fields: Type, Subtag, Description, Added, Comments

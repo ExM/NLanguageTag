@@ -12,10 +12,9 @@ namespace AbbyyLS.Globalization.Bcp47
 	{
 		[TestCase(null)]
 		[TestCase((object)(new string[0]))]
-		[ExpectedException(typeof(FormatException))]
 		public void EmptyCtor(string[] sequence)
 		{
-			new PrivateUseSubtags(sequence);
+			Assert.Throws<FormatException>(() => new PrivateUseSubtags(sequence));
 		}
 
 		[Test]
@@ -62,7 +61,6 @@ namespace AbbyyLS.Globalization.Bcp47
 		[TestCase("x-aaa-")]
 		[TestCase("x-")]
 		[TestCase("x")]
-		[ExpectedException(typeof(FormatException))]
 		public void ParseFail(string text)
 		{
 			var pu1 = PrivateUseSubtags.TryParse(text);
@@ -71,7 +69,7 @@ namespace AbbyyLS.Globalization.Bcp47
 			PrivateUseSubtags pu2;
 			Assert.That(PrivateUseSubtags.TryParse(text, out pu2), Is.False);
 
-			PrivateUseSubtags.Parse(text);
+			Assert.Throws<FormatException>(() => PrivateUseSubtags.Parse(text));
 		}
 
 		[Test]

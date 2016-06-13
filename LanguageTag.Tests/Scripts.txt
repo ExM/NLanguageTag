@@ -12,6 +12,7 @@ Bamu
 Bass
 Batk
 Beng
+Bhks
 Blis
 Bopo
 Brah
@@ -44,6 +45,7 @@ Gran
 Grek
 Gujr
 Guru
+Hanb
 Hang
 Hani
 Hano
@@ -58,6 +60,7 @@ Hrkt
 Hung
 Inds
 Ital
+Jamo
 Java
 Jpan
 Jurc
@@ -77,6 +80,7 @@ Laoo
 Latf
 Latg
 Latn
+Leke
 Lepc
 Limb
 Lina
@@ -103,6 +107,7 @@ Mult
 Mymr
 Narb
 Nbat
+Newa
 Nkgb
 Nkoo
 Nshu
@@ -120,6 +125,7 @@ Phli
 Phlp
 Phlv
 Phnx
+Piqd
 Plrd
 Prti
 Rjng
@@ -167,6 +173,7 @@ Xsux
 Yiii
 Zinh
 Zmth
+Zsye
 Zsym
 Zxxx
 Zyyy

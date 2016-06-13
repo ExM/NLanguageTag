@@ -12,10 +12,9 @@ namespace AbbyyLS.Globalization.Bcp47
 	{
 		[TestCase(null)]
 		[TestCase((object)(new string[0]))]
-		[ExpectedException(typeof(FormatException))]
 		public void EmptyCtor(string[] sequence)
 		{
-			new ExtensionSubtag('a', sequence);
+			Assert.Throws<FormatException>(() => new ExtensionSubtag('a', sequence));
 		}
 
 		[Test]
@@ -42,10 +41,9 @@ namespace AbbyyLS.Globalization.Bcp47
 		[TestCase("a-a?a")]
 		[TestCase("x-aaa")]
 		[TestCase("aaa")]
-		[ExpectedException(typeof(FormatException))]
 		public void ParseFromExtensionSubtagFail(string text)
 		{
-			text.ParseFromExtensionSubtag();
+			Assert.Throws<FormatException>(() => text.ParseFromExtensionSubtag());
 		}
 
 		[TestCase(new string[] { "aaa" }, "a-aaa")]
