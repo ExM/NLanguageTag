@@ -36,6 +36,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Variant.Ekavsk: return new string[] { "sr", "sr-Latn", "sr-Cyrl" };
 				case Variant.Emodeng: return new string[] { "en" };
 				case Variant.Fonipa: return new string[] {  };
+				case Variant.Fonnapa: return new string[] {  };
 				case Variant.Fonupa: return new string[] {  };
 				case Variant.Fonxsamp: return new string[] {  };
 				case Variant.Hepburn: return new string[] { "ja-Latn" };
@@ -123,6 +124,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Variant.Ekavsk: return "ekavsk";
 				case Variant.Emodeng: return "emodeng";
 				case Variant.Fonipa: return "fonipa";
+				case Variant.Fonnapa: return "fonnapa";
 				case Variant.Fonupa: return "fonupa";
 				case Variant.Fonxsamp: return "fonxsamp";
 				case Variant.Hepburn: return "hepburn";
@@ -207,6 +209,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "ekavsk": return Variant.Ekavsk;
 				case "emodeng": return Variant.Emodeng;
 				case "fonipa": return Variant.Fonipa;
+				case "fonnapa": return Variant.Fonnapa;
 				case "fonupa": return Variant.Fonupa;
 				case "fonxsamp": return Variant.Fonxsamp;
 				case "hepburn": return Variant.Hepburn;

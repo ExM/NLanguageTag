@@ -25,6 +25,7 @@ dajnko
 ekavsk
 emodeng
 fonipa
+fonnapa
 fonupa
 fonxsamp
 hepburn

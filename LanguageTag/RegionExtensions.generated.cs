@@ -89,6 +89,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Region.ES: return "ES";
 				case Region.ET: return "ET";
 				case Region.EU: return "EU";
+				case Region.EZ: return "EZ";
 				case Region.FI: return "FI";
 				case Region.FJ: return "FJ";
 				case Region.FK: return "FK";
@@ -256,6 +257,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Region.UA: return "UA";
 				case Region.UG: return "UG";
 				case Region.UM: return "UM";
+				case Region.UN: return "UN";
 				case Region.US: return "US";
 				case Region.UY: return "UY";
 				case Region.UZ: return "UZ";
@@ -393,6 +395,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "es": return Region.ES;
 				case "et": return Region.ET;
 				case "eu": return Region.EU;
+				case "ez": return Region.EZ;
 				case "fi": return Region.FI;
 				case "fj": return Region.FJ;
 				case "fk": return Region.FK;
@@ -562,6 +565,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "ua": return Region.UA;
 				case "ug": return Region.UG;
 				case "um": return Region.UM;
+				case "un": return Region.UN;
 				case "us": return Region.US;
 				case "uy": return Region.UY;
 				case "uz": return Region.UZ;

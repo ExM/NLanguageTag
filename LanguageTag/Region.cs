@@ -311,7 +311,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		CY,
 
 		/// <summary>
-		/// Czech Republic
+		/// Czechia Czech Republic
 		/// </summary>
 		CZ,
 
@@ -394,6 +394,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// European Union
 		/// </summary>
 		EU,
+
+		/// <summary>
+		/// Eurozone
+		/// </summary>
+		EZ,
 
 		/// <summary>
 		/// Finland
@@ -1230,6 +1235,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// United States Minor Outlying Islands
 		/// </summary>
 		UM,
+
+		/// <summary>
+		/// United Nations
+		/// </summary>
+		UN,
 
 		/// <summary>
 		/// United States

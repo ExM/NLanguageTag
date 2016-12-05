@@ -159,6 +159,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		Fonipa,
 
 		/// <summary>
+		/// North American Phonetic Alphabet Americanist Phonetic Notation
+		/// </summary>
+		Fonnapa,
+
+		/// <summary>
 		/// Uralic Phonetic Alphabet
 		/// </summary>
 		Fonupa,

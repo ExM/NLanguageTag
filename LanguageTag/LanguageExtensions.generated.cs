@@ -6062,6 +6062,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case Language.OUE: return "oue";
 				case Language.OUI: return "oui";
 				case Language.OUM: return "oum";
+				case Language.OVD: return "ovd";
 				case Language.OWI: return "owi";
 				case Language.OWL: return "owl";
 				case Language.OYB: return "oyb";
@@ -14156,6 +14157,7 @@ namespace AbbyyLS.Globalization.Bcp47
 				case "oui": return Language.OUI;
 				case "oum": return Language.OUM;
 				case "oun": return Language.VAJ;
+				case "ovd": return Language.OVD;
 				case "owi": return Language.OWI;
 				case "owl": return Language.OWL;
 				case "oyb": return Language.OYB;

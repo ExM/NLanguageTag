@@ -9450,7 +9450,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		DRG,
 
 		/// <summary>
-		/// C'lela
+		/// C'Lela
 		/// </summary>
 		DRI,
 
@@ -26404,6 +26404,11 @@ namespace AbbyyLS.Globalization.Bcp47
 		/// Ouma
 		/// </summary>
 		OUM,
+
+		/// <summary>
+		/// Övdalian Elfdalian
+		/// </summary>
+		OVD,
 
 		/// <summary>
 		/// Owiniga
