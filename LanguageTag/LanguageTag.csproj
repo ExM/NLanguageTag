@@ -88,7 +88,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>LanguageTag.ctors.cs</LastGenOutput>
     </None>
-    <None Include="LanguageTag.nuspec" />
+    <None Include="paket.template" />
     <None Include="RegistryGenerator.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RegistryGenerator.statistic.txt</LastGenOutput>

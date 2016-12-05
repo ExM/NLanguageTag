@@ -1,0 +1,11 @@
+type project
+projectUrl https://github.com/ExM/LanguageTag
+licenseUrl https://github.com/ExM/LanguageTag/raw/master/LICENSE
+requireLicenseAcceptance false
+include-pdbs true
+authors Anatoliy Koperin
+owners Anatoliy Koperin
+description
+    Language tags are used to help identify languages, whether spoken, written, signed, or otherwise signaled, for the purpose of communication. Language tag syntax is defined by the IETF's BCP 47 (https://tools.ietf.org/html/bcp47)
+tags
+    bcp47 languagetag iso639
