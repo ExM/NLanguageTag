@@ -8837,6 +8837,9 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		public static Language? TryParseFromLanguage(this string text)
 		{
+			if(text == null)
+				return null;
+
 			switch (text.ToLower(CultureInfo.InvariantCulture))
 			{
 				case "aa": return Language.AA;

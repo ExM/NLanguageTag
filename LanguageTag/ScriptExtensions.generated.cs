@@ -200,6 +200,9 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		public static Script? TryParseFromScript(this string text)
 		{
+			if(text == null)
+				return null;
+
 			switch (text.ToLower(CultureInfo.InvariantCulture))
 			{
 				case "adlm": return Script.Adlm;

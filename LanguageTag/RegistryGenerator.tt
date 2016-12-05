@@ -56,6 +56,9 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		public static Language? TryParseFromExtLanguage(this string text, Language prefix)
 		{
+			if(text == null)
+				return null;
+
 			switch(prefix)
 			{
 <#foreach(var lang in extlangs.Select(_ => _.Prefix.First()).Distinct())
@@ -193,6 +196,9 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		public static Language? TryParseFromLanguage(this string text)
 		{
+			if(text == null)
+				return null;
+
 			switch (text.ToLower(CultureInfo.InvariantCulture))
 			{
 <#foreach(var entry in prlangs)
@@ -256,6 +262,9 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		public static Region? TryParseFromRegion(this string text)
 		{
+			if(text == null)
+				return null;
+
 			switch (text.ToLower(CultureInfo.InvariantCulture))
 			{
 <#foreach(var entry in regions)
@@ -320,6 +329,9 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		public static Script? TryParseFromScript(this string text)
 		{
+			if(text == null)
+				return null;
+
 			switch (text.ToLower(CultureInfo.InvariantCulture))
 			{
 <#foreach(var entry in scripts)
@@ -397,6 +409,9 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		public static Variant? TryParseFromVariant(this string text)
 		{
+			if(text == null)
+				return null;
+
 			switch (text.ToLower(CultureInfo.InvariantCulture))
 			{
 <#foreach(var entry in variants)

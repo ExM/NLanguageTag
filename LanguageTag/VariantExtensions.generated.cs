@@ -180,6 +180,9 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		public static Variant? TryParseFromVariant(this string text)
 		{
+			if(text == null)
+				return null;
+
 			switch (text.ToLower(CultureInfo.InvariantCulture))
 			{
 				case "1606nict": return Variant.V1606nict;

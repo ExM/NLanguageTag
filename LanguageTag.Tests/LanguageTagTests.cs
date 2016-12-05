@@ -7,7 +7,6 @@ namespace AbbyyLS.Globalization.Bcp47
 	[TestFixture]
 	public partial class LanguageTagTests
 	{
-		[TestCase("", null, null, null)]
 		[TestCase("en", Language.EN, null, null)]
 		[TestCase("en-Latn", Language.EN, null, null)]
 		[TestCase("ru-Latn", Language.RU, Script.Latn, null)]
@@ -77,12 +76,18 @@ namespace AbbyyLS.Globalization.Bcp47
 		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa", LanguageTag.Field.Language | LanguageTag.Field.Region, "ru-RU")]
 		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa", LanguageTag.Field.Enumerated, "ru-Latn-RU-Petr1708")]
 		[TestCase("x-aaa", LanguageTag.Field.PrivateUse, "x-aaa")]
-		[TestCase("x-aaa", LanguageTag.Field.Language, "")]
 		[TestCase("en-x-aaa", LanguageTag.Field.PrivateUse, "x-aaa")]
-		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa", (byte)255, "")]
 		public void Take(string tagSource, LanguageTag.Field fields, string expected)
 		{
 			Assert.That(LanguageTag.Parse(tagSource).Take(fields), Is.EqualTo(LanguageTag.Parse(expected)));
+		}
+
+		[TestCase("x-aaa", LanguageTag.Field.Language)]
+		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa", (byte)255)]
+		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa", LanguageTag.Field.None)]
+		public void TakeNone(string tagSource, LanguageTag.Field fields)
+		{
+			Assert.That(LanguageTag.Parse(tagSource).Take(fields), Is.EqualTo(new LanguageTag()));
 		}
 
 		[TestCase("en-scotland", ">=", "en", true)]
@@ -233,7 +238,6 @@ namespace AbbyyLS.Globalization.Bcp47
 			Assert.Throws<NotSupportedException>(() => LanguageTag.Parse(grandfathered));
 		}
 
-		[TestCase("", "")]
 		[TestCase("zh-CHS", "zh-Hans")]
 		[TestCase("sl-rozaj-biske-1994-fonipa", "sl-rozaj-biske-1994-fonipa")]
 		[TestCase("SL-rozaj-fonipa-alalc97", "sl-rozaj-alalc97-fonipa")]
@@ -249,6 +253,12 @@ namespace AbbyyLS.Globalization.Bcp47
 		public void ToString(string source, string expected)
 		{
 			Assert.AreEqual(expected, LanguageTag.Parse(source).ToString());
+		}
+
+		[Test]
+		public void EmptyToString()
+		{
+			Assert.That(new LanguageTag().ToString(), Is.Empty);
 		}
 
 		[Test]
@@ -281,10 +291,19 @@ namespace AbbyyLS.Globalization.Bcp47
 			Assert.That(tag, Is.EqualTo(expected));
 		}
 
-		[Test]
-		public void ConstructorString_ArgumentNullException()
+		[TestCase(null)]
+		[TestCase("")]
+		[TestCase(" ")]
+		public void ConstructorWithEmptyString(string text)
 		{
-			Assert.Throws<ArgumentNullException>(() => new LanguageTag((string)null));
+			Assert.Throws<ArgumentNullException>(() => new LanguageTag(text));
+		}
+
+		[Test]
+		public void DefaultConstructor()
+		{
+			var tag = new LanguageTag();
+			Assert.That(tag.Fields, Is.EqualTo(LanguageTag.Field.None));
 		}
 	}
 }

@@ -276,6 +276,9 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		public static Language? TryParseFromExtLanguage(this string text, Language prefix)
 		{
+			if(text == null)
+				return null;
+
 			switch(prefix)
 			{
 				case Language.AR:

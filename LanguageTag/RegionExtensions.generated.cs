@@ -314,6 +314,9 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		public static Region? TryParseFromRegion(this string text)
 		{
+			if(text == null)
+				return null;
+
 			switch (text.ToLower(CultureInfo.InvariantCulture))
 			{
 				case "aa": return Region.AA;

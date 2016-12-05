@@ -131,6 +131,9 @@ namespace AbbyyLS.Globalization.Bcp47
 		public LanguageTag(string text)
 			: this()
 		{
+			if (string.IsNullOrWhiteSpace(text))
+				throw new ArgumentNullException("text");
+
 			try
 			{
 				InternalParse(text);
@@ -149,6 +152,10 @@ namespace AbbyyLS.Globalization.Bcp47
 		public static bool TryParse(string text, out LanguageTag result)
 		{
 			result = new LanguageTag();
+
+			if (string.IsNullOrWhiteSpace(text))
+				return false;
+
 			try
 			{
 				result.InternalParse(text);
@@ -162,6 +169,9 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		public static LanguageTag? TryParse(string text)
 		{
+			if (string.IsNullOrWhiteSpace(text))
+				return null;
+
 			var result = new LanguageTag();
 
 			try
@@ -177,12 +187,6 @@ namespace AbbyyLS.Globalization.Bcp47
 
 		private void InternalParse(string text)
 		{
-			if (text == null)
-				throw new ArgumentNullException("text");
-
-			if (text.Length == 0)
-				return;
-
 			var gf = Grandfathered.GetPreferredValue(text);
 			if (gf != null)
 				text = gf;
