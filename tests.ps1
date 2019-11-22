@@ -1,6 +1,4 @@
 $ErrorActionPreference = "Stop"
 $mainFolder = Resolve-Path (Split-Path -Path $MyInvocation.MyCommand.Definition -Parent)
 
-& dotnet clean
-& dotnet restore
-& dotnet build -c:Release $mainFolder\NLanguageTag.sln
+& dotnet test $mainFolder/NLanguageTag.Tests/NLanguageTag.Tests.csproj -v d

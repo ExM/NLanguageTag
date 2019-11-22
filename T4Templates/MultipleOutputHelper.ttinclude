@@ -1,6 +1,5 @@
 ﻿<#@ assembly name="System.Core"
 #><#@ assembly name="System.Data.Linq"
-#><#@ assembly name="EnvDTE"
 #><#@ assembly name="System.Xml"
 #><#@ assembly name="System.Xml.Linq"
 #><#@ import namespace="System.Collections.Generic"
@@ -28,7 +27,7 @@ class Manager {
     protected readonly List<String> generatedFileNames = new List<String>();
 
     public static Manager Create(ITextTemplatingEngineHost host, StringBuilder template) {
-        return (host is IServiceProvider) ? new VSManager(host, template) : new Manager(host, template);
+        return new Manager(host, template);
     }
 
     public void StartNewFile(String name) {
@@ -107,75 +106,6 @@ class Manager {
             if (value != null)
                 value.Start = template.Length;
             currentBlock = value;
-        }
-    }
-
-    private class VSManager: Manager {
-        private readonly EnvDTE.ProjectItem templateProjectItem;
-        private readonly EnvDTE.DTE dte;
-        private readonly Action<String> checkOutAction;
-        private readonly Action<List<String>> projectSyncAction;
-
-        public override String DefaultProjectNamespace {
-            get {
-                return templateProjectItem.ContainingProject.Properties.Item("DefaultNamespace").Value.ToString();
-            }
-        }
-
-        public override String GetCustomToolNamespace(string fileName) {
-            return dte.Solution.FindProjectItem(fileName).Properties.Item("CustomToolNamespace").Value.ToString();
-        }
-
-        public override void Process(bool split, bool sync) {
-            if (templateProjectItem.ProjectItems == null)
-                return;
-            base.Process(split, sync);
-            if (sync)
-                projectSyncAction.EndInvoke(projectSyncAction.BeginInvoke(generatedFileNames, null, null));
-        }
-
-        protected override void CreateFile(String fileName, String content) {
-            if (IsFileContentDifferent(fileName, content)) {
-                CheckoutFileIfRequired(fileName);
-                File.WriteAllText(fileName, content);
-            }
-        }
-
-        internal VSManager(ITextTemplatingEngineHost host, StringBuilder template)
-            : base(host, template) {
-            var hostServiceProvider = (IServiceProvider)host;
-            if (hostServiceProvider == null)
-                throw new ArgumentNullException("Could not obtain IServiceProvider");
-            dte = (EnvDTE.DTE) hostServiceProvider.GetService(typeof(EnvDTE.DTE));
-            if (dte == null)
-                throw new ArgumentNullException("Could not obtain DTE from host");
-            templateProjectItem = dte.Solution.FindProjectItem(host.TemplateFile);
-            checkOutAction = fileName => dte.SourceControl.CheckOutItem(fileName);
-            projectSyncAction = keepFileNames => ProjectSync(templateProjectItem, keepFileNames);
-        }
-
-        private static void ProjectSync(EnvDTE.ProjectItem templateProjectItem, List<String> keepFileNames) {
-            var keepFileNameSet = new HashSet<String>(keepFileNames);
-            var projectFiles = new Dictionary<String, EnvDTE.ProjectItem>();
-            var originalFilePrefix = Path.GetFileNameWithoutExtension(templateProjectItem.FileNames[0]) + ".";
-            foreach (EnvDTE.ProjectItem projectItem in templateProjectItem.ProjectItems)
-                projectFiles.Add(projectItem.FileNames[0], projectItem);
-
-            // Remove unused items from the project
-            foreach (var pair in projectFiles)
-                if (!keepFileNames.Contains(pair.Key) && !(Path.GetFileNameWithoutExtension(pair.Key) + ".").StartsWith(originalFilePrefix))
-                    pair.Value.Delete();
-
-            // Add missing files to the project
-            foreach(String fileName in keepFileNameSet)
-                if (!projectFiles.ContainsKey(fileName))
-                    templateProjectItem.ProjectItems.AddFromFile(fileName);
-        }
-
-        private void CheckoutFileIfRequired(String fileName) {
-            var sc = dte.SourceControl;
-            if (sc != null && sc.IsItemUnderSCC(fileName) && !sc.IsItemCheckedOut(fileName))
-                checkOutAction.EndInvoke(checkOutAction.BeginInvoke(fileName, null, null));
         }
     }
 } #>
