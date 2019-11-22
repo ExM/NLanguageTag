@@ -1,7 +1,7 @@
 using System;
 using System.Globalization;
 
-namespace AbbyyLS.Globalization.Bcp47
+namespace NLanguageTag
 {
 	internal static class Grandfathered
 	{

@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
+using NLanguageTag;
 
-namespace AbbyyLS.Globalization.Bcp47
+namespace NLanguageTag.Tests
 {
 	public partial class LanguageTagTests
 	{

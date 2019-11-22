@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AbbyyLS.Globalization.Bcp47
+namespace NLanguageTag
 {
 	public partial struct LanguageTag
 	{

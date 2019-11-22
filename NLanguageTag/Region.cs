@@ -1,6 +1,6 @@
 using System;
 
-namespace AbbyyLS.Globalization.Bcp47
+namespace NLanguageTag
 {
 	/// <summary>
 	/// Region subtags are used to indicate linguistic variations associated

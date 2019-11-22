@@ -1,4 +1,4 @@
-﻿namespace AbbyyLS.Globalization.Bcp47
+﻿namespace NLanguageTag
 {
 	public enum LanguageScope
 	{

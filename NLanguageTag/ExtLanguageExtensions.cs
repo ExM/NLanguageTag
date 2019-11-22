@@ -1,7 +1,7 @@
 using System;
 using System.Globalization;
 
-namespace AbbyyLS.Globalization.Bcp47
+namespace NLanguageTag
 {
 	/// <summary>
 	/// Мethods for the components of language tag

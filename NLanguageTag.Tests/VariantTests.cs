@@ -2,7 +2,7 @@
 using System;
 using System.Linq;
 
-namespace AbbyyLS.Globalization.Bcp47
+namespace NLanguageTag.Tests
 {
 	[TestFixture]
 	public class VariantTests

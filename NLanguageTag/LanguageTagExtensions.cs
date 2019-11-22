@@ -3,7 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AbbyyLS.Globalization.Bcp47
+namespace NLanguageTag
 {
 	/// <summary>
 	/// 

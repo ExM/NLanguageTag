@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
 
-namespace AbbyyLS.Globalization.Bcp47
+namespace NLanguageTag.Tests
 {
 	[TestFixture]
 	public class RegionTests

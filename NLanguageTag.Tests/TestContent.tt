@@ -24,7 +24,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace AbbyyLS.Globalization.Bcp47
+namespace NLanguageTag.Tests
 {
 	public static class TestContent
 	{
@@ -32,7 +32,7 @@ namespace AbbyyLS.Globalization.Bcp47
 		public static IEnumerable<string> Get<#= resource.Name #>()
 		{
 			var assembly = typeof(TestContent).Assembly;
-			var resourceName = "AbbyyLS.Globalization.Bcp47.<#= resource.Name #>.txt";
+			var resourceName = "NLanguageTag.Tests.<#= resource.Name #>.txt";
 
 			using (Stream stream = assembly.GetManifestResourceStream(resourceName))
 			using (StreamReader reader = new StreamReader(stream))

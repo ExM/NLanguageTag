@@ -1,6 +1,6 @@
 using System;
 
-namespace AbbyyLS.Globalization.Bcp47
+namespace NLanguageTag
 {
 	/// <summary>
 	/// The primary language subtag is the first subtag in a language tag.

@@ -1,6 +1,6 @@
 using System;
 
-namespace AbbyyLS.Globalization.Bcp47
+namespace NLanguageTag
 {
 	/// <summary>
 	/// Variant subtags are used to indicate additional, well-recognized variations that define a

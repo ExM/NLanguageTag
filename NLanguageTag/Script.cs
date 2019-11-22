@@ -1,6 +1,6 @@
 using System;
 
-namespace AbbyyLS.Globalization.Bcp47
+namespace NLanguageTag
 {
 	/// <summary>
 	/// Script subtags are used to indicate the script or writing system variations

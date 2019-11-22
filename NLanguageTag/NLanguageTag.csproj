@@ -14,7 +14,7 @@
     <Copyright>Anatoliy Koperin &lt;a.koperin@gmail.com&gt;</Copyright>
     <RepositoryUrl>https://github.com/ExM/NLanguageTag</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
-    <RootNamespace>AbbyyLS.Globalization.Bcp47</RootNamespace>
+    <RootNamespace>NLanguageTag</RootNamespace>
     <PackageTags>bcp47 languagetag iso639</PackageTags>
     <Description>Language tags are used to help identify languages, whether spoken, written, signed, or otherwise signaled, for the purpose of communication. Language tag syntax is defined by the IETF's BCP 47 (https://tools.ietf.org/html/bcp47)</Description>
     <PackageLicenseUrl>https://github.com/ExM/NLanguageTag/raw/master/LICENSE</PackageLicenseUrl>

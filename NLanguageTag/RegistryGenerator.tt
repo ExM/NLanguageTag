@@ -12,7 +12,7 @@
 using System;
 using System.Globalization;
 
-namespace AbbyyLS.Globalization.Bcp47
+namespace NLanguageTag
 {
 	/// <summary>
 	/// Мethods for the components of language tag
@@ -84,7 +84,7 @@ namespace AbbyyLS.Globalization.Bcp47
 using System;
 using System.Globalization;
 
-namespace AbbyyLS.Globalization.Bcp47
+namespace NLanguageTag
 {
 	internal static class Grandfathered
 	{
@@ -111,7 +111,7 @@ namespace AbbyyLS.Globalization.Bcp47
 <# manager.StartNewFile("Language.cs"); #>
 using System;
 
-namespace AbbyyLS.Globalization.Bcp47
+namespace NLanguageTag
 {
 	/// <summary>
 	/// The primary language subtag is the first subtag in a language tag.
@@ -136,7 +136,7 @@ namespace AbbyyLS.Globalization.Bcp47
 using System;
 using System.Globalization;
 
-namespace AbbyyLS.Globalization.Bcp47
+namespace NLanguageTag
 {
 	public static partial class LanguageTagExtensions
 	{
@@ -214,7 +214,7 @@ namespace AbbyyLS.Globalization.Bcp47
 <# manager.StartNewFile("Region.cs"); #>
 using System;
 
-namespace AbbyyLS.Globalization.Bcp47
+namespace NLanguageTag
 {
 	/// <summary>
 	/// Region subtags are used to indicate linguistic variations associated
@@ -240,7 +240,7 @@ namespace AbbyyLS.Globalization.Bcp47
 using System;
 using System.Globalization;
 
-namespace AbbyyLS.Globalization.Bcp47
+namespace NLanguageTag
 {
 	public static partial class LanguageTagExtensions
 	{
@@ -280,7 +280,7 @@ namespace AbbyyLS.Globalization.Bcp47
 <# manager.StartNewFile("Script.cs"); #>
 using System;
 
-namespace AbbyyLS.Globalization.Bcp47
+namespace NLanguageTag
 {
 	/// <summary>
 	/// Script subtags are used to indicate the script or writing system variations
@@ -306,7 +306,7 @@ namespace AbbyyLS.Globalization.Bcp47
 using System;
 using System.Globalization;
 
-namespace AbbyyLS.Globalization.Bcp47
+namespace NLanguageTag
 {
 	public static partial class LanguageTagExtensions
 	{
@@ -347,7 +347,7 @@ namespace AbbyyLS.Globalization.Bcp47
 <# manager.StartNewFile("Variant.cs"); #>
 using System;
 
-namespace AbbyyLS.Globalization.Bcp47
+namespace NLanguageTag
 {
 	/// <summary>
 	/// Variant subtags are used to indicate additional, well-recognized variations that define a
@@ -373,7 +373,7 @@ namespace AbbyyLS.Globalization.Bcp47
 using System;
 using System.Globalization;
 
-namespace AbbyyLS.Globalization.Bcp47
+namespace NLanguageTag
 {
 	public static partial class LanguageTagExtensions
 	{

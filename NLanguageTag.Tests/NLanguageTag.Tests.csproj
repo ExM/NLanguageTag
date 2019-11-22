@@ -4,7 +4,7 @@
     <AssemblyName>NLanguageTag.Tests</AssemblyName>
     <TargetFramework>netcoreapp2.1</TargetFramework>
 	<IsTestProject>true</IsTestProject>
-	<RootNamespace>AbbyyLS.Globalization.Bcp47</RootNamespace>
+	<RootNamespace>NLanguageTag.Tests</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="ExtLanguages.txt" />

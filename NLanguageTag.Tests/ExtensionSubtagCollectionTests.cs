@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace AbbyyLS.Globalization.Bcp47
+namespace NLanguageTag.Tests
 {
 	[TestFixture]
 	public class ExtensionSubtagCollectionTests

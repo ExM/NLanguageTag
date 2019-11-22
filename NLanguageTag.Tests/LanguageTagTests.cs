@@ -1,8 +1,9 @@
 ﻿using NUnit.Framework;
 using System;
 using System.Linq;
+using NLanguageTag;
 
-namespace AbbyyLS.Globalization.Bcp47
+namespace NLanguageTag.Tests
 {
 	[TestFixture]
 	public partial class LanguageTagTests
