@@ -18,16 +18,22 @@ namespace NLanguageTag.Tests
 		public void Empty()
 		{
 			var empty = new ExtensionSubtag();
-			Assert.IsTrue(empty.IsEmpty);
-			Assert.AreEqual("", empty.ToString());
-			Assert.That(empty.ToArray(), Is.Empty);
+			Assert.Throws<InvalidOperationException>(() => empty.ToString());
+			Assert.Throws<InvalidOperationException>(() => empty.Singleton.GetHashCode());
 		}
 
-		[TestCase("a-bbb", 'a', new string[] { "bbb" })]
-		[TestCase("a-bbb-ccc", 'a', new string[] { "bbb", "ccc" })]
+		[TestCase("a-bbb", 'a', new[] { "bbb" })]
+		[TestCase("a-bbb-ccc", 'a', new[] { "bbb", "ccc" })]
 		public void ParseFromExtensionSubtag(string text, char singleton, string[] subtags)
 		{
-			Assert.AreEqual(new ExtensionSubtag(singleton, subtags), text.ParseFromExtensionSubtag());
+			foreach (var language in TestContent.GetLanguages())
+			{
+				var languageTag = LanguageTag.TryParse($"{language}-{text}");
+				Assert.IsNotNull(languageTag);
+				CollectionAssert.AreEqual(
+					languageTag.Value.Extensions,
+					new[] { new ExtensionSubtag(singleton, subtags) });
+			}
 		}
 
 		[TestCase("")]
@@ -40,19 +46,26 @@ namespace NLanguageTag.Tests
 		[TestCase("aaa")]
 		public void ParseFromExtensionSubtagFail(string text)
 		{
-			Assert.Throws<FormatException>(() => text.ParseFromExtensionSubtag());
+			foreach (var language in TestContent.GetLanguages())
+			{
+				var languageTag = LanguageTag.TryParse($"{language}-{text}");
+				if (languageTag.HasValue)
+				{
+					CollectionAssert.IsEmpty(languageTag.Value.Extensions);
+				}
+			}
 		}
 
-		[TestCase(new string[] { "aaa" }, "a-aaa")]
-		[TestCase(new string[] { "aaa", "bbb" }, "a-aaa-bbb")]
+		[TestCase(new[] { "aaa" }, "a-aaa")]
+		[TestCase(new[] { "aaa", "bbb" }, "a-aaa-bbb")]
 		public void ToString(string[] subtags, string expected)
 		{
 			var ext = new ExtensionSubtag('a', subtags);
 			Assert.AreEqual(expected, ext.ToString());
 		}
 
-		[TestCase((object)new string[] { "aaa" })]
-		[TestCase((object)new string[] { "aaa", "bbb" })]
+		[TestCase((object)new[] { "aaa" })]
+		[TestCase((object)new[] { "aaa", "bbb" })]
 		public void Enumerate(string[] subtags)
 		{
 			var ext = new ExtensionSubtag('a', subtags);
@@ -62,30 +75,19 @@ namespace NLanguageTag.Tests
 		[Test]
 		public void Equals()
 		{
-			var ext1 = new ExtensionSubtag();
-			var ext2 = new ExtensionSubtag();
+			var ext1 = new ExtensionSubtag('a', "aaa");
+			var ext2 = new ExtensionSubtag('a', "aaa");
 
-			var ext3 = new ExtensionSubtag('a', "aaa");
-			var ext4 = new ExtensionSubtag('a', "aaa");
+			var ext3 = new ExtensionSubtag('b', "aaa");
+			var ext4 = new ExtensionSubtag('b', "bbb");
 
-			var ext5 = new ExtensionSubtag('b', "aaa");
-			var ext6 = new ExtensionSubtag('b', "bbb");
-
-			Assert.IsFalse(ext1.Equals(null));
-			Assert.IsTrue(ext1.Equals((object)ext2));
 			Assert.IsTrue(ext1.Equals(ext1));
 			Assert.IsTrue(ext1.Equals(ext2));
-			Assert.IsFalse(ext1.Equals(ext3));
-			Assert.IsTrue(ext3.Equals(ext3));
-			Assert.IsTrue(ext3.Equals(ext4));
-			Assert.IsFalse(ext4.Equals(ext5));
-			Assert.IsFalse(ext5.Equals(ext6));
+			Assert.IsFalse(ext2.Equals(ext3));
+			Assert.IsFalse(ext3.Equals(ext4));
 
-			Assert.IsTrue(ext1 == ext2);
-			Assert.IsFalse(ext1 != ext2);
-
-			Assert.IsTrue(ext3 != ext5);
-			Assert.IsFalse(ext3 == ext5);
+			Assert.IsTrue(ext1 != ext3);
+			Assert.IsFalse(ext1 == ext3);
 		}
 	}
 }

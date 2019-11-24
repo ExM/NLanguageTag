@@ -54,6 +54,12 @@ namespace NLanguageTag
 			}
 		}
 
+		/// <summary>
+		/// Determines the proper language subtag that should be used instead of given combination of
+		/// language subtag and extlang subtag
+		/// </summary>
+		/// <param name="text">text that can possibly be extlang subtag</param>
+		/// <param name="prefix">the main language subtag</param>
 		public static Language? TryParseFromExtLanguage(this string text, Language prefix)
 		{
 			if(text == null)
@@ -64,7 +70,7 @@ namespace NLanguageTag
 <#foreach(var lang in extlangs.Select(_ => _.Prefix.First()).Distinct())
 { #>
 				case Language.<#= lang.ToUpper() #>:
-					switch (text.ToLower(CultureInfo.InvariantCulture))
+					switch (text.ToLowerInvariant())
 					{
 <#foreach(var entry in extlangs.Where(_ => _.Prefix.First() == lang && _.PreferredValue != null))
 { #>
@@ -90,7 +96,10 @@ namespace NLanguageTag
 	{
 		internal static string GetPreferredValue(string text)
 		{
-			switch(text.ToLower())
+			if (text == null)
+				return null;
+
+			switch (text.ToLowerInvariant())
 			{
 <#foreach(var entry in grandfathered.Where(_ => _.PreferredValue != null))
 { #>
@@ -140,6 +149,9 @@ namespace NLanguageTag
 {
 	public static partial class LanguageTagExtensions
 	{
+		/// <summary>
+		/// Returns macrolanguage for the given specific language
+		/// </summary>
 		public static Language? GetMacrolanguage(this Language language)
 		{
 			switch(language)
@@ -152,6 +164,9 @@ namespace NLanguageTag
 			}
 		}
 
+		/// <summary>
+		/// Returns the scope of the given language subtag (on null if the subtag represents an invididual language)
+		/// </summary>
 		public static LanguageScope? GetScope(this Language language)
 		{
 			switch(language)
@@ -166,7 +181,12 @@ namespace NLanguageTag
 			}
 		}
 
-		public static Script? GetSupressScript(this Language language)
+		/// <summary>
+		/// Returns script (if such exists) used to write the overwhelming majority of documents for the
+		/// given language. The subtag for such a script therefore adds no distinguishing information to
+		/// a language tag and thus SHOULD NOT be used for most documents in that language.
+		/// </summary>
+		public static Script? GetSuppressScript(this Language language)
 		{
 			switch(language)
 			{
@@ -194,12 +214,15 @@ namespace NLanguageTag
 			}
 		}
 
-		public static Language? TryParseFromLanguage(this string text)
+		/// <summary>
+		/// Parses language subtag from its string representation, returns null if parsing was not successful
+		/// </summary>
+		public static Language? TryParseLanguage(this string text)
 		{
 			if(text == null)
 				return null;
 
-			switch (text.ToLower(CultureInfo.InvariantCulture))
+			switch (text.ToLowerInvariant())
 			{
 <#foreach(var entry in prlangs)
 { #>
@@ -260,12 +283,15 @@ namespace NLanguageTag
 			}
 		}
 
-		public static Region? TryParseFromRegion(this string text)
+		/// <summary>
+		/// Parses region subtag from its string representation, returns null if parsing was not successful
+		/// </summary>
+		public static Region? TryParseRegion(this string text)
 		{
 			if(text == null)
 				return null;
 
-			switch (text.ToLower(CultureInfo.InvariantCulture))
+			switch (text.ToLowerInvariant())
 			{
 <#foreach(var entry in regions)
 { #>
@@ -327,12 +353,15 @@ namespace NLanguageTag
 			}
 		}
 
-		public static Script? TryParseFromScript(this string text)
+		/// <summary>
+		/// Parses script subtag from its string representation, returns null if parsing was not successful
+		/// </summary>
+		public static Script? TryParseScript(this string text)
 		{
 			if(text == null)
 				return null;
 
-			switch (text.ToLower(CultureInfo.InvariantCulture))
+			switch (text.ToLowerInvariant())
 			{
 <#foreach(var entry in scripts)
 { #>
@@ -345,8 +374,6 @@ namespace NLanguageTag
 }
 <# manager.EndBlock(); #>
 <# manager.StartNewFile("Variant.cs"); #>
-using System;
-
 namespace NLanguageTag
 {
 	/// <summary>
@@ -377,7 +404,7 @@ namespace NLanguageTag
 {
 	public static partial class LanguageTagExtensions
 	{
-		private static string[] GetTextPrefixes(this Variant v)
+		internal static string[] GetTextPrefixes(this Variant v)
 		{
 			switch(v)
 			{
@@ -407,12 +434,15 @@ namespace NLanguageTag
 			}
 		}
 
-		public static Variant? TryParseFromVariant(this string text)
+		/// <summary>
+		/// Parses variant subtag from its string representation, returns null if parsing was not successful
+		/// </summary>
+		public static Variant? TryParseVariant(this string text)
 		{
 			if(text == null)
 				return null;
 
-			switch (text.ToLower(CultureInfo.InvariantCulture))
+			switch (text.ToLowerInvariant())
 			{
 <#foreach(var entry in variants)
 { #>

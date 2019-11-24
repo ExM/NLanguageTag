@@ -11,9 +11,9 @@ namespace NLanguageTag.Tests
 		{
 			foreach (var text in TestContent.GetRegions())
 			{
-				var region = text.TryParseFromRegion().Value;
-				
-				Assert.NotNull(region.ToText());
+				var region = text.TryParseRegion();
+				Assert.NotNull(region);
+				Assert.NotNull(region.Value.ToText());
 			}
 		}
 
@@ -32,7 +32,7 @@ namespace NLanguageTag.Tests
 		[TestCase("gb", Region.GB)]
 		public void ParseFromRegion(string text, Region? expected)
 		{
-			Assert.AreEqual(expected, text.TryParseFromRegion());
+			Assert.AreEqual(expected, text.TryParseRegion());
 		}
 	}
 }

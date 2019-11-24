@@ -12,9 +12,10 @@ namespace NLanguageTag.Tests
 		{
 			foreach (var text in TestContent.GetVariants())
 			{
-				var variant = text.TryParseFromVariant().Value;
-				variant.GetPrefixes();
-				Assert.NotNull(variant.ToText());
+				var variant = text.TryParseVariant();
+				Assert.NotNull(variant);
+				variant.Value.GetPrefixes();
+				Assert.NotNull(variant.Value.ToText());
 			}
 		}
 
@@ -43,7 +44,7 @@ namespace NLanguageTag.Tests
 		[TestCase("1901", Variant.V1901)]
 		public void ParseFromVariant(string text, Variant? expected)
 		{
-			Assert.AreEqual(expected, text.TryParseFromVariant());
+			Assert.AreEqual(expected, text.TryParseVariant());
 		}
 
 		[TestCase("sr-ekavsk")]
@@ -57,7 +58,7 @@ namespace NLanguageTag.Tests
 		[TestCase("sl-rozaj-biske")]
 		public void VariantCollectionCreate(string tagText)
 		{
-			var tag = new LanguageTag(tagText);
+			var tag = LanguageTag.Parse(tagText);
 			var variants = VariantCollection.Create(tag.Language, tag.Script, tag.Variants);
 
 			Assert.That(variants, Is.EqualTo(tag.Variants));
@@ -72,8 +73,8 @@ namespace NLanguageTag.Tests
 		{
 			Assert.Throws<FormatException>(() =>
 			{
-				var tag = new LanguageTag(tagText);
-				VariantCollection.Create(tag.Language, tag.Script, tag.Variants.Union(new Variant[] { appendVariant }));
+				var tag = LanguageTag.Parse(tagText);
+				VariantCollection.Create(tag.Language, tag.Script, tag.Variants.Union(new [] { appendVariant }));
 			});
 		}
 
@@ -83,10 +84,10 @@ namespace NLanguageTag.Tests
 			var vc1 = new VariantCollection();
 			var vc2 = new VariantCollection();
 
-			var vc3 = new VariantCollection(Variant.Alalc97, Variant.Aluku);
-			var vc4 = new VariantCollection(Variant.Alalc97, Variant.Aluku);
+			var vc3 = VariantCollection.Create(Language.DJK, null, new[] { Variant.Alalc97, Variant.Aluku });
+			var vc4 = VariantCollection.Create(Language.DJK, null, new[] { Variant.Alalc97, Variant.Aluku });
 
-			var vc5 = new VariantCollection(Variant.Alalc97);
+			var vc5 = VariantCollection.Create(null, null, new[] { Variant.Alalc97 });
 
 			Assert.IsFalse(vc1.Equals(null));
 			Assert.IsTrue(vc1.Equals((object)vc2));
@@ -105,12 +106,13 @@ namespace NLanguageTag.Tests
 		}
 
 		[TestCase(new Variant[] { }, Variant.Alalc97, false)]
-		[TestCase(new Variant[] { Variant.Aluku }, Variant.Alalc97, false)]
-		[TestCase(new Variant[] { Variant.Aluku }, Variant.Aluku, true)]
-		[TestCase(new Variant[] { Variant.Aluku, Variant.Alalc97 }, Variant.Alalc97, true)]
+		[TestCase(new[] { Variant.Aluku }, Variant.Alalc97, false)]
+		[TestCase(new[] { Variant.Aluku }, Variant.Aluku, true)]
+		[TestCase(new[] { Variant.Aluku, Variant.Alalc97 }, Variant.Alalc97, true)]
 		public void Contains(Variant[] variants, Variant tag, bool expected)
 		{
-			Assert.That(new VariantCollection(variants).Contains(tag), Is.EqualTo(expected));
+			var collection = VariantCollection.Create(Language.DJK, null, variants);
+			Assert.That(collection.Contains(tag), Is.EqualTo(expected));
 		}
 	}
 }

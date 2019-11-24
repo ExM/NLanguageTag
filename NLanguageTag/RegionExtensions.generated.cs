@@ -312,12 +312,15 @@ namespace NLanguageTag
 			}
 		}
 
-		public static Region? TryParseFromRegion(this string text)
+		/// <summary>
+		/// Parses region subtag from its string representation, returns null if parsing was not successful
+		/// </summary>
+		public static Region? TryParseRegion(this string text)
 		{
 			if(text == null)
 				return null;
 
-			switch (text.ToLower(CultureInfo.InvariantCulture))
+			switch (text.ToLowerInvariant())
 			{
 				case "aa": return Region.AA;
 				case "ac": return Region.AC;

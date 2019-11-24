@@ -11,8 +11,9 @@ namespace NLanguageTag.Tests
 		{
 			foreach (var text in TestContent.GetScripts())
 			{
-				var script = text.TryParseFromScript().Value;
-				Assert.NotNull(script.ToText());
+				var script = text.TryParseScript();
+				Assert.NotNull(script);
+				Assert.NotNull(script.Value.ToText());
 			}
 		}
 
@@ -31,7 +32,7 @@ namespace NLanguageTag.Tests
 		[TestCase("Hans", Script.Hans)]
 		public void ParseFromScript(string text, Script? expected)
 		{
-			Assert.AreEqual(expected, text.TryParseFromScript());
+			Assert.AreEqual(expected, text.TryParseScript());
 		}
 	}
 }

@@ -5,13 +5,8 @@
 <#@ import namespace="System.Collections.Generic" #>
 <#@ output extension=".cs" #>
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace NLanguageTag
+namespace NLanguageTag.Tests
 {
 	public partial class LanguageTagTests
 	{

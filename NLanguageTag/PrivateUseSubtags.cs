@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,41 +11,57 @@ namespace NLanguageTag
 	/// </summary>
 	public struct PrivateUseSubtags : IEnumerable<string>, IEquatable<PrivateUseSubtags>
 	{
-		private string[] _subtags;
+		/// <summary>
+		/// Subtag that identifies start of private-use subtags
+		/// </summary>
+		public static string Singleton => "x";
 
-		public static readonly string Singleton = "x";
-
+		/// <summary>
+		/// Initializes new value of <see cref="PrivateUseSubtags"/>
+		/// </summary>
 		public PrivateUseSubtags(params string[] subtags)
-			: this()
+			: this(subtags as IReadOnlyList<string>)
 		{
-			if (subtags == null || subtags.Length == 0)
-				throw new FormatException("private use subtags not contain elements");
-
-			_subtags = new string[subtags.Length];
-			for (int i = 0; i < subtags.Length; i++)
-				_subtags[i] = ValidateSubtag(subtags[i]);
 		}
 
-		internal static PrivateUseSubtags Parse(LanguageTag.TokenEnumerator tokens)
+		/// <summary>
+		/// Initializes new value of <see cref="PrivateUseSubtags"/>
+		/// </summary>
+		public PrivateUseSubtags(IReadOnlyList<string> subtags)
 		{
-			var result = new PrivateUseSubtags();
+			if (subtags == null || subtags.Count == 0)
+			{
+				_subtags = null;
+				return;
+			}
 
+			_subtags = new string[subtags.Count];
+			for (var i = 0; i < subtags.Count; i++)
+				_subtags[i] = validateSubtag(subtags[i]);
+		}
+
+		internal static PartialParseResult<PrivateUseSubtags> Parse(TokenEnumerator tokens)
+		{
 			if (!tokens.TokenIs(Singleton))
-				throw new FormatException("unexpected subtag '" + tokens.Token + "'");
+				return PartialParseResult<PrivateUseSubtags>.Empty;
+
+			tokens.ToNextToken();
 
 			var subtags = new List<string>();
 
-			while (tokens.NextTokenAvailable) // get all subtags
+			while (tokens.CurrentTokenAvailable)
 			{
+				if (!isValidSubtag(tokens.Token))
+					return PartialParseResult<PrivateUseSubtags>.Error;
+
+				subtags.Add(tokens.Token);
 				tokens.ToNextToken();
-				subtags.Add(ValidateSubtag(tokens.Token));
 			}
 
 			if (subtags.Count == 0)
-				throw new FormatException("private use subtags not contain elements");
+				return PartialParseResult<PrivateUseSubtags>.Error;
 
-			result._subtags = subtags.ToArray();
-			return result;
+			return PartialParseResult<PrivateUseSubtags>.Success(new PrivateUseSubtags(subtags));
 		}
 
 		/// <summary>
@@ -52,7 +69,9 @@ namespace NLanguageTag
 		/// </summary>
 		public static PrivateUseSubtags Parse(string text)
 		{
-			return Parse(new LanguageTag.TokenEnumerator(text));
+			return TryParse(text, out var result)
+				? result
+				: throw new FormatException("Invalid private use subtags string: " + text);
 		}
 
 		/// <summary>
@@ -61,16 +80,15 @@ namespace NLanguageTag
 		/// <returns>true if s was converted successfully; otherwise, false.</returns>
 		public static bool TryParse(string text, out PrivateUseSubtags result)
 		{
-			try
+			var parseResult = Parse(new TokenEnumerator(text));
+			if (parseResult.ErrorOccured)
 			{
-				result = Parse(text);
-				return true;
-			}
-			catch (FormatException)
-			{
-				result = new PrivateUseSubtags();
+				result = default;
 				return false;
 			}
+
+			result = parseResult.NothingToParse ? default : parseResult.Result;
+			return true;
 		}
 
 		/// <summary>
@@ -78,37 +96,34 @@ namespace NLanguageTag
 		/// </summary>
 		public static PrivateUseSubtags? TryParse(string text)
 		{
-			try
-			{
-				return Parse(text);
-			}
-			catch (FormatException)
-			{
-				return null;
-			}
+			return TryParse(text, out var result) ? result : (PrivateUseSubtags?)null;
 		}
 
-		private static string ValidateSubtag(string text)
+		private static string validateSubtag(string text)
 		{
 			if (text.Length < 1 || 8 < text.Length)
-				throw new FormatException("private use subtag must be from 1 to 8 characters");
+				throw new FormatException("Private use subtag must be from 1 to 8 characters");
 
-			if (!text.All(ch => Char.IsLetterOrDigit(ch) && (int)ch < 127))
-				throw new FormatException("private use subtag must consist only of numbers or letters in ASCII");
+			if (!text.All(isAsciiLetterOrDigit))
+				throw new FormatException("Private use subtag must consist only of numbers or letters in ASCII");
 
 			return text.ToLowerInvariant();
 		}
 
-		/// <summary>
-		/// This collection not contain elements
-		/// </summary>
-		public bool IsEmpty
+		private static bool isValidSubtag(string text)
 		{
-			get
-			{
-				return _subtags == null;
-			}
+			return text.Length >= 1 && text.Length <= 8 && text.All(isAsciiLetterOrDigit);
 		}
+
+		private static bool isAsciiLetterOrDigit(char value)
+		{
+			return value < 127 && char.IsLetterOrDigit(value);
+		}
+
+		/// <summary>
+		/// Indicates whether this collection contains no elements
+		/// </summary>
+		public bool IsEmpty => _subtags == null;
 
 		/// <summary>
 		/// Determines whether a sequence contains a specified element
@@ -126,7 +141,7 @@ namespace NLanguageTag
 		/// </summary>
 		public bool Equals(PrivateUseSubtags other)
 		{
-			return _subtags.IsEquivalent(other._subtags);
+			return _subtags.IsEquivalentTo(other._subtags);
 		}
 
 		/// <summary>
@@ -142,8 +157,7 @@ namespace NLanguageTag
 		/// </summary>
 		public override bool Equals(object obj)
 		{
-			return obj is PrivateUseSubtags &&
-				Equals((PrivateUseSubtags)obj);
+			return obj is PrivateUseSubtags privateUseSubtags && Equals(privateUseSubtags);
 		}
 
 		/// <summary>
@@ -155,14 +169,17 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
-		/// Not equality operator
+		/// Inequality operator
 		/// </summary>
 		public static bool operator !=(PrivateUseSubtags x, PrivateUseSubtags y)
 		{
 			return !(x == y);
 		}
 
-		public IEnumerable<string> SubtagElements()
+		/// <summary>
+		/// Returns all elements of this subtag as they appear in full language tag
+		/// </summary>
+		public IEnumerable<string> GetSubtagElements()
 		{
 			if (_subtags == null)
 				yield break;
@@ -178,7 +195,7 @@ namespace NLanguageTag
 		/// </summary>
 		public override string ToString()
 		{
-			return string.Join(LanguageTag.TagSeparator.ToString(), SubtagElements());
+			return string.Join(LanguageTag.TagSeparator.ToString(), GetSubtagElements());
 		}
 
 		/// <summary>
@@ -186,15 +203,19 @@ namespace NLanguageTag
 		/// </summary>
 		public IEnumerator<string> GetEnumerator()
 		{
-			if (_subtags == null)
-				return Enumerable.Empty<string>().GetEnumerator();
-			else
-				return _subtags.AsEnumerable().GetEnumerator();
+			var subtags = _subtags ?? Enumerable.Empty<string>();
+			return subtags.GetEnumerator();
 		}
 
-		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+		IEnumerator IEnumerable.GetEnumerator()
 		{
 			return GetEnumerator();
 		}
+
+		// Since this is value type, there is no way to prevent it being in the default state.
+		// The natural meaning for the default state is an empty collection.
+		// We will treat this field being null as empty collection, and also store null here if this value
+		// is initialized as empty collection.
+		private readonly string[] _subtags;
 	}
 }

@@ -5,7 +5,7 @@ namespace NLanguageTag
 {
 	public static partial class LanguageTagExtensions
 	{
-		private static string[] GetTextPrefixes(this Variant v)
+		internal static string[] GetTextPrefixes(this Variant v)
 		{
 			switch(v)
 			{
@@ -178,12 +178,15 @@ namespace NLanguageTag
 			}
 		}
 
-		public static Variant? TryParseFromVariant(this string text)
+		/// <summary>
+		/// Parses variant subtag from its string representation, returns null if parsing was not successful
+		/// </summary>
+		public static Variant? TryParseVariant(this string text)
 		{
 			if(text == null)
 				return null;
 
-			switch (text.ToLower(CultureInfo.InvariantCulture))
+			switch (text.ToLowerInvariant())
 			{
 				case "1606nict": return Variant.V1606nict;
 				case "1694acad": return Variant.V1694acad;

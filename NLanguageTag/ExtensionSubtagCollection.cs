@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,61 +10,69 @@ namespace NLanguageTag
 	/// </summary>
 	public struct ExtensionSubtagCollection : IEnumerable<ExtensionSubtag>, IEquatable<ExtensionSubtagCollection>
 	{
-		private List<ExtensionSubtag> _sortedList;
-
+		/// <summary>
+		/// Initializes new instance of <see cref="ExtensionSubtagCollection"/> with provided subtags
+		/// </summary>
 		public ExtensionSubtagCollection(params ExtensionSubtag[] subtags)
-			:this()
-		{
-			if (subtags == null || subtags.Length == 0)
-				return;
-
-			_sortedList = new List<ExtensionSubtag>(subtags.Length);
-			foreach (var extSubtag in subtags)
-				Append(extSubtag);
-		}
-
-		public ExtensionSubtagCollection(IEnumerable<ExtensionSubtag> subtags)
-			: this(subtags.ToArray())
+			: this(subtags as IReadOnlyCollection<ExtensionSubtag>)
 		{
 		}
 
 		/// <summary>
-		/// This collection not contain elements
+		/// Initializes new instance of <see cref="ExtensionSubtagCollection"/> with provided subtags
 		/// </summary>
-		public bool IsEmpty
+		public ExtensionSubtagCollection(IReadOnlyCollection<ExtensionSubtag> subtags)
 		{
-			get
+			if (subtags == null || subtags.Count == 0)
 			{
-				return _sortedList == null;
+				_sortedCollection = null;
+				return;
 			}
+
+			var collection = new ExtensionSubtag[subtags.Count];
+			var i = 0;
+			foreach (var subtag in subtags)
+			{
+				collection[i] = subtag;
+				i++;
+			}
+
+			// Sorting subtags by their singletons
+			Array.Sort(collection, _singletonComparer);
+
+			// Checking that all subtags singletons are unieuq
+			for (i = 1; i < collection.Length; i++)
+			{
+				if (collection[i - 1].Singleton == collection[i].Singleton)
+				{
+					throw new ArgumentException(
+						$"Two or more subtags have the same singleton `{collection[i].Singleton}'",
+						nameof(subtags));
+				}
+			}
+
+			_sortedCollection = collection;
 		}
+
+		/// <summary>
+		/// Initializes new instance of <see cref="ExtensionSubtagCollection"/> with provided subtags
+		/// </summary>
+		public ExtensionSubtagCollection(IEnumerable<ExtensionSubtag> subtags)
+			: this(safeConvert(subtags))
+		{
+		}
+
+		/// <summary>
+		/// Indicates whether this collection contains no elements
+		/// </summary>
+		public bool IsEmpty => _sortedCollection == null;
 
 		/// <summary>
 		/// Returns a value indicating whether this instance is equal to a specified object.
 		/// </summary>
 		public override bool Equals(object obj)
 		{
-			return obj is ExtensionSubtagCollection &&
-				Equals((ExtensionSubtagCollection)obj);
-		}
-
-		private void Append(ExtensionSubtag extSubtag)
-		{
-			var index = _sortedList.BinarySearch(extSubtag, _singletonComparer);
-			if (index >= 0)
-				throw new FormatException("duplicate extenson subtag with singletone `" + extSubtag.Singleton + "'");
-			
-			_sortedList.Insert(~index, extSubtag);
-		}
-
-		private static readonly IComparer<ExtensionSubtag> _singletonComparer = new SingletonComparerImpl();
-
-		private class SingletonComparerImpl : IComparer<ExtensionSubtag>
-		{
-			public int Compare(ExtensionSubtag x, ExtensionSubtag y)
-			{
-				return x.Singleton.CompareTo(y.Singleton);
-			}
+			return obj is ExtensionSubtagCollection extensionSubtagCollection && Equals(extensionSubtagCollection);
 		}
 
 		/// <summary>
@@ -71,7 +80,7 @@ namespace NLanguageTag
 		/// </summary>
 		public bool Equals(ExtensionSubtagCollection other)
 		{
-			return _sortedList.IsEquivalent(other._sortedList);
+			return _sortedCollection.IsEquivalentTo(other._sortedCollection);
 		}
 
 		/// <summary>
@@ -83,7 +92,7 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
-		/// Not equality operator
+		/// Inequality operator
 		/// </summary>
 		public static bool operator !=(ExtensionSubtagCollection a, ExtensionSubtagCollection b)
 		{
@@ -95,39 +104,79 @@ namespace NLanguageTag
 		/// </summary>
 		public override int GetHashCode()
 		{
-			return _sortedList.GetHashCodeOfSequence();
+			return _sortedCollection.GetHashCodeOfSequence();
 		}
 
+		/// <summary>
+		/// Returns an enumerator that iterates through the collection
+		/// </summary>
 		public IEnumerator<ExtensionSubtag> GetEnumerator()
 		{
-			if (_sortedList == null)
-				return Enumerable.Empty<ExtensionSubtag>().GetEnumerator();
-			else
-				return _sortedList.GetEnumerator();
+			var enumerable = _sortedCollection ?? Enumerable.Empty<ExtensionSubtag>();
+			return enumerable.GetEnumerator();
 		}
 
-		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+		IEnumerator IEnumerable.GetEnumerator()
 		{
 			return GetEnumerator();
 		}
 
-		internal static ExtensionSubtagCollection TryParse(LanguageTag.TokenEnumerator tokens)
+		internal static PartialParseResult<ExtensionSubtagCollection> Parse(TokenEnumerator tokens)
 		{
-			var result = new ExtensionSubtagCollection();
-			var subtag = ExtensionSubtag.TryParse(tokens);
+			var subtagResult = ExtensionSubtag.Parse(tokens);
 
-			if (subtag.HasValue)
+			if (subtagResult.NothingToParse)
+				return PartialParseResult<ExtensionSubtagCollection>.Empty;
+
+			if (subtagResult.ErrorOccured)
+				return PartialParseResult<ExtensionSubtagCollection>.Error;
+
+			var resultCollection = new List<ExtensionSubtag>();
+			var usedSingletons = new bool[128];
+
+			while (true)
 			{
-				result._sortedList = new List<ExtensionSubtag>();
-				do
-				{
-					result.Append(subtag.Value);
-					subtag = ExtensionSubtag.TryParse(tokens);
-				}
-				while (subtag.HasValue);
+				var subtag = subtagResult.Result;
+				if (usedSingletons[subtag.Singleton])
+					return PartialParseResult<ExtensionSubtagCollection>.Error;
+
+				usedSingletons[subtag.Singleton] = true;
+				resultCollection.Add(subtag);
+				subtagResult = ExtensionSubtag.Parse(tokens);
+
+				if (subtagResult.NothingToParse)
+					return PartialParseResult<ExtensionSubtagCollection>.Success(
+						new ExtensionSubtagCollection(resultCollection));
+
+				if (subtagResult.ErrorOccured)
+					return PartialParseResult<ExtensionSubtagCollection>.Error;
+			}
+		}
+
+		private static IReadOnlyCollection<ExtensionSubtag> safeConvert(IEnumerable<ExtensionSubtag> subtags)
+		{
+			if (subtags == null)
+			{
+				return null;
 			}
 
-			return result;
+			return subtags as IReadOnlyCollection<ExtensionSubtag> ?? subtags.ToArray();
+		}
+
+		// Since this is value type, there is no way to prevent it being in the default state.
+		// The natural meaning for the default state is an empty collection.
+		// We will treat this field being null as empty collection, and also store null here if this value
+		// is initialized as empty collection.
+		private readonly ExtensionSubtag[] _sortedCollection;
+
+		private static readonly IComparer<ExtensionSubtag> _singletonComparer = new SingletonComparer();
+
+		private sealed class SingletonComparer : IComparer<ExtensionSubtag>
+		{
+			public int Compare(ExtensionSubtag x, ExtensionSubtag y)
+			{
+				return x.Singleton.CompareTo(y.Singleton);
+			}
 		}
 	}
 }

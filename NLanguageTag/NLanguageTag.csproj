@@ -15,6 +15,8 @@
     <RepositoryUrl>https://github.com/ExM/NLanguageTag</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
     <RootNamespace>NLanguageTag</RootNamespace>
+    <LangVersion>7.3</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <PackageTags>bcp47 languagetag iso639</PackageTags>
     <Description>Language tags are used to help identify languages, whether spoken, written, signed, or otherwise signaled, for the purpose of communication. Language tag syntax is defined by the IETF's BCP 47 (https://tools.ietf.org/html/bcp47)</Description>
     <PackageLicenseUrl>https://github.com/ExM/NLanguageTag/raw/master/LICENSE</PackageLicenseUrl>
@@ -22,8 +24,8 @@
   <Import Project="..\.paket\Paket.Restore.targets" />
   <ItemGroup>
     <None Update="LanguageTag.ctors.tt">
-	  <Generator>TextTemplatingFileGenerator</Generator>
-	  <LastGenOutput>LanguageTag.ctors.cs</LastGenOutput>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>LanguageTag.ctors.cs</LastGenOutput>
     </None>
     <None Update="RegistryGenerator.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

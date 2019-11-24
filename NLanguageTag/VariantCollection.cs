@@ -10,50 +10,45 @@ namespace NLanguageTag
 	/// </summary>
 	public struct VariantCollection : IEnumerable<Variant>, IEquatable<VariantCollection>
 	{
-		private Variant[] _variants;
-
-		/// <summary>
-		/// Create collection of variant subtags
-		/// </summary>
-		public VariantCollection(params Variant[] variants)
-			:this()
+		private VariantCollection(Variant[] variants)
 		{
-			if (variants.Length != 0)
-				_variants = variants;
+			_variants = variants.Length > 0 ? variants : null;
 		}
 
-		public static VariantCollection Create(Language? lang, Script? script, IEnumerable<Variant> variants)
+		/// <summary>
+		/// Creates new variant collection from the specified variants, while checking their applicability to
+		/// the specified language and script
+		/// </summary>
+		public static VariantCollection Create(Language? language, Script? script, IEnumerable<Variant> variants)
 		{
-			VariantCollection.Builder builder = null;
-			foreach(var variant in variants)
+			if (variants == null)
+				return default;
+
+			Builder builder = null;
+
+			foreach (var variant in variants)
 			{
 				if (builder == null)
-					builder = new VariantCollection.Builder(lang, script);
-				
-				builder.Append(variant);
+					builder = new Builder(language, script);
+
+				if (!builder.TryAppend(variant))
+					throw new FormatException("Invalid variants for given language and script");
 			}
 
-			return (builder == null) ? new VariantCollection() : builder.ToCollection();
+			return builder == null ? default : builder.ToCollection();
 		}
 
 		/// <summary>
-		/// This collection not contain elements
+		/// Indicates whether this collection contains no elements
 		/// </summary>
-		public bool IsEmpty
-		{
-			get
-			{
-				return _variants == null;
-			}
-		}
+		public bool IsEmpty => _variants == null;
 
 		/// <summary>
 		/// Returns a value indicating whether this instance is equal to a specified object.
 		/// </summary>
 		public override bool Equals(object other)
 		{
-			return other is VariantCollection &&
-				Equals((VariantCollection)other);
+			return other is VariantCollection variantCollection && Equals(variantCollection);
 		}
 
 		/// <summary>
@@ -61,17 +56,20 @@ namespace NLanguageTag
 		/// </summary>
 		public bool Equals(VariantCollection other)
 		{
-			if (_variants == null)
-				return other._variants == null;
+			var v1 = _variants;
+			var v2 = other._variants;
 
-			if (other._variants == null)
+			if (ReferenceEquals(v1, v2))
+				return true;
+
+			if (ReferenceEquals(v1, null) || ReferenceEquals(v2, null))
 				return false;
 
-			if (_variants.Length != other._variants.Length)
+			if (v1.Length != v2.Length)
 				return false;
 
-			for (int i = 0; i < _variants.Length; i++)
-				if (_variants[i] != other._variants[i])
+			for (var i = 0; i < v1.Length; i++)
+				if (v1[i] != v2[i])
 					return false;
 
 			return true;
@@ -86,7 +84,7 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
-		/// Not equality operator
+		/// Inequality operator
 		/// </summary>
 		public static bool operator !=(VariantCollection a, VariantCollection b)
 		{
@@ -102,67 +100,63 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
-		/// Determines whether a sequence contains a specified element
-		/// </summary>
-		public bool Contains(Variant item)
-		{
-			if (_variants == null)
-				return false;
-			return _variants.Contains(item);
-		}
-
-		/// <summary>
 		/// Returns an enumerator that iterates through the collection.
 		/// </summary>
 		public IEnumerator<Variant> GetEnumerator()
 		{
-			if (_variants == null)
-				return Enumerable.Empty<Variant>().GetEnumerator();
-			return _variants.AsEnumerable().GetEnumerator();
+			var variants = _variants ?? Enumerable.Empty<Variant>();
+			return variants.GetEnumerator();
 		}
 
-		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+		IEnumerator IEnumerable.GetEnumerator()
 		{
 			return GetEnumerator();
 		}
 
-		internal static VariantCollection TryParse(Language? lang, Script? script, LanguageTag.TokenEnumerator tokens)
+		internal static PartialParseResult<VariantCollection> Parse(
+			Language? lang,
+			Script? script,
+			TokenEnumerator tokens)
 		{
 			var variant = tokens.TryParseVariant();
 			if (!variant.HasValue)
-				return new VariantCollection();
-			
-			var builder = new VariantCollection.Builder(lang, script);
+				return PartialParseResult<VariantCollection>.Empty;
+
+			var builder = new Builder(lang, script);
 
 			do
 			{
-				builder.Append(variant.Value);
+				if (!builder.TryAppend(variant.Value))
+				{
+					return PartialParseResult<VariantCollection>.Error;
+				}
+
 				variant = tokens.TryParseVariant();
 			}
 			while (variant.HasValue);
 
-			return builder.ToCollection();
+			return PartialParseResult<VariantCollection>.Success(builder.ToCollection());
 		}
 
-		private class Builder: IEnumerable<Variant>
+		// Since this is value type, there is no way to prevent it being in the default state.
+		// The natural meaning for the default state is an empty collection.
+		// We will treat this field being null as empty collection, and also store null here if this value
+		// is initialized as empty collection.
+		private readonly Variant[] _variants;
+
+		private sealed class Builder : IReadOnlyList<Variant>
 		{
-			private Language? _lang;
-			private Script? _script;
-
-			private List<Variant> _prefix = new List<Variant>();
-			private List<Variant> _options = new List<Variant>();
-
 			public Builder(Language? lang, Script? script)
 			{
 				_lang = lang;
 				_script = script;
 			}
 
-			public void Append(Variant item)
+			public bool TryAppend(Variant item)
 			{
 				var restrictive = item.RestrictiveAcceptableFor(_lang, _script, this);
 				if (!restrictive.HasValue)
-					throw new FormatException("variant subtag '" + item + "' is unacceptable");
+					return false;
 
 				if (restrictive.Value)
 				{
@@ -176,7 +170,26 @@ namespace NLanguageTag
 						_options.Insert(~index, item);
 					}
 				}
+
+				return true;
 			}
+
+			public VariantCollection ToCollection()
+			{
+				var count = _prefix.Count + _options.Count;
+				var variants = new Variant[count];
+
+				_prefix.CopyTo(variants);
+				_options.CopyTo(variants, _prefix.Count);
+
+				return new VariantCollection(variants);
+			}
+
+			public int Count => _prefix.Count + _options.Count;
+
+			public Variant this[int index] => index < _prefix.Count
+				? _prefix[index]
+				: _options[index - _prefix.Count];
 
 			public IEnumerator<Variant> GetEnumerator()
 			{
@@ -187,21 +200,16 @@ namespace NLanguageTag
 					yield return v;
 			}
 
-			public VariantCollection ToCollection()
-			{
-				var count = _prefix.Count + _options.Count;
-				var variants = new Variant[count];
-
-				_prefix.CopyTo(variants);
-				_options.CopyTo(variants, _prefix.Count);
-				
-				return new VariantCollection(variants);
-			}
-
 			IEnumerator IEnumerable.GetEnumerator()
 			{
 				return GetEnumerator();
 			}
+
+			private readonly Language? _lang;
+			private readonly Script? _script;
+
+			private readonly List<Variant> _prefix = new List<Variant>();
+			private readonly List<Variant> _options = new List<Variant>();
 		}
 	}
 }

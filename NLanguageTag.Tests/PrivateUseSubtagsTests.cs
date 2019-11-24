@@ -7,13 +7,6 @@ namespace NLanguageTag.Tests
 	[TestFixture]
 	public class PrivateUseSubtagsTests
 	{
-		[TestCase(null)]
-		[TestCase((object)(new string[0]))]
-		public void EmptyCtor(string[] sequence)
-		{
-			Assert.Throws<FormatException>(() => new PrivateUseSubtags(sequence));
-		}
-
 		[Test]
 		public void Empty()
 		{
@@ -23,8 +16,8 @@ namespace NLanguageTag.Tests
 			Assert.That(empty.ToArray(), Is.Empty);
 		}
 
-		[TestCase(new string[] { "aaa" }, "x-aaa")]
-		[TestCase(new string[] { "aaa", "bbb" }, "x-aaa-bbb")]
+		[TestCase(new [] { "aaa" }, "x-aaa")]
+		[TestCase(new [] { "aaa", "bbb" }, "x-aaa-bbb")]
 		public void ToText(string[] args, string expected)
 		{
 			Assert.That(new PrivateUseSubtags(args).ToString(), Is.EqualTo(expected));
@@ -41,15 +34,14 @@ namespace NLanguageTag.Tests
 			Assert.That(pu.Contains(tag), Is.EqualTo(expected));
 		}
 
-		[TestCase("x-aaa", new string[] { "aaa" })]
-		[TestCase("x-aaa-bbb", new string[] { "aaa", "bbb" })]
+		[TestCase("x-aaa", new [] { "aaa" })]
+		[TestCase("x-aaa-bbb", new [] { "aaa", "bbb" })]
 		public void TryParse(string text, string[] subtags)
 		{
 			var pu1 = PrivateUseSubtags.TryParse(text);
-			Assert.That(pu1.Value, Is.EquivalentTo(subtags));
+			Assert.That(pu1, Is.EquivalentTo(subtags));
 
-			PrivateUseSubtags pu2;
-			Assert.That(PrivateUseSubtags.TryParse(text, out pu2), Is.True);
+			Assert.That(PrivateUseSubtags.TryParse(text, out var pu2), Is.True);
 			Assert.That(pu2, Is.EquivalentTo(subtags));
 
 			Assert.That(pu1, Is.EqualTo(pu2));
@@ -63,8 +55,7 @@ namespace NLanguageTag.Tests
 			var pu1 = PrivateUseSubtags.TryParse(text);
 			Assert.That(pu1.HasValue, Is.False);
 
-			PrivateUseSubtags pu2;
-			Assert.That(PrivateUseSubtags.TryParse(text, out pu2), Is.False);
+			Assert.That(PrivateUseSubtags.TryParse(text, out _), Is.False);
 
 			Assert.Throws<FormatException>(() => PrivateUseSubtags.Parse(text));
 		}

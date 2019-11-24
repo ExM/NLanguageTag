@@ -11,9 +11,9 @@ namespace NLanguageTag.Tests
 		{
 			foreach (var text in TestContent.GetLanguages())
 			{
-				var lang = text.ParseFromLanguage();
+				var lang = parseLanguage(text);
 
-				lang.GetSupressScript();
+				lang.GetSuppressScript();
 				lang.GetMacrolanguage();
 				lang.GetPrefix();
 				lang.GetScope();
@@ -23,8 +23,7 @@ namespace NLanguageTag.Tests
 
 			foreach (var text in TestContent.GetExtLanguages())
 			{
-				var lang = text.ParseFromLanguage();
-
+				var lang = parseLanguage(text);
 				Assert.AreEqual(text, lang.ToExtLanguage());
 			}
 
@@ -49,7 +48,7 @@ namespace NLanguageTag.Tests
 		[TestCase("iw", Language.HE)]
 		public void ParseFromLanguage(string text, Language expected)
 		{
-			Assert.AreEqual(expected, text.ParseFromLanguage());
+			Assert.AreEqual(expected, parseLanguage(text));
 		}
 
 		[TestCase(Language.AFB, "afb")]
@@ -83,7 +82,7 @@ namespace NLanguageTag.Tests
 		[TestCase("zh-yue-Hans")]
 		public void ParseFromLanguage_Fail(string text)
 		{
-			Assert.Throws<FormatException>(() => text.ParseFromLanguage());
+			Assert.Throws<FormatException>(() => parseLanguage(text));
 		}
 
 		[TestCase(Language.AFB, "ar-afb")]
@@ -92,6 +91,20 @@ namespace NLanguageTag.Tests
 		public void ToExtLanguage(Language lang, string expExtLang)
 		{
 			Assert.AreEqual(expExtLang, lang.ToExtLanguage());
+		}
+
+		private static Language parseLanguage(string text)
+		{
+			if (!LanguageTag.TryParse(text, out var languageTag))
+				throw new FormatException($"Cannot parse language from `{text}'");
+
+			if ((languageTag.Fields & ~LanguageTag.Field.Language) != 0)
+				throw new FormatException($"Tag contains more than just language `{text}'");
+
+			if (languageTag.Language.HasValue)
+				return languageTag.Language.Value;
+
+			throw new FormatException($"Tag does not contain language `{text}'");
 		}
 	}
 }

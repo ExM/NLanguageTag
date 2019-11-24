@@ -274,6 +274,12 @@ namespace NLanguageTag
 			}
 		}
 
+		/// <summary>
+		/// Determines the proper language subtag that should be used instead of given combination of
+		/// language subtag and extlang subtag
+		/// </summary>
+		/// <param name="text">text that can possibly be extlang subtag</param>
+		/// <param name="prefix">the main language subtag</param>
 		public static Language? TryParseFromExtLanguage(this string text, Language prefix)
 		{
 			if(text == null)
@@ -282,7 +288,7 @@ namespace NLanguageTag
 			switch(prefix)
 			{
 				case Language.AR:
-					switch (text.ToLower(CultureInfo.InvariantCulture))
+					switch (text.ToLowerInvariant())
 					{
 						case "aao": return Language.AAO;
 						case "abh": return Language.ABH;
@@ -317,7 +323,7 @@ namespace NLanguageTag
 						default: return null;
 					}
 				case Language.SGN:
-					switch (text.ToLower(CultureInfo.InvariantCulture))
+					switch (text.ToLowerInvariant())
 					{
 						case "ads": return Language.ADS;
 						case "aed": return Language.AED;
@@ -466,7 +472,7 @@ namespace NLanguageTag
 						default: return null;
 					}
 				case Language.MS:
-					switch (text.ToLower(CultureInfo.InvariantCulture))
+					switch (text.ToLowerInvariant())
 					{
 						case "bjn": return Language.BJN;
 						case "btj": return Language.BTJ;
@@ -506,7 +512,7 @@ namespace NLanguageTag
 						default: return null;
 					}
 				case Language.ZH:
-					switch (text.ToLower(CultureInfo.InvariantCulture))
+					switch (text.ToLowerInvariant())
 					{
 						case "cdo": return Language.CDO;
 						case "cjy": return Language.CJY;
@@ -525,28 +531,28 @@ namespace NLanguageTag
 						default: return null;
 					}
 				case Language.KOK:
-					switch (text.ToLower(CultureInfo.InvariantCulture))
+					switch (text.ToLowerInvariant())
 					{
 						case "gom": return Language.GOM;
 						case "knn": return Language.KNN;
 						default: return null;
 					}
 				case Language.LV:
-					switch (text.ToLower(CultureInfo.InvariantCulture))
+					switch (text.ToLowerInvariant())
 					{
 						case "ltg": return Language.LTG;
 						case "lvs": return Language.LVS;
 						default: return null;
 					}
 				case Language.SW:
-					switch (text.ToLower(CultureInfo.InvariantCulture))
+					switch (text.ToLowerInvariant())
 					{
 						case "swc": return Language.SWC;
 						case "swh": return Language.SWH;
 						default: return null;
 					}
 				case Language.UZ:
-					switch (text.ToLower(CultureInfo.InvariantCulture))
+					switch (text.ToLowerInvariant())
 					{
 						case "uzn": return Language.UZN;
 						case "uzs": return Language.UZS;

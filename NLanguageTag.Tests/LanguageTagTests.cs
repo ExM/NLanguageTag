@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
 using System.Linq;
-using NLanguageTag;
 
 namespace NLanguageTag.Tests
 {
@@ -31,44 +30,44 @@ namespace NLanguageTag.Tests
 		}
 
 		[TestCase("en", new Variant[]{})]
-		[TestCase("en-scotland", new Variant[] { Variant.Scotland })]
-		[TestCase("en-GB-scotland", new Variant[] { Variant.Scotland })]
-		[TestCase("sl-rozaj", new Variant[] { Variant.Rozaj })]
-		[TestCase("sl-rozaj-biske", new Variant[] { Variant.Rozaj, Variant.Biske })]
-		[TestCase("sl-rozaj-biske-1994", new Variant[] { Variant.Rozaj, Variant.Biske, Variant.V1994 })]
-		[TestCase("sl-rozaj-1994", new Variant[] { Variant.Rozaj, Variant.V1994 })]
-		[TestCase("sl-rozaj-biske-1994-fonipa", new Variant[] { Variant.Rozaj, Variant.Biske, Variant.V1994, Variant.Fonipa })]
-		[TestCase("sl-rozaj-biske-1994-fonipa-fonipa", new Variant[] { Variant.Rozaj, Variant.Biske, Variant.V1994, Variant.Fonipa })]
+		[TestCase("en-scotland", new[] { Variant.Scotland })]
+		[TestCase("en-GB-scotland", new[] { Variant.Scotland })]
+		[TestCase("sl-rozaj", new[] { Variant.Rozaj })]
+		[TestCase("sl-rozaj-biske", new[] { Variant.Rozaj, Variant.Biske })]
+		[TestCase("sl-rozaj-biske-1994", new[] { Variant.Rozaj, Variant.Biske, Variant.V1994 })]
+		[TestCase("sl-rozaj-1994", new[] { Variant.Rozaj, Variant.V1994 })]
+		[TestCase("sl-rozaj-biske-1994-fonipa", new[] { Variant.Rozaj, Variant.Biske, Variant.V1994, Variant.Fonipa })]
+		[TestCase("sl-rozaj-biske-1994-fonipa-fonipa", new[] { Variant.Rozaj, Variant.Biske, Variant.V1994, Variant.Fonipa })]
 		public void ParseWithVariants(string text, Variant[] variantsEx)
 		{
 			var tag = LanguageTag.Parse(text);
 			Assert.That(tag.Variants, Is.EquivalentTo(variantsEx));
 		}
 
-		[TestCase("sl-rozaj-a-bbb-ccc", new char[]{ 'a'})]
-		[TestCase("sl-rozaj-a-bbb-ccc-b-aaa", new char[] { 'a', 'b' })]
-		[TestCase("sl-rozaj-b-bbb-ccc-a-aaa", new char[] { 'a', 'b' })]
+		[TestCase("sl-rozaj-a-bbb-ccc", new[]{ 'a'})]
+		[TestCase("sl-rozaj-a-bbb-ccc-b-aaa", new[] { 'a', 'b' })]
+		[TestCase("sl-rozaj-b-bbb-ccc-a-aaa", new[] { 'a', 'b' })]
 		public void ParseWithExtensions(string text, char[] singletones)
 		{
 			var tag = LanguageTag.Parse(text);
 			Assert.That(tag.Extensions.Select(_ => _.Singleton), Is.EquivalentTo(singletones));
 		}
 
-		[TestCase("en-scotland", "en", true)]
-		[TestCase("sl-US-rozaj-biske-1994-fonipa", "sl-rozaj-biske-1994", true)]
-		[TestCase("en-GB", "en-scotland", false)]
-		[TestCase("en-GB", "it", false)]
-		[TestCase("en-a-aaa-b-bbb", "en-a-aaa", true)]
-		[TestCase("en-a-aaa-b-bbb", "en-b-bbb", true)]
+		[TestCase("en", "en-scotland", true)]
+		[TestCase("sl-rozaj-biske-1994", "sl-US-rozaj-biske-1994-fonipa", true)]
+		[TestCase("en-scotland", "en-GB", false)]
+		[TestCase("it", "en-GB", false)]
+		[TestCase("en-a-aaa", "en-a-aaa-b-bbb", true)]
+		[TestCase("en-b-bbb", "en-a-aaa-b-bbb", true)]
 		[TestCase("en-a-aaa-b-bbb", "en-a-aaa-b-bbb", true)]
-		[TestCase("en-b-bbb", "en-a-aaa-b-bbb", false)]
-		[TestCase("en-a-aaa-b-ccc", "en-a-aaa-b-bbb", false)]
-		public void Included(string x, string y, bool expected)
+		[TestCase("en-a-aaa-b-bbb", "en-b-bbb", false)]
+		[TestCase("en-a-aaa-b-bbb", "en-a-aaa-b-ccc", false)]
+		public void IsSubsetOf(string x, string y, bool expected)
 		{
 			var xTag = LanguageTag.Parse(x);
 			var yTag = LanguageTag.Parse(y);
 
-			Assert.That(xTag.Included(yTag), Is.EqualTo(expected));
+			Assert.That(xTag.IsSubsetOf(yTag), Is.EqualTo(expected));
 		}
 
 		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa", LanguageTag.Field.All ^ LanguageTag.Field.PrivateUse, "ru-Latn-RU-Petr1708-a-aaa")]
@@ -142,10 +141,10 @@ namespace NLanguageTag.Tests
 			switch(operatorText)
 			{
 				case ">=":
-					Assert.That(x >= y, Is.EqualTo(expected));
+					Assert.That(y.IsSubsetOf(x), Is.EqualTo(expected));
 					break;
 				case "<=":
-					Assert.That(x <= y, Is.EqualTo(expected));
+					Assert.That(x.IsSubsetOf(y), Is.EqualTo(expected));
 					break;
 				case "==":
 					Assert.That(x == y, Is.EqualTo(expected));
@@ -154,7 +153,7 @@ namespace NLanguageTag.Tests
 					Assert.That(x != y, Is.EqualTo(expected));
 					break;
 				default:
-					throw new NotImplementedException();
+					throw new ApplicationException("Invalid test case");
 			}
 		}
 
@@ -202,35 +201,34 @@ namespace NLanguageTag.Tests
 			Assert.That(tag1, Is.EqualTo(tag2));
 		}
 
-		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa-", "ru-Latn-RU-Petr1708-a-aaa")]
-		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa-?", "ru-Latn-RU-Petr1708-a-aaa")]
-		[TestCase("ru-Latn-RU-Petr1708-a-aaa-b-?", "ru-Latn-RU-Petr1708")]
-		[TestCase("ru-Latn-RU-Petr1708-?", "ru-Latn-RU-Petr1708")]
-		[TestCase("ru-Latn-RU-?", "ru-Latn-RU")]
-		[TestCase("ru-Latn-?", "ru-Latn")]
-		[TestCase("ru-?", "ru")]
-		public void TryParse_Fail(string text, string expected)
+		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa-")]
+		[TestCase("ru-Latn-RU-Petr1708-a-aaa-x-aaa-?")]
+		[TestCase("ru-Latn-RU-Petr1708-a-aaa-b-?")]
+		[TestCase("ru-Latn-RU-Petr1708-?")]
+		[TestCase("ru-Latn-RU-?")]
+		[TestCase("ru-Latn-?")]
+		[TestCase("ru-?")]
+		public void TryParse_Fail(string text)
 		{
 			Assert.That(LanguageTag.TryParse(text).HasValue, Is.False);
 
-			LanguageTag tag;
-			var result = LanguageTag.TryParse(text, out tag);
+			var result = LanguageTag.TryParse(text, out var tag);
 
 			Assert.That(result, Is.False);
-			Assert.That(tag, Is.EqualTo(LanguageTag.Parse(expected)));
+			Assert.That(tag, Is.EqualTo(default(LanguageTag)));
 		}
 
 		[TestCase("zh-CHS", "zh-Hans")]
 		[TestCase("zh-CHT", "zh-Hant")]
 		public void ParseAdditionalGrandfathered(string text, string expected)
 		{
-			Assert.AreEqual(new LanguageTag(expected), new LanguageTag(text));
+			Assert.AreEqual(LanguageTag.Parse(expected), LanguageTag.Parse(text));
 		}
 
 		[TestCaseSource(typeof(TestContent), "GetGrandfathered")]
 		public void ParseGrandfathered(string grandfathered)
 		{
-			Assert.True(new LanguageTag(grandfathered).Language.HasValue);
+			Assert.True(LanguageTag.Parse(grandfathered).Language.HasValue);
 		}
 
 		[TestCaseSource(typeof(TestContent), "GetGrandfatheredNotSupported")]
@@ -295,9 +293,9 @@ namespace NLanguageTag.Tests
 		[TestCase(null)]
 		[TestCase("")]
 		[TestCase(" ")]
-		public void ConstructorWithEmptyString(string text)
+		public void ParsingEmptyString(string text)
 		{
-			Assert.Throws<ArgumentNullException>(() => new LanguageTag(text));
+			Assert.Throws<FormatException>(() => LanguageTag.Parse(text));
 		}
 
 		[Test]

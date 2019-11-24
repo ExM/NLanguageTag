@@ -7,7 +7,10 @@ namespace NLanguageTag
 	{
 		internal static string GetPreferredValue(string text)
 		{
-			switch(text.ToLower())
+			if (text == null)
+				return null;
+
+			switch (text.ToLowerInvariant())
 			{
 				case "art-lojban": return "jbo";
 				case "en-gb-oed": return "en-GB-oxendict";

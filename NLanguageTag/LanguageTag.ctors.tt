@@ -5,11 +5,7 @@
 <#@ import namespace="System.Collections.Generic" #>
 <#@ output extension=".cs" #>
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NLanguageTag
 {
@@ -24,7 +20,7 @@ foreach(var p in new bool[]{false, true})
 { #>
 
 		/// <summary>
-		/// Create the LanguageTag instance
+		/// Initializes new value of <see cref="LanguageTag"/>
 		/// </summary>
 		/// <param name="lang">primary language</param>
 <# if(s) {
@@ -43,31 +39,50 @@ foreach(var p in new bool[]{false, true})
 		if(v) {#>, IEnumerable<Variant> variants<# }; 
 		if(e) {#>, IEnumerable<ExtensionSubtag> extSubtags<# }; 
 		if(p) {#>, PrivateUseSubtags privateUseSubtags<# } #>)
-			: this()
-		{
-			Language = lang;
+			: this(
+			(Language?)lang,
 <# if(s) {
-#>			Script = script;
-<# }; if(r) {
-#>			Region = region;
-<# }; if(v) {
-#>			Variants = VariantCollection.Create(Language, Script, variants);
-<# }; if(e) {
-#>			Extensions = new ExtensionSubtagCollection(extSubtags);
-<# }; if(p) {
-#>			PrivateUse = privateUseSubtags;
-<# } #>
+#>			script,
+<# } else {
+#>			null,
+<# }
+if(r) {
+#>			region,
+<# } else {
+#>			null,
+<# }
+if(v) {
+#>			VariantCollection.Create(lang, <# if(s) { #>script<# } else { #>null<# } #>, variants),
+<# } else {
+#>			default,
+<# }
+if(e) {
+#>			new ExtensionSubtagCollection(extSubtags),
+<# } else {
+#>			default,
+<# }
+if(p) {
+#>			privateUseSubtags)
+<# } else {
+#>			default)
+<# }
+#>		{
 		}
 <# } #>
 
+		/// <summary>
+		/// Creates language tag that consists of specified fields of this language tag
+		/// </summary>
 		public LanguageTag Take(Field fields)
 		{
-			if(!Language.HasValue)
+			if (fields == Field.All)
+				return this;
+
+			if (!Language.HasValue)
 			{
-				if(fields.IsSet(Field.PrivateUse))
-					return new LanguageTag(PrivateUse);
-				else
-					return new LanguageTag();
+				return fields.HasFlag(Field.PrivateUse)
+					? new LanguageTag(PrivateUse)
+					: new LanguageTag(null, null, null, default, default, default);
 			}
 
 			switch(fields)
@@ -80,18 +95,21 @@ foreach(var e in new bool[]{false, true})
 foreach(var p in new bool[]{false, true})
 { #>
 				case Field.Language<#
-		if(s) {#>| Field.Script<# }; 
-		if(r) {#>| Field.Region<# }; 
-		if(v) {#>| Field.Variants<# }; 
-		if(e) {#>| Field.Extensions<# }; 
-		if(p) {#>| Field.PrivateUse<# } #>:
-					return new LanguageTag(Language.Value<#
+		if(s) {#> | Field.Script<# };
+		if(r) {#> | Field.Region<# };
+		if(v) {#> | Field.Variants<# };
+		if(e) {#> | Field.Extensions<# };
+		if(p) {#> | Field.PrivateUse<# } #>:
+<# if (s && r && v && e && p) { #>
+					throw new ApplicationException("This should never happen");
+<# } else { #>
+					return new LanguageTag(Language<# if (!s || !r || !v || !e || !p) { #>.Value<# } #><#
 		if(s) {#>, Script<# }; 
 		if(r) {#>, Region<# }; 
 		if(v) {#>, Variants<# }; 
 		if(e) {#>, Extensions<# }; 
 		if(p) {#>, PrivateUse<# } #>);
-<# } #>
+<# } } #>
 				case Field.PrivateUse:
 					return new LanguageTag(PrivateUse);
 				default:

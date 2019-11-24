@@ -198,12 +198,15 @@ namespace NLanguageTag
 			}
 		}
 
-		public static Script? TryParseFromScript(this string text)
+		/// <summary>
+		/// Parses script subtag from its string representation, returns null if parsing was not successful
+		/// </summary>
+		public static Script? TryParseScript(this string text)
 		{
 			if(text == null)
 				return null;
 
-			switch (text.ToLower(CultureInfo.InvariantCulture))
+			switch (text.ToLowerInvariant())
 			{
 				case "adlm": return Script.Adlm;
 				case "afak": return Script.Afak;

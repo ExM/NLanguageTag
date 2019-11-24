@@ -5,6 +5,9 @@ namespace NLanguageTag
 {
 	public static partial class LanguageTagExtensions
 	{
+		/// <summary>
+		/// Returns macrolanguage for the given specific language
+		/// </summary>
 		public static Language? GetMacrolanguage(this Language language)
 		{
 			switch(language)
@@ -454,6 +457,9 @@ namespace NLanguageTag
 			}
 		}
 
+		/// <summary>
+		/// Returns the scope of the given language subtag (on null if the subtag represents an invididual language)
+		/// </summary>
 		public static LanguageScope? GetScope(this Language language)
 		{
 			switch(language)
@@ -644,7 +650,12 @@ namespace NLanguageTag
 			}
 		}
 
-		public static Script? GetSupressScript(this Language language)
+		/// <summary>
+		/// Returns script (if such exists) used to write the overwhelming majority of documents for the
+		/// given language. The subtag for such a script therefore adds no distinguishing information to
+		/// a language tag and thus SHOULD NOT be used for most documents in that language.
+		/// </summary>
+		public static Script? GetSuppressScript(this Language language)
 		{
 			switch(language)
 			{
@@ -8835,12 +8846,15 @@ namespace NLanguageTag
 			}
 		}
 
-		public static Language? TryParseFromLanguage(this string text)
+		/// <summary>
+		/// Parses language subtag from its string representation, returns null if parsing was not successful
+		/// </summary>
+		public static Language? TryParseLanguage(this string text)
 		{
 			if(text == null)
 				return null;
 
-			switch (text.ToLower(CultureInfo.InvariantCulture))
+			switch (text.ToLowerInvariant())
 			{
 				case "aa": return Language.AA;
 				case "ab": return Language.AB;
