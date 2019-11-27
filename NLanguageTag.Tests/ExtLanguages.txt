@@ -123,12 +123,15 @@ ms-liw
 sgn-lls
 sgn-lsg
 sgn-lsl
+sgn-lsn
 sgn-lso
 sgn-lsp
 sgn-lst
+sgn-lsv
 sgn-lsy
 lv-ltg
 lv-lvs
+sgn-lws
 zh-lzh
 ms-max
 sgn-mdl
@@ -195,6 +198,7 @@ sw-swc
 sw-swh
 sgn-swl
 sgn-syy
+sgn-szs
 ms-tmw
 sgn-tse
 sgn-tsm
@@ -215,11 +219,13 @@ ms-vkt
 sgn-vsi
 sgn-vsl
 sgn-vsv
+sgn-wbs
 zh-wuu
 sgn-xki
 sgn-xml
 ms-xmm
 sgn-xms
+sgn-yds
 sgn-ygs
 sgn-yhs
 sgn-ysl

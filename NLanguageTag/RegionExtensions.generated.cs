@@ -306,6 +306,7 @@ namespace NLanguageTag
 				case Region.M151: return "151";
 				case Region.M154: return "154";
 				case Region.M155: return "155";
+				case Region.M202: return "202";
 				case Region.M419: return "419";
 				default:
 					throw new NotImplementedException("unexpected value '" + v + "'");
@@ -622,6 +623,7 @@ namespace NLanguageTag
 				case "151": return Region.M151;
 				case "154": return Region.M154;
 				case "155": return Region.M155;
+				case "202": return Region.M202;
 				case "419": return Region.M419;
 				default: return null;
 			}

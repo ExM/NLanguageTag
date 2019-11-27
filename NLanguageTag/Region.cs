@@ -777,7 +777,7 @@ namespace NLanguageTag
 		MH,
 
 		/// <summary>
-		/// The Former Yugoslav Republic of Macedonia
+		/// North Macedonia
 		/// </summary>
 		MK,
 
@@ -1132,7 +1132,7 @@ namespace NLanguageTag
 		SY,
 
 		/// <summary>
-		/// Swaziland
+		/// Eswatini eSwatini Swaziland
 		/// </summary>
 		SZ,
 
@@ -1483,6 +1483,11 @@ namespace NLanguageTag
 		/// Western Europe
 		/// </summary>
 		M155,
+
+		/// <summary>
+		/// Sub-Saharan Africa
+		/// </summary>
+		M202,
 
 		/// <summary>
 		/// Latin America and the Caribbean

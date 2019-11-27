@@ -46,6 +46,11 @@ namespace NLanguageTag
 		Abl1943,
 
 		/// <summary>
+		/// Akuapem Twi
+		/// </summary>
+		Akuapem,
+
+		/// <summary>
 		/// ALA-LC Romanization, 1997 edition
 		/// Romanizations recommended by the American Library Association and the Library of Congress, in "ALA-LC Romanization Tables: Transliteration Schemes for Non-Roman Scripts" (1997), ISBN 978-0-8444-0940-5.
 		/// </summary>
@@ -64,14 +69,33 @@ namespace NLanguageTag
 		Ao1990,
 
 		/// <summary>
+		/// Aranese
+		/// Occitan variant spoken in the Val d'Aran
+		/// </summary>
+		Aranes,
+
+		/// <summary>
 		/// Eastern Armenian
+		/// Preferred tag is hy
 		/// </summary>
 		Arevela,
 
 		/// <summary>
 		/// Western Armenian
+		/// Preferred tag is hyw
 		/// </summary>
 		Arevmda,
+
+		/// <summary>
+		/// Asante Twi Ashanti Twi
+		/// </summary>
+		Asante,
+
+		/// <summary>
+		/// Auvergnat
+		/// Occitan variant spoken in Auvergne
+		/// </summary>
+		Auvern,
 
 		/// <summary>
 		/// Unified Turkic Latin Alphabet (Historical)
@@ -125,6 +149,17 @@ namespace NLanguageTag
 		Boont,
 
 		/// <summary>
+		/// Bornholmsk
+		/// </summary>
+		Bornholm,
+
+		/// <summary>
+		/// Cisalpine
+		/// Occitan variant spoken in northwestern Italy
+		/// </summary>
+		Cisaup,
+
+		/// <summary>
 		/// Portuguese-Brazilian Orthographic Convention of 1945 (Convenção Ortográfica Luso-Brasileira de 1945)
 		/// Portuguese orthography conventions established in 1945, generally in effect until 2009. This reform was not ratified in Brazil.
 		/// </summary>
@@ -134,6 +169,11 @@ namespace NLanguageTag
 		/// Cornu-English Cornish English Anglo-Cornish
 		/// </summary>
 		Cornu,
+
+		/// <summary>
+		/// Occitan variants of the Croissant area
+		/// </summary>
+		Creiss,
 
 		/// <summary>
 		/// Slovene in Dajnko alphabet
@@ -157,6 +197,11 @@ namespace NLanguageTag
 		Fonipa,
 
 		/// <summary>
+		/// Kirshenbaum Phonetic Alphabet
+		/// </summary>
+		Fonkirsh,
+
+		/// <summary>
 		/// North American Phonetic Alphabet Americanist Phonetic Notation
 		/// </summary>
 		Fonnapa,
@@ -173,6 +218,29 @@ namespace NLanguageTag
 		Fonxsamp,
 
 		/// <summary>
+		/// Gascon
+		/// Occitan variant spoken in Gascony
+		/// </summary>
+		Gascon,
+
+		/// <summary>
+		/// Classical Occitan orthography
+		/// Classical written standard for Occitan developed in 1935 by Alibèrt
+		/// </summary>
+		Grclass,
+
+		/// <summary>
+		/// Italian-inspired Occitan orthography
+		/// </summary>
+		Grital,
+
+		/// <summary>
+		/// Mistralian or Mistralian-inspired Occitan orthography
+		/// Written standard developed by Romanilha in 1853 and used by Mistral and the Félibres, including derived standards such as Escolo dóu Po, Escolo Gaston Febus, and others
+		/// </summary>
+		Grmistr,
+
+		/// <summary>
 		/// Hepburn romanization
 		/// </summary>
 		Hepburn,
@@ -184,6 +252,11 @@ namespace NLanguageTag
 		Hognorsk,
 
 		/// <summary>
+		/// Standard H-system orthographic fallback for spelling Esperanto
+		/// </summary>
+		Hsistemo,
+
+		/// <summary>
 		/// Serbian with Ijekavian pronunciation
 		/// </summary>
 		Ijekavsk,
@@ -192,6 +265,12 @@ namespace NLanguageTag
 		/// Epic Sanskrit
 		/// </summary>
 		Itihasa,
+
+		/// <summary>
+		/// Bulgarian in 1899 orthography
+		/// Bulgarian orthography introduced by Todor Ivanchov in 1899
+		/// </summary>
+		Ivanchov,
 
 		/// <summary>
 		/// Jauer dialect of Romansh
@@ -225,6 +304,18 @@ namespace NLanguageTag
 		/// Classical Sanskrit
 		/// </summary>
 		Laukika,
+
+		/// <summary>
+		/// Limousin
+		/// Occitan variant spoken in Limousin
+		/// </summary>
+		Lemosin,
+
+		/// <summary>
+		/// Languedocien
+		/// Occitan variant spoken in Languedoc
+		/// </summary>
+		Lengadoc,
 
 		/// <summary>
 		/// The Lipovaz dialect of Resian The Lipovec dialect of Resian
@@ -266,6 +357,12 @@ namespace NLanguageTag
 		Newfound,
 
 		/// <summary>
+		/// Niçard
+		/// Occitan variant spoken in Nice
+		/// </summary>
+		Nicard,
+
+		/// <summary>
 		/// The Gniva dialect of Resian The Njiva dialect of Resian
 		/// The dialect of Gniva/Njiva is one of the four major local dialects of Resian
 		/// </summary>
@@ -288,6 +385,21 @@ namespace NLanguageTag
 		Oxendict,
 
 		/// <summary>
+		/// Pahawh Hmong Second Stage Reduced orthography
+		/// </summary>
+		Pahawh2,
+
+		/// <summary>
+		/// Pahawh Hmong Third Stage Reduced orthography
+		/// </summary>
+		Pahawh3,
+
+		/// <summary>
+		/// Pahawh Hmong Final Version orthography
+		/// </summary>
+		Pahawh4,
+
+		/// <summary>
 		/// Pamaka dialect
 		/// Pamaka dialect of the "Busi Nenge Tongo" English-based Creole continuum in Eastern Suriname and Western French Guiana
 		/// </summary>
@@ -308,6 +420,12 @@ namespace NLanguageTag
 		/// Polytonic Greek
 		/// </summary>
 		Polyton,
+
+		/// <summary>
+		/// Provençal
+		/// Occitan variant spoken in Provence
+		/// </summary>
+		Provenc,
 
 		/// <summary>
 		/// Puter idiom of Romansh
@@ -358,6 +476,12 @@ namespace NLanguageTag
 		/// Sotavento is one of the two main dialect groups of Kabuverdianu.
 		/// </summary>
 		Sotav,
+
+		/// <summary>
+		/// Spanglish
+		/// A variety of contact dialects of English and Spanish
+		/// </summary>
+		Spanglis,
 
 		/// <summary>
 		/// Surmiran idiom of Romansh
@@ -422,9 +546,20 @@ namespace NLanguageTag
 		Vallader,
 
 		/// <summary>
+		/// Vivaro-Alpine
+		/// Occitan variant spoken in northeastern Occitania
+		/// </summary>
+		Vivaraup,
+
+		/// <summary>
 		/// Wade-Giles romanization
 		/// </summary>
 		Wadegile,
+
+		/// <summary>
+		/// Standard X-system orthographic fallback for spelling Esperanto
+		/// </summary>
+		Xsistemo,
 
 	}
 }

@@ -98,7 +98,7 @@ namespace NLanguageTag
 		BM,
 
 		/// <summary>
-		/// Bengali
+		/// Bengali Bangla
 		/// </summary>
 		BN,
 
@@ -319,6 +319,7 @@ namespace NLanguageTag
 
 		/// <summary>
 		/// Armenian
+		/// see also hyw
 		/// </summary>
 		HY,
 
@@ -418,7 +419,7 @@ namespace NLanguageTag
 		KL,
 
 		/// <summary>
-		/// Central Khmer
+		/// Khmer Central Khmer
 		/// </summary>
 		KM,
 
@@ -473,7 +474,7 @@ namespace NLanguageTag
 		LB,
 
 		/// <summary>
-		/// Ganda
+		/// Ganda Luganda
 		/// </summary>
 		LG,
 
@@ -760,6 +761,7 @@ namespace NLanguageTag
 
 		/// <summary>
 		/// Serbian
+		/// see cnr for Montenegrin
 		/// </summary>
 		SR,
 
@@ -1289,7 +1291,7 @@ namespace NLanguageTag
 		ADB,
 
 		/// <summary>
-		/// Dzodinka
+		/// Lidzonka Dzodinka
 		/// </summary>
 		ADD,
 
@@ -1831,6 +1833,7 @@ namespace NLanguageTag
 
 		/// <summary>
 		/// Nataoran Amis
+		/// see ami, szy
 		/// </summary>
 		AIS,
 
@@ -1855,7 +1858,7 @@ namespace NLanguageTag
 		AIY,
 
 		/// <summary>
-		/// Aja (Sudan)
+		/// Aja (South Sudan)
 		/// </summary>
 		AJA,
 
@@ -2360,7 +2363,7 @@ namespace NLanguageTag
 		ANS,
 
 		/// <summary>
-		/// Antakarinya
+		/// Antakarinya Antikarinya
 		/// </summary>
 		ANT,
 
@@ -2805,17 +2808,12 @@ namespace NLanguageTag
 		ASC,
 
 		/// <summary>
-		/// Asas
-		/// </summary>
-		ASD,
-
-		/// <summary>
 		/// American Sign Language
 		/// </summary>
 		ASE,
 
 		/// <summary>
-		/// Australian Sign Language
+		/// Auslan Australian Sign Language
 		/// </summary>
 		ASF,
 
@@ -3806,7 +3804,7 @@ namespace NLanguageTag
 		BCJ,
 
 		/// <summary>
-		/// Bunaba
+		/// Bunuba
 		/// </summary>
 		BCK,
 
@@ -3916,7 +3914,7 @@ namespace NLanguageTag
 		BDG,
 
 		/// <summary>
-		/// Baka (Sudan)
+		/// Baka (South Sudan)
 		/// </summary>
 		BDH,
 
@@ -3926,7 +3924,7 @@ namespace NLanguageTag
 		BDI,
 
 		/// <summary>
-		/// Bai
+		/// Bai (South Sudan) Bai
 		/// </summary>
 		BDJ,
 
@@ -4934,7 +4932,7 @@ namespace NLanguageTag
 		BLL,
 
 		/// <summary>
-		/// Beli (Sudan)
+		/// Beli (South Sudan)
 		/// </summary>
 		BLM,
 
@@ -4974,7 +4972,7 @@ namespace NLanguageTag
 		BLT,
 
 		/// <summary>
-		/// Bolo
+		/// Kibala Bolo
 		/// </summary>
 		BLV,
 
@@ -5024,7 +5022,7 @@ namespace NLanguageTag
 		BME,
 
 		/// <summary>
-		/// Bom
+		/// Bom-Kim
 		/// </summary>
 		BMF,
 
@@ -6536,7 +6534,7 @@ namespace NLanguageTag
 		BYL,
 
 		/// <summary>
-		/// Bidyara
+		/// Bidjara
 		/// </summary>
 		BYM,
 
@@ -7146,6 +7144,11 @@ namespace NLanguageTag
 		CET,
 
 		/// <summary>
+		/// Ekai Chin
+		/// </summary>
+		CEY,
+
+		/// <summary>
 		/// Dijim-Bwilim
 		/// </summary>
 		CFA,
@@ -7659,6 +7662,12 @@ namespace NLanguageTag
 		/// Con
 		/// </summary>
 		CNO,
+
+		/// <summary>
+		/// Montenegrin
+		/// see sr for Serbian
+		/// </summary>
+		CNR,
 
 		/// <summary>
 		/// Central Asmat
@@ -8201,7 +8210,7 @@ namespace NLanguageTag
 		CUC,
 
 		/// <summary>
-		/// Cung
+		/// Chungmboko Cung
 		/// </summary>
 		CUG,
 
@@ -8284,6 +8293,11 @@ namespace NLanguageTag
 		/// Tepeuxila Cuicatec
 		/// </summary>
 		CUX,
+
+		/// <summary>
+		/// Cuitlatec
+		/// </summary>
+		CUY,
 
 		/// <summary>
 		/// Chug
@@ -8918,7 +8932,7 @@ namespace NLanguageTag
 		DID,
 
 		/// <summary>
-		/// Dieri
+		/// Dieri Diyari
 		/// </summary>
 		DIF,
 
@@ -8988,11 +9002,6 @@ namespace NLanguageTag
 		DIS,
 
 		/// <summary>
-		/// Dirari
-		/// </summary>
-		DIT,
-
-		/// <summary>
 		/// Diriku
 		/// </summary>
 		DIU,
@@ -9033,7 +9042,7 @@ namespace NLanguageTag
 		DJC,
 
 		/// <summary>
-		/// Djamindjung
+		/// Djamindjung Ngaliwurru
 		/// </summary>
 		DJD,
 
@@ -9074,7 +9083,7 @@ namespace NLanguageTag
 		DJM,
 
 		/// <summary>
-		/// Djauan
+		/// Jawoyn Djauan
 		/// </summary>
 		DJN,
 
@@ -9278,6 +9287,11 @@ namespace NLanguageTag
 		/// Dzùùngoo
 		/// </summary>
 		DNN,
+
+		/// <summary>
+		/// Ndrulo Northern Lendu
+		/// </summary>
+		DNO,
 
 		/// <summary>
 		/// Danaru
@@ -9631,6 +9645,7 @@ namespace NLanguageTag
 
 		/// <summary>
 		/// Hun-Saare
+		/// see uth, uss
 		/// </summary>
 		DUD,
 
@@ -9782,6 +9797,11 @@ namespace NLanguageTag
 		DWY,
 
 		/// <summary>
+		/// Dewas Rai
+		/// </summary>
+		DWZ,
+
+		/// <summary>
 		/// Dyan
 		/// </summary>
 		DYA,
@@ -9812,7 +9832,7 @@ namespace NLanguageTag
 		DYM,
 
 		/// <summary>
-		/// Dyangadi
+		/// Dyangadi Dhanggatti
 		/// </summary>
 		DYN,
 
@@ -9827,7 +9847,7 @@ namespace NLanguageTag
 		DYU,
 
 		/// <summary>
-		/// Dyaabugay
+		/// Djabugay Dyaabugay
 		/// </summary>
 		DYY,
 
@@ -10533,7 +10553,7 @@ namespace NLanguageTag
 		FAN,
 
 		/// <summary>
-		/// Palor
+		/// Paloor
 		/// </summary>
 		FAP,
 
@@ -11054,7 +11074,7 @@ namespace NLanguageTag
 		GBC,
 
 		/// <summary>
-		/// Karadjeri
+		/// Karajarri
 		/// </summary>
 		GBD,
 
@@ -11424,7 +11444,7 @@ namespace NLanguageTag
 		GGD,
 
 		/// <summary>
-		/// Guragone
+		/// Gurr-goni
 		/// </summary>
 		GGE,
 
@@ -11526,7 +11546,7 @@ namespace NLanguageTag
 		GHT,
 
 		/// <summary>
-		/// Kitja
+		/// Kija
 		/// </summary>
 		GIA,
 
@@ -11544,6 +11564,11 @@ namespace NLanguageTag
 		/// Gidar
 		/// </summary>
 		GID,
+
+		/// <summary>
+		/// Gaɓogbo Guébie
+		/// </summary>
+		GIE,
 
 		/// <summary>
 		/// Goaria
@@ -11662,6 +11687,11 @@ namespace NLanguageTag
 		GKA,
 
 		/// <summary>
+		/// Magɨ (Madang Province)
+		/// </summary>
+		GKD,
+
+		/// <summary>
 		/// Ndai
 		/// </summary>
 		GKE,
@@ -11682,7 +11712,7 @@ namespace NLanguageTag
 		GKP,
 
 		/// <summary>
-		/// ǂUngkue =/Ungkue
+		/// ǂUngkue
 		/// </summary>
 		GKU,
 
@@ -11867,7 +11897,12 @@ namespace NLanguageTag
 		GNI,
 
 		/// <summary>
-		/// //Gana ǁGana
+		/// Ngen
+		/// </summary>
+		GNJ,
+
+		/// <summary>
+		/// ǁGana
 		/// </summary>
 		GNK,
 
@@ -12267,7 +12302,7 @@ namespace NLanguageTag
 		GUD,
 
 		/// <summary>
-		/// Gurinji
+		/// Gurindji
 		/// </summary>
 		GUE,
 
@@ -12467,7 +12502,7 @@ namespace NLanguageTag
 		GWI,
 
 		/// <summary>
-		/// /Gwi ǀGwi
+		/// ǀGwi
 		/// </summary>
 		GWJ,
 
@@ -12560,6 +12595,11 @@ namespace NLanguageTag
 		/// Guyanese Creole English
 		/// </summary>
 		GYN,
+
+		/// <summary>
+		/// Gyalsumdo
+		/// </summary>
+		GYO,
 
 		/// <summary>
 		/// Guarayu
@@ -12787,7 +12827,7 @@ namespace NLanguageTag
 		HEM,
 
 		/// <summary>
-		/// Hai//om Haiǁom
+		/// Haiǁom
 		/// </summary>
 		HGM,
 
@@ -12910,6 +12950,11 @@ namespace NLanguageTag
 		/// Hunjara-Kaina Ke
 		/// </summary>
 		HKK,
+
+		/// <summary>
+		/// Mel-Khaonh
+		/// </summary>
+		HKN,
 
 		/// <summary>
 		/// Hong Kong Sign Language Heung Kong Sau Yue
@@ -13087,7 +13132,7 @@ namespace NLanguageTag
 		HNE,
 
 		/// <summary>
-		/// //Ani ǁAni
+		/// ǁAni
 		/// </summary>
 		HNH,
 
@@ -13347,7 +13392,7 @@ namespace NLanguageTag
 		HUB,
 
 		/// <summary>
-		/// =/Hua ǂHua
+		/// ǂHua
 		/// </summary>
 		HUC,
 
@@ -13507,6 +13552,12 @@ namespace NLanguageTag
 		HYA,
 
 		/// <summary>
+		/// Western Armenian
+		/// see also hy
+		/// </summary>
+		HYW,
+
+		/// <summary>
 		/// Armenian (family)
 		/// </summary>
 		HYX,
@@ -13555,6 +13606,11 @@ namespace NLanguageTag
 		/// Ibanag
 		/// </summary>
 		IBG,
+
+		/// <summary>
+		/// Bih
+		/// </summary>
+		IBH,
 
 		/// <summary>
 		/// Ibaloi
@@ -14093,7 +14149,7 @@ namespace NLanguageTag
 		IRH,
 
 		/// <summary>
-		/// Irigwe
+		/// Rigwe Irigwe
 		/// </summary>
 		IRI,
 
@@ -14465,7 +14521,7 @@ namespace NLanguageTag
 		JAX,
 
 		/// <summary>
-		/// Yan-nhangu
+		/// Yan-nhangu Nhangu
 		/// </summary>
 		JAY,
 
@@ -14558,11 +14614,6 @@ namespace NLanguageTag
 		/// Jerung
 		/// </summary>
 		JEE,
-
-		/// <summary>
-		/// Jeng
-		/// </summary>
-		JEG,
 
 		/// <summary>
 		/// Jeh
@@ -14660,7 +14711,7 @@ namespace NLanguageTag
 		JIE,
 
 		/// <summary>
-		/// Djingili
+		/// Jingulu Djingili
 		/// </summary>
 		JIG,
 
@@ -15807,6 +15858,7 @@ namespace NLanguageTag
 
 		/// <summary>
 		/// Kataang
+		/// see ncq, sct
 		/// </summary>
 		KGD,
 
@@ -16352,7 +16404,7 @@ namespace NLanguageTag
 		KKO,
 
 		/// <summary>
-		/// Gugubera
+		/// Gugubera Koko-Bera
 		/// </summary>
 		KKP,
 
@@ -16397,7 +16449,7 @@ namespace NLanguageTag
 		KKX,
 
 		/// <summary>
-		/// Guguyimidjir
+		/// Guugu Yimidhirr Guguyimidjir
 		/// </summary>
 		KKY,
 
@@ -16517,7 +16569,7 @@ namespace NLanguageTag
 		KLV,
 
 		/// <summary>
-		/// Lindu
+		/// Tado Lindu
 		/// </summary>
 		KLW,
 
@@ -17213,11 +17265,6 @@ namespace NLanguageTag
 		KRL,
 
 		/// <summary>
-		/// Krim
-		/// </summary>
-		KRM,
-
-		/// <summary>
 		/// Sapo
 		/// </summary>
 		KRN,
@@ -17233,7 +17280,7 @@ namespace NLanguageTag
 		KRP,
 
 		/// <summary>
-		/// Kru'ng 2
+		/// Krung
 		/// </summary>
 		KRR,
 
@@ -17423,7 +17470,7 @@ namespace NLanguageTag
 		KTC,
 
 		/// <summary>
-		/// Kokata
+		/// Kokata Kukatha
 		/// </summary>
 		KTD,
 
@@ -17528,7 +17575,7 @@ namespace NLanguageTag
 		KTY,
 
 		/// <summary>
-		/// Ju/'hoan Juǀʼhoan
+		/// Juǀʼhoan Juǀʼhoansi
 		/// </summary>
 		KTZ,
 
@@ -18444,7 +18491,7 @@ namespace NLanguageTag
 		LBM,
 
 		/// <summary>
-		/// Lamet
+		/// Rmeet
 		/// </summary>
 		LBN,
 
@@ -18494,7 +18541,7 @@ namespace NLanguageTag
 		LBX,
 
 		/// <summary>
-		/// Lamu-Lamu
+		/// Lamalama Lamu-Lamu
 		/// </summary>
 		LBY,
 
@@ -18805,7 +18852,7 @@ namespace NLanguageTag
 		LGM,
 
 		/// <summary>
-		/// Opuuo
+		/// T'apo Opuuo
 		/// </summary>
 		LGN,
 
@@ -19185,11 +19232,6 @@ namespace NLanguageTag
 		LLN,
 
 		/// <summary>
-		/// Khlor
-		/// </summary>
-		LLO,
-
-		/// <summary>
 		/// North Efate
 		/// </summary>
 		LLP,
@@ -19380,7 +19422,7 @@ namespace NLanguageTag
 		LNN,
 
 		/// <summary>
-		/// Lango (Sudan)
+		/// Lango (South Sudan)
 		/// </summary>
 		LNO,
 
@@ -19665,6 +19707,11 @@ namespace NLanguageTag
 		LSM,
 
 		/// <summary>
+		/// Tibetan Sign Language
+		/// </summary>
+		LSN,
+
+		/// <summary>
 		/// Laos Sign Language
 		/// </summary>
 		LSO,
@@ -19690,6 +19737,11 @@ namespace NLanguageTag
 		LST,
 
 		/// <summary>
+		/// Sivia Sign Language
+		/// </summary>
+		LSV,
+
+		/// <summary>
 		/// Mauritian Sign Language
 		/// </summary>
 		LSY,
@@ -19703,6 +19755,11 @@ namespace NLanguageTag
 		/// Latgalian
 		/// </summary>
 		LTG,
+
+		/// <summary>
+		/// Thur
+		/// </summary>
+		LTH,
 
 		/// <summary>
 		/// Leti (Indonesia)
@@ -19845,6 +19902,11 @@ namespace NLanguageTag
 		LVA,
 
 		/// <summary>
+		/// Lavi
+		/// </summary>
+		LVI,
+
+		/// <summary>
 		/// Lavukaleve
 		/// </summary>
 		LVK,
@@ -19893,6 +19955,11 @@ namespace NLanguageTag
 		/// Luwo
 		/// </summary>
 		LWO,
+
+		/// <summary>
+		/// Malawian Sign Language
+		/// </summary>
+		LWS,
 
 		/// <summary>
 		/// Lewotobi
@@ -19946,6 +20013,7 @@ namespace NLanguageTag
 
 		/// <summary>
 		/// San Jerónimo Tecóatl Mazatec
+		/// see also pbm
 		/// </summary>
 		MAA,
 
@@ -20435,7 +20503,7 @@ namespace NLanguageTag
 		MEB,
 
 		/// <summary>
-		/// Mara
+		/// Marra
 		/// </summary>
 		MEC,
 
@@ -20495,7 +20563,7 @@ namespace NLanguageTag
 		MEO,
 
 		/// <summary>
-		/// Miriwung
+		/// Miriwoong
 		/// </summary>
 		MEP,
 
@@ -20630,7 +20698,7 @@ namespace NLanguageTag
 		MFQ,
 
 		/// <summary>
-		/// Marithiel
+		/// Marrithiyel
 		/// </summary>
 		MFR,
 
@@ -21798,12 +21866,12 @@ namespace NLanguageTag
 		MPA,
 
 		/// <summary>
-		/// Mullukmulluk
+		/// Malak Malak Mullukmulluk
 		/// </summary>
 		MPB,
 
 		/// <summary>
-		/// Mangarayi
+		/// Mangarrayi
 		/// </summary>
 		MPC,
 
@@ -21833,7 +21901,7 @@ namespace NLanguageTag
 		MPI,
 
 		/// <summary>
-		/// Martu Wangka
+		/// Martu Wangka Wangkajunga
 		/// </summary>
 		MPJ,
 
@@ -22919,11 +22987,6 @@ namespace NLanguageTag
 		MYC,
 
 		/// <summary>
-		/// Maramba
-		/// </summary>
-		MYD,
-
-		/// <summary>
 		/// Myene
 		/// </summary>
 		MYE,
@@ -23259,7 +23322,7 @@ namespace NLanguageTag
 		NAX,
 
 		/// <summary>
-		/// Narrinyeri
+		/// Ngarrindjeri
 		/// </summary>
 		NAY,
 
@@ -23315,7 +23378,7 @@ namespace NLanguageTag
 		NBI,
 
 		/// <summary>
-		/// Ngarinman
+		/// Ngarinyman
 		/// </summary>
 		NBJ,
 
@@ -23350,7 +23413,7 @@ namespace NLanguageTag
 		NBQ,
 
 		/// <summary>
-		/// Numana-Nunku-Gbantu-Numbu
+		/// Numana
 		/// </summary>
 		NBR,
 
@@ -23441,7 +23504,7 @@ namespace NLanguageTag
 		NCJ,
 
 		/// <summary>
-		/// Nakara
+		/// Na-kara
 		/// </summary>
 		NCK,
 
@@ -23466,9 +23529,9 @@ namespace NLanguageTag
 		NCO,
 
 		/// <summary>
-		/// Ndaktup
+		/// Northern Katang
 		/// </summary>
-		NCP,
+		NCQ,
 
 		/// <summary>
 		/// Ncane
@@ -23801,7 +23864,7 @@ namespace NLanguageTag
 		NGG,
 
 		/// <summary>
-		/// N/u Nǀu
+		/// Nǁng
 		/// </summary>
 		NGH,
 
@@ -23861,7 +23924,7 @@ namespace NLanguageTag
 		NGS,
 
 		/// <summary>
-		/// Ngeq
+		/// Kriang Ngeq
 		/// </summary>
 		NGT,
 
@@ -24041,7 +24104,7 @@ namespace NLanguageTag
 		NIF,
 
 		/// <summary>
-		/// Ngalakan
+		/// Ngalakgan
 		/// </summary>
 		NIG,
 
@@ -24381,6 +24444,11 @@ namespace NLanguageTag
 		NLL,
 
 		/// <summary>
+		/// Mankiyali
+		/// </summary>
+		NLM,
+
+		/// <summary>
 		/// Durango Nahuatl
 		/// see azd, azn
 		/// </summary>
@@ -24499,7 +24567,7 @@ namespace NLanguageTag
 		NMM,
 
 		/// <summary>
-		/// !Xóõ ǃXóõ
+		/// ǃXóõ
 		/// </summary>
 		NMN,
 
@@ -24647,11 +24715,6 @@ namespace NLanguageTag
 		/// Narungga
 		/// </summary>
 		NNR,
-
-		/// <summary>
-		/// Ningye
-		/// </summary>
-		NNS,
 
 		/// <summary>
 		/// Nanticoke
@@ -24850,6 +24913,11 @@ namespace NLanguageTag
 		NPU,
 
 		/// <summary>
+		/// Noipx
+		/// </summary>
+		NPX,
+
+		/// <summary>
 		/// Napu
 		/// </summary>
 		NPY,
@@ -24863,6 +24931,11 @@ namespace NLanguageTag
 		/// Kura Ede Nago
 		/// </summary>
 		NQK,
+
+		/// <summary>
+		/// Ngendelengo
+		/// </summary>
+		NQL,
 
 		/// <summary>
 		/// Ndom
@@ -25471,7 +25544,7 @@ namespace NLanguageTag
 		NYG,
 
 		/// <summary>
-		/// Nyigina
+		/// Nyikina
 		/// </summary>
 		NYH,
 
@@ -25526,7 +25599,7 @@ namespace NLanguageTag
 		NYR,
 
 		/// <summary>
-		/// Nyunga
+		/// Nyungar
 		/// </summary>
 		NYS,
 
@@ -25569,6 +25642,11 @@ namespace NLanguageTag
 		/// Njebi
 		/// </summary>
 		NZB,
+
+		/// <summary>
+		/// Nzadi
+		/// </summary>
+		NZD,
 
 		/// <summary>
 		/// Nzima
@@ -26406,7 +26484,7 @@ namespace NLanguageTag
 		OUM,
 
 		/// <summary>
-		/// Övdalian Elfdalian
+		/// Elfdalian Övdalian
 		/// </summary>
 		OVD,
 
@@ -26604,6 +26682,12 @@ namespace NLanguageTag
 		/// Mak (Nigeria)
 		/// </summary>
 		PBL,
+
+		/// <summary>
+		/// Puebla Mazatec
+		/// see also maa
+		/// </summary>
+		PBM,
 
 		/// <summary>
 		/// Kpasam
@@ -27441,6 +27525,11 @@ namespace NLanguageTag
 		PNC,
 
 		/// <summary>
+		/// Mpinda
+		/// </summary>
+		PND,
+
+		/// <summary>
 		/// Western Penan
 		/// </summary>
 		PNE,
@@ -27527,7 +27616,7 @@ namespace NLanguageTag
 		PNV,
 
 		/// <summary>
-		/// Panytyima
+		/// Banyjima Panytyima
 		/// </summary>
 		PNW,
 
@@ -27948,7 +28037,7 @@ namespace NLanguageTag
 		PTH,
 
 		/// <summary>
-		/// Pintiini
+		/// Pindiini Wangkatha
 		/// </summary>
 		PTI,
 
@@ -28763,7 +28852,7 @@ namespace NLanguageTag
 		RIF,
 
 		/// <summary>
-		/// Riang (Myanmar)
+		/// Riang Lang Riang (Myanmar)
 		/// </summary>
 		RIL,
 
@@ -28783,7 +28872,7 @@ namespace NLanguageTag
 		RIR,
 
 		/// <summary>
-		/// Ritarungo
+		/// Ritharrngu
 		/// </summary>
 		RIT,
 
@@ -28848,7 +28937,7 @@ namespace NLanguageTag
 		RMA,
 
 		/// <summary>
-		/// Rembarunga
+		/// Rembarrnga
 		/// </summary>
 		RMB,
 
@@ -29254,7 +29343,7 @@ namespace NLanguageTag
 		RXD,
 
 		/// <summary>
-		/// Karuwali
+		/// Karuwali Garuwali
 		/// </summary>
 		RXW,
 
@@ -29580,7 +29669,7 @@ namespace NLanguageTag
 		SCO,
 
 		/// <summary>
-		/// Helambu Sherpa
+		/// Hyolmo Helambu Sherpa
 		/// </summary>
 		SCP,
 
@@ -29593,6 +29682,11 @@ namespace NLanguageTag
 		/// North Slavey
 		/// </summary>
 		SCS,
+
+		/// <summary>
+		/// Southern Katang
+		/// </summary>
+		SCT,
 
 		/// <summary>
 		/// Shumcho
@@ -30361,11 +30455,6 @@ namespace NLanguageTag
 		SKJ,
 
 		/// <summary>
-		/// Sok
-		/// </summary>
-		SKK,
-
-		/// <summary>
 		/// Kutong
 		/// </summary>
 		SKM,
@@ -30776,7 +30865,7 @@ namespace NLanguageTag
 		SNY,
 
 		/// <summary>
-		/// Sinsauru
+		/// Kou
 		/// </summary>
 		SNZ,
 
@@ -31442,6 +31531,7 @@ namespace NLanguageTag
 
 		/// <summary>
 		/// Shubi
+		/// see also xsj
 		/// </summary>
 		SUJ,
 
@@ -31678,7 +31768,7 @@ namespace NLanguageTag
 		SXE,
 
 		/// <summary>
-		/// Shixing
+		/// Shuhi Shixing
 		/// </summary>
 		SXG,
 
@@ -31848,6 +31938,11 @@ namespace NLanguageTag
 		SZP,
 
 		/// <summary>
+		/// Solomon Islands Sign Language
+		/// </summary>
+		SZS,
+
+		/// <summary>
 		/// Isu (Fako Division)
 		/// </summary>
 		SZV,
@@ -31856,6 +31951,11 @@ namespace NLanguageTag
 		/// Sawai
 		/// </summary>
 		SZW,
+
+		/// <summary>
+		/// Sakizaya
+		/// </summary>
+		SZY,
 
 		/// <summary>
 		/// Lower Tanana
@@ -32008,7 +32108,7 @@ namespace NLanguageTag
 		TBG,
 
 		/// <summary>
-		/// Thurawal
+		/// Dharawal Thurawal
 		/// </summary>
 		TBH,
 
@@ -32183,7 +32283,7 @@ namespace NLanguageTag
 		TCQ,
 
 		/// <summary>
-		/// Torres Strait Creole
+		/// Torres Strait Creole Yumplatok
 		/// </summary>
 		TCS,
 
@@ -32443,6 +32543,11 @@ namespace NLanguageTag
 		TEY,
 
 		/// <summary>
+		/// Tetserret
+		/// </summary>
+		TEZ,
+
+		/// <summary>
 		/// Tofin Gbe
 		/// </summary>
 		TFI,
@@ -32584,7 +32689,7 @@ namespace NLanguageTag
 		TGZ,
 
 		/// <summary>
-		/// Thayore
+		/// Kuuk Thaayorre Thayore
 		/// </summary>
 		THD,
 
@@ -32810,6 +32915,11 @@ namespace NLanguageTag
 		TJI,
 
 		/// <summary>
+		/// Tjungundji
+		/// </summary>
+		TJJ,
+
+		/// <summary>
 		/// Tai Laing
 		/// </summary>
 		TJL,
@@ -32828,6 +32938,11 @@ namespace NLanguageTag
 		/// Temacine Tamazight
 		/// </summary>
 		TJO,
+
+		/// <summary>
+		/// Tjupany
+		/// </summary>
+		TJP,
 
 		/// <summary>
 		/// Southern Tujia
@@ -32970,7 +33085,7 @@ namespace NLanguageTag
 		TLG,
 
 		/// <summary>
-		/// Klingon tlhIngan-Hol
+		/// Klingon tlhIngan Hol
 		/// </summary>
 		TLH,
 
@@ -34115,6 +34230,11 @@ namespace NLanguageTag
 		TVW,
 
 		/// <summary>
+		/// Taivoan
+		/// </summary>
+		TVX,
+
+		/// <summary>
 		/// Timor Pidgin
 		/// </summary>
 		TVY,
@@ -34590,6 +34710,11 @@ namespace NLanguageTag
 		UKH,
 
 		/// <summary>
+		/// Muak Sa-aak
+		/// </summary>
+		UKK,
+
+		/// <summary>
 		/// Ukrainian Sign Language
 		/// </summary>
 		UKL,
@@ -34655,7 +34780,7 @@ namespace NLanguageTag
 		ULI,
 
 		/// <summary>
-		/// Meriam
+		/// Meriam Mir
 		/// </summary>
 		ULK,
 
@@ -34705,7 +34830,7 @@ namespace NLanguageTag
 		UMD,
 
 		/// <summary>
-		/// Umbuygamu
+		/// Morrobalama Umbuygamu
 		/// </summary>
 		UMG,
 
@@ -34961,6 +35086,11 @@ namespace NLanguageTag
 		USP,
 
 		/// <summary>
+		/// us-Saare
+		/// </summary>
+		USS,
+
+		/// <summary>
 		/// Uya
 		/// </summary>
 		USU,
@@ -34974,6 +35104,11 @@ namespace NLanguageTag
 		/// Ute-Southern Paiute
 		/// </summary>
 		UTE,
+
+		/// <summary>
+		/// ut-Hun
+		/// </summary>
+		UTH,
 
 		/// <summary>
 		/// Amba (Solomon Islands)
@@ -35076,7 +35211,7 @@ namespace NLanguageTag
 		VAI,
 
 		/// <summary>
-		/// Sekele Northwestern !Kung Northwestern ǃKung Vasekele
+		/// Sekele Northwestern ǃKung Vasekele
 		/// </summary>
 		VAJ,
 
@@ -35572,7 +35707,7 @@ namespace NLanguageTag
 		WAP,
 
 		/// <summary>
-		/// Wageman
+		/// Wagiman
 		/// </summary>
 		WAQ,
 
@@ -35688,7 +35823,12 @@ namespace NLanguageTag
 		WBR,
 
 		/// <summary>
-		/// Wanman
+		/// West Bengal Sign Language
+		/// </summary>
+		WBS,
+
+		/// <summary>
+		/// Warnman
 		/// </summary>
 		WBT,
 
@@ -35833,7 +35973,7 @@ namespace NLanguageTag
 		WGB,
 
 		/// <summary>
-		/// Wangganguru
+		/// Wangkangurru Wangganguru
 		/// </summary>
 		WGG,
 
@@ -35904,7 +36044,7 @@ namespace NLanguageTag
 		WIF,
 
 		/// <summary>
-		/// Wik-Ngathana
+		/// Wik Ngathan
 		/// </summary>
 		WIG,
 
@@ -36004,6 +36144,11 @@ namespace NLanguageTag
 		/// Kalanadi
 		/// </summary>
 		WKL,
+
+		/// <summary>
+		/// Keerray-Woorroong
+		/// </summary>
+		WKR,
 
 		/// <summary>
 		/// Kunduvadi
@@ -36236,12 +36381,12 @@ namespace NLanguageTag
 		WNW,
 
 		/// <summary>
-		/// Wanyi
+		/// Wanyi Waanyi
 		/// </summary>
 		WNY,
 
 		/// <summary>
-		/// Tyaraity
+		/// Kuwema Tyaraity
 		/// </summary>
 		WOA,
 
@@ -36331,7 +36476,7 @@ namespace NLanguageTag
 		WRA,
 
 		/// <summary>
-		/// Warluwara
+		/// Waluwarra Warluwara
 		/// </summary>
 		WRB,
 
@@ -36341,12 +36486,12 @@ namespace NLanguageTag
 		WRD,
 
 		/// <summary>
-		/// Warungu
+		/// Warungu Gudjal
 		/// </summary>
 		WRG,
 
 		/// <summary>
-		/// Wiradhuri
+		/// Wiradjuri
 		/// </summary>
 		WRH,
 
@@ -36676,7 +36821,7 @@ namespace NLanguageTag
 		XAL,
 
 		/// <summary>
-		/// /Xam ǀXam
+		/// ǀXam
 		/// </summary>
 		XAM,
 
@@ -36806,7 +36951,7 @@ namespace NLanguageTag
 		XBX,
 
 		/// <summary>
-		/// Batyala
+		/// Batjala Batyala
 		/// </summary>
 		XBY,
 
@@ -36906,6 +37051,11 @@ namespace NLanguageTag
 		XDM,
 
 		/// <summary>
+		/// Kwandu
+		/// </summary>
+		XDO,
+
+		/// <summary>
 		/// Malayic Dayak
 		/// </summary>
 		XDY,
@@ -36921,7 +37071,7 @@ namespace NLanguageTag
 		XED,
 
 		/// <summary>
-		/// //Xegwi ǁXegwi
+		/// ǁXegwi
 		/// </summary>
 		XEG,
 
@@ -37341,7 +37491,7 @@ namespace NLanguageTag
 		XMG,
 
 		/// <summary>
-		/// Kuku-Muminh
+		/// Kugu-Muminh
 		/// </summary>
 		XMH,
 
@@ -37756,6 +37906,12 @@ namespace NLanguageTag
 		XSI,
 
 		/// <summary>
+		/// Subi
+		/// see also suj
+		/// </summary>
+		XSJ,
+
+		/// <summary>
 		/// South Slavey
 		/// </summary>
 		XSL,
@@ -37986,7 +38142,7 @@ namespace NLanguageTag
 		XUT,
 
 		/// <summary>
-		/// Kxoe
+		/// Kxoe Khwedam
 		/// </summary>
 		XUU,
 
@@ -38572,7 +38728,7 @@ namespace NLanguageTag
 		YIM,
 
 		/// <summary>
-		/// Yinchia
+		/// Riang Lai Yinchia
 		/// </summary>
 		YIN,
 
@@ -39798,12 +39954,12 @@ namespace NLanguageTag
 		ZMK,
 
 		/// <summary>
-		/// Madngele
+		/// Matngala
 		/// </summary>
 		ZML,
 
 		/// <summary>
-		/// Marimanindji
+		/// Marimanindji Marramaninyshi
 		/// </summary>
 		ZMM,
 

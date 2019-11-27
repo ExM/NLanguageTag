@@ -84,6 +84,7 @@ namespace NLanguageTag
 				case Language.CKB: return Language.KU;
 				case Language.CLD: return Language.SYR;
 				case Language.CMN: return Language.ZH;
+				case Language.CNR: return Language.SH;
 				case Language.COA: return Language.MS;
 				case Language.CPX: return Language.ZH;
 				case Language.CQD: return Language.HMN;
@@ -1360,7 +1361,6 @@ namespace NLanguageTag
 				case Language.ASA: return "asa";
 				case Language.ASB: return "asb";
 				case Language.ASC: return "asc";
-				case Language.ASD: return "asd";
 				case Language.ASE: return "ase";
 				case Language.ASF: return "asf";
 				case Language.ASG: return "asg";
@@ -2227,6 +2227,7 @@ namespace NLanguageTag
 				case Language.CEL: return "cel";
 				case Language.CEN: return "cen";
 				case Language.CET: return "cet";
+				case Language.CEY: return "cey";
 				case Language.CFA: return "cfa";
 				case Language.CFD: return "cfd";
 				case Language.CFG: return "cfg";
@@ -2330,6 +2331,7 @@ namespace NLanguageTag
 				case Language.CNK: return "cnk";
 				case Language.CNL: return "cnl";
 				case Language.CNO: return "cno";
+				case Language.CNR: return "cnr";
 				case Language.CNS: return "cns";
 				case Language.CNT: return "cnt";
 				case Language.CNU: return "cnu";
@@ -2455,6 +2457,7 @@ namespace NLanguageTag
 				case Language.CUV: return "cuv";
 				case Language.CUW: return "cuw";
 				case Language.CUX: return "cux";
+				case Language.CUY: return "cuy";
 				case Language.CVG: return "cvg";
 				case Language.CVN: return "cvn";
 				case Language.CWA: return "cwa";
@@ -2595,7 +2598,6 @@ namespace NLanguageTag
 				case Language.DIQ: return "diq";
 				case Language.DIR: return "dir";
 				case Language.DIS: return "dis";
-				case Language.DIT: return "dit";
 				case Language.DIU: return "diu";
 				case Language.DIW: return "diw";
 				case Language.DIX: return "dix";
@@ -2653,6 +2655,7 @@ namespace NLanguageTag
 				case Language.DNJ: return "dnj";
 				case Language.DNK: return "dnk";
 				case Language.DNN: return "dnn";
+				case Language.DNO: return "dno";
 				case Language.DNR: return "dnr";
 				case Language.DNT: return "dnt";
 				case Language.DNU: return "dnu";
@@ -2753,6 +2756,7 @@ namespace NLanguageTag
 				case Language.DWU: return "dwu";
 				case Language.DWW: return "dww";
 				case Language.DWY: return "dwy";
+				case Language.DWZ: return "dwz";
 				case Language.DYA: return "dya";
 				case Language.DYB: return "dyb";
 				case Language.DYD: return "dyd";
@@ -3105,6 +3109,7 @@ namespace NLanguageTag
 				case Language.GIB: return "gib";
 				case Language.GIC: return "gic";
 				case Language.GID: return "gid";
+				case Language.GIE: return "gie";
 				case Language.GIG: return "gig";
 				case Language.GIH: return "gih";
 				case Language.GIL: return "gil";
@@ -3128,6 +3133,7 @@ namespace NLanguageTag
 				case Language.GJR: return "gjr";
 				case Language.GJU: return "gju";
 				case Language.GKA: return "gka";
+				case Language.GKD: return "gkd";
 				case Language.GKE: return "gke";
 				case Language.GKN: return "gkn";
 				case Language.GKO: return "gko";
@@ -3169,6 +3175,7 @@ namespace NLanguageTag
 				case Language.GNG: return "gng";
 				case Language.GNH: return "gnh";
 				case Language.GNI: return "gni";
+				case Language.GNJ: return "gnj";
 				case Language.GNK: return "gnk";
 				case Language.GNL: return "gnl";
 				case Language.GNM: return "gnm";
@@ -3308,6 +3315,7 @@ namespace NLanguageTag
 				case Language.GYL: return "gyl";
 				case Language.GYM: return "gym";
 				case Language.GYN: return "gyn";
+				case Language.GYO: return "gyo";
 				case Language.GYR: return "gyr";
 				case Language.GYY: return "gyy";
 				case Language.GZA: return "gza";
@@ -3378,6 +3386,7 @@ namespace NLanguageTag
 				case Language.HKA: return "hka";
 				case Language.HKE: return "hke";
 				case Language.HKK: return "hkk";
+				case Language.HKN: return "hkn";
 				case Language.HKS: return "hks";
 				case Language.HLA: return "hla";
 				case Language.HLB: return "hlb";
@@ -3497,6 +3506,7 @@ namespace NLanguageTag
 				case Language.HWC: return "hwc";
 				case Language.HWO: return "hwo";
 				case Language.HYA: return "hya";
+				case Language.HYW: return "hyw";
 				case Language.HYX: return "hyx";
 				case Language.IAI: return "iai";
 				case Language.IAN: return "ian";
@@ -3507,6 +3517,7 @@ namespace NLanguageTag
 				case Language.IBD: return "ibd";
 				case Language.IBE: return "ibe";
 				case Language.IBG: return "ibg";
+				case Language.IBH: return "ibh";
 				case Language.IBL: return "ibl";
 				case Language.IBM: return "ibm";
 				case Language.IBN: return "ibn";
@@ -3707,7 +3718,6 @@ namespace NLanguageTag
 				case Language.JDT: return "jdt";
 				case Language.JEB: return "jeb";
 				case Language.JEE: return "jee";
-				case Language.JEG: return "jeg";
 				case Language.JEH: return "jeh";
 				case Language.JEI: return "jei";
 				case Language.JEK: return "jek";
@@ -4237,7 +4247,6 @@ namespace NLanguageTag
 				case Language.KRJ: return "krj";
 				case Language.KRK: return "krk";
 				case Language.KRL: return "krl";
-				case Language.KRM: return "krm";
 				case Language.KRN: return "krn";
 				case Language.KRO: return "kro";
 				case Language.KRP: return "krp";
@@ -4631,7 +4640,6 @@ namespace NLanguageTag
 				case Language.LLL: return "lll";
 				case Language.LLM: return "llm";
 				case Language.LLN: return "lln";
-				case Language.LLO: return "llo";
 				case Language.LLP: return "llp";
 				case Language.LLQ: return "llq";
 				case Language.LLS: return "lls";
@@ -4727,14 +4735,17 @@ namespace NLanguageTag
 				case Language.LSI: return "lsi";
 				case Language.LSL: return "lsl";
 				case Language.LSM: return "lsm";
+				case Language.LSN: return "lsn";
 				case Language.LSO: return "lso";
 				case Language.LSP: return "lsp";
 				case Language.LSR: return "lsr";
 				case Language.LSS: return "lss";
 				case Language.LST: return "lst";
+				case Language.LSV: return "lsv";
 				case Language.LSY: return "lsy";
 				case Language.LTC: return "ltc";
 				case Language.LTG: return "ltg";
+				case Language.LTH: return "lth";
 				case Language.LTI: return "lti";
 				case Language.LTN: return "ltn";
 				case Language.LTO: return "lto";
@@ -4763,6 +4774,7 @@ namespace NLanguageTag
 				case Language.LUY: return "luy";
 				case Language.LUZ: return "luz";
 				case Language.LVA: return "lva";
+				case Language.LVI: return "lvi";
 				case Language.LVK: return "lvk";
 				case Language.LVS: return "lvs";
 				case Language.LVU: return "lvu";
@@ -4773,6 +4785,7 @@ namespace NLanguageTag
 				case Language.LWL: return "lwl";
 				case Language.LWM: return "lwm";
 				case Language.LWO: return "lwo";
+				case Language.LWS: return "lws";
 				case Language.LWT: return "lwt";
 				case Language.LWU: return "lwu";
 				case Language.LWW: return "lww";
@@ -5377,7 +5390,6 @@ namespace NLanguageTag
 				case Language.MXZ: return "mxz";
 				case Language.MYB: return "myb";
 				case Language.MYC: return "myc";
-				case Language.MYD: return "myd";
 				case Language.MYE: return "mye";
 				case Language.MYF: return "myf";
 				case Language.MYG: return "myg";
@@ -5486,7 +5498,7 @@ namespace NLanguageTag
 				case Language.NCM: return "ncm";
 				case Language.NCN: return "ncn";
 				case Language.NCO: return "nco";
-				case Language.NCP: return "ncp";
+				case Language.NCQ: return "ncq";
 				case Language.NCR: return "ncr";
 				case Language.NCS: return "ncs";
 				case Language.NCT: return "nct";
@@ -5669,6 +5681,7 @@ namespace NLanguageTag
 				case Language.NLJ: return "nlj";
 				case Language.NLK: return "nlk";
 				case Language.NLL: return "nll";
+				case Language.NLM: return "nlm";
 				case Language.NLN: return "nln";
 				case Language.NLO: return "nlo";
 				case Language.NLQ: return "nlq";
@@ -5722,7 +5735,6 @@ namespace NLanguageTag
 				case Language.NNP: return "nnp";
 				case Language.NNQ: return "nnq";
 				case Language.NNR: return "nnr";
-				case Language.NNS: return "nns";
 				case Language.NNT: return "nnt";
 				case Language.NNU: return "nnu";
 				case Language.NNV: return "nnv";
@@ -5762,9 +5774,11 @@ namespace NLanguageTag
 				case Language.NPO: return "npo";
 				case Language.NPS: return "nps";
 				case Language.NPU: return "npu";
+				case Language.NPX: return "npx";
 				case Language.NPY: return "npy";
 				case Language.NQG: return "nqg";
 				case Language.NQK: return "nqk";
+				case Language.NQL: return "nql";
 				case Language.NQM: return "nqm";
 				case Language.NQN: return "nqn";
 				case Language.NQO: return "nqo";
@@ -5906,6 +5920,7 @@ namespace NLanguageTag
 				case Language.NYY: return "nyy";
 				case Language.NZA: return "nza";
 				case Language.NZB: return "nzb";
+				case Language.NZD: return "nzd";
 				case Language.NZI: return "nzi";
 				case Language.NZK: return "nzk";
 				case Language.NZM: return "nzm";
@@ -6113,6 +6128,7 @@ namespace NLanguageTag
 				case Language.PBH: return "pbh";
 				case Language.PBI: return "pbi";
 				case Language.PBL: return "pbl";
+				case Language.PBM: return "pbm";
 				case Language.PBN: return "pbn";
 				case Language.PBO: return "pbo";
 				case Language.PBP: return "pbp";
@@ -6280,6 +6296,7 @@ namespace NLanguageTag
 				case Language.PNA: return "pna";
 				case Language.PNB: return "pnb";
 				case Language.PNC: return "pnc";
+				case Language.PND: return "pnd";
 				case Language.PNE: return "pne";
 				case Language.PNG: return "png";
 				case Language.PNH: return "pnh";
@@ -6710,6 +6727,7 @@ namespace NLanguageTag
 				case Language.SCP: return "scp";
 				case Language.SCQ: return "scq";
 				case Language.SCS: return "scs";
+				case Language.SCT: return "sct";
 				case Language.SCU: return "scu";
 				case Language.SCV: return "scv";
 				case Language.SCW: return "scw";
@@ -6863,7 +6881,6 @@ namespace NLanguageTag
 				case Language.SKH: return "skh";
 				case Language.SKI: return "ski";
 				case Language.SKJ: return "skj";
-				case Language.SKK: return "skk";
 				case Language.SKM: return "skm";
 				case Language.SKN: return "skn";
 				case Language.SKO: return "sko";
@@ -7160,8 +7177,10 @@ namespace NLanguageTag
 				case Language.SZL: return "szl";
 				case Language.SZN: return "szn";
 				case Language.SZP: return "szp";
+				case Language.SZS: return "szs";
 				case Language.SZV: return "szv";
 				case Language.SZW: return "szw";
+				case Language.SZY: return "szy";
 				case Language.TAA: return "taa";
 				case Language.TAB: return "tab";
 				case Language.TAC: return "tac";
@@ -7279,6 +7298,7 @@ namespace NLanguageTag
 				case Language.TEW: return "tew";
 				case Language.TEX: return "tex";
 				case Language.TEY: return "tey";
+				case Language.TEZ: return "tez";
 				case Language.TFI: return "tfi";
 				case Language.TFN: return "tfn";
 				case Language.TFO: return "tfo";
@@ -7352,10 +7372,12 @@ namespace NLanguageTag
 				case Language.TJA: return "tja";
 				case Language.TJG: return "tjg";
 				case Language.TJI: return "tji";
+				case Language.TJJ: return "tjj";
 				case Language.TJL: return "tjl";
 				case Language.TJM: return "tjm";
 				case Language.TJN: return "tjn";
 				case Language.TJO: return "tjo";
+				case Language.TJP: return "tjp";
 				case Language.TJS: return "tjs";
 				case Language.TJU: return "tju";
 				case Language.TJW: return "tjw";
@@ -7613,6 +7635,7 @@ namespace NLanguageTag
 				case Language.TVT: return "tvt";
 				case Language.TVU: return "tvu";
 				case Language.TVW: return "tvw";
+				case Language.TVX: return "tvx";
 				case Language.TVY: return "tvy";
 				case Language.TWA: return "twa";
 				case Language.TWB: return "twb";
@@ -7708,6 +7731,7 @@ namespace NLanguageTag
 				case Language.UKA: return "uka";
 				case Language.UKG: return "ukg";
 				case Language.UKH: return "ukh";
+				case Language.UKK: return "ukk";
 				case Language.UKL: return "ukl";
 				case Language.UKP: return "ukp";
 				case Language.UKQ: return "ukq";
@@ -7782,9 +7806,11 @@ namespace NLanguageTag
 				case Language.USI: return "usi";
 				case Language.USK: return "usk";
 				case Language.USP: return "usp";
+				case Language.USS: return "uss";
 				case Language.USU: return "usu";
 				case Language.UTA: return "uta";
 				case Language.UTE: return "ute";
+				case Language.UTH: return "uth";
 				case Language.UTP: return "utp";
 				case Language.UTR: return "utr";
 				case Language.UTU: return "utu";
@@ -7927,6 +7953,7 @@ namespace NLanguageTag
 				case Language.WBP: return "wbp";
 				case Language.WBQ: return "wbq";
 				case Language.WBR: return "wbr";
+				case Language.WBS: return "wbs";
 				case Language.WBT: return "wbt";
 				case Language.WBV: return "wbv";
 				case Language.WBW: return "wbw";
@@ -7990,6 +8017,7 @@ namespace NLanguageTag
 				case Language.WKB: return "wkb";
 				case Language.WKD: return "wkd";
 				case Language.WKL: return "wkl";
+				case Language.WKR: return "wkr";
 				case Language.WKU: return "wku";
 				case Language.WKW: return "wkw";
 				case Language.WKY: return "wky";
@@ -8170,6 +8198,7 @@ namespace NLanguageTag
 				case Language.XDC: return "xdc";
 				case Language.XDK: return "xdk";
 				case Language.XDM: return "xdm";
+				case Language.XDO: return "xdo";
 				case Language.XDY: return "xdy";
 				case Language.XEB: return "xeb";
 				case Language.XED: return "xed";
@@ -8340,6 +8369,7 @@ namespace NLanguageTag
 				case Language.XSE: return "xse";
 				case Language.XSH: return "xsh";
 				case Language.XSI: return "xsi";
+				case Language.XSJ: return "xsj";
 				case Language.XSL: return "xsl";
 				case Language.XSM: return "xsm";
 				case Language.XSN: return "xsn";
@@ -9422,7 +9452,7 @@ namespace NLanguageTag
 				case "asa": return Language.ASA;
 				case "asb": return Language.ASB;
 				case "asc": return Language.ASC;
-				case "asd": return Language.ASD;
+				case "asd": return Language.SNZ;
 				case "ase": return Language.ASE;
 				case "asf": return Language.ASF;
 				case "asg": return Language.ASG;
@@ -10294,6 +10324,7 @@ namespace NLanguageTag
 				case "cel": return Language.CEL;
 				case "cen": return Language.CEN;
 				case "cet": return Language.CET;
+				case "cey": return Language.CEY;
 				case "cfa": return Language.CFA;
 				case "cfd": return Language.CFD;
 				case "cfg": return Language.CFG;
@@ -10400,6 +10431,7 @@ namespace NLanguageTag
 				case "cnk": return Language.CNK;
 				case "cnl": return Language.CNL;
 				case "cno": return Language.CNO;
+				case "cnr": return Language.CNR;
 				case "cns": return Language.CNS;
 				case "cnt": return Language.CNT;
 				case "cnu": return Language.CNU;
@@ -10527,6 +10559,7 @@ namespace NLanguageTag
 				case "cuv": return Language.CUV;
 				case "cuw": return Language.CUW;
 				case "cux": return Language.CUX;
+				case "cuy": return Language.CUY;
 				case "cvg": return Language.CVG;
 				case "cvn": return Language.CVN;
 				case "cwa": return Language.CWA;
@@ -10667,7 +10700,7 @@ namespace NLanguageTag
 				case "diq": return Language.DIQ;
 				case "dir": return Language.DIR;
 				case "dis": return Language.DIS;
-				case "dit": return Language.DIT;
+				case "dit": return Language.DIF;
 				case "diu": return Language.DIU;
 				case "diw": return Language.DIW;
 				case "dix": return Language.DIX;
@@ -10725,6 +10758,7 @@ namespace NLanguageTag
 				case "dnj": return Language.DNJ;
 				case "dnk": return Language.DNK;
 				case "dnn": return Language.DNN;
+				case "dno": return Language.DNO;
 				case "dnr": return Language.DNR;
 				case "dnt": return Language.DNT;
 				case "dnu": return Language.DNU;
@@ -10827,6 +10861,7 @@ namespace NLanguageTag
 				case "dwu": return Language.DWU;
 				case "dww": return Language.DWW;
 				case "dwy": return Language.DWY;
+				case "dwz": return Language.DWZ;
 				case "dya": return Language.DYA;
 				case "dyb": return Language.DYB;
 				case "dyd": return Language.DYD;
@@ -11182,6 +11217,7 @@ namespace NLanguageTag
 				case "gib": return Language.GIB;
 				case "gic": return Language.GIC;
 				case "gid": return Language.GID;
+				case "gie": return Language.GIE;
 				case "gig": return Language.GIG;
 				case "gih": return Language.GIH;
 				case "gil": return Language.GIL;
@@ -11205,6 +11241,7 @@ namespace NLanguageTag
 				case "gjr": return Language.GJR;
 				case "gju": return Language.GJU;
 				case "gka": return Language.GKA;
+				case "gkd": return Language.GKD;
 				case "gke": return Language.GKE;
 				case "gkn": return Language.GKN;
 				case "gko": return Language.GKO;
@@ -11246,6 +11283,7 @@ namespace NLanguageTag
 				case "gng": return Language.GNG;
 				case "gnh": return Language.GNH;
 				case "gni": return Language.GNI;
+				case "gnj": return Language.GNJ;
 				case "gnk": return Language.GNK;
 				case "gnl": return Language.GNL;
 				case "gnm": return Language.GNM;
@@ -11387,6 +11425,7 @@ namespace NLanguageTag
 				case "gyl": return Language.GYL;
 				case "gym": return Language.GYM;
 				case "gyn": return Language.GYN;
+				case "gyo": return Language.GYO;
 				case "gyr": return Language.GYR;
 				case "gyy": return Language.GYY;
 				case "gza": return Language.GZA;
@@ -11457,6 +11496,7 @@ namespace NLanguageTag
 				case "hka": return Language.HKA;
 				case "hke": return Language.HKE;
 				case "hkk": return Language.HKK;
+				case "hkn": return Language.HKN;
 				case "hks": return Language.HKS;
 				case "hla": return Language.HLA;
 				case "hlb": return Language.HLB;
@@ -11577,6 +11617,7 @@ namespace NLanguageTag
 				case "hwc": return Language.HWC;
 				case "hwo": return Language.HWO;
 				case "hya": return Language.HYA;
+				case "hyw": return Language.HYW;
 				case "hyx": return Language.HYX;
 				case "iai": return Language.IAI;
 				case "ian": return Language.IAN;
@@ -11587,6 +11628,7 @@ namespace NLanguageTag
 				case "ibd": return Language.IBD;
 				case "ibe": return Language.IBE;
 				case "ibg": return Language.IBG;
+				case "ibh": return Language.IBH;
 				case "ibi": return Language.OPA;
 				case "ibl": return Language.IBL;
 				case "ibm": return Language.IBM;
@@ -11789,7 +11831,7 @@ namespace NLanguageTag
 				case "jdt": return Language.JDT;
 				case "jeb": return Language.JEB;
 				case "jee": return Language.JEE;
-				case "jeg": return Language.JEG;
+				case "jeg": return Language.OYB;
 				case "jeh": return Language.JEH;
 				case "jei": return Language.JEI;
 				case "jek": return Language.JEK;
@@ -12322,7 +12364,7 @@ namespace NLanguageTag
 				case "krj": return Language.KRJ;
 				case "krk": return Language.KRK;
 				case "krl": return Language.KRL;
-				case "krm": return Language.KRM;
+				case "krm": return Language.BMF;
 				case "krn": return Language.KRN;
 				case "kro": return Language.KRO;
 				case "krp": return Language.KRP;
@@ -12723,7 +12765,7 @@ namespace NLanguageTag
 				case "lll": return Language.LLL;
 				case "llm": return Language.LLM;
 				case "lln": return Language.LLN;
-				case "llo": return Language.LLO;
+				case "llo": return Language.NGT;
 				case "llp": return Language.LLP;
 				case "llq": return Language.LLQ;
 				case "lls": return Language.LLS;
@@ -12820,14 +12862,17 @@ namespace NLanguageTag
 				case "lsi": return Language.LSI;
 				case "lsl": return Language.LSL;
 				case "lsm": return Language.LSM;
+				case "lsn": return Language.LSN;
 				case "lso": return Language.LSO;
 				case "lsp": return Language.LSP;
 				case "lsr": return Language.LSR;
 				case "lss": return Language.LSS;
 				case "lst": return Language.LST;
+				case "lsv": return Language.LSV;
 				case "lsy": return Language.LSY;
 				case "ltc": return Language.LTC;
 				case "ltg": return Language.LTG;
+				case "lth": return Language.LTH;
 				case "lti": return Language.LTI;
 				case "ltn": return Language.LTN;
 				case "lto": return Language.LTO;
@@ -12856,6 +12901,7 @@ namespace NLanguageTag
 				case "luy": return Language.LUY;
 				case "luz": return Language.LUZ;
 				case "lva": return Language.LVA;
+				case "lvi": return Language.LVI;
 				case "lvk": return Language.LVK;
 				case "lvs": return Language.LVS;
 				case "lvu": return Language.LVU;
@@ -12866,6 +12912,7 @@ namespace NLanguageTag
 				case "lwl": return Language.LWL;
 				case "lwm": return Language.LWM;
 				case "lwo": return Language.LWO;
+				case "lws": return Language.LWS;
 				case "lwt": return Language.LWT;
 				case "lwu": return Language.LWU;
 				case "lww": return Language.LWW;
@@ -13473,7 +13520,7 @@ namespace NLanguageTag
 				case "mxz": return Language.MXZ;
 				case "myb": return Language.MYB;
 				case "myc": return Language.MYC;
-				case "myd": return Language.MYD;
+				case "myd": return Language.AOG;
 				case "mye": return Language.MYE;
 				case "myf": return Language.MYF;
 				case "myg": return Language.MYG;
@@ -13584,7 +13631,8 @@ namespace NLanguageTag
 				case "ncm": return Language.NCM;
 				case "ncn": return Language.NCN;
 				case "nco": return Language.NCO;
-				case "ncp": return Language.NCP;
+				case "ncp": return Language.KDZ;
+				case "ncq": return Language.NCQ;
 				case "ncr": return Language.NCR;
 				case "ncs": return Language.NCS;
 				case "nct": return Language.NCT;
@@ -13767,6 +13815,7 @@ namespace NLanguageTag
 				case "nlj": return Language.NLJ;
 				case "nlk": return Language.NLK;
 				case "nll": return Language.NLL;
+				case "nlm": return Language.NLM;
 				case "nln": return Language.NLN;
 				case "nlo": return Language.NLO;
 				case "nlq": return Language.NLQ;
@@ -13820,7 +13869,7 @@ namespace NLanguageTag
 				case "nnp": return Language.NNP;
 				case "nnq": return Language.NNQ;
 				case "nnr": return Language.NNR;
-				case "nns": return Language.NNS;
+				case "nns": return Language.NBR;
 				case "nnt": return Language.NNT;
 				case "nnu": return Language.NNU;
 				case "nnv": return Language.NNV;
@@ -13861,9 +13910,11 @@ namespace NLanguageTag
 				case "npo": return Language.NPO;
 				case "nps": return Language.NPS;
 				case "npu": return Language.NPU;
+				case "npx": return Language.NPX;
 				case "npy": return Language.NPY;
 				case "nqg": return Language.NQG;
 				case "nqk": return Language.NQK;
+				case "nql": return Language.NQL;
 				case "nqm": return Language.NQM;
 				case "nqn": return Language.NQN;
 				case "nqo": return Language.NQO;
@@ -14006,6 +14057,7 @@ namespace NLanguageTag
 				case "nyy": return Language.NYY;
 				case "nza": return Language.NZA;
 				case "nzb": return Language.NZB;
+				case "nzd": return Language.NZD;
 				case "nzi": return Language.NZI;
 				case "nzk": return Language.NZK;
 				case "nzm": return Language.NZM;
@@ -14214,6 +14266,7 @@ namespace NLanguageTag
 				case "pbh": return Language.PBH;
 				case "pbi": return Language.PBI;
 				case "pbl": return Language.PBL;
+				case "pbm": return Language.PBM;
 				case "pbn": return Language.PBN;
 				case "pbo": return Language.PBO;
 				case "pbp": return Language.PBP;
@@ -14384,6 +14437,7 @@ namespace NLanguageTag
 				case "pna": return Language.PNA;
 				case "pnb": return Language.PNB;
 				case "pnc": return Language.PNC;
+				case "pnd": return Language.PND;
 				case "pne": return Language.PNE;
 				case "png": return Language.PNG;
 				case "pnh": return Language.PNH;
@@ -14819,6 +14873,7 @@ namespace NLanguageTag
 				case "scp": return Language.SCP;
 				case "scq": return Language.SCQ;
 				case "scs": return Language.SCS;
+				case "sct": return Language.SCT;
 				case "scu": return Language.SCU;
 				case "scv": return Language.SCV;
 				case "scw": return Language.SCW;
@@ -14972,7 +15027,7 @@ namespace NLanguageTag
 				case "skh": return Language.SKH;
 				case "ski": return Language.SKI;
 				case "skj": return Language.SKJ;
-				case "skk": return Language.SKK;
+				case "skk": return Language.OYB;
 				case "skm": return Language.SKM;
 				case "skn": return Language.SKN;
 				case "sko": return Language.SKO;
@@ -15269,8 +15324,10 @@ namespace NLanguageTag
 				case "szl": return Language.SZL;
 				case "szn": return Language.SZN;
 				case "szp": return Language.SZP;
+				case "szs": return Language.SZS;
 				case "szv": return Language.SZV;
 				case "szw": return Language.SZW;
+				case "szy": return Language.SZY;
 				case "taa": return Language.TAA;
 				case "tab": return Language.TAB;
 				case "tac": return Language.TAC;
@@ -15389,6 +15446,7 @@ namespace NLanguageTag
 				case "tew": return Language.TEW;
 				case "tex": return Language.TEX;
 				case "tey": return Language.TEY;
+				case "tez": return Language.TEZ;
 				case "tfi": return Language.TFI;
 				case "tfn": return Language.TFN;
 				case "tfo": return Language.TFO;
@@ -15465,10 +15523,12 @@ namespace NLanguageTag
 				case "tja": return Language.TJA;
 				case "tjg": return Language.TJG;
 				case "tji": return Language.TJI;
+				case "tjj": return Language.TJJ;
 				case "tjl": return Language.TJL;
 				case "tjm": return Language.TJM;
 				case "tjn": return Language.TJN;
 				case "tjo": return Language.TJO;
+				case "tjp": return Language.TJP;
 				case "tjs": return Language.TJS;
 				case "tju": return Language.TJU;
 				case "tjw": return Language.TJW;
@@ -15732,6 +15792,7 @@ namespace NLanguageTag
 				case "tvt": return Language.TVT;
 				case "tvu": return Language.TVU;
 				case "tvw": return Language.TVW;
+				case "tvx": return Language.TVX;
 				case "tvy": return Language.TVY;
 				case "twa": return Language.TWA;
 				case "twb": return Language.TWB;
@@ -15827,6 +15888,7 @@ namespace NLanguageTag
 				case "uka": return Language.UKA;
 				case "ukg": return Language.UKG;
 				case "ukh": return Language.UKH;
+				case "ukk": return Language.UKK;
 				case "ukl": return Language.UKL;
 				case "ukp": return Language.UKP;
 				case "ukq": return Language.UKQ;
@@ -15902,9 +15964,11 @@ namespace NLanguageTag
 				case "usi": return Language.USI;
 				case "usk": return Language.USK;
 				case "usp": return Language.USP;
+				case "uss": return Language.USS;
 				case "usu": return Language.USU;
 				case "uta": return Language.UTA;
 				case "ute": return Language.UTE;
+				case "uth": return Language.UTH;
 				case "utp": return Language.UTP;
 				case "utr": return Language.UTR;
 				case "utu": return Language.UTU;
@@ -16047,6 +16111,7 @@ namespace NLanguageTag
 				case "wbp": return Language.WBP;
 				case "wbq": return Language.WBQ;
 				case "wbr": return Language.WBR;
+				case "wbs": return Language.WBS;
 				case "wbt": return Language.WBT;
 				case "wbv": return Language.WBV;
 				case "wbw": return Language.WBW;
@@ -16110,6 +16175,7 @@ namespace NLanguageTag
 				case "wkb": return Language.WKB;
 				case "wkd": return Language.WKD;
 				case "wkl": return Language.WKL;
+				case "wkr": return Language.WKR;
 				case "wku": return Language.WKU;
 				case "wkw": return Language.WKW;
 				case "wky": return Language.WKY;
@@ -16291,6 +16357,7 @@ namespace NLanguageTag
 				case "xdc": return Language.XDC;
 				case "xdk": return Language.XDK;
 				case "xdm": return Language.XDM;
+				case "xdo": return Language.XDO;
 				case "xdy": return Language.XDY;
 				case "xeb": return Language.XEB;
 				case "xed": return Language.XED;
@@ -16463,7 +16530,7 @@ namespace NLanguageTag
 				case "xse": return Language.XSE;
 				case "xsh": return Language.XSH;
 				case "xsi": return Language.XSI;
-				case "xsj": return Language.SUJ;
+				case "xsj": return Language.XSJ;
 				case "xsl": return Language.XSL;
 				case "xsm": return Language.XSM;
 				case "xsn": return Language.XSN;

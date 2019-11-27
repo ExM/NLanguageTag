@@ -74,7 +74,7 @@ namespace NLanguageTag
 		Batk,
 
 		/// <summary>
-		/// Bengali
+		/// Bengali Bangla
 		/// </summary>
 		Beng,
 
@@ -139,6 +139,11 @@ namespace NLanguageTag
 		Cher,
 
 		/// <summary>
+		/// Chorasmian
+		/// </summary>
+		Chrs,
+
+		/// <summary>
 		/// Cirth
 		/// </summary>
 		Cirt,
@@ -149,7 +154,12 @@ namespace NLanguageTag
 		Copt,
 
 		/// <summary>
-		/// Cypriot
+		/// Cypro-Minoan
+		/// </summary>
+		Cpmn,
+
+		/// <summary>
+		/// Cypriot syllabary
 		/// </summary>
 		Cprt,
 
@@ -167,6 +177,16 @@ namespace NLanguageTag
 		/// Devanagari Nagari
 		/// </summary>
 		Deva,
+
+		/// <summary>
+		/// Dives Akuru
+		/// </summary>
+		Diak,
+
+		/// <summary>
+		/// Dogra
+		/// </summary>
+		Dogr,
 
 		/// <summary>
 		/// Deseret Mormon
@@ -199,6 +219,11 @@ namespace NLanguageTag
 		Elba,
 
 		/// <summary>
+		/// Elymaic
+		/// </summary>
+		Elym,
+
+		/// <summary>
 		/// Ethiopic Geʻez Ge'ez
 		/// </summary>
 		Ethi,
@@ -209,7 +234,7 @@ namespace NLanguageTag
 		Geok,
 
 		/// <summary>
-		/// Georgian (Mkhedruli)
+		/// Georgian (Mkhedruli and Mtavruli)
 		/// </summary>
 		Geor,
 
@@ -217,6 +242,16 @@ namespace NLanguageTag
 		/// Glagolitic
 		/// </summary>
 		Glag,
+
+		/// <summary>
+		/// Gunjala Gondi
+		/// </summary>
+		Gong,
+
+		/// <summary>
+		/// Masaram Gondi
+		/// </summary>
+		Gonm,
 
 		/// <summary>
 		/// Gothic
@@ -297,6 +332,11 @@ namespace NLanguageTag
 		/// Pahawh Hmong
 		/// </summary>
 		Hmng,
+
+		/// <summary>
+		/// Nyiakeng Puachue Hmong
+		/// </summary>
+		Hmnp,
 
 		/// <summary>
 		/// Japanese syllabaries (alias for Hiragana + Katakana)
@@ -469,6 +509,11 @@ namespace NLanguageTag
 		Mahj,
 
 		/// <summary>
+		/// Makasar
+		/// </summary>
+		Maka,
+
+		/// <summary>
 		/// Mandaic Mandaean
 		/// </summary>
 		Mand,
@@ -487,6 +532,11 @@ namespace NLanguageTag
 		/// Mayan hieroglyphs
 		/// </summary>
 		Maya,
+
+		/// <summary>
+		/// Medefaidrin Oberi Okaime Oberi Ɔkaimɛ
+		/// </summary>
+		Medf,
 
 		/// <summary>
 		/// Mende Kikakui
@@ -544,6 +594,11 @@ namespace NLanguageTag
 		Mymr,
 
 		/// <summary>
+		/// Nandinagari
+		/// </summary>
+		Nand,
+
+		/// <summary>
 		/// Old North Arabian Ancient North Arabian
 		/// </summary>
 		Narb,
@@ -559,7 +614,12 @@ namespace NLanguageTag
 		Newa,
 
 		/// <summary>
-		/// Nakhi Geba 'Na-'Khi ²Ggŏ-¹baw Naxi Geba
+		/// Naxi Dongba na²¹ɕi³³ to³³ba²¹ Nakhi Tomba
+		/// </summary>
+		Nkdb,
+
+		/// <summary>
+		/// Naxi Geba na²¹ɕi³³ gʌ²¹ba²¹ 'Na-'Khi ²Ggŏ-¹baw Nakhi Geba
 		/// </summary>
 		Nkgb,
 
@@ -589,7 +649,7 @@ namespace NLanguageTag
 		Orkh,
 
 		/// <summary>
-		/// Oriya
+		/// Oriya Odia
 		/// </summary>
 		Orya,
 
@@ -664,6 +724,11 @@ namespace NLanguageTag
 		Rjng,
 
 		/// <summary>
+		/// Hanifi Rohingya
+		/// </summary>
+		Rohg,
+
+		/// <summary>
 		/// Rongorongo
 		/// </summary>
 		Roro,
@@ -709,6 +774,11 @@ namespace NLanguageTag
 		Shrd,
 
 		/// <summary>
+		/// Shuishu
+		/// </summary>
+		Shui,
+
+		/// <summary>
 		/// Siddham Siddhaṃ Siddhamātṛkā
 		/// </summary>
 		Sidd,
@@ -724,9 +794,24 @@ namespace NLanguageTag
 		Sinh,
 
 		/// <summary>
+		/// Sogdian
+		/// </summary>
+		Sogd,
+
+		/// <summary>
+		/// Old Sogdian
+		/// </summary>
+		Sogo,
+
+		/// <summary>
 		/// Sora Sompeng
 		/// </summary>
 		Sora,
+
+		/// <summary>
+		/// Soyombo
+		/// </summary>
+		Soyo,
 
 		/// <summary>
 		/// Sundanese
@@ -854,6 +939,11 @@ namespace NLanguageTag
 		Wara,
 
 		/// <summary>
+		/// Wancho
+		/// </summary>
+		Wcho,
+
+		/// <summary>
 		/// Woleai
 		/// </summary>
 		Wole,
@@ -869,9 +959,19 @@ namespace NLanguageTag
 		Xsux,
 
 		/// <summary>
+		/// Yezidi
+		/// </summary>
+		Yezi,
+
+		/// <summary>
 		/// Yi
 		/// </summary>
 		Yiii,
+
+		/// <summary>
+		/// Zanabazar Square Zanabazarin Dörböljin Useg Xewtee Dörböljin Bicig Horizontal Square Script
+		/// </summary>
+		Zanb,
 
 		/// <summary>
 		/// Code for inherited script
