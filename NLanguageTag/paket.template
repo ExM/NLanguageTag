@@ -1,6 +1,6 @@
 type project
-projectUrl https://github.com/ExM/LanguageTag
-licenseUrl https://github.com/ExM/LanguageTag/raw/master/LICENSE
+projectUrl https://github.com/ExM/NLanguageTag
+licenseUrl https://github.com/ExM/NLanguageTag/raw/master/LICENSE
 requireLicenseAcceptance false
 include-pdbs true
 authors Anatoliy Koperin
