@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using System;
+using System.Collections.Generic;
 
 namespace NLanguageTag.Tests
 {
@@ -13,26 +13,35 @@ namespace NLanguageTag.Tests
 			{
 				var region = text.TryParseRegion();
 				Assert.NotNull(region);
-				Assert.NotNull(region.Value.ToText());
+				Assert.IsFalse(region.PrivateUse);
 			}
 		}
 
-		[Test]
-		public void ToTextFail()
-		{
-			Assert.Throws<NotImplementedException>(() =>
-			{
-				var en = (Region)(-1);
-				en.ToText();
-			});
-		}
-
-		[TestCase("xxx", null)]
-		[TestCase("RU", Region.RU)]
-		[TestCase("gb", Region.GB)]
-		public void ParseFromRegion(string text, Region? expected)
+		[TestCaseSource(nameof(parseCases))]
+		public void Parse(string text, Region expected)
 		{
 			Assert.AreEqual(expected, text.TryParseRegion());
+		}
+
+		[TestCase("XB")]
+		[TestCase("Xb")]
+		[TestCase("aa")]
+		[TestCase("zz")]
+		[TestCase("qz")]
+		[TestCase("XZ")]
+		public void ParsePrivateUse(string text)
+		{
+			var region = text.TryParseRegion();
+
+			Assert.IsTrue(region.PrivateUse);
+			Assert.AreEqual(region, text.TryParseRegion());
+		}
+
+		internal static IEnumerable<TestCaseData> parseCases()
+		{
+			yield return new TestCaseData("xxx", null);
+			yield return new TestCaseData("RU", Region.RU);
+			yield return new TestCaseData("gb", Region.GB);
 		}
 	}
 }

@@ -34,13 +34,13 @@ foreach(var p in new bool[]{false, true})
 <# }; if(p) {
 #>		/// <param name="privateUseSubtags">private use subtag</param>
 <# } #>		public LanguageTag(Language lang<#
-		if(s) {#>, Script? script<# }; 
-		if(r) {#>, Region? region<# }; 
-		if(v) {#>, IEnumerable<Variant> variants<# }; 
-		if(e) {#>, IEnumerable<ExtensionSubtag> extSubtags<# }; 
-		if(p) {#>, PrivateUseSubtags privateUseSubtags<# } #>)
+		if(s) {#>, Script? script<# };
+		if(r) {#>, Region? region<# };
+		if(v) {#>, IEnumerable<Variant>? variants<# };
+		if(e) {#>, IEnumerable<ExtensionSubtag>? extSubtags<# };
+		if(p) {#>, ExtensionSubtag privateUseSubtags<# } #>)
 			: this(
-			(Language?)lang,
+			lang,
 <# if(s) {
 #>			script,
 <# } else {
@@ -78,7 +78,7 @@ if(p) {
 			if (fields == Field.All)
 				return this;
 
-			if (!Language.HasValue)
+			if (Language == null)
 			{
 				return fields.HasFlag(Field.PrivateUse)
 					? new LanguageTag(PrivateUse)
@@ -103,11 +103,11 @@ foreach(var p in new bool[]{false, true})
 <# if (s && r && v && e && p) { #>
 					throw new ApplicationException("This should never happen");
 <# } else { #>
-					return new LanguageTag(Language<# if (!s || !r || !v || !e || !p) { #>.Value<# } #><#
-		if(s) {#>, Script<# }; 
-		if(r) {#>, Region<# }; 
-		if(v) {#>, Variants<# }; 
-		if(e) {#>, Extensions<# }; 
+					return new LanguageTag(Language<#
+		if(s) {#>, Script<# };
+		if(r) {#>, Region<# };
+		if(v) {#>, Variants<# };
+		if(e) {#>, Extensions<# };
 		if(p) {#>, PrivateUse<# } #>);
 <# } } #>
 				case Field.PrivateUse:

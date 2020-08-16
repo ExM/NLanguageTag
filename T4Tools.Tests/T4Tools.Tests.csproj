@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp2.1</TargetFramework>
+		<IsTestProject>true</IsTestProject>
+		<LangVersion>7.3</LangVersion>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<AssemblyName>NLanguageTag.T4Tools.Tests</AssemblyName>
+		<RootNamespace>NLanguageTag.T4Tools</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="registries\language-subtag-registry_2019-09-16" />
+	  <None Remove="registries\language-subtag-registry_2020-07-17" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\T4Tools\T4Tools.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="registries\2019-09-16" />
+	  <EmbeddedResource Include="registries\2019-09-16" />
+	  <None Remove="registries\2020-07-17" />
+	  <EmbeddedResource Include="registries\2020-07-17" />
+	</ItemGroup>
+
+	<Import Project="..\.paket\Paket.Restore.targets" />
+</Project>

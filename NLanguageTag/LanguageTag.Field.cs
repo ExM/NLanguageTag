@@ -2,7 +2,7 @@ using System;
 
 namespace NLanguageTag
 {
-	public partial struct LanguageTag
+	public readonly partial struct LanguageTag
 	{
 		/// <summary>
 		/// Assigned properties of language subtag

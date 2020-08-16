@@ -8,12 +8,17 @@ namespace NLanguageTag
 	/// <summary>
 	/// Extensions provide a mechanism for extending language tags for use in various applications
 	/// </summary>
-	public struct ExtensionSubtag : IEquatable<ExtensionSubtag>, IEnumerable<string>
+	public readonly struct ExtensionSubtag : IEquatable<ExtensionSubtag>, IEnumerable<string>
 	{
 		/// <summary>
 		/// Single-character subtag, introducing this extension subtag
 		/// </summary>
-		public char Singleton => _singleton != 0 ? _singleton : throw getNotInitializedException();
+		public char Singleton => _sequence != null ? _singleton : throw new InvalidOperationException("This value was not initialized");
+
+		/// <summary>
+		/// Subtag for private use only
+		/// </summary>
+		public bool PrivateUse => _singleton == _privateUseSingleton;
 
 		/// <summary>
 		/// Initializes new instance of <see cref="ExtensionSubtag"/> with values of the singleton and
@@ -31,13 +36,46 @@ namespace NLanguageTag
 		public ExtensionSubtag(char singleton, IReadOnlyList<string> sequence)
 		{
 			_singleton = validateSingleton(singleton);
+			var privateUse = _singleton == _privateUseSingleton;
 
 			if (sequence == null || sequence.Count == 0)
 				throw new FormatException("Extension subtag '" + singleton + "' contains no elements");
 
 			_sequence = new string[sequence.Count];
 			for (var i = 0; i < sequence.Count; i++)
-				_sequence[i] = validateElement(sequence[i]);
+				_sequence[i] = validateElement(sequence[i], privateUse);
+		}
+
+		/// <summary>
+		/// Initializes new value for private use
+		/// </summary>
+		public static ExtensionSubtag ForPrivateUse(params string[] sequence)
+		{
+			return ForPrivateUse(sequence as IReadOnlyList<string>);
+		}
+
+		/// <summary>
+		/// Initializes new value for private use
+		/// </summary>
+		public static ExtensionSubtag ForPrivateUse(IReadOnlyList<string> sequence)
+		{
+			return new ExtensionSubtag(_privateUseSingleton, sequence);
+		}
+
+		/// <summary>
+		/// Indicates whether this collection contains no elements
+		/// </summary>
+		public bool IsEmpty => _sequence == null;
+
+		/// <summary>
+		/// Determines whether a sequence contains a specified element
+		/// </summary>
+		public bool Contains(string subtag)
+		{
+			if (_sequence == null)
+				return false;
+
+			return _sequence.Contains(subtag, StringComparer.OrdinalIgnoreCase);
 		}
 
 		/// <summary>
@@ -45,8 +83,8 @@ namespace NLanguageTag
 		/// </summary>
 		public IEnumerator<string> GetEnumerator()
 		{
-			IEnumerable<string> sequence = _sequence ?? throw getNotInitializedException();
-			return sequence.GetEnumerator();
+			var subtags = _sequence ?? Enumerable.Empty<string>();
+			return subtags.GetEnumerator();
 		}
 
 		IEnumerator IEnumerable.GetEnumerator()
@@ -59,7 +97,7 @@ namespace NLanguageTag
 		/// </summary>
 		public bool Equals(ExtensionSubtag other)
 		{
-			return Singleton == other.Singleton && _sequence.IsEquivalentTo(other._sequence);
+			return _singleton == other._singleton && _sequence.IsEquivalentTo(other._sequence);
 		}
 
 		/// <summary>
@@ -68,8 +106,8 @@ namespace NLanguageTag
 		public override int GetHashCode()
 		{
 			return _sequence != null
-				? Singleton.GetHashCode() ^ _sequence.GetHashCodeOfSequence()
-				: throw getNotInitializedException();
+				? Singleton.GetHashCode() ^ _sequence.GetHashCodeOfClassSequence()
+				: 0;
 		}
 
 		/// <summary>
@@ -102,12 +140,12 @@ namespace NLanguageTag
 		public IEnumerable<string> GetSubtagElements()
 		{
 			if (_sequence == null)
-				throw getNotInitializedException();
+				yield break;
 
 			yield return Singleton.ToString();
 
-			foreach (var element in _sequence)
-				yield return element;
+			foreach (var el in _sequence)
+				yield return el;
 		}
 
 		/// <summary>
@@ -118,16 +156,71 @@ namespace NLanguageTag
 			return string.Join(LanguageTag.TagSeparator.ToString(), GetSubtagElements());
 		}
 
-		internal static PartialParseResult<ExtensionSubtag> Parse(TokenEnumerator tokens)
+		/// <summary>
+		/// Converts the string representation of a private use subtags
+		/// </summary>
+		public static ExtensionSubtag Parse(string text)
+		{
+			return TryParse(text, out var result)
+				? result
+				: throw new FormatException("Invalid private use subtags string: " + text);
+		}
+
+		/// <summary>
+		/// Converts the string representation of a private use subtags
+		/// </summary>
+		/// <returns>true if s was converted successfully; otherwise, false.</returns>
+		public static bool TryParse(string text, out ExtensionSubtag result)
+		{
+			if(text == null)
+				throw new ArgumentNullException(nameof(text));
+			var tokens = new TokenEnumerator(text);
+
+			if (!tokens.CurrentTokenAvailable)
+			{
+				result = default;
+				return false;
+			}
+
+			var parseResult = Parse(tokens, tokens.TokenIsPrivateUseSingleton());
+			if (parseResult.ErrorOccured
+				|| parseResult.NothingToParse
+				|| tokens.CurrentTokenAvailable)
+			{
+				result = default;
+				return false;
+			}
+
+			result = parseResult.Result;
+			return true;
+		}
+
+		/// <summary>
+		/// Converts the string representation of a private use subtags
+		/// </summary>
+		public static ExtensionSubtag? TryParse(string text)
+		{
+			return TryParse(text, out var result) ? result : (ExtensionSubtag?)null;
+		}
+
+		internal static PartialParseResult<ExtensionSubtag> Parse(TokenEnumerator tokens, bool privateUse)
 		{
 			// Get the singleton
 			if (!tokens.CurrentTokenAvailable)
 				return PartialParseResult<ExtensionSubtag>.Empty;
 
-			if (tokens.Token.Length != 1 || tokens.TokenIs(PrivateUseSubtags.Singleton))
-				return PartialParseResult<ExtensionSubtag>.Empty;
+			if (privateUse)
+			{
+				if (!tokens.TokenIsPrivateUseSingleton())
+					return PartialParseResult<ExtensionSubtag>.Empty;
+			}
+			else
+			{
+				if (tokens.CurrentToken.Length != 1 || tokens.TokenIsPrivateUseSingleton())
+					return PartialParseResult<ExtensionSubtag>.Empty;
+			}
 
-			var singleton = tokens.Token[0];
+			var singleton = tokens.CurrentToken[0];
 			if (!isAsciiLetterOrDigit(singleton))
 				return PartialParseResult<ExtensionSubtag>.Error;
 
@@ -138,23 +231,27 @@ namespace NLanguageTag
 
 			tokens.ToNextToken();
 
-			if (!isValidElement(tokens.Token))
+			var token = tokens.CurrentToken.AsText();
+
+			if (!isValidElement(token, privateUse))
 				return PartialParseResult<ExtensionSubtag>.Error;
 
-			sequence.Add(tokens.Token);
+			sequence.Add(token);
 
 			// Get remaining elements
 			tokens.ToNextToken();
 
 			while (tokens.CurrentTokenAvailable)
 			{
-				if (tokens.Token.Length == 1) // next extension subtag or private use
+				if (tokens.CurrentToken.Length == 1) // next extension subtag or private use
 					break;
 
-				if (!isValidElement(tokens.Token))
+				token = tokens.CurrentToken.AsText();
+
+				if (!isValidElement(token, privateUse))
 					return PartialParseResult<ExtensionSubtag>.Error;
 
-				sequence.Add(tokens.Token);
+				sequence.Add(token);
 				tokens.ToNextToken();
 			}
 
@@ -169,10 +266,18 @@ namespace NLanguageTag
 			throw new FormatException("Singleton must be a letter or digit in ASCII");
 		}
 
-		private static string validateElement(string text)
+		private static string validateElement(string text, bool privateUse)
 		{
-			if (text.Length < 2 || 8 < text.Length)
-				throw new FormatException("Extension subtag must be from 2 to 8 characters");
+			if (privateUse)
+			{
+				if (text.Length < 1 || 8 < text.Length)
+					throw new FormatException("Private use subtag must be from 1 to 8 characters");
+			}
+			else
+			{
+				if (text.Length < 2 || 8 < text.Length)
+					throw new FormatException("Extension subtag must be from 2 to 8 characters");
+			}
 
 			if (!text.All(isAsciiLetterOrDigit))
 				throw new FormatException("Element must consist only of numbers or letters in ASCII");
@@ -180,9 +285,12 @@ namespace NLanguageTag
 			return text.ToLowerInvariant();
 		}
 
-		private static bool isValidElement(string text)
+		private static bool isValidElement(string text, bool privateUse)
 		{
-			return text.Length >= 2 && text.Length <= 8 && text.All(isAsciiLetterOrDigit);
+			if (privateUse)
+				return text.Length >= 1 && text.Length <= 8 && text.All(isAsciiLetterOrDigit);
+			else
+				return text.Length >= 2 && text.Length <= 8 && text.All(isAsciiLetterOrDigit);
 		}
 
 		private static bool isAsciiLetterOrDigit(char value)
@@ -190,15 +298,13 @@ namespace NLanguageTag
 			return value < 127 && char.IsLetterOrDigit(value);
 		}
 
-		private static InvalidOperationException getNotInitializedException()
-		{
-			return new InvalidOperationException("This value was not initialized");
-		}
-
 		// Since this is value type, there is no way to prevent it being in the default state.
-		// There is no reasonable meaning for the default state.
-		// Thus when accessing the fields we will throw exception if they are in the default state.
+		// The natural meaning for the default state is an empty collection.
+		// We will treat this field being null as empty collection, and also store null here if this value
+		// is initialized as empty collection.
 		private readonly char _singleton;
-		private readonly string[] _sequence;
+		private readonly string[]? _sequence;
+
+		private const char _privateUseSingleton = 'x';
 	}
 }

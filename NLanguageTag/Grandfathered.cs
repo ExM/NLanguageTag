@@ -5,7 +5,7 @@ namespace NLanguageTag
 {
 	internal static class Grandfathered
 	{
-		internal static string GetPreferredValue(string text)
+		internal static string? GetPreferredValue(string? text)
 		{
 			if (text == null)
 				return null;

@@ -6,7 +6,7 @@ using NUnit.Framework;
 namespace NLanguageTag.Tests
 {
 	[TestFixture]
-	public partial class PerfomanceTests
+	public class PerfomanceTests
 	{
 		[Test]
 		public void ParseLSR()

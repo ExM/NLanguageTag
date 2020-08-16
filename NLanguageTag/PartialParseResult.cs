@@ -5,7 +5,7 @@ namespace NLanguageTag
 	/// <summary>
 	/// Result of parsing part of language tag
 	/// </summary>
-	internal struct PartialParseResult<T>
+	internal readonly struct PartialParseResult<T> where T : struct
 	{
 		private PartialParseResult(T result, bool errorOccured, bool nothingToParse)
 		{

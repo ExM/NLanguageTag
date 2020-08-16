@@ -5,7 +5,7 @@ namespace NLanguageTag
 {
 	internal static class CollectionUtils
 	{
-		internal static int GetHashCodeOfSequence<T>(this IEnumerable<T> items)
+		internal static int GetHashCodeOfStructSequence<T>(this IEnumerable<T>? items) where T: struct
 		{
 			if (items == null)
 				return 0;
@@ -21,7 +21,23 @@ namespace NLanguageTag
 			}
 		}
 
-		internal static bool IsEquivalentTo<T>(this IReadOnlyList<T> x, IReadOnlyList<T> y) where T : IEquatable<T>
+		internal static int GetHashCodeOfClassSequence<T>(this IEnumerable<T>? items) where T: class
+		{
+			if (items == null)
+				return 0;
+
+			unchecked
+			{
+				var hash = 19;
+				foreach (var i in items)
+				{
+					hash = hash * 31 + (i?.GetHashCode() ?? 0);
+				}
+				return hash;
+			}
+		}
+
+		internal static bool IsEquivalentTo<T>(this IReadOnlyList<T>? x, IReadOnlyList<T>? y) where T : IEquatable<T>
 		{
 			if (ReferenceEquals(x, y))
 				return true;
@@ -41,7 +57,7 @@ namespace NLanguageTag
 			return true;
 		}
 
-		internal static bool IsEquivalentTo(this IEnumerable<Variant> x, IEnumerable<Variant> y)
+		internal static bool IsEquivalentTo(this IEnumerable<Variant>? x, IEnumerable<Variant>? y)
 		{
 			if (ReferenceEquals(x, y))
 				return true;
@@ -49,20 +65,18 @@ namespace NLanguageTag
 			if (ReferenceEquals(x, null) || ReferenceEquals(y, null))
 				return false;
 
-			using (var xEn = x.GetEnumerator())
-			using (var yEn = y.GetEnumerator())
+			using var xEn = x.GetEnumerator();
+			using var yEn = y.GetEnumerator();
+			while (true)
 			{
-				while (true)
-				{
-					if (!xEn.MoveNext())
-						return !yEn.MoveNext();
+				if (!xEn.MoveNext())
+					return !yEn.MoveNext();
 
-					if (!yEn.MoveNext())
-						return false;
+				if (!yEn.MoveNext())
+					return false;
 
-					if (xEn.Current != yEn.Current)
-						return false;
-				}
+				if (xEn.Current != yEn.Current)
+					return false;
 			}
 		}
 	}

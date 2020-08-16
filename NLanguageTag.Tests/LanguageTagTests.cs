@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace NLanguageTag.Tests
@@ -7,18 +8,8 @@ namespace NLanguageTag.Tests
 	[TestFixture]
 	public partial class LanguageTagTests
 	{
-		[TestCase("en", Language.EN, null, null)]
-		[TestCase("en-Latn", Language.EN, null, null)]
-		[TestCase("ru-Latn", Language.RU, Script.Latn, null)]
-		[TestCase("afb", Language.AFB, null, null)]
-		[TestCase("ar-afb", Language.AFB, null, null)]
-		[TestCase("yue", Language.YUE, null, null)]
-		[TestCase("zh-yue", Language.YUE, null, null)]
-		[TestCase("ru-Latn", Language.RU, Script.Latn, null)]
-		[TestCase("zh-Hans", Language.ZH, Script.Hans, null)]
-		[TestCase("zh-TW", Language.ZH, null, Region.TW)]
-		[TestCase("zh-Hans-TW", Language.ZH, Script.Hans, Region.TW)]
-		public void SimpleParse(string text, Language? langEx, Script? scrEx, Region? regionEx)
+		[TestCaseSource(nameof(SimpleParseCases))]
+		public void SimpleParse(string text, Language langEx, Script scrEx, Region regionEx)
 		{
 			var tag = LanguageTag.Parse(text);
 			Assert.That(tag.Language, Is.EqualTo(langEx));
@@ -29,19 +20,77 @@ namespace NLanguageTag.Tests
 			Assert.That(tag.PrivateUse, Is.Empty);
 		}
 
-		[TestCase("en", new Variant[]{})]
-		[TestCase("en-scotland", new[] { Variant.Scotland })]
-		[TestCase("en-GB-scotland", new[] { Variant.Scotland })]
-		[TestCase("sl-rozaj", new[] { Variant.Rozaj })]
-		[TestCase("sl-rozaj-biske", new[] { Variant.Rozaj, Variant.Biske })]
-		[TestCase("sl-rozaj-biske-1994", new[] { Variant.Rozaj, Variant.Biske, Variant.V1994 })]
-		[TestCase("sl-rozaj-1994", new[] { Variant.Rozaj, Variant.V1994 })]
-		[TestCase("sl-rozaj-biske-1994-fonipa", new[] { Variant.Rozaj, Variant.Biske, Variant.V1994, Variant.Fonipa })]
-		[TestCase("sl-rozaj-biske-1994-fonipa-fonipa", new[] { Variant.Rozaj, Variant.Biske, Variant.V1994, Variant.Fonipa })]
-		public void ParseWithVariants(string text, Variant[] variantsEx)
+		internal static IEnumerable<TestCaseData> SimpleParseCases()
+		{
+			yield return new TestCaseData("en", Language.EN, null, null);
+			yield return new TestCaseData("qaa", Language.Parse("qaa"), null, null);
+			yield return new TestCaseData("en-Latn", Language.EN, null, null);
+			yield return new TestCaseData("ru-Latn", Language.RU, Script.Latn, null);
+			yield return new TestCaseData("qaa-Latn", Language.Parse("qaa"), Script.Latn, null);
+			yield return new TestCaseData("afb", Language.AFB, null, null);
+			yield return new TestCaseData("ar-afb", Language.AFB, null, null);
+			yield return new TestCaseData("yue", Language.YUE, null, null);
+			yield return new TestCaseData("zh-yue", Language.YUE, null, null);
+			yield return new TestCaseData("ru-Latn", Language.RU, Script.Latn, null);
+			yield return new TestCaseData("zh-Hans", Language.ZH, Script.Hans, null);
+			yield return new TestCaseData("zh-TW", Language.ZH, null, Region.TW);
+			yield return new TestCaseData("zh-QM", Language.ZH, null, Region.Parse("QM"));
+			yield return new TestCaseData("zh-Hans-TW", Language.ZH, Script.Hans, Region.TW);
+			yield return new TestCaseData("zh-Qabx-TW", Language.ZH, Script.Parse("Qabx"), Region.TW);
+		}
+
+		[TestCaseSource(nameof(containsPrivateUseSubtagsCases))]
+		public void ContainsPrivateUseSubtags(string text, bool expected)
 		{
 			var tag = LanguageTag.Parse(text);
-			Assert.That(tag.Variants, Is.EquivalentTo(variantsEx));
+			Assert.That(tag.ContainsPrivateUseSubtags, Is.EqualTo(expected));
+		}
+
+		internal static IEnumerable<TestCaseData> containsPrivateUseSubtagsCases()
+		{
+			yield return new TestCaseData("en", false);
+			yield return new TestCaseData("qaa", true);
+			yield return new TestCaseData("en-Latn", false);
+			yield return new TestCaseData("qaa-Latn", true);
+			yield return new TestCaseData("zh-TW", false);
+			yield return new TestCaseData("zh-QM", true);
+			yield return new TestCaseData("zh-Hans-TW", false);
+			yield return new TestCaseData("zh-Qabx-TW", true);
+			yield return new TestCaseData("zh-Hans-TW-x-aaa", true);
+		}
+
+		[TestCaseSource(nameof(containsDeprecatedSubtagsCases))]
+		public void ContainsDeprecatedSubtags(string text, bool expected)
+		{
+			var tag = LanguageTag.Parse(text);
+			Assert.That(tag.ContainsDeprecatedSubtags, Is.EqualTo(expected));
+		}
+
+		internal static IEnumerable<TestCaseData> containsDeprecatedSubtagsCases()
+		{
+			yield return new TestCaseData("en", false);
+			yield return new TestCaseData("ais", true);
+			yield return new TestCaseData("en-Latn", false);
+			yield return new TestCaseData("ais-Latn", true);
+			yield return new TestCaseData("zh-TW", false);
+			yield return new TestCaseData("zh-AN", true);
+			yield return new TestCaseData("hy", false);
+			yield return new TestCaseData("hy-Arevela", true);
+		}
+
+		[TestCase("en", new string[]{})]
+		[TestCase("en-scotland", new[] { "scotland" })]
+		[TestCase("en-GB-scotland", new[] { "scotland" })]
+		[TestCase("sl-rozaj", new[] { "rozaj" })]
+		[TestCase("sl-rozaj-biske", new[] { "rozaj", "biske" })]
+		[TestCase("sl-rozaj-biske-1994", new[] { "rozaj", "biske", "1994" })]
+		[TestCase("sl-rozaj-1994", new[] { "rozaj", "1994" })]
+		[TestCase("sl-rozaj-biske-1994-fonipa", new[] { "rozaj", "biske", "1994", "fonipa" })]
+		[TestCase("sl-rozaj-biske-1994-fonipa-fonipa", new[] { "rozaj", "biske", "1994", "fonipa" })]
+		public void ParseWithVariants(string text, string[] variantsEx)
+		{
+			var tag = LanguageTag.Parse(text);
+			Assert.That(tag.Variants, Is.EquivalentTo(variantsEx.Select(_ => _.TryParseVariant())));
 		}
 
 		[TestCase("sl-rozaj-a-bbb-ccc", new[]{ 'a'})]
@@ -228,7 +277,7 @@ namespace NLanguageTag.Tests
 		[TestCaseSource(typeof(TestContent), "GetGrandfathered")]
 		public void ParseGrandfathered(string grandfathered)
 		{
-			Assert.True(LanguageTag.Parse(grandfathered).Language.HasValue);
+			Assert.IsNotNull(LanguageTag.Parse(grandfathered).Language);
 		}
 
 		[TestCaseSource(typeof(TestContent), "GetGrandfatheredNotSupported")]
@@ -285,17 +334,22 @@ namespace NLanguageTag.Tests
 		[Test]
 		public void Constructor_Pr()
 		{
-			var tag = new LanguageTag(new PrivateUseSubtags("aaa"));
+			var tag = new LanguageTag(new ExtensionSubtag('x', "aaa"));
 			var expected = LanguageTag.Parse("x-aaa");
 			Assert.That(tag, Is.EqualTo(expected));
 		}
 
-		[TestCase(null)]
 		[TestCase("")]
 		[TestCase(" ")]
 		public void ParsingEmptyString(string text)
 		{
 			Assert.Throws<FormatException>(() => LanguageTag.Parse(text));
+		}
+
+		[Test]
+		public void ParsingNullString()
+		{
+			Assert.Throws<ArgumentNullException>(() => LanguageTag.Parse(null));
 		}
 
 		[Test]

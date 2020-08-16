@@ -8,7 +8,7 @@ namespace NLanguageTag
 	/// <summary>
 	/// Collection of extension subtags
 	/// </summary>
-	public struct ExtensionSubtagCollection : IEnumerable<ExtensionSubtag>, IEquatable<ExtensionSubtagCollection>
+	public readonly struct ExtensionSubtagCollection : IEnumerable<ExtensionSubtag>, IEquatable<ExtensionSubtagCollection>
 	{
 		/// <summary>
 		/// Initializes new instance of <see cref="ExtensionSubtagCollection"/> with provided subtags
@@ -21,7 +21,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// Initializes new instance of <see cref="ExtensionSubtagCollection"/> with provided subtags
 		/// </summary>
-		public ExtensionSubtagCollection(IReadOnlyCollection<ExtensionSubtag> subtags)
+		public ExtensionSubtagCollection(IReadOnlyCollection<ExtensionSubtag>? subtags)
 		{
 			if (subtags == null || subtags.Count == 0)
 			{
@@ -33,6 +33,12 @@ namespace NLanguageTag
 			var i = 0;
 			foreach (var subtag in subtags)
 			{
+				if(subtag.IsEmpty)
+					throw new ArgumentException("subtag can't be empty");
+
+				if(subtag.PrivateUse)
+					throw new ArgumentException("subtag can't be private use");
+
 				collection[i] = subtag;
 				i++;
 			}
@@ -57,7 +63,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// Initializes new instance of <see cref="ExtensionSubtagCollection"/> with provided subtags
 		/// </summary>
-		public ExtensionSubtagCollection(IEnumerable<ExtensionSubtag> subtags)
+		public ExtensionSubtagCollection(IEnumerable<ExtensionSubtag>? subtags)
 			: this(safeConvert(subtags))
 		{
 		}
@@ -104,7 +110,7 @@ namespace NLanguageTag
 		/// </summary>
 		public override int GetHashCode()
 		{
-			return _sortedCollection.GetHashCodeOfSequence();
+			return _sortedCollection.GetHashCodeOfStructSequence();
 		}
 
 		/// <summary>
@@ -123,7 +129,7 @@ namespace NLanguageTag
 
 		internal static PartialParseResult<ExtensionSubtagCollection> Parse(TokenEnumerator tokens)
 		{
-			var subtagResult = ExtensionSubtag.Parse(tokens);
+			var subtagResult = ExtensionSubtag.Parse(tokens, false);
 
 			if (subtagResult.NothingToParse)
 				return PartialParseResult<ExtensionSubtagCollection>.Empty;
@@ -142,7 +148,7 @@ namespace NLanguageTag
 
 				usedSingletons[subtag.Singleton] = true;
 				resultCollection.Add(subtag);
-				subtagResult = ExtensionSubtag.Parse(tokens);
+				subtagResult = ExtensionSubtag.Parse(tokens, false);
 
 				if (subtagResult.NothingToParse)
 					return PartialParseResult<ExtensionSubtagCollection>.Success(
@@ -153,7 +159,7 @@ namespace NLanguageTag
 			}
 		}
 
-		private static IReadOnlyCollection<ExtensionSubtag> safeConvert(IEnumerable<ExtensionSubtag> subtags)
+		private static IReadOnlyCollection<ExtensionSubtag>? safeConvert(IEnumerable<ExtensionSubtag>? subtags)
 		{
 			if (subtags == null)
 			{
@@ -167,7 +173,7 @@ namespace NLanguageTag
 		// The natural meaning for the default state is an empty collection.
 		// We will treat this field being null as empty collection, and also store null here if this value
 		// is initialized as empty collection.
-		private readonly ExtensionSubtag[] _sortedCollection;
+		private readonly ExtensionSubtag[]? _sortedCollection;
 
 		private static readonly IComparer<ExtensionSubtag> _singletonComparer = new SingletonComparer();
 
