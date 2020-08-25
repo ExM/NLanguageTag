@@ -2066,6 +2066,17 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Toto
+		/// added: 2020-05-12
+		/// </summary>
+		public static Script Toto => TotoCache.Instance;
+
+		private static class TotoCache
+		{
+			public static readonly Script Instance = new Script("Toto", false);
+		}
+
+		/// <summary>
 		/// Ugaritic
 		/// added: 2005-10-16
 		/// </summary>

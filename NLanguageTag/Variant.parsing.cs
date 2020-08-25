@@ -423,8 +423,32 @@ namespace NLanguageTag
 		
 		private static Variant? tryParse_L5_p(StringSpan span)
 		{
-			if(Char.ToLowerInvariant(span[1]) == 'u')
-				return tryParse_L5_pu(span);
+			switch(span[1])
+			{
+				case 'e': return tryParse_L5_pe(span);
+				case 'u': return tryParse_L5_pu(span);
+				default: return null;
+			}
+		}
+		
+		private static Variant? tryParse_L5_pe(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[2]) == 'a')
+				return tryParse_L5_pea(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L5_pea(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[3]) == 'n')
+				return tryParse_L5_pean(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L5_pean(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[4]) == 'o')
+				return Peano;
 			return null;
 		}
 		
@@ -1382,8 +1406,8 @@ namespace NLanguageTag
 			switch(span[1])
 			{
 				case 'b': return tryParse_L7_ab(span);
-				case 'l': return tryParse_L7_al(span);
 				case 'k': return tryParse_L7_ak(span);
+				case 'l': return tryParse_L7_al(span);
 				case 'r': return tryParse_L7_ar(span);
 				default: return null;
 			}
@@ -1424,41 +1448,6 @@ namespace NLanguageTag
 			return null;
 		}
 		
-		private static Variant? tryParse_L7_al(StringSpan span)
-		{
-			if(Char.ToLowerInvariant(span[2]) == 'a')
-				return tryParse_L7_ala(span);
-			return null;
-		}
-		
-		private static Variant? tryParse_L7_ala(StringSpan span)
-		{
-			if(Char.ToLowerInvariant(span[3]) == 'l')
-				return tryParse_L7_alal(span);
-			return null;
-		}
-		
-		private static Variant? tryParse_L7_alal(StringSpan span)
-		{
-			if(Char.ToLowerInvariant(span[4]) == 'c')
-				return tryParse_L7_alalc(span);
-			return null;
-		}
-		
-		private static Variant? tryParse_L7_alalc(StringSpan span)
-		{
-			if(Char.ToLowerInvariant(span[5]) == '9')
-				return tryParse_L7_alalc9(span);
-			return null;
-		}
-		
-		private static Variant? tryParse_L7_alalc9(StringSpan span)
-		{
-			if(Char.ToLowerInvariant(span[6]) == '7')
-				return Alalc97;
-			return null;
-		}
-		
 		private static Variant? tryParse_L7_ak(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'u')
@@ -1491,6 +1480,41 @@ namespace NLanguageTag
 		{
 			if(Char.ToLowerInvariant(span[6]) == 'm')
 				return Akuapem;
+			return null;
+		}
+		
+		private static Variant? tryParse_L7_al(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[2]) == 'a')
+				return tryParse_L7_ala(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L7_ala(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[3]) == 'l')
+				return tryParse_L7_alal(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L7_alal(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[4]) == 'c')
+				return tryParse_L7_alalc(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L7_alalc(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[5]) == '9')
+				return tryParse_L7_alalc9(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L7_alalc9(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[6]) == '7')
+				return Alalc97;
 			return null;
 		}
 		
@@ -2310,6 +2334,7 @@ namespace NLanguageTag
 				case 'o': return tryParse_L8_o(span);
 				case 'p': return tryParse_L8_p(span);
 				case 's': return tryParse_L8_s(span);
+				case 't': return tryParse_L8_t(span);
 				case 'v': return tryParse_L8_v(span);
 				case 'w': return tryParse_L8_w(span);
 				case 'x': return tryParse_L8_x(span);
@@ -3414,6 +3439,100 @@ namespace NLanguageTag
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'n')
 				return Surmiran;
+			return null;
+		}
+		
+		private static Variant? tryParse_L8_t(StringSpan span)
+		{
+			switch(span[1])
+			{
+				case 'o': return tryParse_L8_to(span);
+				case 'u': return tryParse_L8_tu(span);
+				default: return null;
+			}
+		}
+		
+		private static Variant? tryParse_L8_to(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[2]) == 'n')
+				return tryParse_L8_ton(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L8_ton(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[3]) == 'g')
+				return tryParse_L8_tong(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L8_tong(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[4]) == 'y')
+				return tryParse_L8_tongy(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L8_tongy(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[5]) == 'o')
+				return tryParse_L8_tongyo(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L8_tongyo(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[6]) == 'n')
+				return tryParse_L8_tongyon(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L8_tongyon(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[7]) == 'g')
+				return Tongyong;
+			return null;
+		}
+		
+		private static Variant? tryParse_L8_tu(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[2]) == 'n')
+				return tryParse_L8_tun(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L8_tun(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[3]) == 'u')
+				return tryParse_L8_tunu(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L8_tunu(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[4]) == 'm')
+				return tryParse_L8_tunum(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L8_tunum(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[5]) == 'i')
+				return tryParse_L8_tunumi(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L8_tunumi(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[6]) == 'i')
+				return tryParse_L8_tunumii(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L8_tunumii(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[7]) == 't')
+				return Tunumiit;
 			return null;
 		}
 		

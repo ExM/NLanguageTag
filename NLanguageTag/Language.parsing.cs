@@ -2389,6 +2389,7 @@ namespace NLanguageTag
 				case 'b': return CKB;
 				case 'h': return CKH;
 				case 'l': return CKL;
+				case 'm': return CKM;
 				case 'n': return CKN;
 				case 'o': return CKO;
 				case 'q': return CKQ;
@@ -2461,6 +2462,7 @@ namespace NLanguageTag
 				case 'k': return CNK;
 				case 'l': return CNL;
 				case 'o': return CNO;
+				case 'p': return CNP;
 				case 'r': return CNR;
 				case 's': return CNS;
 				case 't': return CNT;
@@ -2585,6 +2587,7 @@ namespace NLanguageTag
 				case 'm': return CSM;
 				case 'n': return CSN;
 				case 'o': return CSO;
+				case 'p': return CSP;
 				case 'q': return CSQ;
 				case 'r': return CSR;
 				case 's': return CSS;
@@ -2982,6 +2985,7 @@ namespace NLanguageTag
 				case 'c': return DMC;
 				case 'd': return DMD;
 				case 'e': return DME;
+				case 'f': return DMF;
 				case 'g': return DMG;
 				case 'k': return DMK;
 				case 'l': return DML;
@@ -3074,7 +3078,7 @@ namespace NLanguageTag
 				case 'n': return DRN;
 				case 'o': return DRO;
 				case 'q': return DRQ;
-				case 'r': return DRR;
+				case 'r': return KZK;
 				case 's': return DRS;
 				case 't': return DRT;
 				case 'u': return DRU;
@@ -3168,6 +3172,7 @@ namespace NLanguageTag
 			switch(span[2])
 			{
 				case 'a': return DWA;
+				case 'k': return DWK;
 				case 'l': return DWL;
 				case 'r': return DWR;
 				case 's': return DWS;
@@ -3254,6 +3259,7 @@ namespace NLanguageTag
 		{
 			switch(span[2])
 			{
+				case 'c': return EBC;
 				case 'g': return EBG;
 				case 'k': return EBK;
 				case 'o': return EBO;
@@ -3637,6 +3643,7 @@ namespace NLanguageTag
 			{
 				case 'a': return FIA;
 				case 'e': return FIE;
+				case 'f': return FIF;
 				case 'l': return FIL;
 				case 'p': return FIP;
 				case 'r': return FIR;
@@ -3946,6 +3953,7 @@ namespace NLanguageTag
 				case 'b': return GEB;
 				case 'c': return GEC;
 				case 'd': return GED;
+				case 'f': return GEF;
 				case 'g': return GEG;
 				case 'h': return GEH;
 				case 'i': return GEI;
@@ -4080,7 +4088,7 @@ namespace NLanguageTag
 				case 'c': return GLC;
 				case 'd': return GLD;
 				case 'h': return GLH;
-				case 'i': return GLI;
+				case 'i': return KZK;
 				case 'j': return GLJ;
 				case 'k': return GLK;
 				case 'l': return GLL;
@@ -4107,6 +4115,7 @@ namespace NLanguageTag
 				case 'm': return GMM;
 				case 'n': return GMN;
 				case 'q': return GMQ;
+				case 'r': return GMR;
 				case 'u': return GMU;
 				case 'v': return GMV;
 				case 'w': return GMW;
@@ -4604,6 +4613,7 @@ namespace NLanguageTag
 				case 'a': return HNA;
 				case 'd': return HND;
 				case 'e': return HNE;
+				case 'g': return HNG;
 				case 'h': return HNH;
 				case 'i': return HNI;
 				case 'j': return HNJ;
@@ -6316,7 +6326,7 @@ namespace NLanguageTag
 				case 'i': return KXI;
 				case 'j': return KXJ;
 				case 'k': return KXK;
-				case 'l': return KXL;
+				case 'l': return KRU;
 				case 'm': return KXM;
 				case 'n': return KXN;
 				case 'o': return KXO;
@@ -8407,6 +8417,7 @@ namespace NLanguageTag
 			switch(span[2])
 			{
 				case 'a': return NSA;
+				case 'b': return NSB;
 				case 'c': return NSC;
 				case 'd': return NSD;
 				case 'e': return NSE;
@@ -8538,7 +8549,7 @@ namespace NLanguageTag
 				case 'o': return NXO;
 				case 'q': return NXQ;
 				case 'r': return NXR;
-				case 'u': return NXU;
+				case 'u': return BPP;
 				case 'x': return NXX;
 				default: return null;
 			}
@@ -10174,6 +10185,7 @@ namespace NLanguageTag
 				case 'n': return SDN;
 				case 'o': return SDO;
 				case 'p': return SDP;
+				case 'q': return SDQ;
 				case 'r': return SDR;
 				case 's': return SDS;
 				case 't': return SDT;
@@ -11048,7 +11060,7 @@ namespace NLanguageTag
 				case 't': return THT;
 				case 'u': return THU;
 				case 'v': return THV;
-				case 'w': return THW;
+				case 'w': return OLA;
 				case 'x': return OYB;
 				case 'y': return THY;
 				case 'z': return THZ;
@@ -11693,12 +11705,14 @@ namespace NLanguageTag
 				case 'a': return UKA;
 				case 'g': return UKG;
 				case 'h': return UKH;
+				case 'i': return UKI;
 				case 'k': return UKK;
 				case 'l': return UKL;
 				case 'p': return UKP;
 				case 'q': return UKQ;
 				case 's': return UKS;
 				case 'u': return UKU;
+				case 'v': return UKV;
 				case 'w': return UKW;
 				case 'y': return UKY;
 				default: return null;
@@ -12350,6 +12364,7 @@ namespace NLanguageTag
 				case 'c': return WLC;
 				case 'e': return WLE;
 				case 'g': return WLG;
+				case 'h': return WLH;
 				case 'i': return WLI;
 				case 'k': return WLK;
 				case 'l': return WLL;
@@ -12869,6 +12884,7 @@ namespace NLanguageTag
 				case 'h': return XNH;
 				case 'i': return XNI;
 				case 'k': return XNK;
+				case 'm': return XNM;
 				case 'n': return XNN;
 				case 'o': return XNO;
 				case 'r': return XNR;
@@ -12905,12 +12921,17 @@ namespace NLanguageTag
 			switch(span[2])
 			{
 				case 'a': return XPA;
+				case 'b': return XPB;
 				case 'c': return XPC;
+				case 'd': return XPD;
 				case 'e': return XPE;
+				case 'f': return XPF;
 				case 'g': return XPG;
+				case 'h': return XPH;
 				case 'i': return XPI;
 				case 'j': return XPJ;
 				case 'k': return XPK;
+				case 'l': return XPL;
 				case 'm': return XPM;
 				case 'n': return XPN;
 				case 'o': return XPO;
@@ -12920,7 +12941,11 @@ namespace NLanguageTag
 				case 's': return XPS;
 				case 't': return XPT;
 				case 'u': return XPU;
+				case 'v': return XPV;
+				case 'w': return XPW;
+				case 'x': return XPX;
 				case 'y': return XPY;
+				case 'z': return XPZ;
 				default: return null;
 			}
 		}
@@ -12947,7 +12972,7 @@ namespace NLanguageTag
 				case 'i': return XRI;
 				case 'm': return XRM;
 				case 'n': return XRN;
-				case 'q': return XRQ;
+				case 'q': return DMW;
 				case 'r': return XRR;
 				case 't': return XRT;
 				case 'u': return XRU;
@@ -13634,6 +13659,7 @@ namespace NLanguageTag
 		{
 			switch(span[2])
 			{
+				case 'a': return ZBA;
 				case 'c': return ZBC;
 				case 'e': return ZBE;
 				case 'l': return ZBL;
@@ -13710,7 +13736,7 @@ namespace NLanguageTag
 				case 'l': return ZIL;
 				case 'm': return ZIM;
 				case 'n': return ZIN;
-				case 'r': return ZIR;
+				case 'r': return SCV;
 				case 'w': return ZIW;
 				case 'z': return ZIZ;
 				default: return null;

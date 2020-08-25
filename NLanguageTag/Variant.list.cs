@@ -869,6 +869,20 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Latino Sine Flexione
+		/// Interlingua de API
+		/// Interlingua de Peano
+		/// Peano’s Interlingua, created in 1903 by Giuseppe Peano as an international auxiliary language
+		/// added: 2020-03-12
+		/// </summary>
+		public static Variant Peano => PeanoCache.Instance;
+
+		private static class PeanoCache
+		{
+			public static readonly Variant Instance = new Variant("peano", new string[] { "la" }, false);
+		}
+
+		/// <summary>
 		/// Petrine orthography
 		/// Russian orthography from the Petrine orthographic reforms of 1708 to the 1917 orthographic reform
 		/// added: 2010-10-10
@@ -1082,6 +1096,32 @@ namespace NLanguageTag
 		private static class TaraskCache
 		{
 			public static readonly Variant Instance = new Variant("tarask", new string[] { "be" }, false);
+		}
+
+		/// <summary>
+		/// Tongyong Pinyin romanization
+		/// Former official transcription standard for Mandarin Chinese in Taiwan.
+		/// added: 2020-06-08
+		/// </summary>
+		public static Variant Tongyong => TongyongCache.Instance;
+
+		private static class TongyongCache
+		{
+			public static readonly Variant Instance = new Variant("tongyong", new string[] { "zh-Latn" }, false);
+		}
+
+		/// <summary>
+		/// Tunumiisiut
+		/// East Greenlandic
+		/// Østgrønlandsk
+		/// Also known as Tunumiit oraasiat
+		/// added: 2020-07-16
+		/// </summary>
+		public static Variant Tunumiit => TunumiitCache.Instance;
+
+		private static class TunumiitCache
+		{
+			public static readonly Variant Instance = new Variant("tunumiit", new string[] { "kl" }, false);
 		}
 
 		/// <summary>
