@@ -13,7 +13,7 @@ namespace NLanguageTag
 
 		private static class V1606nictCache
 		{
-			public static readonly Variant Instance = new Variant("1606nict", new string[] { "frm" }, false);
+			public static readonly Variant Instance = new Variant("1606nict", VariantCode.V1606nict, new string[] { "frm" }, false);
 		}
 
 		/// <summary>
@@ -25,7 +25,7 @@ namespace NLanguageTag
 
 		private static class V1694acadCache
 		{
-			public static readonly Variant Instance = new Variant("1694acad", new string[] { "fr" }, false);
+			public static readonly Variant Instance = new Variant("1694acad", VariantCode.V1694acad, new string[] { "fr" }, false);
 		}
 
 		/// <summary>
@@ -36,7 +36,7 @@ namespace NLanguageTag
 
 		private static class V1901Cache
 		{
-			public static readonly Variant Instance = new Variant("1901", new string[] { "de" }, false);
+			public static readonly Variant Instance = new Variant("1901", VariantCode.V1901, new string[] { "de" }, false);
 		}
 
 		/// <summary>
@@ -47,7 +47,7 @@ namespace NLanguageTag
 
 		private static class V1959acadCache
 		{
-			public static readonly Variant Instance = new Variant("1959acad", new string[] { "be" }, false);
+			public static readonly Variant Instance = new Variant("1959acad", VariantCode.V1959acad, new string[] { "be" }, false);
 		}
 
 		/// <summary>
@@ -59,7 +59,7 @@ namespace NLanguageTag
 
 		private static class V1994Cache
 		{
-			public static readonly Variant Instance = new Variant("1994", new string[] { "sl-rozaj", "sl-rozaj-biske", "sl-rozaj-njiva", "sl-rozaj-osojs", "sl-rozaj-solba" }, false);
+			public static readonly Variant Instance = new Variant("1994", VariantCode.V1994, new string[] { "sl-rozaj", "sl-rozaj-biske", "sl-rozaj-njiva", "sl-rozaj-osojs", "sl-rozaj-solba" }, false);
 		}
 
 		/// <summary>
@@ -70,7 +70,7 @@ namespace NLanguageTag
 
 		private static class V1996Cache
 		{
-			public static readonly Variant Instance = new Variant("1996", new string[] { "de" }, false);
+			public static readonly Variant Instance = new Variant("1996", VariantCode.V1996, new string[] { "de" }, false);
 		}
 
 		/// <summary>
@@ -82,7 +82,7 @@ namespace NLanguageTag
 
 		private static class Abl1943Cache
 		{
-			public static readonly Variant Instance = new Variant("abl1943", new string[] { "pt-BR" }, false);
+			public static readonly Variant Instance = new Variant("abl1943", VariantCode.Abl1943, new string[] { "pt-BR" }, false);
 		}
 
 		/// <summary>
@@ -93,7 +93,7 @@ namespace NLanguageTag
 
 		private static class AkuapemCache
 		{
-			public static readonly Variant Instance = new Variant("akuapem", new string[] { "tw" }, false);
+			public static readonly Variant Instance = new Variant("akuapem", VariantCode.Akuapem, new string[] { "tw" }, false);
 		}
 
 		/// <summary>
@@ -105,7 +105,7 @@ namespace NLanguageTag
 
 		private static class Alalc97Cache
 		{
-			public static readonly Variant Instance = new Variant("alalc97", new string[] {  }, false);
+			public static readonly Variant Instance = new Variant("alalc97", VariantCode.Alalc97, new string[] {  }, false);
 		}
 
 		/// <summary>
@@ -118,7 +118,7 @@ namespace NLanguageTag
 
 		private static class AlukuCache
 		{
-			public static readonly Variant Instance = new Variant("aluku", new string[] { "djk" }, false);
+			public static readonly Variant Instance = new Variant("aluku", VariantCode.Aluku, new string[] { "djk" }, false);
 		}
 
 		/// <summary>
@@ -130,7 +130,7 @@ namespace NLanguageTag
 
 		private static class Ao1990Cache
 		{
-			public static readonly Variant Instance = new Variant("ao1990", new string[] { "pt", "gl" }, false);
+			public static readonly Variant Instance = new Variant("ao1990", VariantCode.Ao1990, new string[] { "pt", "gl" }, false);
 		}
 
 		/// <summary>
@@ -142,7 +142,7 @@ namespace NLanguageTag
 
 		private static class AranesCache
 		{
-			public static readonly Variant Instance = new Variant("aranes", new string[] { "oc" }, false);
+			public static readonly Variant Instance = new Variant("aranes", VariantCode.Aranes, new string[] { "oc" }, false);
 		}
 
 		/// <summary>
@@ -155,7 +155,7 @@ namespace NLanguageTag
 
 		private static class ArevelaCache
 		{
-			public static readonly Variant Instance = new Variant("arevela", new string[] { "hy" }, true);
+			public static readonly Variant Instance = new Variant("arevela", VariantCode.Arevela, new string[] { "hy" }, true);
 		}
 
 		/// <summary>
@@ -168,7 +168,7 @@ namespace NLanguageTag
 
 		private static class ArevmdaCache
 		{
-			public static readonly Variant Instance = new Variant("arevmda", new string[] { "hy" }, true);
+			public static readonly Variant Instance = new Variant("arevmda", VariantCode.Arevmda, new string[] { "hy" }, true);
 		}
 
 		/// <summary>
@@ -180,7 +180,7 @@ namespace NLanguageTag
 
 		private static class AsanteCache
 		{
-			public static readonly Variant Instance = new Variant("asante", new string[] { "tw" }, false);
+			public static readonly Variant Instance = new Variant("asante", VariantCode.Asante, new string[] { "tw" }, false);
 		}
 
 		/// <summary>
@@ -192,7 +192,7 @@ namespace NLanguageTag
 
 		private static class AuvernCache
 		{
-			public static readonly Variant Instance = new Variant("auvern", new string[] { "oc" }, false);
+			public static readonly Variant Instance = new Variant("auvern", VariantCode.Auvern, new string[] { "oc" }, false);
 		}
 
 		/// <summary>
@@ -204,7 +204,7 @@ namespace NLanguageTag
 
 		private static class Baku1926Cache
 		{
-			public static readonly Variant Instance = new Variant("baku1926", new string[] { "az", "ba", "crh", "kk", "krc", "ky", "sah", "tk", "tt", "uz" }, false);
+			public static readonly Variant Instance = new Variant("baku1926", VariantCode.Baku1926, new string[] { "az", "ba", "crh", "kk", "krc", "ky", "sah", "tk", "tt", "uz" }, false);
 		}
 
 		/// <summary>
@@ -216,7 +216,7 @@ namespace NLanguageTag
 
 		private static class BalankaCache
 		{
-			public static readonly Variant Instance = new Variant("balanka", new string[] { "blo" }, false);
+			public static readonly Variant Instance = new Variant("balanka", VariantCode.Balanka, new string[] { "blo" }, false);
 		}
 
 		/// <summary>
@@ -228,7 +228,7 @@ namespace NLanguageTag
 
 		private static class BarlaCache
 		{
-			public static readonly Variant Instance = new Variant("barla", new string[] { "kea" }, false);
+			public static readonly Variant Instance = new Variant("barla", VariantCode.Barla, new string[] { "kea" }, false);
 		}
 
 		/// <summary>
@@ -239,7 +239,7 @@ namespace NLanguageTag
 
 		private static class BasicengCache
 		{
-			public static readonly Variant Instance = new Variant("basiceng", new string[] { "en" }, false);
+			public static readonly Variant Instance = new Variant("basiceng", VariantCode.Basiceng, new string[] { "en" }, false);
 		}
 
 		/// <summary>
@@ -250,7 +250,7 @@ namespace NLanguageTag
 
 		private static class BauddhaCache
 		{
-			public static readonly Variant Instance = new Variant("bauddha", new string[] { "sa" }, false);
+			public static readonly Variant Instance = new Variant("bauddha", VariantCode.Bauddha, new string[] { "sa" }, false);
 		}
 
 		/// <summary>
@@ -261,7 +261,7 @@ namespace NLanguageTag
 
 		private static class BiscayanCache
 		{
-			public static readonly Variant Instance = new Variant("biscayan", new string[] { "eu" }, false);
+			public static readonly Variant Instance = new Variant("biscayan", VariantCode.Biscayan, new string[] { "eu" }, false);
 		}
 
 		/// <summary>
@@ -274,7 +274,7 @@ namespace NLanguageTag
 
 		private static class BiskeCache
 		{
-			public static readonly Variant Instance = new Variant("biske", new string[] { "sl-rozaj" }, false);
+			public static readonly Variant Instance = new Variant("biske", VariantCode.Biske, new string[] { "sl-rozaj" }, false);
 		}
 
 		/// <summary>
@@ -286,7 +286,7 @@ namespace NLanguageTag
 
 		private static class BohoricCache
 		{
-			public static readonly Variant Instance = new Variant("bohoric", new string[] { "sl" }, false);
+			public static readonly Variant Instance = new Variant("bohoric", VariantCode.Bohoric, new string[] { "sl" }, false);
 		}
 
 		/// <summary>
@@ -298,7 +298,7 @@ namespace NLanguageTag
 
 		private static class BoontCache
 		{
-			public static readonly Variant Instance = new Variant("boont", new string[] { "en" }, false);
+			public static readonly Variant Instance = new Variant("boont", VariantCode.Boont, new string[] { "en" }, false);
 		}
 
 		/// <summary>
@@ -309,7 +309,7 @@ namespace NLanguageTag
 
 		private static class BornholmCache
 		{
-			public static readonly Variant Instance = new Variant("bornholm", new string[] { "da" }, false);
+			public static readonly Variant Instance = new Variant("bornholm", VariantCode.Bornholm, new string[] { "da" }, false);
 		}
 
 		/// <summary>
@@ -321,7 +321,7 @@ namespace NLanguageTag
 
 		private static class CisaupCache
 		{
-			public static readonly Variant Instance = new Variant("cisaup", new string[] { "oc" }, false);
+			public static readonly Variant Instance = new Variant("cisaup", VariantCode.Cisaup, new string[] { "oc" }, false);
 		}
 
 		/// <summary>
@@ -333,7 +333,7 @@ namespace NLanguageTag
 
 		private static class Colb1945Cache
 		{
-			public static readonly Variant Instance = new Variant("colb1945", new string[] { "pt" }, false);
+			public static readonly Variant Instance = new Variant("colb1945", VariantCode.Colb1945, new string[] { "pt" }, false);
 		}
 
 		/// <summary>
@@ -346,7 +346,7 @@ namespace NLanguageTag
 
 		private static class CornuCache
 		{
-			public static readonly Variant Instance = new Variant("cornu", new string[] { "en" }, false);
+			public static readonly Variant Instance = new Variant("cornu", VariantCode.Cornu, new string[] { "en" }, false);
 		}
 
 		/// <summary>
@@ -357,7 +357,7 @@ namespace NLanguageTag
 
 		private static class CreissCache
 		{
-			public static readonly Variant Instance = new Variant("creiss", new string[] { "oc" }, false);
+			public static readonly Variant Instance = new Variant("creiss", VariantCode.Creiss, new string[] { "oc" }, false);
 		}
 
 		/// <summary>
@@ -369,7 +369,7 @@ namespace NLanguageTag
 
 		private static class DajnkoCache
 		{
-			public static readonly Variant Instance = new Variant("dajnko", new string[] { "sl" }, false);
+			public static readonly Variant Instance = new Variant("dajnko", VariantCode.Dajnko, new string[] { "sl" }, false);
 		}
 
 		/// <summary>
@@ -380,7 +380,7 @@ namespace NLanguageTag
 
 		private static class EkavskCache
 		{
-			public static readonly Variant Instance = new Variant("ekavsk", new string[] { "sr", "sr-Latn", "sr-Cyrl" }, false);
+			public static readonly Variant Instance = new Variant("ekavsk", VariantCode.Ekavsk, new string[] { "sr", "sr-Latn", "sr-Cyrl" }, false);
 		}
 
 		/// <summary>
@@ -391,7 +391,7 @@ namespace NLanguageTag
 
 		private static class EmodengCache
 		{
-			public static readonly Variant Instance = new Variant("emodeng", new string[] { "en" }, false);
+			public static readonly Variant Instance = new Variant("emodeng", VariantCode.Emodeng, new string[] { "en" }, false);
 		}
 
 		/// <summary>
@@ -402,7 +402,7 @@ namespace NLanguageTag
 
 		private static class FonipaCache
 		{
-			public static readonly Variant Instance = new Variant("fonipa", new string[] {  }, false);
+			public static readonly Variant Instance = new Variant("fonipa", VariantCode.Fonipa, new string[] {  }, false);
 		}
 
 		/// <summary>
@@ -413,7 +413,7 @@ namespace NLanguageTag
 
 		private static class FonkirshCache
 		{
-			public static readonly Variant Instance = new Variant("fonkirsh", new string[] {  }, false);
+			public static readonly Variant Instance = new Variant("fonkirsh", VariantCode.Fonkirsh, new string[] {  }, false);
 		}
 
 		/// <summary>
@@ -425,7 +425,7 @@ namespace NLanguageTag
 
 		private static class FonnapaCache
 		{
-			public static readonly Variant Instance = new Variant("fonnapa", new string[] {  }, false);
+			public static readonly Variant Instance = new Variant("fonnapa", VariantCode.Fonnapa, new string[] {  }, false);
 		}
 
 		/// <summary>
@@ -436,7 +436,7 @@ namespace NLanguageTag
 
 		private static class FonupaCache
 		{
-			public static readonly Variant Instance = new Variant("fonupa", new string[] {  }, false);
+			public static readonly Variant Instance = new Variant("fonupa", VariantCode.Fonupa, new string[] {  }, false);
 		}
 
 		/// <summary>
@@ -448,7 +448,7 @@ namespace NLanguageTag
 
 		private static class FonxsampCache
 		{
-			public static readonly Variant Instance = new Variant("fonxsamp", new string[] {  }, false);
+			public static readonly Variant Instance = new Variant("fonxsamp", VariantCode.Fonxsamp, new string[] {  }, false);
 		}
 
 		/// <summary>
@@ -460,7 +460,7 @@ namespace NLanguageTag
 
 		private static class GasconCache
 		{
-			public static readonly Variant Instance = new Variant("gascon", new string[] { "oc" }, false);
+			public static readonly Variant Instance = new Variant("gascon", VariantCode.Gascon, new string[] { "oc" }, false);
 		}
 
 		/// <summary>
@@ -472,7 +472,7 @@ namespace NLanguageTag
 
 		private static class GrclassCache
 		{
-			public static readonly Variant Instance = new Variant("grclass", new string[] { "oc" }, false);
+			public static readonly Variant Instance = new Variant("grclass", VariantCode.Grclass, new string[] { "oc" }, false);
 		}
 
 		/// <summary>
@@ -483,7 +483,7 @@ namespace NLanguageTag
 
 		private static class GritalCache
 		{
-			public static readonly Variant Instance = new Variant("grital", new string[] { "oc" }, false);
+			public static readonly Variant Instance = new Variant("grital", VariantCode.Grital, new string[] { "oc" }, false);
 		}
 
 		/// <summary>
@@ -495,7 +495,7 @@ namespace NLanguageTag
 
 		private static class GrmistrCache
 		{
-			public static readonly Variant Instance = new Variant("grmistr", new string[] { "oc" }, false);
+			public static readonly Variant Instance = new Variant("grmistr", VariantCode.Grmistr, new string[] { "oc" }, false);
 		}
 
 		/// <summary>
@@ -506,7 +506,7 @@ namespace NLanguageTag
 
 		private static class HepburnCache
 		{
-			public static readonly Variant Instance = new Variant("hepburn", new string[] { "ja-Latn" }, false);
+			public static readonly Variant Instance = new Variant("hepburn", VariantCode.Hepburn, new string[] { "ja-Latn" }, false);
 		}
 
 		/// <summary>
@@ -519,7 +519,7 @@ namespace NLanguageTag
 
 		private static class HeplocCache
 		{
-			public static readonly Variant Instance = new Variant("heploc", new string[] { "ja-Latn-hepburn" }, true);
+			public static readonly Variant Instance = new Variant("heploc", VariantCode.Heploc, new string[] { "ja-Latn-hepburn" }, true);
 		}
 
 		/// <summary>
@@ -531,7 +531,7 @@ namespace NLanguageTag
 
 		private static class HognorskCache
 		{
-			public static readonly Variant Instance = new Variant("hognorsk", new string[] { "nn" }, false);
+			public static readonly Variant Instance = new Variant("hognorsk", VariantCode.Hognorsk, new string[] { "nn" }, false);
 		}
 
 		/// <summary>
@@ -542,7 +542,7 @@ namespace NLanguageTag
 
 		private static class HsistemoCache
 		{
-			public static readonly Variant Instance = new Variant("hsistemo", new string[] { "eo" }, false);
+			public static readonly Variant Instance = new Variant("hsistemo", VariantCode.Hsistemo, new string[] { "eo" }, false);
 		}
 
 		/// <summary>
@@ -553,7 +553,7 @@ namespace NLanguageTag
 
 		private static class IjekavskCache
 		{
-			public static readonly Variant Instance = new Variant("ijekavsk", new string[] { "sr", "sr-Latn", "sr-Cyrl" }, false);
+			public static readonly Variant Instance = new Variant("ijekavsk", VariantCode.Ijekavsk, new string[] { "sr", "sr-Latn", "sr-Cyrl" }, false);
 		}
 
 		/// <summary>
@@ -564,7 +564,7 @@ namespace NLanguageTag
 
 		private static class ItihasaCache
 		{
-			public static readonly Variant Instance = new Variant("itihasa", new string[] { "sa" }, false);
+			public static readonly Variant Instance = new Variant("itihasa", VariantCode.Itihasa, new string[] { "sa" }, false);
 		}
 
 		/// <summary>
@@ -576,7 +576,7 @@ namespace NLanguageTag
 
 		private static class IvanchovCache
 		{
-			public static readonly Variant Instance = new Variant("ivanchov", new string[] { "bg" }, false);
+			public static readonly Variant Instance = new Variant("ivanchov", VariantCode.Ivanchov, new string[] { "bg" }, false);
 		}
 
 		/// <summary>
@@ -588,7 +588,7 @@ namespace NLanguageTag
 
 		private static class JauerCache
 		{
-			public static readonly Variant Instance = new Variant("jauer", new string[] { "rm" }, false);
+			public static readonly Variant Instance = new Variant("jauer", VariantCode.Jauer, new string[] { "rm" }, false);
 		}
 
 		/// <summary>
@@ -600,7 +600,7 @@ namespace NLanguageTag
 
 		private static class JyutpingCache
 		{
-			public static readonly Variant Instance = new Variant("jyutping", new string[] { "yue" }, false);
+			public static readonly Variant Instance = new Variant("jyutping", VariantCode.Jyutping, new string[] { "yue" }, false);
 		}
 
 		/// <summary>
@@ -611,7 +611,7 @@ namespace NLanguageTag
 
 		private static class KkcorCache
 		{
-			public static readonly Variant Instance = new Variant("kkcor", new string[] { "kw" }, false);
+			public static readonly Variant Instance = new Variant("kkcor", VariantCode.Kkcor, new string[] { "kw" }, false);
 		}
 
 		/// <summary>
@@ -623,7 +623,7 @@ namespace NLanguageTag
 
 		private static class KociewieCache
 		{
-			public static readonly Variant Instance = new Variant("kociewie", new string[] { "pl" }, false);
+			public static readonly Variant Instance = new Variant("kociewie", VariantCode.Kociewie, new string[] { "pl" }, false);
 		}
 
 		/// <summary>
@@ -635,7 +635,7 @@ namespace NLanguageTag
 
 		private static class KscorCache
 		{
-			public static readonly Variant Instance = new Variant("kscor", new string[] { "kw" }, false);
+			public static readonly Variant Instance = new Variant("kscor", VariantCode.Kscor, new string[] { "kw" }, false);
 		}
 
 		/// <summary>
@@ -646,7 +646,7 @@ namespace NLanguageTag
 
 		private static class LaukikaCache
 		{
-			public static readonly Variant Instance = new Variant("laukika", new string[] { "sa" }, false);
+			public static readonly Variant Instance = new Variant("laukika", VariantCode.Laukika, new string[] { "sa" }, false);
 		}
 
 		/// <summary>
@@ -658,7 +658,7 @@ namespace NLanguageTag
 
 		private static class LemosinCache
 		{
-			public static readonly Variant Instance = new Variant("lemosin", new string[] { "oc" }, false);
+			public static readonly Variant Instance = new Variant("lemosin", VariantCode.Lemosin, new string[] { "oc" }, false);
 		}
 
 		/// <summary>
@@ -670,7 +670,7 @@ namespace NLanguageTag
 
 		private static class LengadocCache
 		{
-			public static readonly Variant Instance = new Variant("lengadoc", new string[] { "oc" }, false);
+			public static readonly Variant Instance = new Variant("lengadoc", VariantCode.Lengadoc, new string[] { "oc" }, false);
 		}
 
 		/// <summary>
@@ -683,7 +683,7 @@ namespace NLanguageTag
 
 		private static class LipawCache
 		{
-			public static readonly Variant Instance = new Variant("lipaw", new string[] { "sl-rozaj" }, false);
+			public static readonly Variant Instance = new Variant("lipaw", VariantCode.Lipaw, new string[] { "sl-rozaj" }, false);
 		}
 
 		/// <summary>
@@ -695,7 +695,7 @@ namespace NLanguageTag
 
 		private static class Luna1918Cache
 		{
-			public static readonly Variant Instance = new Variant("luna1918", new string[] { "ru" }, false);
+			public static readonly Variant Instance = new Variant("luna1918", VariantCode.Luna1918, new string[] { "ru" }, false);
 		}
 
 		/// <summary>
@@ -707,7 +707,7 @@ namespace NLanguageTag
 
 		private static class MetelkoCache
 		{
-			public static readonly Variant Instance = new Variant("metelko", new string[] { "sl" }, false);
+			public static readonly Variant Instance = new Variant("metelko", VariantCode.Metelko, new string[] { "sl" }, false);
 		}
 
 		/// <summary>
@@ -718,7 +718,7 @@ namespace NLanguageTag
 
 		private static class MonotonCache
 		{
-			public static readonly Variant Instance = new Variant("monoton", new string[] { "el" }, false);
+			public static readonly Variant Instance = new Variant("monoton", VariantCode.Monoton, new string[] { "el" }, false);
 		}
 
 		/// <summary>
@@ -731,7 +731,7 @@ namespace NLanguageTag
 
 		private static class NdyukaCache
 		{
-			public static readonly Variant Instance = new Variant("ndyuka", new string[] { "djk" }, false);
+			public static readonly Variant Instance = new Variant("ndyuka", VariantCode.Ndyuka, new string[] { "djk" }, false);
 		}
 
 		/// <summary>
@@ -743,7 +743,7 @@ namespace NLanguageTag
 
 		private static class NedisCache
 		{
-			public static readonly Variant Instance = new Variant("nedis", new string[] { "sl" }, false);
+			public static readonly Variant Instance = new Variant("nedis", VariantCode.Nedis, new string[] { "sl" }, false);
 		}
 
 		/// <summary>
@@ -754,7 +754,7 @@ namespace NLanguageTag
 
 		private static class NewfoundCache
 		{
-			public static readonly Variant Instance = new Variant("newfound", new string[] { "en-CA" }, false);
+			public static readonly Variant Instance = new Variant("newfound", VariantCode.Newfound, new string[] { "en-CA" }, false);
 		}
 
 		/// <summary>
@@ -766,7 +766,7 @@ namespace NLanguageTag
 
 		private static class NicardCache
 		{
-			public static readonly Variant Instance = new Variant("nicard", new string[] { "oc" }, false);
+			public static readonly Variant Instance = new Variant("nicard", VariantCode.Nicard, new string[] { "oc" }, false);
 		}
 
 		/// <summary>
@@ -779,7 +779,7 @@ namespace NLanguageTag
 
 		private static class NjivaCache
 		{
-			public static readonly Variant Instance = new Variant("njiva", new string[] { "sl-rozaj" }, false);
+			public static readonly Variant Instance = new Variant("njiva", VariantCode.Njiva, new string[] { "sl-rozaj" }, false);
 		}
 
 		/// <summary>
@@ -796,7 +796,7 @@ namespace NLanguageTag
 
 		private static class NulikCache
 		{
-			public static readonly Variant Instance = new Variant("nulik", new string[] { "vo" }, false);
+			public static readonly Variant Instance = new Variant("nulik", VariantCode.Nulik, new string[] { "vo" }, false);
 		}
 
 		/// <summary>
@@ -809,7 +809,7 @@ namespace NLanguageTag
 
 		private static class OsojsCache
 		{
-			public static readonly Variant Instance = new Variant("osojs", new string[] { "sl-rozaj" }, false);
+			public static readonly Variant Instance = new Variant("osojs", VariantCode.Osojs, new string[] { "sl-rozaj" }, false);
 		}
 
 		/// <summary>
@@ -820,7 +820,7 @@ namespace NLanguageTag
 
 		private static class OxendictCache
 		{
-			public static readonly Variant Instance = new Variant("oxendict", new string[] { "en" }, false);
+			public static readonly Variant Instance = new Variant("oxendict", VariantCode.Oxendict, new string[] { "en" }, false);
 		}
 
 		/// <summary>
@@ -831,7 +831,7 @@ namespace NLanguageTag
 
 		private static class Pahawh2Cache
 		{
-			public static readonly Variant Instance = new Variant("pahawh2", new string[] { "mww", "hnj" }, false);
+			public static readonly Variant Instance = new Variant("pahawh2", VariantCode.Pahawh2, new string[] { "mww", "hnj" }, false);
 		}
 
 		/// <summary>
@@ -842,7 +842,7 @@ namespace NLanguageTag
 
 		private static class Pahawh3Cache
 		{
-			public static readonly Variant Instance = new Variant("pahawh3", new string[] { "mww", "hnj" }, false);
+			public static readonly Variant Instance = new Variant("pahawh3", VariantCode.Pahawh3, new string[] { "mww", "hnj" }, false);
 		}
 
 		/// <summary>
@@ -853,7 +853,7 @@ namespace NLanguageTag
 
 		private static class Pahawh4Cache
 		{
-			public static readonly Variant Instance = new Variant("pahawh4", new string[] { "mww", "hnj" }, false);
+			public static readonly Variant Instance = new Variant("pahawh4", VariantCode.Pahawh4, new string[] { "mww", "hnj" }, false);
 		}
 
 		/// <summary>
@@ -865,7 +865,7 @@ namespace NLanguageTag
 
 		private static class PamakaCache
 		{
-			public static readonly Variant Instance = new Variant("pamaka", new string[] { "djk" }, false);
+			public static readonly Variant Instance = new Variant("pamaka", VariantCode.Pamaka, new string[] { "djk" }, false);
 		}
 
 		/// <summary>
@@ -877,7 +877,7 @@ namespace NLanguageTag
 
 		private static class Petr1708Cache
 		{
-			public static readonly Variant Instance = new Variant("petr1708", new string[] { "ru" }, false);
+			public static readonly Variant Instance = new Variant("petr1708", VariantCode.Petr1708, new string[] { "ru" }, false);
 		}
 
 		/// <summary>
@@ -888,7 +888,7 @@ namespace NLanguageTag
 
 		private static class PinyinCache
 		{
-			public static readonly Variant Instance = new Variant("pinyin", new string[] { "zh-Latn", "bo-Latn" }, false);
+			public static readonly Variant Instance = new Variant("pinyin", VariantCode.Pinyin, new string[] { "zh-Latn", "bo-Latn" }, false);
 		}
 
 		/// <summary>
@@ -899,7 +899,7 @@ namespace NLanguageTag
 
 		private static class PolytonCache
 		{
-			public static readonly Variant Instance = new Variant("polyton", new string[] { "el" }, false);
+			public static readonly Variant Instance = new Variant("polyton", VariantCode.Polyton, new string[] { "el" }, false);
 		}
 
 		/// <summary>
@@ -911,7 +911,7 @@ namespace NLanguageTag
 
 		private static class ProvencCache
 		{
-			public static readonly Variant Instance = new Variant("provenc", new string[] { "oc" }, false);
+			public static readonly Variant Instance = new Variant("provenc", VariantCode.Provenc, new string[] { "oc" }, false);
 		}
 
 		/// <summary>
@@ -923,7 +923,7 @@ namespace NLanguageTag
 
 		private static class PuterCache
 		{
-			public static readonly Variant Instance = new Variant("puter", new string[] { "rm" }, false);
+			public static readonly Variant Instance = new Variant("puter", VariantCode.Puter, new string[] { "rm" }, false);
 		}
 
 		/// <summary>
@@ -937,7 +937,7 @@ namespace NLanguageTag
 
 		private static class RigikCache
 		{
-			public static readonly Variant Instance = new Variant("rigik", new string[] { "vo" }, false);
+			public static readonly Variant Instance = new Variant("rigik", VariantCode.Rigik, new string[] { "vo" }, false);
 		}
 
 		/// <summary>
@@ -950,7 +950,7 @@ namespace NLanguageTag
 
 		private static class RozajCache
 		{
-			public static readonly Variant Instance = new Variant("rozaj", new string[] { "sl" }, false);
+			public static readonly Variant Instance = new Variant("rozaj", VariantCode.Rozaj, new string[] { "sl" }, false);
 		}
 
 		/// <summary>
@@ -962,7 +962,7 @@ namespace NLanguageTag
 
 		private static class RumgrCache
 		{
-			public static readonly Variant Instance = new Variant("rumgr", new string[] { "rm" }, false);
+			public static readonly Variant Instance = new Variant("rumgr", VariantCode.Rumgr, new string[] { "rm" }, false);
 		}
 
 		/// <summary>
@@ -973,7 +973,7 @@ namespace NLanguageTag
 
 		private static class ScotlandCache
 		{
-			public static readonly Variant Instance = new Variant("scotland", new string[] { "en" }, false);
+			public static readonly Variant Instance = new Variant("scotland", VariantCode.Scotland, new string[] { "en" }, false);
 		}
 
 		/// <summary>
@@ -985,7 +985,7 @@ namespace NLanguageTag
 
 		private static class ScouseCache
 		{
-			public static readonly Variant Instance = new Variant("scouse", new string[] { "en" }, false);
+			public static readonly Variant Instance = new Variant("scouse", VariantCode.Scouse, new string[] { "en" }, false);
 		}
 
 		/// <summary>
@@ -996,7 +996,7 @@ namespace NLanguageTag
 
 		private static class SimpleCache
 		{
-			public static readonly Variant Instance = new Variant("simple", new string[] {  }, false);
+			public static readonly Variant Instance = new Variant("simple", VariantCode.Simple, new string[] {  }, false);
 		}
 
 		/// <summary>
@@ -1009,7 +1009,7 @@ namespace NLanguageTag
 
 		private static class SolbaCache
 		{
-			public static readonly Variant Instance = new Variant("solba", new string[] { "sl-rozaj" }, false);
+			public static readonly Variant Instance = new Variant("solba", VariantCode.Solba, new string[] { "sl-rozaj" }, false);
 		}
 
 		/// <summary>
@@ -1021,7 +1021,7 @@ namespace NLanguageTag
 
 		private static class SotavCache
 		{
-			public static readonly Variant Instance = new Variant("sotav", new string[] { "kea" }, false);
+			public static readonly Variant Instance = new Variant("sotav", VariantCode.Sotav, new string[] { "kea" }, false);
 		}
 
 		/// <summary>
@@ -1033,7 +1033,7 @@ namespace NLanguageTag
 
 		private static class SpanglisCache
 		{
-			public static readonly Variant Instance = new Variant("spanglis", new string[] { "en", "es" }, false);
+			public static readonly Variant Instance = new Variant("spanglis", VariantCode.Spanglis, new string[] { "en", "es" }, false);
 		}
 
 		/// <summary>
@@ -1045,7 +1045,7 @@ namespace NLanguageTag
 
 		private static class SurmiranCache
 		{
-			public static readonly Variant Instance = new Variant("surmiran", new string[] { "rm" }, false);
+			public static readonly Variant Instance = new Variant("surmiran", VariantCode.Surmiran, new string[] { "rm" }, false);
 		}
 
 		/// <summary>
@@ -1057,7 +1057,7 @@ namespace NLanguageTag
 
 		private static class SursilvCache
 		{
-			public static readonly Variant Instance = new Variant("sursilv", new string[] { "rm" }, false);
+			public static readonly Variant Instance = new Variant("sursilv", VariantCode.Sursilv, new string[] { "rm" }, false);
 		}
 
 		/// <summary>
@@ -1069,7 +1069,7 @@ namespace NLanguageTag
 
 		private static class SutsilvCache
 		{
-			public static readonly Variant Instance = new Variant("sutsilv", new string[] { "rm" }, false);
+			public static readonly Variant Instance = new Variant("sutsilv", VariantCode.Sutsilv, new string[] { "rm" }, false);
 		}
 
 		/// <summary>
@@ -1081,7 +1081,7 @@ namespace NLanguageTag
 
 		private static class TaraskCache
 		{
-			public static readonly Variant Instance = new Variant("tarask", new string[] { "be" }, false);
+			public static readonly Variant Instance = new Variant("tarask", VariantCode.Tarask, new string[] { "be" }, false);
 		}
 
 		/// <summary>
@@ -1092,7 +1092,7 @@ namespace NLanguageTag
 
 		private static class UccorCache
 		{
-			public static readonly Variant Instance = new Variant("uccor", new string[] { "kw" }, false);
+			public static readonly Variant Instance = new Variant("uccor", VariantCode.Uccor, new string[] { "kw" }, false);
 		}
 
 		/// <summary>
@@ -1103,7 +1103,7 @@ namespace NLanguageTag
 
 		private static class UcrcorCache
 		{
-			public static readonly Variant Instance = new Variant("ucrcor", new string[] { "kw" }, false);
+			public static readonly Variant Instance = new Variant("ucrcor", VariantCode.Ucrcor, new string[] { "kw" }, false);
 		}
 
 		/// <summary>
@@ -1114,7 +1114,7 @@ namespace NLanguageTag
 
 		private static class UlsterCache
 		{
-			public static readonly Variant Instance = new Variant("ulster", new string[] { "sco" }, false);
+			public static readonly Variant Instance = new Variant("ulster", VariantCode.Ulster, new string[] { "sco" }, false);
 		}
 
 		/// <summary>
@@ -1125,7 +1125,7 @@ namespace NLanguageTag
 
 		private static class UnifonCache
 		{
-			public static readonly Variant Instance = new Variant("unifon", new string[] { "en", "hup", "kyh", "tol", "yur" }, false);
+			public static readonly Variant Instance = new Variant("unifon", VariantCode.Unifon, new string[] { "en", "hup", "kyh", "tol", "yur" }, false);
 		}
 
 		/// <summary>
@@ -1137,7 +1137,7 @@ namespace NLanguageTag
 
 		private static class VaidikaCache
 		{
-			public static readonly Variant Instance = new Variant("vaidika", new string[] { "sa" }, false);
+			public static readonly Variant Instance = new Variant("vaidika", VariantCode.Vaidika, new string[] { "sa" }, false);
 		}
 
 		/// <summary>
@@ -1149,7 +1149,7 @@ namespace NLanguageTag
 
 		private static class ValenciaCache
 		{
-			public static readonly Variant Instance = new Variant("valencia", new string[] { "ca" }, false);
+			public static readonly Variant Instance = new Variant("valencia", VariantCode.Valencia, new string[] { "ca" }, false);
 		}
 
 		/// <summary>
@@ -1161,7 +1161,7 @@ namespace NLanguageTag
 
 		private static class ValladerCache
 		{
-			public static readonly Variant Instance = new Variant("vallader", new string[] { "rm" }, false);
+			public static readonly Variant Instance = new Variant("vallader", VariantCode.Vallader, new string[] { "rm" }, false);
 		}
 
 		/// <summary>
@@ -1173,7 +1173,7 @@ namespace NLanguageTag
 
 		private static class VivaraupCache
 		{
-			public static readonly Variant Instance = new Variant("vivaraup", new string[] { "oc" }, false);
+			public static readonly Variant Instance = new Variant("vivaraup", VariantCode.Vivaraup, new string[] { "oc" }, false);
 		}
 
 		/// <summary>
@@ -1184,7 +1184,7 @@ namespace NLanguageTag
 
 		private static class WadegileCache
 		{
-			public static readonly Variant Instance = new Variant("wadegile", new string[] { "zh-Latn" }, false);
+			public static readonly Variant Instance = new Variant("wadegile", VariantCode.Wadegile, new string[] { "zh-Latn" }, false);
 		}
 
 		/// <summary>
@@ -1195,7 +1195,7 @@ namespace NLanguageTag
 
 		private static class XsistemoCache
 		{
-			public static readonly Variant Instance = new Variant("xsistemo", new string[] { "eo" }, false);
+			public static readonly Variant Instance = new Variant("xsistemo", VariantCode.Xsistemo, new string[] { "eo" }, false);
 		}
 
 	}

@@ -16,9 +16,10 @@ namespace NLanguageTag
 		private static readonly Lazy<IReadOnlyCollection<LanguageTag>> _emptyPrefixes =
 			new Lazy<IReadOnlyCollection<LanguageTag>>(() => Enumerable.Empty<LanguageTag>().ToList());
 
-		private Variant(string tag, string[] prefixes, bool deprecated)
+		private Variant(string tag, VariantCode enumCode, string[] prefixes, bool deprecated)
 		{
 			_tag = tag;
+			EnumCode = enumCode;
 			_lazyPrefixes = prefixes.Any()
 				? new Lazy<IReadOnlyCollection<LanguageTag>>(() => prefixes.Select(LanguageTag.Parse).ToList())
 				: _emptyPrefixes;
@@ -34,6 +35,16 @@ namespace NLanguageTag
 		/// Subtag is deprecated
 		/// </summary>
 		public bool Deprecated { get; }
+
+		/// <summary>
+		/// subtag as text
+		/// </summary>
+		public string TextCode => _tag;
+
+		/// <summary>
+		/// Enum code to use as constants in C#
+		/// </summary>
+		public VariantCode EnumCode { get; }
 
 		/// <inheritdoc />
 		public override string ToString()

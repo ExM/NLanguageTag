@@ -1,5 +1,6 @@
 using System;
 
+#pragma warning disable 618
 namespace NLanguageTag
 {
 	public partial class Region
@@ -12,7 +13,7 @@ namespace NLanguageTag
 
 		private static class M001Cache
 		{
-			public static readonly Region Instance = new Region("001", false, false);
+			public static readonly Region Instance = new Region("001",  RegionCode.M001, false);
 		}
 
 		/// <summary>
@@ -23,7 +24,7 @@ namespace NLanguageTag
 
 		private static class M002Cache
 		{
-			public static readonly Region Instance = new Region("002", false, false);
+			public static readonly Region Instance = new Region("002",  RegionCode.M002, false);
 		}
 
 		/// <summary>
@@ -35,7 +36,7 @@ namespace NLanguageTag
 
 		private static class M003Cache
 		{
-			public static readonly Region Instance = new Region("003", false, false);
+			public static readonly Region Instance = new Region("003",  RegionCode.M003, false);
 		}
 
 		/// <summary>
@@ -46,7 +47,7 @@ namespace NLanguageTag
 
 		private static class M005Cache
 		{
-			public static readonly Region Instance = new Region("005", false, false);
+			public static readonly Region Instance = new Region("005",  RegionCode.M005, false);
 		}
 
 		/// <summary>
@@ -57,7 +58,7 @@ namespace NLanguageTag
 
 		private static class M009Cache
 		{
-			public static readonly Region Instance = new Region("009", false, false);
+			public static readonly Region Instance = new Region("009",  RegionCode.M009, false);
 		}
 
 		/// <summary>
@@ -68,7 +69,7 @@ namespace NLanguageTag
 
 		private static class M011Cache
 		{
-			public static readonly Region Instance = new Region("011", false, false);
+			public static readonly Region Instance = new Region("011",  RegionCode.M011, false);
 		}
 
 		/// <summary>
@@ -79,7 +80,7 @@ namespace NLanguageTag
 
 		private static class M013Cache
 		{
-			public static readonly Region Instance = new Region("013", false, false);
+			public static readonly Region Instance = new Region("013",  RegionCode.M013, false);
 		}
 
 		/// <summary>
@@ -90,7 +91,7 @@ namespace NLanguageTag
 
 		private static class M014Cache
 		{
-			public static readonly Region Instance = new Region("014", false, false);
+			public static readonly Region Instance = new Region("014",  RegionCode.M014, false);
 		}
 
 		/// <summary>
@@ -101,7 +102,7 @@ namespace NLanguageTag
 
 		private static class M015Cache
 		{
-			public static readonly Region Instance = new Region("015", false, false);
+			public static readonly Region Instance = new Region("015",  RegionCode.M015, false);
 		}
 
 		/// <summary>
@@ -112,7 +113,7 @@ namespace NLanguageTag
 
 		private static class M017Cache
 		{
-			public static readonly Region Instance = new Region("017", false, false);
+			public static readonly Region Instance = new Region("017",  RegionCode.M017, false);
 		}
 
 		/// <summary>
@@ -123,7 +124,7 @@ namespace NLanguageTag
 
 		private static class M018Cache
 		{
-			public static readonly Region Instance = new Region("018", false, false);
+			public static readonly Region Instance = new Region("018",  RegionCode.M018, false);
 		}
 
 		/// <summary>
@@ -134,7 +135,7 @@ namespace NLanguageTag
 
 		private static class M019Cache
 		{
-			public static readonly Region Instance = new Region("019", false, false);
+			public static readonly Region Instance = new Region("019",  RegionCode.M019, false);
 		}
 
 		/// <summary>
@@ -146,7 +147,7 @@ namespace NLanguageTag
 
 		private static class M021Cache
 		{
-			public static readonly Region Instance = new Region("021", false, false);
+			public static readonly Region Instance = new Region("021",  RegionCode.M021, false);
 		}
 
 		/// <summary>
@@ -157,7 +158,7 @@ namespace NLanguageTag
 
 		private static class M029Cache
 		{
-			public static readonly Region Instance = new Region("029", false, false);
+			public static readonly Region Instance = new Region("029",  RegionCode.M029, false);
 		}
 
 		/// <summary>
@@ -168,7 +169,7 @@ namespace NLanguageTag
 
 		private static class M030Cache
 		{
-			public static readonly Region Instance = new Region("030", false, false);
+			public static readonly Region Instance = new Region("030",  RegionCode.M030, false);
 		}
 
 		/// <summary>
@@ -179,7 +180,7 @@ namespace NLanguageTag
 
 		private static class M034Cache
 		{
-			public static readonly Region Instance = new Region("034", false, false);
+			public static readonly Region Instance = new Region("034",  RegionCode.M034, false);
 		}
 
 		/// <summary>
@@ -190,7 +191,7 @@ namespace NLanguageTag
 
 		private static class M035Cache
 		{
-			public static readonly Region Instance = new Region("035", false, false);
+			public static readonly Region Instance = new Region("035",  RegionCode.M035, false);
 		}
 
 		/// <summary>
@@ -201,7 +202,7 @@ namespace NLanguageTag
 
 		private static class M039Cache
 		{
-			public static readonly Region Instance = new Region("039", false, false);
+			public static readonly Region Instance = new Region("039",  RegionCode.M039, false);
 		}
 
 		/// <summary>
@@ -212,7 +213,7 @@ namespace NLanguageTag
 
 		private static class M053Cache
 		{
-			public static readonly Region Instance = new Region("053", false, false);
+			public static readonly Region Instance = new Region("053",  RegionCode.M053, false);
 		}
 
 		/// <summary>
@@ -223,7 +224,7 @@ namespace NLanguageTag
 
 		private static class M054Cache
 		{
-			public static readonly Region Instance = new Region("054", false, false);
+			public static readonly Region Instance = new Region("054",  RegionCode.M054, false);
 		}
 
 		/// <summary>
@@ -234,7 +235,7 @@ namespace NLanguageTag
 
 		private static class M057Cache
 		{
-			public static readonly Region Instance = new Region("057", false, false);
+			public static readonly Region Instance = new Region("057",  RegionCode.M057, false);
 		}
 
 		/// <summary>
@@ -245,7 +246,7 @@ namespace NLanguageTag
 
 		private static class M061Cache
 		{
-			public static readonly Region Instance = new Region("061", false, false);
+			public static readonly Region Instance = new Region("061",  RegionCode.M061, false);
 		}
 
 		/// <summary>
@@ -256,7 +257,7 @@ namespace NLanguageTag
 
 		private static class M142Cache
 		{
-			public static readonly Region Instance = new Region("142", false, false);
+			public static readonly Region Instance = new Region("142",  RegionCode.M142, false);
 		}
 
 		/// <summary>
@@ -267,7 +268,7 @@ namespace NLanguageTag
 
 		private static class M143Cache
 		{
-			public static readonly Region Instance = new Region("143", false, false);
+			public static readonly Region Instance = new Region("143",  RegionCode.M143, false);
 		}
 
 		/// <summary>
@@ -278,7 +279,7 @@ namespace NLanguageTag
 
 		private static class M145Cache
 		{
-			public static readonly Region Instance = new Region("145", false, false);
+			public static readonly Region Instance = new Region("145",  RegionCode.M145, false);
 		}
 
 		/// <summary>
@@ -289,7 +290,7 @@ namespace NLanguageTag
 
 		private static class M150Cache
 		{
-			public static readonly Region Instance = new Region("150", false, false);
+			public static readonly Region Instance = new Region("150",  RegionCode.M150, false);
 		}
 
 		/// <summary>
@@ -300,7 +301,7 @@ namespace NLanguageTag
 
 		private static class M151Cache
 		{
-			public static readonly Region Instance = new Region("151", false, false);
+			public static readonly Region Instance = new Region("151",  RegionCode.M151, false);
 		}
 
 		/// <summary>
@@ -311,7 +312,7 @@ namespace NLanguageTag
 
 		private static class M154Cache
 		{
-			public static readonly Region Instance = new Region("154", false, false);
+			public static readonly Region Instance = new Region("154",  RegionCode.M154, false);
 		}
 
 		/// <summary>
@@ -322,7 +323,7 @@ namespace NLanguageTag
 
 		private static class M155Cache
 		{
-			public static readonly Region Instance = new Region("155", false, false);
+			public static readonly Region Instance = new Region("155",  RegionCode.M155, false);
 		}
 
 		/// <summary>
@@ -333,7 +334,7 @@ namespace NLanguageTag
 
 		private static class M202Cache
 		{
-			public static readonly Region Instance = new Region("202", false, false);
+			public static readonly Region Instance = new Region("202",  RegionCode.M202, false);
 		}
 
 		/// <summary>
@@ -344,7 +345,7 @@ namespace NLanguageTag
 
 		private static class M419Cache
 		{
-			public static readonly Region Instance = new Region("419", false, false);
+			public static readonly Region Instance = new Region("419",  RegionCode.M419, false);
 		}
 
 		/// <summary>
@@ -355,7 +356,7 @@ namespace NLanguageTag
 
 		private static class ACCache
 		{
-			public static readonly Region Instance = new Region("AC", false, false);
+			public static readonly Region Instance = new Region("AC",  RegionCode.AC, false);
 		}
 
 		/// <summary>
@@ -366,7 +367,7 @@ namespace NLanguageTag
 
 		private static class ADCache
 		{
-			public static readonly Region Instance = new Region("AD", false, false);
+			public static readonly Region Instance = new Region("AD",  RegionCode.AD, false);
 		}
 
 		/// <summary>
@@ -377,7 +378,7 @@ namespace NLanguageTag
 
 		private static class AECache
 		{
-			public static readonly Region Instance = new Region("AE", false, false);
+			public static readonly Region Instance = new Region("AE",  RegionCode.AE, false);
 		}
 
 		/// <summary>
@@ -388,7 +389,7 @@ namespace NLanguageTag
 
 		private static class AFCache
 		{
-			public static readonly Region Instance = new Region("AF", false, false);
+			public static readonly Region Instance = new Region("AF",  RegionCode.AF, false);
 		}
 
 		/// <summary>
@@ -399,7 +400,7 @@ namespace NLanguageTag
 
 		private static class AGCache
 		{
-			public static readonly Region Instance = new Region("AG", false, false);
+			public static readonly Region Instance = new Region("AG",  RegionCode.AG, false);
 		}
 
 		/// <summary>
@@ -410,7 +411,7 @@ namespace NLanguageTag
 
 		private static class AICache
 		{
-			public static readonly Region Instance = new Region("AI", false, false);
+			public static readonly Region Instance = new Region("AI",  RegionCode.AI, false);
 		}
 
 		/// <summary>
@@ -421,7 +422,7 @@ namespace NLanguageTag
 
 		private static class ALCache
 		{
-			public static readonly Region Instance = new Region("AL", false, false);
+			public static readonly Region Instance = new Region("AL",  RegionCode.AL, false);
 		}
 
 		/// <summary>
@@ -432,7 +433,7 @@ namespace NLanguageTag
 
 		private static class AMCache
 		{
-			public static readonly Region Instance = new Region("AM", false, false);
+			public static readonly Region Instance = new Region("AM",  RegionCode.AM, false);
 		}
 
 		/// <summary>
@@ -445,7 +446,7 @@ namespace NLanguageTag
 
 		private static class ANCache
 		{
-			public static readonly Region Instance = new Region("AN", true, false);
+			public static readonly Region Instance = new Region("AN",  RegionCode.AN, true);
 		}
 
 		/// <summary>
@@ -456,7 +457,7 @@ namespace NLanguageTag
 
 		private static class AOCache
 		{
-			public static readonly Region Instance = new Region("AO", false, false);
+			public static readonly Region Instance = new Region("AO",  RegionCode.AO, false);
 		}
 
 		/// <summary>
@@ -467,7 +468,7 @@ namespace NLanguageTag
 
 		private static class AQCache
 		{
-			public static readonly Region Instance = new Region("AQ", false, false);
+			public static readonly Region Instance = new Region("AQ",  RegionCode.AQ, false);
 		}
 
 		/// <summary>
@@ -478,7 +479,7 @@ namespace NLanguageTag
 
 		private static class ARCache
 		{
-			public static readonly Region Instance = new Region("AR", false, false);
+			public static readonly Region Instance = new Region("AR",  RegionCode.AR, false);
 		}
 
 		/// <summary>
@@ -489,7 +490,7 @@ namespace NLanguageTag
 
 		private static class ASCache
 		{
-			public static readonly Region Instance = new Region("AS", false, false);
+			public static readonly Region Instance = new Region("AS",  RegionCode.AS, false);
 		}
 
 		/// <summary>
@@ -500,7 +501,7 @@ namespace NLanguageTag
 
 		private static class ATCache
 		{
-			public static readonly Region Instance = new Region("AT", false, false);
+			public static readonly Region Instance = new Region("AT",  RegionCode.AT, false);
 		}
 
 		/// <summary>
@@ -511,7 +512,7 @@ namespace NLanguageTag
 
 		private static class AUCache
 		{
-			public static readonly Region Instance = new Region("AU", false, false);
+			public static readonly Region Instance = new Region("AU",  RegionCode.AU, false);
 		}
 
 		/// <summary>
@@ -522,7 +523,7 @@ namespace NLanguageTag
 
 		private static class AWCache
 		{
-			public static readonly Region Instance = new Region("AW", false, false);
+			public static readonly Region Instance = new Region("AW",  RegionCode.AW, false);
 		}
 
 		/// <summary>
@@ -533,7 +534,7 @@ namespace NLanguageTag
 
 		private static class AXCache
 		{
-			public static readonly Region Instance = new Region("AX", false, false);
+			public static readonly Region Instance = new Region("AX",  RegionCode.AX, false);
 		}
 
 		/// <summary>
@@ -544,7 +545,7 @@ namespace NLanguageTag
 
 		private static class AZCache
 		{
-			public static readonly Region Instance = new Region("AZ", false, false);
+			public static readonly Region Instance = new Region("AZ",  RegionCode.AZ, false);
 		}
 
 		/// <summary>
@@ -555,7 +556,7 @@ namespace NLanguageTag
 
 		private static class BACache
 		{
-			public static readonly Region Instance = new Region("BA", false, false);
+			public static readonly Region Instance = new Region("BA",  RegionCode.BA, false);
 		}
 
 		/// <summary>
@@ -566,7 +567,7 @@ namespace NLanguageTag
 
 		private static class BBCache
 		{
-			public static readonly Region Instance = new Region("BB", false, false);
+			public static readonly Region Instance = new Region("BB",  RegionCode.BB, false);
 		}
 
 		/// <summary>
@@ -577,7 +578,7 @@ namespace NLanguageTag
 
 		private static class BDCache
 		{
-			public static readonly Region Instance = new Region("BD", false, false);
+			public static readonly Region Instance = new Region("BD",  RegionCode.BD, false);
 		}
 
 		/// <summary>
@@ -588,7 +589,7 @@ namespace NLanguageTag
 
 		private static class BECache
 		{
-			public static readonly Region Instance = new Region("BE", false, false);
+			public static readonly Region Instance = new Region("BE",  RegionCode.BE, false);
 		}
 
 		/// <summary>
@@ -599,7 +600,7 @@ namespace NLanguageTag
 
 		private static class BFCache
 		{
-			public static readonly Region Instance = new Region("BF", false, false);
+			public static readonly Region Instance = new Region("BF",  RegionCode.BF, false);
 		}
 
 		/// <summary>
@@ -610,7 +611,7 @@ namespace NLanguageTag
 
 		private static class BGCache
 		{
-			public static readonly Region Instance = new Region("BG", false, false);
+			public static readonly Region Instance = new Region("BG",  RegionCode.BG, false);
 		}
 
 		/// <summary>
@@ -621,7 +622,7 @@ namespace NLanguageTag
 
 		private static class BHCache
 		{
-			public static readonly Region Instance = new Region("BH", false, false);
+			public static readonly Region Instance = new Region("BH",  RegionCode.BH, false);
 		}
 
 		/// <summary>
@@ -632,7 +633,7 @@ namespace NLanguageTag
 
 		private static class BICache
 		{
-			public static readonly Region Instance = new Region("BI", false, false);
+			public static readonly Region Instance = new Region("BI",  RegionCode.BI, false);
 		}
 
 		/// <summary>
@@ -643,7 +644,7 @@ namespace NLanguageTag
 
 		private static class BJCache
 		{
-			public static readonly Region Instance = new Region("BJ", false, false);
+			public static readonly Region Instance = new Region("BJ",  RegionCode.BJ, false);
 		}
 
 		/// <summary>
@@ -654,7 +655,7 @@ namespace NLanguageTag
 
 		private static class BLCache
 		{
-			public static readonly Region Instance = new Region("BL", false, false);
+			public static readonly Region Instance = new Region("BL",  RegionCode.BL, false);
 		}
 
 		/// <summary>
@@ -665,7 +666,7 @@ namespace NLanguageTag
 
 		private static class BMCache
 		{
-			public static readonly Region Instance = new Region("BM", false, false);
+			public static readonly Region Instance = new Region("BM",  RegionCode.BM, false);
 		}
 
 		/// <summary>
@@ -676,7 +677,7 @@ namespace NLanguageTag
 
 		private static class BNCache
 		{
-			public static readonly Region Instance = new Region("BN", false, false);
+			public static readonly Region Instance = new Region("BN",  RegionCode.BN, false);
 		}
 
 		/// <summary>
@@ -687,7 +688,7 @@ namespace NLanguageTag
 
 		private static class BOCache
 		{
-			public static readonly Region Instance = new Region("BO", false, false);
+			public static readonly Region Instance = new Region("BO",  RegionCode.BO, false);
 		}
 
 		/// <summary>
@@ -698,7 +699,7 @@ namespace NLanguageTag
 
 		private static class BQCache
 		{
-			public static readonly Region Instance = new Region("BQ", false, false);
+			public static readonly Region Instance = new Region("BQ",  RegionCode.BQ, false);
 		}
 
 		/// <summary>
@@ -709,7 +710,7 @@ namespace NLanguageTag
 
 		private static class BRCache
 		{
-			public static readonly Region Instance = new Region("BR", false, false);
+			public static readonly Region Instance = new Region("BR",  RegionCode.BR, false);
 		}
 
 		/// <summary>
@@ -720,7 +721,7 @@ namespace NLanguageTag
 
 		private static class BSCache
 		{
-			public static readonly Region Instance = new Region("BS", false, false);
+			public static readonly Region Instance = new Region("BS",  RegionCode.BS, false);
 		}
 
 		/// <summary>
@@ -731,7 +732,7 @@ namespace NLanguageTag
 
 		private static class BTCache
 		{
-			public static readonly Region Instance = new Region("BT", false, false);
+			public static readonly Region Instance = new Region("BT",  RegionCode.BT, false);
 		}
 
 		/// <summary>
@@ -743,7 +744,7 @@ namespace NLanguageTag
 
 		private static class BUCache
 		{
-			public static readonly Region Instance = new Region("BU", true, false);
+			public static readonly Region Instance = new Region("BU",  RegionCode.BU, true);
 		}
 
 		/// <summary>
@@ -754,7 +755,7 @@ namespace NLanguageTag
 
 		private static class BVCache
 		{
-			public static readonly Region Instance = new Region("BV", false, false);
+			public static readonly Region Instance = new Region("BV",  RegionCode.BV, false);
 		}
 
 		/// <summary>
@@ -765,7 +766,7 @@ namespace NLanguageTag
 
 		private static class BWCache
 		{
-			public static readonly Region Instance = new Region("BW", false, false);
+			public static readonly Region Instance = new Region("BW",  RegionCode.BW, false);
 		}
 
 		/// <summary>
@@ -776,7 +777,7 @@ namespace NLanguageTag
 
 		private static class BYCache
 		{
-			public static readonly Region Instance = new Region("BY", false, false);
+			public static readonly Region Instance = new Region("BY",  RegionCode.BY, false);
 		}
 
 		/// <summary>
@@ -787,7 +788,7 @@ namespace NLanguageTag
 
 		private static class BZCache
 		{
-			public static readonly Region Instance = new Region("BZ", false, false);
+			public static readonly Region Instance = new Region("BZ",  RegionCode.BZ, false);
 		}
 
 		/// <summary>
@@ -798,7 +799,7 @@ namespace NLanguageTag
 
 		private static class CACache
 		{
-			public static readonly Region Instance = new Region("CA", false, false);
+			public static readonly Region Instance = new Region("CA",  RegionCode.CA, false);
 		}
 
 		/// <summary>
@@ -809,7 +810,7 @@ namespace NLanguageTag
 
 		private static class CCCache
 		{
-			public static readonly Region Instance = new Region("CC", false, false);
+			public static readonly Region Instance = new Region("CC",  RegionCode.CC, false);
 		}
 
 		/// <summary>
@@ -820,7 +821,7 @@ namespace NLanguageTag
 
 		private static class CDCache
 		{
-			public static readonly Region Instance = new Region("CD", false, false);
+			public static readonly Region Instance = new Region("CD",  RegionCode.CD, false);
 		}
 
 		/// <summary>
@@ -831,7 +832,7 @@ namespace NLanguageTag
 
 		private static class CFCache
 		{
-			public static readonly Region Instance = new Region("CF", false, false);
+			public static readonly Region Instance = new Region("CF",  RegionCode.CF, false);
 		}
 
 		/// <summary>
@@ -842,7 +843,7 @@ namespace NLanguageTag
 
 		private static class CGCache
 		{
-			public static readonly Region Instance = new Region("CG", false, false);
+			public static readonly Region Instance = new Region("CG",  RegionCode.CG, false);
 		}
 
 		/// <summary>
@@ -853,7 +854,7 @@ namespace NLanguageTag
 
 		private static class CHCache
 		{
-			public static readonly Region Instance = new Region("CH", false, false);
+			public static readonly Region Instance = new Region("CH",  RegionCode.CH, false);
 		}
 
 		/// <summary>
@@ -864,7 +865,7 @@ namespace NLanguageTag
 
 		private static class CICache
 		{
-			public static readonly Region Instance = new Region("CI", false, false);
+			public static readonly Region Instance = new Region("CI",  RegionCode.CI, false);
 		}
 
 		/// <summary>
@@ -875,7 +876,7 @@ namespace NLanguageTag
 
 		private static class CKCache
 		{
-			public static readonly Region Instance = new Region("CK", false, false);
+			public static readonly Region Instance = new Region("CK",  RegionCode.CK, false);
 		}
 
 		/// <summary>
@@ -886,7 +887,7 @@ namespace NLanguageTag
 
 		private static class CLCache
 		{
-			public static readonly Region Instance = new Region("CL", false, false);
+			public static readonly Region Instance = new Region("CL",  RegionCode.CL, false);
 		}
 
 		/// <summary>
@@ -897,7 +898,7 @@ namespace NLanguageTag
 
 		private static class CMCache
 		{
-			public static readonly Region Instance = new Region("CM", false, false);
+			public static readonly Region Instance = new Region("CM",  RegionCode.CM, false);
 		}
 
 		/// <summary>
@@ -908,7 +909,7 @@ namespace NLanguageTag
 
 		private static class CNCache
 		{
-			public static readonly Region Instance = new Region("CN", false, false);
+			public static readonly Region Instance = new Region("CN",  RegionCode.CN, false);
 		}
 
 		/// <summary>
@@ -919,7 +920,7 @@ namespace NLanguageTag
 
 		private static class COCache
 		{
-			public static readonly Region Instance = new Region("CO", false, false);
+			public static readonly Region Instance = new Region("CO",  RegionCode.CO, false);
 		}
 
 		/// <summary>
@@ -930,7 +931,7 @@ namespace NLanguageTag
 
 		private static class CPCache
 		{
-			public static readonly Region Instance = new Region("CP", false, false);
+			public static readonly Region Instance = new Region("CP",  RegionCode.CP, false);
 		}
 
 		/// <summary>
@@ -941,7 +942,7 @@ namespace NLanguageTag
 
 		private static class CRCache
 		{
-			public static readonly Region Instance = new Region("CR", false, false);
+			public static readonly Region Instance = new Region("CR",  RegionCode.CR, false);
 		}
 
 		/// <summary>
@@ -954,7 +955,7 @@ namespace NLanguageTag
 
 		private static class CSCache
 		{
-			public static readonly Region Instance = new Region("CS", true, false);
+			public static readonly Region Instance = new Region("CS",  RegionCode.CS, true);
 		}
 
 		/// <summary>
@@ -965,7 +966,7 @@ namespace NLanguageTag
 
 		private static class CUCache
 		{
-			public static readonly Region Instance = new Region("CU", false, false);
+			public static readonly Region Instance = new Region("CU",  RegionCode.CU, false);
 		}
 
 		/// <summary>
@@ -977,7 +978,7 @@ namespace NLanguageTag
 
 		private static class CVCache
 		{
-			public static readonly Region Instance = new Region("CV", false, false);
+			public static readonly Region Instance = new Region("CV",  RegionCode.CV, false);
 		}
 
 		/// <summary>
@@ -988,7 +989,7 @@ namespace NLanguageTag
 
 		private static class CWCache
 		{
-			public static readonly Region Instance = new Region("CW", false, false);
+			public static readonly Region Instance = new Region("CW",  RegionCode.CW, false);
 		}
 
 		/// <summary>
@@ -999,7 +1000,7 @@ namespace NLanguageTag
 
 		private static class CXCache
 		{
-			public static readonly Region Instance = new Region("CX", false, false);
+			public static readonly Region Instance = new Region("CX",  RegionCode.CX, false);
 		}
 
 		/// <summary>
@@ -1010,7 +1011,7 @@ namespace NLanguageTag
 
 		private static class CYCache
 		{
-			public static readonly Region Instance = new Region("CY", false, false);
+			public static readonly Region Instance = new Region("CY",  RegionCode.CY, false);
 		}
 
 		/// <summary>
@@ -1022,7 +1023,7 @@ namespace NLanguageTag
 
 		private static class CZCache
 		{
-			public static readonly Region Instance = new Region("CZ", false, false);
+			public static readonly Region Instance = new Region("CZ",  RegionCode.CZ, false);
 		}
 
 		/// <summary>
@@ -1034,7 +1035,7 @@ namespace NLanguageTag
 
 		private static class DDCache
 		{
-			public static readonly Region Instance = new Region("DD", true, false);
+			public static readonly Region Instance = new Region("DD",  RegionCode.DD, true);
 		}
 
 		/// <summary>
@@ -1045,7 +1046,7 @@ namespace NLanguageTag
 
 		private static class DECache
 		{
-			public static readonly Region Instance = new Region("DE", false, false);
+			public static readonly Region Instance = new Region("DE",  RegionCode.DE, false);
 		}
 
 		/// <summary>
@@ -1056,7 +1057,7 @@ namespace NLanguageTag
 
 		private static class DGCache
 		{
-			public static readonly Region Instance = new Region("DG", false, false);
+			public static readonly Region Instance = new Region("DG",  RegionCode.DG, false);
 		}
 
 		/// <summary>
@@ -1067,7 +1068,7 @@ namespace NLanguageTag
 
 		private static class DJCache
 		{
-			public static readonly Region Instance = new Region("DJ", false, false);
+			public static readonly Region Instance = new Region("DJ",  RegionCode.DJ, false);
 		}
 
 		/// <summary>
@@ -1078,7 +1079,7 @@ namespace NLanguageTag
 
 		private static class DKCache
 		{
-			public static readonly Region Instance = new Region("DK", false, false);
+			public static readonly Region Instance = new Region("DK",  RegionCode.DK, false);
 		}
 
 		/// <summary>
@@ -1089,7 +1090,7 @@ namespace NLanguageTag
 
 		private static class DMCache
 		{
-			public static readonly Region Instance = new Region("DM", false, false);
+			public static readonly Region Instance = new Region("DM",  RegionCode.DM, false);
 		}
 
 		/// <summary>
@@ -1100,7 +1101,7 @@ namespace NLanguageTag
 
 		private static class DOCache
 		{
-			public static readonly Region Instance = new Region("DO", false, false);
+			public static readonly Region Instance = new Region("DO",  RegionCode.DO, false);
 		}
 
 		/// <summary>
@@ -1111,7 +1112,7 @@ namespace NLanguageTag
 
 		private static class DZCache
 		{
-			public static readonly Region Instance = new Region("DZ", false, false);
+			public static readonly Region Instance = new Region("DZ",  RegionCode.DZ, false);
 		}
 
 		/// <summary>
@@ -1122,7 +1123,7 @@ namespace NLanguageTag
 
 		private static class EACache
 		{
-			public static readonly Region Instance = new Region("EA", false, false);
+			public static readonly Region Instance = new Region("EA",  RegionCode.EA, false);
 		}
 
 		/// <summary>
@@ -1133,7 +1134,7 @@ namespace NLanguageTag
 
 		private static class ECCache
 		{
-			public static readonly Region Instance = new Region("EC", false, false);
+			public static readonly Region Instance = new Region("EC",  RegionCode.EC, false);
 		}
 
 		/// <summary>
@@ -1144,7 +1145,7 @@ namespace NLanguageTag
 
 		private static class EECache
 		{
-			public static readonly Region Instance = new Region("EE", false, false);
+			public static readonly Region Instance = new Region("EE",  RegionCode.EE, false);
 		}
 
 		/// <summary>
@@ -1155,7 +1156,7 @@ namespace NLanguageTag
 
 		private static class EGCache
 		{
-			public static readonly Region Instance = new Region("EG", false, false);
+			public static readonly Region Instance = new Region("EG",  RegionCode.EG, false);
 		}
 
 		/// <summary>
@@ -1166,7 +1167,7 @@ namespace NLanguageTag
 
 		private static class EHCache
 		{
-			public static readonly Region Instance = new Region("EH", false, false);
+			public static readonly Region Instance = new Region("EH",  RegionCode.EH, false);
 		}
 
 		/// <summary>
@@ -1177,7 +1178,7 @@ namespace NLanguageTag
 
 		private static class ERCache
 		{
-			public static readonly Region Instance = new Region("ER", false, false);
+			public static readonly Region Instance = new Region("ER",  RegionCode.ER, false);
 		}
 
 		/// <summary>
@@ -1188,7 +1189,7 @@ namespace NLanguageTag
 
 		private static class ESCache
 		{
-			public static readonly Region Instance = new Region("ES", false, false);
+			public static readonly Region Instance = new Region("ES",  RegionCode.ES, false);
 		}
 
 		/// <summary>
@@ -1199,7 +1200,7 @@ namespace NLanguageTag
 
 		private static class ETCache
 		{
-			public static readonly Region Instance = new Region("ET", false, false);
+			public static readonly Region Instance = new Region("ET",  RegionCode.ET, false);
 		}
 
 		/// <summary>
@@ -1210,7 +1211,7 @@ namespace NLanguageTag
 
 		private static class EUCache
 		{
-			public static readonly Region Instance = new Region("EU", false, false);
+			public static readonly Region Instance = new Region("EU",  RegionCode.EU, false);
 		}
 
 		/// <summary>
@@ -1221,7 +1222,7 @@ namespace NLanguageTag
 
 		private static class EZCache
 		{
-			public static readonly Region Instance = new Region("EZ", false, false);
+			public static readonly Region Instance = new Region("EZ",  RegionCode.EZ, false);
 		}
 
 		/// <summary>
@@ -1232,7 +1233,7 @@ namespace NLanguageTag
 
 		private static class FICache
 		{
-			public static readonly Region Instance = new Region("FI", false, false);
+			public static readonly Region Instance = new Region("FI",  RegionCode.FI, false);
 		}
 
 		/// <summary>
@@ -1243,7 +1244,7 @@ namespace NLanguageTag
 
 		private static class FJCache
 		{
-			public static readonly Region Instance = new Region("FJ", false, false);
+			public static readonly Region Instance = new Region("FJ",  RegionCode.FJ, false);
 		}
 
 		/// <summary>
@@ -1254,7 +1255,7 @@ namespace NLanguageTag
 
 		private static class FKCache
 		{
-			public static readonly Region Instance = new Region("FK", false, false);
+			public static readonly Region Instance = new Region("FK",  RegionCode.FK, false);
 		}
 
 		/// <summary>
@@ -1265,7 +1266,7 @@ namespace NLanguageTag
 
 		private static class FMCache
 		{
-			public static readonly Region Instance = new Region("FM", false, false);
+			public static readonly Region Instance = new Region("FM",  RegionCode.FM, false);
 		}
 
 		/// <summary>
@@ -1276,7 +1277,7 @@ namespace NLanguageTag
 
 		private static class FOCache
 		{
-			public static readonly Region Instance = new Region("FO", false, false);
+			public static readonly Region Instance = new Region("FO",  RegionCode.FO, false);
 		}
 
 		/// <summary>
@@ -1287,7 +1288,7 @@ namespace NLanguageTag
 
 		private static class FRCache
 		{
-			public static readonly Region Instance = new Region("FR", false, false);
+			public static readonly Region Instance = new Region("FR",  RegionCode.FR, false);
 		}
 
 		/// <summary>
@@ -1299,7 +1300,7 @@ namespace NLanguageTag
 
 		private static class FXCache
 		{
-			public static readonly Region Instance = new Region("FX", true, false);
+			public static readonly Region Instance = new Region("FX",  RegionCode.FX, true);
 		}
 
 		/// <summary>
@@ -1310,7 +1311,7 @@ namespace NLanguageTag
 
 		private static class GACache
 		{
-			public static readonly Region Instance = new Region("GA", false, false);
+			public static readonly Region Instance = new Region("GA",  RegionCode.GA, false);
 		}
 
 		/// <summary>
@@ -1322,7 +1323,7 @@ namespace NLanguageTag
 
 		private static class GBCache
 		{
-			public static readonly Region Instance = new Region("GB", false, false);
+			public static readonly Region Instance = new Region("GB",  RegionCode.GB, false);
 		}
 
 		/// <summary>
@@ -1333,7 +1334,7 @@ namespace NLanguageTag
 
 		private static class GDCache
 		{
-			public static readonly Region Instance = new Region("GD", false, false);
+			public static readonly Region Instance = new Region("GD",  RegionCode.GD, false);
 		}
 
 		/// <summary>
@@ -1344,7 +1345,7 @@ namespace NLanguageTag
 
 		private static class GECache
 		{
-			public static readonly Region Instance = new Region("GE", false, false);
+			public static readonly Region Instance = new Region("GE",  RegionCode.GE, false);
 		}
 
 		/// <summary>
@@ -1355,7 +1356,7 @@ namespace NLanguageTag
 
 		private static class GFCache
 		{
-			public static readonly Region Instance = new Region("GF", false, false);
+			public static readonly Region Instance = new Region("GF",  RegionCode.GF, false);
 		}
 
 		/// <summary>
@@ -1366,7 +1367,7 @@ namespace NLanguageTag
 
 		private static class GGCache
 		{
-			public static readonly Region Instance = new Region("GG", false, false);
+			public static readonly Region Instance = new Region("GG",  RegionCode.GG, false);
 		}
 
 		/// <summary>
@@ -1377,7 +1378,7 @@ namespace NLanguageTag
 
 		private static class GHCache
 		{
-			public static readonly Region Instance = new Region("GH", false, false);
+			public static readonly Region Instance = new Region("GH",  RegionCode.GH, false);
 		}
 
 		/// <summary>
@@ -1388,7 +1389,7 @@ namespace NLanguageTag
 
 		private static class GICache
 		{
-			public static readonly Region Instance = new Region("GI", false, false);
+			public static readonly Region Instance = new Region("GI",  RegionCode.GI, false);
 		}
 
 		/// <summary>
@@ -1399,7 +1400,7 @@ namespace NLanguageTag
 
 		private static class GLCache
 		{
-			public static readonly Region Instance = new Region("GL", false, false);
+			public static readonly Region Instance = new Region("GL",  RegionCode.GL, false);
 		}
 
 		/// <summary>
@@ -1410,7 +1411,7 @@ namespace NLanguageTag
 
 		private static class GMCache
 		{
-			public static readonly Region Instance = new Region("GM", false, false);
+			public static readonly Region Instance = new Region("GM",  RegionCode.GM, false);
 		}
 
 		/// <summary>
@@ -1421,7 +1422,7 @@ namespace NLanguageTag
 
 		private static class GNCache
 		{
-			public static readonly Region Instance = new Region("GN", false, false);
+			public static readonly Region Instance = new Region("GN",  RegionCode.GN, false);
 		}
 
 		/// <summary>
@@ -1432,7 +1433,7 @@ namespace NLanguageTag
 
 		private static class GPCache
 		{
-			public static readonly Region Instance = new Region("GP", false, false);
+			public static readonly Region Instance = new Region("GP",  RegionCode.GP, false);
 		}
 
 		/// <summary>
@@ -1443,7 +1444,7 @@ namespace NLanguageTag
 
 		private static class GQCache
 		{
-			public static readonly Region Instance = new Region("GQ", false, false);
+			public static readonly Region Instance = new Region("GQ",  RegionCode.GQ, false);
 		}
 
 		/// <summary>
@@ -1454,7 +1455,7 @@ namespace NLanguageTag
 
 		private static class GRCache
 		{
-			public static readonly Region Instance = new Region("GR", false, false);
+			public static readonly Region Instance = new Region("GR",  RegionCode.GR, false);
 		}
 
 		/// <summary>
@@ -1465,7 +1466,7 @@ namespace NLanguageTag
 
 		private static class GSCache
 		{
-			public static readonly Region Instance = new Region("GS", false, false);
+			public static readonly Region Instance = new Region("GS",  RegionCode.GS, false);
 		}
 
 		/// <summary>
@@ -1476,7 +1477,7 @@ namespace NLanguageTag
 
 		private static class GTCache
 		{
-			public static readonly Region Instance = new Region("GT", false, false);
+			public static readonly Region Instance = new Region("GT",  RegionCode.GT, false);
 		}
 
 		/// <summary>
@@ -1487,7 +1488,7 @@ namespace NLanguageTag
 
 		private static class GUCache
 		{
-			public static readonly Region Instance = new Region("GU", false, false);
+			public static readonly Region Instance = new Region("GU",  RegionCode.GU, false);
 		}
 
 		/// <summary>
@@ -1498,7 +1499,7 @@ namespace NLanguageTag
 
 		private static class GWCache
 		{
-			public static readonly Region Instance = new Region("GW", false, false);
+			public static readonly Region Instance = new Region("GW",  RegionCode.GW, false);
 		}
 
 		/// <summary>
@@ -1509,7 +1510,7 @@ namespace NLanguageTag
 
 		private static class GYCache
 		{
-			public static readonly Region Instance = new Region("GY", false, false);
+			public static readonly Region Instance = new Region("GY",  RegionCode.GY, false);
 		}
 
 		/// <summary>
@@ -1520,7 +1521,7 @@ namespace NLanguageTag
 
 		private static class HKCache
 		{
-			public static readonly Region Instance = new Region("HK", false, false);
+			public static readonly Region Instance = new Region("HK",  RegionCode.HK, false);
 		}
 
 		/// <summary>
@@ -1531,7 +1532,7 @@ namespace NLanguageTag
 
 		private static class HMCache
 		{
-			public static readonly Region Instance = new Region("HM", false, false);
+			public static readonly Region Instance = new Region("HM",  RegionCode.HM, false);
 		}
 
 		/// <summary>
@@ -1542,7 +1543,7 @@ namespace NLanguageTag
 
 		private static class HNCache
 		{
-			public static readonly Region Instance = new Region("HN", false, false);
+			public static readonly Region Instance = new Region("HN",  RegionCode.HN, false);
 		}
 
 		/// <summary>
@@ -1553,7 +1554,7 @@ namespace NLanguageTag
 
 		private static class HRCache
 		{
-			public static readonly Region Instance = new Region("HR", false, false);
+			public static readonly Region Instance = new Region("HR",  RegionCode.HR, false);
 		}
 
 		/// <summary>
@@ -1564,7 +1565,7 @@ namespace NLanguageTag
 
 		private static class HTCache
 		{
-			public static readonly Region Instance = new Region("HT", false, false);
+			public static readonly Region Instance = new Region("HT",  RegionCode.HT, false);
 		}
 
 		/// <summary>
@@ -1575,7 +1576,7 @@ namespace NLanguageTag
 
 		private static class HUCache
 		{
-			public static readonly Region Instance = new Region("HU", false, false);
+			public static readonly Region Instance = new Region("HU",  RegionCode.HU, false);
 		}
 
 		/// <summary>
@@ -1586,7 +1587,7 @@ namespace NLanguageTag
 
 		private static class ICCache
 		{
-			public static readonly Region Instance = new Region("IC", false, false);
+			public static readonly Region Instance = new Region("IC",  RegionCode.IC, false);
 		}
 
 		/// <summary>
@@ -1597,7 +1598,7 @@ namespace NLanguageTag
 
 		private static class IDCache
 		{
-			public static readonly Region Instance = new Region("ID", false, false);
+			public static readonly Region Instance = new Region("ID",  RegionCode.ID, false);
 		}
 
 		/// <summary>
@@ -1608,7 +1609,7 @@ namespace NLanguageTag
 
 		private static class IECache
 		{
-			public static readonly Region Instance = new Region("IE", false, false);
+			public static readonly Region Instance = new Region("IE",  RegionCode.IE, false);
 		}
 
 		/// <summary>
@@ -1619,7 +1620,7 @@ namespace NLanguageTag
 
 		private static class ILCache
 		{
-			public static readonly Region Instance = new Region("IL", false, false);
+			public static readonly Region Instance = new Region("IL",  RegionCode.IL, false);
 		}
 
 		/// <summary>
@@ -1630,7 +1631,7 @@ namespace NLanguageTag
 
 		private static class IMCache
 		{
-			public static readonly Region Instance = new Region("IM", false, false);
+			public static readonly Region Instance = new Region("IM",  RegionCode.IM, false);
 		}
 
 		/// <summary>
@@ -1641,7 +1642,7 @@ namespace NLanguageTag
 
 		private static class INCache
 		{
-			public static readonly Region Instance = new Region("IN", false, false);
+			public static readonly Region Instance = new Region("IN",  RegionCode.IN, false);
 		}
 
 		/// <summary>
@@ -1652,7 +1653,7 @@ namespace NLanguageTag
 
 		private static class IOCache
 		{
-			public static readonly Region Instance = new Region("IO", false, false);
+			public static readonly Region Instance = new Region("IO",  RegionCode.IO, false);
 		}
 
 		/// <summary>
@@ -1663,7 +1664,7 @@ namespace NLanguageTag
 
 		private static class IQCache
 		{
-			public static readonly Region Instance = new Region("IQ", false, false);
+			public static readonly Region Instance = new Region("IQ",  RegionCode.IQ, false);
 		}
 
 		/// <summary>
@@ -1674,7 +1675,7 @@ namespace NLanguageTag
 
 		private static class IRCache
 		{
-			public static readonly Region Instance = new Region("IR", false, false);
+			public static readonly Region Instance = new Region("IR",  RegionCode.IR, false);
 		}
 
 		/// <summary>
@@ -1685,7 +1686,7 @@ namespace NLanguageTag
 
 		private static class ISCache
 		{
-			public static readonly Region Instance = new Region("IS", false, false);
+			public static readonly Region Instance = new Region("IS",  RegionCode.IS, false);
 		}
 
 		/// <summary>
@@ -1696,7 +1697,7 @@ namespace NLanguageTag
 
 		private static class ITCache
 		{
-			public static readonly Region Instance = new Region("IT", false, false);
+			public static readonly Region Instance = new Region("IT",  RegionCode.IT, false);
 		}
 
 		/// <summary>
@@ -1707,7 +1708,7 @@ namespace NLanguageTag
 
 		private static class JECache
 		{
-			public static readonly Region Instance = new Region("JE", false, false);
+			public static readonly Region Instance = new Region("JE",  RegionCode.JE, false);
 		}
 
 		/// <summary>
@@ -1718,7 +1719,7 @@ namespace NLanguageTag
 
 		private static class JMCache
 		{
-			public static readonly Region Instance = new Region("JM", false, false);
+			public static readonly Region Instance = new Region("JM",  RegionCode.JM, false);
 		}
 
 		/// <summary>
@@ -1729,7 +1730,7 @@ namespace NLanguageTag
 
 		private static class JOCache
 		{
-			public static readonly Region Instance = new Region("JO", false, false);
+			public static readonly Region Instance = new Region("JO",  RegionCode.JO, false);
 		}
 
 		/// <summary>
@@ -1740,7 +1741,7 @@ namespace NLanguageTag
 
 		private static class JPCache
 		{
-			public static readonly Region Instance = new Region("JP", false, false);
+			public static readonly Region Instance = new Region("JP",  RegionCode.JP, false);
 		}
 
 		/// <summary>
@@ -1751,7 +1752,7 @@ namespace NLanguageTag
 
 		private static class KECache
 		{
-			public static readonly Region Instance = new Region("KE", false, false);
+			public static readonly Region Instance = new Region("KE",  RegionCode.KE, false);
 		}
 
 		/// <summary>
@@ -1762,7 +1763,7 @@ namespace NLanguageTag
 
 		private static class KGCache
 		{
-			public static readonly Region Instance = new Region("KG", false, false);
+			public static readonly Region Instance = new Region("KG",  RegionCode.KG, false);
 		}
 
 		/// <summary>
@@ -1773,7 +1774,7 @@ namespace NLanguageTag
 
 		private static class KHCache
 		{
-			public static readonly Region Instance = new Region("KH", false, false);
+			public static readonly Region Instance = new Region("KH",  RegionCode.KH, false);
 		}
 
 		/// <summary>
@@ -1784,7 +1785,7 @@ namespace NLanguageTag
 
 		private static class KICache
 		{
-			public static readonly Region Instance = new Region("KI", false, false);
+			public static readonly Region Instance = new Region("KI",  RegionCode.KI, false);
 		}
 
 		/// <summary>
@@ -1795,7 +1796,7 @@ namespace NLanguageTag
 
 		private static class KMCache
 		{
-			public static readonly Region Instance = new Region("KM", false, false);
+			public static readonly Region Instance = new Region("KM",  RegionCode.KM, false);
 		}
 
 		/// <summary>
@@ -1806,7 +1807,7 @@ namespace NLanguageTag
 
 		private static class KNCache
 		{
-			public static readonly Region Instance = new Region("KN", false, false);
+			public static readonly Region Instance = new Region("KN",  RegionCode.KN, false);
 		}
 
 		/// <summary>
@@ -1817,7 +1818,7 @@ namespace NLanguageTag
 
 		private static class KPCache
 		{
-			public static readonly Region Instance = new Region("KP", false, false);
+			public static readonly Region Instance = new Region("KP",  RegionCode.KP, false);
 		}
 
 		/// <summary>
@@ -1828,7 +1829,7 @@ namespace NLanguageTag
 
 		private static class KRCache
 		{
-			public static readonly Region Instance = new Region("KR", false, false);
+			public static readonly Region Instance = new Region("KR",  RegionCode.KR, false);
 		}
 
 		/// <summary>
@@ -1839,7 +1840,7 @@ namespace NLanguageTag
 
 		private static class KWCache
 		{
-			public static readonly Region Instance = new Region("KW", false, false);
+			public static readonly Region Instance = new Region("KW",  RegionCode.KW, false);
 		}
 
 		/// <summary>
@@ -1850,7 +1851,7 @@ namespace NLanguageTag
 
 		private static class KYCache
 		{
-			public static readonly Region Instance = new Region("KY", false, false);
+			public static readonly Region Instance = new Region("KY",  RegionCode.KY, false);
 		}
 
 		/// <summary>
@@ -1861,7 +1862,7 @@ namespace NLanguageTag
 
 		private static class KZCache
 		{
-			public static readonly Region Instance = new Region("KZ", false, false);
+			public static readonly Region Instance = new Region("KZ",  RegionCode.KZ, false);
 		}
 
 		/// <summary>
@@ -1872,7 +1873,7 @@ namespace NLanguageTag
 
 		private static class LACache
 		{
-			public static readonly Region Instance = new Region("LA", false, false);
+			public static readonly Region Instance = new Region("LA",  RegionCode.LA, false);
 		}
 
 		/// <summary>
@@ -1883,7 +1884,7 @@ namespace NLanguageTag
 
 		private static class LBCache
 		{
-			public static readonly Region Instance = new Region("LB", false, false);
+			public static readonly Region Instance = new Region("LB",  RegionCode.LB, false);
 		}
 
 		/// <summary>
@@ -1894,7 +1895,7 @@ namespace NLanguageTag
 
 		private static class LCCache
 		{
-			public static readonly Region Instance = new Region("LC", false, false);
+			public static readonly Region Instance = new Region("LC",  RegionCode.LC, false);
 		}
 
 		/// <summary>
@@ -1905,7 +1906,7 @@ namespace NLanguageTag
 
 		private static class LICache
 		{
-			public static readonly Region Instance = new Region("LI", false, false);
+			public static readonly Region Instance = new Region("LI",  RegionCode.LI, false);
 		}
 
 		/// <summary>
@@ -1916,7 +1917,7 @@ namespace NLanguageTag
 
 		private static class LKCache
 		{
-			public static readonly Region Instance = new Region("LK", false, false);
+			public static readonly Region Instance = new Region("LK",  RegionCode.LK, false);
 		}
 
 		/// <summary>
@@ -1927,7 +1928,7 @@ namespace NLanguageTag
 
 		private static class LRCache
 		{
-			public static readonly Region Instance = new Region("LR", false, false);
+			public static readonly Region Instance = new Region("LR",  RegionCode.LR, false);
 		}
 
 		/// <summary>
@@ -1938,7 +1939,7 @@ namespace NLanguageTag
 
 		private static class LSCache
 		{
-			public static readonly Region Instance = new Region("LS", false, false);
+			public static readonly Region Instance = new Region("LS",  RegionCode.LS, false);
 		}
 
 		/// <summary>
@@ -1949,7 +1950,7 @@ namespace NLanguageTag
 
 		private static class LTCache
 		{
-			public static readonly Region Instance = new Region("LT", false, false);
+			public static readonly Region Instance = new Region("LT",  RegionCode.LT, false);
 		}
 
 		/// <summary>
@@ -1960,7 +1961,7 @@ namespace NLanguageTag
 
 		private static class LUCache
 		{
-			public static readonly Region Instance = new Region("LU", false, false);
+			public static readonly Region Instance = new Region("LU",  RegionCode.LU, false);
 		}
 
 		/// <summary>
@@ -1971,7 +1972,7 @@ namespace NLanguageTag
 
 		private static class LVCache
 		{
-			public static readonly Region Instance = new Region("LV", false, false);
+			public static readonly Region Instance = new Region("LV",  RegionCode.LV, false);
 		}
 
 		/// <summary>
@@ -1982,7 +1983,7 @@ namespace NLanguageTag
 
 		private static class LYCache
 		{
-			public static readonly Region Instance = new Region("LY", false, false);
+			public static readonly Region Instance = new Region("LY",  RegionCode.LY, false);
 		}
 
 		/// <summary>
@@ -1993,7 +1994,7 @@ namespace NLanguageTag
 
 		private static class MACache
 		{
-			public static readonly Region Instance = new Region("MA", false, false);
+			public static readonly Region Instance = new Region("MA",  RegionCode.MA, false);
 		}
 
 		/// <summary>
@@ -2004,7 +2005,7 @@ namespace NLanguageTag
 
 		private static class MCCache
 		{
-			public static readonly Region Instance = new Region("MC", false, false);
+			public static readonly Region Instance = new Region("MC",  RegionCode.MC, false);
 		}
 
 		/// <summary>
@@ -2015,7 +2016,7 @@ namespace NLanguageTag
 
 		private static class MDCache
 		{
-			public static readonly Region Instance = new Region("MD", false, false);
+			public static readonly Region Instance = new Region("MD",  RegionCode.MD, false);
 		}
 
 		/// <summary>
@@ -2026,7 +2027,7 @@ namespace NLanguageTag
 
 		private static class MECache
 		{
-			public static readonly Region Instance = new Region("ME", false, false);
+			public static readonly Region Instance = new Region("ME",  RegionCode.ME, false);
 		}
 
 		/// <summary>
@@ -2037,7 +2038,7 @@ namespace NLanguageTag
 
 		private static class MFCache
 		{
-			public static readonly Region Instance = new Region("MF", false, false);
+			public static readonly Region Instance = new Region("MF",  RegionCode.MF, false);
 		}
 
 		/// <summary>
@@ -2048,7 +2049,7 @@ namespace NLanguageTag
 
 		private static class MGCache
 		{
-			public static readonly Region Instance = new Region("MG", false, false);
+			public static readonly Region Instance = new Region("MG",  RegionCode.MG, false);
 		}
 
 		/// <summary>
@@ -2059,7 +2060,7 @@ namespace NLanguageTag
 
 		private static class MHCache
 		{
-			public static readonly Region Instance = new Region("MH", false, false);
+			public static readonly Region Instance = new Region("MH",  RegionCode.MH, false);
 		}
 
 		/// <summary>
@@ -2070,7 +2071,7 @@ namespace NLanguageTag
 
 		private static class MKCache
 		{
-			public static readonly Region Instance = new Region("MK", false, false);
+			public static readonly Region Instance = new Region("MK",  RegionCode.MK, false);
 		}
 
 		/// <summary>
@@ -2081,7 +2082,7 @@ namespace NLanguageTag
 
 		private static class MLCache
 		{
-			public static readonly Region Instance = new Region("ML", false, false);
+			public static readonly Region Instance = new Region("ML",  RegionCode.ML, false);
 		}
 
 		/// <summary>
@@ -2092,7 +2093,7 @@ namespace NLanguageTag
 
 		private static class MMCache
 		{
-			public static readonly Region Instance = new Region("MM", false, false);
+			public static readonly Region Instance = new Region("MM",  RegionCode.MM, false);
 		}
 
 		/// <summary>
@@ -2103,7 +2104,7 @@ namespace NLanguageTag
 
 		private static class MNCache
 		{
-			public static readonly Region Instance = new Region("MN", false, false);
+			public static readonly Region Instance = new Region("MN",  RegionCode.MN, false);
 		}
 
 		/// <summary>
@@ -2114,7 +2115,7 @@ namespace NLanguageTag
 
 		private static class MOCache
 		{
-			public static readonly Region Instance = new Region("MO", false, false);
+			public static readonly Region Instance = new Region("MO",  RegionCode.MO, false);
 		}
 
 		/// <summary>
@@ -2125,7 +2126,7 @@ namespace NLanguageTag
 
 		private static class MPCache
 		{
-			public static readonly Region Instance = new Region("MP", false, false);
+			public static readonly Region Instance = new Region("MP",  RegionCode.MP, false);
 		}
 
 		/// <summary>
@@ -2136,7 +2137,7 @@ namespace NLanguageTag
 
 		private static class MQCache
 		{
-			public static readonly Region Instance = new Region("MQ", false, false);
+			public static readonly Region Instance = new Region("MQ",  RegionCode.MQ, false);
 		}
 
 		/// <summary>
@@ -2147,7 +2148,7 @@ namespace NLanguageTag
 
 		private static class MRCache
 		{
-			public static readonly Region Instance = new Region("MR", false, false);
+			public static readonly Region Instance = new Region("MR",  RegionCode.MR, false);
 		}
 
 		/// <summary>
@@ -2158,7 +2159,7 @@ namespace NLanguageTag
 
 		private static class MSCache
 		{
-			public static readonly Region Instance = new Region("MS", false, false);
+			public static readonly Region Instance = new Region("MS",  RegionCode.MS, false);
 		}
 
 		/// <summary>
@@ -2169,7 +2170,7 @@ namespace NLanguageTag
 
 		private static class MTCache
 		{
-			public static readonly Region Instance = new Region("MT", false, false);
+			public static readonly Region Instance = new Region("MT",  RegionCode.MT, false);
 		}
 
 		/// <summary>
@@ -2180,7 +2181,7 @@ namespace NLanguageTag
 
 		private static class MUCache
 		{
-			public static readonly Region Instance = new Region("MU", false, false);
+			public static readonly Region Instance = new Region("MU",  RegionCode.MU, false);
 		}
 
 		/// <summary>
@@ -2191,7 +2192,7 @@ namespace NLanguageTag
 
 		private static class MVCache
 		{
-			public static readonly Region Instance = new Region("MV", false, false);
+			public static readonly Region Instance = new Region("MV",  RegionCode.MV, false);
 		}
 
 		/// <summary>
@@ -2202,7 +2203,7 @@ namespace NLanguageTag
 
 		private static class MWCache
 		{
-			public static readonly Region Instance = new Region("MW", false, false);
+			public static readonly Region Instance = new Region("MW",  RegionCode.MW, false);
 		}
 
 		/// <summary>
@@ -2213,7 +2214,7 @@ namespace NLanguageTag
 
 		private static class MXCache
 		{
-			public static readonly Region Instance = new Region("MX", false, false);
+			public static readonly Region Instance = new Region("MX",  RegionCode.MX, false);
 		}
 
 		/// <summary>
@@ -2224,7 +2225,7 @@ namespace NLanguageTag
 
 		private static class MYCache
 		{
-			public static readonly Region Instance = new Region("MY", false, false);
+			public static readonly Region Instance = new Region("MY",  RegionCode.MY, false);
 		}
 
 		/// <summary>
@@ -2235,7 +2236,7 @@ namespace NLanguageTag
 
 		private static class MZCache
 		{
-			public static readonly Region Instance = new Region("MZ", false, false);
+			public static readonly Region Instance = new Region("MZ",  RegionCode.MZ, false);
 		}
 
 		/// <summary>
@@ -2246,7 +2247,7 @@ namespace NLanguageTag
 
 		private static class NACache
 		{
-			public static readonly Region Instance = new Region("NA", false, false);
+			public static readonly Region Instance = new Region("NA",  RegionCode.NA, false);
 		}
 
 		/// <summary>
@@ -2257,7 +2258,7 @@ namespace NLanguageTag
 
 		private static class NCCache
 		{
-			public static readonly Region Instance = new Region("NC", false, false);
+			public static readonly Region Instance = new Region("NC",  RegionCode.NC, false);
 		}
 
 		/// <summary>
@@ -2268,7 +2269,7 @@ namespace NLanguageTag
 
 		private static class NECache
 		{
-			public static readonly Region Instance = new Region("NE", false, false);
+			public static readonly Region Instance = new Region("NE",  RegionCode.NE, false);
 		}
 
 		/// <summary>
@@ -2279,7 +2280,7 @@ namespace NLanguageTag
 
 		private static class NFCache
 		{
-			public static readonly Region Instance = new Region("NF", false, false);
+			public static readonly Region Instance = new Region("NF",  RegionCode.NF, false);
 		}
 
 		/// <summary>
@@ -2290,7 +2291,7 @@ namespace NLanguageTag
 
 		private static class NGCache
 		{
-			public static readonly Region Instance = new Region("NG", false, false);
+			public static readonly Region Instance = new Region("NG",  RegionCode.NG, false);
 		}
 
 		/// <summary>
@@ -2301,7 +2302,7 @@ namespace NLanguageTag
 
 		private static class NICache
 		{
-			public static readonly Region Instance = new Region("NI", false, false);
+			public static readonly Region Instance = new Region("NI",  RegionCode.NI, false);
 		}
 
 		/// <summary>
@@ -2312,7 +2313,7 @@ namespace NLanguageTag
 
 		private static class NLCache
 		{
-			public static readonly Region Instance = new Region("NL", false, false);
+			public static readonly Region Instance = new Region("NL",  RegionCode.NL, false);
 		}
 
 		/// <summary>
@@ -2323,7 +2324,7 @@ namespace NLanguageTag
 
 		private static class NOCache
 		{
-			public static readonly Region Instance = new Region("NO", false, false);
+			public static readonly Region Instance = new Region("NO",  RegionCode.NO, false);
 		}
 
 		/// <summary>
@@ -2334,7 +2335,7 @@ namespace NLanguageTag
 
 		private static class NPCache
 		{
-			public static readonly Region Instance = new Region("NP", false, false);
+			public static readonly Region Instance = new Region("NP",  RegionCode.NP, false);
 		}
 
 		/// <summary>
@@ -2345,7 +2346,7 @@ namespace NLanguageTag
 
 		private static class NRCache
 		{
-			public static readonly Region Instance = new Region("NR", false, false);
+			public static readonly Region Instance = new Region("NR",  RegionCode.NR, false);
 		}
 
 		/// <summary>
@@ -2357,7 +2358,7 @@ namespace NLanguageTag
 
 		private static class NTCache
 		{
-			public static readonly Region Instance = new Region("NT", true, false);
+			public static readonly Region Instance = new Region("NT",  RegionCode.NT, true);
 		}
 
 		/// <summary>
@@ -2368,7 +2369,7 @@ namespace NLanguageTag
 
 		private static class NUCache
 		{
-			public static readonly Region Instance = new Region("NU", false, false);
+			public static readonly Region Instance = new Region("NU",  RegionCode.NU, false);
 		}
 
 		/// <summary>
@@ -2379,7 +2380,7 @@ namespace NLanguageTag
 
 		private static class NZCache
 		{
-			public static readonly Region Instance = new Region("NZ", false, false);
+			public static readonly Region Instance = new Region("NZ",  RegionCode.NZ, false);
 		}
 
 		/// <summary>
@@ -2390,7 +2391,7 @@ namespace NLanguageTag
 
 		private static class OMCache
 		{
-			public static readonly Region Instance = new Region("OM", false, false);
+			public static readonly Region Instance = new Region("OM",  RegionCode.OM, false);
 		}
 
 		/// <summary>
@@ -2401,7 +2402,7 @@ namespace NLanguageTag
 
 		private static class PACache
 		{
-			public static readonly Region Instance = new Region("PA", false, false);
+			public static readonly Region Instance = new Region("PA",  RegionCode.PA, false);
 		}
 
 		/// <summary>
@@ -2412,7 +2413,7 @@ namespace NLanguageTag
 
 		private static class PECache
 		{
-			public static readonly Region Instance = new Region("PE", false, false);
+			public static readonly Region Instance = new Region("PE",  RegionCode.PE, false);
 		}
 
 		/// <summary>
@@ -2423,7 +2424,7 @@ namespace NLanguageTag
 
 		private static class PFCache
 		{
-			public static readonly Region Instance = new Region("PF", false, false);
+			public static readonly Region Instance = new Region("PF",  RegionCode.PF, false);
 		}
 
 		/// <summary>
@@ -2434,7 +2435,7 @@ namespace NLanguageTag
 
 		private static class PGCache
 		{
-			public static readonly Region Instance = new Region("PG", false, false);
+			public static readonly Region Instance = new Region("PG",  RegionCode.PG, false);
 		}
 
 		/// <summary>
@@ -2445,7 +2446,7 @@ namespace NLanguageTag
 
 		private static class PHCache
 		{
-			public static readonly Region Instance = new Region("PH", false, false);
+			public static readonly Region Instance = new Region("PH",  RegionCode.PH, false);
 		}
 
 		/// <summary>
@@ -2456,7 +2457,7 @@ namespace NLanguageTag
 
 		private static class PKCache
 		{
-			public static readonly Region Instance = new Region("PK", false, false);
+			public static readonly Region Instance = new Region("PK",  RegionCode.PK, false);
 		}
 
 		/// <summary>
@@ -2467,7 +2468,7 @@ namespace NLanguageTag
 
 		private static class PLCache
 		{
-			public static readonly Region Instance = new Region("PL", false, false);
+			public static readonly Region Instance = new Region("PL",  RegionCode.PL, false);
 		}
 
 		/// <summary>
@@ -2478,7 +2479,7 @@ namespace NLanguageTag
 
 		private static class PMCache
 		{
-			public static readonly Region Instance = new Region("PM", false, false);
+			public static readonly Region Instance = new Region("PM",  RegionCode.PM, false);
 		}
 
 		/// <summary>
@@ -2489,7 +2490,7 @@ namespace NLanguageTag
 
 		private static class PNCache
 		{
-			public static readonly Region Instance = new Region("PN", false, false);
+			public static readonly Region Instance = new Region("PN",  RegionCode.PN, false);
 		}
 
 		/// <summary>
@@ -2500,7 +2501,7 @@ namespace NLanguageTag
 
 		private static class PRCache
 		{
-			public static readonly Region Instance = new Region("PR", false, false);
+			public static readonly Region Instance = new Region("PR",  RegionCode.PR, false);
 		}
 
 		/// <summary>
@@ -2511,7 +2512,7 @@ namespace NLanguageTag
 
 		private static class PSCache
 		{
-			public static readonly Region Instance = new Region("PS", false, false);
+			public static readonly Region Instance = new Region("PS",  RegionCode.PS, false);
 		}
 
 		/// <summary>
@@ -2522,7 +2523,7 @@ namespace NLanguageTag
 
 		private static class PTCache
 		{
-			public static readonly Region Instance = new Region("PT", false, false);
+			public static readonly Region Instance = new Region("PT",  RegionCode.PT, false);
 		}
 
 		/// <summary>
@@ -2533,7 +2534,7 @@ namespace NLanguageTag
 
 		private static class PWCache
 		{
-			public static readonly Region Instance = new Region("PW", false, false);
+			public static readonly Region Instance = new Region("PW",  RegionCode.PW, false);
 		}
 
 		/// <summary>
@@ -2544,7 +2545,7 @@ namespace NLanguageTag
 
 		private static class PYCache
 		{
-			public static readonly Region Instance = new Region("PY", false, false);
+			public static readonly Region Instance = new Region("PY",  RegionCode.PY, false);
 		}
 
 		/// <summary>
@@ -2555,7 +2556,7 @@ namespace NLanguageTag
 
 		private static class QACache
 		{
-			public static readonly Region Instance = new Region("QA", false, false);
+			public static readonly Region Instance = new Region("QA",  RegionCode.QA, false);
 		}
 
 		/// <summary>
@@ -2566,7 +2567,7 @@ namespace NLanguageTag
 
 		private static class RECache
 		{
-			public static readonly Region Instance = new Region("RE", false, false);
+			public static readonly Region Instance = new Region("RE",  RegionCode.RE, false);
 		}
 
 		/// <summary>
@@ -2577,7 +2578,7 @@ namespace NLanguageTag
 
 		private static class ROCache
 		{
-			public static readonly Region Instance = new Region("RO", false, false);
+			public static readonly Region Instance = new Region("RO",  RegionCode.RO, false);
 		}
 
 		/// <summary>
@@ -2588,7 +2589,7 @@ namespace NLanguageTag
 
 		private static class RSCache
 		{
-			public static readonly Region Instance = new Region("RS", false, false);
+			public static readonly Region Instance = new Region("RS",  RegionCode.RS, false);
 		}
 
 		/// <summary>
@@ -2599,7 +2600,7 @@ namespace NLanguageTag
 
 		private static class RUCache
 		{
-			public static readonly Region Instance = new Region("RU", false, false);
+			public static readonly Region Instance = new Region("RU",  RegionCode.RU, false);
 		}
 
 		/// <summary>
@@ -2610,7 +2611,7 @@ namespace NLanguageTag
 
 		private static class RWCache
 		{
-			public static readonly Region Instance = new Region("RW", false, false);
+			public static readonly Region Instance = new Region("RW",  RegionCode.RW, false);
 		}
 
 		/// <summary>
@@ -2621,7 +2622,7 @@ namespace NLanguageTag
 
 		private static class SACache
 		{
-			public static readonly Region Instance = new Region("SA", false, false);
+			public static readonly Region Instance = new Region("SA",  RegionCode.SA, false);
 		}
 
 		/// <summary>
@@ -2632,7 +2633,7 @@ namespace NLanguageTag
 
 		private static class SBCache
 		{
-			public static readonly Region Instance = new Region("SB", false, false);
+			public static readonly Region Instance = new Region("SB",  RegionCode.SB, false);
 		}
 
 		/// <summary>
@@ -2643,7 +2644,7 @@ namespace NLanguageTag
 
 		private static class SCCache
 		{
-			public static readonly Region Instance = new Region("SC", false, false);
+			public static readonly Region Instance = new Region("SC",  RegionCode.SC, false);
 		}
 
 		/// <summary>
@@ -2654,7 +2655,7 @@ namespace NLanguageTag
 
 		private static class SDCache
 		{
-			public static readonly Region Instance = new Region("SD", false, false);
+			public static readonly Region Instance = new Region("SD",  RegionCode.SD, false);
 		}
 
 		/// <summary>
@@ -2665,7 +2666,7 @@ namespace NLanguageTag
 
 		private static class SECache
 		{
-			public static readonly Region Instance = new Region("SE", false, false);
+			public static readonly Region Instance = new Region("SE",  RegionCode.SE, false);
 		}
 
 		/// <summary>
@@ -2676,7 +2677,7 @@ namespace NLanguageTag
 
 		private static class SGCache
 		{
-			public static readonly Region Instance = new Region("SG", false, false);
+			public static readonly Region Instance = new Region("SG",  RegionCode.SG, false);
 		}
 
 		/// <summary>
@@ -2687,7 +2688,7 @@ namespace NLanguageTag
 
 		private static class SHCache
 		{
-			public static readonly Region Instance = new Region("SH", false, false);
+			public static readonly Region Instance = new Region("SH",  RegionCode.SH, false);
 		}
 
 		/// <summary>
@@ -2698,7 +2699,7 @@ namespace NLanguageTag
 
 		private static class SICache
 		{
-			public static readonly Region Instance = new Region("SI", false, false);
+			public static readonly Region Instance = new Region("SI",  RegionCode.SI, false);
 		}
 
 		/// <summary>
@@ -2709,7 +2710,7 @@ namespace NLanguageTag
 
 		private static class SJCache
 		{
-			public static readonly Region Instance = new Region("SJ", false, false);
+			public static readonly Region Instance = new Region("SJ",  RegionCode.SJ, false);
 		}
 
 		/// <summary>
@@ -2720,7 +2721,7 @@ namespace NLanguageTag
 
 		private static class SKCache
 		{
-			public static readonly Region Instance = new Region("SK", false, false);
+			public static readonly Region Instance = new Region("SK",  RegionCode.SK, false);
 		}
 
 		/// <summary>
@@ -2731,7 +2732,7 @@ namespace NLanguageTag
 
 		private static class SLCache
 		{
-			public static readonly Region Instance = new Region("SL", false, false);
+			public static readonly Region Instance = new Region("SL",  RegionCode.SL, false);
 		}
 
 		/// <summary>
@@ -2742,7 +2743,7 @@ namespace NLanguageTag
 
 		private static class SMCache
 		{
-			public static readonly Region Instance = new Region("SM", false, false);
+			public static readonly Region Instance = new Region("SM",  RegionCode.SM, false);
 		}
 
 		/// <summary>
@@ -2753,7 +2754,7 @@ namespace NLanguageTag
 
 		private static class SNCache
 		{
-			public static readonly Region Instance = new Region("SN", false, false);
+			public static readonly Region Instance = new Region("SN",  RegionCode.SN, false);
 		}
 
 		/// <summary>
@@ -2764,7 +2765,7 @@ namespace NLanguageTag
 
 		private static class SOCache
 		{
-			public static readonly Region Instance = new Region("SO", false, false);
+			public static readonly Region Instance = new Region("SO",  RegionCode.SO, false);
 		}
 
 		/// <summary>
@@ -2775,7 +2776,7 @@ namespace NLanguageTag
 
 		private static class SRCache
 		{
-			public static readonly Region Instance = new Region("SR", false, false);
+			public static readonly Region Instance = new Region("SR",  RegionCode.SR, false);
 		}
 
 		/// <summary>
@@ -2786,7 +2787,7 @@ namespace NLanguageTag
 
 		private static class SSCache
 		{
-			public static readonly Region Instance = new Region("SS", false, false);
+			public static readonly Region Instance = new Region("SS",  RegionCode.SS, false);
 		}
 
 		/// <summary>
@@ -2797,7 +2798,7 @@ namespace NLanguageTag
 
 		private static class STCache
 		{
-			public static readonly Region Instance = new Region("ST", false, false);
+			public static readonly Region Instance = new Region("ST",  RegionCode.ST, false);
 		}
 
 		/// <summary>
@@ -2809,7 +2810,7 @@ namespace NLanguageTag
 
 		private static class SUCache
 		{
-			public static readonly Region Instance = new Region("SU", true, false);
+			public static readonly Region Instance = new Region("SU",  RegionCode.SU, true);
 		}
 
 		/// <summary>
@@ -2820,7 +2821,7 @@ namespace NLanguageTag
 
 		private static class SVCache
 		{
-			public static readonly Region Instance = new Region("SV", false, false);
+			public static readonly Region Instance = new Region("SV",  RegionCode.SV, false);
 		}
 
 		/// <summary>
@@ -2831,7 +2832,7 @@ namespace NLanguageTag
 
 		private static class SXCache
 		{
-			public static readonly Region Instance = new Region("SX", false, false);
+			public static readonly Region Instance = new Region("SX",  RegionCode.SX, false);
 		}
 
 		/// <summary>
@@ -2842,7 +2843,7 @@ namespace NLanguageTag
 
 		private static class SYCache
 		{
-			public static readonly Region Instance = new Region("SY", false, false);
+			public static readonly Region Instance = new Region("SY",  RegionCode.SY, false);
 		}
 
 		/// <summary>
@@ -2855,7 +2856,7 @@ namespace NLanguageTag
 
 		private static class SZCache
 		{
-			public static readonly Region Instance = new Region("SZ", false, false);
+			public static readonly Region Instance = new Region("SZ",  RegionCode.SZ, false);
 		}
 
 		/// <summary>
@@ -2866,7 +2867,7 @@ namespace NLanguageTag
 
 		private static class TACache
 		{
-			public static readonly Region Instance = new Region("TA", false, false);
+			public static readonly Region Instance = new Region("TA",  RegionCode.TA, false);
 		}
 
 		/// <summary>
@@ -2877,7 +2878,7 @@ namespace NLanguageTag
 
 		private static class TCCache
 		{
-			public static readonly Region Instance = new Region("TC", false, false);
+			public static readonly Region Instance = new Region("TC",  RegionCode.TC, false);
 		}
 
 		/// <summary>
@@ -2888,7 +2889,7 @@ namespace NLanguageTag
 
 		private static class TDCache
 		{
-			public static readonly Region Instance = new Region("TD", false, false);
+			public static readonly Region Instance = new Region("TD",  RegionCode.TD, false);
 		}
 
 		/// <summary>
@@ -2899,7 +2900,7 @@ namespace NLanguageTag
 
 		private static class TFCache
 		{
-			public static readonly Region Instance = new Region("TF", false, false);
+			public static readonly Region Instance = new Region("TF",  RegionCode.TF, false);
 		}
 
 		/// <summary>
@@ -2910,7 +2911,7 @@ namespace NLanguageTag
 
 		private static class TGCache
 		{
-			public static readonly Region Instance = new Region("TG", false, false);
+			public static readonly Region Instance = new Region("TG",  RegionCode.TG, false);
 		}
 
 		/// <summary>
@@ -2921,7 +2922,7 @@ namespace NLanguageTag
 
 		private static class THCache
 		{
-			public static readonly Region Instance = new Region("TH", false, false);
+			public static readonly Region Instance = new Region("TH",  RegionCode.TH, false);
 		}
 
 		/// <summary>
@@ -2932,7 +2933,7 @@ namespace NLanguageTag
 
 		private static class TJCache
 		{
-			public static readonly Region Instance = new Region("TJ", false, false);
+			public static readonly Region Instance = new Region("TJ",  RegionCode.TJ, false);
 		}
 
 		/// <summary>
@@ -2943,7 +2944,7 @@ namespace NLanguageTag
 
 		private static class TKCache
 		{
-			public static readonly Region Instance = new Region("TK", false, false);
+			public static readonly Region Instance = new Region("TK",  RegionCode.TK, false);
 		}
 
 		/// <summary>
@@ -2954,7 +2955,7 @@ namespace NLanguageTag
 
 		private static class TLCache
 		{
-			public static readonly Region Instance = new Region("TL", false, false);
+			public static readonly Region Instance = new Region("TL",  RegionCode.TL, false);
 		}
 
 		/// <summary>
@@ -2965,7 +2966,7 @@ namespace NLanguageTag
 
 		private static class TMCache
 		{
-			public static readonly Region Instance = new Region("TM", false, false);
+			public static readonly Region Instance = new Region("TM",  RegionCode.TM, false);
 		}
 
 		/// <summary>
@@ -2976,7 +2977,7 @@ namespace NLanguageTag
 
 		private static class TNCache
 		{
-			public static readonly Region Instance = new Region("TN", false, false);
+			public static readonly Region Instance = new Region("TN",  RegionCode.TN, false);
 		}
 
 		/// <summary>
@@ -2987,7 +2988,7 @@ namespace NLanguageTag
 
 		private static class TOCache
 		{
-			public static readonly Region Instance = new Region("TO", false, false);
+			public static readonly Region Instance = new Region("TO",  RegionCode.TO, false);
 		}
 
 		/// <summary>
@@ -2999,7 +3000,7 @@ namespace NLanguageTag
 
 		private static class TPCache
 		{
-			public static readonly Region Instance = new Region("TP", true, false);
+			public static readonly Region Instance = new Region("TP",  RegionCode.TP, true);
 		}
 
 		/// <summary>
@@ -3010,7 +3011,7 @@ namespace NLanguageTag
 
 		private static class TRCache
 		{
-			public static readonly Region Instance = new Region("TR", false, false);
+			public static readonly Region Instance = new Region("TR",  RegionCode.TR, false);
 		}
 
 		/// <summary>
@@ -3021,7 +3022,7 @@ namespace NLanguageTag
 
 		private static class TTCache
 		{
-			public static readonly Region Instance = new Region("TT", false, false);
+			public static readonly Region Instance = new Region("TT",  RegionCode.TT, false);
 		}
 
 		/// <summary>
@@ -3032,7 +3033,7 @@ namespace NLanguageTag
 
 		private static class TVCache
 		{
-			public static readonly Region Instance = new Region("TV", false, false);
+			public static readonly Region Instance = new Region("TV",  RegionCode.TV, false);
 		}
 
 		/// <summary>
@@ -3043,7 +3044,7 @@ namespace NLanguageTag
 
 		private static class TWCache
 		{
-			public static readonly Region Instance = new Region("TW", false, false);
+			public static readonly Region Instance = new Region("TW",  RegionCode.TW, false);
 		}
 
 		/// <summary>
@@ -3054,7 +3055,7 @@ namespace NLanguageTag
 
 		private static class TZCache
 		{
-			public static readonly Region Instance = new Region("TZ", false, false);
+			public static readonly Region Instance = new Region("TZ",  RegionCode.TZ, false);
 		}
 
 		/// <summary>
@@ -3065,7 +3066,7 @@ namespace NLanguageTag
 
 		private static class UACache
 		{
-			public static readonly Region Instance = new Region("UA", false, false);
+			public static readonly Region Instance = new Region("UA",  RegionCode.UA, false);
 		}
 
 		/// <summary>
@@ -3076,7 +3077,7 @@ namespace NLanguageTag
 
 		private static class UGCache
 		{
-			public static readonly Region Instance = new Region("UG", false, false);
+			public static readonly Region Instance = new Region("UG",  RegionCode.UG, false);
 		}
 
 		/// <summary>
@@ -3087,7 +3088,7 @@ namespace NLanguageTag
 
 		private static class UMCache
 		{
-			public static readonly Region Instance = new Region("UM", false, false);
+			public static readonly Region Instance = new Region("UM",  RegionCode.UM, false);
 		}
 
 		/// <summary>
@@ -3098,7 +3099,7 @@ namespace NLanguageTag
 
 		private static class UNCache
 		{
-			public static readonly Region Instance = new Region("UN", false, false);
+			public static readonly Region Instance = new Region("UN",  RegionCode.UN, false);
 		}
 
 		/// <summary>
@@ -3109,7 +3110,7 @@ namespace NLanguageTag
 
 		private static class USCache
 		{
-			public static readonly Region Instance = new Region("US", false, false);
+			public static readonly Region Instance = new Region("US",  RegionCode.US, false);
 		}
 
 		/// <summary>
@@ -3120,7 +3121,7 @@ namespace NLanguageTag
 
 		private static class UYCache
 		{
-			public static readonly Region Instance = new Region("UY", false, false);
+			public static readonly Region Instance = new Region("UY",  RegionCode.UY, false);
 		}
 
 		/// <summary>
@@ -3131,7 +3132,7 @@ namespace NLanguageTag
 
 		private static class UZCache
 		{
-			public static readonly Region Instance = new Region("UZ", false, false);
+			public static readonly Region Instance = new Region("UZ",  RegionCode.UZ, false);
 		}
 
 		/// <summary>
@@ -3142,7 +3143,7 @@ namespace NLanguageTag
 
 		private static class VACache
 		{
-			public static readonly Region Instance = new Region("VA", false, false);
+			public static readonly Region Instance = new Region("VA",  RegionCode.VA, false);
 		}
 
 		/// <summary>
@@ -3153,7 +3154,7 @@ namespace NLanguageTag
 
 		private static class VCCache
 		{
-			public static readonly Region Instance = new Region("VC", false, false);
+			public static readonly Region Instance = new Region("VC",  RegionCode.VC, false);
 		}
 
 		/// <summary>
@@ -3164,7 +3165,7 @@ namespace NLanguageTag
 
 		private static class VECache
 		{
-			public static readonly Region Instance = new Region("VE", false, false);
+			public static readonly Region Instance = new Region("VE",  RegionCode.VE, false);
 		}
 
 		/// <summary>
@@ -3175,7 +3176,7 @@ namespace NLanguageTag
 
 		private static class VGCache
 		{
-			public static readonly Region Instance = new Region("VG", false, false);
+			public static readonly Region Instance = new Region("VG",  RegionCode.VG, false);
 		}
 
 		/// <summary>
@@ -3186,7 +3187,7 @@ namespace NLanguageTag
 
 		private static class VICache
 		{
-			public static readonly Region Instance = new Region("VI", false, false);
+			public static readonly Region Instance = new Region("VI",  RegionCode.VI, false);
 		}
 
 		/// <summary>
@@ -3197,7 +3198,7 @@ namespace NLanguageTag
 
 		private static class VNCache
 		{
-			public static readonly Region Instance = new Region("VN", false, false);
+			public static readonly Region Instance = new Region("VN",  RegionCode.VN, false);
 		}
 
 		/// <summary>
@@ -3208,7 +3209,7 @@ namespace NLanguageTag
 
 		private static class VUCache
 		{
-			public static readonly Region Instance = new Region("VU", false, false);
+			public static readonly Region Instance = new Region("VU",  RegionCode.VU, false);
 		}
 
 		/// <summary>
@@ -3219,7 +3220,7 @@ namespace NLanguageTag
 
 		private static class WFCache
 		{
-			public static readonly Region Instance = new Region("WF", false, false);
+			public static readonly Region Instance = new Region("WF",  RegionCode.WF, false);
 		}
 
 		/// <summary>
@@ -3230,7 +3231,7 @@ namespace NLanguageTag
 
 		private static class WSCache
 		{
-			public static readonly Region Instance = new Region("WS", false, false);
+			public static readonly Region Instance = new Region("WS",  RegionCode.WS, false);
 		}
 
 		/// <summary>
@@ -3242,7 +3243,7 @@ namespace NLanguageTag
 
 		private static class YDCache
 		{
-			public static readonly Region Instance = new Region("YD", true, false);
+			public static readonly Region Instance = new Region("YD",  RegionCode.YD, true);
 		}
 
 		/// <summary>
@@ -3253,7 +3254,7 @@ namespace NLanguageTag
 
 		private static class YECache
 		{
-			public static readonly Region Instance = new Region("YE", false, false);
+			public static readonly Region Instance = new Region("YE",  RegionCode.YE, false);
 		}
 
 		/// <summary>
@@ -3264,7 +3265,7 @@ namespace NLanguageTag
 
 		private static class YTCache
 		{
-			public static readonly Region Instance = new Region("YT", false, false);
+			public static readonly Region Instance = new Region("YT",  RegionCode.YT, false);
 		}
 
 		/// <summary>
@@ -3277,7 +3278,7 @@ namespace NLanguageTag
 
 		private static class YUCache
 		{
-			public static readonly Region Instance = new Region("YU", true, false);
+			public static readonly Region Instance = new Region("YU",  RegionCode.YU, true);
 		}
 
 		/// <summary>
@@ -3288,7 +3289,7 @@ namespace NLanguageTag
 
 		private static class ZACache
 		{
-			public static readonly Region Instance = new Region("ZA", false, false);
+			public static readonly Region Instance = new Region("ZA",  RegionCode.ZA, false);
 		}
 
 		/// <summary>
@@ -3299,7 +3300,7 @@ namespace NLanguageTag
 
 		private static class ZMCache
 		{
-			public static readonly Region Instance = new Region("ZM", false, false);
+			public static readonly Region Instance = new Region("ZM",  RegionCode.ZM, false);
 		}
 
 		/// <summary>
@@ -3311,7 +3312,7 @@ namespace NLanguageTag
 
 		private static class ZRCache
 		{
-			public static readonly Region Instance = new Region("ZR", true, false);
+			public static readonly Region Instance = new Region("ZR",  RegionCode.ZR, true);
 		}
 
 		/// <summary>
@@ -3322,7 +3323,7 @@ namespace NLanguageTag
 
 		private static class ZWCache
 		{
-			public static readonly Region Instance = new Region("ZW", false, false);
+			public static readonly Region Instance = new Region("ZW",  RegionCode.ZW, false);
 		}
 
 	}

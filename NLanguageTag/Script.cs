@@ -12,14 +12,24 @@ namespace NLanguageTag
 		/// <summary>
 		/// For private use only
 		/// </summary>
-		public bool PrivateUse { get; }
+		public bool PrivateUse => EnumCode == ScriptCode.PrivateUse;
 
 		private readonly string _tag;
 
-		private Script(string tag, bool privateUse)
+		/// <summary>
+		/// subtag as text
+		/// </summary>
+		public string TextCode => _tag;
+
+		/// <summary>
+		/// Enum code to use as constants in C#
+		/// </summary>
+		public ScriptCode EnumCode { get; }
+
+		private Script(string tag, ScriptCode enumCode)
 		{
 			_tag = tag;
-			PrivateUse = privateUse;
+			EnumCode = enumCode;
 		}
 
 		/// <inheritdoc />
@@ -73,7 +83,7 @@ namespace NLanguageTag
 		private static readonly ConcurrentDictionary<string, Script> _privateUse =
 			new ConcurrentDictionary<string, Script>(StringComparer.OrdinalIgnoreCase);
 
-		private static readonly Func<string, Script> _regionCreator = (tag) => new Script(char.ToUpper(tag[0]) + tag.Substring(1), true);
+		private static readonly Func<string, Script> _regionCreator = (tag) => new Script(char.ToUpper(tag[0]) + tag.Substring(1), ScriptCode.PrivateUse);
 
 		private static Script forPrivateUse(string text)
 		{

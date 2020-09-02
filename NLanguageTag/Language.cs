@@ -13,23 +13,33 @@ namespace NLanguageTag
 
 		private Language(
 			string tag,
+			LanguageCode code,
 			Script? suppressScript,
 			Language? macrolanguage,
 			LanguageScope? scope,
 			Func<StringSpan, Language?>? extLanguageParser,
 			Language? prefix,
-			bool deprecated,
-			bool privateUse)
+			bool deprecated)
 		{
 			_tag = tag;
+			EnumCode = code;
 			_extLanguageParser = extLanguageParser;
 			SuppressScript = suppressScript;
 			Macrolanguage = macrolanguage;
 			Scope = scope;
 			Prefix = prefix;
-			PrivateUse = privateUse;
 			Deprecated = deprecated;
 		}
+
+		/// <summary>
+		/// subtag as text
+		/// </summary>
+		public string TextCode => _tag;
+
+		/// <summary>
+		/// Enum code to use as constants in C#
+		/// </summary>
+		public LanguageCode EnumCode { get; }
 
 		/// <summary>
 		/// Returns script (if such exists) used to write the overwhelming majority of documents for the
@@ -61,7 +71,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// Subtag for private use only
 		/// </summary>
-		public bool PrivateUse { get; }
+		public bool PrivateUse => EnumCode == LanguageCode.PrivateUse;
 
 		/// <summary>
 		/// Subtag is deprecated
@@ -126,12 +136,12 @@ namespace NLanguageTag
 		private static readonly ConcurrentDictionary<string, Language> _privateUse =
 			new ConcurrentDictionary<string, Language>(StringComparer.OrdinalIgnoreCase);
 
-		private static readonly Func<string, Language> _regionCreator = (tag) =>
-			new Language(tag.ToLowerInvariant(), null, null, null, null, null, false, true);
+		private static readonly Func<string, Language> _langCreator = (tag) =>
+			new Language(tag.ToLowerInvariant(), LanguageCode.PrivateUse, null, null, null, null, null, false);
 
 		private static Language forPrivateUse(string text)
 		{
-			return _privateUse.GetOrAdd(text, _regionCreator);
+			return _privateUse.GetOrAdd(text, _langCreator);
 		}
 
 		/// <summary>

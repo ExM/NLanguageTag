@@ -1,4 +1,5 @@
 type project
+version 3.0.0-beta2
 projectUrl https://github.com/ExM/NLanguageTag
 licenseUrl https://github.com/ExM/NLanguageTag/raw/master/LICENSE
 requireLicenseAcceptance false

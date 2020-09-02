@@ -12,7 +12,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// Subtag for private use only
 		/// </summary>
-		public bool PrivateUse { get; }
+		public bool PrivateUse => EnumCode == RegionCode.PrivateUse;
 
 		/// <summary>
 		/// Subtag is deprecated
@@ -21,12 +21,22 @@ namespace NLanguageTag
 
 		private readonly string _tag;
 
-		private Region(string tag, bool deprecated, bool privateUse)
+		private Region(string tag, RegionCode enumCode, bool deprecated)
 		{
-			PrivateUse = privateUse;
 			_tag = tag;
+			EnumCode = enumCode;
 			Deprecated = deprecated;
 		}
+
+		/// <summary>
+		/// subtag as text
+		/// </summary>
+		public string TextCode => _tag;
+
+		/// <summary>
+		/// Enum code to use as constants in C#
+		/// </summary>
+		public RegionCode EnumCode { get; }
 
 		/// <inheritdoc />
 		public override string ToString()
@@ -79,7 +89,7 @@ namespace NLanguageTag
 		private static readonly ConcurrentDictionary<string, Region> _privateUse =
 			new ConcurrentDictionary<string, Region>(StringComparer.OrdinalIgnoreCase);
 
-		private static readonly Func<string, Region> _regionCreator = (tag) => new Region(tag.ToUpperInvariant(), false, true);
+		private static readonly Func<string, Region> _regionCreator = (tag) => new Region(tag.ToUpperInvariant(), RegionCode.PrivateUse ,false);
 
 		private static Region forPrivateUse(string text)
 		{

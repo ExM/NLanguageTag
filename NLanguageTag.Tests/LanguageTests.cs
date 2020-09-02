@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace NLanguageTag.Tests
 {
@@ -8,7 +9,7 @@ namespace NLanguageTag.Tests
 	public class LanguageTests
 	{
 		[Test]
-		public void CheckSwitches()
+		public void CheckParseSwitches()
 		{
 			foreach (var text in TestContent.GetLanguages())
 			{
@@ -22,7 +23,19 @@ namespace NLanguageTag.Tests
 				Assert.AreEqual(text, lang.ToExtLanguage());
 			}
 		}
-		
+
+		[Test]
+		public void CheckPublicCodes()
+		{
+			foreach (var code in Enum.GetValues(typeof(LanguageCode)).Cast<LanguageCode>()
+				.Where(_ => _ != LanguageCode.PrivateUse))
+			{
+				var lang = Language.ByCode(code);
+				Assert.IsFalse(lang.PrivateUse);
+				Assert.AreEqual(code, lang.EnumCode);
+			}
+		}
+
 		internal static IEnumerable<TestCaseData> parseFromLanguageCases()
 		{
 			yield return new TestCaseData("afb", Language.AFB);
@@ -77,7 +90,7 @@ namespace NLanguageTag.Tests
 		{
 			Assert.Throws<FormatException>(() => parseLanguage(text));
 		}
-		
+
 		[TestCase("qaa")]
 		[TestCase("qtz")]
 		[TestCase("qba")]
@@ -86,11 +99,12 @@ namespace NLanguageTag.Tests
 		public void ParsePrivateUse(string text)
 		{
 			var lang = Language.Parse(text);
-			
+
 			Assert.IsTrue(lang.PrivateUse);
+			Assert.AreEqual(LanguageCode.PrivateUse, lang.EnumCode);
 			Assert.AreEqual(lang, Language.Parse(text));
 		}
-		
+
 		internal static IEnumerable<TestCaseData> toExtLanguageCases()
 		{
 			yield return new TestCaseData(Language.AFB, "ar-afb");

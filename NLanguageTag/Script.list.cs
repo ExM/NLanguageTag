@@ -12,7 +12,7 @@ namespace NLanguageTag
 
 		private static class AdlmCache
 		{
-			public static readonly Script Instance = new Script("Adlm", false);
+			public static readonly Script Instance = new Script("Adlm", ScriptCode.Adlm);
 		}
 
 		/// <summary>
@@ -23,7 +23,7 @@ namespace NLanguageTag
 
 		private static class AfakCache
 		{
-			public static readonly Script Instance = new Script("Afak", false);
+			public static readonly Script Instance = new Script("Afak", ScriptCode.Afak);
 		}
 
 		/// <summary>
@@ -34,7 +34,7 @@ namespace NLanguageTag
 
 		private static class AghbCache
 		{
-			public static readonly Script Instance = new Script("Aghb", false);
+			public static readonly Script Instance = new Script("Aghb", ScriptCode.Aghb);
 		}
 
 		/// <summary>
@@ -46,7 +46,7 @@ namespace NLanguageTag
 
 		private static class AhomCache
 		{
-			public static readonly Script Instance = new Script("Ahom", false);
+			public static readonly Script Instance = new Script("Ahom", ScriptCode.Ahom);
 		}
 
 		/// <summary>
@@ -57,7 +57,7 @@ namespace NLanguageTag
 
 		private static class ArabCache
 		{
-			public static readonly Script Instance = new Script("Arab", false);
+			public static readonly Script Instance = new Script("Arab", ScriptCode.Arab);
 		}
 
 		/// <summary>
@@ -68,7 +68,7 @@ namespace NLanguageTag
 
 		private static class AranCache
 		{
-			public static readonly Script Instance = new Script("Aran", false);
+			public static readonly Script Instance = new Script("Aran", ScriptCode.Aran);
 		}
 
 		/// <summary>
@@ -79,7 +79,7 @@ namespace NLanguageTag
 
 		private static class ArmiCache
 		{
-			public static readonly Script Instance = new Script("Armi", false);
+			public static readonly Script Instance = new Script("Armi", ScriptCode.Armi);
 		}
 
 		/// <summary>
@@ -90,7 +90,7 @@ namespace NLanguageTag
 
 		private static class ArmnCache
 		{
-			public static readonly Script Instance = new Script("Armn", false);
+			public static readonly Script Instance = new Script("Armn", ScriptCode.Armn);
 		}
 
 		/// <summary>
@@ -101,7 +101,7 @@ namespace NLanguageTag
 
 		private static class AvstCache
 		{
-			public static readonly Script Instance = new Script("Avst", false);
+			public static readonly Script Instance = new Script("Avst", ScriptCode.Avst);
 		}
 
 		/// <summary>
@@ -112,7 +112,7 @@ namespace NLanguageTag
 
 		private static class BaliCache
 		{
-			public static readonly Script Instance = new Script("Bali", false);
+			public static readonly Script Instance = new Script("Bali", ScriptCode.Bali);
 		}
 
 		/// <summary>
@@ -123,7 +123,7 @@ namespace NLanguageTag
 
 		private static class BamuCache
 		{
-			public static readonly Script Instance = new Script("Bamu", false);
+			public static readonly Script Instance = new Script("Bamu", ScriptCode.Bamu);
 		}
 
 		/// <summary>
@@ -134,7 +134,7 @@ namespace NLanguageTag
 
 		private static class BassCache
 		{
-			public static readonly Script Instance = new Script("Bass", false);
+			public static readonly Script Instance = new Script("Bass", ScriptCode.Bass);
 		}
 
 		/// <summary>
@@ -145,7 +145,7 @@ namespace NLanguageTag
 
 		private static class BatkCache
 		{
-			public static readonly Script Instance = new Script("Batk", false);
+			public static readonly Script Instance = new Script("Batk", ScriptCode.Batk);
 		}
 
 		/// <summary>
@@ -157,7 +157,7 @@ namespace NLanguageTag
 
 		private static class BengCache
 		{
-			public static readonly Script Instance = new Script("Beng", false);
+			public static readonly Script Instance = new Script("Beng", ScriptCode.Beng);
 		}
 
 		/// <summary>
@@ -168,7 +168,7 @@ namespace NLanguageTag
 
 		private static class BhksCache
 		{
-			public static readonly Script Instance = new Script("Bhks", false);
+			public static readonly Script Instance = new Script("Bhks", ScriptCode.Bhks);
 		}
 
 		/// <summary>
@@ -179,7 +179,7 @@ namespace NLanguageTag
 
 		private static class BlisCache
 		{
-			public static readonly Script Instance = new Script("Blis", false);
+			public static readonly Script Instance = new Script("Blis", ScriptCode.Blis);
 		}
 
 		/// <summary>
@@ -190,7 +190,7 @@ namespace NLanguageTag
 
 		private static class BopoCache
 		{
-			public static readonly Script Instance = new Script("Bopo", false);
+			public static readonly Script Instance = new Script("Bopo", ScriptCode.Bopo);
 		}
 
 		/// <summary>
@@ -201,7 +201,7 @@ namespace NLanguageTag
 
 		private static class BrahCache
 		{
-			public static readonly Script Instance = new Script("Brah", false);
+			public static readonly Script Instance = new Script("Brah", ScriptCode.Brah);
 		}
 
 		/// <summary>
@@ -212,7 +212,7 @@ namespace NLanguageTag
 
 		private static class BraiCache
 		{
-			public static readonly Script Instance = new Script("Brai", false);
+			public static readonly Script Instance = new Script("Brai", ScriptCode.Brai);
 		}
 
 		/// <summary>
@@ -223,7 +223,7 @@ namespace NLanguageTag
 
 		private static class BugiCache
 		{
-			public static readonly Script Instance = new Script("Bugi", false);
+			public static readonly Script Instance = new Script("Bugi", ScriptCode.Bugi);
 		}
 
 		/// <summary>
@@ -234,7 +234,7 @@ namespace NLanguageTag
 
 		private static class BuhdCache
 		{
-			public static readonly Script Instance = new Script("Buhd", false);
+			public static readonly Script Instance = new Script("Buhd", ScriptCode.Buhd);
 		}
 
 		/// <summary>
@@ -245,7 +245,7 @@ namespace NLanguageTag
 
 		private static class CakmCache
 		{
-			public static readonly Script Instance = new Script("Cakm", false);
+			public static readonly Script Instance = new Script("Cakm", ScriptCode.Cakm);
 		}
 
 		/// <summary>
@@ -256,7 +256,7 @@ namespace NLanguageTag
 
 		private static class CansCache
 		{
-			public static readonly Script Instance = new Script("Cans", false);
+			public static readonly Script Instance = new Script("Cans", ScriptCode.Cans);
 		}
 
 		/// <summary>
@@ -267,7 +267,7 @@ namespace NLanguageTag
 
 		private static class CariCache
 		{
-			public static readonly Script Instance = new Script("Cari", false);
+			public static readonly Script Instance = new Script("Cari", ScriptCode.Cari);
 		}
 
 		/// <summary>
@@ -278,7 +278,7 @@ namespace NLanguageTag
 
 		private static class ChamCache
 		{
-			public static readonly Script Instance = new Script("Cham", false);
+			public static readonly Script Instance = new Script("Cham", ScriptCode.Cham);
 		}
 
 		/// <summary>
@@ -289,7 +289,7 @@ namespace NLanguageTag
 
 		private static class CherCache
 		{
-			public static readonly Script Instance = new Script("Cher", false);
+			public static readonly Script Instance = new Script("Cher", ScriptCode.Cher);
 		}
 
 		/// <summary>
@@ -300,7 +300,7 @@ namespace NLanguageTag
 
 		private static class ChrsCache
 		{
-			public static readonly Script Instance = new Script("Chrs", false);
+			public static readonly Script Instance = new Script("Chrs", ScriptCode.Chrs);
 		}
 
 		/// <summary>
@@ -311,7 +311,7 @@ namespace NLanguageTag
 
 		private static class CirtCache
 		{
-			public static readonly Script Instance = new Script("Cirt", false);
+			public static readonly Script Instance = new Script("Cirt", ScriptCode.Cirt);
 		}
 
 		/// <summary>
@@ -322,7 +322,7 @@ namespace NLanguageTag
 
 		private static class CoptCache
 		{
-			public static readonly Script Instance = new Script("Copt", false);
+			public static readonly Script Instance = new Script("Copt", ScriptCode.Copt);
 		}
 
 		/// <summary>
@@ -333,7 +333,7 @@ namespace NLanguageTag
 
 		private static class CpmnCache
 		{
-			public static readonly Script Instance = new Script("Cpmn", false);
+			public static readonly Script Instance = new Script("Cpmn", ScriptCode.Cpmn);
 		}
 
 		/// <summary>
@@ -344,7 +344,7 @@ namespace NLanguageTag
 
 		private static class CprtCache
 		{
-			public static readonly Script Instance = new Script("Cprt", false);
+			public static readonly Script Instance = new Script("Cprt", ScriptCode.Cprt);
 		}
 
 		/// <summary>
@@ -355,7 +355,7 @@ namespace NLanguageTag
 
 		private static class CyrlCache
 		{
-			public static readonly Script Instance = new Script("Cyrl", false);
+			public static readonly Script Instance = new Script("Cyrl", ScriptCode.Cyrl);
 		}
 
 		/// <summary>
@@ -366,7 +366,7 @@ namespace NLanguageTag
 
 		private static class CyrsCache
 		{
-			public static readonly Script Instance = new Script("Cyrs", false);
+			public static readonly Script Instance = new Script("Cyrs", ScriptCode.Cyrs);
 		}
 
 		/// <summary>
@@ -378,7 +378,7 @@ namespace NLanguageTag
 
 		private static class DevaCache
 		{
-			public static readonly Script Instance = new Script("Deva", false);
+			public static readonly Script Instance = new Script("Deva", ScriptCode.Deva);
 		}
 
 		/// <summary>
@@ -389,7 +389,7 @@ namespace NLanguageTag
 
 		private static class DiakCache
 		{
-			public static readonly Script Instance = new Script("Diak", false);
+			public static readonly Script Instance = new Script("Diak", ScriptCode.Diak);
 		}
 
 		/// <summary>
@@ -400,7 +400,7 @@ namespace NLanguageTag
 
 		private static class DogrCache
 		{
-			public static readonly Script Instance = new Script("Dogr", false);
+			public static readonly Script Instance = new Script("Dogr", ScriptCode.Dogr);
 		}
 
 		/// <summary>
@@ -412,7 +412,7 @@ namespace NLanguageTag
 
 		private static class DsrtCache
 		{
-			public static readonly Script Instance = new Script("Dsrt", false);
+			public static readonly Script Instance = new Script("Dsrt", ScriptCode.Dsrt);
 		}
 
 		/// <summary>
@@ -424,7 +424,7 @@ namespace NLanguageTag
 
 		private static class DuplCache
 		{
-			public static readonly Script Instance = new Script("Dupl", false);
+			public static readonly Script Instance = new Script("Dupl", ScriptCode.Dupl);
 		}
 
 		/// <summary>
@@ -435,7 +435,7 @@ namespace NLanguageTag
 
 		private static class EgydCache
 		{
-			public static readonly Script Instance = new Script("Egyd", false);
+			public static readonly Script Instance = new Script("Egyd", ScriptCode.Egyd);
 		}
 
 		/// <summary>
@@ -446,7 +446,7 @@ namespace NLanguageTag
 
 		private static class EgyhCache
 		{
-			public static readonly Script Instance = new Script("Egyh", false);
+			public static readonly Script Instance = new Script("Egyh", ScriptCode.Egyh);
 		}
 
 		/// <summary>
@@ -457,7 +457,7 @@ namespace NLanguageTag
 
 		private static class EgypCache
 		{
-			public static readonly Script Instance = new Script("Egyp", false);
+			public static readonly Script Instance = new Script("Egyp", ScriptCode.Egyp);
 		}
 
 		/// <summary>
@@ -468,7 +468,7 @@ namespace NLanguageTag
 
 		private static class ElbaCache
 		{
-			public static readonly Script Instance = new Script("Elba", false);
+			public static readonly Script Instance = new Script("Elba", ScriptCode.Elba);
 		}
 
 		/// <summary>
@@ -479,7 +479,7 @@ namespace NLanguageTag
 
 		private static class ElymCache
 		{
-			public static readonly Script Instance = new Script("Elym", false);
+			public static readonly Script Instance = new Script("Elym", ScriptCode.Elym);
 		}
 
 		/// <summary>
@@ -492,7 +492,7 @@ namespace NLanguageTag
 
 		private static class EthiCache
 		{
-			public static readonly Script Instance = new Script("Ethi", false);
+			public static readonly Script Instance = new Script("Ethi", ScriptCode.Ethi);
 		}
 
 		/// <summary>
@@ -503,7 +503,7 @@ namespace NLanguageTag
 
 		private static class GeokCache
 		{
-			public static readonly Script Instance = new Script("Geok", false);
+			public static readonly Script Instance = new Script("Geok", ScriptCode.Geok);
 		}
 
 		/// <summary>
@@ -514,7 +514,7 @@ namespace NLanguageTag
 
 		private static class GeorCache
 		{
-			public static readonly Script Instance = new Script("Geor", false);
+			public static readonly Script Instance = new Script("Geor", ScriptCode.Geor);
 		}
 
 		/// <summary>
@@ -525,7 +525,7 @@ namespace NLanguageTag
 
 		private static class GlagCache
 		{
-			public static readonly Script Instance = new Script("Glag", false);
+			public static readonly Script Instance = new Script("Glag", ScriptCode.Glag);
 		}
 
 		/// <summary>
@@ -536,7 +536,7 @@ namespace NLanguageTag
 
 		private static class GongCache
 		{
-			public static readonly Script Instance = new Script("Gong", false);
+			public static readonly Script Instance = new Script("Gong", ScriptCode.Gong);
 		}
 
 		/// <summary>
@@ -547,7 +547,7 @@ namespace NLanguageTag
 
 		private static class GonmCache
 		{
-			public static readonly Script Instance = new Script("Gonm", false);
+			public static readonly Script Instance = new Script("Gonm", ScriptCode.Gonm);
 		}
 
 		/// <summary>
@@ -558,7 +558,7 @@ namespace NLanguageTag
 
 		private static class GothCache
 		{
-			public static readonly Script Instance = new Script("Goth", false);
+			public static readonly Script Instance = new Script("Goth", ScriptCode.Goth);
 		}
 
 		/// <summary>
@@ -569,7 +569,7 @@ namespace NLanguageTag
 
 		private static class GranCache
 		{
-			public static readonly Script Instance = new Script("Gran", false);
+			public static readonly Script Instance = new Script("Gran", ScriptCode.Gran);
 		}
 
 		/// <summary>
@@ -580,7 +580,7 @@ namespace NLanguageTag
 
 		private static class GrekCache
 		{
-			public static readonly Script Instance = new Script("Grek", false);
+			public static readonly Script Instance = new Script("Grek", ScriptCode.Grek);
 		}
 
 		/// <summary>
@@ -591,7 +591,7 @@ namespace NLanguageTag
 
 		private static class GujrCache
 		{
-			public static readonly Script Instance = new Script("Gujr", false);
+			public static readonly Script Instance = new Script("Gujr", ScriptCode.Gujr);
 		}
 
 		/// <summary>
@@ -602,7 +602,7 @@ namespace NLanguageTag
 
 		private static class GuruCache
 		{
-			public static readonly Script Instance = new Script("Guru", false);
+			public static readonly Script Instance = new Script("Guru", ScriptCode.Guru);
 		}
 
 		/// <summary>
@@ -613,7 +613,7 @@ namespace NLanguageTag
 
 		private static class HanbCache
 		{
-			public static readonly Script Instance = new Script("Hanb", false);
+			public static readonly Script Instance = new Script("Hanb", ScriptCode.Hanb);
 		}
 
 		/// <summary>
@@ -626,7 +626,7 @@ namespace NLanguageTag
 
 		private static class HangCache
 		{
-			public static readonly Script Instance = new Script("Hang", false);
+			public static readonly Script Instance = new Script("Hang", ScriptCode.Hang);
 		}
 
 		/// <summary>
@@ -640,7 +640,7 @@ namespace NLanguageTag
 
 		private static class HaniCache
 		{
-			public static readonly Script Instance = new Script("Hani", false);
+			public static readonly Script Instance = new Script("Hani", ScriptCode.Hani);
 		}
 
 		/// <summary>
@@ -652,7 +652,7 @@ namespace NLanguageTag
 
 		private static class HanoCache
 		{
-			public static readonly Script Instance = new Script("Hano", false);
+			public static readonly Script Instance = new Script("Hano", ScriptCode.Hano);
 		}
 
 		/// <summary>
@@ -663,7 +663,7 @@ namespace NLanguageTag
 
 		private static class HansCache
 		{
-			public static readonly Script Instance = new Script("Hans", false);
+			public static readonly Script Instance = new Script("Hans", ScriptCode.Hans);
 		}
 
 		/// <summary>
@@ -674,7 +674,7 @@ namespace NLanguageTag
 
 		private static class HantCache
 		{
-			public static readonly Script Instance = new Script("Hant", false);
+			public static readonly Script Instance = new Script("Hant", ScriptCode.Hant);
 		}
 
 		/// <summary>
@@ -685,7 +685,7 @@ namespace NLanguageTag
 
 		private static class HatrCache
 		{
-			public static readonly Script Instance = new Script("Hatr", false);
+			public static readonly Script Instance = new Script("Hatr", ScriptCode.Hatr);
 		}
 
 		/// <summary>
@@ -696,7 +696,7 @@ namespace NLanguageTag
 
 		private static class HebrCache
 		{
-			public static readonly Script Instance = new Script("Hebr", false);
+			public static readonly Script Instance = new Script("Hebr", ScriptCode.Hebr);
 		}
 
 		/// <summary>
@@ -707,7 +707,7 @@ namespace NLanguageTag
 
 		private static class HiraCache
 		{
-			public static readonly Script Instance = new Script("Hira", false);
+			public static readonly Script Instance = new Script("Hira", ScriptCode.Hira);
 		}
 
 		/// <summary>
@@ -720,7 +720,7 @@ namespace NLanguageTag
 
 		private static class HluwCache
 		{
-			public static readonly Script Instance = new Script("Hluw", false);
+			public static readonly Script Instance = new Script("Hluw", ScriptCode.Hluw);
 		}
 
 		/// <summary>
@@ -731,7 +731,7 @@ namespace NLanguageTag
 
 		private static class HmngCache
 		{
-			public static readonly Script Instance = new Script("Hmng", false);
+			public static readonly Script Instance = new Script("Hmng", ScriptCode.Hmng);
 		}
 
 		/// <summary>
@@ -742,7 +742,7 @@ namespace NLanguageTag
 
 		private static class HmnpCache
 		{
-			public static readonly Script Instance = new Script("Hmnp", false);
+			public static readonly Script Instance = new Script("Hmnp", ScriptCode.Hmnp);
 		}
 
 		/// <summary>
@@ -753,7 +753,7 @@ namespace NLanguageTag
 
 		private static class HrktCache
 		{
-			public static readonly Script Instance = new Script("Hrkt", false);
+			public static readonly Script Instance = new Script("Hrkt", ScriptCode.Hrkt);
 		}
 
 		/// <summary>
@@ -765,7 +765,7 @@ namespace NLanguageTag
 
 		private static class HungCache
 		{
-			public static readonly Script Instance = new Script("Hung", false);
+			public static readonly Script Instance = new Script("Hung", ScriptCode.Hung);
 		}
 
 		/// <summary>
@@ -777,7 +777,7 @@ namespace NLanguageTag
 
 		private static class IndsCache
 		{
-			public static readonly Script Instance = new Script("Inds", false);
+			public static readonly Script Instance = new Script("Inds", ScriptCode.Inds);
 		}
 
 		/// <summary>
@@ -788,7 +788,7 @@ namespace NLanguageTag
 
 		private static class ItalCache
 		{
-			public static readonly Script Instance = new Script("Ital", false);
+			public static readonly Script Instance = new Script("Ital", ScriptCode.Ital);
 		}
 
 		/// <summary>
@@ -799,7 +799,7 @@ namespace NLanguageTag
 
 		private static class JamoCache
 		{
-			public static readonly Script Instance = new Script("Jamo", false);
+			public static readonly Script Instance = new Script("Jamo", ScriptCode.Jamo);
 		}
 
 		/// <summary>
@@ -810,7 +810,7 @@ namespace NLanguageTag
 
 		private static class JavaCache
 		{
-			public static readonly Script Instance = new Script("Java", false);
+			public static readonly Script Instance = new Script("Java", ScriptCode.Java);
 		}
 
 		/// <summary>
@@ -821,7 +821,7 @@ namespace NLanguageTag
 
 		private static class JpanCache
 		{
-			public static readonly Script Instance = new Script("Jpan", false);
+			public static readonly Script Instance = new Script("Jpan", ScriptCode.Jpan);
 		}
 
 		/// <summary>
@@ -832,7 +832,7 @@ namespace NLanguageTag
 
 		private static class JurcCache
 		{
-			public static readonly Script Instance = new Script("Jurc", false);
+			public static readonly Script Instance = new Script("Jurc", ScriptCode.Jurc);
 		}
 
 		/// <summary>
@@ -843,7 +843,7 @@ namespace NLanguageTag
 
 		private static class KaliCache
 		{
-			public static readonly Script Instance = new Script("Kali", false);
+			public static readonly Script Instance = new Script("Kali", ScriptCode.Kali);
 		}
 
 		/// <summary>
@@ -854,7 +854,7 @@ namespace NLanguageTag
 
 		private static class KanaCache
 		{
-			public static readonly Script Instance = new Script("Kana", false);
+			public static readonly Script Instance = new Script("Kana", ScriptCode.Kana);
 		}
 
 		/// <summary>
@@ -865,7 +865,7 @@ namespace NLanguageTag
 
 		private static class KharCache
 		{
-			public static readonly Script Instance = new Script("Khar", false);
+			public static readonly Script Instance = new Script("Khar", ScriptCode.Khar);
 		}
 
 		/// <summary>
@@ -876,7 +876,7 @@ namespace NLanguageTag
 
 		private static class KhmrCache
 		{
-			public static readonly Script Instance = new Script("Khmr", false);
+			public static readonly Script Instance = new Script("Khmr", ScriptCode.Khmr);
 		}
 
 		/// <summary>
@@ -887,7 +887,7 @@ namespace NLanguageTag
 
 		private static class KhojCache
 		{
-			public static readonly Script Instance = new Script("Khoj", false);
+			public static readonly Script Instance = new Script("Khoj", ScriptCode.Khoj);
 		}
 
 		/// <summary>
@@ -898,7 +898,7 @@ namespace NLanguageTag
 
 		private static class KitlCache
 		{
-			public static readonly Script Instance = new Script("Kitl", false);
+			public static readonly Script Instance = new Script("Kitl", ScriptCode.Kitl);
 		}
 
 		/// <summary>
@@ -909,7 +909,7 @@ namespace NLanguageTag
 
 		private static class KitsCache
 		{
-			public static readonly Script Instance = new Script("Kits", false);
+			public static readonly Script Instance = new Script("Kits", ScriptCode.Kits);
 		}
 
 		/// <summary>
@@ -920,7 +920,7 @@ namespace NLanguageTag
 
 		private static class KndaCache
 		{
-			public static readonly Script Instance = new Script("Knda", false);
+			public static readonly Script Instance = new Script("Knda", ScriptCode.Knda);
 		}
 
 		/// <summary>
@@ -931,7 +931,7 @@ namespace NLanguageTag
 
 		private static class KoreCache
 		{
-			public static readonly Script Instance = new Script("Kore", false);
+			public static readonly Script Instance = new Script("Kore", ScriptCode.Kore);
 		}
 
 		/// <summary>
@@ -942,7 +942,7 @@ namespace NLanguageTag
 
 		private static class KpelCache
 		{
-			public static readonly Script Instance = new Script("Kpel", false);
+			public static readonly Script Instance = new Script("Kpel", ScriptCode.Kpel);
 		}
 
 		/// <summary>
@@ -953,7 +953,7 @@ namespace NLanguageTag
 
 		private static class KthiCache
 		{
-			public static readonly Script Instance = new Script("Kthi", false);
+			public static readonly Script Instance = new Script("Kthi", ScriptCode.Kthi);
 		}
 
 		/// <summary>
@@ -965,7 +965,7 @@ namespace NLanguageTag
 
 		private static class LanaCache
 		{
-			public static readonly Script Instance = new Script("Lana", false);
+			public static readonly Script Instance = new Script("Lana", ScriptCode.Lana);
 		}
 
 		/// <summary>
@@ -976,7 +976,7 @@ namespace NLanguageTag
 
 		private static class LaooCache
 		{
-			public static readonly Script Instance = new Script("Laoo", false);
+			public static readonly Script Instance = new Script("Laoo", ScriptCode.Laoo);
 		}
 
 		/// <summary>
@@ -987,7 +987,7 @@ namespace NLanguageTag
 
 		private static class LatfCache
 		{
-			public static readonly Script Instance = new Script("Latf", false);
+			public static readonly Script Instance = new Script("Latf", ScriptCode.Latf);
 		}
 
 		/// <summary>
@@ -998,7 +998,7 @@ namespace NLanguageTag
 
 		private static class LatgCache
 		{
-			public static readonly Script Instance = new Script("Latg", false);
+			public static readonly Script Instance = new Script("Latg", ScriptCode.Latg);
 		}
 
 		/// <summary>
@@ -1009,7 +1009,7 @@ namespace NLanguageTag
 
 		private static class LatnCache
 		{
-			public static readonly Script Instance = new Script("Latn", false);
+			public static readonly Script Instance = new Script("Latn", ScriptCode.Latn);
 		}
 
 		/// <summary>
@@ -1020,7 +1020,7 @@ namespace NLanguageTag
 
 		private static class LekeCache
 		{
-			public static readonly Script Instance = new Script("Leke", false);
+			public static readonly Script Instance = new Script("Leke", ScriptCode.Leke);
 		}
 
 		/// <summary>
@@ -1032,7 +1032,7 @@ namespace NLanguageTag
 
 		private static class LepcCache
 		{
-			public static readonly Script Instance = new Script("Lepc", false);
+			public static readonly Script Instance = new Script("Lepc", ScriptCode.Lepc);
 		}
 
 		/// <summary>
@@ -1043,7 +1043,7 @@ namespace NLanguageTag
 
 		private static class LimbCache
 		{
-			public static readonly Script Instance = new Script("Limb", false);
+			public static readonly Script Instance = new Script("Limb", ScriptCode.Limb);
 		}
 
 		/// <summary>
@@ -1054,7 +1054,7 @@ namespace NLanguageTag
 
 		private static class LinaCache
 		{
-			public static readonly Script Instance = new Script("Lina", false);
+			public static readonly Script Instance = new Script("Lina", ScriptCode.Lina);
 		}
 
 		/// <summary>
@@ -1065,7 +1065,7 @@ namespace NLanguageTag
 
 		private static class LinbCache
 		{
-			public static readonly Script Instance = new Script("Linb", false);
+			public static readonly Script Instance = new Script("Linb", ScriptCode.Linb);
 		}
 
 		/// <summary>
@@ -1077,7 +1077,7 @@ namespace NLanguageTag
 
 		private static class LisuCache
 		{
-			public static readonly Script Instance = new Script("Lisu", false);
+			public static readonly Script Instance = new Script("Lisu", ScriptCode.Lisu);
 		}
 
 		/// <summary>
@@ -1088,7 +1088,7 @@ namespace NLanguageTag
 
 		private static class LomaCache
 		{
-			public static readonly Script Instance = new Script("Loma", false);
+			public static readonly Script Instance = new Script("Loma", ScriptCode.Loma);
 		}
 
 		/// <summary>
@@ -1099,7 +1099,7 @@ namespace NLanguageTag
 
 		private static class LyciCache
 		{
-			public static readonly Script Instance = new Script("Lyci", false);
+			public static readonly Script Instance = new Script("Lyci", ScriptCode.Lyci);
 		}
 
 		/// <summary>
@@ -1110,7 +1110,7 @@ namespace NLanguageTag
 
 		private static class LydiCache
 		{
-			public static readonly Script Instance = new Script("Lydi", false);
+			public static readonly Script Instance = new Script("Lydi", ScriptCode.Lydi);
 		}
 
 		/// <summary>
@@ -1121,7 +1121,7 @@ namespace NLanguageTag
 
 		private static class MahjCache
 		{
-			public static readonly Script Instance = new Script("Mahj", false);
+			public static readonly Script Instance = new Script("Mahj", ScriptCode.Mahj);
 		}
 
 		/// <summary>
@@ -1132,7 +1132,7 @@ namespace NLanguageTag
 
 		private static class MakaCache
 		{
-			public static readonly Script Instance = new Script("Maka", false);
+			public static readonly Script Instance = new Script("Maka", ScriptCode.Maka);
 		}
 
 		/// <summary>
@@ -1144,7 +1144,7 @@ namespace NLanguageTag
 
 		private static class MandCache
 		{
-			public static readonly Script Instance = new Script("Mand", false);
+			public static readonly Script Instance = new Script("Mand", ScriptCode.Mand);
 		}
 
 		/// <summary>
@@ -1155,7 +1155,7 @@ namespace NLanguageTag
 
 		private static class ManiCache
 		{
-			public static readonly Script Instance = new Script("Mani", false);
+			public static readonly Script Instance = new Script("Mani", ScriptCode.Mani);
 		}
 
 		/// <summary>
@@ -1166,7 +1166,7 @@ namespace NLanguageTag
 
 		private static class MarcCache
 		{
-			public static readonly Script Instance = new Script("Marc", false);
+			public static readonly Script Instance = new Script("Marc", ScriptCode.Marc);
 		}
 
 		/// <summary>
@@ -1177,7 +1177,7 @@ namespace NLanguageTag
 
 		private static class MayaCache
 		{
-			public static readonly Script Instance = new Script("Maya", false);
+			public static readonly Script Instance = new Script("Maya", ScriptCode.Maya);
 		}
 
 		/// <summary>
@@ -1190,7 +1190,7 @@ namespace NLanguageTag
 
 		private static class MedfCache
 		{
-			public static readonly Script Instance = new Script("Medf", false);
+			public static readonly Script Instance = new Script("Medf", ScriptCode.Medf);
 		}
 
 		/// <summary>
@@ -1201,7 +1201,7 @@ namespace NLanguageTag
 
 		private static class MendCache
 		{
-			public static readonly Script Instance = new Script("Mend", false);
+			public static readonly Script Instance = new Script("Mend", ScriptCode.Mend);
 		}
 
 		/// <summary>
@@ -1212,7 +1212,7 @@ namespace NLanguageTag
 
 		private static class MercCache
 		{
-			public static readonly Script Instance = new Script("Merc", false);
+			public static readonly Script Instance = new Script("Merc", ScriptCode.Merc);
 		}
 
 		/// <summary>
@@ -1223,7 +1223,7 @@ namespace NLanguageTag
 
 		private static class MeroCache
 		{
-			public static readonly Script Instance = new Script("Mero", false);
+			public static readonly Script Instance = new Script("Mero", ScriptCode.Mero);
 		}
 
 		/// <summary>
@@ -1234,7 +1234,7 @@ namespace NLanguageTag
 
 		private static class MlymCache
 		{
-			public static readonly Script Instance = new Script("Mlym", false);
+			public static readonly Script Instance = new Script("Mlym", ScriptCode.Mlym);
 		}
 
 		/// <summary>
@@ -1246,7 +1246,7 @@ namespace NLanguageTag
 
 		private static class ModiCache
 		{
-			public static readonly Script Instance = new Script("Modi", false);
+			public static readonly Script Instance = new Script("Modi", ScriptCode.Modi);
 		}
 
 		/// <summary>
@@ -1257,7 +1257,7 @@ namespace NLanguageTag
 
 		private static class MongCache
 		{
-			public static readonly Script Instance = new Script("Mong", false);
+			public static readonly Script Instance = new Script("Mong", ScriptCode.Mong);
 		}
 
 		/// <summary>
@@ -1271,7 +1271,7 @@ namespace NLanguageTag
 
 		private static class MoonCache
 		{
-			public static readonly Script Instance = new Script("Moon", false);
+			public static readonly Script Instance = new Script("Moon", ScriptCode.Moon);
 		}
 
 		/// <summary>
@@ -1283,7 +1283,7 @@ namespace NLanguageTag
 
 		private static class MrooCache
 		{
-			public static readonly Script Instance = new Script("Mroo", false);
+			public static readonly Script Instance = new Script("Mroo", ScriptCode.Mroo);
 		}
 
 		/// <summary>
@@ -1296,7 +1296,7 @@ namespace NLanguageTag
 
 		private static class MteiCache
 		{
-			public static readonly Script Instance = new Script("Mtei", false);
+			public static readonly Script Instance = new Script("Mtei", ScriptCode.Mtei);
 		}
 
 		/// <summary>
@@ -1307,7 +1307,7 @@ namespace NLanguageTag
 
 		private static class MultCache
 		{
-			public static readonly Script Instance = new Script("Mult", false);
+			public static readonly Script Instance = new Script("Mult", ScriptCode.Mult);
 		}
 
 		/// <summary>
@@ -1319,7 +1319,7 @@ namespace NLanguageTag
 
 		private static class MymrCache
 		{
-			public static readonly Script Instance = new Script("Mymr", false);
+			public static readonly Script Instance = new Script("Mymr", ScriptCode.Mymr);
 		}
 
 		/// <summary>
@@ -1330,7 +1330,7 @@ namespace NLanguageTag
 
 		private static class NandCache
 		{
-			public static readonly Script Instance = new Script("Nand", false);
+			public static readonly Script Instance = new Script("Nand", ScriptCode.Nand);
 		}
 
 		/// <summary>
@@ -1342,7 +1342,7 @@ namespace NLanguageTag
 
 		private static class NarbCache
 		{
-			public static readonly Script Instance = new Script("Narb", false);
+			public static readonly Script Instance = new Script("Narb", ScriptCode.Narb);
 		}
 
 		/// <summary>
@@ -1353,7 +1353,7 @@ namespace NLanguageTag
 
 		private static class NbatCache
 		{
-			public static readonly Script Instance = new Script("Nbat", false);
+			public static readonly Script Instance = new Script("Nbat", ScriptCode.Nbat);
 		}
 
 		/// <summary>
@@ -1367,7 +1367,7 @@ namespace NLanguageTag
 
 		private static class NewaCache
 		{
-			public static readonly Script Instance = new Script("Newa", false);
+			public static readonly Script Instance = new Script("Newa", ScriptCode.Newa);
 		}
 
 		/// <summary>
@@ -1380,7 +1380,7 @@ namespace NLanguageTag
 
 		private static class NkdbCache
 		{
-			public static readonly Script Instance = new Script("Nkdb", false);
+			public static readonly Script Instance = new Script("Nkdb", ScriptCode.Nkdb);
 		}
 
 		/// <summary>
@@ -1394,7 +1394,7 @@ namespace NLanguageTag
 
 		private static class NkgbCache
 		{
-			public static readonly Script Instance = new Script("Nkgb", false);
+			public static readonly Script Instance = new Script("Nkgb", ScriptCode.Nkgb);
 		}
 
 		/// <summary>
@@ -1406,7 +1406,7 @@ namespace NLanguageTag
 
 		private static class NkooCache
 		{
-			public static readonly Script Instance = new Script("Nkoo", false);
+			public static readonly Script Instance = new Script("Nkoo", ScriptCode.Nkoo);
 		}
 
 		/// <summary>
@@ -1417,7 +1417,7 @@ namespace NLanguageTag
 
 		private static class NshuCache
 		{
-			public static readonly Script Instance = new Script("Nshu", false);
+			public static readonly Script Instance = new Script("Nshu", ScriptCode.Nshu);
 		}
 
 		/// <summary>
@@ -1428,7 +1428,7 @@ namespace NLanguageTag
 
 		private static class OgamCache
 		{
-			public static readonly Script Instance = new Script("Ogam", false);
+			public static readonly Script Instance = new Script("Ogam", ScriptCode.Ogam);
 		}
 
 		/// <summary>
@@ -1442,7 +1442,7 @@ namespace NLanguageTag
 
 		private static class OlckCache
 		{
-			public static readonly Script Instance = new Script("Olck", false);
+			public static readonly Script Instance = new Script("Olck", ScriptCode.Olck);
 		}
 
 		/// <summary>
@@ -1454,7 +1454,7 @@ namespace NLanguageTag
 
 		private static class OrkhCache
 		{
-			public static readonly Script Instance = new Script("Orkh", false);
+			public static readonly Script Instance = new Script("Orkh", ScriptCode.Orkh);
 		}
 
 		/// <summary>
@@ -1466,7 +1466,7 @@ namespace NLanguageTag
 
 		private static class OryaCache
 		{
-			public static readonly Script Instance = new Script("Orya", false);
+			public static readonly Script Instance = new Script("Orya", ScriptCode.Orya);
 		}
 
 		/// <summary>
@@ -1477,7 +1477,7 @@ namespace NLanguageTag
 
 		private static class OsgeCache
 		{
-			public static readonly Script Instance = new Script("Osge", false);
+			public static readonly Script Instance = new Script("Osge", ScriptCode.Osge);
 		}
 
 		/// <summary>
@@ -1488,7 +1488,7 @@ namespace NLanguageTag
 
 		private static class OsmaCache
 		{
-			public static readonly Script Instance = new Script("Osma", false);
+			public static readonly Script Instance = new Script("Osma", ScriptCode.Osma);
 		}
 
 		/// <summary>
@@ -1499,7 +1499,7 @@ namespace NLanguageTag
 
 		private static class PalmCache
 		{
-			public static readonly Script Instance = new Script("Palm", false);
+			public static readonly Script Instance = new Script("Palm", ScriptCode.Palm);
 		}
 
 		/// <summary>
@@ -1510,7 +1510,7 @@ namespace NLanguageTag
 
 		private static class PaucCache
 		{
-			public static readonly Script Instance = new Script("Pauc", false);
+			public static readonly Script Instance = new Script("Pauc", ScriptCode.Pauc);
 		}
 
 		/// <summary>
@@ -1521,7 +1521,7 @@ namespace NLanguageTag
 
 		private static class PermCache
 		{
-			public static readonly Script Instance = new Script("Perm", false);
+			public static readonly Script Instance = new Script("Perm", ScriptCode.Perm);
 		}
 
 		/// <summary>
@@ -1532,7 +1532,7 @@ namespace NLanguageTag
 
 		private static class PhagCache
 		{
-			public static readonly Script Instance = new Script("Phag", false);
+			public static readonly Script Instance = new Script("Phag", ScriptCode.Phag);
 		}
 
 		/// <summary>
@@ -1543,7 +1543,7 @@ namespace NLanguageTag
 
 		private static class PhliCache
 		{
-			public static readonly Script Instance = new Script("Phli", false);
+			public static readonly Script Instance = new Script("Phli", ScriptCode.Phli);
 		}
 
 		/// <summary>
@@ -1554,7 +1554,7 @@ namespace NLanguageTag
 
 		private static class PhlpCache
 		{
-			public static readonly Script Instance = new Script("Phlp", false);
+			public static readonly Script Instance = new Script("Phlp", ScriptCode.Phlp);
 		}
 
 		/// <summary>
@@ -1565,7 +1565,7 @@ namespace NLanguageTag
 
 		private static class PhlvCache
 		{
-			public static readonly Script Instance = new Script("Phlv", false);
+			public static readonly Script Instance = new Script("Phlv", ScriptCode.Phlv);
 		}
 
 		/// <summary>
@@ -1576,7 +1576,7 @@ namespace NLanguageTag
 
 		private static class PhnxCache
 		{
-			public static readonly Script Instance = new Script("Phnx", false);
+			public static readonly Script Instance = new Script("Phnx", ScriptCode.Phnx);
 		}
 
 		/// <summary>
@@ -1587,7 +1587,7 @@ namespace NLanguageTag
 
 		private static class PiqdCache
 		{
-			public static readonly Script Instance = new Script("Piqd", false);
+			public static readonly Script Instance = new Script("Piqd", ScriptCode.Piqd);
 		}
 
 		/// <summary>
@@ -1599,7 +1599,7 @@ namespace NLanguageTag
 
 		private static class PlrdCache
 		{
-			public static readonly Script Instance = new Script("Plrd", false);
+			public static readonly Script Instance = new Script("Plrd", ScriptCode.Plrd);
 		}
 
 		/// <summary>
@@ -1610,7 +1610,7 @@ namespace NLanguageTag
 
 		private static class PrtiCache
 		{
-			public static readonly Script Instance = new Script("Prti", false);
+			public static readonly Script Instance = new Script("Prti", ScriptCode.Prti);
 		}
 
 		/// <summary>
@@ -1623,7 +1623,7 @@ namespace NLanguageTag
 
 		private static class RjngCache
 		{
-			public static readonly Script Instance = new Script("Rjng", false);
+			public static readonly Script Instance = new Script("Rjng", ScriptCode.Rjng);
 		}
 
 		/// <summary>
@@ -1634,7 +1634,7 @@ namespace NLanguageTag
 
 		private static class RohgCache
 		{
-			public static readonly Script Instance = new Script("Rohg", false);
+			public static readonly Script Instance = new Script("Rohg", ScriptCode.Rohg);
 		}
 
 		/// <summary>
@@ -1645,7 +1645,7 @@ namespace NLanguageTag
 
 		private static class RoroCache
 		{
-			public static readonly Script Instance = new Script("Roro", false);
+			public static readonly Script Instance = new Script("Roro", ScriptCode.Roro);
 		}
 
 		/// <summary>
@@ -1656,7 +1656,7 @@ namespace NLanguageTag
 
 		private static class RunrCache
 		{
-			public static readonly Script Instance = new Script("Runr", false);
+			public static readonly Script Instance = new Script("Runr", ScriptCode.Runr);
 		}
 
 		/// <summary>
@@ -1667,7 +1667,7 @@ namespace NLanguageTag
 
 		private static class SamrCache
 		{
-			public static readonly Script Instance = new Script("Samr", false);
+			public static readonly Script Instance = new Script("Samr", ScriptCode.Samr);
 		}
 
 		/// <summary>
@@ -1678,7 +1678,7 @@ namespace NLanguageTag
 
 		private static class SaraCache
 		{
-			public static readonly Script Instance = new Script("Sara", false);
+			public static readonly Script Instance = new Script("Sara", ScriptCode.Sara);
 		}
 
 		/// <summary>
@@ -1689,7 +1689,7 @@ namespace NLanguageTag
 
 		private static class SarbCache
 		{
-			public static readonly Script Instance = new Script("Sarb", false);
+			public static readonly Script Instance = new Script("Sarb", ScriptCode.Sarb);
 		}
 
 		/// <summary>
@@ -1700,7 +1700,7 @@ namespace NLanguageTag
 
 		private static class SaurCache
 		{
-			public static readonly Script Instance = new Script("Saur", false);
+			public static readonly Script Instance = new Script("Saur", ScriptCode.Saur);
 		}
 
 		/// <summary>
@@ -1711,7 +1711,7 @@ namespace NLanguageTag
 
 		private static class SgnwCache
 		{
-			public static readonly Script Instance = new Script("Sgnw", false);
+			public static readonly Script Instance = new Script("Sgnw", ScriptCode.Sgnw);
 		}
 
 		/// <summary>
@@ -1723,7 +1723,7 @@ namespace NLanguageTag
 
 		private static class ShawCache
 		{
-			public static readonly Script Instance = new Script("Shaw", false);
+			public static readonly Script Instance = new Script("Shaw", ScriptCode.Shaw);
 		}
 
 		/// <summary>
@@ -1735,7 +1735,7 @@ namespace NLanguageTag
 
 		private static class ShrdCache
 		{
-			public static readonly Script Instance = new Script("Shrd", false);
+			public static readonly Script Instance = new Script("Shrd", ScriptCode.Shrd);
 		}
 
 		/// <summary>
@@ -1746,7 +1746,7 @@ namespace NLanguageTag
 
 		private static class ShuiCache
 		{
-			public static readonly Script Instance = new Script("Shui", false);
+			public static readonly Script Instance = new Script("Shui", ScriptCode.Shui);
 		}
 
 		/// <summary>
@@ -1759,7 +1759,7 @@ namespace NLanguageTag
 
 		private static class SiddCache
 		{
-			public static readonly Script Instance = new Script("Sidd", false);
+			public static readonly Script Instance = new Script("Sidd", ScriptCode.Sidd);
 		}
 
 		/// <summary>
@@ -1771,7 +1771,7 @@ namespace NLanguageTag
 
 		private static class SindCache
 		{
-			public static readonly Script Instance = new Script("Sind", false);
+			public static readonly Script Instance = new Script("Sind", ScriptCode.Sind);
 		}
 
 		/// <summary>
@@ -1782,7 +1782,7 @@ namespace NLanguageTag
 
 		private static class SinhCache
 		{
-			public static readonly Script Instance = new Script("Sinh", false);
+			public static readonly Script Instance = new Script("Sinh", ScriptCode.Sinh);
 		}
 
 		/// <summary>
@@ -1793,7 +1793,7 @@ namespace NLanguageTag
 
 		private static class SogdCache
 		{
-			public static readonly Script Instance = new Script("Sogd", false);
+			public static readonly Script Instance = new Script("Sogd", ScriptCode.Sogd);
 		}
 
 		/// <summary>
@@ -1804,7 +1804,7 @@ namespace NLanguageTag
 
 		private static class SogoCache
 		{
-			public static readonly Script Instance = new Script("Sogo", false);
+			public static readonly Script Instance = new Script("Sogo", ScriptCode.Sogo);
 		}
 
 		/// <summary>
@@ -1815,7 +1815,7 @@ namespace NLanguageTag
 
 		private static class SoraCache
 		{
-			public static readonly Script Instance = new Script("Sora", false);
+			public static readonly Script Instance = new Script("Sora", ScriptCode.Sora);
 		}
 
 		/// <summary>
@@ -1826,7 +1826,7 @@ namespace NLanguageTag
 
 		private static class SoyoCache
 		{
-			public static readonly Script Instance = new Script("Soyo", false);
+			public static readonly Script Instance = new Script("Soyo", ScriptCode.Soyo);
 		}
 
 		/// <summary>
@@ -1837,7 +1837,7 @@ namespace NLanguageTag
 
 		private static class SundCache
 		{
-			public static readonly Script Instance = new Script("Sund", false);
+			public static readonly Script Instance = new Script("Sund", ScriptCode.Sund);
 		}
 
 		/// <summary>
@@ -1848,7 +1848,7 @@ namespace NLanguageTag
 
 		private static class SyloCache
 		{
-			public static readonly Script Instance = new Script("Sylo", false);
+			public static readonly Script Instance = new Script("Sylo", ScriptCode.Sylo);
 		}
 
 		/// <summary>
@@ -1859,7 +1859,7 @@ namespace NLanguageTag
 
 		private static class SyrcCache
 		{
-			public static readonly Script Instance = new Script("Syrc", false);
+			public static readonly Script Instance = new Script("Syrc", ScriptCode.Syrc);
 		}
 
 		/// <summary>
@@ -1870,7 +1870,7 @@ namespace NLanguageTag
 
 		private static class SyreCache
 		{
-			public static readonly Script Instance = new Script("Syre", false);
+			public static readonly Script Instance = new Script("Syre", ScriptCode.Syre);
 		}
 
 		/// <summary>
@@ -1881,7 +1881,7 @@ namespace NLanguageTag
 
 		private static class SyrjCache
 		{
-			public static readonly Script Instance = new Script("Syrj", false);
+			public static readonly Script Instance = new Script("Syrj", ScriptCode.Syrj);
 		}
 
 		/// <summary>
@@ -1892,7 +1892,7 @@ namespace NLanguageTag
 
 		private static class SyrnCache
 		{
-			public static readonly Script Instance = new Script("Syrn", false);
+			public static readonly Script Instance = new Script("Syrn", ScriptCode.Syrn);
 		}
 
 		/// <summary>
@@ -1903,7 +1903,7 @@ namespace NLanguageTag
 
 		private static class TagbCache
 		{
-			public static readonly Script Instance = new Script("Tagb", false);
+			public static readonly Script Instance = new Script("Tagb", ScriptCode.Tagb);
 		}
 
 		/// <summary>
@@ -1916,7 +1916,7 @@ namespace NLanguageTag
 
 		private static class TakrCache
 		{
-			public static readonly Script Instance = new Script("Takr", false);
+			public static readonly Script Instance = new Script("Takr", ScriptCode.Takr);
 		}
 
 		/// <summary>
@@ -1927,7 +1927,7 @@ namespace NLanguageTag
 
 		private static class TaleCache
 		{
-			public static readonly Script Instance = new Script("Tale", false);
+			public static readonly Script Instance = new Script("Tale", ScriptCode.Tale);
 		}
 
 		/// <summary>
@@ -1938,7 +1938,7 @@ namespace NLanguageTag
 
 		private static class TaluCache
 		{
-			public static readonly Script Instance = new Script("Talu", false);
+			public static readonly Script Instance = new Script("Talu", ScriptCode.Talu);
 		}
 
 		/// <summary>
@@ -1949,7 +1949,7 @@ namespace NLanguageTag
 
 		private static class TamlCache
 		{
-			public static readonly Script Instance = new Script("Taml", false);
+			public static readonly Script Instance = new Script("Taml", ScriptCode.Taml);
 		}
 
 		/// <summary>
@@ -1960,7 +1960,7 @@ namespace NLanguageTag
 
 		private static class TangCache
 		{
-			public static readonly Script Instance = new Script("Tang", false);
+			public static readonly Script Instance = new Script("Tang", ScriptCode.Tang);
 		}
 
 		/// <summary>
@@ -1971,7 +1971,7 @@ namespace NLanguageTag
 
 		private static class TavtCache
 		{
-			public static readonly Script Instance = new Script("Tavt", false);
+			public static readonly Script Instance = new Script("Tavt", ScriptCode.Tavt);
 		}
 
 		/// <summary>
@@ -1982,7 +1982,7 @@ namespace NLanguageTag
 
 		private static class TeluCache
 		{
-			public static readonly Script Instance = new Script("Telu", false);
+			public static readonly Script Instance = new Script("Telu", ScriptCode.Telu);
 		}
 
 		/// <summary>
@@ -1993,7 +1993,7 @@ namespace NLanguageTag
 
 		private static class TengCache
 		{
-			public static readonly Script Instance = new Script("Teng", false);
+			public static readonly Script Instance = new Script("Teng", ScriptCode.Teng);
 		}
 
 		/// <summary>
@@ -2005,7 +2005,7 @@ namespace NLanguageTag
 
 		private static class TfngCache
 		{
-			public static readonly Script Instance = new Script("Tfng", false);
+			public static readonly Script Instance = new Script("Tfng", ScriptCode.Tfng);
 		}
 
 		/// <summary>
@@ -2018,7 +2018,7 @@ namespace NLanguageTag
 
 		private static class TglgCache
 		{
-			public static readonly Script Instance = new Script("Tglg", false);
+			public static readonly Script Instance = new Script("Tglg", ScriptCode.Tglg);
 		}
 
 		/// <summary>
@@ -2029,7 +2029,7 @@ namespace NLanguageTag
 
 		private static class ThaaCache
 		{
-			public static readonly Script Instance = new Script("Thaa", false);
+			public static readonly Script Instance = new Script("Thaa", ScriptCode.Thaa);
 		}
 
 		/// <summary>
@@ -2040,7 +2040,7 @@ namespace NLanguageTag
 
 		private static class ThaiCache
 		{
-			public static readonly Script Instance = new Script("Thai", false);
+			public static readonly Script Instance = new Script("Thai", ScriptCode.Thai);
 		}
 
 		/// <summary>
@@ -2051,7 +2051,7 @@ namespace NLanguageTag
 
 		private static class TibtCache
 		{
-			public static readonly Script Instance = new Script("Tibt", false);
+			public static readonly Script Instance = new Script("Tibt", ScriptCode.Tibt);
 		}
 
 		/// <summary>
@@ -2062,7 +2062,7 @@ namespace NLanguageTag
 
 		private static class TirhCache
 		{
-			public static readonly Script Instance = new Script("Tirh", false);
+			public static readonly Script Instance = new Script("Tirh", ScriptCode.Tirh);
 		}
 
 		/// <summary>
@@ -2073,7 +2073,7 @@ namespace NLanguageTag
 
 		private static class UgarCache
 		{
-			public static readonly Script Instance = new Script("Ugar", false);
+			public static readonly Script Instance = new Script("Ugar", ScriptCode.Ugar);
 		}
 
 		/// <summary>
@@ -2084,7 +2084,7 @@ namespace NLanguageTag
 
 		private static class VaiiCache
 		{
-			public static readonly Script Instance = new Script("Vaii", false);
+			public static readonly Script Instance = new Script("Vaii", ScriptCode.Vaii);
 		}
 
 		/// <summary>
@@ -2095,7 +2095,7 @@ namespace NLanguageTag
 
 		private static class VispCache
 		{
-			public static readonly Script Instance = new Script("Visp", false);
+			public static readonly Script Instance = new Script("Visp", ScriptCode.Visp);
 		}
 
 		/// <summary>
@@ -2107,7 +2107,7 @@ namespace NLanguageTag
 
 		private static class WaraCache
 		{
-			public static readonly Script Instance = new Script("Wara", false);
+			public static readonly Script Instance = new Script("Wara", ScriptCode.Wara);
 		}
 
 		/// <summary>
@@ -2118,7 +2118,7 @@ namespace NLanguageTag
 
 		private static class WchoCache
 		{
-			public static readonly Script Instance = new Script("Wcho", false);
+			public static readonly Script Instance = new Script("Wcho", ScriptCode.Wcho);
 		}
 
 		/// <summary>
@@ -2129,7 +2129,7 @@ namespace NLanguageTag
 
 		private static class WoleCache
 		{
-			public static readonly Script Instance = new Script("Wole", false);
+			public static readonly Script Instance = new Script("Wole", ScriptCode.Wole);
 		}
 
 		/// <summary>
@@ -2140,7 +2140,7 @@ namespace NLanguageTag
 
 		private static class XpeoCache
 		{
-			public static readonly Script Instance = new Script("Xpeo", false);
+			public static readonly Script Instance = new Script("Xpeo", ScriptCode.Xpeo);
 		}
 
 		/// <summary>
@@ -2151,7 +2151,7 @@ namespace NLanguageTag
 
 		private static class XsuxCache
 		{
-			public static readonly Script Instance = new Script("Xsux", false);
+			public static readonly Script Instance = new Script("Xsux", ScriptCode.Xsux);
 		}
 
 		/// <summary>
@@ -2162,7 +2162,7 @@ namespace NLanguageTag
 
 		private static class YeziCache
 		{
-			public static readonly Script Instance = new Script("Yezi", false);
+			public static readonly Script Instance = new Script("Yezi", ScriptCode.Yezi);
 		}
 
 		/// <summary>
@@ -2173,7 +2173,7 @@ namespace NLanguageTag
 
 		private static class YiiiCache
 		{
-			public static readonly Script Instance = new Script("Yiii", false);
+			public static readonly Script Instance = new Script("Yiii", ScriptCode.Yiii);
 		}
 
 		/// <summary>
@@ -2187,7 +2187,7 @@ namespace NLanguageTag
 
 		private static class ZanbCache
 		{
-			public static readonly Script Instance = new Script("Zanb", false);
+			public static readonly Script Instance = new Script("Zanb", ScriptCode.Zanb);
 		}
 
 		/// <summary>
@@ -2199,7 +2199,7 @@ namespace NLanguageTag
 
 		private static class ZinhCache
 		{
-			public static readonly Script Instance = new Script("Zinh", false);
+			public static readonly Script Instance = new Script("Zinh", ScriptCode.Zinh);
 		}
 
 		/// <summary>
@@ -2210,7 +2210,7 @@ namespace NLanguageTag
 
 		private static class ZmthCache
 		{
-			public static readonly Script Instance = new Script("Zmth", false);
+			public static readonly Script Instance = new Script("Zmth", ScriptCode.Zmth);
 		}
 
 		/// <summary>
@@ -2221,7 +2221,7 @@ namespace NLanguageTag
 
 		private static class ZsyeCache
 		{
-			public static readonly Script Instance = new Script("Zsye", false);
+			public static readonly Script Instance = new Script("Zsye", ScriptCode.Zsye);
 		}
 
 		/// <summary>
@@ -2232,7 +2232,7 @@ namespace NLanguageTag
 
 		private static class ZsymCache
 		{
-			public static readonly Script Instance = new Script("Zsym", false);
+			public static readonly Script Instance = new Script("Zsym", ScriptCode.Zsym);
 		}
 
 		/// <summary>
@@ -2243,7 +2243,7 @@ namespace NLanguageTag
 
 		private static class ZxxxCache
 		{
-			public static readonly Script Instance = new Script("Zxxx", false);
+			public static readonly Script Instance = new Script("Zxxx", ScriptCode.Zxxx);
 		}
 
 		/// <summary>
@@ -2254,7 +2254,7 @@ namespace NLanguageTag
 
 		private static class ZyyyCache
 		{
-			public static readonly Script Instance = new Script("Zyyy", false);
+			public static readonly Script Instance = new Script("Zyyy", ScriptCode.Zyyy);
 		}
 
 		/// <summary>
@@ -2265,7 +2265,7 @@ namespace NLanguageTag
 
 		private static class ZzzzCache
 		{
-			public static readonly Script Instance = new Script("Zzzz", false);
+			public static readonly Script Instance = new Script("Zzzz", ScriptCode.Zzzz);
 		}
 
 	}

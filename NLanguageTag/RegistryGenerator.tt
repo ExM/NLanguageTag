@@ -71,6 +71,7 @@ namespace NLanguageTag
 <# manager.StartNewFile("Language.list.cs"); #>
 using System;
 
+#pragma warning disable 618
 namespace NLanguageTag
 {
 	public partial class Language
@@ -113,16 +114,92 @@ namespace NLanguageTag
 		{
 			public static readonly Language Instance = new Language(
                 "<#= entry.Subtag #>",
+                LanguageCode.<#= entry.CSharp_Name() #>,
                 <#= suppressScriptArg #>,
                 <#= macrolanguageArg #>,
                 <#= scopeArg #>,
                 <#= extLanguageParserArg #>,
                 <#= prefixArg #>,
-                <#= entry.Deprecated != null ? "true" : "false" #>,
-                false);
+                <#= entry.Deprecated != null ? "true" : "false" #>);
 		}
 
 <# } #>
+	}
+}
+<# manager.EndBlock(); #>
+<# manager.StartNewFile("LanguageCode.cs"); #>
+using System;
+
+namespace NLanguageTag
+{
+	/// <summary>
+	/// Enum code of <see cref="Language"/> to use as constants in C#
+	/// </summary>
+	public enum LanguageCode
+	{
+		/// <summary>
+		/// For private use
+		/// </summary>
+		PrivateUse = 0,
+
+<#
+   foreach(var entry in registry.PrimaryLanguages.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	{ #>
+		/// <summary>
+		/// code of <see cref="Language.<#= entry.CSharp_Name() #>"/>
+		/// </summary>
+<#if(entry.Deprecated != null)
+  { #>
+		[Obsolete("similarly Language.<#= entry.CSharp_Name() #>")]
+<# } #>
+		<#= entry.CSharp_Name() #> = <#= FixedNumbers.LanguageCode.TryGet(entry.Subtag)?.ToString()??"#error code not found" #>,
+
+<# } #>
+	}
+}
+<# manager.EndBlock(); #>
+<#
+   if (registry.PrimaryLanguages.Count > FixedNumbers.LanguageCode.Count)
+   {
+	   var newNumberCode = FixedNumbers.LanguageCode.Count + 1;
+	   manager.StartNewFile("LanguageCode.newNumbers.csv");
+	   foreach (var entry in registry.PrimaryLanguages.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	   {
+		   if (FixedNumbers.LanguageCode.TryGet(entry.Subtag) == null)
+		   {
+			   #>
+<#= entry.Subtag #>,<#= newNumberCode #>
+<#
+			   newNumberCode++;
+		   }
+	   }
+	   manager.EndBlock();
+   }
+#>
+<# manager.StartNewFile("Language.byCode.cs"); #>
+using System;
+using System.Globalization;
+
+#pragma warning disable 618
+namespace NLanguageTag
+{
+	public partial class Language
+	{
+		/// <summary>
+		/// Returns public Language by LanguageCode
+		/// </summary>
+		public static Language ByCode(LanguageCode code)
+		{
+			switch(code)
+			{
+<#
+   foreach(var entry in registry.PrimaryLanguages.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	{ #>
+				case LanguageCode.<#= entry.CSharp_Name() #>: return <#= entry.CSharp_Name() #>Cache.Instance;
+<# } #>
+				default: throw new ArgumentException(nameof(code), $"the code '{code}' does not correspond to the public language");
+			}
+		}
 	}
 }
 <# manager.EndBlock(); #>
@@ -139,7 +216,7 @@ namespace NLanguageTag
 var languageSelector = new PrefixTreeSelector("TryParse", "Language?",
 	registry.PrimaryLanguages.ToDictionary(
 		_ => _.Subtag.ToLower(),
-		_ => _.CSharp_Preferred()));
+		_ => _.CSharp_Preferred() + "Cache.Instance"));
 {
 	var (minKey, maxKey) = registry.PrivateUsePrimaryLanguages.AsInterval();
 	languageSelector.AddInterval(minKey.ToLowerInvariant(), maxKey.ToLowerInvariant(), "forPrivateUse(span.AsText())");
@@ -156,6 +233,7 @@ var languageSelector = new PrefixTreeSelector("TryParse", "Language?",
 <# manager.StartNewFile("Region.list.cs"); #>
 using System;
 
+#pragma warning disable 618
 namespace NLanguageTag
 {
 	public partial class Region
@@ -181,10 +259,86 @@ namespace NLanguageTag
 
 		private static class <#= entry.CSharp_Name() #>Cache
 		{
-			public static readonly Region Instance = new Region("<#= entry.Subtag #>", <#= entry.Deprecated != null ? "true" : "false" #>, false);
+			public static readonly Region Instance = new Region("<#= entry.Subtag #>",  RegionCode.<#= entry.CSharp_Name() #>, <#= entry.Deprecated != null ? "true" : "false" #>);
 		}
 
 <# } #>
+	}
+}
+<# manager.EndBlock(); #>
+<# manager.StartNewFile("RegionCode.cs"); #>
+using System;
+
+namespace NLanguageTag
+{
+	/// <summary>
+	/// Enum code of <see cref="Region"/> to use as constants in C#
+	/// </summary>
+	public enum RegionCode
+	{
+		/// <summary>
+		/// For private use
+		/// </summary>
+		PrivateUse = 0,
+
+<#
+   foreach(var entry in registry.Regions.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	{ #>
+		/// <summary>
+		/// code of <see cref="Region.<#= entry.CSharp_Name() #>"/>
+		/// </summary>
+<#if(entry.Deprecated != null)
+  { #>
+		[Obsolete("similarly Region.<#= entry.CSharp_Name() #>")]
+<# } #>
+		<#= entry.CSharp_Name() #> = <#= FixedNumbers.RegionCode.TryGet(entry.Subtag)?.ToString()??"#error code not found" #>,
+
+<# } #>
+	}
+}
+<# manager.EndBlock(); #>
+<#
+   if (registry.Regions.Count > FixedNumbers.RegionCode.Count)
+   {
+	   var newNumberCode = FixedNumbers.RegionCode.Count + 1;
+	   manager.StartNewFile("RegionCode.newNumbers.csv");
+	   foreach (var entry in registry.Regions.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	   {
+		   if (FixedNumbers.RegionCode.TryGet(entry.Subtag) == null)
+		   {
+			   #>
+<#= entry.Subtag #>,<#= newNumberCode #>
+<#
+			   newNumberCode++;
+		   }
+	   }
+	   manager.EndBlock();
+   }
+#>
+<# manager.StartNewFile("Region.byCode.cs"); #>
+using System;
+using System.Globalization;
+
+#pragma warning disable 618
+namespace NLanguageTag
+{
+	public partial class Region
+	{
+		/// <summary>
+		/// Returns public Region by RegionCode
+		/// </summary>
+		public static Region ByCode(RegionCode code)
+		{
+			switch(code)
+			{
+<#
+   foreach(var entry in registry.Regions.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	{ #>
+				case RegionCode.<#= entry.CSharp_Name() #>: return <#= entry.CSharp_Name() #>Cache.Instance;
+<# } #>
+				default: throw new ArgumentException(nameof(code), $"the code '{code}' does not correspond to the public region");
+			}
+		}
 	}
 }
 <# manager.EndBlock(); #>
@@ -201,7 +355,7 @@ namespace NLanguageTag
 var regionSelector = new PrefixTreeSelector("TryParse", "Region?",
 	registry.Regions.ToDictionary(
 		_ => _.Subtag.ToLower(),
-		_ => _.CSharp_Preferred()));
+		_ => _.CSharp_Preferred() + "Cache.Instance"));
     foreach (var region in registry.PrivateUseRegions)
     {
 	    var (minKey, maxKey) = region.AsInterval();
@@ -238,10 +392,82 @@ namespace NLanguageTag
 
 		private static class <#= entry.CSharp_Name() #>Cache
 		{
-			public static readonly Script Instance = new Script("<#= entry.Subtag #>", false);
+			public static readonly Script Instance = new Script("<#= entry.Subtag #>", ScriptCode.<#= entry.CSharp_Name() #>);
 		}
 
 <# } #>
+	}
+}
+<# manager.EndBlock(); #>
+<# manager.StartNewFile("ScriptCode.cs"); #>
+using System;
+
+namespace NLanguageTag
+{
+	/// <summary>
+	/// Enum code of <see cref="Script"/> to use as constants in C#
+	/// </summary>
+	public enum ScriptCode
+	{
+		/// <summary>
+		/// For private use
+		/// </summary>
+		PrivateUse = 0,
+
+<#
+   foreach(var entry in registry.Scripts.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	{ #>
+		/// <summary>
+		/// code of <see cref="Script.<#= entry.CSharp_Name() #>"/>
+		/// </summary>
+		<#= entry.CSharp_Name() #> = <#= FixedNumbers.ScriptCode.TryGet(entry.Subtag)?.ToString()??"#error code not found" #>,
+
+<# } #>
+	}
+}
+<# manager.EndBlock(); #>
+<#
+   if (registry.Scripts.Count > FixedNumbers.ScriptCode.Count)
+   {
+	   var newNumberCode = FixedNumbers.ScriptCode.Count + 1;
+	   manager.StartNewFile("ScriptCode.newNumbers.csv");
+	   foreach (var entry in registry.Scripts.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	   {
+		   if (FixedNumbers.ScriptCode.TryGet(entry.Subtag) == null)
+		   {
+			   #>
+<#= entry.Subtag #>,<#= newNumberCode #>
+<#
+			   newNumberCode++;
+		   }
+	   }
+	   manager.EndBlock();
+   }
+#>
+<# manager.StartNewFile("Script.byCode.cs"); #>
+using System;
+using System.Globalization;
+
+#pragma warning disable 618
+namespace NLanguageTag
+{
+	public partial class Script
+	{
+		/// <summary>
+		/// Returns public Script by ScriptCode
+		/// </summary>
+		public static Script ByCode(ScriptCode code)
+		{
+			switch(code)
+			{
+<#
+   foreach(var entry in registry.Scripts.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	{ #>
+				case ScriptCode.<#= entry.CSharp_Name() #>: return <#= entry.CSharp_Name() #>Cache.Instance;
+<# } #>
+				default: throw new ArgumentException(nameof(code), $"the code '{code}' does not correspond to the public script");
+			}
+		}
 	}
 }
 <# manager.EndBlock(); #>
@@ -257,7 +483,7 @@ namespace NLanguageTag
 var scriptSelector = new PrefixTreeSelector("TryParse", "Script?",
 	registry.Scripts.ToDictionary(
 		_ => _.Subtag.ToLower(),
-		_ => _.Subtag));
+		_ => _.Subtag + "Cache.Instance"));
 {
     var (minKey, maxKey) = registry.PrivateUseScripts.AsInterval();
     scriptSelector.AddInterval(minKey.ToLowerInvariant(), maxKey.ToLowerInvariant(), "forPrivateUse(span.AsText())");
@@ -297,10 +523,77 @@ namespace NLanguageTag
 
 		private static class <#= entry.CSharp_Name() #>Cache
 		{
-			public static readonly Variant Instance = new Variant("<#= entry.Subtag #>", new string[] { <#= tags #> }, <#= entry.Deprecated != null ? "true" : "false" #>);
+			public static readonly Variant Instance = new Variant("<#= entry.Subtag #>", VariantCode.<#= entry.CSharp_Name() #>, new string[] { <#= tags #> }, <#= entry.Deprecated != null ? "true" : "false" #>);
 		}
 
 <# } #>
+	}
+}
+<# manager.EndBlock(); #>
+<# manager.StartNewFile("VariantCode.cs"); #>
+using System;
+
+namespace NLanguageTag
+{
+	/// <summary>
+	/// Enum code of <see cref="Variant"/> to use as constants in C#
+	/// </summary>
+	public enum VariantCode
+	{
+<#
+   foreach(var entry in registry.Variants.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	{ #>
+		/// <summary>
+		/// code of <see cref="Variant.<#= entry.CSharp_Name() #>"/>
+		/// </summary>
+		<#= entry.CSharp_Name() #> = <#= FixedNumbers.VariantCode.TryGet(entry.Subtag)?.ToString()??"#error code not found" #>,
+
+<# } #>
+	}
+}
+<# manager.EndBlock(); #>
+<#
+   if (registry.Variants.Count > FixedNumbers.VariantCode.Count)
+   {
+	   var newNumberCode = FixedNumbers.VariantCode.Count + 1;
+	   manager.StartNewFile("VariantCode.newNumbers.csv");
+	   foreach (var entry in registry.Variants.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	   {
+		   if (FixedNumbers.VariantCode.TryGet(entry.Subtag) == null)
+		   {
+			   #>
+<#= entry.Subtag #>,<#= newNumberCode #>
+<#
+			   newNumberCode++;
+		   }
+	   }
+	   manager.EndBlock();
+   }
+#>
+<# manager.StartNewFile("Variant.byCode.cs"); #>
+using System;
+using System.Globalization;
+
+#pragma warning disable 618
+namespace NLanguageTag
+{
+	public partial class Variant
+	{
+		/// <summary>
+		/// Returns public Variant by VariantCode
+		/// </summary>
+		public static Variant ByCode(VariantCode code)
+		{
+			switch(code)
+			{
+<#
+   foreach(var entry in registry.Variants.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	{ #>
+				case VariantCode.<#= entry.CSharp_Name() #>: return <#= entry.CSharp_Name() #>Cache.Instance;
+<# } #>
+				default: throw new ArgumentException(nameof(code), $"the code '{code}' does not correspond to the public variant");
+			}
+		}
 	}
 }
 <# manager.EndBlock(); #>
@@ -317,7 +610,7 @@ namespace NLanguageTag
 var variantSelector = new PrefixTreeSelector("TryParse", "Variant?",
 	registry.Variants.ToDictionary(
 		_ => _.Subtag.ToLower(),
-		_ => _.CSharp_Preferred()));
+		_ => _.CSharp_Preferred() + "Cache.Instance"));
 #>
 
 <#foreach(var line in variantSelector.Render())

@@ -8,6 +8,26 @@ namespace NLanguageTag.Tests
 	[TestFixture]
 	public class VariantTests
 	{
+		[Test]
+		public void CheckCodes()
+		{
+			foreach (var code in Enum.GetValues(typeof(VariantCode)).Cast<VariantCode>())
+			{
+				var variant = Variant.ByCode(code);
+				Assert.AreEqual(code, variant.EnumCode);
+			}
+		}
+
+		[Test]
+		public void CheckParseSwitches()
+		{
+			foreach (var text in TestContent.GetVariants())
+			{
+				var variant = text.TryParseVariant();
+				Assert.NotNull(variant);
+			}
+		}
+
 		[TestCaseSource(nameof(parseCases))]
 		public void ParseFromVariant(string text, Variant expected)
 		{
@@ -47,7 +67,7 @@ namespace NLanguageTag.Tests
 				VariantCollection.Create(tag.Language, tag.Script, tag.Variants.Union(new [] { appendVariant }));
 			});
 		}
-		
+
 		internal static IEnumerable<TestCaseData> variantCollectionCreateCases()
 		{
 			yield return new TestCaseData("en",  Variant.Ekavsk);
@@ -90,7 +110,7 @@ namespace NLanguageTag.Tests
 			var collection = VariantCollection.Create(Language.DJK, null, variants);
 			Assert.That(collection.Contains(tag), Is.EqualTo(expected));
 		}
-		
+
 		internal static IEnumerable<TestCaseData> containsCases()
 		{
 			yield return new TestCaseData(new Variant[] { }, Variant.Alalc97, false);

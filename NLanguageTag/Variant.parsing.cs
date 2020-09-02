@@ -47,7 +47,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L4_190(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[3]) == '1')
-				return V1901;
+				return V1901Cache.Instance;
 			return null;
 		}
 		
@@ -55,8 +55,8 @@ namespace NLanguageTag
 		{
 			switch(span[3])
 			{
-				case '4': return V1994;
-				case '6': return V1996;
+				case '4': return V1994Cache.Instance;
+				case '6': return V1996Cache.Instance;
 				default: return null;
 			}
 		}
@@ -105,7 +105,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L5_aluk(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[4]) == 'u')
-				return Aluku;
+				return AlukuCache.Instance;
 			return null;
 		}
 		
@@ -137,7 +137,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L5_barl(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[4]) == 'a')
-				return Barla;
+				return BarlaCache.Instance;
 			return null;
 		}
 		
@@ -158,7 +158,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L5_bisk(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[4]) == 'e')
-				return Biske;
+				return BiskeCache.Instance;
 			return null;
 		}
 		
@@ -179,7 +179,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L5_boon(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[4]) == 't')
-				return Boont;
+				return BoontCache.Instance;
 			return null;
 		}
 		
@@ -207,7 +207,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L5_corn(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[4]) == 'u')
-				return Cornu;
+				return CornuCache.Instance;
 			return null;
 		}
 		
@@ -235,7 +235,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L5_jaue(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[4]) == 'r')
-				return Jauer;
+				return JauerCache.Instance;
 			return null;
 		}
 		
@@ -266,7 +266,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L5_kkco(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[4]) == 'r')
-				return Kkcor;
+				return KkcorCache.Instance;
 			return null;
 		}
 		
@@ -287,7 +287,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L5_ksco(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[4]) == 'r')
-				return Kscor;
+				return KscorCache.Instance;
 			return null;
 		}
 		
@@ -315,7 +315,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L5_lipa(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[4]) == 'w')
-				return Lipaw;
+				return LipawCache.Instance;
 			return null;
 		}
 		
@@ -347,7 +347,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L5_nedi(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[4]) == 's')
-				return Nedis;
+				return NedisCache.Instance;
 			return null;
 		}
 		
@@ -368,7 +368,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L5_njiv(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[4]) == 'a')
-				return Njiva;
+				return NjivaCache.Instance;
 			return null;
 		}
 		
@@ -389,7 +389,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L5_nuli(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[4]) == 'k')
-				return Nulik;
+				return NulikCache.Instance;
 			return null;
 		}
 		
@@ -417,7 +417,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L5_osoj(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[4]) == 's')
-				return Osojs;
+				return OsojsCache.Instance;
 			return null;
 		}
 		
@@ -445,7 +445,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L5_pute(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[4]) == 'r')
-				return Puter;
+				return PuterCache.Instance;
 			return null;
 		}
 		
@@ -477,7 +477,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L5_rigi(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[4]) == 'k')
-				return Rigik;
+				return RigikCache.Instance;
 			return null;
 		}
 		
@@ -498,7 +498,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L5_roza(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[4]) == 'j')
-				return Rozaj;
+				return RozajCache.Instance;
 			return null;
 		}
 		
@@ -519,7 +519,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L5_rumg(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[4]) == 'r')
-				return Rumgr;
+				return RumgrCache.Instance;
 			return null;
 		}
 		
@@ -550,7 +550,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L5_solb(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[4]) == 'a')
-				return Solba;
+				return SolbaCache.Instance;
 			return null;
 		}
 		
@@ -564,7 +564,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L5_sota(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[4]) == 'v')
-				return Sotav;
+				return SotavCache.Instance;
 			return null;
 		}
 		
@@ -592,7 +592,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L5_ucco(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[4]) == 'r')
-				return Uccor;
+				return UccorCache.Instance;
 			return null;
 		}
 		
@@ -652,7 +652,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L6_ao199(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[5]) == '0')
-				return Ao1990;
+				return Ao1990Cache.Instance;
 			return null;
 		}
 		
@@ -680,7 +680,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L6_arane(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[5]) == 's')
-				return Aranes;
+				return AranesCache.Instance;
 			return null;
 		}
 		
@@ -708,7 +708,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L6_asant(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[5]) == 'e')
-				return Asante;
+				return AsanteCache.Instance;
 			return null;
 		}
 		
@@ -736,7 +736,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L6_auver(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[5]) == 'n')
-				return Auvern;
+				return AuvernCache.Instance;
 			return null;
 		}
 		
@@ -774,7 +774,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L6_cisau(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[5]) == 'p')
-				return Cisaup;
+				return CisaupCache.Instance;
 			return null;
 		}
 		
@@ -802,7 +802,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L6_creis(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[5]) == 's')
-				return Creiss;
+				return CreissCache.Instance;
 			return null;
 		}
 		
@@ -837,7 +837,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L6_dajnk(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[5]) == 'o')
-				return Dajnko;
+				return DajnkoCache.Instance;
 			return null;
 		}
 		
@@ -872,7 +872,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L6_ekavs(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[5]) == 'k')
-				return Ekavsk;
+				return EkavskCache.Instance;
 			return null;
 		}
 		
@@ -910,7 +910,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L6_fonip(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[5]) == 'a')
-				return Fonipa;
+				return FonipaCache.Instance;
 			return null;
 		}
 		
@@ -924,7 +924,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L6_fonup(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[5]) == 'a')
-				return Fonupa;
+				return FonupaCache.Instance;
 			return null;
 		}
 		
@@ -962,7 +962,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L6_gasco(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[5]) == 'n')
-				return Gascon;
+				return GasconCache.Instance;
 			return null;
 		}
 		
@@ -990,7 +990,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L6_grita(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[5]) == 'l')
-				return Grital;
+				return GritalCache.Instance;
 			return null;
 		}
 		
@@ -1025,7 +1025,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L6_heplo(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[5]) == 'c')
-				return Alalc97;
+				return Alalc97Cache.Instance;
 			return null;
 		}
 		
@@ -1063,7 +1063,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L6_ndyuk(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[5]) == 'a')
-				return Ndyuka;
+				return NdyukaCache.Instance;
 			return null;
 		}
 		
@@ -1091,7 +1091,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L6_nicar(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[5]) == 'd')
-				return Nicard;
+				return NicardCache.Instance;
 			return null;
 		}
 		
@@ -1129,7 +1129,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L6_pamak(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[5]) == 'a')
-				return Pamaka;
+				return PamakaCache.Instance;
 			return null;
 		}
 		
@@ -1157,7 +1157,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L6_pinyi(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[5]) == 'n')
-				return Pinyin;
+				return PinyinCache.Instance;
 			return null;
 		}
 		
@@ -1195,7 +1195,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L6_scous(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[5]) == 'e')
-				return Scouse;
+				return ScouseCache.Instance;
 			return null;
 		}
 		
@@ -1223,7 +1223,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L6_simpl(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[5]) == 'e')
-				return Simple;
+				return SimpleCache.Instance;
 			return null;
 		}
 		
@@ -1258,7 +1258,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L6_taras(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[5]) == 'k')
-				return Tarask;
+				return TaraskCache.Instance;
 			return null;
 		}
 		
@@ -1297,7 +1297,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L6_ucrco(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[5]) == 'r')
-				return Ucrcor;
+				return UcrcorCache.Instance;
 			return null;
 		}
 		
@@ -1325,7 +1325,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L6_ulste(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[5]) == 'r')
-				return Ulster;
+				return UlsterCache.Instance;
 			return null;
 		}
 		
@@ -1353,7 +1353,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L6_unifo(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[5]) == 'n')
-				return Unifon;
+				return UnifonCache.Instance;
 			return null;
 		}
 		
@@ -1420,7 +1420,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L7_abl194(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[6]) == '3')
-				return Abl1943;
+				return Abl1943Cache.Instance;
 			return null;
 		}
 		
@@ -1455,7 +1455,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L7_alalc9(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[6]) == '7')
-				return Alalc97;
+				return Alalc97Cache.Instance;
 			return null;
 		}
 		
@@ -1490,7 +1490,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L7_akuape(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[6]) == 'm')
-				return Akuapem;
+				return AkuapemCache.Instance;
 			return null;
 		}
 		
@@ -1528,7 +1528,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L7_arevel(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[6]) == 'a')
-				return Arevela;
+				return ArevelaCache.Instance;
 			return null;
 		}
 		
@@ -1542,7 +1542,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L7_arevmd(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[6]) == 'a')
-				return Arevmda;
+				return ArevmdaCache.Instance;
 			return null;
 		}
 		
@@ -1590,7 +1590,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L7_balank(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[6]) == 'a')
-				return Balanka;
+				return BalankaCache.Instance;
 			return null;
 		}
 		
@@ -1618,7 +1618,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L7_bauddh(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[6]) == 'a')
-				return Bauddha;
+				return BauddhaCache.Instance;
 			return null;
 		}
 		
@@ -1653,7 +1653,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L7_bohori(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[6]) == 'c')
-				return Bohoric;
+				return BohoricCache.Instance;
 			return null;
 		}
 		
@@ -1695,7 +1695,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L7_emoden(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[6]) == 'g')
-				return Emodeng;
+				return EmodengCache.Instance;
 			return null;
 		}
 		
@@ -1737,7 +1737,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L7_fonnap(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[6]) == 'a')
-				return Fonnapa;
+				return FonnapaCache.Instance;
 			return null;
 		}
 		
@@ -1782,7 +1782,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L7_grclas(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[6]) == 's')
-				return Grclass;
+				return GrclassCache.Instance;
 			return null;
 		}
 		
@@ -1810,7 +1810,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L7_grmist(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[6]) == 'r')
-				return Grmistr;
+				return GrmistrCache.Instance;
 			return null;
 		}
 		
@@ -1852,7 +1852,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L7_hepbur(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[6]) == 'n')
-				return Hepburn;
+				return HepburnCache.Instance;
 			return null;
 		}
 		
@@ -1894,7 +1894,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L7_itihas(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[6]) == 'a')
-				return Itihasa;
+				return ItihasaCache.Instance;
 			return null;
 		}
 		
@@ -1939,7 +1939,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L7_laukik(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[6]) == 'a')
-				return Laukika;
+				return LaukikaCache.Instance;
 			return null;
 		}
 		
@@ -1974,7 +1974,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L7_lemosi(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[6]) == 'n')
-				return Lemosin;
+				return LemosinCache.Instance;
 			return null;
 		}
 		
@@ -2019,7 +2019,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L7_metelk(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[6]) == 'o')
-				return Metelko;
+				return MetelkoCache.Instance;
 			return null;
 		}
 		
@@ -2054,7 +2054,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L7_monoto(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[6]) == 'n')
-				return Monoton;
+				return MonotonCache.Instance;
 			return null;
 		}
 		
@@ -2101,9 +2101,9 @@ namespace NLanguageTag
 		{
 			switch(span[6])
 			{
-				case '2': return Pahawh2;
-				case '3': return Pahawh3;
-				case '4': return Pahawh4;
+				case '2': return Pahawh2Cache.Instance;
+				case '3': return Pahawh3Cache.Instance;
+				case '4': return Pahawh4Cache.Instance;
 				default: return null;
 			}
 		}
@@ -2139,7 +2139,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L7_polyto(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[6]) == 'n')
-				return Polyton;
+				return PolytonCache.Instance;
 			return null;
 		}
 		
@@ -2174,7 +2174,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L7_proven(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[6]) == 'c')
-				return Provenc;
+				return ProvencCache.Instance;
 			return null;
 		}
 		
@@ -2219,7 +2219,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L7_sursil(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[6]) == 'v')
-				return Sursilv;
+				return SursilvCache.Instance;
 			return null;
 		}
 		
@@ -2247,7 +2247,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L7_sutsil(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[6]) == 'v')
-				return Sutsilv;
+				return SutsilvCache.Instance;
 			return null;
 		}
 		
@@ -2289,7 +2289,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L7_vaidik(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[6]) == 'a')
-				return Vaidika;
+				return VaidikaCache.Instance;
 			return null;
 		}
 		
@@ -2368,7 +2368,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_1606nic(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 't')
-				return V1606nict;
+				return V1606nictCache.Instance;
 			return null;
 		}
 		
@@ -2403,7 +2403,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_1694aca(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'd')
-				return V1694acad;
+				return V1694acadCache.Instance;
 			return null;
 		}
 		
@@ -2445,7 +2445,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_1959aca(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'd')
-				return V1959acad;
+				return V1959acadCache.Instance;
 			return null;
 		}
 		
@@ -2501,7 +2501,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_baku192(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == '6')
-				return Baku1926;
+				return Baku1926Cache.Instance;
 			return null;
 		}
 		
@@ -2536,7 +2536,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_basicen(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'g')
-				return Basiceng;
+				return BasicengCache.Instance;
 			return null;
 		}
 		
@@ -2578,7 +2578,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_biscaya(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'n')
-				return Biscayan;
+				return BiscayanCache.Instance;
 			return null;
 		}
 		
@@ -2620,7 +2620,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_bornhol(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'm')
-				return Bornholm;
+				return BornholmCache.Instance;
 			return null;
 		}
 		
@@ -2669,7 +2669,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_colb194(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == '5')
-				return Colb1945;
+				return Colb1945Cache.Instance;
 			return null;
 		}
 		
@@ -2721,7 +2721,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_fonkirs(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'h')
-				return Fonkirsh;
+				return FonkirshCache.Instance;
 			return null;
 		}
 		
@@ -2749,7 +2749,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_fonxsam(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'p')
-				return Fonxsamp;
+				return FonxsampCache.Instance;
 			return null;
 		}
 		
@@ -2801,7 +2801,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_hognors(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'k')
-				return Hognorsk;
+				return HognorskCache.Instance;
 			return null;
 		}
 		
@@ -2843,7 +2843,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_hsistem(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'o')
-				return Hsistemo;
+				return HsistemoCache.Instance;
 			return null;
 		}
 		
@@ -2895,7 +2895,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_ijekavs(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'k')
-				return Ijekavsk;
+				return IjekavskCache.Instance;
 			return null;
 		}
 		
@@ -2937,7 +2937,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_ivancho(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'v')
-				return Ivanchov;
+				return IvanchovCache.Instance;
 			return null;
 		}
 		
@@ -2986,7 +2986,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_jyutpin(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'g')
-				return Jyutping;
+				return JyutpingCache.Instance;
 			return null;
 		}
 		
@@ -3035,7 +3035,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_kociewi(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'e')
-				return Kociewie;
+				return KociewieCache.Instance;
 			return null;
 		}
 		
@@ -3087,7 +3087,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_lengado(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'c')
-				return Lengadoc;
+				return LengadocCache.Instance;
 			return null;
 		}
 		
@@ -3129,7 +3129,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_luna191(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == '8')
-				return Luna1918;
+				return Luna1918Cache.Instance;
 			return null;
 		}
 		
@@ -3178,7 +3178,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_newfoun(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'd')
-				return Newfound;
+				return NewfoundCache.Instance;
 			return null;
 		}
 		
@@ -3227,7 +3227,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_oxendic(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 't')
-				return Oxendict;
+				return OxendictCache.Instance;
 			return null;
 		}
 		
@@ -3276,7 +3276,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_petr170(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == '8')
-				return Petr1708;
+				return Petr1708Cache.Instance;
 			return null;
 		}
 		
@@ -3329,7 +3329,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_scotlan(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'd')
-				return Scotland;
+				return ScotlandCache.Instance;
 			return null;
 		}
 		
@@ -3371,7 +3371,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_spangli(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 's')
-				return Spanglis;
+				return SpanglisCache.Instance;
 			return null;
 		}
 		
@@ -3413,7 +3413,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_surmira(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'n')
-				return Surmiran;
+				return SurmiranCache.Instance;
 			return null;
 		}
 		
@@ -3468,7 +3468,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_valenci(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'a')
-				return Valencia;
+				return ValenciaCache.Instance;
 			return null;
 		}
 		
@@ -3496,7 +3496,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_vallade(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'r')
-				return Vallader;
+				return ValladerCache.Instance;
 			return null;
 		}
 		
@@ -3538,7 +3538,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_vivarau(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'p')
-				return Vivaraup;
+				return VivaraupCache.Instance;
 			return null;
 		}
 		
@@ -3587,7 +3587,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_wadegil(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'e')
-				return Wadegile;
+				return WadegileCache.Instance;
 			return null;
 		}
 		
@@ -3636,7 +3636,7 @@ namespace NLanguageTag
 		private static Variant? tryParse_L8_xsistem(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'o')
-				return Xsistemo;
+				return XsistemoCache.Instance;
 			return null;
 		}
 	}

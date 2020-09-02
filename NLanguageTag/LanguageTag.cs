@@ -257,16 +257,16 @@ namespace NLanguageTag
 			var result = new StringBuilder(16);
 
 			if (Language != null)
-				appendSubtag(result, Language.ToString());
+				appendSubtag(result, Language.TextCode);
 
 			if (Script != null)
-				appendSubtag(result, Script.ToString());
+				appendSubtag(result, Script.TextCode);
 
 			if (Region != null)
-				appendSubtag(result, Region.ToString());
+				appendSubtag(result, Region.TextCode);
 
 			foreach (var v in Variants)
-				appendSubtag(result, v.ToString());
+				appendSubtag(result, v.TextCode);
 
 			foreach (var ext in Extensions)
 				foreach (var subtag in ext.GetSubtagElements())

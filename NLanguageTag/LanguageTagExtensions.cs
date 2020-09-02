@@ -17,7 +17,7 @@ namespace NLanguageTag
 			if (prefix == null)
 				return lang.ToString();
 
-			return prefix.ToString() + LanguageTag.TagSeparator + lang.ToString();
+			return prefix.TextCode + LanguageTag.TagSeparator + lang.TextCode;
 		}
 
 		/// <summary>
