@@ -1663,7 +1663,9 @@ namespace NLanguageTag
 				case 'd': return tryParseFromExtLanguage_ZH_L3_cd(span);
 				case 'j': return tryParseFromExtLanguage_ZH_L3_cj(span);
 				case 'm': return tryParseFromExtLanguage_ZH_L3_cm(span);
+				case 'n': return tryParseFromExtLanguage_ZH_L3_cn(span);
 				case 'p': return tryParseFromExtLanguage_ZH_L3_cp(span);
+				case 's': return tryParseFromExtLanguage_ZH_L3_cs(span);
 				case 'z': return tryParseFromExtLanguage_ZH_L3_cz(span);
 				default: return null;
 			}
@@ -1690,10 +1692,24 @@ namespace NLanguageTag
 			return null;
 		}
 		
+		private static Language? tryParseFromExtLanguage_ZH_L3_cn(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[2]) == 'p')
+				return Language.CNP;
+			return null;
+		}
+		
 		private static Language? tryParseFromExtLanguage_ZH_L3_cp(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'x')
 				return Language.CPX;
+			return null;
+		}
+		
+		private static Language? tryParseFromExtLanguage_ZH_L3_cs(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[2]) == 'p')
+				return Language.CSP;
 			return null;
 		}
 		

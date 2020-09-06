@@ -86,6 +86,7 @@ namespace NLanguageTag
 				case VariantCode.Pahawh3: return Pahawh3Cache.Instance;
 				case VariantCode.Pahawh4: return Pahawh4Cache.Instance;
 				case VariantCode.Pamaka: return PamakaCache.Instance;
+				case VariantCode.Peano: return PeanoCache.Instance;
 				case VariantCode.Petr1708: return Petr1708Cache.Instance;
 				case VariantCode.Pinyin: return PinyinCache.Instance;
 				case VariantCode.Polyton: return PolytonCache.Instance;
@@ -104,6 +105,8 @@ namespace NLanguageTag
 				case VariantCode.Sursilv: return SursilvCache.Instance;
 				case VariantCode.Sutsilv: return SutsilvCache.Instance;
 				case VariantCode.Tarask: return TaraskCache.Instance;
+				case VariantCode.Tongyong: return TongyongCache.Instance;
+				case VariantCode.Tunumiit: return TunumiitCache.Instance;
 				case VariantCode.Uccor: return UccorCache.Instance;
 				case VariantCode.Ucrcor: return UcrcorCache.Instance;
 				case VariantCode.Ulster: return UlsterCache.Instance;

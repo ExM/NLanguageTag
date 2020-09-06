@@ -923,6 +923,11 @@ namespace NLanguageTag
 		Tirh = 182,
 
 		/// <summary>
+		/// code of <see cref="Script.Toto"/>
+		/// </summary>
+		Toto = 201,
+
+		/// <summary>
 		/// code of <see cref="Script.Ugar"/>
 		/// </summary>
 		Ugar = 183,

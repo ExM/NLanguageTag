@@ -1,10 +1,10 @@
 ﻿
-Total entries: 9088
+Total entries: 9120
 Types:
-* language - 8152
-* extlang - 237
-* script - 201
+* language - 8178
+* extlang - 239
+* script - 202
 * region - 304
-* variant - 101
+* variant - 104
 * grandfathered - 26
 * redundant - 67
