@@ -3,7 +3,7 @@ framework: auto-detect
 storage: none
 
 source https://www.nuget.org/api/v2/
-nuget NUnit ~> 3.10
-nuget NUnit3TestAdapter ~> 3.10
-nuget Microsoft.NET.Test.Sdk ~> 15.5
+nuget NUnit ~> 3.12
+nuget NUnit3TestAdapter ~> 3.17
+nuget Microsoft.NET.Test.Sdk ~> 15.9
 nuget Microsoft.TestPlatform.ObjectModel
