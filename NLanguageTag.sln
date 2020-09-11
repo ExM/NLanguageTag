@@ -25,6 +25,8 @@ ProjectSection(SolutionItems) = preProject
 	doc\references.txt = doc\references.txt
 EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLanguageTag.Benchmark", "NLanguageTag.Benchmark\NLanguageTag.Benchmark.csproj", "{2F44D184-03DA-4C44-A88C-8067CBED7E5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{61855940-1B59-42CA-A570-73884CBA76FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61855940-1B59-42CA-A570-73884CBA76FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61855940-1B59-42CA-A570-73884CBA76FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F44D184-03DA-4C44-A88C-8067CBED7E5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F44D184-03DA-4C44-A88C-8067CBED7E5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F44D184-03DA-4C44-A88C-8067CBED7E5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F44D184-03DA-4C44-A88C-8067CBED7E5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

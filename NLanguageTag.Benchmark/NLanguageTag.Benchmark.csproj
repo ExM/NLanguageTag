@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SubtagSamples\ExtLanguages.txt" />
+    <EmbeddedResource Include="SubtagSamples\Languages.txt" />
+    <EmbeddedResource Include="SubtagSamples\Regions.txt" />
+    <EmbeddedResource Include="SubtagSamples\Scripts.txt" />
+    <EmbeddedResource Include="SubtagSamples\Variants.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NLanguageTag\NLanguageTag.csproj" />
+  </ItemGroup>
+  <Import Project="..\.paket\Paket.Restore.targets" />
+</Project>

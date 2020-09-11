@@ -7,3 +7,4 @@ nuget NUnit ~> 3.12
 nuget NUnit3TestAdapter ~> 3.17
 nuget Microsoft.NET.Test.Sdk ~> 15.9
 nuget Microsoft.TestPlatform.ObjectModel
+nuget BenchmarkDotNet ~> 0.12
