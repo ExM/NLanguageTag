@@ -13,7 +13,7 @@ namespace NLanguageTag.Tests
 			{
 				var script = text.TryParseScript();
 				Assert.NotNull(script);
-				Assert.NotNull(script.Value.ToText());
+				Assert.NotNull(script!.Value.ToText());
 			}
 		}
 

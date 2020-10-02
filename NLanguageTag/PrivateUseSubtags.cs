@@ -9,7 +9,7 @@ namespace NLanguageTag
 	/// Private use subtags are used to indicate distinctions in language
 	/// that are important in a given context by private agreement.
 	/// </summary>
-	public struct PrivateUseSubtags : IEnumerable<string>, IEquatable<PrivateUseSubtags>
+	public readonly struct PrivateUseSubtags : IEnumerable<string>, IEquatable<PrivateUseSubtags>
 	{
 		/// <summary>
 		/// Subtag that identifies start of private-use subtags
@@ -19,7 +19,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// Initializes new value of <see cref="PrivateUseSubtags"/>
 		/// </summary>
-		public PrivateUseSubtags(params string[] subtags)
+		public PrivateUseSubtags(params string[]? subtags)
 			: this(subtags as IReadOnlyList<string>)
 		{
 		}
@@ -27,9 +27,9 @@ namespace NLanguageTag
 		/// <summary>
 		/// Initializes new value of <see cref="PrivateUseSubtags"/>
 		/// </summary>
-		public PrivateUseSubtags(IReadOnlyList<string> subtags)
+		public PrivateUseSubtags(IReadOnlyList<string>? subtags)
 		{
-			if (subtags == null || subtags.Count == 0)
+			if (subtags is null || subtags.Count == 0)
 			{
 				_subtags = null;
 				return;
@@ -123,17 +123,14 @@ namespace NLanguageTag
 		/// <summary>
 		/// Indicates whether this collection contains no elements
 		/// </summary>
-		public bool IsEmpty => _subtags == null;
+		public bool IsEmpty => _subtags is null;
 
 		/// <summary>
 		/// Determines whether a sequence contains a specified element
 		/// </summary>
 		public bool Contains(string subtag)
 		{
-			if (_subtags == null)
-				return false;
-
-			return _subtags.Contains(subtag, StringComparer.OrdinalIgnoreCase);
+			return _subtags != null && _subtags.Contains(subtag, StringComparer.OrdinalIgnoreCase);
 		}
 
 		/// <summary>
@@ -149,13 +146,13 @@ namespace NLanguageTag
 		/// </summary>
 		public override int GetHashCode()
 		{
-			return _subtags.GetHashCodeOfSequence();
+			return _subtags.GetHashCodeOfClassSequence();
 		}
 
 		/// <summary>
 		/// Returns a value indicating whether this instance is equal to a specified object.
 		/// </summary>
-		public override bool Equals(object obj)
+		public override bool Equals(object? obj)
 		{
 			return obj is PrivateUseSubtags privateUseSubtags && Equals(privateUseSubtags);
 		}
@@ -181,7 +178,7 @@ namespace NLanguageTag
 		/// </summary>
 		public IEnumerable<string> GetSubtagElements()
 		{
-			if (_subtags == null)
+			if (_subtags is null)
 				yield break;
 
 			yield return Singleton;
@@ -216,6 +213,6 @@ namespace NLanguageTag
 		// The natural meaning for the default state is an empty collection.
 		// We will treat this field being null as empty collection, and also store null here if this value
 		// is initialized as empty collection.
-		private readonly string[] _subtags;
+		private readonly string[]? _subtags;
 	}
 }

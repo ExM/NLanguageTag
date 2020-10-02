@@ -14,7 +14,7 @@ namespace NLanguageTag.Tests
 			{
 				var variant = text.TryParseVariant();
 				Assert.NotNull(variant);
-				variant.Value.GetPrefixes();
+				variant!.Value.GetPrefixes();
 				Assert.NotNull(variant.Value.ToText());
 			}
 		}

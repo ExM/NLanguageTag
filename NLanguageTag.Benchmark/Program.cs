@@ -1,13 +1,11 @@
-﻿using System;
-using System.Linq;
-using BenchmarkDotNet.Attributes;
+﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
 
 namespace NLanguageTag.Benchmark
 {
-	class Program
+	internal static class Program
 	{
-		static void Main(string[] args)
+		public static void Main(string[] args)
 		{
 			BenchmarkRunner.Run<Parse>();
 		}
@@ -22,7 +20,7 @@ namespace NLanguageTag.Benchmark
 		private int _languageIndex = 0;
 		private int _regionIndex = 0;
 		private int _scriptIndex = 0;
-		private string _text;
+		private string _text = string.Empty;
 
 		[GlobalSetup]
 		public void GlobalSetup()
@@ -32,7 +30,8 @@ namespace NLanguageTag.Benchmark
 		[IterationSetup]
 		public void IterationSetup()
 		{
-			_text = string.Join("-",
+			_text = string.Join(
+				"-",
 				SubtagSamples.Languages[_languageIndex],
 				SubtagSamples.Scripts[_scriptIndex],
 				SubtagSamples.Regions[_regionIndex]);

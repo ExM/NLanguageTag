@@ -8,7 +8,7 @@ namespace NLanguageTag
 	/// <summary>
 	/// Collection of variant subtags
 	/// </summary>
-	public struct VariantCollection : IEnumerable<Variant>, IEquatable<VariantCollection>
+	public readonly struct VariantCollection : IEnumerable<Variant>, IEquatable<VariantCollection>
 	{
 		private VariantCollection(Variant[] variants)
 		{
@@ -19,34 +19,34 @@ namespace NLanguageTag
 		/// Creates new variant collection from the specified variants, while checking their applicability to
 		/// the specified language and script
 		/// </summary>
-		public static VariantCollection Create(Language? language, Script? script, IEnumerable<Variant> variants)
+		public static VariantCollection Create(Language? language, Script? script, IEnumerable<Variant>? variants)
 		{
-			if (variants == null)
+			if (variants is null)
 				return default;
 
-			Builder builder = null;
+			Builder? builder = null;
 
 			foreach (var variant in variants)
 			{
-				if (builder == null)
+				if (builder is null)
 					builder = new Builder(language, script);
 
 				if (!builder.TryAppend(variant))
 					throw new FormatException("Invalid variants for given language and script");
 			}
 
-			return builder == null ? default : builder.ToCollection();
+			return builder is null ? default : builder.ToCollection();
 		}
 
 		/// <summary>
 		/// Indicates whether this collection contains no elements
 		/// </summary>
-		public bool IsEmpty => _variants == null;
+		public bool IsEmpty => _variants is null;
 
 		/// <summary>
 		/// Returns a value indicating whether this instance is equal to a specified object.
 		/// </summary>
-		public override bool Equals(object other)
+		public override bool Equals(object? other)
 		{
 			return other is VariantCollection variantCollection && Equals(variantCollection);
 		}
@@ -96,7 +96,7 @@ namespace NLanguageTag
 		/// </summary>
 		public override int GetHashCode()
 		{
-			return _variants.GetHashCodeOfSequence();
+			return _variants.GetHashCodeOfStructSequence();
 		}
 
 		/// <summary>
@@ -142,7 +142,7 @@ namespace NLanguageTag
 		// The natural meaning for the default state is an empty collection.
 		// We will treat this field being null as empty collection, and also store null here if this value
 		// is initialized as empty collection.
-		private readonly Variant[] _variants;
+		private readonly Variant[]? _variants;
 
 		private sealed class Builder : IReadOnlyList<Variant>
 		{

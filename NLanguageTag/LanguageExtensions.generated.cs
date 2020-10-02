@@ -1,6 +1,8 @@
 using System;
 using System.Globalization;
 
+#nullable enable
+
 namespace NLanguageTag
 {
 	public static partial class LanguageTagExtensions
@@ -10,7 +12,7 @@ namespace NLanguageTag
 		/// </summary>
 		public static Language? GetMacrolanguage(this Language language)
 		{
-			switch(language)
+			switch (language)
 			{
 				case Language.BS: return Language.SH;
 				case Language.HR: return Language.SH;
@@ -463,7 +465,7 @@ namespace NLanguageTag
 		/// </summary>
 		public static LanguageScope? GetScope(this Language language)
 		{
-			switch(language)
+			switch (language)
 			{
 				case Language.AK: return LanguageScope.Macrolanguage;
 				case Language.AR: return LanguageScope.Macrolanguage;
@@ -658,7 +660,7 @@ namespace NLanguageTag
 		/// </summary>
 		public static Script? GetSuppressScript(this Language language)
 		{
-			switch(language)
+			switch (language)
 			{
 				case Language.AB: return Script.Cyrl;
 				case Language.AF: return Script.Latn;
@@ -8879,9 +8881,9 @@ namespace NLanguageTag
 		/// <summary>
 		/// Parses language subtag from its string representation, returns null if parsing was not successful
 		/// </summary>
-		public static Language? TryParseLanguage(this string text)
+		public static Language? TryParseLanguage(this string? text)
 		{
-			if(text == null)
+			if (text is null)
 				return null;
 
 			switch (text.ToLowerInvariant())

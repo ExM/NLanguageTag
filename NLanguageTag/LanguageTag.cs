@@ -9,7 +9,7 @@ namespace NLanguageTag
 	/// Language tag syntax is defined by the IETF's BCP 47 (https://tools.ietf.org/html/bcp47)
 	/// and corresponds to the IANA Language Subtag Registry (http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) of 2016-10-12
 	/// </summary>
-	public partial struct LanguageTag : IEquatable<LanguageTag>
+	public readonly partial struct LanguageTag : IEquatable<LanguageTag>
 	{
 		internal const char TagSeparator = '-';
 
@@ -290,7 +290,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// Returns a value indicating whether this instance is equal to a specified object.
 		/// </summary>
-		public override bool Equals(object obj)
+		public override bool Equals(object? obj)
 		{
 			return obj is LanguageTag languageTag && Equals(languageTag);
 		}

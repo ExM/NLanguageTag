@@ -1,10 +1,7 @@
-using System;
-using System.Globalization;
-
 namespace NLanguageTag
 {
 	/// <summary>
-	/// Мethods for the components of language tag
+	/// Methods for the components of language tag
 	/// </summary>
 	public static partial class LanguageTagExtensions
 	{
@@ -14,7 +11,7 @@ namespace NLanguageTag
 		/// <param name="language">primary language subtag</param>
 		public static bool ExtLanguageAvailable(this Language language)
 		{
-			switch(language)
+			switch (language)
 			{
 				case Language.AR:
 				case Language.SGN:
@@ -36,7 +33,7 @@ namespace NLanguageTag
 		/// <param name="language">primary language subtag</param>
 		public static Language? GetPrefix(this Language language)
 		{
-			switch(language)
+			switch (language)
 			{
 				case Language.AAO: return Language.AR;
 				case Language.ABH: return Language.AR;
@@ -288,10 +285,10 @@ namespace NLanguageTag
 		/// <param name="prefix">the main language subtag</param>
 		public static Language? TryParseFromExtLanguage(this string text, Language prefix)
 		{
-			if(text == null)
+			if (text is null)
 				return null;
 
-			switch(prefix)
+			switch (prefix)
 			{
 				case Language.AR:
 					switch (text.ToLowerInvariant())

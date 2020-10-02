@@ -10,7 +10,7 @@ namespace NLanguageTag
 
 			if (string.IsNullOrEmpty(text))
 			{
-				Token = null;
+				_currentToken = null;
 				_nextTokenPosition = null;
 			}
 			else
@@ -20,22 +20,22 @@ namespace NLanguageTag
 			}
 		}
 
-		public string Token { get; private set; }
+		public string Token => _currentToken ?? throw new InvalidOperationException("Current token is not available");
 
 		public bool NextTokenAvailable => _nextTokenPosition.HasValue;
 
-		public bool CurrentTokenAvailable => Token != null;
+		public bool CurrentTokenAvailable => _currentToken != null;
 
 		public bool TokenIs(string token)
 		{
-			return string.Equals(Token, token, StringComparison.OrdinalIgnoreCase);
+			return string.Equals(_currentToken, token, StringComparison.OrdinalIgnoreCase);
 		}
 
 		public void ToNextToken()
 		{
 			if (!_nextTokenPosition.HasValue)
 			{
-				Token = null;
+				_currentToken = null;
 				return;
 			}
 
@@ -43,16 +43,17 @@ namespace NLanguageTag
 
 			if (pos == -1)
 			{
-				Token = _source.Substring(_nextTokenPosition.Value);
+				_currentToken = _source.Substring(_nextTokenPosition.Value);
 				_nextTokenPosition = null;
 			}
 			else
 			{
-				Token = _source.Substring(_nextTokenPosition.Value, pos - _nextTokenPosition.Value);
+				_currentToken = _source.Substring(_nextTokenPosition.Value, pos - _nextTokenPosition.Value);
 				_nextTokenPosition = pos + 1;
 			}
 		}
 
+		private string? _currentToken;
 		private int? _nextTokenPosition;
 		private readonly string _source;
 	}

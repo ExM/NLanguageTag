@@ -28,9 +28,9 @@ namespace NLanguageTag.Tests
 		[TestCase("x-aaa-bbb", "x", false)]
 		[TestCase("x-aaa-bbb", "aaa", true)]
 		[TestCase("x-aaa-bbb", "bbb", true)]
-		public void Contains(string subtagText, string tag, bool expected)
+		public void Contains(string? subtagText, string tag, bool expected)
 		{
-			var pu = subtagText == null ? new PrivateUseSubtags() : PrivateUseSubtags.Parse(subtagText);
+			var pu = subtagText is null ? new PrivateUseSubtags() : PrivateUseSubtags.Parse(subtagText);
 			Assert.That(pu.Contains(tag), Is.EqualTo(expected));
 		}
 

@@ -5,7 +5,7 @@ namespace NLanguageTag
 	/// <summary>
 	/// Result of parsing part of language tag
 	/// </summary>
-	internal struct PartialParseResult<T>
+	internal readonly struct PartialParseResult<T> where T : struct
 	{
 		private PartialParseResult(T result, bool errorOccured, bool nothingToParse)
 		{
@@ -17,7 +17,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// Creates successful parsing result
 		/// </summary>
-		/// <param name="result">parsed valud</param>
+		/// <param name="result">parsed value</param>
 		public static PartialParseResult<T> Success(T result)
 		{
 			return new PartialParseResult<T>(result, false, false);

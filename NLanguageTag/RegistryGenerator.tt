@@ -9,13 +9,10 @@
 <#@ include file="..\T4Templates\MultipleOutputHelper.ttinclude"#>
 <# var manager = Manager.Create(Host, GenerationEnvironment); #>
 <# manager.StartNewFile("ExtLanguageExtensions.cs"); #>
-using System;
-using System.Globalization;
-
 namespace NLanguageTag
 {
 	/// <summary>
-	/// Мethods for the components of language tag
+	/// Methods for the components of language tag
 	/// </summary>
 	public static partial class LanguageTagExtensions
 	{
@@ -25,7 +22,7 @@ namespace NLanguageTag
 		/// <param name="language">primary language subtag</param>
 		public static bool ExtLanguageAvailable(this Language language)
 		{
-			switch(language)
+			switch (language)
 			{
 <#foreach(var code in extlangs.Select(_ => _.Prefix.First().ToUpper()).Distinct())
 { #>
@@ -43,7 +40,7 @@ namespace NLanguageTag
 		/// <param name="language">primary language subtag</param>
 		public static Language? GetPrefix(this Language language)
 		{
-			switch(language)
+			switch (language)
 			{
 <#foreach(var entry in extlangs)
 { if(entry.PreferredValue != null) {#>
@@ -62,10 +59,10 @@ namespace NLanguageTag
 		/// <param name="prefix">the main language subtag</param>
 		public static Language? TryParseFromExtLanguage(this string text, Language prefix)
 		{
-			if(text == null)
+			if (text is null)
 				return null;
 
-			switch(prefix)
+			switch (prefix)
 			{
 <#foreach(var lang in extlangs.Select(_ => _.Prefix.First()).Distinct())
 { #>
@@ -88,15 +85,16 @@ namespace NLanguageTag
 <# manager.EndBlock(); #>
 <# manager.StartNewFile("Grandfathered.cs"); #>
 using System;
-using System.Globalization;
+
+#nullable enable
 
 namespace NLanguageTag
 {
 	internal static class Grandfathered
 	{
-		internal static string GetPreferredValue(string text)
+		internal static string? GetPreferredValue(string? text)
 		{
-			if (text == null)
+			if (text is null)
 				return null;
 
 			switch (text.ToLowerInvariant())
@@ -107,7 +105,7 @@ namespace NLanguageTag
 <# } #>
 <#foreach(var entry in grandfathered.Where(_ => _.PreferredValue == null))
 { #>
-				case "<#= entry.Tag.ToLower() #>": throw new NotSupportedException("grandfathered code '" + text + "' not supported");
+				case "<#= entry.Tag.ToLower() #>": throw new NotSupportedException($"Grandfathered code '{text}' not supported");
 <# } #>
 				case "zh-chs": return "zh-Hans";
 				case "zh-cht": return "zh-Hant";
@@ -145,6 +143,8 @@ namespace NLanguageTag
 using System;
 using System.Globalization;
 
+#nullable enable
+
 namespace NLanguageTag
 {
 	public static partial class LanguageTagExtensions
@@ -154,7 +154,7 @@ namespace NLanguageTag
 		/// </summary>
 		public static Language? GetMacrolanguage(this Language language)
 		{
-			switch(language)
+			switch (language)
 			{
 <#foreach(var entry in prlangs.Where(_ => _.PreferredValue == null && _.Macrolanguage != null))
 { #>
@@ -169,7 +169,7 @@ namespace NLanguageTag
 		/// </summary>
 		public static LanguageScope? GetScope(this Language language)
 		{
-			switch(language)
+			switch (language)
 			{
 <#foreach(var entry in prlangs.Where(_ => _.Scope != null))
 {
@@ -188,7 +188,7 @@ namespace NLanguageTag
 		/// </summary>
 		public static Script? GetSuppressScript(this Language language)
 		{
-			switch(language)
+			switch (language)
 			{
 <#foreach(var entry in prlangs.Where(_ => _.PreferredValue == null && _.SuppressScript != null))
 { #>
@@ -217,9 +217,9 @@ namespace NLanguageTag
 		/// <summary>
 		/// Parses language subtag from its string representation, returns null if parsing was not successful
 		/// </summary>
-		public static Language? TryParseLanguage(this string text)
+		public static Language? TryParseLanguage(this string? text)
 		{
-			if(text == null)
+			if (text is null)
 				return null;
 
 			switch (text.ToLowerInvariant())
@@ -235,8 +235,6 @@ namespace NLanguageTag
 }
 <# manager.EndBlock(); #>
 <# manager.StartNewFile("Region.cs"); #>
-using System;
-
 namespace NLanguageTag
 {
 	/// <summary>
@@ -263,6 +261,8 @@ namespace NLanguageTag
 using System;
 using System.Globalization;
 
+#nullable enable
+
 namespace NLanguageTag
 {
 	public static partial class LanguageTagExtensions
@@ -286,9 +286,9 @@ namespace NLanguageTag
 		/// <summary>
 		/// Parses region subtag from its string representation, returns null if parsing was not successful
 		/// </summary>
-		public static Region? TryParseRegion(this string text)
+		public static Region? TryParseRegion(this string? text)
 		{
-			if(text == null)
+			if (text is null)
 				return null;
 
 			switch (text.ToLowerInvariant())
@@ -304,8 +304,6 @@ namespace NLanguageTag
 }
 <# manager.EndBlock(); #>
 <# manager.StartNewFile("Script.cs"); #>
-using System;
-
 namespace NLanguageTag
 {
 	/// <summary>
@@ -332,6 +330,8 @@ namespace NLanguageTag
 using System;
 using System.Globalization;
 
+#nullable enable
+
 namespace NLanguageTag
 {
 	public static partial class LanguageTagExtensions
@@ -356,9 +356,9 @@ namespace NLanguageTag
 		/// <summary>
 		/// Parses script subtag from its string representation, returns null if parsing was not successful
 		/// </summary>
-		public static Script? TryParseScript(this string text)
+		public static Script? TryParseScript(this string? text)
 		{
-			if(text == null)
+			if (text is null)
 				return null;
 
 			switch (text.ToLowerInvariant())
@@ -400,13 +400,15 @@ namespace NLanguageTag
 using System;
 using System.Globalization;
 
+#nullable enable
+
 namespace NLanguageTag
 {
 	public static partial class LanguageTagExtensions
 	{
 		internal static string[] GetTextPrefixes(this Variant v)
 		{
-			switch(v)
+			switch (v)
 			{
 <#foreach(var entry in variants.Where(_ => _.PreferredValue == null))
 {
@@ -437,9 +439,9 @@ namespace NLanguageTag
 		/// <summary>
 		/// Parses variant subtag from its string representation, returns null if parsing was not successful
 		/// </summary>
-		public static Variant? TryParseVariant(this string text)
+		public static Variant? TryParseVariant(this string? text)
 		{
-			if(text == null)
+			if (text is null)
 				return null;
 
 			switch (text.ToLowerInvariant())

@@ -8,7 +8,7 @@ namespace NLanguageTag
 	/// <summary>
 	/// Collection of extension subtags
 	/// </summary>
-	public struct ExtensionSubtagCollection : IEnumerable<ExtensionSubtag>, IEquatable<ExtensionSubtagCollection>
+	public readonly struct ExtensionSubtagCollection : IEnumerable<ExtensionSubtag>, IEquatable<ExtensionSubtagCollection>
 	{
 		/// <summary>
 		/// Initializes new instance of <see cref="ExtensionSubtagCollection"/> with provided subtags
@@ -21,9 +21,9 @@ namespace NLanguageTag
 		/// <summary>
 		/// Initializes new instance of <see cref="ExtensionSubtagCollection"/> with provided subtags
 		/// </summary>
-		public ExtensionSubtagCollection(IReadOnlyCollection<ExtensionSubtag> subtags)
+		public ExtensionSubtagCollection(IReadOnlyCollection<ExtensionSubtag>? subtags)
 		{
-			if (subtags == null || subtags.Count == 0)
+			if (subtags is null || subtags.Count == 0)
 			{
 				_sortedCollection = null;
 				return;
@@ -40,7 +40,7 @@ namespace NLanguageTag
 			// Sorting subtags by their singletons
 			Array.Sort(collection, _singletonComparer);
 
-			// Checking that all subtags singletons are unieuq
+			// Checking that all subtags singletons are unique
 			for (i = 1; i < collection.Length; i++)
 			{
 				if (collection[i - 1].Singleton == collection[i].Singleton)
@@ -65,12 +65,12 @@ namespace NLanguageTag
 		/// <summary>
 		/// Indicates whether this collection contains no elements
 		/// </summary>
-		public bool IsEmpty => _sortedCollection == null;
+		public bool IsEmpty => _sortedCollection is null;
 
 		/// <summary>
 		/// Returns a value indicating whether this instance is equal to a specified object.
 		/// </summary>
-		public override bool Equals(object obj)
+		public override bool Equals(object? obj)
 		{
 			return obj is ExtensionSubtagCollection extensionSubtagCollection && Equals(extensionSubtagCollection);
 		}
@@ -104,7 +104,7 @@ namespace NLanguageTag
 		/// </summary>
 		public override int GetHashCode()
 		{
-			return _sortedCollection.GetHashCodeOfSequence();
+			return _sortedCollection.GetHashCodeOfStructSequence();
 		}
 
 		/// <summary>
@@ -153,9 +153,9 @@ namespace NLanguageTag
 			}
 		}
 
-		private static IReadOnlyCollection<ExtensionSubtag> safeConvert(IEnumerable<ExtensionSubtag> subtags)
+		private static IReadOnlyCollection<ExtensionSubtag>? safeConvert(IEnumerable<ExtensionSubtag>? subtags)
 		{
-			if (subtags == null)
+			if (subtags is null)
 			{
 				return null;
 			}
@@ -167,7 +167,7 @@ namespace NLanguageTag
 		// The natural meaning for the default state is an empty collection.
 		// We will treat this field being null as empty collection, and also store null here if this value
 		// is initialized as empty collection.
-		private readonly ExtensionSubtag[] _sortedCollection;
+		private readonly ExtensionSubtag[]? _sortedCollection;
 
 		private static readonly IComparer<ExtensionSubtag> _singletonComparer = new SingletonComparer();
 

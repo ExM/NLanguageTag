@@ -13,7 +13,7 @@ namespace NLanguageTag.Tests
 			{
 				var region = text.TryParseRegion();
 				Assert.NotNull(region);
-				Assert.NotNull(region.Value.ToText());
+				Assert.NotNull(region!.Value.ToText());
 			}
 		}
 

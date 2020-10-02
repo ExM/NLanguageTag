@@ -8,7 +8,7 @@ namespace NLanguageTag
 	/// <summary>
 	/// Extensions provide a mechanism for extending language tags for use in various applications
 	/// </summary>
-	public struct ExtensionSubtag : IEquatable<ExtensionSubtag>, IEnumerable<string>
+	public readonly struct ExtensionSubtag : IEquatable<ExtensionSubtag>, IEnumerable<string>
 	{
 		/// <summary>
 		/// Single-character subtag, introducing this extension subtag
@@ -32,7 +32,7 @@ namespace NLanguageTag
 		{
 			_singleton = validateSingleton(singleton);
 
-			if (sequence == null || sequence.Count == 0)
+			if (sequence is null || sequence.Count == 0)
 				throw new FormatException("Extension subtag '" + singleton + "' contains no elements");
 
 			_sequence = new string[sequence.Count];
@@ -68,14 +68,14 @@ namespace NLanguageTag
 		public override int GetHashCode()
 		{
 			return _sequence != null
-				? Singleton.GetHashCode() ^ _sequence.GetHashCodeOfSequence()
+				? Singleton.GetHashCode() ^ _sequence.GetHashCodeOfClassSequence()
 				: throw getNotInitializedException();
 		}
 
 		/// <summary>
 		/// Returns a value indicating whether this instance is equal to a specified object.
 		/// </summary>
-		public override bool Equals(object obj)
+		public override bool Equals(object? obj)
 		{
 			return obj is ExtensionSubtag extensionSubtag && Equals(extensionSubtag);
 		}
@@ -101,7 +101,7 @@ namespace NLanguageTag
 		/// </summary>
 		public IEnumerable<string> GetSubtagElements()
 		{
-			if (_sequence == null)
+			if (_sequence is null)
 				throw getNotInitializedException();
 
 			yield return Singleton.ToString();
@@ -199,6 +199,6 @@ namespace NLanguageTag
 		// There is no reasonable meaning for the default state.
 		// Thus when accessing the fields we will throw exception if they are in the default state.
 		private readonly char _singleton;
-		private readonly string[] _sequence;
+		private readonly string[]? _sequence;
 	}
 }

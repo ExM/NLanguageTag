@@ -1,8 +1,8 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
-using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Text;
 
 namespace NLanguageTag.Benchmark
 {
@@ -17,16 +17,24 @@ namespace NLanguageTag.Benchmark
 		private static IEnumerable<string> readSubtags(string resourceName)
 		{
 			var fullResourceName = $"NLanguageTag.Benchmark.SubtagSamples.{resourceName}.txt";
-			using var stream = typeof(SubtagSamples).Assembly.GetManifestResourceStream(fullResourceName);
-			using var reader = new StreamReader(stream);
 
-			while(true)
+			using var stream = typeof(SubtagSamples).Assembly.GetManifestResourceStream(fullResourceName);
+			if (stream is null)
+			{
+				throw new ApplicationException($"Resource '{fullResourceName}' not found");
+			}
+
+			using var reader = new StreamReader(stream, Encoding.UTF8);
+
+			while (true)
 			{
 				var line = reader.ReadLine();
-				if(string.IsNullOrEmpty(line))
+				if (string.IsNullOrEmpty(line))
+				{
 					yield break;
-				else
-					yield return line;
+				}
+
+				yield return line;
 			}
 		}
 	}

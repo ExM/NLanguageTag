@@ -1,6 +1,8 @@
 using System;
 using System.Globalization;
 
+#nullable enable
+
 namespace NLanguageTag
 {
 	public static partial class LanguageTagExtensions
@@ -316,9 +318,9 @@ namespace NLanguageTag
 		/// <summary>
 		/// Parses region subtag from its string representation, returns null if parsing was not successful
 		/// </summary>
-		public static Region? TryParseRegion(this string text)
+		public static Region? TryParseRegion(this string? text)
 		{
-			if(text == null)
+			if (text is null)
 				return null;
 
 			switch (text.ToLowerInvariant())

@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using System;
-using System.Linq;
 
 namespace NLanguageTag.Tests
 {
@@ -31,7 +30,7 @@ namespace NLanguageTag.Tests
 				var languageTag = LanguageTag.TryParse($"{language}-{text}");
 				Assert.IsNotNull(languageTag);
 				CollectionAssert.AreEqual(
-					languageTag.Value.Extensions,
+					languageTag!.Value.Extensions,
 					new[] { new ExtensionSubtag(singleton, subtags) });
 			}
 		}

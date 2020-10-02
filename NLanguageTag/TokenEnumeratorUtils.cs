@@ -7,6 +7,9 @@ namespace NLanguageTag
 			if (!tokens.NextTokenAvailable)
 			{
 				// No other tokens — try parsing current and return whatever we got
+				if (!tokens.CurrentTokenAvailable)
+					return null;
+
 				var result = tokens.Token.TryParseLanguage();
 				if (result.HasValue)
 					tokens.ToNextToken();
@@ -36,6 +39,9 @@ namespace NLanguageTag
 
 		public static Script? TryParseScript(this TokenEnumerator tokens)
 		{
+			if (!tokens.CurrentTokenAvailable)
+				return null;
+
 			var script = tokens.Token.TryParseScript();
 
 			if (script != null)
@@ -46,6 +52,9 @@ namespace NLanguageTag
 
 		public static Region? TryParseRegion(this TokenEnumerator tokens)
 		{
+			if (!tokens.CurrentTokenAvailable)
+				return null;
+
 			var region = tokens.Token.TryParseRegion();
 
 			if (region != null)
@@ -56,6 +65,9 @@ namespace NLanguageTag
 
 		public static Variant? TryParseVariant(this TokenEnumerator tokens)
 		{
+			if (!tokens.CurrentTokenAvailable)
+				return null;
+
 			var variant = tokens.Token.TryParseVariant();
 
 			if (variant != null)

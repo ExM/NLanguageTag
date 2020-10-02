@@ -22,10 +22,9 @@ namespace NLanguageTag
 		public static string ToExtLanguage(this Language lang)
 		{
 			var prefix = lang.GetPrefix();
-			if (prefix == null)
-				return lang.ToText();
-
-			return prefix.Value.ToText() + LanguageTag.TagSeparator + lang.ToText();
+			return prefix.HasValue
+				? prefix.Value.ToText() + LanguageTag.TagSeparator + lang.ToText()
+				: lang.ToText();
 		}
 	}
 }

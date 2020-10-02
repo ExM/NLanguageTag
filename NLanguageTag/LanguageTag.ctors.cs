@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace NLanguageTag
 {
-	public partial struct LanguageTag
+	public readonly partial struct LanguageTag
 	{
 
 		/// <summary>

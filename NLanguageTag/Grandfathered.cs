@@ -1,13 +1,14 @@
 using System;
-using System.Globalization;
+
+#nullable enable
 
 namespace NLanguageTag
 {
 	internal static class Grandfathered
 	{
-		internal static string GetPreferredValue(string text)
+		internal static string? GetPreferredValue(string? text)
 		{
-			if (text == null)
+			if (text is null)
 				return null;
 
 			switch (text.ToLowerInvariant())
@@ -33,11 +34,11 @@ namespace NLanguageTag
 				case "zh-hakka": return "hak";
 				case "zh-min-nan": return "nan";
 				case "zh-xiang": return "hsn";
-				case "cel-gaulish": throw new NotSupportedException("grandfathered code '" + text + "' not supported");
-				case "i-default": throw new NotSupportedException("grandfathered code '" + text + "' not supported");
-				case "i-enochian": throw new NotSupportedException("grandfathered code '" + text + "' not supported");
-				case "i-mingo": throw new NotSupportedException("grandfathered code '" + text + "' not supported");
-				case "zh-min": throw new NotSupportedException("grandfathered code '" + text + "' not supported");
+				case "cel-gaulish": throw new NotSupportedException($"Grandfathered code '{text}' not supported");
+				case "i-default": throw new NotSupportedException($"Grandfathered code '{text}' not supported");
+				case "i-enochian": throw new NotSupportedException($"Grandfathered code '{text}' not supported");
+				case "i-mingo": throw new NotSupportedException($"Grandfathered code '{text}' not supported");
+				case "zh-min": throw new NotSupportedException($"Grandfathered code '{text}' not supported");
 				case "zh-chs": return "zh-Hans";
 				case "zh-cht": return "zh-Hant";
 				default: return null;

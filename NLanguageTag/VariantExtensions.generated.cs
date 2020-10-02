@@ -1,13 +1,15 @@
 using System;
 using System.Globalization;
 
+#nullable enable
+
 namespace NLanguageTag
 {
 	public static partial class LanguageTagExtensions
 	{
 		internal static string[] GetTextPrefixes(this Variant v)
 		{
-			switch(v)
+			switch (v)
 			{
 				case Variant.V1606nict: return new string[] { "frm" };
 				case Variant.V1694acad: return new string[] { "fr" };
@@ -229,9 +231,9 @@ namespace NLanguageTag
 		/// <summary>
 		/// Parses variant subtag from its string representation, returns null if parsing was not successful
 		/// </summary>
-		public static Variant? TryParseVariant(this string text)
+		public static Variant? TryParseVariant(this string? text)
 		{
-			if(text == null)
+			if (text is null)
 				return null;
 
 			switch (text.ToLowerInvariant())
