@@ -44,6 +44,11 @@ namespace NLanguageTag
 		public bool IsEmpty => _variants is null;
 
 		/// <summary>
+		/// Contains is any deprecated subtags
+		/// </summary>
+		public bool ContainsDeprecatedSubtags => _variants != null && _variants.Any(_ => _.Deprecated);
+
+		/// <summary>
 		/// Returns a value indicating whether this instance is equal to a specified object.
 		/// </summary>
 		public override bool Equals(object? other)
@@ -96,7 +101,7 @@ namespace NLanguageTag
 		/// </summary>
 		public override int GetHashCode()
 		{
-			return _variants.GetHashCodeOfStructSequence();
+			return _variants.GetHashCodeOfClassSequence();
 		}
 
 		/// <summary>
@@ -119,21 +124,21 @@ namespace NLanguageTag
 			TokenEnumerator tokens)
 		{
 			var variant = tokens.TryParseVariant();
-			if (!variant.HasValue)
+			if (variant is null)
 				return PartialParseResult<VariantCollection>.Empty;
 
 			var builder = new Builder(lang, script);
 
 			do
 			{
-				if (!builder.TryAppend(variant.Value))
+				if (!builder.TryAppend(variant))
 				{
 					return PartialParseResult<VariantCollection>.Error;
 				}
 
 				variant = tokens.TryParseVariant();
 			}
-			while (variant.HasValue);
+			while (variant != null);
 
 			return PartialParseResult<VariantCollection>.Success(builder.ToCollection());
 		}

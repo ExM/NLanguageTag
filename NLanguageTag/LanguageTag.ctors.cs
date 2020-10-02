@@ -12,7 +12,7 @@ namespace NLanguageTag
 		/// <param name="lang">primary language</param>
 		public LanguageTag(Language lang)
 			: this(
-			(Language?)lang,
+			lang,
 			null,
 			null,
 			default,
@@ -26,9 +26,9 @@ namespace NLanguageTag
 		/// </summary>
 		/// <param name="lang">primary language</param>
 		/// <param name="privateUseSubtags">private use subtag</param>
-		public LanguageTag(Language lang, PrivateUseSubtags privateUseSubtags)
+		public LanguageTag(Language lang, ExtensionSubtag privateUseSubtags)
 			: this(
-			(Language?)lang,
+			lang,
 			null,
 			null,
 			default,
@@ -42,9 +42,9 @@ namespace NLanguageTag
 		/// </summary>
 		/// <param name="lang">primary language</param>
 		/// <param name="extSubtags">enumarate of extensions subtags</param>
-		public LanguageTag(Language lang, IEnumerable<ExtensionSubtag> extSubtags)
+		public LanguageTag(Language lang, IEnumerable<ExtensionSubtag>? extSubtags)
 			: this(
-			(Language?)lang,
+			lang,
 			null,
 			null,
 			default,
@@ -59,9 +59,9 @@ namespace NLanguageTag
 		/// <param name="lang">primary language</param>
 		/// <param name="extSubtags">enumarate of extensions subtags</param>
 		/// <param name="privateUseSubtags">private use subtag</param>
-		public LanguageTag(Language lang, IEnumerable<ExtensionSubtag> extSubtags, PrivateUseSubtags privateUseSubtags)
+		public LanguageTag(Language lang, IEnumerable<ExtensionSubtag>? extSubtags, ExtensionSubtag privateUseSubtags)
 			: this(
-			(Language?)lang,
+			lang,
 			null,
 			null,
 			default,
@@ -75,9 +75,9 @@ namespace NLanguageTag
 		/// </summary>
 		/// <param name="lang">primary language</param>
 		/// <param name="variants">enumarate of variant subtags</param>
-		public LanguageTag(Language lang, IEnumerable<Variant> variants)
+		public LanguageTag(Language lang, IEnumerable<Variant>? variants)
 			: this(
-			(Language?)lang,
+			lang,
 			null,
 			null,
 			VariantCollection.Create(lang, null, variants),
@@ -92,9 +92,9 @@ namespace NLanguageTag
 		/// <param name="lang">primary language</param>
 		/// <param name="variants">enumarate of variant subtags</param>
 		/// <param name="privateUseSubtags">private use subtag</param>
-		public LanguageTag(Language lang, IEnumerable<Variant> variants, PrivateUseSubtags privateUseSubtags)
+		public LanguageTag(Language lang, IEnumerable<Variant>? variants, ExtensionSubtag privateUseSubtags)
 			: this(
-			(Language?)lang,
+			lang,
 			null,
 			null,
 			VariantCollection.Create(lang, null, variants),
@@ -109,9 +109,9 @@ namespace NLanguageTag
 		/// <param name="lang">primary language</param>
 		/// <param name="variants">enumarate of variant subtags</param>
 		/// <param name="extSubtags">enumarate of extensions subtags</param>
-		public LanguageTag(Language lang, IEnumerable<Variant> variants, IEnumerable<ExtensionSubtag> extSubtags)
+		public LanguageTag(Language lang, IEnumerable<Variant>? variants, IEnumerable<ExtensionSubtag>? extSubtags)
 			: this(
-			(Language?)lang,
+			lang,
 			null,
 			null,
 			VariantCollection.Create(lang, null, variants),
@@ -127,9 +127,9 @@ namespace NLanguageTag
 		/// <param name="variants">enumarate of variant subtags</param>
 		/// <param name="extSubtags">enumarate of extensions subtags</param>
 		/// <param name="privateUseSubtags">private use subtag</param>
-		public LanguageTag(Language lang, IEnumerable<Variant> variants, IEnumerable<ExtensionSubtag> extSubtags, PrivateUseSubtags privateUseSubtags)
+		public LanguageTag(Language lang, IEnumerable<Variant>? variants, IEnumerable<ExtensionSubtag>? extSubtags, ExtensionSubtag privateUseSubtags)
 			: this(
-			(Language?)lang,
+			lang,
 			null,
 			null,
 			VariantCollection.Create(lang, null, variants),
@@ -145,7 +145,7 @@ namespace NLanguageTag
 		/// <param name="region">region subtag</param>
 		public LanguageTag(Language lang, Region? region)
 			: this(
-			(Language?)lang,
+			lang,
 			null,
 			region,
 			default,
@@ -160,9 +160,9 @@ namespace NLanguageTag
 		/// <param name="lang">primary language</param>
 		/// <param name="region">region subtag</param>
 		/// <param name="privateUseSubtags">private use subtag</param>
-		public LanguageTag(Language lang, Region? region, PrivateUseSubtags privateUseSubtags)
+		public LanguageTag(Language lang, Region? region, ExtensionSubtag privateUseSubtags)
 			: this(
-			(Language?)lang,
+			lang,
 			null,
 			region,
 			default,
@@ -177,9 +177,9 @@ namespace NLanguageTag
 		/// <param name="lang">primary language</param>
 		/// <param name="region">region subtag</param>
 		/// <param name="extSubtags">enumarate of extensions subtags</param>
-		public LanguageTag(Language lang, Region? region, IEnumerable<ExtensionSubtag> extSubtags)
+		public LanguageTag(Language lang, Region? region, IEnumerable<ExtensionSubtag>? extSubtags)
 			: this(
-			(Language?)lang,
+			lang,
 			null,
 			region,
 			default,
@@ -195,9 +195,9 @@ namespace NLanguageTag
 		/// <param name="region">region subtag</param>
 		/// <param name="extSubtags">enumarate of extensions subtags</param>
 		/// <param name="privateUseSubtags">private use subtag</param>
-		public LanguageTag(Language lang, Region? region, IEnumerable<ExtensionSubtag> extSubtags, PrivateUseSubtags privateUseSubtags)
+		public LanguageTag(Language lang, Region? region, IEnumerable<ExtensionSubtag>? extSubtags, ExtensionSubtag privateUseSubtags)
 			: this(
-			(Language?)lang,
+			lang,
 			null,
 			region,
 			default,
@@ -212,9 +212,9 @@ namespace NLanguageTag
 		/// <param name="lang">primary language</param>
 		/// <param name="region">region subtag</param>
 		/// <param name="variants">enumarate of variant subtags</param>
-		public LanguageTag(Language lang, Region? region, IEnumerable<Variant> variants)
+		public LanguageTag(Language lang, Region? region, IEnumerable<Variant>? variants)
 			: this(
-			(Language?)lang,
+			lang,
 			null,
 			region,
 			VariantCollection.Create(lang, null, variants),
@@ -230,9 +230,9 @@ namespace NLanguageTag
 		/// <param name="region">region subtag</param>
 		/// <param name="variants">enumarate of variant subtags</param>
 		/// <param name="privateUseSubtags">private use subtag</param>
-		public LanguageTag(Language lang, Region? region, IEnumerable<Variant> variants, PrivateUseSubtags privateUseSubtags)
+		public LanguageTag(Language lang, Region? region, IEnumerable<Variant>? variants, ExtensionSubtag privateUseSubtags)
 			: this(
-			(Language?)lang,
+			lang,
 			null,
 			region,
 			VariantCollection.Create(lang, null, variants),
@@ -248,9 +248,9 @@ namespace NLanguageTag
 		/// <param name="region">region subtag</param>
 		/// <param name="variants">enumarate of variant subtags</param>
 		/// <param name="extSubtags">enumarate of extensions subtags</param>
-		public LanguageTag(Language lang, Region? region, IEnumerable<Variant> variants, IEnumerable<ExtensionSubtag> extSubtags)
+		public LanguageTag(Language lang, Region? region, IEnumerable<Variant>? variants, IEnumerable<ExtensionSubtag>? extSubtags)
 			: this(
-			(Language?)lang,
+			lang,
 			null,
 			region,
 			VariantCollection.Create(lang, null, variants),
@@ -267,9 +267,9 @@ namespace NLanguageTag
 		/// <param name="variants">enumarate of variant subtags</param>
 		/// <param name="extSubtags">enumarate of extensions subtags</param>
 		/// <param name="privateUseSubtags">private use subtag</param>
-		public LanguageTag(Language lang, Region? region, IEnumerable<Variant> variants, IEnumerable<ExtensionSubtag> extSubtags, PrivateUseSubtags privateUseSubtags)
+		public LanguageTag(Language lang, Region? region, IEnumerable<Variant>? variants, IEnumerable<ExtensionSubtag>? extSubtags, ExtensionSubtag privateUseSubtags)
 			: this(
-			(Language?)lang,
+			lang,
 			null,
 			region,
 			VariantCollection.Create(lang, null, variants),
@@ -285,7 +285,7 @@ namespace NLanguageTag
 		/// <param name="script">script subtag</param>
 		public LanguageTag(Language lang, Script? script)
 			: this(
-			(Language?)lang,
+			lang,
 			script,
 			null,
 			default,
@@ -300,9 +300,9 @@ namespace NLanguageTag
 		/// <param name="lang">primary language</param>
 		/// <param name="script">script subtag</param>
 		/// <param name="privateUseSubtags">private use subtag</param>
-		public LanguageTag(Language lang, Script? script, PrivateUseSubtags privateUseSubtags)
+		public LanguageTag(Language lang, Script? script, ExtensionSubtag privateUseSubtags)
 			: this(
-			(Language?)lang,
+			lang,
 			script,
 			null,
 			default,
@@ -317,9 +317,9 @@ namespace NLanguageTag
 		/// <param name="lang">primary language</param>
 		/// <param name="script">script subtag</param>
 		/// <param name="extSubtags">enumarate of extensions subtags</param>
-		public LanguageTag(Language lang, Script? script, IEnumerable<ExtensionSubtag> extSubtags)
+		public LanguageTag(Language lang, Script? script, IEnumerable<ExtensionSubtag>? extSubtags)
 			: this(
-			(Language?)lang,
+			lang,
 			script,
 			null,
 			default,
@@ -335,9 +335,9 @@ namespace NLanguageTag
 		/// <param name="script">script subtag</param>
 		/// <param name="extSubtags">enumarate of extensions subtags</param>
 		/// <param name="privateUseSubtags">private use subtag</param>
-		public LanguageTag(Language lang, Script? script, IEnumerable<ExtensionSubtag> extSubtags, PrivateUseSubtags privateUseSubtags)
+		public LanguageTag(Language lang, Script? script, IEnumerable<ExtensionSubtag>? extSubtags, ExtensionSubtag privateUseSubtags)
 			: this(
-			(Language?)lang,
+			lang,
 			script,
 			null,
 			default,
@@ -352,9 +352,9 @@ namespace NLanguageTag
 		/// <param name="lang">primary language</param>
 		/// <param name="script">script subtag</param>
 		/// <param name="variants">enumarate of variant subtags</param>
-		public LanguageTag(Language lang, Script? script, IEnumerable<Variant> variants)
+		public LanguageTag(Language lang, Script? script, IEnumerable<Variant>? variants)
 			: this(
-			(Language?)lang,
+			lang,
 			script,
 			null,
 			VariantCollection.Create(lang, script, variants),
@@ -370,9 +370,9 @@ namespace NLanguageTag
 		/// <param name="script">script subtag</param>
 		/// <param name="variants">enumarate of variant subtags</param>
 		/// <param name="privateUseSubtags">private use subtag</param>
-		public LanguageTag(Language lang, Script? script, IEnumerable<Variant> variants, PrivateUseSubtags privateUseSubtags)
+		public LanguageTag(Language lang, Script? script, IEnumerable<Variant>? variants, ExtensionSubtag privateUseSubtags)
 			: this(
-			(Language?)lang,
+			lang,
 			script,
 			null,
 			VariantCollection.Create(lang, script, variants),
@@ -388,9 +388,9 @@ namespace NLanguageTag
 		/// <param name="script">script subtag</param>
 		/// <param name="variants">enumarate of variant subtags</param>
 		/// <param name="extSubtags">enumarate of extensions subtags</param>
-		public LanguageTag(Language lang, Script? script, IEnumerable<Variant> variants, IEnumerable<ExtensionSubtag> extSubtags)
+		public LanguageTag(Language lang, Script? script, IEnumerable<Variant>? variants, IEnumerable<ExtensionSubtag>? extSubtags)
 			: this(
-			(Language?)lang,
+			lang,
 			script,
 			null,
 			VariantCollection.Create(lang, script, variants),
@@ -407,9 +407,9 @@ namespace NLanguageTag
 		/// <param name="variants">enumarate of variant subtags</param>
 		/// <param name="extSubtags">enumarate of extensions subtags</param>
 		/// <param name="privateUseSubtags">private use subtag</param>
-		public LanguageTag(Language lang, Script? script, IEnumerable<Variant> variants, IEnumerable<ExtensionSubtag> extSubtags, PrivateUseSubtags privateUseSubtags)
+		public LanguageTag(Language lang, Script? script, IEnumerable<Variant>? variants, IEnumerable<ExtensionSubtag>? extSubtags, ExtensionSubtag privateUseSubtags)
 			: this(
-			(Language?)lang,
+			lang,
 			script,
 			null,
 			VariantCollection.Create(lang, script, variants),
@@ -426,7 +426,7 @@ namespace NLanguageTag
 		/// <param name="region">region subtag</param>
 		public LanguageTag(Language lang, Script? script, Region? region)
 			: this(
-			(Language?)lang,
+			lang,
 			script,
 			region,
 			default,
@@ -442,9 +442,9 @@ namespace NLanguageTag
 		/// <param name="script">script subtag</param>
 		/// <param name="region">region subtag</param>
 		/// <param name="privateUseSubtags">private use subtag</param>
-		public LanguageTag(Language lang, Script? script, Region? region, PrivateUseSubtags privateUseSubtags)
+		public LanguageTag(Language lang, Script? script, Region? region, ExtensionSubtag privateUseSubtags)
 			: this(
-			(Language?)lang,
+			lang,
 			script,
 			region,
 			default,
@@ -460,9 +460,9 @@ namespace NLanguageTag
 		/// <param name="script">script subtag</param>
 		/// <param name="region">region subtag</param>
 		/// <param name="extSubtags">enumarate of extensions subtags</param>
-		public LanguageTag(Language lang, Script? script, Region? region, IEnumerable<ExtensionSubtag> extSubtags)
+		public LanguageTag(Language lang, Script? script, Region? region, IEnumerable<ExtensionSubtag>? extSubtags)
 			: this(
-			(Language?)lang,
+			lang,
 			script,
 			region,
 			default,
@@ -479,9 +479,9 @@ namespace NLanguageTag
 		/// <param name="region">region subtag</param>
 		/// <param name="extSubtags">enumarate of extensions subtags</param>
 		/// <param name="privateUseSubtags">private use subtag</param>
-		public LanguageTag(Language lang, Script? script, Region? region, IEnumerable<ExtensionSubtag> extSubtags, PrivateUseSubtags privateUseSubtags)
+		public LanguageTag(Language lang, Script? script, Region? region, IEnumerable<ExtensionSubtag>? extSubtags, ExtensionSubtag privateUseSubtags)
 			: this(
-			(Language?)lang,
+			lang,
 			script,
 			region,
 			default,
@@ -497,9 +497,9 @@ namespace NLanguageTag
 		/// <param name="script">script subtag</param>
 		/// <param name="region">region subtag</param>
 		/// <param name="variants">enumarate of variant subtags</param>
-		public LanguageTag(Language lang, Script? script, Region? region, IEnumerable<Variant> variants)
+		public LanguageTag(Language lang, Script? script, Region? region, IEnumerable<Variant>? variants)
 			: this(
-			(Language?)lang,
+			lang,
 			script,
 			region,
 			VariantCollection.Create(lang, script, variants),
@@ -516,9 +516,9 @@ namespace NLanguageTag
 		/// <param name="region">region subtag</param>
 		/// <param name="variants">enumarate of variant subtags</param>
 		/// <param name="privateUseSubtags">private use subtag</param>
-		public LanguageTag(Language lang, Script? script, Region? region, IEnumerable<Variant> variants, PrivateUseSubtags privateUseSubtags)
+		public LanguageTag(Language lang, Script? script, Region? region, IEnumerable<Variant>? variants, ExtensionSubtag privateUseSubtags)
 			: this(
-			(Language?)lang,
+			lang,
 			script,
 			region,
 			VariantCollection.Create(lang, script, variants),
@@ -535,9 +535,9 @@ namespace NLanguageTag
 		/// <param name="region">region subtag</param>
 		/// <param name="variants">enumarate of variant subtags</param>
 		/// <param name="extSubtags">enumarate of extensions subtags</param>
-		public LanguageTag(Language lang, Script? script, Region? region, IEnumerable<Variant> variants, IEnumerable<ExtensionSubtag> extSubtags)
+		public LanguageTag(Language lang, Script? script, Region? region, IEnumerable<Variant>? variants, IEnumerable<ExtensionSubtag>? extSubtags)
 			: this(
-			(Language?)lang,
+			lang,
 			script,
 			region,
 			VariantCollection.Create(lang, script, variants),
@@ -555,9 +555,9 @@ namespace NLanguageTag
 		/// <param name="variants">enumarate of variant subtags</param>
 		/// <param name="extSubtags">enumarate of extensions subtags</param>
 		/// <param name="privateUseSubtags">private use subtag</param>
-		public LanguageTag(Language lang, Script? script, Region? region, IEnumerable<Variant> variants, IEnumerable<ExtensionSubtag> extSubtags, PrivateUseSubtags privateUseSubtags)
+		public LanguageTag(Language lang, Script? script, Region? region, IEnumerable<Variant>? variants, IEnumerable<ExtensionSubtag>? extSubtags, ExtensionSubtag privateUseSubtags)
 			: this(
-			(Language?)lang,
+			lang,
 			script,
 			region,
 			VariantCollection.Create(lang, script, variants),
@@ -574,7 +574,7 @@ namespace NLanguageTag
 			if (fields == Field.All)
 				return this;
 
-			if (!Language.HasValue)
+			if (Language is null)
 			{
 				return fields.HasFlag(Field.PrivateUse)
 					? new LanguageTag(PrivateUse)
@@ -584,67 +584,67 @@ namespace NLanguageTag
 			switch(fields)
 			{
 				case Field.Language:
-					return new LanguageTag(Language.Value);
+					return new LanguageTag(Language);
 				case Field.Language | Field.PrivateUse:
-					return new LanguageTag(Language.Value, PrivateUse);
+					return new LanguageTag(Language, PrivateUse);
 				case Field.Language | Field.Extensions:
-					return new LanguageTag(Language.Value, Extensions);
+					return new LanguageTag(Language, Extensions);
 				case Field.Language | Field.Extensions | Field.PrivateUse:
-					return new LanguageTag(Language.Value, Extensions, PrivateUse);
+					return new LanguageTag(Language, Extensions, PrivateUse);
 				case Field.Language | Field.Variants:
-					return new LanguageTag(Language.Value, Variants);
+					return new LanguageTag(Language, Variants);
 				case Field.Language | Field.Variants | Field.PrivateUse:
-					return new LanguageTag(Language.Value, Variants, PrivateUse);
+					return new LanguageTag(Language, Variants, PrivateUse);
 				case Field.Language | Field.Variants | Field.Extensions:
-					return new LanguageTag(Language.Value, Variants, Extensions);
+					return new LanguageTag(Language, Variants, Extensions);
 				case Field.Language | Field.Variants | Field.Extensions | Field.PrivateUse:
-					return new LanguageTag(Language.Value, Variants, Extensions, PrivateUse);
+					return new LanguageTag(Language, Variants, Extensions, PrivateUse);
 				case Field.Language | Field.Region:
-					return new LanguageTag(Language.Value, Region);
+					return new LanguageTag(Language, Region);
 				case Field.Language | Field.Region | Field.PrivateUse:
-					return new LanguageTag(Language.Value, Region, PrivateUse);
+					return new LanguageTag(Language, Region, PrivateUse);
 				case Field.Language | Field.Region | Field.Extensions:
-					return new LanguageTag(Language.Value, Region, Extensions);
+					return new LanguageTag(Language, Region, Extensions);
 				case Field.Language | Field.Region | Field.Extensions | Field.PrivateUse:
-					return new LanguageTag(Language.Value, Region, Extensions, PrivateUse);
+					return new LanguageTag(Language, Region, Extensions, PrivateUse);
 				case Field.Language | Field.Region | Field.Variants:
-					return new LanguageTag(Language.Value, Region, Variants);
+					return new LanguageTag(Language, Region, Variants);
 				case Field.Language | Field.Region | Field.Variants | Field.PrivateUse:
-					return new LanguageTag(Language.Value, Region, Variants, PrivateUse);
+					return new LanguageTag(Language, Region, Variants, PrivateUse);
 				case Field.Language | Field.Region | Field.Variants | Field.Extensions:
-					return new LanguageTag(Language.Value, Region, Variants, Extensions);
+					return new LanguageTag(Language, Region, Variants, Extensions);
 				case Field.Language | Field.Region | Field.Variants | Field.Extensions | Field.PrivateUse:
-					return new LanguageTag(Language.Value, Region, Variants, Extensions, PrivateUse);
+					return new LanguageTag(Language, Region, Variants, Extensions, PrivateUse);
 				case Field.Language | Field.Script:
-					return new LanguageTag(Language.Value, Script);
+					return new LanguageTag(Language, Script);
 				case Field.Language | Field.Script | Field.PrivateUse:
-					return new LanguageTag(Language.Value, Script, PrivateUse);
+					return new LanguageTag(Language, Script, PrivateUse);
 				case Field.Language | Field.Script | Field.Extensions:
-					return new LanguageTag(Language.Value, Script, Extensions);
+					return new LanguageTag(Language, Script, Extensions);
 				case Field.Language | Field.Script | Field.Extensions | Field.PrivateUse:
-					return new LanguageTag(Language.Value, Script, Extensions, PrivateUse);
+					return new LanguageTag(Language, Script, Extensions, PrivateUse);
 				case Field.Language | Field.Script | Field.Variants:
-					return new LanguageTag(Language.Value, Script, Variants);
+					return new LanguageTag(Language, Script, Variants);
 				case Field.Language | Field.Script | Field.Variants | Field.PrivateUse:
-					return new LanguageTag(Language.Value, Script, Variants, PrivateUse);
+					return new LanguageTag(Language, Script, Variants, PrivateUse);
 				case Field.Language | Field.Script | Field.Variants | Field.Extensions:
-					return new LanguageTag(Language.Value, Script, Variants, Extensions);
+					return new LanguageTag(Language, Script, Variants, Extensions);
 				case Field.Language | Field.Script | Field.Variants | Field.Extensions | Field.PrivateUse:
-					return new LanguageTag(Language.Value, Script, Variants, Extensions, PrivateUse);
+					return new LanguageTag(Language, Script, Variants, Extensions, PrivateUse);
 				case Field.Language | Field.Script | Field.Region:
-					return new LanguageTag(Language.Value, Script, Region);
+					return new LanguageTag(Language, Script, Region);
 				case Field.Language | Field.Script | Field.Region | Field.PrivateUse:
-					return new LanguageTag(Language.Value, Script, Region, PrivateUse);
+					return new LanguageTag(Language, Script, Region, PrivateUse);
 				case Field.Language | Field.Script | Field.Region | Field.Extensions:
-					return new LanguageTag(Language.Value, Script, Region, Extensions);
+					return new LanguageTag(Language, Script, Region, Extensions);
 				case Field.Language | Field.Script | Field.Region | Field.Extensions | Field.PrivateUse:
-					return new LanguageTag(Language.Value, Script, Region, Extensions, PrivateUse);
+					return new LanguageTag(Language, Script, Region, Extensions, PrivateUse);
 				case Field.Language | Field.Script | Field.Region | Field.Variants:
-					return new LanguageTag(Language.Value, Script, Region, Variants);
+					return new LanguageTag(Language, Script, Region, Variants);
 				case Field.Language | Field.Script | Field.Region | Field.Variants | Field.PrivateUse:
-					return new LanguageTag(Language.Value, Script, Region, Variants, PrivateUse);
+					return new LanguageTag(Language, Script, Region, Variants, PrivateUse);
 				case Field.Language | Field.Script | Field.Region | Field.Variants | Field.Extensions:
-					return new LanguageTag(Language.Value, Script, Region, Variants, Extensions);
+					return new LanguageTag(Language, Script, Region, Variants, Extensions);
 				case Field.Language | Field.Script | Field.Region | Field.Variants | Field.Extensions | Field.PrivateUse:
 					throw new ApplicationException("This should never happen");
 				case Field.PrivateUse:

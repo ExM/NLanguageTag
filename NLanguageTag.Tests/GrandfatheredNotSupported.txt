@@ -1,5 +1,0 @@
-cel-gaulish
-i-default
-i-enochian
-i-mingo
-zh-min

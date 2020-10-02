@@ -1,85 +1,39 @@
 ﻿<#@ template debug="false" hostspecific="true" language="C#" #>
 <#@ assembly name="System.Core" #>
+<#@ assembly name="$(SolutionDir)\T4Tools\bin\NLanguageTag.T4Tools.dll" #>
 <#@ import namespace="System.IO" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="NLanguageTag.T4Tools" #>
 <#@ output extension=".statistic.txt" #>
-<#@ include file="..\T4Templates\Registry.ttinclude" #>
+<#
+	var registry = Registry.ReadCurrent();
+#>
 <#@ include file="..\T4Templates\MultipleOutputHelper.ttinclude"#>
 <# var manager = Manager.Create(Host, GenerationEnvironment); #>
-<# manager.StartNewFile("ExtLanguageExtensions.cs"); #>
+<# manager.StartNewFile("Language.extLang.cs"); #>
+using System;
+using System.Globalization;
+
+#pragma warning disable 618
 namespace NLanguageTag
 {
-	/// <summary>
-	/// Methods for the components of language tag
-	/// </summary>
-	public static partial class LanguageTagExtensions
+	public partial class Language
 	{
-		/// <summary>
-		/// Determines the possible presence of extlang subtag
-		/// </summary>
-		/// <param name="language">primary language subtag</param>
-		public static bool ExtLanguageAvailable(this Language language)
-		{
-			switch (language)
-			{
-<#foreach(var code in extlangs.Select(_ => _.Prefix.First().ToUpper()).Distinct())
-{ #>
-				case Language.<#= code #>:
-<# } #>
-					return true;
-				default:
-					return false;
-			}
-		}
+<#foreach(var lang in registry.ExtLanguages.Select(_ => _.Prefix).Distinct())
+{
+	var extLangSelector = new PrefixTreeSelector("tryParseFromExtLanguage_" + lang.ToUpperInvariant(), "Language?",
+	registry.ExtLanguages.Where(_ => _.Prefix == lang && _.PreferredValue != null).ToDictionary(
+		_ => _.Subtag.ToLower(),
+		_ => "Language." + _.PreferredValue.ToUpperInvariant()));
+#>
 
-		/// <summary>
-		/// specifies the language that must precede the extlang subtag
-		/// </summary>
-		/// <param name="language">primary language subtag</param>
-		public static Language? GetPrefix(this Language language)
-		{
-			switch (language)
-			{
-<#foreach(var entry in extlangs)
-{ if(entry.PreferredValue != null) {#>
-				case Language.<#= entry.PreferredValue.ToUpper() #>: return Language.<#= entry.Prefix.First().ToUpper() #>;
-<#} } #>
-				default:
-					return null;
-			}
-		}
-
-		/// <summary>
-		/// Determines the proper language subtag that should be used instead of given combination of
-		/// language subtag and extlang subtag
-		/// </summary>
-		/// <param name="text">text that can possibly be extlang subtag</param>
-		/// <param name="prefix">the main language subtag</param>
-		public static Language? TryParseFromExtLanguage(this string text, Language prefix)
-		{
-			if (text is null)
-				return null;
-
-			switch (prefix)
-			{
-<#foreach(var lang in extlangs.Select(_ => _.Prefix.First()).Distinct())
+<#foreach(var line in extLangSelector.Render())
 { #>
-				case Language.<#= lang.ToUpper() #>:
-					switch (text.ToLowerInvariant())
-					{
-<#foreach(var entry in extlangs.Where(_ => _.Prefix.First() == lang && _.PreferredValue != null))
-{ #>
-						case "<#= entry.Subtag.ToLower()#>": return Language.<#= entry.PreferredValue.ToUpper() #>;
+		<#= line #>
 <# } #>
-						default: return null;
-					}
 <# } #>
-				default:
-					return null;
-			}
-		}
 	}
 }
 <# manager.EndBlock(); #>
@@ -99,11 +53,11 @@ namespace NLanguageTag
 
 			switch (text.ToLowerInvariant())
 			{
-<#foreach(var entry in grandfathered.Where(_ => _.PreferredValue != null))
+<#foreach(var entry in registry.Grandfathered.Where(_ => _.PreferredValue != null))
 { #>
 				case "<#= entry.Tag.ToLower() #>": return "<#= entry.PreferredValue #>";
 <# } #>
-<#foreach(var entry in grandfathered.Where(_ => _.PreferredValue == null))
+<#foreach(var entry in registry.Grandfathered.Where(_ => _.PreferredValue is null))
 { #>
 				case "<#= entry.Tag.ToLower() #>": throw new NotSupportedException($"Grandfathered code '{text}' not supported");
 <# } #>
@@ -115,353 +69,563 @@ namespace NLanguageTag
 	}
 }
 <# manager.EndBlock(); #>
-<# manager.StartNewFile("Language.cs"); #>
+<# manager.StartNewFile("Language.list.cs"); #>
 using System;
 
+#pragma warning disable 618
 namespace NLanguageTag
 {
-	/// <summary>
-	/// The primary language subtag is the first subtag in a language tag.
-	/// </summary>
-	public enum Language
+	public partial class Language
 	{
-<#foreach(var entry in prlangs.Where(_ => _.PreferredValue == null))
-{ #>
+<#
+	var isPrefix = new HashSet<string>(registry.ExtLanguages.Select(_ => _.Prefix.ToUpperInvariant()).Distinct());
+	var prefixMap = registry.ExtLanguages.Where(_ => _.PreferredValue != null)
+		  .ToDictionary(_ => _.PreferredValue.ToUpperInvariant(), _ => _.Prefix.ToUpperInvariant());
+
+	foreach(var entry in registry.PrimaryLanguages.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	{
+	    var suppressScriptArg = entry.SuppressScript is null ? "null" : $"Script.{entry.SuppressScript}";
+	    var macrolanguageArg = entry.Macrolanguage is null ? "null" : $"Language.{entry.CSharp_Macrolanguage()}";
+	    var scopeArg = entry.Scope is null ? "null" : $"LanguageScope.{entry.CSharp_LanguageScope()}";
+	    var extLanguageParserArg = isPrefix.Contains(entry.CSharp_Name())
+		    ? $"tryParseFromExtLanguage_{entry.CSharp_Name()}"
+		    : "null";
+	    var prefixArg = prefixMap.TryGetValue(entry.CSharp_Name(), out var prefix)
+		         ? $"Language.{prefix}"
+		         : "null";
+	    #>
 		/// <summary>
-		/// <#= entry.Description #>
-<#if(entry.Comments != null)
-{ #>		/// <#= entry.Comments #>
+<#foreach(var summaryLine in entry.CSharp_Summary())
+{ #>
+		/// <#= summaryLine #>
 <# } #>
 		/// </summary>
-		<#= entry.Subtag.ToUpper() #>,
+<#if(entry.Deprecated != null)
+  {
+	  var obsoleteDescription = "";
+	  if (entry.PreferredValue != null)
+		  obsoleteDescription += $"use {entry.PreferredValue}, ";
+	  if (entry.Comments != null)
+		  obsoleteDescription += $"{entry.Comments}, ";#>
+		[Obsolete("<#= obsoleteDescription #>deprecated from <#= entry.Deprecated #>")]
+<# } #>
+		public static Language <#= entry.CSharp_Name() #> => <#= entry.CSharp_Name() #>Cache.Instance;
+
+		private static class <#= entry.CSharp_Name() #>Cache
+		{
+			public static readonly Language Instance = new Language(
+                "<#= entry.Subtag #>",
+                LanguageCode.<#= entry.CSharp_Name() #>,
+                <#= suppressScriptArg #>,
+                <#= macrolanguageArg #>,
+                <#= scopeArg #>,
+                <#= extLanguageParserArg #>,
+                <#= prefixArg #>,
+                <#= entry.Deprecated != null ? "true" : "false" #>);
+		}
 
 <# } #>
 	}
 }
 <# manager.EndBlock(); #>
-<# manager.StartNewFile("LanguageExtensions.generated.cs"); #>
+<# manager.StartNewFile("LanguageCode.cs"); #>
 using System;
-using System.Globalization;
-
-#nullable enable
 
 namespace NLanguageTag
 {
-	public static partial class LanguageTagExtensions
+	/// <summary>
+	/// Enum code of <see cref="Language"/> to use as constants in C#
+	/// </summary>
+	public enum LanguageCode
 	{
 		/// <summary>
-		/// Returns macrolanguage for the given specific language
+		/// For private use
 		/// </summary>
-		public static Language? GetMacrolanguage(this Language language)
-		{
-			switch (language)
-			{
-<#foreach(var entry in prlangs.Where(_ => _.PreferredValue == null && _.Macrolanguage != null))
-{ #>
-				case Language.<#= entry.Subtag.ToUpper() #>: return Language.<#= entry.Macrolanguage.ToUpper() #>;
-<# } #>
-				default: return null;
-			}
-		}
+		PrivateUse = 0,
 
+<#
+   foreach(var entry in registry.PrimaryLanguages.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	{ #>
 		/// <summary>
-		/// Returns the scope of the given language subtag (on null if the subtag represents an invididual language)
+		/// code of <see cref="Language.<#= entry.CSharp_Name() #>"/>
 		/// </summary>
-		public static LanguageScope? GetScope(this Language language)
-		{
-			switch (language)
-			{
-<#foreach(var entry in prlangs.Where(_ => _.Scope != null))
-{
-	var code = char.ToUpper(entry.Scope[0]) + entry.Scope.Substring(1);
+<#if(entry.Deprecated != null)
+  { #>
+		[Obsolete("similarly Language.<#= entry.CSharp_Name() #>")]
+<# } #>
+		<#= entry.CSharp_Name() #> = <#= FixedNumbers.LanguageCode.TryGet(entry.Subtag)?.ToString()??"#error code not found" #>,
+
+<# } #>
+	}
+}
+<# manager.EndBlock(); #>
+<#
+   if (registry.PrimaryLanguages.Count > FixedNumbers.LanguageCode.Count)
+   {
+	   var newNumberCode = FixedNumbers.LanguageCode.Count + 1;
+	   manager.StartNewFile("LanguageCode.newNumbers.csv");
+	   foreach (var entry in registry.PrimaryLanguages.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	   {
+		   if (FixedNumbers.LanguageCode.TryGet(entry.Subtag) is null)
+		   {
+			   #>
+<#= entry.Subtag #>,<#= newNumberCode #>
+<#
+			   newNumberCode++;
+		   }
+	   }
+	   manager.EndBlock();
+   }
 #>
-				case Language.<#= entry.Subtag.ToUpper() #>: return LanguageScope.<#= code #>;
-<# } #>
-				default: return null;
-			}
-		}
-
-		/// <summary>
-		/// Returns script (if such exists) used to write the overwhelming majority of documents for the
-		/// given language. The subtag for such a script therefore adds no distinguishing information to
-		/// a language tag and thus SHOULD NOT be used for most documents in that language.
-		/// </summary>
-		public static Script? GetSuppressScript(this Language language)
-		{
-			switch (language)
-			{
-<#foreach(var entry in prlangs.Where(_ => _.PreferredValue == null && _.SuppressScript != null))
-{ #>
-				case Language.<#= entry.Subtag.ToUpper() #>: return Script.<#= entry.SuppressScript #>;
-<# } #>
-				default: return null;
-			}
-		}
-
-		/// <summary>
-		/// Converts the value to its equivalent string representation.
-		/// </summary>
-		public static string ToText(this Language v)
-		{
-			switch (v)
-			{
-<#foreach(var entry in prlangs.Where(_ => _.PreferredValue == null))
-{ #>
-				case Language.<#= entry.Subtag.ToUpper() #>: return "<#= entry.Subtag #>";
-<# } #>
-				default:
-					throw new NotImplementedException("unexpected language '" + v + "'");
-			}
-		}
-
-		/// <summary>
-		/// Parses language subtag from its string representation, returns null if parsing was not successful
-		/// </summary>
-		public static Language? TryParseLanguage(this string? text)
-		{
-			if (text is null)
-				return null;
-
-			switch (text.ToLowerInvariant())
-			{
-<#foreach(var entry in prlangs)
-{ #>
-				case "<#= entry.Subtag.ToLower()#>": return Language.<#= (entry.PreferredValue??entry.Subtag).ToUpper() #>;
-<# } #>
-				default: return null;
-			}
-		}
-	}
-}
-<# manager.EndBlock(); #>
-<# manager.StartNewFile("Region.cs"); #>
-namespace NLanguageTag
-{
-	/// <summary>
-	/// Region subtags are used to indicate linguistic variations associated
-	/// with or appropriate to a specific country, territory, or region.
-	/// </summary>
-	public enum Region
-	{
-<#foreach(var entry in regions.Where(_ => _.PreferredValue == null))
-{ #>
-		/// <summary>
-		/// <#= entry.Description #>
-<#if(entry.Comments != null)
-{ #>		/// <#= entry.Comments #>
-<# } #>
-		/// </summary>
-		<#= entry.AsRegionCode #>,
-
-<# } #>
-	}
-}
-<# manager.EndBlock(); #>
-<# manager.StartNewFile("RegionExtensions.generated.cs"); #>
+<# manager.StartNewFile("Language.byCode.cs"); #>
 using System;
 using System.Globalization;
 
-#nullable enable
-
+#pragma warning disable 618
 namespace NLanguageTag
 {
-	public static partial class LanguageTagExtensions
+	public partial class Language
 	{
 		/// <summary>
-		/// Converts the value to its equivalent string representation.
+		/// Returns public Language by LanguageCode
 		/// </summary>
-		public static string ToText(this Region v)
+		public static Language ByCode(LanguageCode code)
 		{
-			switch (v)
+			switch(code)
 			{
-<#foreach(var entry in regions.Where(_ => _.PreferredValue == null))
-{ #>
-				case Region.<#= entry.AsRegionCode #>: return "<#= entry.Subtag #>";
+<#
+   foreach(var entry in registry.PrimaryLanguages.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	{ #>
+				case LanguageCode.<#= entry.CSharp_Name() #>: return <#= entry.CSharp_Name() #>Cache.Instance;
 <# } #>
-				default:
-					throw new NotImplementedException("unexpected value '" + v + "'");
-			}
-		}
-
-		/// <summary>
-		/// Parses region subtag from its string representation, returns null if parsing was not successful
-		/// </summary>
-		public static Region? TryParseRegion(this string? text)
-		{
-			if (text is null)
-				return null;
-
-			switch (text.ToLowerInvariant())
-			{
-<#foreach(var entry in regions)
-{ #>
-				case "<#= entry.Subtag.ToLower()#>": return Region.<#= entry.PreferredValue??entry.AsRegionCode #>;
-<# } #>
-				default: return null;
+				default: throw new ArgumentException(nameof(code), $"the code '{code}' does not correspond to the public language");
 			}
 		}
 	}
 }
 <# manager.EndBlock(); #>
-<# manager.StartNewFile("Script.cs"); #>
-namespace NLanguageTag
-{
-	/// <summary>
-	/// Script subtags are used to indicate the script or writing system variations
-	/// that distinguish the written forms of a language or its dialects
-	/// </summary>
-	public enum Script
-	{
-<#foreach(var entry in scripts)
-{ #>
-		/// <summary>
-		/// <#= entry.Description #>
-<#if(entry.Comments != null)
-{ #>		/// <#= entry.Comments #>
-<# } #>
-		/// </summary>
-		<#= entry.Subtag #>,
-
-<# } #>
-	}
-}
-<# manager.EndBlock(); #>
-<# manager.StartNewFile("ScriptExtensions.generated.cs"); #>
+<# manager.StartNewFile("Language.parsing.cs"); #>
 using System;
 using System.Globalization;
 
-#nullable enable
-
+#pragma warning disable 618
 namespace NLanguageTag
 {
-	public static partial class LanguageTagExtensions
+	public partial class Language
 	{
+<#
+var languageSelector = new PrefixTreeSelector("TryParse", "Language?",
+	registry.PrimaryLanguages.ToDictionary(
+		_ => _.Subtag.ToLower(),
+		_ => _.CSharp_Preferred() + "Cache.Instance"));
+{
+	var (minKey, maxKey) = registry.PrivateUsePrimaryLanguages.AsInterval();
+	languageSelector.AddInterval(minKey.ToLowerInvariant(), maxKey.ToLowerInvariant(), "forPrivateUse(span.AsText())");
+}
+#>
 
-		/// <summary>
-		/// Converts the value to its equivalent string representation.
-		/// </summary>
-		public static string ToText(this Script v)
-		{
-			switch (v)
-			{
-<#foreach(var entry in scripts)
+<#foreach(var line in languageSelector.Render())
 { #>
-				case Script.<#= entry.Subtag #>: return "<#= entry.Subtag#>";
+		<#= line #>
 <# } #>
-				default:
-					throw new NotImplementedException("unexpected value: " + v);
-			}
-		}
-
-		/// <summary>
-		/// Parses script subtag from its string representation, returns null if parsing was not successful
-		/// </summary>
-		public static Script? TryParseScript(this string? text)
-		{
-			if (text is null)
-				return null;
-
-			switch (text.ToLowerInvariant())
-			{
-<#foreach(var entry in scripts)
-{ #>
-				case "<#= entry.Subtag.ToLower()#>": return Script.<#= entry.Subtag#>;
-<# } #>
-				default: return null;
-			}
-		}
 	}
 }
 <# manager.EndBlock(); #>
-<# manager.StartNewFile("Variant.cs"); #>
+<# manager.StartNewFile("Region.list.cs"); #>
+using System;
+
+#pragma warning disable 618
+namespace NLanguageTag
+{
+	public partial class Region
+	{
+<#foreach(var entry in registry.Regions.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+{ #>
+		/// <summary>
+<#foreach(var summaryLine in entry.CSharp_Summary())
+{ #>
+		/// <#= summaryLine #>
+<# } #>
+		/// </summary>
+<#if(entry.Deprecated != null)
+  {
+	  var obsoleteDescription = "";
+	  if (entry.PreferredValue != null)
+		  obsoleteDescription += $"use {entry.PreferredValue}, ";
+	  if (entry.Comments != null)
+		  obsoleteDescription += $"{entry.Comments}, ";#>
+		[Obsolete("<#= obsoleteDescription #>deprecated from <#= entry.Deprecated #>")]
+<# } #>
+		public static Region <#= entry.CSharp_Name() #> => <#= entry.CSharp_Name() #>Cache.Instance;
+
+		private static class <#= entry.CSharp_Name() #>Cache
+		{
+			public static readonly Region Instance = new Region("<#= entry.Subtag #>",  RegionCode.<#= entry.CSharp_Name() #>, <#= entry.Deprecated != null ? "true" : "false" #>);
+		}
+
+<# } #>
+	}
+}
+<# manager.EndBlock(); #>
+<# manager.StartNewFile("RegionCode.cs"); #>
+using System;
+
 namespace NLanguageTag
 {
 	/// <summary>
-	/// Variant subtags are used to indicate additional, well-recognized variations that define a
-	/// language or its dialects that are not covered by other available subtags.
+	/// Enum code of <see cref="Region"/> to use as constants in C#
 	/// </summary>
-	public enum Variant
+	public enum RegionCode
 	{
-<#foreach(var entry in variants.Where(_ => _.PreferredValue == null).OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
-{#>
 		/// <summary>
-		/// <#= entry.Description #>
-<#if(entry.Comments != null)
-{ #>		/// <#= entry.Comments #>
-<# } #>
+		/// For private use
 		/// </summary>
-		<#= CodeStyle.ToVariantCode(entry.Subtag) #>,
+		PrivateUse = 0,
+
+<#
+   foreach(var entry in registry.Regions.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	{ #>
+		/// <summary>
+		/// code of <see cref="Region.<#= entry.CSharp_Name() #>"/>
+		/// </summary>
+<#if(entry.Deprecated != null)
+  { #>
+		[Obsolete("similarly Region.<#= entry.CSharp_Name() #>")]
+<# } #>
+		<#= entry.CSharp_Name() #> = <#= FixedNumbers.RegionCode.TryGet(entry.Subtag)?.ToString()??"#error code not found" #>,
 
 <# } #>
 	}
 }
 <# manager.EndBlock(); #>
-<# manager.StartNewFile("VariantExtensions.generated.cs"); #>
+<#
+   if (registry.Regions.Count > FixedNumbers.RegionCode.Count)
+   {
+	   var newNumberCode = FixedNumbers.RegionCode.Count + 1;
+	   manager.StartNewFile("RegionCode.newNumbers.csv");
+	   foreach (var entry in registry.Regions.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	   {
+		   if (FixedNumbers.RegionCode.TryGet(entry.Subtag) is null)
+		   {
+			   #>
+<#= entry.Subtag #>,<#= newNumberCode #>
+<#
+			   newNumberCode++;
+		   }
+	   }
+	   manager.EndBlock();
+   }
+#>
+<# manager.StartNewFile("Region.byCode.cs"); #>
 using System;
 using System.Globalization;
 
-#nullable enable
-
+#pragma warning disable 618
 namespace NLanguageTag
 {
-	public static partial class LanguageTagExtensions
+	public partial class Region
 	{
-		internal static string[] GetTextPrefixes(this Variant v)
-		{
-			switch (v)
-			{
-<#foreach(var entry in variants.Where(_ => _.PreferredValue == null))
-{
-	var tags = string.Join(", ", entry.Prefix.Select(_ => "\"" + _ + "\"")); #>
-				case Variant.<#= CodeStyle.ToVariantCode(entry.Subtag) #>: return new string[] { <#= tags #> };
-<# } #>
-				default:
-					throw new NotImplementedException("unexpected value: " + v);
-			}
-		}
-
 		/// <summary>
-		/// Converts the value to its equivalent string representation.
+		/// Returns public Region by RegionCode
 		/// </summary>
-		public static string ToText(this Variant v)
+		public static Region ByCode(RegionCode code)
 		{
-			switch (v)
+			switch(code)
 			{
-<#foreach(var entry in variants.Where(_ => _.PreferredValue == null))
-{ #>
-				case Variant.<#= CodeStyle.ToVariantCode(entry.Subtag) #>: return "<#= entry.Subtag #>";
+<#
+   foreach(var entry in registry.Regions.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	{ #>
+				case RegionCode.<#= entry.CSharp_Name() #>: return <#= entry.CSharp_Name() #>Cache.Instance;
 <# } #>
-				default:
-					throw new NotImplementedException("unexpected value: " + v);
-			}
-		}
-
-		/// <summary>
-		/// Parses variant subtag from its string representation, returns null if parsing was not successful
-		/// </summary>
-		public static Variant? TryParseVariant(this string? text)
-		{
-			if (text is null)
-				return null;
-
-			switch (text.ToLowerInvariant())
-			{
-<#foreach(var entry in variants)
-{ #>
-				case "<#= entry.Subtag.ToLower()#>": return Variant.<#= CodeStyle.ToVariantCode(entry.PreferredValue??entry.Subtag) #>;
-<# } #>
-				default: return null;
+				default: throw new ArgumentException(nameof(code), $"the code '{code}' does not correspond to the public region");
 			}
 		}
 	}
 }
 <# manager.EndBlock(); #>
-<# var types = new HashSet<string>(entries.Select(_ => _.Type)); #>
-Total entries: <#= entries.Count() #>
+<# manager.StartNewFile("Region.parsing.cs"); #>
+using System;
+using System.Globalization;
+
+#pragma warning disable 618
+namespace NLanguageTag
+{
+	public partial class Region
+	{
+<#
+var regionSelector = new PrefixTreeSelector("TryParse", "Region?",
+	registry.Regions.ToDictionary(
+		_ => _.Subtag.ToLower(),
+		_ => _.CSharp_Preferred() + "Cache.Instance"));
+    foreach (var region in registry.PrivateUseRegions)
+    {
+	    var (minKey, maxKey) = region.AsInterval();
+	    if(minKey  is null)
+		    regionSelector.Add(region.Subtag.ToLower(), $"forPrivateUse(\"{region.Subtag.ToLower()}\")");
+		else
+	        regionSelector.AddInterval(minKey.ToLowerInvariant(), maxKey.ToLowerInvariant(), "forPrivateUse(span.AsText())");
+    }
+#>
+
+<#foreach(var line in regionSelector.Render())
+{ #>
+		<#= line #>
+<# } #>
+	}
+}
+<# manager.EndBlock(); #>
+<# manager.StartNewFile("Script.list.cs"); #>
+using System;
+
+namespace NLanguageTag
+{
+	public partial class Script
+	{
+<#foreach(var entry in registry.Scripts.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+{ #>
+		/// <summary>
+<#foreach(var summaryLine in entry.CSharp_Summary())
+{ #>
+		/// <#= summaryLine #>
+<# } #>
+		/// </summary>
+		public static Script <#= entry.CSharp_Name() #> => <#= entry.CSharp_Name() #>Cache.Instance;
+
+		private static class <#= entry.CSharp_Name() #>Cache
+		{
+			public static readonly Script Instance = new Script("<#= entry.Subtag #>", ScriptCode.<#= entry.CSharp_Name() #>);
+		}
+
+<# } #>
+	}
+}
+<# manager.EndBlock(); #>
+<# manager.StartNewFile("ScriptCode.cs"); #>
+using System;
+
+namespace NLanguageTag
+{
+	/// <summary>
+	/// Enum code of <see cref="Script"/> to use as constants in C#
+	/// </summary>
+	public enum ScriptCode
+	{
+		/// <summary>
+		/// For private use
+		/// </summary>
+		PrivateUse = 0,
+
+<#
+   foreach(var entry in registry.Scripts.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	{ #>
+		/// <summary>
+		/// code of <see cref="Script.<#= entry.CSharp_Name() #>"/>
+		/// </summary>
+		<#= entry.CSharp_Name() #> = <#= FixedNumbers.ScriptCode.TryGet(entry.Subtag)?.ToString()??"#error code not found" #>,
+
+<# } #>
+	}
+}
+<# manager.EndBlock(); #>
+<#
+   if (registry.Scripts.Count > FixedNumbers.ScriptCode.Count)
+   {
+	   var newNumberCode = FixedNumbers.ScriptCode.Count + 1;
+	   manager.StartNewFile("ScriptCode.newNumbers.csv");
+	   foreach (var entry in registry.Scripts.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	   {
+		   if (FixedNumbers.ScriptCode.TryGet(entry.Subtag) is null)
+		   {
+			   #>
+<#= entry.Subtag #>,<#= newNumberCode #>
+<#
+			   newNumberCode++;
+		   }
+	   }
+	   manager.EndBlock();
+   }
+#>
+<# manager.StartNewFile("Script.byCode.cs"); #>
+using System;
+using System.Globalization;
+
+#pragma warning disable 618
+namespace NLanguageTag
+{
+	public partial class Script
+	{
+		/// <summary>
+		/// Returns public Script by ScriptCode
+		/// </summary>
+		public static Script ByCode(ScriptCode code)
+		{
+			switch(code)
+			{
+<#
+   foreach(var entry in registry.Scripts.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	{ #>
+				case ScriptCode.<#= entry.CSharp_Name() #>: return <#= entry.CSharp_Name() #>Cache.Instance;
+<# } #>
+				default: throw new ArgumentException(nameof(code), $"the code '{code}' does not correspond to the public script");
+			}
+		}
+	}
+}
+<# manager.EndBlock(); #>
+<# manager.StartNewFile("Script.parsing.cs"); #>
+using System;
+using System.Globalization;
+
+namespace NLanguageTag
+{
+	public partial class Script
+	{
+<#
+var scriptSelector = new PrefixTreeSelector("TryParse", "Script?",
+	registry.Scripts.ToDictionary(
+		_ => _.Subtag.ToLower(),
+		_ => _.Subtag + "Cache.Instance"));
+{
+    var (minKey, maxKey) = registry.PrivateUseScripts.AsInterval();
+    scriptSelector.AddInterval(minKey.ToLowerInvariant(), maxKey.ToLowerInvariant(), "forPrivateUse(span.AsText())");
+}
+#>
+
+<#foreach(var line in scriptSelector.Render())
+{ #>
+		<#= line #>
+<# } #>
+	}
+}
+<# manager.EndBlock(); #>
+<# manager.StartNewFile("Variant.list.cs"); #>
+using System;
+
+namespace NLanguageTag
+{
+	public partial class Variant
+	{
+<#foreach(var entry in registry.Variants.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+{
+	var tags = string.Join(", ", entry.Prefixes.Select(_ => "\"" + _ + "\""));
+
+	#>
+		/// <summary>
+<#foreach(var summaryLine in entry.CSharp_Summary())
+{ #>
+		/// <#= summaryLine #>
+<# } #>
+		/// </summary>
+<#if(entry.Deprecated != null)
+{ #>
+		[Obsolete("<#= entry.Comments #>, deprecated from <#= entry.Deprecated #>")]
+<# } #>
+		public static Variant <#= entry.CSharp_Name() #> => <#= entry.CSharp_Name() #>Cache.Instance;
+
+		private static class <#= entry.CSharp_Name() #>Cache
+		{
+			public static readonly Variant Instance = new Variant("<#= entry.Subtag #>", VariantCode.<#= entry.CSharp_Name() #>, new string[] { <#= tags #> }, <#= entry.Deprecated != null ? "true" : "false" #>);
+		}
+
+<# } #>
+	}
+}
+<# manager.EndBlock(); #>
+<# manager.StartNewFile("VariantCode.cs"); #>
+using System;
+
+namespace NLanguageTag
+{
+	/// <summary>
+	/// Enum code of <see cref="Variant"/> to use as constants in C#
+	/// </summary>
+	public enum VariantCode
+	{
+<#
+   foreach(var entry in registry.Variants.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	{ #>
+		/// <summary>
+		/// code of <see cref="Variant.<#= entry.CSharp_Name() #>"/>
+		/// </summary>
+		<#= entry.CSharp_Name() #> = <#= FixedNumbers.VariantCode.TryGet(entry.Subtag)?.ToString()??"#error code not found" #>,
+
+<# } #>
+	}
+}
+<# manager.EndBlock(); #>
+<#
+   if (registry.Variants.Count > FixedNumbers.VariantCode.Count)
+   {
+	   var newNumberCode = FixedNumbers.VariantCode.Count + 1;
+	   manager.StartNewFile("VariantCode.newNumbers.csv");
+	   foreach (var entry in registry.Variants.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	   {
+		   if (FixedNumbers.VariantCode.TryGet(entry.Subtag) is null)
+		   {
+			   #>
+<#= entry.Subtag #>,<#= newNumberCode #>
+<#
+			   newNumberCode++;
+		   }
+	   }
+	   manager.EndBlock();
+   }
+#>
+<# manager.StartNewFile("Variant.byCode.cs"); #>
+using System;
+using System.Globalization;
+
+#pragma warning disable 618
+namespace NLanguageTag
+{
+	public partial class Variant
+	{
+		/// <summary>
+		/// Returns public Variant by VariantCode
+		/// </summary>
+		public static Variant ByCode(VariantCode code)
+		{
+			switch(code)
+			{
+<#
+   foreach(var entry in registry.Variants.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	{ #>
+				case VariantCode.<#= entry.CSharp_Name() #>: return <#= entry.CSharp_Name() #>Cache.Instance;
+<# } #>
+				default: throw new ArgumentException(nameof(code), $"the code '{code}' does not correspond to the public variant");
+			}
+		}
+	}
+}
+<# manager.EndBlock(); #>
+<# manager.StartNewFile("Variant.parsing.cs"); #>
+using System;
+using System.Globalization;
+
+#pragma warning disable 618
+namespace NLanguageTag
+{
+	public partial class Variant
+	{
+<#
+var variantSelector = new PrefixTreeSelector("TryParse", "Variant?",
+	registry.Variants.ToDictionary(
+		_ => _.Subtag.ToLower(),
+		_ => _.CSharp_Preferred() + "Cache.Instance"));
+#>
+
+<#foreach(var line in variantSelector.Render())
+{ #>
+		<#= line #>
+<# } #>
+	}
+}
+<# manager.EndBlock(); #>
+<# var types = new HashSet<string>(registry.AllEntries.Select(_ => _.Type)); #>
+Total entries: <#= registry.AllEntries.Count() #>
 Types:
 <#foreach(var type in types)
 { #>
-* <#= type #> - <#= entries.Count(_ => _.Type == type) #>
-	use fields: <#= string.Join(", ", new HashSet<string>(entries.Where(_ => _.Type == type).SelectMany(_ => _.UsedFields))) #>
+* <#= type #> - <#= registry.AllEntries.Count(_ => _.Type == type) #>
 <# } #>
 <# manager.Process(true); #>

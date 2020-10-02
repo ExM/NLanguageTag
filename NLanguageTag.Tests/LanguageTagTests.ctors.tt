@@ -20,29 +20,29 @@ foreach(var p in new bool[]{false, true})
 
 		[Test]
 		public void Constructor_Lang<#
-		if(s) {#>Scr<# }; 
-		if(r) {#>Reg<# }; 
-		if(v) {#>Var<# }; 
-		if(e) {#>Exr<# }; 
+		if(s) {#>Scr<# };
+		if(r) {#>Reg<# };
+		if(v) {#>Var<# };
+		if(e) {#>Exr<# };
 		if(p) {#>Pr<# } #>()
 		{
 			var tag1 = new LanguageTag(Language.RU<#
-		if(s) {#>, Script.Latn<# }; 
-		if(r) {#>, Region.RU<# }; 
-		if(v) {#>, new Variant[]{ Variant.Petr1708 }<# }; 
-		if(e) {#>, new ExtensionSubtag[]{ new ExtensionSubtag('a', "aaa") }<# }; 
-		if(p) {#>, new PrivateUseSubtags("aaa")<# } #>);
+		if(s) {#>, Script.Latn<# };
+		if(r) {#>, Region.RU<# };
+		if(v) {#>, new []{ Variant.Petr1708 }<# };
+		if(e) {#>, new []{ new ExtensionSubtag('a', "aaa") }<# };
+		if(p) {#>, ExtensionSubtag.ForPrivateUse("aaa")<# } #>);
 			var tag2 = new LanguageTag(Language.RU<#
-		if(s) {#>, Script.Latn<# } else {#>, (Script?)null<# }; 
-		if(r) {#>, Region.RU<# } else {#>, (Region?)null<# }; 
-		if(v) {#>, new Variant[]{ Variant.Petr1708 }<# } else {#>, new Variant[]{}<# }; 
-		if(e) {#>, new ExtensionSubtag[]{ new ExtensionSubtag('a', "aaa") }<# } else {#>, new ExtensionSubtag[]{}<# }; 
-		if(p) {#>, new PrivateUseSubtags("aaa")<# } else {#>, new PrivateUseSubtags()<# };#>);
+		if(s) {#>, Script.Latn<# } else {#>, null<# };
+		if(r) {#>, Region.RU<# } else {#>, null<# };
+		if(v) {#>, new []{ Variant.Petr1708 }<# } else {#>, new Variant[]{}<# };
+		if(e) {#>, new []{ new ExtensionSubtag('a', "aaa") }<# } else {#>, new ExtensionSubtag[]{}<# };
+		if(p) {#>, ExtensionSubtag.ForPrivateUse("aaa")<# } else {#>, new ExtensionSubtag()<# };#>);
 			var expected = LanguageTag.Parse("ru<#
-		if(s) {#>-Latn<# }; 
-		if(r) {#>-RU<# }; 
-		if(v) {#>-Petr1708<# }; 
-		if(e) {#>-a-aaa<# }; 
+		if(s) {#>-Latn<# };
+		if(r) {#>-RU<# };
+		if(v) {#>-Petr1708<# };
+		if(e) {#>-a-aaa<# };
 		if(p) {#>-x-aaa<# } #>");
 			Assert.That(tag1, Is.EqualTo(expected));
 			Assert.That(tag2, Is.EqualTo(expected));

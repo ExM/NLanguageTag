@@ -5,11 +5,11 @@
     <AssemblyName>NLanguageTag</AssemblyName>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyVersion>2.0.0.0</AssemblyVersion>
-    <FileVersion>2.0.0.0</FileVersion>
+    <AssemblyVersion>3.0.0.0</AssemblyVersion>
+    <FileVersion>3.0.0.0</FileVersion>
     <Company>ExM</Company>
     <Authors>Anatoliy Koperin &lt;a.koperin@gmail.com&gt;</Authors>
-    <Version>2.0.0</Version>
+    <Version>3.0.0-beta2</Version>
     <PackageProjectUrl></PackageProjectUrl>
     <Copyright>Anatoliy Koperin &lt;a.koperin@gmail.com&gt;</Copyright>
     <RepositoryUrl>https://github.com/ExM/NLanguageTag</RepositoryUrl>
@@ -21,6 +21,7 @@
     <Description>Language tags are used to help identify languages, whether spoken, written, signed, or otherwise signaled, for the purpose of communication. Language tag syntax is defined by the IETF's BCP 47 (https://tools.ietf.org/html/bcp47)</Description>
     <PackageLicenseUrl>https://github.com/ExM/NLanguageTag/raw/master/LICENSE</PackageLicenseUrl>
     <Nullable>enable</Nullable>
+    <PackageVersion>3.0.0-beta2</PackageVersion>
   </PropertyGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
   <ItemGroup>
@@ -30,7 +31,7 @@
     </None>
     <None Update="RegistryGenerator.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RegistryGenerator.cs</LastGenOutput>
+      <LastGenOutput>RegistryGenerator.statistic.txt</LastGenOutput>
     </None>
     <None Update="RuntimeTextTemplate1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -42,6 +43,8 @@
       <DependentUpon>Script1.tt</DependentUpon>
     </None>
     <None Update="RegistryGenerator.statistic.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>RegistryGenerator.tt</DependentUpon>
     </None>
   </ItemGroup>
@@ -54,44 +57,63 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>LanguageTag.ctors.tt</DependentUpon>
     </Compile>
-    <Compile Update="RegistryGenerator.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>RegistryGenerator.tt</DependentUpon>
-    </Compile>
     <Compile Update="RuntimeTextTemplate1.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>RuntimeTextTemplate1.tt</DependentUpon>
     </Compile>
-    <Compile Update="LanguageExtensions.generated.cs">
-      <DependentUpon>RegistryGenerator.tt</DependentUpon>
-    </Compile>
-    <Compile Update="RegionExtensions.generated.cs">
-      <DependentUpon>RegistryGenerator.tt</DependentUpon>
-    </Compile>
-    <Compile Update="ScriptExtensions.generated.cs">
-      <DependentUpon>RegistryGenerator.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Script.cs">
-      <DependentUpon>RegistryGenerator.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Variant.cs">
-      <DependentUpon>RegistryGenerator.tt</DependentUpon>
-    </Compile>
-    <Compile Update="VariantExtensions.generated.cs">
-      <DependentUpon>RegistryGenerator.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Region.cs">
-      <DependentUpon>RegistryGenerator.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Language.cs">
-      <DependentUpon>RegistryGenerator.tt</DependentUpon>
-    </Compile>
     <Compile Update="Grandfathered.cs">
       <DependentUpon>RegistryGenerator.tt</DependentUpon>
     </Compile>
-    <Compile Update="ExtLanguageExtensions.cs">
+    <Compile Update="Variant.list.cs">
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Variant.parsing.cs">
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Region.list.cs">
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Region.parsing.cs">
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Script.list.cs">
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Script.parsing.cs">
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Language.parsing.cs">
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Language.list.cs">
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Language.extLang.cs">
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="LanguageCode.cs">
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="RegionCode.cs">
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="ScriptCode.cs">
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="VariantCode.cs">
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Language.byCode.cs">
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Region.byCode.cs">
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Script.byCode.cs">
+      <DependentUpon>RegistryGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Variant.byCode.cs">
       <DependentUpon>RegistryGenerator.tt</DependentUpon>
     </Compile>
   </ItemGroup>

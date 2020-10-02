@@ -17,32 +17,23 @@
     <None Remove="Regions.txt" />
     <None Remove="Scripts.txt" />
     <None Remove="Variants.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="ExtLanguages.txt">
-      <DependentUpon>TestContent.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Grandfathered.txt">
-      <DependentUpon>TestContent.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GrandfatheredNotSupported.txt">
-      <DependentUpon>TestContent.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Languages.txt">
-      <DependentUpon>TestContent.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Regions.txt">
-      <DependentUpon>TestContent.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Scripts.txt">
-      <DependentUpon>TestContent.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Variants.txt">
-      <DependentUpon>TestContent.tt</DependentUpon>
-    </EmbeddedResource>
+    <None Update="LanguageTagTests.ctors.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>LanguageTagTests.ctors.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NLanguageTag\NLanguageTag.csproj" />
+    <ProjectReference Include="..\T4Tools\T4Tools.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="LanguageTagTests.ctors.cs">
+      <DependentUpon>LanguageTagTests.ctors.tt</DependentUpon>
+    </Compile>
+    <Compile Update="TestContent.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>

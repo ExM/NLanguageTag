@@ -1,165 +1,33 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using NLanguageTag.T4Tools;
 
 namespace NLanguageTag.Tests
 {
 	public static class TestContent
 	{
-		public static IEnumerable<string> GetLanguages()
-		{
-			const string resourceName = "NLanguageTag.Tests.Languages.txt";
+		public static readonly Registry Registry = Registry.ReadCurrent();
 
-			using var stream = typeof(TestContent).Assembly.GetManifestResourceStream(resourceName);
-			if (stream is null)
-			{
-				throw new ApplicationException($"Resource '{resourceName}' not found");
-			}
+		public static IEnumerable<string> GetLanguages() =>
+			Registry.PrimaryLanguages.Select(_ => _.Subtag);
 
-			using StreamReader reader = new StreamReader(stream, Encoding.UTF8);
+		public static IEnumerable<string> GetGrandfathered() =>
+			Registry.Grandfathered.Where(_ => _.PreferredValue != null).Select(_ => _.Tag);
 
-			while (true)
-			{
-				var line = reader.ReadLine();
-				if (string.IsNullOrEmpty(line))
-					yield break;
+		public static IEnumerable<string> GetGrandfatheredNotSupported() =>
+			Registry.Grandfathered.Where(_ => _.PreferredValue == null).Select(_ => _.Tag);
 
-				yield return line;
-			}
-		}
+		public static IEnumerable<string> GetRegions() =>
+			Registry.Regions.Select(_ => _.Subtag);
 
-		public static IEnumerable<string> GetGrandfathered()
-		{
-			const string resourceName = "NLanguageTag.Tests.Grandfathered.txt";
+		public static IEnumerable<string> GetScripts() =>
+			Registry.Scripts.Select(_ => _.Subtag);
 
-			using var stream = typeof(TestContent).Assembly.GetManifestResourceStream(resourceName);
-			if (stream is null)
-			{
-				throw new ApplicationException($"Resource '{resourceName}' not found");
-			}
+		public static IEnumerable<string> GetVariants() =>
+			Registry.Variants.Select(_ => _.Subtag);
 
-			using StreamReader reader = new StreamReader(stream, Encoding.UTF8);
-
-			while (true)
-			{
-				var line = reader.ReadLine();
-				if (string.IsNullOrEmpty(line))
-					yield break;
-
-				yield return line;
-			}
-		}
-
-		public static IEnumerable<string> GetGrandfatheredNotSupported()
-		{
-			const string resourceName = "NLanguageTag.Tests.GrandfatheredNotSupported.txt";
-
-			using var stream = typeof(TestContent).Assembly.GetManifestResourceStream(resourceName);
-			if (stream is null)
-			{
-				throw new ApplicationException($"Resource '{resourceName}' not found");
-			}
-
-			using StreamReader reader = new StreamReader(stream, Encoding.UTF8);
-
-			while (true)
-			{
-				var line = reader.ReadLine();
-				if (string.IsNullOrEmpty(line))
-					yield break;
-
-				yield return line;
-			}
-		}
-
-		public static IEnumerable<string> GetRegions()
-		{
-			const string resourceName = "NLanguageTag.Tests.Regions.txt";
-
-			using var stream = typeof(TestContent).Assembly.GetManifestResourceStream(resourceName);
-			if (stream is null)
-			{
-				throw new ApplicationException($"Resource '{resourceName}' not found");
-			}
-
-			using StreamReader reader = new StreamReader(stream, Encoding.UTF8);
-
-			while (true)
-			{
-				var line = reader.ReadLine();
-				if (string.IsNullOrEmpty(line))
-					yield break;
-
-				yield return line;
-			}
-		}
-
-		public static IEnumerable<string> GetScripts()
-		{
-			const string resourceName = "NLanguageTag.Tests.Scripts.txt";
-
-			using var stream = typeof(TestContent).Assembly.GetManifestResourceStream(resourceName);
-			if (stream is null)
-			{
-				throw new ApplicationException($"Resource '{resourceName}' not found");
-			}
-
-			using StreamReader reader = new StreamReader(stream, Encoding.UTF8);
-
-			while (true)
-			{
-				var line = reader.ReadLine();
-				if (string.IsNullOrEmpty(line))
-					yield break;
-
-				yield return line;
-			}
-		}
-
-		public static IEnumerable<string> GetVariants()
-		{
-			const string resourceName = "NLanguageTag.Tests.Variants.txt";
-
-			using var stream = typeof(TestContent).Assembly.GetManifestResourceStream(resourceName);
-			if (stream is null)
-			{
-				throw new ApplicationException($"Resource '{resourceName}' not found");
-			}
-
-			using StreamReader reader = new StreamReader(stream, Encoding.UTF8);
-
-			while (true)
-			{
-				var line = reader.ReadLine();
-				if (string.IsNullOrEmpty(line))
-					yield break;
-
-				yield return line;
-			}
-		}
-
-		public static IEnumerable<string> GetExtLanguages()
-		{
-			const string resourceName = "NLanguageTag.Tests.ExtLanguages.txt";
-
-			using var stream = typeof(TestContent).Assembly.GetManifestResourceStream(resourceName);
-			if (stream is null)
-			{
-				throw new ApplicationException($"Resource '{resourceName}' not found");
-			}
-
-			using StreamReader reader = new StreamReader(stream, Encoding.UTF8);
-
-			while (true)
-			{
-				var line = reader.ReadLine();
-				if (string.IsNullOrEmpty(line))
-					yield break;
-
-				yield return line;
-			}
-		}
-
+		public static IEnumerable<string> GetExtLanguages() =>
+			Registry.ExtLanguages.Where(_ => _.PreferredValue != null).Select(_ => _.Prefix + "-" + _.Subtag);
 	}
 }

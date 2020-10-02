@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net48</TargetFramework>
+		<AssemblyName>NLanguageTag.T4Tools</AssemblyName>
+		<RootNamespace>NLanguageTag.T4Tools</RootNamespace>
+		<LangVersion>default</LangVersion>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+	  <OutputPath>bin\</OutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+	  <OutputPath>bin\</OutputPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="language-subtag-registry" />
+	  <EmbeddedResource Include="language-subtag-registry" />
+	  <None Remove="VariantCode.fixedNumbers.csv" />
+	  <EmbeddedResource Include="VariantCode.fixedNumbers.csv" />
+	  <None Remove="ScriptCode.fixedNumbers.csv" />
+	  <EmbeddedResource Include="ScriptCode.fixedNumbers.csv" />
+	  <None Remove="RegionCode.fixedNumbers.csv" />
+	  <EmbeddedResource Include="RegionCode.fixedNumbers.csv" />
+	  <None Remove="LanguageCode.fixedNumbers.csv" />
+	  <EmbeddedResource Include="LanguageCode.fixedNumbers.csv" />
+	</ItemGroup>
+
+</Project>
