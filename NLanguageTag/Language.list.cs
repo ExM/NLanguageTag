@@ -1394,7 +1394,7 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
-		/// Adabe
+		/// Atauran
 		/// added: 2009-07-29
 		/// </summary>
 		public static Language ADB => ADBCache.Instance;
@@ -5873,6 +5873,7 @@ namespace NLanguageTag
 		/// Arma
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("deprecated from 2020-03-28")]
 		public static Language AOH => AOHCache.Instance;
 
 		private static class AOHCache
@@ -5885,7 +5886,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -9856,6 +9857,7 @@ namespace NLanguageTag
 		/// Tayabas Ayta
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("deprecated from 2020-03-28")]
 		public static Language AYY => AYYCache.Instance;
 
 		private static class AYYCache
@@ -9868,7 +9870,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -11056,6 +11058,7 @@ namespace NLanguageTag
 		/// Babalia Creole Arabic
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("deprecated from 2020-03-28")]
 		public static Language BBZ => BBZCache.Instance;
 
 		private static class BBZCache
@@ -11068,7 +11071,7 @@ namespace NLanguageTag
                 null,
                 null,
                 Language.AR,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -17405,6 +17408,7 @@ namespace NLanguageTag
 		/// Barbacoas
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("deprecated from 2020-03-28")]
 		public static Language BPB => BPBCache.Instance;
 
 		private static class BPBCache
@@ -17417,7 +17421,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -18393,7 +18397,7 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
-		/// Bera
+		/// Bira
 		/// added: 2009-07-29
 		/// </summary>
 		public static Language BRF => BRFCache.Instance;
@@ -23506,6 +23510,7 @@ namespace NLanguageTag
 		/// Cauca
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("deprecated from 2020-03-28")]
 		public static Language CCA => CCACache.Instance;
 
 		private static class CCACache
@@ -23518,7 +23523,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -23887,6 +23892,7 @@ namespace NLanguageTag
 		/// Chamari
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("deprecated from 2020-03-28")]
 		public static Language CDG => CDGCache.Instance;
 
 		private static class CDGCache
@@ -23899,7 +23905,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -25390,6 +25396,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Chakavian
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language CKM => CKMCache.Instance;
+
+		private static class CKMCache
+		{
+			public static readonly Language Instance = new Language(
+                "ckm",
+                LanguageCode.CKM,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Kaang Chin
 		/// added: 2013-09-10
 		/// </summary>
@@ -26300,6 +26325,26 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
+                false);
+		}
+
+		/// <summary>
+		/// Northern Ping Chinese
+		/// Northern Pinghua
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language CNP => CNPCache.Instance;
+
+		private static class CNPCache
+		{
+			public static readonly Language Instance = new Language(
+                "cnp",
+                LanguageCode.CNP,
+                null,
+                Language.ZH,
+                null,
+                null,
+                Language.ZH,
                 false);
 		}
 
@@ -27961,6 +28006,26 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
+                false);
+		}
+
+		/// <summary>
+		/// Southern Ping Chinese
+		/// Southern Pinghua
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language CSP => CSPCache.Instance;
+
+		private static class CSPCache
+		{
+			public static readonly Language Instance = new Language(
+                "csp",
+                LanguageCode.CSP,
+                null,
+                Language.ZH,
+                null,
+                null,
+                Language.ZH,
                 false);
 		}
 
@@ -30850,6 +30915,7 @@ namespace NLanguageTag
 
 		/// <summary>
 		/// Dogrib
+		/// Tłı̨chǫ
 		/// added: 2005-10-16
 		/// </summary>
 		public static Language DGR => DGRCache.Instance;
@@ -30909,6 +30975,7 @@ namespace NLanguageTag
 		/// Degaru
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("deprecated from 2020-03-28")]
 		public static Language DGU => DGUCache.Instance;
 
 		private static class DGUCache
@@ -30921,7 +30988,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -32308,6 +32375,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Medefaidrin
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language DMF => DMFCache.Instance;
+
+		private static class DMFCache
+		{
+			public static readonly Language Instance = new Language(
+                "dmf",
+                LanguageCode.DMF,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Upper Kinabatangan
 		/// added: 2009-07-29
 		/// </summary>
@@ -33493,6 +33579,7 @@ namespace NLanguageTag
 		/// Dororo
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("use kzk, deprecated from 2020-03-28")]
 		public static Language DRR => DRRCache.Instance;
 
 		private static class DRRCache
@@ -33505,7 +33592,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -34583,6 +34670,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Dawik Kui
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language DWK => DWKCache.Instance;
+
+		private static class DWKCache
+		{
+			public static readonly Language Instance = new Language(
+                "dwk",
+                LanguageCode.DWK,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Walo Kumbe Dogon
 		/// see dbt, dbw
 		/// added: 2009-07-29
@@ -35063,6 +35169,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Beginci
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language EBC => EBCCache.Instance;
+
+		private static class EBCCache
+		{
+			public static readonly Language Instance = new Language(
+                "ebc",
+                LanguageCode.EBC,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Ebughu
 		/// added: 2009-07-29
 		/// </summary>
@@ -35523,6 +35648,7 @@ namespace NLanguageTag
 		/// Eastern Karnic
 		/// added: 2013-09-10
 		/// </summary>
+		[Obsolete("deprecated from 2020-03-28")]
 		public static Language EKC => EKCCache.Instance;
 
 		private static class EKCCache
@@ -35535,7 +35661,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -38063,6 +38189,25 @@ namespace NLanguageTag
 			public static readonly Language Instance = new Language(
                 "fie",
                 LanguageCode.FIE,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Faifi
+		/// added: 2020-06-08
+		/// </summary>
+		public static Language FIF => FIFCache.Instance;
+
+		private static class FIFCache
+		{
+			public static readonly Language Instance = new Language(
+                "fif",
+                LanguageCode.FIF,
                 null,
                 null,
                 null,
@@ -40609,6 +40754,7 @@ namespace NLanguageTag
 
 		/// <summary>
 		/// Gadjerawang
+		/// Gajirrabeng
 		/// added: 2009-07-29
 		/// </summary>
 		public static Language GDH => GDHCache.Instance;
@@ -40941,6 +41087,25 @@ namespace NLanguageTag
 			public static readonly Language Instance = new Language(
                 "ged",
                 LanguageCode.GED,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Gerai
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language GEF => GEFCache.Instance;
+
+		private static class GEFCache
+		{
+			public static readonly Language Instance = new Language(
+                "gef",
+                LanguageCode.GEF,
                 null,
                 null,
                 null,
@@ -42467,6 +42632,7 @@ namespace NLanguageTag
 		/// Guliguli
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("use kzk, deprecated from 2020-03-28")]
 		public static Language GLI => GLICache.Instance;
 
 		private static class GLICache
@@ -42479,7 +42645,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -42819,6 +42985,26 @@ namespace NLanguageTag
                 null,
                 null,
                 LanguageScope.Collection,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Mirning
+		/// Mirniny
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language GMR => GMRCache.Instance;
+
+		private static class GMRCache
+		{
+			public static readonly Language Instance = new Language(
+                "gmr",
+                LanguageCode.GMR,
+                null,
+                null,
+                null,
                 null,
                 null,
                 false);
@@ -45377,6 +45563,7 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Gawri
 		/// Kalami
 		/// added: 2009-07-29
 		/// </summary>
@@ -47959,6 +48146,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Hungu
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language HNG => HNGCache.Instance;
+
+		private static class HNGCache
+		{
+			public static readonly Language Instance = new Language(
+                "hng",
+                LanguageCode.HNG,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// ǁAni
 		/// added: 2009-07-29
 		/// </summary>
@@ -49050,6 +49256,7 @@ namespace NLanguageTag
 
 		/// <summary>
 		/// ǂHua
+		/// ǂʼAmkhoe
 		/// added: 2009-07-29
 		/// </summary>
 		public static Language HUC => HUCCache.Instance;
@@ -55998,6 +56205,7 @@ namespace NLanguageTag
 
 		/// <summary>
 		/// Kara-Kalpak
+		/// Karakalpak
 		/// added: 2005-10-16
 		/// </summary>
 		public static Language KAA => KAACache.Instance;
@@ -60369,9 +60577,10 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
-		/// Khalaj
+		/// Khalaj [Indo-Iranian]
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("deprecated from 2020-03-28")]
 		public static Language KJF => KJFCache.Instance;
 
 		private static class KJFCache
@@ -60384,7 +60593,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -61073,7 +61282,7 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
-		/// Kaiku
+		/// Kaeku
 		/// added: 2009-07-29
 		/// </summary>
 		public static Language KKQ => KKQCache.Instance;
@@ -61455,7 +61664,7 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
-		/// Turkic Khalaj
+		/// Khalaj
 		/// added: 2009-07-29
 		/// </summary>
 		public static Language KLJ => KLJCache.Instance;
@@ -65858,6 +66067,7 @@ namespace NLanguageTag
 
 		/// <summary>
 		/// Kuikúro-Kalapálo
+		/// Kalapalo
 		/// added: 2009-07-29
 		/// </summary>
 		public static Language KUI => KUICache.Instance;
@@ -67407,6 +67617,7 @@ namespace NLanguageTag
 		/// Nepali Kurux
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("use kru, deprecated from 2020-03-28")]
 		public static Language KXL => KXLCache.Instance;
 
 		private static class KXLCache
@@ -67419,7 +67630,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -67576,8 +67787,10 @@ namespace NLanguageTag
 
 		/// <summary>
 		/// Kui (India)
+		/// see dwk, uki
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("see dwk, uki, deprecated from 2020-03-28")]
 		public static Language KXU => KXUCache.Instance;
 
 		private static class KXUCache
@@ -67590,7 +67803,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -72827,6 +73040,7 @@ namespace NLanguageTag
 		/// Lumbee
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("deprecated from 2020-03-28")]
 		public static Language LMZ => LMZCache.Instance;
 
 		private static class LMZCache
@@ -72839,7 +73053,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -82184,6 +82398,7 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Innu
 		/// Montagnais
 		/// added: 2009-07-29
 		/// </summary>
@@ -95116,6 +95331,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Lower Nossob
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language NSB => NSBCache.Instance;
+
+		private static class NSBCache
+		{
+			public static readonly Language Instance = new Language(
+                "nsb",
+                LanguageCode.NSB,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Nshi
 		/// added: 2009-07-29
 		/// </summary>
@@ -96875,6 +97109,7 @@ namespace NLanguageTag
 		/// Narau
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("use bpp, deprecated from 2020-03-28")]
 		public static Language NXU => NXUCache.Instance;
 
 		private static class NXUCache
@@ -96887,7 +97122,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -102590,7 +102825,7 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
-		/// Peere
+		/// Pere
 		/// added: 2009-07-29
 		/// </summary>
 		public static Language PFE => PFECache.Instance;
@@ -104136,6 +104371,7 @@ namespace NLanguageTag
 		/// Palpa
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("deprecated from 2020-03-28")]
 		public static Language PLP => PLPCache.Instance;
 
 		private static class PLPCache
@@ -104148,7 +104384,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -113637,8 +113873,10 @@ namespace NLanguageTag
 
 		/// <summary>
 		/// Semandang
+		/// see ebc, gef, sdq
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("see ebc, gef, sdq, deprecated from 2020-03-28")]
 		public static Language SDM => SDMCache.Instance;
 
 		private static class SDMCache
@@ -113651,7 +113889,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -113703,6 +113941,25 @@ namespace NLanguageTag
 			public static readonly Language Instance = new Language(
                 "sdp",
                 LanguageCode.SDP,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Semandang
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language SDQ => SDQCache.Instance;
+
+		private static class SDQCache
+		{
+			public static readonly Language Instance = new Language(
+                "sdq",
+                LanguageCode.SDQ,
                 null,
                 null,
                 null,
@@ -122802,6 +123059,7 @@ namespace NLanguageTag
 		/// Tapeba
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("deprecated from 2020-03-28")]
 		public static Language TBB => TBBCache.Instance;
 
 		private static class TBBCache
@@ -122814,7 +123072,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -125529,6 +125787,7 @@ namespace NLanguageTag
 		/// Thudam
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("use ola, deprecated from 2020-06-08")]
 		public static Language THW => THWCache.Instance;
 
 		private static class THWCache
@@ -125541,7 +125800,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -133299,6 +133558,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Kui (India)
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language UKI => UKICache.Instance;
+
+		private static class UKICache
+		{
+			public static readonly Language Instance = new Language(
+                "uki",
+                LanguageCode.UKI,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Muak Sa-aak
 		/// added: 2017-02-23
 		/// </summary>
@@ -133405,6 +133683,25 @@ namespace NLanguageTag
 			public static readonly Language Instance = new Language(
                 "uku",
                 LanguageCode.UKU,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Kuku
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language UKV => UKVCache.Instance;
+
+		private static class UKVCache
+		{
+			public static readonly Language Instance = new Language(
+                "ukv",
+                LanguageCode.UKV,
                 null,
                 null,
                 null,
@@ -139048,6 +139345,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Welaun
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language WLH => WLHCache.Instance;
+
+		private static class WLHCache
+		{
+			public static readonly Language Instance = new Language(
+                "wlh",
+                LanguageCode.WLH,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Waioli
 		/// added: 2009-07-29
 		/// </summary>
@@ -144592,6 +144908,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Ngumbarl
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language XNM => XNMCache.Instance;
+
+		private static class XNMCache
+		{
+			public static readonly Language Instance = new Language(
+                "xnm",
+                LanguageCode.XNM,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Northern Kankanay
 		/// added: 2009-07-29
 		/// </summary>
@@ -144973,6 +145308,26 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Northeastern Tasmanian
+		/// Pyemmairrener
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language XPB => XPBCache.Instance;
+
+		private static class XPBCache
+		{
+			public static readonly Language Instance = new Language(
+                "xpb",
+                LanguageCode.XPB,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Pecheneg
 		/// added: 2009-07-29
 		/// </summary>
@@ -144983,6 +145338,25 @@ namespace NLanguageTag
 			public static readonly Language Instance = new Language(
                 "xpc",
                 LanguageCode.XPC,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Oyster Bay Tasmanian
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language XPD => XPDCache.Instance;
+
+		private static class XPDCache
+		{
+			public static readonly Language Instance = new Language(
+                "xpd",
+                LanguageCode.XPD,
                 null,
                 null,
                 null,
@@ -145011,6 +145385,26 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Southeast Tasmanian
+		/// Nuenonne
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language XPF => XPFCache.Instance;
+
+		private static class XPFCache
+		{
+			public static readonly Language Instance = new Language(
+                "xpf",
+                LanguageCode.XPF,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Phrygian
 		/// added: 2009-07-29
 		/// </summary>
@@ -145021,6 +145415,26 @@ namespace NLanguageTag
 			public static readonly Language Instance = new Language(
                 "xpg",
                 LanguageCode.XPG,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// North Midlands Tasmanian
+		/// Tyerrenoterpanner
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language XPH => XPHCache.Instance;
+
+		private static class XPHCache
+		{
+			public static readonly Language Instance = new Language(
+                "xph",
+                LanguageCode.XPH,
                 null,
                 null,
                 null,
@@ -145078,6 +145492,25 @@ namespace NLanguageTag
 			public static readonly Language Instance = new Language(
                 "xpk",
                 LanguageCode.XPK,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Port Sorell Tasmanian
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language XPL => XPLCache.Instance;
+
+		private static class XPLCache
+		{
+			public static readonly Language Instance = new Language(
+                "xpl",
+                LanguageCode.XPL,
                 null,
                 null,
                 null,
@@ -145258,6 +145691,66 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Northern Tasmanian
+		/// Tommeginne
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language XPV => XPVCache.Instance;
+
+		private static class XPVCache
+		{
+			public static readonly Language Instance = new Language(
+                "xpv",
+                LanguageCode.XPV,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Northwestern Tasmanian
+		/// Peerapper
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language XPW => XPWCache.Instance;
+
+		private static class XPWCache
+		{
+			public static readonly Language Instance = new Language(
+                "xpw",
+                LanguageCode.XPW,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Southwestern Tasmanian
+		/// Toogee
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language XPX => XPXCache.Instance;
+
+		private static class XPXCache
+		{
+			public static readonly Language Instance = new Language(
+                "xpx",
+                LanguageCode.XPX,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Puyo
 		/// added: 2009-07-29
 		/// </summary>
@@ -145268,6 +145761,25 @@ namespace NLanguageTag
 			public static readonly Language Instance = new Language(
                 "xpy",
                 LanguageCode.XPY,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Bruny Island Tasmanian
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language XPZ => XPZCache.Instance;
+
+		private static class XPZCache
+		{
+			public static readonly Language Instance = new Language(
+                "xpz",
+                LanguageCode.XPZ,
                 null,
                 null,
                 null,
@@ -145470,6 +145982,7 @@ namespace NLanguageTag
 		/// Karranga
 		/// added: 2013-09-10
 		/// </summary>
+		[Obsolete("use dmw, deprecated from 2020-03-28")]
 		public static Language XRQ => XRQCache.Instance;
 
 		private static class XRQCache
@@ -145482,7 +145995,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -146343,8 +146856,10 @@ namespace NLanguageTag
 
 		/// <summary>
 		/// Tasmanian
+		/// see xpb, xpd, xpf, xph, xpl, xpv, xpw, xpx, xpz
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("see xpb, xpd, xpf, xph, xpl, xpv, xpw, xpx, xpz, deprecated from 2020-03-28")]
 		public static Language XTZ => XTZCache.Instance;
 
 		private static class XTZCache
@@ -146357,7 +146872,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -146457,6 +146972,7 @@ namespace NLanguageTag
 
 		/// <summary>
 		/// Ngunawal
+		/// Nunukul
 		/// added: 2013-09-10
 		/// </summary>
 		public static Language XUL => XULCache.Instance;
@@ -152406,6 +152922,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Balaibalan
+		/// added: 2020-03-28
+		/// </summary>
+		public static Language ZBA => ZBACache.Instance;
+
+		private static class ZBACache
+		{
+			public static readonly Language Instance = new Language(
+                "zba",
+                LanguageCode.ZBA,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Central Berawan
 		/// added: 2009-07-29
 		/// </summary>
@@ -153000,6 +153535,7 @@ namespace NLanguageTag
 		/// Ziriya
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("use scv, deprecated from 2020-03-28")]
 		public static Language ZIR => ZIRCache.Instance;
 
 		private static class ZIRCache
@@ -153012,7 +153548,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>

@@ -195,6 +195,7 @@ namespace NLanguageTag
 				case ScriptCode.Thai: return ThaiCache.Instance;
 				case ScriptCode.Tibt: return TibtCache.Instance;
 				case ScriptCode.Tirh: return TirhCache.Instance;
+				case ScriptCode.Toto: return TotoCache.Instance;
 				case ScriptCode.Ugar: return UgarCache.Instance;
 				case ScriptCode.Vaii: return VaiiCache.Instance;
 				case ScriptCode.Visp: return VispCache.Instance;
