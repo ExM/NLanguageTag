@@ -2,11 +2,11 @@ using System.Collections.Generic;
 
 namespace NLanguageTag.RegistryToSource
 {
-	public class CtorsBuilder
+	public class BuilderFactory
 	{
 		public static readonly string BaseNamespace = "NLanguageTag";
 
-		public static SourceBuilder Create()
+		public static SourceBuilder Ctors()
 		{
 			var members = new Members();
 
@@ -14,7 +14,7 @@ namespace NLanguageTag.RegistryToSource
 			foreach (var r in new []{false, true})
 			foreach (var v in new []{false, true})
 			foreach (var e in new []{false, true})
-			foreach (var p in new [] {false, true})
+			foreach (var p in new []{false, true})
 			{
 				var comments = new Comments()
 				{
@@ -63,6 +63,62 @@ namespace NLanguageTag.RegistryToSource
 			return new SourceBuilder(BaseNamespace)
 			{
 				Usings = new []{"System", "System.Collections.Generic"},
+				Types = new [] { type }
+			};
+		}
+		
+		public static SourceBuilder Take()
+		{
+			var body = new BodyItems()
+			{
+				@"
+if (fields == Field.All)
+	return this;",
+				"",
+				@"
+if (Language is null)
+{
+	return fields.HasFlag(Field.PrivateUse)
+		? new LanguageTag(PrivateUse)
+		: new LanguageTag(null, null, null, default, default, default);
+}",
+				"",
+				@"
+switch(fields)
+{",
+				@"
+	case Field.PrivateUse:
+		return new LanguageTag(PrivateUse);
+	default:
+		return new LanguageTag();
+}"
+			};
+
+			var type = new TypeBuilder()
+			{
+				Definition = new MemberDefinition() { "public readonly partial struct LanguageTag" },
+				Members = new Members()
+				{
+					new MemberBuilder()
+					{
+						Comments = new Comments()
+						{
+							"<summary>",
+							"Creates language tag that consists of specified fields of this language tag",
+							"</summary>"
+						},
+						Definition = new MemberDefinition()
+						{
+							$"public LanguageTag Take(Field fields)"
+						},
+						Body = body
+					}
+				}
+			};
+
+			return new SourceBuilder(BaseNamespace)
+			{
+				Usings = new [] { "System" },
 				Types = new [] { type }
 			};
 		}

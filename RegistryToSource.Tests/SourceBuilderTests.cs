@@ -90,7 +90,7 @@ namespace NLanguageTag.RegistryToSource
 		[Test]
 		public void Demo3()
 		{
-			Console.WriteLine(CtorsBuilder.Create().Build());
+			Console.WriteLine(BuilderFactory.Ctors().Build());
 		}
 	}
 }
