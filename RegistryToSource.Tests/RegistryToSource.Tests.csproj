@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <IsPackable>false</IsPackable>
+        <AssemblyName>NLanguageTag.RegistryToSource.Tests</AssemblyName>
+        <RootNamespace>NLanguageTag.RegistryToSource</RootNamespace>
+        <OutputType>Library</OutputType>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\RegistryToSource\RegistryToSource.csproj" />
+    </ItemGroup>
+
+    <Import Project="..\.paket\Paket.Restore.targets" />
+</Project>
