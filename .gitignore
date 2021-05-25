@@ -13,3 +13,4 @@ TestResult.xml
 *.nupkg
 /.vs
 /.idea
+/SourceCodeRenderer/CodeTemplates/*.cs

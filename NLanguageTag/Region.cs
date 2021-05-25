@@ -89,7 +89,7 @@ namespace NLanguageTag
 		private static readonly ConcurrentDictionary<string, Region> _privateUse =
 			new ConcurrentDictionary<string, Region>(StringComparer.OrdinalIgnoreCase);
 
-		private static readonly Func<string, Region> _regionCreator = (tag) => new Region(tag.ToUpperInvariant(), RegionCode.PrivateUse ,false);
+		private static readonly Func<string, Region> _regionCreator = (tag) => new Region(tag.ToUpperInvariant(), RegionCode.PrivateUse, false);
 
 		private static Region forPrivateUse(string text)
 		{

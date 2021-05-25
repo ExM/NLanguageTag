@@ -1,0 +1,22 @@
+﻿<#@ template language="C#" inherits="NLanguageTag.SourceCodeRenderer.RegistryContainer" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="NLanguageTag.SourceCodeRenderer" #>
+<#@ import namespace="NLanguageTag.SourceCodeRenderer.SubtagRegistry" #>
+<#@ output extension=".cs" #>
+<#
+	var newNumberCode = FixedNumbers.VariantCode.Count + 1;
+	foreach (var entry in Registry.Variants.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	{
+		if (FixedNumbers.VariantCode.TryGet(entry.Subtag) is null)
+		{
+			#>
+<#= entry.Subtag #>,<#= newNumberCode #>
+<#
+			newNumberCode++;
+		}
+	}
+#>

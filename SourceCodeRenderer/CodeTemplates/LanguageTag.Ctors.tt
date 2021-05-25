@@ -1,0 +1,73 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using System;
+using System.Collections.Generic;
+
+namespace NLanguageTag
+{
+	public readonly partial struct LanguageTag
+	{
+<#
+foreach(var s in new bool[]{false, true})
+foreach(var r in new bool[]{false, true})
+foreach(var v in new bool[]{false, true})
+foreach(var e in new bool[]{false, true})
+foreach(var p in new bool[]{false, true})
+{ #>
+
+		/// <summary>
+		/// Initializes new value of <see cref="LanguageTag"/>
+		/// </summary>
+		/// <param name="lang">primary language</param>
+<# if(s) {
+#>		/// <param name="script">script subtag</param>
+<# }; if(r) {
+#>		/// <param name="region">region subtag</param>
+<# }; if(v) {
+#>		/// <param name="variants">enumarate of variant subtags</param>
+<# }; if(e) {
+#>		/// <param name="extSubtags">enumarate of extensions subtags</param>
+<# }; if(p) {
+#>		/// <param name="privateUseSubtags">private use subtag</param>
+<# } #>		public LanguageTag(Language lang<#
+		if(s) {#>, Script? script<# };
+		if(r) {#>, Region? region<# };
+		if(v) {#>, IEnumerable<Variant>? variants<# };
+		if(e) {#>, IEnumerable<ExtensionSubtag>? extSubtags<# };
+		if(p) {#>, ExtensionSubtag privateUseSubtags<# } #>)
+			: this(
+			lang,
+<# if(s) {
+#>			script,
+<# } else {
+#>			null,
+<# }
+if(r) {
+#>			region,
+<# } else {
+#>			null,
+<# }
+if(v) {
+#>			VariantCollection.Create(lang, <# if(s) { #>script<# } else { #>null<# } #>, variants),
+<# } else {
+#>			default,
+<# }
+if(e) {
+#>			new ExtensionSubtagCollection(extSubtags),
+<# } else {
+#>			default,
+<# }
+if(p) {
+#>			privateUseSubtags)
+<# } else {
+#>			default)
+<# }
+#>		{
+		}
+<# } #>
+	}
+}

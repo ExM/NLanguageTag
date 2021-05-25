@@ -1,0 +1,34 @@
+﻿<#@ template language="C#" inherits="NLanguageTag.SourceCodeRenderer.RegistryContainer" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="NLanguageTag.SourceCodeRenderer" #>
+<#@ import namespace="NLanguageTag.SourceCodeRenderer.SubtagRegistry" #>
+<#@ output extension=".cs" #>
+using System;
+using System.Globalization;
+
+#pragma warning disable 618
+namespace NLanguageTag
+{
+	public partial class Region
+	{
+		/// <summary>
+		/// Returns public Region by RegionCode
+		/// </summary>
+		public static Region ByCode(RegionCode code)
+		{
+			switch(code)
+			{
+<#
+   foreach(var entry in Registry.Regions.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	{ #>
+				case RegionCode.<#= entry.CSharp_Name() #>: return <#= entry.CSharp_Name() #>Cache.Instance;
+<# } #>
+				default: throw new ArgumentException(nameof(code), $"the code '{code}' does not correspond to the public region");
+			}
+		}
+	}
+}

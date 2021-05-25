@@ -1,0 +1,9 @@
+{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "render": {
+      "commandName": "Project",
+      "commandLineArgs": "../../NLanguageTag/Generated"
+    }
+  }
+}

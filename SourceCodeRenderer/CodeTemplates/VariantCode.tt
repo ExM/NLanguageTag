@@ -1,0 +1,30 @@
+﻿<#@ template language="C#" inherits="NLanguageTag.SourceCodeRenderer.RegistryContainer" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="NLanguageTag.SourceCodeRenderer" #>
+<#@ import namespace="NLanguageTag.SourceCodeRenderer.SubtagRegistry" #>
+<#@ output extension=".cs" #>
+using System;
+
+namespace NLanguageTag
+{
+	/// <summary>
+	/// Enum code of <see cref="Variant"/> to use as constants in C#
+	/// </summary>
+	public enum VariantCode
+	{
+<#
+   foreach(var entry in Registry.Variants.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	{ #>
+		/// <summary>
+		/// code of <see cref="Variant.<#= entry.CSharp_Name() #>"/>
+		/// </summary>
+		<#= entry.CSharp_Name() #> = <#= FixedNumbers.VariantCode.TryGet(entry.Subtag)?.ToString()??"#error code not found" #>,
+
+<# } #>
+	}
+}
+
