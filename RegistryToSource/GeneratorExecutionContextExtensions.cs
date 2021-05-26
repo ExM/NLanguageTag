@@ -11,5 +11,10 @@ namespace NLanguageTag.RegistryToSource
 		{
 			context.AddSource(fileName, SourceText.From(builder.Build(), Encoding.UTF8));
 		}
+		
+		public static void AddSource(this GeneratorExecutionContext context, string fileName, string sourceCode)
+		{
+			context.AddSource(fileName, SourceText.From(sourceCode, Encoding.UTF8));
+		}
 	}
 }

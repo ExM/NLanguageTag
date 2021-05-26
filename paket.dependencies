@@ -10,3 +10,4 @@ nuget Microsoft.TestPlatform.ObjectModel
 nuget BenchmarkDotNet ~> 0.12
 nuget Microsoft.CodeAnalysis.CSharp ~> 3.9.0
 nuget Microsoft.CodeAnalysis.Analyzers ~> 3.3.0
+nuget System.CodeDom ~> 5.0

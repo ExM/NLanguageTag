@@ -28,10 +28,6 @@
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
   <ItemGroup>
-    <None Update="LanguageTag.ctors.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>LanguageTag.ctors.cs</LastGenOutput>
-    </None>
     <None Update="RegistryGenerator.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RegistryGenerator.statistic.txt</LastGenOutput>
@@ -55,11 +51,6 @@
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="LanguageTag.ctors.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>LanguageTag.ctors.tt</DependentUpon>
-    </Compile>
     <Compile Update="RuntimeTextTemplate1.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

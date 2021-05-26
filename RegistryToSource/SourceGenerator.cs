@@ -14,7 +14,7 @@ namespace NLanguageTag.RegistryToSource
 		public void Execute(GeneratorExecutionContext context)
 		{
 			context.AddSource("LanguageTag.ctors.cs", BuilderFactory.Ctors());
-			context.AddSource("LanguageTag.take.cs", BuilderFactory.Take());
+			context.AddSource("LanguageTag.take.cs", new LanguageTag_Take().TransformText());
 		}
 	}
 }
