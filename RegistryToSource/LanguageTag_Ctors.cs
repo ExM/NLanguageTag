@@ -18,9 +18,9 @@ namespace NLanguageTag.RegistryToSource
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Take.tt"
+    #line 1 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class LanguageTag_Take : LanguageTag_TakeBase
+    public partial class LanguageTag_Ctors : LanguageTag_CtorsBase
     {
 #line hidden
         /// <summary>
@@ -28,9 +28,9 @@ namespace NLanguageTag.RegistryToSource
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("using System;\n\nnamespace NLanguageTag\n{\n\tpublic readonly partial struct LanguageTag\n\t{\n\t\t/// <summary>\n\t\t/// Creates language tag that consists of specified fields of this language tag\n\t\t/// </summary>\n\t\tpublic LanguageTag Take(Field fields)\n\t\t{\n\t\t\tif (fields == Field.All)\n\t\t\t\treturn this;\n\n\t\t\tif (Language is null)\n\t\t\t{\n\t\t\t\treturn fields.HasFlag(Field.PrivateUse)\n\t\t\t\t\t? new LanguageTag(PrivateUse)\n\t\t\t\t\t: new LanguageTag(null, null, null, default, default, default);\n\t\t\t}\n\n\t\t\tswitch(fields)\n\t\t\t{\n");
+            this.Write("using System;\nusing System.Collections.Generic;\n\nnamespace NLanguageTag\n{\n\tpublic readonly partial struct LanguageTag\n\t{\n");
             
-            #line 30 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Take.tt"
+            #line 14 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
 
 foreach(var s in new bool[]{false, true})
 foreach(var r in new bool[]{false, true})
@@ -41,122 +41,221 @@ foreach(var p in new bool[]{false, true})
             
             #line default
             #line hidden
-            this.Write("\t\t\t\tcase Field.Language");
+            this.Write("\n\t\t/// <summary>\n\t\t/// Initializes new value of <see cref=\"LanguageTag\"/>\n\t\t/// </summary>\n\t\t/// <param name=\"lang\">primary language</param>\n");
             
-            #line 37 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Take.tt"
+            #line 26 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
+ if(s) {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t/// <param name=\"script\">script subtag</param>\n");
+            
+            #line 28 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
+ }; if(r) {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t/// <param name=\"region\">region subtag</param>\n");
+            
+            #line 30 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
+ }; if(v) {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t/// <param name=\"variants\">enumarate of variant subtags</param>\n");
+            
+            #line 32 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
+ }; if(e) {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t/// <param name=\"extSubtags\">enumarate of extensions subtags</param>\n");
+            
+            #line 34 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
+ }; if(p) {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t/// <param name=\"privateUseSubtags\">private use subtag</param>\n");
+            
+            #line 36 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
+ } 
+            
+            #line default
+            #line hidden
+            this.Write("\t\tpublic LanguageTag(Language lang");
+            
+            #line 36 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
 
 		if(s) {
             
             #line default
             #line hidden
-            this.Write(" | Field.Script");
+            this.Write(", Script? script");
             
-            #line 38 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Take.tt"
+            #line 37 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
  };
 		if(r) {
             
             #line default
             #line hidden
-            this.Write(" | Field.Region");
+            this.Write(", Region? region");
             
-            #line 39 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Take.tt"
+            #line 38 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
  };
 		if(v) {
             
             #line default
             #line hidden
-            this.Write(" | Field.Variants");
+            this.Write(", IEnumerable<Variant>? variants");
             
-            #line 40 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Take.tt"
+            #line 39 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
  };
 		if(e) {
             
             #line default
             #line hidden
-            this.Write(" | Field.Extensions");
+            this.Write(", IEnumerable<ExtensionSubtag>? extSubtags");
             
-            #line 41 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Take.tt"
+            #line 40 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
  };
 		if(p) {
             
             #line default
             #line hidden
-            this.Write(" | Field.PrivateUse");
+            this.Write(", ExtensionSubtag privateUseSubtags");
             
-            #line 42 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Take.tt"
+            #line 41 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
  } 
             
             #line default
             #line hidden
-            this.Write(":\n");
+            this.Write(")\n\t\t\t: this(\n\t\t\tlang,\n");
             
-            #line 43 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Take.tt"
- if (s && r && v && e && p) { 
+            #line 44 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
+ if(s) {
+
             
             #line default
             #line hidden
-            this.Write("\t\t\t\t\tthrow new ApplicationException(\"This should never happen\");\n");
+            this.Write("\t\t\tscript,\n");
             
-            #line 45 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Take.tt"
+            #line 46 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
+ } else {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\tnull,\n");
+            
+            #line 48 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
+ }
+if(r) {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\tregion,\n");
+            
+            #line 51 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
+ } else {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\tnull,\n");
+            
+            #line 53 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
+ }
+if(v) {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\tVariantCollection.Create(lang, ");
+            
+            #line 55 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
+ if(s) { 
+            
+            #line default
+            #line hidden
+            this.Write("script");
+            
+            #line 55 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
  } else { 
             
             #line default
             #line hidden
-            this.Write("\t\t\t\t\treturn new LanguageTag(Language");
+            this.Write("null");
             
-            #line 46 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Take.tt"
-
-		if(s) {
-            
-            #line default
-            #line hidden
-            this.Write(", Script");
-            
-            #line 47 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Take.tt"
- };
-		if(r) {
-            
-            #line default
-            #line hidden
-            this.Write(", Region");
-            
-            #line 48 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Take.tt"
- };
-		if(v) {
-            
-            #line default
-            #line hidden
-            this.Write(", Variants");
-            
-            #line 49 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Take.tt"
- };
-		if(e) {
-            
-            #line default
-            #line hidden
-            this.Write(", Extensions");
-            
-            #line 50 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Take.tt"
- };
-		if(p) {
-            
-            #line default
-            #line hidden
-            this.Write(", PrivateUse");
-            
-            #line 51 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Take.tt"
+            #line 55 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
  } 
             
             #line default
             #line hidden
-            this.Write(");\n");
+            this.Write(", variants),\n");
             
-            #line 52 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Take.tt"
- } } 
+            #line 56 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
+ } else {
+
             
             #line default
             #line hidden
-            this.Write("\t\t\t\tcase Field.PrivateUse:\n\t\t\t\t\treturn new LanguageTag(PrivateUse);\n\t\t\t\tdefault:\n\t\t\t\t\treturn new LanguageTag();\n\t\t\t}\n\t\t}\n\t}\n}\n");
+            this.Write("\t\t\tdefault,\n");
+            
+            #line 58 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
+ }
+if(e) {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\tnew ExtensionSubtagCollection(extSubtags),\n");
+            
+            #line 61 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
+ } else {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\tdefault,\n");
+            
+            #line 63 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
+ }
+if(p) {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\tprivateUseSubtags)\n");
+            
+            #line 66 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
+ } else {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\tdefault)\n");
+            
+            #line 68 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
+ }
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t{\n\t\t}\n");
+            
+            #line 71 "/home/tolik/Repos/NLanguageTag/RegistryToSource/LanguageTag_Ctors.tt"
+ } 
+            
+            #line default
+            #line hidden
+            this.Write("\t}\n}");
             return this.GenerationEnvironment.ToString();
         }
     }
@@ -168,7 +267,7 @@ foreach(var p in new bool[]{false, true})
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public class LanguageTag_TakeBase
+    public class LanguageTag_CtorsBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

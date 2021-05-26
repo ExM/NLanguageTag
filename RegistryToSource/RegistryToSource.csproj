@@ -14,12 +14,21 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>LanguageTag_Take.cs</LastGenOutput>
     </None>
+    <None Update="LanguageTag_Ctors.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>LanguageTag_Ctors.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Update="LanguageTag_Take.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LanguageTag_Take.tt</DependentUpon>
+    </Compile>
+    <Compile Update="LanguageTag_Ctors.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LanguageTag_Ctors.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
