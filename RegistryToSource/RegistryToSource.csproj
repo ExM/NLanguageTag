@@ -6,9 +6,28 @@
     <Nullable>enable</Nullable>
     <AssemblyName>NLanguageTag.RegistryToSource</AssemblyName>
     <RootNamespace>NLanguageTag.RegistryToSource</RootNamespace>
-    <OutputPath>bin</OutputPath>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <IsPackable>false</IsPackable>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis" Version="3.9.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.9.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.2" PrivateAssets="all" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Generator dependencies -->
+    <PackageReference Include="Mono.TextTemplating" Version="2.2.0" GeneratePathProperty="true" PrivateAssets="all" />
+    <PackageReference Include="System.CodeDom" Version="5.0.0" GeneratePathProperty="true" PrivateAssets="all" />
+  </ItemGroup>
+  <PropertyGroup>
+    <GetTargetPathDependsOn>$(GetTargetPathDependsOn);GetDependencyTargetPaths</GetTargetPathDependsOn>
+  </PropertyGroup>
+  <Target Name="GetDependencyTargetPaths">
+    <ItemGroup>
+      <TargetPathWithTargetPlatformMoniker Include="$(PKGMono_TextTemplating)\lib\netstandard2.0\Mono.TextTemplating.dll" IncludeRuntimeDependency="false" />
+      <TargetPathWithTargetPlatformMoniker Include="$(PKGSystem_CodeDom)\lib\netstandard2.0\System.CodeDom.dll" IncludeRuntimeDependency="false" />
+    </ItemGroup>
+  </Target>
   <ItemGroup>
     <None Update="LanguageTag_Take.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -20,16 +39,29 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="LanguageTag_Take.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LanguageTag_Take.tt</DependentUpon>
-    </Compile>
     <Compile Update="LanguageTag_Ctors.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LanguageTag_Ctors.tt</DependentUpon>
     </Compile>
+    <Compile Update="LanguageTag_Take.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LanguageTag_Take.tt</DependentUpon>
+    </Compile>
+    <Compile Remove="CodeTemplates\LanguageTag.Ctors.cs" />
+    <Compile Remove="CodeTemplates\LanguageTag.Take.cs" />
   </ItemGroup>
-  <Import Project="..\.paket\Paket.Restore.targets" />
+  <ItemGroup>
+    <EmbeddedResource Include="CodeTemplates\LanguageTag.Ctors.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>LanguageTag.Ctors.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeTemplates\LanguageTag.Take.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>LanguageTag.Take.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Remove="CodeTemplates\LanguageTag\Ctors.tt" />
+    <None Remove="CodeTemplates\LanguageTag\Take.tt" />
+  </ItemGroup>
 </Project>

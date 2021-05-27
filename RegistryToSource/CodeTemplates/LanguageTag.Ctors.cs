@@ -7,7 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace NLanguageTag.RegistryToSource
+namespace NLanguageTag.RegistryToSource.CodeTemplates
 {
     using System.Linq;
     using System.Text;
@@ -18,9 +18,9 @@ namespace NLanguageTag.RegistryToSource
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+    #line 1 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class LanguageTag_Take : LanguageTag_TakeBase
+    public partial class GeneratedTextTransformation : GeneratedTextTransformationBase
     {
 #line hidden
         /// <summary>
@@ -28,9 +28,9 @@ namespace NLanguageTag.RegistryToSource
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("using System;\r\n\r\nnamespace NLanguageTag\r\n{\r\n\tpublic readonly partial struct LanguageTag\r\n\t{\r\n\t\t/// <summary>\r\n\t\t/// Creates language tag that consists of specified fields of this language tag\r\n\t\t/// </summary>\r\n\t\tpublic LanguageTag Take(Field fields)\r\n\t\t{\r\n\t\t\tif (fields == Field.All)\r\n\t\t\t\treturn this;\r\n\r\n\t\t\tif (Language is null)\r\n\t\t\t{\r\n\t\t\t\treturn fields.HasFlag(Field.PrivateUse)\r\n\t\t\t\t\t? new LanguageTag(PrivateUse)\r\n\t\t\t\t\t: new LanguageTag(null, null, null, default, default, default);\r\n\t\t\t}\r\n\r\n\t\t\tswitch(fields)\r\n\t\t\t{\r\n");
+            this.Write("using System;\r\nusing System.Collections.Generic;\r\n\r\nnamespace NLanguageTag\r\n{\r\n\tpublic readonly partial struct LanguageTag\r\n\t{\r\n");
             
-            #line 30 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 14 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
 
 foreach(var s in new bool[]{false, true})
 foreach(var r in new bool[]{false, true})
@@ -41,122 +41,221 @@ foreach(var p in new bool[]{false, true})
             
             #line default
             #line hidden
-            this.Write("\t\t\t\tcase Field.Language");
+            this.Write("\r\n\t\t/// <summary>\r\n\t\t/// Initializes new value of <see cref=\"LanguageTag\"/>\r\n\t\t/// </summary>\r\n\t\t/// <param name=\"lang\">primary language</param>\r\n");
             
-            #line 37 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 26 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
+ if(s) {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t/// <param name=\"script\">script subtag</param>\r\n");
+            
+            #line 28 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
+ }; if(r) {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t/// <param name=\"region\">region subtag</param>\r\n");
+            
+            #line 30 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
+ }; if(v) {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t/// <param name=\"variants\">enumarate of variant subtags</param>\r\n");
+            
+            #line 32 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
+ }; if(e) {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t/// <param name=\"extSubtags\">enumarate of extensions subtags</param>\r\n");
+            
+            #line 34 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
+ }; if(p) {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t/// <param name=\"privateUseSubtags\">private use subtag</param>\r\n");
+            
+            #line 36 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
+ } 
+            
+            #line default
+            #line hidden
+            this.Write("\t\tpublic LanguageTag(Language lang");
+            
+            #line 36 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
 
 		if(s) {
             
             #line default
             #line hidden
-            this.Write(" | Field.Script");
+            this.Write(", Script? script");
             
-            #line 38 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 37 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
  };
 		if(r) {
             
             #line default
             #line hidden
-            this.Write(" | Field.Region");
+            this.Write(", Region? region");
             
-            #line 39 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 38 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
  };
 		if(v) {
             
             #line default
             #line hidden
-            this.Write(" | Field.Variants");
+            this.Write(", IEnumerable<Variant>? variants");
             
-            #line 40 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 39 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
  };
 		if(e) {
             
             #line default
             #line hidden
-            this.Write(" | Field.Extensions");
+            this.Write(", IEnumerable<ExtensionSubtag>? extSubtags");
             
-            #line 41 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 40 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
  };
 		if(p) {
             
             #line default
             #line hidden
-            this.Write(" | Field.PrivateUse");
+            this.Write(", ExtensionSubtag privateUseSubtags");
             
-            #line 42 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 41 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
  } 
             
             #line default
             #line hidden
-            this.Write(":\r\n");
+            this.Write(")\r\n\t\t\t: this(\r\n\t\t\tlang,\r\n");
             
-            #line 43 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
- if (s && r && v && e && p) { 
+            #line 44 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
+ if(s) {
+
             
             #line default
             #line hidden
-            this.Write("\t\t\t\t\tthrow new ApplicationException(\"This should never happen\");\r\n");
+            this.Write("\t\t\tscript,\r\n");
             
-            #line 45 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 46 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
+ } else {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\tnull,\r\n");
+            
+            #line 48 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
+ }
+if(r) {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\tregion,\r\n");
+            
+            #line 51 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
+ } else {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\tnull,\r\n");
+            
+            #line 53 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
+ }
+if(v) {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\tVariantCollection.Create(lang, ");
+            
+            #line 55 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
+ if(s) { 
+            
+            #line default
+            #line hidden
+            this.Write("script");
+            
+            #line 55 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
  } else { 
             
             #line default
             #line hidden
-            this.Write("\t\t\t\t\treturn new LanguageTag(Language");
+            this.Write("null");
             
-            #line 46 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
-
-		if(s) {
-            
-            #line default
-            #line hidden
-            this.Write(", Script");
-            
-            #line 47 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
- };
-		if(r) {
-            
-            #line default
-            #line hidden
-            this.Write(", Region");
-            
-            #line 48 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
- };
-		if(v) {
-            
-            #line default
-            #line hidden
-            this.Write(", Variants");
-            
-            #line 49 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
- };
-		if(e) {
-            
-            #line default
-            #line hidden
-            this.Write(", Extensions");
-            
-            #line 50 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
- };
-		if(p) {
-            
-            #line default
-            #line hidden
-            this.Write(", PrivateUse");
-            
-            #line 51 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 55 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
  } 
             
             #line default
             #line hidden
-            this.Write(");\r\n");
+            this.Write(", variants),\r\n");
             
-            #line 52 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
- } } 
+            #line 56 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
+ } else {
+
             
             #line default
             #line hidden
-            this.Write("\t\t\t\tcase Field.PrivateUse:\r\n\t\t\t\t\treturn new LanguageTag(PrivateUse);\r\n\t\t\t\tdefault:\r\n\t\t\t\t\treturn new LanguageTag();\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}\r\n");
+            this.Write("\t\t\tdefault,\r\n");
+            
+            #line 58 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
+ }
+if(e) {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\tnew ExtensionSubtagCollection(extSubtags),\r\n");
+            
+            #line 61 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
+ } else {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\tdefault,\r\n");
+            
+            #line 63 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
+ }
+if(p) {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\tprivateUseSubtags)\r\n");
+            
+            #line 66 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
+ } else {
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\tdefault)\r\n");
+            
+            #line 68 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
+ }
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t{\r\n\t\t}\r\n");
+            
+            #line 71 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag.Ctors.tt"
+ } 
+            
+            #line default
+            #line hidden
+            this.Write("\t}\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }
@@ -168,7 +267,7 @@ foreach(var p in new bool[]{false, true})
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public class LanguageTag_TakeBase
+    public class GeneratedTextTransformationBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

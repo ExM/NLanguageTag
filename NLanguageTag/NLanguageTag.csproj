@@ -26,7 +26,6 @@
   <ItemGroup>
     <ProjectReference Include="..\RegistryToSource\RegistryToSource.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
   </ItemGroup>
-  <Import Project="..\.paket\Paket.Restore.targets" />
   <ItemGroup>
     <None Update="RegistryGenerator.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

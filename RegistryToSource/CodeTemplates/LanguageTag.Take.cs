@@ -7,7 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace NLanguageTag.RegistryToSource
+namespace NLanguageTag.RegistryToSource.CodeTemplates.LanguageTag
 {
     using System.Linq;
     using System.Text;
@@ -18,9 +18,9 @@ namespace NLanguageTag.RegistryToSource
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+    #line 1 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag\LanguageTag.Take.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class LanguageTag_Take : LanguageTag_TakeBase
+    public partial class GeneratedTextTransformation : GeneratedTextTransformationBase
     {
 #line hidden
         /// <summary>
@@ -30,7 +30,7 @@ namespace NLanguageTag.RegistryToSource
         {
             this.Write("using System;\r\n\r\nnamespace NLanguageTag\r\n{\r\n\tpublic readonly partial struct LanguageTag\r\n\t{\r\n\t\t/// <summary>\r\n\t\t/// Creates language tag that consists of specified fields of this language tag\r\n\t\t/// </summary>\r\n\t\tpublic LanguageTag Take(Field fields)\r\n\t\t{\r\n\t\t\tif (fields == Field.All)\r\n\t\t\t\treturn this;\r\n\r\n\t\t\tif (Language is null)\r\n\t\t\t{\r\n\t\t\t\treturn fields.HasFlag(Field.PrivateUse)\r\n\t\t\t\t\t? new LanguageTag(PrivateUse)\r\n\t\t\t\t\t: new LanguageTag(null, null, null, default, default, default);\r\n\t\t\t}\r\n\r\n\t\t\tswitch(fields)\r\n\t\t\t{\r\n");
             
-            #line 30 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 30 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag\LanguageTag.Take.tt"
 
 foreach(var s in new bool[]{false, true})
 foreach(var r in new bool[]{false, true})
@@ -43,7 +43,7 @@ foreach(var p in new bool[]{false, true})
             #line hidden
             this.Write("\t\t\t\tcase Field.Language");
             
-            #line 37 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 37 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag\LanguageTag.Take.tt"
 
 		if(s) {
             
@@ -51,7 +51,7 @@ foreach(var p in new bool[]{false, true})
             #line hidden
             this.Write(" | Field.Script");
             
-            #line 38 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 38 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag\LanguageTag.Take.tt"
  };
 		if(r) {
             
@@ -59,7 +59,7 @@ foreach(var p in new bool[]{false, true})
             #line hidden
             this.Write(" | Field.Region");
             
-            #line 39 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 39 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag\LanguageTag.Take.tt"
  };
 		if(v) {
             
@@ -67,7 +67,7 @@ foreach(var p in new bool[]{false, true})
             #line hidden
             this.Write(" | Field.Variants");
             
-            #line 40 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 40 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag\LanguageTag.Take.tt"
  };
 		if(e) {
             
@@ -75,7 +75,7 @@ foreach(var p in new bool[]{false, true})
             #line hidden
             this.Write(" | Field.Extensions");
             
-            #line 41 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 41 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag\LanguageTag.Take.tt"
  };
 		if(p) {
             
@@ -83,28 +83,28 @@ foreach(var p in new bool[]{false, true})
             #line hidden
             this.Write(" | Field.PrivateUse");
             
-            #line 42 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 42 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag\LanguageTag.Take.tt"
  } 
             
             #line default
             #line hidden
             this.Write(":\r\n");
             
-            #line 43 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 43 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag\LanguageTag.Take.tt"
  if (s && r && v && e && p) { 
             
             #line default
             #line hidden
             this.Write("\t\t\t\t\tthrow new ApplicationException(\"This should never happen\");\r\n");
             
-            #line 45 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 45 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag\LanguageTag.Take.tt"
  } else { 
             
             #line default
             #line hidden
             this.Write("\t\t\t\t\treturn new LanguageTag(Language");
             
-            #line 46 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 46 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag\LanguageTag.Take.tt"
 
 		if(s) {
             
@@ -112,7 +112,7 @@ foreach(var p in new bool[]{false, true})
             #line hidden
             this.Write(", Script");
             
-            #line 47 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 47 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag\LanguageTag.Take.tt"
  };
 		if(r) {
             
@@ -120,7 +120,7 @@ foreach(var p in new bool[]{false, true})
             #line hidden
             this.Write(", Region");
             
-            #line 48 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 48 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag\LanguageTag.Take.tt"
  };
 		if(v) {
             
@@ -128,7 +128,7 @@ foreach(var p in new bool[]{false, true})
             #line hidden
             this.Write(", Variants");
             
-            #line 49 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 49 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag\LanguageTag.Take.tt"
  };
 		if(e) {
             
@@ -136,7 +136,7 @@ foreach(var p in new bool[]{false, true})
             #line hidden
             this.Write(", Extensions");
             
-            #line 50 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 50 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag\LanguageTag.Take.tt"
  };
 		if(p) {
             
@@ -144,14 +144,14 @@ foreach(var p in new bool[]{false, true})
             #line hidden
             this.Write(", PrivateUse");
             
-            #line 51 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 51 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag\LanguageTag.Take.tt"
  } 
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 52 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\LanguageTag_Take.tt"
+            #line 52 "C:\Work\Repos\Github\LanguageTag\RegistryToSource\CodeTemplates\LanguageTag\LanguageTag.Take.tt"
  } } 
             
             #line default
@@ -168,7 +168,7 @@ foreach(var p in new bool[]{false, true})
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public class LanguageTag_TakeBase
+    public class GeneratedTextTransformationBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

@@ -12,5 +12,12 @@
       <ProjectReference Include="..\RegistryToSource\RegistryToSource.csproj" />
     </ItemGroup>
 
-    <Import Project="..\.paket\Paket.Restore.targets" />
+    <ItemGroup>
+        <PackageReference Include="NUnit" Version="3.13.2" />
+        <PackageReference Include="NUnit3TestAdapter" Version="3.17" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.2" />
+        <PackageReference Include="Microsoft.TestPlatform.ObjectModel" Version="16.9.4" />
+        <PackageReference Include="Microsoft.CodeAnalysis" Version="3.9.0" PrivateAssets="all" />
+    </ItemGroup>
+
 </Project>

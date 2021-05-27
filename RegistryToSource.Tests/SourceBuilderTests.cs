@@ -10,11 +10,11 @@ namespace NLanguageTag.RegistryToSource
 		{
 			Console.WriteLine(new LanguageTag_Ctors().TransformText());
 		}
-		
+
 		[Test]
 		public void Take()
 		{
-			Console.WriteLine(new LanguageTag_Take().TransformText());
+			Console.WriteLine(SourceGenerator.RenderFromTemplate("LanguageTag.Take"));
 		}
 	}
 }

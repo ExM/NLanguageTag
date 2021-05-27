@@ -2,13 +2,28 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <AssemblyName>NLanguageTag.Tests</AssemblyName>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <IsTestProject>true</IsTestProject>
     <RootNamespace>NLanguageTag.Tests</RootNamespace>
     <LangVersion>8</LangVersion>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <OutputType>Library</OutputType>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NLanguageTag\NLanguageTag.csproj" />
+    <ProjectReference Include="..\T4Tools\T4Tools.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.13.2" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.2" />
+    <PackageReference Include="Microsoft.TestPlatform.ObjectModel" Version="16.9.4" />
+  </ItemGroup>
+
   <ItemGroup>
     <None Remove="ExtLanguages.txt" />
     <None Remove="Grandfathered.txt" />
@@ -23,10 +38,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NLanguageTag\NLanguageTag.csproj" />
-    <ProjectReference Include="..\T4Tools\T4Tools.csproj" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Update="LanguageTagTests.ctors.cs">
       <DependentUpon>LanguageTagTests.ctors.tt</DependentUpon>
     </Compile>
@@ -35,5 +46,4 @@
       <AutoGen>True</AutoGen>
     </Compile>
   </ItemGroup>
-  <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>
