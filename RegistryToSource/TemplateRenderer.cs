@@ -30,6 +30,20 @@ namespace NLanguageTag.RegistryToSource
 			//Console.WriteLine(templateSourceCode);
 
 			var sourceReferences = references.Select(x => MetadataReference.CreateFromFile(x)).ToList();
+
+			var allAsmLocations = AppDomain.CurrentDomain.GetAssemblies()
+				.Concat(new[]
+				{
+					typeof(object),
+					typeof(System.CodeDom.CodeObject),
+					typeof(System.Collections.Generic.Stack<>),
+					typeof(CollectionBase)
+				}.Select(x => x.Assembly)).Where(x => !x.IsDynamic && !x.ReflectionOnly && x.GetName().Name == "System").Distinct().Select(x => x.Location);
+
+
+			sourceReferences.AddRange(allAsmLocations.Select(x => MetadataReference.CreateFromFile(x)));
+
+			/*
 			sourceReferences.Add(MetadataReference.CreateFromFile(typeof(object).Assembly.Location));
 			sourceReferences.Add(
 				MetadataReference.CreateFromFile(typeof(System.CodeDom.CodeObject).Assembly.Location));
@@ -43,12 +57,12 @@ namespace NLanguageTag.RegistryToSource
 			//sourceReferences.Add(
 			//	MetadataReference.CreateFromFile(typeof(RegistryContainer).Assembly.Location));
 
-			var netstandardPath = AppDomain.CurrentDomain.GetAssemblies().Single(a => a.GetName().Name == "netstandard").Location;
-
-			sourceReferences.Add(MetadataReference.CreateFromFile(netstandardPath));
+			sourceReferences.Add(
+				MetadataReference.CreateFromFile(AppDomain.CurrentDomain.GetAssemblies().Single(a => a.GetName().Name == "netstandard").Location));
 
 			sourceReferences.Add(
 				MetadataReference.CreateFromFile(AppDomain.CurrentDomain.GetAssemblies().Single(a => a.GetName().Name == "System.Runtime").Location));
+			*/
 
 			var syntaxTree = CSharpSyntaxTree.ParseText(templateSourceCode, CSharpParseOptions.Default, templateName + ".cs", Encoding.UTF8);
 

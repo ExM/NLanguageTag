@@ -11,6 +11,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="NUnit" Version="3.13.2" />
+		<PackageReference Include="NUnit3TestAdapter" Version="3.17" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.2" />
+		<PackageReference Include="Microsoft.TestPlatform.ObjectModel" Version="16.10.0" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="registries\language-subtag-registry_2019-09-16" />
 	  <None Remove="registries\language-subtag-registry_2020-07-17" />
 	</ItemGroup>
@@ -26,5 +33,4 @@
 	  <EmbeddedResource Include="registries\2020-07-17" />
 	</ItemGroup>
 
-	<Import Project="..\.paket\Paket.Restore.targets" />
 </Project>

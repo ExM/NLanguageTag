@@ -17,7 +17,7 @@
   <ItemGroup>
     <!-- Generator dependencies -->
     <PackageReference Include="Mono.TextTemplating" Version="2.2.0" GeneratePathProperty="true" PrivateAssets="all" />
-    <PackageReference Include="System.CodeDom" Version="5.0.0" GeneratePathProperty="true" PrivateAssets="all" />
+    <PackageReference Include="System.CodeDom" Version="4.4.0" GeneratePathProperty="true" PrivateAssets="all" />
   </ItemGroup>
   <PropertyGroup>
     <GetTargetPathDependsOn>$(GetTargetPathDependsOn);GetDependencyTargetPaths</GetTargetPathDependsOn>
