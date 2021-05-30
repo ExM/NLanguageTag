@@ -9,7 +9,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Mono.TextTemplating;
 
-namespace NLanguageTag.RegistryToSource
+namespace NLanguageTag.SourceCodeRenderer
 {
 	public class TemplateRenderer
 	{
@@ -19,6 +19,8 @@ namespace NLanguageTag.RegistryToSource
 
 			string templateSourceCode;
 			string[] references;
+
+
 
 			var preprocessResult = gen.PreprocessTemplate(templateName + ".tt", "MyTemplateClass", "MyTemplateNs", templateString, out _, out references, out templateSourceCode);
 

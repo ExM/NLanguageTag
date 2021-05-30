@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+        <OutputPath>bin</OutputPath>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <AssemblyName>NLanguageTag.SourceCodeRenderer</AssemblyName>
+        <RootNamespace>NLanguageTag.SourceCodeRenderer</RootNamespace>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="CodeTemplates\LanguageTag.Ctors.tt">
+        <Generator>TextTemplatingFilePreprocessor</Generator>
+        <LastGenOutput>LanguageTag.Ctors.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Include="CodeTemplates\LanguageTag.Take.tt">
+        <Generator>TextTemplatingFilePreprocessor</Generator>
+        <LastGenOutput>LanguageTag.Take.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Remove="CodeTemplates\*.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Registry" />
+    </ItemGroup>
+
+    <Import Project="..\.paket\Paket.Restore.targets" />
+</Project>

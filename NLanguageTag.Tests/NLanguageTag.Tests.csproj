@@ -11,19 +11,10 @@
     <IsPackable>false</IsPackable>
     <OutputType>Library</OutputType>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\NLanguageTag\NLanguageTag.csproj" />
     <ProjectReference Include="..\T4Tools\T4Tools.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="NUnit" Version="3.13.2" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.17" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.2" />
-    <PackageReference Include="Microsoft.TestPlatform.ObjectModel" Version="16.9.4" />
-  </ItemGroup>
-
   <ItemGroup>
     <None Remove="ExtLanguages.txt" />
     <None Remove="Grandfathered.txt" />
@@ -46,4 +37,5 @@
       <AutoGen>True</AutoGen>
     </Compile>
   </ItemGroup>
+  <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>
