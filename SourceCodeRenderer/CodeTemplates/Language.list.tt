@@ -1,0 +1,66 @@
+﻿<#@ template language="C#" inherits="NLanguageTag.SourceCodeRenderer.RegistryContainer" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="NLanguageTag.SourceCodeRenderer" #>
+<#@ import namespace="NLanguageTag.SourceCodeRenderer.SubtagRegistry" #>
+<#@ output extension=".cs" #>
+using System;
+
+#pragma warning disable 618
+namespace NLanguageTag
+{
+	public partial class Language
+	{
+<#
+	var isPrefix = new HashSet<string>(Registry.ExtLanguages.Select(_ => _.Prefix.ToUpperInvariant()).Distinct());
+	var prefixMap = Registry.ExtLanguages.Where(_ => _.PreferredValue != null)
+		  .ToDictionary(_ => _.PreferredValue.ToUpperInvariant(), _ => _.Prefix.ToUpperInvariant());
+
+	foreach(var entry in Registry.PrimaryLanguages.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	{
+	    var suppressScriptArg = entry.SuppressScript is null ? "null" : $"Script.{entry.SuppressScript}";
+	    var macrolanguageArg = entry.Macrolanguage is null ? "null" : $"Language.{entry.CSharp_Macrolanguage()}";
+	    var scopeArg = entry.Scope is null ? "null" : $"LanguageScope.{entry.CSharp_LanguageScope()}";
+	    var extLanguageParserArg = isPrefix.Contains(entry.CSharp_Name())
+		    ? $"tryParseFromExtLanguage_{entry.CSharp_Name()}"
+		    : "null";
+	    var prefixArg = prefixMap.TryGetValue(entry.CSharp_Name(), out var prefix)
+		         ? $"Language.{prefix}"
+		         : "null";
+	    #>
+		/// <summary>
+<#foreach(var summaryLine in entry.CSharp_Summary())
+{ #>
+		/// <#= summaryLine #>
+<# } #>
+		/// </summary>
+<#if(entry.Deprecated != null)
+  {
+	  var obsoleteDescription = "";
+	  if (entry.PreferredValue != null)
+		  obsoleteDescription += $"use {entry.PreferredValue}, ";
+	  if (entry.Comments != null)
+		  obsoleteDescription += $"{entry.Comments}, ";#>
+		[Obsolete("<#= obsoleteDescription #>deprecated from <#= entry.Deprecated #>")]
+<# } #>
+		public static Language <#= entry.CSharp_Name() #> => <#= entry.CSharp_Name() #>Cache.Instance;
+
+		private static class <#= entry.CSharp_Name() #>Cache
+		{
+			public static readonly Language Instance = new Language(
+                "<#= entry.Subtag #>",
+                LanguageCode.<#= entry.CSharp_Name() #>,
+                <#= suppressScriptArg #>,
+                <#= macrolanguageArg #>,
+                <#= scopeArg #>,
+                <#= extLanguageParserArg #>,
+                <#= prefixArg #>,
+                <#= entry.Deprecated != null ? "true" : "false" #>);
+		}
+
+<# } #>
+	}
+}

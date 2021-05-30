@@ -11,5 +11,9 @@
   <ItemGroup>
     <ProjectReference Include="..\SourceCodeRenderer\SourceCodeRenderer.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="registries\2019-09-16" />
+    <EmbeddedResource Include="registries\2020-07-17" />
+  </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>

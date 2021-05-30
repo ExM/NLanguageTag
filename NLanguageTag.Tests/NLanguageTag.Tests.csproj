@@ -13,7 +13,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\NLanguageTag\NLanguageTag.csproj" />
-    <ProjectReference Include="..\T4Tools\T4Tools.csproj" />
+    <ProjectReference Include="..\SourceCodeRenderer\SourceCodeRenderer.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="ExtLanguages.txt" />

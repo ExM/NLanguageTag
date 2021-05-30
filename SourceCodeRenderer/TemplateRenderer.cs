@@ -8,6 +8,7 @@ using System.Text;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Mono.TextTemplating;
+using NLanguageTag.SourceCodeRenderer.SubtagRegistry;
 
 namespace NLanguageTag.SourceCodeRenderer
 {
@@ -15,14 +16,17 @@ namespace NLanguageTag.SourceCodeRenderer
 	{
 		public static string Render(string templateName, string templateString)
 		{
+			var preprocessTemplatesNamespace = "NLanguageTag.SourceCodeRenderer.PreprocessTemplates";
+			var preprocessTemplateClass = templateName.Replace(".", "_") + "_Preprocess";
+
 			var gen = new TemplateGenerator();
 
 			string templateSourceCode;
 			string[] references;
 
+			var requiredRegistry = templateString.Contains($"inherits=\"{typeof(RegistryContainer).FullName}\"", StringComparison.Ordinal);
 
-
-			var preprocessResult = gen.PreprocessTemplate(templateName + ".tt", "MyTemplateClass", "MyTemplateNs", templateString, out _, out references, out templateSourceCode);
+			var preprocessResult = gen.PreprocessTemplate(templateName + ".tt", preprocessTemplateClass, preprocessTemplatesNamespace, templateString, out _, out references, out templateSourceCode);
 
 			//UNDONE show warnings
 			if (!preprocessResult)
@@ -42,8 +46,8 @@ namespace NLanguageTag.SourceCodeRenderer
 			sourceReferences.Add(
 				MetadataReference.CreateFromFile(typeof(CollectionBase).Assembly.Location));
 
-			//sourceReferences.Add(
-			//	MetadataReference.CreateFromFile(typeof(RegistryContainer).Assembly.Location));
+			sourceReferences.Add(
+				MetadataReference.CreateFromFile(typeof(RegistryContainer).Assembly.Location));
 
 			var netstandardPath = AppDomain.CurrentDomain.GetAssemblies().Single(a => a.GetName().Name == "netstandard").Location;
 
@@ -62,10 +66,17 @@ namespace NLanguageTag.SourceCodeRenderer
 
 			var asm = Emit(compilation);
 
-			var t = asm.GetType("MyTemplateNs.MyTemplateClass");
+			var t = asm.GetType(preprocessTemplatesNamespace + "." + preprocessTemplateClass);
 
 			var mi = t.GetMethod("TransformText");
+
 			var inst = Activator.CreateInstance(t);
+
+			if (requiredRegistry)
+			{
+				((RegistryContainer)inst).Registry = Registry.ReadCurrent();
+			}
+
 			var result = (string) mi.Invoke(inst, new object?[0]);
 
 			return result;

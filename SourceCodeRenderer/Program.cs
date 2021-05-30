@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using NLanguageTag.SourceCodeRenderer.SubtagRegistry;
 
 namespace NLanguageTag.SourceCodeRenderer
 {
@@ -19,20 +23,38 @@ namespace NLanguageTag.SourceCodeRenderer
 
 			//UNDONE cleanup old *.cs files
 
-			WriteFile(outputPath, "LanguageTag.Ctors");
-			WriteFile(outputPath, "LanguageTag.Take");
+			var registry = Registry.ReadCurrent();
+
+			var templates = new []
+				{
+					"Grandfathered",
+					"Language.byCode",
+					"Language.extLang",
+					"Language.list",
+					"LanguageCode",
+					"LanguageTag.Ctors",
+					"LanguageTag.Take",
+				}
+				.Select(x => new Template(x, CodeTemplateManager.Read(x)))
+				.ToList();
+
+			if (registry.PrimaryLanguages.Count > FixedNumbers.LanguageCode.Count)
+				AddCsv(templates, "LanguageCode.newNumbers");
+
+			var assembly = Template.Emit(templates);
+
+			foreach (var template in templates)
+			{
+				var fileName = Path.Combine(outputPath, template.FileName);
+				var content = template.Render(assembly, registry);
+				File.WriteAllText(fileName, content);
+			}
 		}
 
-		private static void WriteFile(string outputPath, string templateName)
-		{
-			var fileName = Path.Combine(outputPath, $"{templateName}.cs");
-			File.WriteAllText(fileName, RenderFromTemplate(templateName));
-		}
-
-		public static string RenderFromTemplate(string name)
+		private static void AddCsv(List<Template> templates, string name)
 		{
 			var content = CodeTemplateManager.Read(name);
-			return TemplateRenderer.Render(name, content);
+			templates.Add(new Template(name, content, "csv"));
 		}
 	}
 }

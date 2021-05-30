@@ -52,9 +52,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>RuntimeTextTemplate1.tt</DependentUpon>
     </Compile>
-    <Compile Update="Grandfathered.cs">
-      <DependentUpon>RegistryGenerator.tt</DependentUpon>
-    </Compile>
     <Compile Update="Variant.list.cs">
       <DependentUpon>RegistryGenerator.tt</DependentUpon>
     </Compile>
@@ -76,15 +73,6 @@
     <Compile Update="Language.parsing.cs">
       <DependentUpon>RegistryGenerator.tt</DependentUpon>
     </Compile>
-    <Compile Update="Language.list.cs">
-      <DependentUpon>RegistryGenerator.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Language.extLang.cs">
-      <DependentUpon>RegistryGenerator.tt</DependentUpon>
-    </Compile>
-    <Compile Update="LanguageCode.cs">
-      <DependentUpon>RegistryGenerator.tt</DependentUpon>
-    </Compile>
     <Compile Update="RegionCode.cs">
       <DependentUpon>RegistryGenerator.tt</DependentUpon>
     </Compile>
@@ -92,9 +80,6 @@
       <DependentUpon>RegistryGenerator.tt</DependentUpon>
     </Compile>
     <Compile Update="VariantCode.cs">
-      <DependentUpon>RegistryGenerator.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Language.byCode.cs">
       <DependentUpon>RegistryGenerator.tt</DependentUpon>
     </Compile>
     <Compile Update="Region.byCode.cs">

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using NLanguageTag.T4Tools;
+using NLanguageTag.SourceCodeRenderer.SubtagRegistry;
 
 namespace NLanguageTag.Tests
 {

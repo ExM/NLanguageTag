@@ -9,6 +9,26 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
     <ItemGroup>
+      <EmbeddedResource Include="CodeTemplates\LanguageCode.newNumbers.tt">
+        <Generator>TextTemplatingFilePreprocessor</Generator>
+        <LastGenOutput>LanguageCode.newNumbers.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Include="CodeTemplates\Language.byCode.tt">
+        <Generator>TextTemplatingFilePreprocessor</Generator>
+        <LastGenOutput>Language.byCode.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Include="CodeTemplates\LanguageCode.tt">
+        <Generator>TextTemplatingFilePreprocessor</Generator>
+        <LastGenOutput>LanguageCode.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Include="CodeTemplates\Language.extLang.tt">
+        <Generator>TextTemplatingFilePreprocessor</Generator>
+        <LastGenOutput>Language.extLang.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Include="CodeTemplates\Grandfathered.tt">
+        <Generator>TextTemplatingFilePreprocessor</Generator>
+        <LastGenOutput>Grandfathered.cs</LastGenOutput>
+      </EmbeddedResource>
       <EmbeddedResource Include="CodeTemplates\LanguageTag.Ctors.tt">
         <Generator>TextTemplatingFilePreprocessor</Generator>
         <LastGenOutput>LanguageTag.Ctors.cs</LastGenOutput>
@@ -17,12 +37,35 @@
         <Generator>TextTemplatingFilePreprocessor</Generator>
         <LastGenOutput>LanguageTag.Take.cs</LastGenOutput>
       </EmbeddedResource>
+      <EmbeddedResource Include="SubtagRegistry\language-subtag-registry" />
+      <EmbeddedResource Include="SubtagRegistry\LanguageCode.fixedNumbers.csv" />
+      <EmbeddedResource Include="SubtagRegistry\RegionCode.fixedNumbers.csv" />
+      <EmbeddedResource Include="SubtagRegistry\ScriptCode.fixedNumbers.csv" />
+      <EmbeddedResource Include="SubtagRegistry\VariantCode.fixedNumbers.csv" />
+      <None Remove="CodeTemplates\Language.list.tt" />
+      <EmbeddedResource Include="CodeTemplates\Language.list.tt">
+        <Generator>TextTemplatingFilePreprocessor</Generator>
+        <LastGenOutput>RegistryGenerator.statistic.txt</LastGenOutput>
+      </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>
       <Compile Remove="CodeTemplates\*.cs" />
+      <Compile Include="CodeTemplates\Language.byCode.cs">
+        <AutoGen>True</AutoGen>
+        <DesignTime>True</DesignTime>
+        <DependentUpon>Language.byCode.tt</DependentUpon>
+      </Compile>
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Registry" />
+      <None Update="CodeTemplates\RegistryGenerator.tt">
+        <Generator>TextTemplatingFileGenerator</Generator>
+        <LastGenOutput>RegistryGenerator.statistic.txt</LastGenOutput>
+      </None>
+      <None Update="CodeTemplates\RegistryGenerator.statistic.txt">
+        <AutoGen>True</AutoGen>
+        <DesignTime>True</DesignTime>
+        <DependentUpon>RegistryGenerator.tt</DependentUpon>
+      </None>
     </ItemGroup>
 
     <Import Project="..\.paket\Paket.Restore.targets" />
