@@ -1,0 +1,38 @@
+﻿<#@ template language="C#" inherits="NLanguageTag.SourceCodeRenderer.RegistryContainer" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="NLanguageTag.SourceCodeRenderer" #>
+<#@ import namespace="NLanguageTag.SourceCodeRenderer.SubtagRegistry" #>
+<#@ output extension=".cs" #>
+using System;
+
+namespace NLanguageTag
+{
+	/// <summary>
+	/// Enum code of <see cref="Region"/> to use as constants in C#
+	/// </summary>
+	public enum RegionCode
+	{
+		/// <summary>
+		/// For private use
+		/// </summary>
+		PrivateUse = 0,
+
+<#
+   foreach(var entry in Registry.Regions.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	{ #>
+		/// <summary>
+		/// code of <see cref="Region.<#= entry.CSharp_Name() #>"/>
+		/// </summary>
+<#if(entry.Deprecated != null)
+  { #>
+		[Obsolete("similarly Region.<#= entry.CSharp_Name() #>")]
+<# } #>
+		<#= entry.CSharp_Name() #> = <#= FixedNumbers.RegionCode.TryGet(entry.Subtag)?.ToString()??"#error code not found" #>,
+
+<# } #>
+	}
+}

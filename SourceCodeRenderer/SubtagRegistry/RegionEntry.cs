@@ -10,9 +10,9 @@ namespace NLanguageTag.SourceCodeRenderer.SubtagRegistry
 		private string _preferredValue;
 
 		public string Subtag => _subtag;
-		public string Comments => _comments;
-		public string Deprecated => _deprecated;
-		public string PreferredValue => _preferredValue;
+		public string? Comments => _comments;
+		public string? Deprecated => _deprecated;
+		public string? PreferredValue => _preferredValue;
 
 		public RegionEntry(string[] body): base(EntryType.Region, body)
 		{

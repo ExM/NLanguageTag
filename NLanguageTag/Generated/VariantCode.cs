@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace NLanguageTag
 {
@@ -514,3 +514,4 @@ namespace NLanguageTag
 
 	}
 }
+

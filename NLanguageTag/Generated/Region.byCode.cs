@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 
 #pragma warning disable 618

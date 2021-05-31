@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 
 #pragma warning disable 618
@@ -16,7 +16,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2(StringSpan span)
 		{
 			switch(span[0])
@@ -50,7 +50,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2_a(StringSpan span)
 		{
 			switch(span[1])
@@ -70,7 +70,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2_b(StringSpan span)
 		{
 			switch(span[1])
@@ -88,7 +88,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2_c(StringSpan span)
 		{
 			switch(span[1])
@@ -105,7 +105,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2_d(StringSpan span)
 		{
 			switch(span[1])
@@ -117,7 +117,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2_e(StringSpan span)
 		{
 			switch(span[1])
@@ -132,7 +132,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2_f(StringSpan span)
 		{
 			switch(span[1])
@@ -147,7 +147,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2_g(StringSpan span)
 		{
 			switch(span[1])
@@ -161,7 +161,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2_h(StringSpan span)
 		{
 			switch(span[1])
@@ -178,7 +178,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2_i(StringSpan span)
 		{
 			switch(span[1])
@@ -198,7 +198,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2_j(StringSpan span)
 		{
 			switch(span[1])
@@ -210,7 +210,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2_k(StringSpan span)
 		{
 			switch(span[1])
@@ -233,7 +233,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2_l(StringSpan span)
 		{
 			switch(span[1])
@@ -250,7 +250,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2_m(StringSpan span)
 		{
 			switch(span[1])
@@ -269,7 +269,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2_n(StringSpan span)
 		{
 			switch(span[1])
@@ -288,7 +288,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2_o(StringSpan span)
 		{
 			switch(span[1])
@@ -301,7 +301,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2_p(StringSpan span)
 		{
 			switch(span[1])
@@ -314,14 +314,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2_q(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[1]) == 'u')
 				return QUCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L2_r(StringSpan span)
 		{
 			switch(span[1])
@@ -334,7 +334,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2_s(StringSpan span)
 		{
 			switch(span[1])
@@ -361,7 +361,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2_t(StringSpan span)
 		{
 			switch(span[1])
@@ -383,7 +383,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2_u(StringSpan span)
 		{
 			switch(span[1])
@@ -395,7 +395,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2_v(StringSpan span)
 		{
 			switch(span[1])
@@ -406,7 +406,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2_w(StringSpan span)
 		{
 			switch(span[1])
@@ -416,14 +416,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2_x(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[1]) == 'h')
 				return XHCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L2_y(StringSpan span)
 		{
 			switch(span[1])
@@ -433,7 +433,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L2_z(StringSpan span)
 		{
 			switch(span[1])
@@ -444,11 +444,11 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3(StringSpan span)
 		{
 			if ("qaa" <= span && span <= "qtz") return forPrivateUse(span.AsText());
-
+		
 			switch(span[0])
 			{
 				case 'a': return tryParse_L3_a(span);
@@ -480,7 +480,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_a(StringSpan span)
 		{
 			switch(span[1])
@@ -514,7 +514,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_aa(StringSpan span)
 		{
 			switch(span[2])
@@ -545,7 +545,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ab(StringSpan span)
 		{
 			switch(span[2])
@@ -578,7 +578,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ac(StringSpan span)
 		{
 			switch(span[2])
@@ -608,7 +608,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ad(StringSpan span)
 		{
 			switch(span[2])
@@ -638,7 +638,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ae(StringSpan span)
 		{
 			switch(span[2])
@@ -662,7 +662,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_af(StringSpan span)
 		{
 			switch(span[2])
@@ -685,7 +685,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ag(StringSpan span)
 		{
 			switch(span[2])
@@ -719,7 +719,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ah(StringSpan span)
 		{
 			switch(span[2])
@@ -741,7 +741,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ai(StringSpan span)
 		{
 			switch(span[2])
@@ -772,7 +772,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_aj(StringSpan span)
 		{
 			switch(span[2])
@@ -789,7 +789,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ak(StringSpan span)
 		{
 			switch(span[2])
@@ -821,7 +821,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_al(StringSpan span)
 		{
 			switch(span[2])
@@ -854,7 +854,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_am(StringSpan span)
 		{
 			switch(span[2])
@@ -886,7 +886,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_an(StringSpan span)
 		{
 			switch(span[2])
@@ -920,7 +920,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ao(StringSpan span)
 		{
 			switch(span[2])
@@ -948,7 +948,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ap(StringSpan span)
 		{
 			switch(span[2])
@@ -982,7 +982,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_aq(StringSpan span)
 		{
 			switch(span[2])
@@ -1001,7 +1001,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ar(StringSpan span)
 		{
 			switch(span[2])
@@ -1031,7 +1031,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_as(StringSpan span)
 		{
 			switch(span[2])
@@ -1064,7 +1064,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_at(StringSpan span)
 		{
 			switch(span[2])
@@ -1097,7 +1097,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_au(StringSpan span)
 		{
 			switch(span[2])
@@ -1130,7 +1130,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_av(StringSpan span)
 		{
 			switch(span[2])
@@ -1150,7 +1150,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_aw(StringSpan span)
 		{
 			switch(span[2])
@@ -1178,7 +1178,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ax(StringSpan span)
 		{
 			switch(span[2])
@@ -1193,7 +1193,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ay(StringSpan span)
 		{
 			switch(span[2])
@@ -1222,7 +1222,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_az(StringSpan span)
 		{
 			switch(span[2])
@@ -1241,7 +1241,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_b(StringSpan span)
 		{
 			switch(span[1])
@@ -1275,7 +1275,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ba(StringSpan span)
 		{
 			switch(span[2])
@@ -1306,7 +1306,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_bb(StringSpan span)
 		{
 			switch(span[2])
@@ -1340,7 +1340,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_bc(StringSpan span)
 		{
 			switch(span[2])
@@ -1373,7 +1373,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_bd(StringSpan span)
 		{
 			switch(span[2])
@@ -1407,7 +1407,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_be(StringSpan span)
 		{
 			switch(span[2])
@@ -1439,7 +1439,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_bf(StringSpan span)
 		{
 			switch(span[2])
@@ -1472,7 +1472,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_bg(StringSpan span)
 		{
 			switch(span[2])
@@ -1505,7 +1505,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_bh(StringSpan span)
 		{
 			switch(span[2])
@@ -1539,7 +1539,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_bi(StringSpan span)
 		{
 			switch(span[2])
@@ -1570,7 +1570,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_bj(StringSpan span)
 		{
 			switch(span[2])
@@ -1604,7 +1604,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_bk(StringSpan span)
 		{
 			switch(span[2])
@@ -1637,7 +1637,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_bl(StringSpan span)
 		{
 			switch(span[2])
@@ -1670,7 +1670,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_bm(StringSpan span)
 		{
 			switch(span[2])
@@ -1704,7 +1704,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_bn(StringSpan span)
 		{
 			switch(span[2])
@@ -1737,7 +1737,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_bo(StringSpan span)
 		{
 			switch(span[2])
@@ -1768,7 +1768,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_bp(StringSpan span)
 		{
 			switch(span[2])
@@ -1799,7 +1799,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_bq(StringSpan span)
 		{
 			switch(span[2])
@@ -1832,7 +1832,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_br(StringSpan span)
 		{
 			switch(span[2])
@@ -1865,7 +1865,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_bs(StringSpan span)
 		{
 			switch(span[2])
@@ -1897,7 +1897,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_bt(StringSpan span)
 		{
 			switch(span[2])
@@ -1931,7 +1931,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_bu(StringSpan span)
 		{
 			switch(span[2])
@@ -1963,7 +1963,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_bv(StringSpan span)
 		{
 			switch(span[2])
@@ -1996,7 +1996,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_bw(StringSpan span)
 		{
 			switch(span[2])
@@ -2029,7 +2029,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_bx(StringSpan span)
 		{
 			switch(span[2])
@@ -2061,7 +2061,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_by(StringSpan span)
 		{
 			switch(span[2])
@@ -2094,7 +2094,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_bz(StringSpan span)
 		{
 			switch(span[2])
@@ -2128,7 +2128,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_c(StringSpan span)
 		{
 			switch(span[1])
@@ -2161,7 +2161,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ca(StringSpan span)
 		{
 			switch(span[2])
@@ -2194,7 +2194,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_cb(StringSpan span)
 		{
 			switch(span[2])
@@ -2223,7 +2223,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_cc(StringSpan span)
 		{
 			switch(span[2])
@@ -2246,7 +2246,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_cd(StringSpan span)
 		{
 			switch(span[2])
@@ -2270,7 +2270,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ce(StringSpan span)
 		{
 			switch(span[2])
@@ -2286,7 +2286,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_cf(StringSpan span)
 		{
 			switch(span[2])
@@ -2298,7 +2298,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_cg(StringSpan span)
 		{
 			switch(span[2])
@@ -2310,7 +2310,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ch(StringSpan span)
 		{
 			switch(span[2])
@@ -2338,7 +2338,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ci(StringSpan span)
 		{
 			switch(span[2])
@@ -2359,7 +2359,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_cj(StringSpan span)
 		{
 			switch(span[2])
@@ -2380,7 +2380,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ck(StringSpan span)
 		{
 			switch(span[2])
@@ -2403,7 +2403,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_cl(StringSpan span)
 		{
 			switch(span[2])
@@ -2426,7 +2426,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_cm(StringSpan span)
 		{
 			switch(span[2])
@@ -2447,7 +2447,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_cn(StringSpan span)
 		{
 			switch(span[2])
@@ -2470,7 +2470,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_co(StringSpan span)
 		{
 			switch(span[2])
@@ -2501,7 +2501,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_cp(StringSpan span)
 		{
 			switch(span[2])
@@ -2523,7 +2523,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_cq(StringSpan span)
 		{
 			switch(span[2])
@@ -2533,7 +2533,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_cr(StringSpan span)
 		{
 			switch(span[2])
@@ -2565,7 +2565,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_cs(StringSpan span)
 		{
 			switch(span[2])
@@ -2597,7 +2597,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ct(StringSpan span)
 		{
 			switch(span[2])
@@ -2620,7 +2620,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_cu(StringSpan span)
 		{
 			switch(span[2])
@@ -2649,7 +2649,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_cv(StringSpan span)
 		{
 			switch(span[2])
@@ -2659,7 +2659,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_cw(StringSpan span)
 		{
 			switch(span[2])
@@ -2673,7 +2673,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_cy(StringSpan span)
 		{
 			switch(span[2])
@@ -2684,7 +2684,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_cz(StringSpan span)
 		{
 			switch(span[2])
@@ -2697,7 +2697,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_d(StringSpan span)
 		{
 			switch(span[1])
@@ -2728,7 +2728,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_da(StringSpan span)
 		{
 			switch(span[2])
@@ -2759,7 +2759,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_db(StringSpan span)
 		{
 			switch(span[2])
@@ -2787,7 +2787,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_dc(StringSpan span)
 		{
 			switch(span[2])
@@ -2797,7 +2797,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_dd(StringSpan span)
 		{
 			switch(span[2])
@@ -2816,7 +2816,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_de(StringSpan span)
 		{
 			switch(span[2])
@@ -2841,7 +2841,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_dg(StringSpan span)
 		{
 			switch(span[2])
@@ -2868,7 +2868,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_dh(StringSpan span)
 		{
 			switch(span[2])
@@ -2890,7 +2890,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_di(StringSpan span)
 		{
 			switch(span[2])
@@ -2922,7 +2922,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_dj(StringSpan span)
 		{
 			switch(span[2])
@@ -2946,7 +2946,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_dk(StringSpan span)
 		{
 			switch(span[2])
@@ -2960,7 +2960,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_dl(StringSpan span)
 		{
 			switch(span[2])
@@ -2972,7 +2972,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_dm(StringSpan span)
 		{
 			switch(span[2])
@@ -2998,7 +2998,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_dn(StringSpan span)
 		{
 			switch(span[2])
@@ -3021,7 +3021,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_do(StringSpan span)
 		{
 			switch(span[2])
@@ -3050,14 +3050,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_dp(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'p')
 				return DPPCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_dr(StringSpan span)
 		{
 			switch(span[2])
@@ -3083,7 +3083,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ds(StringSpan span)
 		{
 			switch(span[2])
@@ -3099,7 +3099,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_dt(StringSpan span)
 		{
 			switch(span[2])
@@ -3122,7 +3122,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_du(StringSpan span)
 		{
 			switch(span[2])
@@ -3155,14 +3155,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_dv(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'a')
 				return DVACache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_dw(StringSpan span)
 		{
 			switch(span[2])
@@ -3178,7 +3178,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_dy(StringSpan span)
 		{
 			switch(span[2])
@@ -3196,7 +3196,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_dz(StringSpan span)
 		{
 			switch(span[2])
@@ -3210,7 +3210,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_e(StringSpan span)
 		{
 			switch(span[1])
@@ -3242,14 +3242,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ea(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'a')
 				return EAACache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_eb(StringSpan span)
 		{
 			switch(span[2])
@@ -3262,7 +3262,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ec(StringSpan span)
 		{
 			switch(span[2])
@@ -3273,14 +3273,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ee(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'e')
 				return EEECache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_ef(StringSpan span)
 		{
 			switch(span[2])
@@ -3291,7 +3291,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_eg(StringSpan span)
 		{
 			switch(span[2])
@@ -3304,14 +3304,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_eh(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'u')
 				return EHUCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_ei(StringSpan span)
 		{
 			switch(span[2])
@@ -3322,14 +3322,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ej(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'a')
 				return EJACache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_ek(StringSpan span)
 		{
 			switch(span[2])
@@ -3349,7 +3349,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_el(StringSpan span)
 		{
 			switch(span[2])
@@ -3366,7 +3366,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_em(StringSpan span)
 		{
 			switch(span[2])
@@ -3389,7 +3389,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_en(StringSpan span)
 		{
 			switch(span[2])
@@ -3413,21 +3413,21 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_eo(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 't')
 				return EOTCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_ep(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'i')
 				return EPICache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_er(StringSpan span)
 		{
 			switch(span[2])
@@ -3445,7 +3445,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_es(StringSpan span)
 		{
 			switch(span[2])
@@ -3467,7 +3467,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_et(StringSpan span)
 		{
 			switch(span[2])
@@ -3486,14 +3486,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_eu(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'q')
 				return EUQCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_ev(StringSpan span)
 		{
 			switch(span[2])
@@ -3504,21 +3504,21 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ew(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'o')
 				return EWOCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_ex(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 't')
 				return EXTCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_ey(StringSpan span)
 		{
 			switch(span[2])
@@ -3528,7 +3528,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ez(StringSpan span)
 		{
 			switch(span[2])
@@ -3538,7 +3538,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_f(StringSpan span)
 		{
 			switch(span[1])
@@ -3565,7 +3565,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_fa(StringSpan span)
 		{
 			switch(span[2])
@@ -3592,28 +3592,28 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_fb(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'l')
 				return FBLCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_fc(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 's')
 				return FCSCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_fe(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'r')
 				return FERCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_ff(StringSpan span)
 		{
 			switch(span[2])
@@ -3623,14 +3623,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_fg(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'r')
 				return FGRCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_fi(StringSpan span)
 		{
 			switch(span[2])
@@ -3646,7 +3646,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_fk(StringSpan span)
 		{
 			switch(span[2])
@@ -3656,7 +3656,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_fl(StringSpan span)
 		{
 			switch(span[2])
@@ -3671,7 +3671,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_fm(StringSpan span)
 		{
 			switch(span[2])
@@ -3681,7 +3681,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_fn(StringSpan span)
 		{
 			switch(span[2])
@@ -3692,7 +3692,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_fo(StringSpan span)
 		{
 			switch(span[2])
@@ -3707,21 +3707,21 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_fp(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'e')
 				return FPECache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_fq(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 's')
 				return FQSCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_fr(StringSpan span)
 		{
 			switch(span[2])
@@ -3739,7 +3739,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_fs(StringSpan span)
 		{
 			switch(span[2])
@@ -3750,7 +3750,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_fu(StringSpan span)
 		{
 			switch(span[2])
@@ -3774,14 +3774,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_fv(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'r')
 				return FVRCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_fw(StringSpan span)
 		{
 			switch(span[2])
@@ -3791,7 +3791,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_g(StringSpan span)
 		{
 			switch(span[1])
@@ -3825,7 +3825,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ga(StringSpan span)
 		{
 			switch(span[2])
@@ -3859,7 +3859,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_gb(StringSpan span)
 		{
 			switch(span[2])
@@ -3892,7 +3892,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_gc(StringSpan span)
 		{
 			switch(span[2])
@@ -3908,7 +3908,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_gd(StringSpan span)
 		{
 			switch(span[2])
@@ -3937,7 +3937,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ge(StringSpan span)
 		{
 			switch(span[2])
@@ -3963,7 +3963,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_gf(StringSpan span)
 		{
 			switch(span[2])
@@ -3974,7 +3974,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_gg(StringSpan span)
 		{
 			switch(span[2])
@@ -3995,7 +3995,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_gh(StringSpan span)
 		{
 			switch(span[2])
@@ -4014,7 +4014,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_gi(StringSpan span)
 		{
 			switch(span[2])
@@ -4043,7 +4043,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_gj(StringSpan span)
 		{
 			switch(span[2])
@@ -4057,7 +4057,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_gk(StringSpan span)
 		{
 			switch(span[2])
@@ -4072,7 +4072,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_gl(StringSpan span)
 		{
 			switch(span[2])
@@ -4092,7 +4092,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_gm(StringSpan span)
 		{
 			switch(span[2])
@@ -4116,7 +4116,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_gn(StringSpan span)
 		{
 			switch(span[2])
@@ -4144,7 +4144,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_go(StringSpan span)
 		{
 			switch(span[2])
@@ -4177,7 +4177,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_gp(StringSpan span)
 		{
 			switch(span[2])
@@ -4188,7 +4188,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_gq(StringSpan span)
 		{
 			switch(span[2])
@@ -4201,7 +4201,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_gr(StringSpan span)
 		{
 			switch(span[2])
@@ -4230,7 +4230,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_gs(StringSpan span)
 		{
 			switch(span[2])
@@ -4247,7 +4247,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_gt(StringSpan span)
 		{
 			switch(span[2])
@@ -4258,7 +4258,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_gu(StringSpan span)
 		{
 			switch(span[2])
@@ -4290,7 +4290,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_gv(StringSpan span)
 		{
 			switch(span[2])
@@ -4311,7 +4311,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_gw(StringSpan span)
 		{
 			switch(span[2])
@@ -4335,14 +4335,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_gx(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'x')
 				return GXXCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_gy(StringSpan span)
 		{
 			switch(span[2])
@@ -4363,7 +4363,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_gz(StringSpan span)
 		{
 			switch(span[2])
@@ -4374,7 +4374,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_h(StringSpan span)
 		{
 			switch(span[1])
@@ -4404,7 +4404,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ha(StringSpan span)
 		{
 			switch(span[2])
@@ -4436,7 +4436,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_hb(StringSpan span)
 		{
 			switch(span[2])
@@ -4449,7 +4449,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_hc(StringSpan span)
 		{
 			switch(span[2])
@@ -4459,7 +4459,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_hd(StringSpan span)
 		{
 			switch(span[2])
@@ -4470,7 +4470,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_he(StringSpan span)
 		{
 			switch(span[2])
@@ -4484,7 +4484,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_hg(StringSpan span)
 		{
 			switch(span[2])
@@ -4494,7 +4494,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_hh(StringSpan span)
 		{
 			switch(span[2])
@@ -4505,7 +4505,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_hi(StringSpan span)
 		{
 			switch(span[2])
@@ -4529,14 +4529,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_hj(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'i')
 				return HJICache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_hk(StringSpan span)
 		{
 			switch(span[2])
@@ -4549,7 +4549,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_hl(StringSpan span)
 		{
 			switch(span[2])
@@ -4563,7 +4563,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_hm(StringSpan span)
 		{
 			switch(span[2])
@@ -4596,7 +4596,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_hn(StringSpan span)
 		{
 			switch(span[2])
@@ -4614,7 +4614,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ho(StringSpan span)
 		{
 			switch(span[2])
@@ -4642,7 +4642,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_hp(StringSpan span)
 		{
 			switch(span[2])
@@ -4652,7 +4652,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_hr(StringSpan span)
 		{
 			switch(span[2])
@@ -4673,7 +4673,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_hs(StringSpan span)
 		{
 			switch(span[2])
@@ -4686,7 +4686,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ht(StringSpan span)
 		{
 			switch(span[2])
@@ -4699,7 +4699,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_hu(StringSpan span)
 		{
 			switch(span[2])
@@ -4731,7 +4731,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_hv(StringSpan span)
 		{
 			switch(span[2])
@@ -4744,7 +4744,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_hw(StringSpan span)
 		{
 			switch(span[2])
@@ -4755,7 +4755,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_hy(StringSpan span)
 		{
 			switch(span[2])
@@ -4766,7 +4766,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_i(StringSpan span)
 		{
 			switch(span[1])
@@ -4799,7 +4799,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ia(StringSpan span)
 		{
 			switch(span[2])
@@ -4811,7 +4811,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ib(StringSpan span)
 		{
 			switch(span[2])
@@ -4832,7 +4832,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ic(StringSpan span)
 		{
 			switch(span[2])
@@ -4844,7 +4844,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_id(StringSpan span)
 		{
 			switch(span[2])
@@ -4862,7 +4862,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_if(StringSpan span)
 		{
 			switch(span[2])
@@ -4878,7 +4878,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ig(StringSpan span)
 		{
 			switch(span[2])
@@ -4895,7 +4895,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ih(StringSpan span)
 		{
 			switch(span[2])
@@ -4907,7 +4907,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ii(StringSpan span)
 		{
 			switch(span[2])
@@ -4917,7 +4917,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ij(StringSpan span)
 		{
 			switch(span[2])
@@ -4931,7 +4931,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ik(StringSpan span)
 		{
 			switch(span[2])
@@ -4952,7 +4952,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_il(StringSpan span)
 		{
 			switch(span[2])
@@ -4973,7 +4973,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_im(StringSpan span)
 		{
 			switch(span[2])
@@ -4990,7 +4990,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_in(StringSpan span)
 		{
 			switch(span[2])
@@ -5012,7 +5012,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_io(StringSpan span)
 		{
 			switch(span[2])
@@ -5023,7 +5023,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ip(StringSpan span)
 		{
 			switch(span[2])
@@ -5033,7 +5033,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_iq(StringSpan span)
 		{
 			switch(span[2])
@@ -5043,7 +5043,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ir(StringSpan span)
 		{
 			switch(span[2])
@@ -5062,7 +5062,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_is(StringSpan span)
 		{
 			switch(span[2])
@@ -5084,7 +5084,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_it(StringSpan span)
 		{
 			switch(span[2])
@@ -5109,14 +5109,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_iu(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'm')
 				return IUMCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_iv(StringSpan span)
 		{
 			switch(span[2])
@@ -5126,7 +5126,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_iw(StringSpan span)
 		{
 			switch(span[2])
@@ -5138,7 +5138,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ix(StringSpan span)
 		{
 			switch(span[2])
@@ -5148,7 +5148,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_iy(StringSpan span)
 		{
 			switch(span[2])
@@ -5159,7 +5159,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_iz(StringSpan span)
 		{
 			switch(span[2])
@@ -5171,7 +5171,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_j(StringSpan span)
 		{
 			switch(span[1])
@@ -5201,7 +5201,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ja(StringSpan span)
 		{
 			switch(span[2])
@@ -5230,7 +5230,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_jb(StringSpan span)
 		{
 			switch(span[2])
@@ -5248,7 +5248,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_jc(StringSpan span)
 		{
 			switch(span[2])
@@ -5258,7 +5258,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_jd(StringSpan span)
 		{
 			switch(span[2])
@@ -5269,7 +5269,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_je(StringSpan span)
 		{
 			switch(span[2])
@@ -5288,7 +5288,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_jg(StringSpan span)
 		{
 			switch(span[2])
@@ -5300,7 +5300,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_jh(StringSpan span)
 		{
 			switch(span[2])
@@ -5310,7 +5310,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ji(StringSpan span)
 		{
 			switch(span[2])
@@ -5334,7 +5334,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_jj(StringSpan span)
 		{
 			switch(span[2])
@@ -5344,7 +5344,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_jk(StringSpan span)
 		{
 			switch(span[2])
@@ -5358,7 +5358,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_jl(StringSpan span)
 		{
 			switch(span[2])
@@ -5368,7 +5368,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_jm(StringSpan span)
 		{
 			switch(span[2])
@@ -5387,7 +5387,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_jn(StringSpan span)
 		{
 			switch(span[2])
@@ -5402,7 +5402,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_jo(StringSpan span)
 		{
 			switch(span[2])
@@ -5416,7 +5416,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_jp(StringSpan span)
 		{
 			switch(span[2])
@@ -5427,14 +5427,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_jq(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'r')
 				return JQRCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_jr(StringSpan span)
 		{
 			switch(span[2])
@@ -5447,14 +5447,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_js(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'l')
 				return JSLCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_ju(StringSpan span)
 		{
 			switch(span[2])
@@ -5480,7 +5480,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_jv(StringSpan span)
 		{
 			switch(span[2])
@@ -5490,14 +5490,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_jw(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'i')
 				return JWICache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_jy(StringSpan span)
 		{
 			switch(span[2])
@@ -5508,7 +5508,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_k(StringSpan span)
 		{
 			switch(span[1])
@@ -5542,7 +5542,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ka(StringSpan span)
 		{
 			switch(span[2])
@@ -5570,7 +5570,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_kb(StringSpan span)
 		{
 			switch(span[2])
@@ -5604,7 +5604,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_kc(StringSpan span)
 		{
 			switch(span[2])
@@ -5638,7 +5638,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_kd(StringSpan span)
 		{
 			switch(span[2])
@@ -5670,7 +5670,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ke(StringSpan span)
 		{
 			switch(span[2])
@@ -5704,7 +5704,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_kf(StringSpan span)
 		{
 			switch(span[2])
@@ -5738,7 +5738,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_kg(StringSpan span)
 		{
 			switch(span[2])
@@ -5771,7 +5771,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_kh(StringSpan span)
 		{
 			switch(span[2])
@@ -5804,7 +5804,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ki(StringSpan span)
 		{
 			switch(span[2])
@@ -5835,7 +5835,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_kj(StringSpan span)
 		{
 			switch(span[2])
@@ -5868,7 +5868,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_kk(StringSpan span)
 		{
 			switch(span[2])
@@ -5902,7 +5902,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_kl(StringSpan span)
 		{
 			switch(span[2])
@@ -5936,7 +5936,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_km(StringSpan span)
 		{
 			switch(span[2])
@@ -5970,7 +5970,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_kn(StringSpan span)
 		{
 			switch(span[2])
@@ -6003,7 +6003,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ko(StringSpan span)
 		{
 			switch(span[2])
@@ -6033,7 +6033,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_kp(StringSpan span)
 		{
 			switch(span[2])
@@ -6067,7 +6067,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_kq(StringSpan span)
 		{
 			switch(span[2])
@@ -6101,7 +6101,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_kr(StringSpan span)
 		{
 			switch(span[2])
@@ -6133,7 +6133,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ks(StringSpan span)
 		{
 			switch(span[2])
@@ -6167,7 +6167,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_kt(StringSpan span)
 		{
 			switch(span[2])
@@ -6201,7 +6201,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ku(StringSpan span)
 		{
 			switch(span[2])
@@ -6233,7 +6233,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_kv(StringSpan span)
 		{
 			switch(span[2])
@@ -6267,7 +6267,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_kw(StringSpan span)
 		{
 			switch(span[2])
@@ -6301,7 +6301,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_kx(StringSpan span)
 		{
 			switch(span[2])
@@ -6334,7 +6334,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ky(StringSpan span)
 		{
 			switch(span[2])
@@ -6368,7 +6368,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_kz(StringSpan span)
 		{
 			switch(span[2])
@@ -6402,7 +6402,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_l(StringSpan span)
 		{
 			switch(span[1])
@@ -6434,7 +6434,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_la(StringSpan span)
 		{
 			switch(span[2])
@@ -6465,7 +6465,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_lb(StringSpan span)
 		{
 			switch(span[2])
@@ -6496,7 +6496,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_lc(StringSpan span)
 		{
 			switch(span[2])
@@ -6514,7 +6514,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ld(StringSpan span)
 		{
 			switch(span[2])
@@ -6536,7 +6536,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_le(StringSpan span)
 		{
 			switch(span[2])
@@ -6570,7 +6570,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_lf(StringSpan span)
 		{
 			switch(span[2])
@@ -6580,7 +6580,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_lg(StringSpan span)
 		{
 			switch(span[2])
@@ -6602,7 +6602,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_lh(StringSpan span)
 		{
 			switch(span[2])
@@ -6620,7 +6620,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_li(StringSpan span)
 		{
 			switch(span[2])
@@ -6651,7 +6651,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_lj(StringSpan span)
 		{
 			switch(span[2])
@@ -6666,7 +6666,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_lk(StringSpan span)
 		{
 			switch(span[2])
@@ -6691,7 +6691,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ll(StringSpan span)
 		{
 			switch(span[2])
@@ -6719,7 +6719,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_lm(StringSpan span)
 		{
 			switch(span[2])
@@ -6751,7 +6751,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ln(StringSpan span)
 		{
 			switch(span[2])
@@ -6774,7 +6774,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_lo(StringSpan span)
 		{
 			switch(span[2])
@@ -6807,7 +6807,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_lp(StringSpan span)
 		{
 			switch(span[2])
@@ -6820,7 +6820,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_lr(StringSpan span)
 		{
 			switch(span[2])
@@ -6842,7 +6842,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ls(StringSpan span)
 		{
 			switch(span[2])
@@ -6866,7 +6866,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_lt(StringSpan span)
 		{
 			switch(span[2])
@@ -6882,7 +6882,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_lu(StringSpan span)
 		{
 			switch(span[2])
@@ -6912,7 +6912,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_lv(StringSpan span)
 		{
 			switch(span[2])
@@ -6925,7 +6925,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_lw(StringSpan span)
 		{
 			switch(span[2])
@@ -6944,7 +6944,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ly(StringSpan span)
 		{
 			switch(span[2])
@@ -6955,7 +6955,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_lz(StringSpan span)
 		{
 			switch(span[2])
@@ -6967,7 +6967,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_m(StringSpan span)
 		{
 			switch(span[1])
@@ -7001,7 +7001,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ma(StringSpan span)
 		{
 			switch(span[2])
@@ -7029,7 +7029,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_mb(StringSpan span)
 		{
 			switch(span[2])
@@ -7062,7 +7062,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_mc(StringSpan span)
 		{
 			switch(span[2])
@@ -7096,7 +7096,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_md(StringSpan span)
 		{
 			switch(span[2])
@@ -7129,7 +7129,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_me(StringSpan span)
 		{
 			switch(span[2])
@@ -7162,7 +7162,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_mf(StringSpan span)
 		{
 			switch(span[2])
@@ -7196,7 +7196,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_mg(StringSpan span)
 		{
 			switch(span[2])
@@ -7230,7 +7230,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_mh(StringSpan span)
 		{
 			switch(span[2])
@@ -7263,7 +7263,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_mi(StringSpan span)
 		{
 			switch(span[2])
@@ -7296,7 +7296,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_mj(StringSpan span)
 		{
 			switch(span[2])
@@ -7329,7 +7329,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_mk(StringSpan span)
 		{
 			switch(span[2])
@@ -7362,7 +7362,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ml(StringSpan span)
 		{
 			switch(span[2])
@@ -7393,7 +7393,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_mm(StringSpan span)
 		{
 			switch(span[2])
@@ -7426,7 +7426,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_mn(StringSpan span)
 		{
 			switch(span[2])
@@ -7460,7 +7460,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_mo(StringSpan span)
 		{
 			switch(span[2])
@@ -7491,7 +7491,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_mp(StringSpan span)
 		{
 			switch(span[2])
@@ -7524,7 +7524,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_mq(StringSpan span)
 		{
 			switch(span[2])
@@ -7557,7 +7557,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_mr(StringSpan span)
 		{
 			switch(span[2])
@@ -7590,7 +7590,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ms(StringSpan span)
 		{
 			switch(span[2])
@@ -7623,7 +7623,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_mt(StringSpan span)
 		{
 			switch(span[2])
@@ -7656,7 +7656,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_mu(StringSpan span)
 		{
 			switch(span[2])
@@ -7688,7 +7688,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_mv(StringSpan span)
 		{
 			switch(span[2])
@@ -7720,7 +7720,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_mw(StringSpan span)
 		{
 			switch(span[2])
@@ -7754,7 +7754,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_mx(StringSpan span)
 		{
 			switch(span[2])
@@ -7788,7 +7788,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_my(StringSpan span)
 		{
 			switch(span[2])
@@ -7821,7 +7821,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_mz(StringSpan span)
 		{
 			switch(span[2])
@@ -7854,7 +7854,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_n(StringSpan span)
 		{
 			switch(span[1])
@@ -7888,7 +7888,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_na(StringSpan span)
 		{
 			switch(span[2])
@@ -7920,7 +7920,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_nb(StringSpan span)
 		{
 			switch(span[2])
@@ -7952,7 +7952,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_nc(StringSpan span)
 		{
 			switch(span[2])
@@ -7983,7 +7983,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_nd(StringSpan span)
 		{
 			switch(span[2])
@@ -8015,7 +8015,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ne(StringSpan span)
 		{
 			switch(span[2])
@@ -8047,7 +8047,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_nf(StringSpan span)
 		{
 			switch(span[2])
@@ -8060,7 +8060,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ng(StringSpan span)
 		{
 			switch(span[2])
@@ -8094,7 +8094,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_nh(StringSpan span)
 		{
 			switch(span[2])
@@ -8125,7 +8125,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ni(StringSpan span)
 		{
 			switch(span[2])
@@ -8158,7 +8158,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_nj(StringSpan span)
 		{
 			switch(span[2])
@@ -8183,7 +8183,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_nk(StringSpan span)
 		{
 			switch(span[2])
@@ -8215,7 +8215,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_nl(StringSpan span)
 		{
 			switch(span[2])
@@ -8242,7 +8242,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_nm(StringSpan span)
 		{
 			switch(span[2])
@@ -8276,7 +8276,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_nn(StringSpan span)
 		{
 			switch(span[2])
@@ -8309,7 +8309,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_no(StringSpan span)
 		{
 			switch(span[2])
@@ -8340,7 +8340,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_np(StringSpan span)
 		{
 			switch(span[2])
@@ -8360,7 +8360,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_nq(StringSpan span)
 		{
 			switch(span[2])
@@ -8376,7 +8376,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_nr(StringSpan span)
 		{
 			switch(span[2])
@@ -8401,7 +8401,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ns(StringSpan span)
 		{
 			switch(span[2])
@@ -8433,7 +8433,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_nt(StringSpan span)
 		{
 			switch(span[2])
@@ -8457,7 +8457,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_nu(StringSpan span)
 		{
 			switch(span[2])
@@ -8491,7 +8491,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_nv(StringSpan span)
 		{
 			switch(span[2])
@@ -8502,7 +8502,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_nw(StringSpan span)
 		{
 			switch(span[2])
@@ -8521,7 +8521,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_nx(StringSpan span)
 		{
 			switch(span[2])
@@ -8543,7 +8543,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ny(StringSpan span)
 		{
 			switch(span[2])
@@ -8575,7 +8575,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_nz(StringSpan span)
 		{
 			switch(span[2])
@@ -8593,7 +8593,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_o(StringSpan span)
 		{
 			switch(span[1])
@@ -8624,7 +8624,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_oa(StringSpan span)
 		{
 			switch(span[2])
@@ -8636,7 +8636,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ob(StringSpan span)
 		{
 			switch(span[2])
@@ -8652,7 +8652,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_oc(StringSpan span)
 		{
 			switch(span[2])
@@ -8664,7 +8664,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_od(StringSpan span)
 		{
 			switch(span[2])
@@ -8676,7 +8676,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_of(StringSpan span)
 		{
 			switch(span[2])
@@ -8687,7 +8687,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_og(StringSpan span)
 		{
 			switch(span[2])
@@ -8701,7 +8701,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_oh(StringSpan span)
 		{
 			switch(span[2])
@@ -8711,7 +8711,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_oi(StringSpan span)
 		{
 			switch(span[2])
@@ -8721,7 +8721,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_oj(StringSpan span)
 		{
 			switch(span[2])
@@ -8736,7 +8736,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ok(StringSpan span)
 		{
 			switch(span[2])
@@ -8762,7 +8762,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ol(StringSpan span)
 		{
 			switch(span[2])
@@ -8779,7 +8779,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_om(StringSpan span)
 		{
 			switch(span[2])
@@ -8805,7 +8805,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_on(StringSpan span)
 		{
 			switch(span[2])
@@ -8829,7 +8829,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_oo(StringSpan span)
 		{
 			switch(span[2])
@@ -8842,7 +8842,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_op(StringSpan span)
 		{
 			switch(span[2])
@@ -8856,7 +8856,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_or(StringSpan span)
 		{
 			switch(span[2])
@@ -8880,7 +8880,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_os(StringSpan span)
 		{
 			switch(span[2])
@@ -8896,7 +8896,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ot(StringSpan span)
 		{
 			switch(span[2])
@@ -8923,7 +8923,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ou(StringSpan span)
 		{
 			switch(span[2])
@@ -8937,14 +8937,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ov(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'd')
 				return OVDCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_ow(StringSpan span)
 		{
 			switch(span[2])
@@ -8954,7 +8954,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_oy(StringSpan span)
 		{
 			switch(span[2])
@@ -8966,14 +8966,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_oz(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'm')
 				return OZMCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_p(StringSpan span)
 		{
 			switch(span[1])
@@ -9006,7 +9006,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_pa(StringSpan span)
 		{
 			switch(span[2])
@@ -9038,7 +9038,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_pb(StringSpan span)
 		{
 			switch(span[2])
@@ -9065,7 +9065,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_pc(StringSpan span)
 		{
 			switch(span[2])
@@ -9090,7 +9090,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_pd(StringSpan span)
 		{
 			switch(span[2])
@@ -9105,7 +9105,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_pe(StringSpan span)
 		{
 			switch(span[2])
@@ -9133,7 +9133,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_pf(StringSpan span)
 		{
 			switch(span[2])
@@ -9144,7 +9144,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_pg(StringSpan span)
 		{
 			switch(span[2])
@@ -9163,7 +9163,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ph(StringSpan span)
 		{
 			switch(span[2])
@@ -9187,7 +9187,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_pi(StringSpan span)
 		{
 			switch(span[2])
@@ -9219,14 +9219,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_pj(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 't')
 				return PJTCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_pk(StringSpan span)
 		{
 			switch(span[2])
@@ -9246,7 +9246,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_pl(StringSpan span)
 		{
 			switch(span[2])
@@ -9277,7 +9277,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_pm(StringSpan span)
 		{
 			switch(span[2])
@@ -9308,7 +9308,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_pn(StringSpan span)
 		{
 			switch(span[2])
@@ -9341,7 +9341,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_po(StringSpan span)
 		{
 			switch(span[2])
@@ -9369,7 +9369,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_pp(StringSpan span)
 		{
 			switch(span[2])
@@ -9391,7 +9391,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_pq(StringSpan span)
 		{
 			switch(span[2])
@@ -9403,7 +9403,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_pr(StringSpan span)
 		{
 			switch(span[2])
@@ -9435,7 +9435,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ps(StringSpan span)
 		{
 			switch(span[2])
@@ -9462,7 +9462,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_pt(StringSpan span)
 		{
 			switch(span[2])
@@ -9483,7 +9483,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_pu(StringSpan span)
 		{
 			switch(span[2])
@@ -9512,7 +9512,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_pw(StringSpan span)
 		{
 			switch(span[2])
@@ -9529,14 +9529,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_px(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'm')
 				return PXMCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_py(StringSpan span)
 		{
 			switch(span[2])
@@ -9551,14 +9551,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_pz(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'n')
 				return PZNCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_q(StringSpan span)
 		{
 			switch(span[1])
@@ -9571,7 +9571,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_qu(StringSpan span)
 		{
 			switch(span[2])
@@ -9600,7 +9600,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_qv(StringSpan span)
 		{
 			switch(span[2])
@@ -9623,7 +9623,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_qw(StringSpan span)
 		{
 			switch(span[2])
@@ -9638,7 +9638,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_qx(StringSpan span)
 		{
 			switch(span[2])
@@ -9659,7 +9659,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_qy(StringSpan span)
 		{
 			switch(span[2])
@@ -9669,7 +9669,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_r(StringSpan span)
 		{
 			switch(span[1])
@@ -9699,7 +9699,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ra(StringSpan span)
 		{
 			switch(span[2])
@@ -9732,7 +9732,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_rb(StringSpan span)
 		{
 			switch(span[2])
@@ -9744,21 +9744,21 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_rc(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'f')
 				return RCFCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_rd(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'b')
 				return RDBCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_re(StringSpan span)
 		{
 			switch(span[2])
@@ -9779,7 +9779,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_rg(StringSpan span)
 		{
 			switch(span[2])
@@ -9794,7 +9794,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_rh(StringSpan span)
 		{
 			switch(span[2])
@@ -9804,7 +9804,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ri(StringSpan span)
 		{
 			switch(span[2])
@@ -9821,7 +9821,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_rj(StringSpan span)
 		{
 			switch(span[2])
@@ -9832,7 +9832,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_rk(StringSpan span)
 		{
 			switch(span[2])
@@ -9847,7 +9847,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_rm(StringSpan span)
 		{
 			switch(span[2])
@@ -9880,7 +9880,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_rn(StringSpan span)
 		{
 			switch(span[2])
@@ -9896,7 +9896,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ro(StringSpan span)
 		{
 			switch(span[2])
@@ -9918,7 +9918,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_rp(StringSpan span)
 		{
 			switch(span[2])
@@ -9928,7 +9928,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_rr(StringSpan span)
 		{
 			switch(span[2])
@@ -9939,7 +9939,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_rs(StringSpan span)
 		{
 			switch(span[2])
@@ -9951,7 +9951,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_rt(StringSpan span)
 		{
 			switch(span[2])
@@ -9964,7 +9964,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ru(StringSpan span)
 		{
 			switch(span[2])
@@ -9987,7 +9987,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_rw(StringSpan span)
 		{
 			switch(span[2])
@@ -10000,7 +10000,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_rx(StringSpan span)
 		{
 			switch(span[2])
@@ -10010,7 +10010,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ry(StringSpan span)
 		{
 			switch(span[2])
@@ -10021,14 +10021,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_rz(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'h')
 				return RZHCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_s(StringSpan span)
 		{
 			switch(span[1])
@@ -10062,7 +10062,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_sa(StringSpan span)
 		{
 			switch(span[2])
@@ -10094,7 +10094,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_sb(StringSpan span)
 		{
 			switch(span[2])
@@ -10128,7 +10128,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_sc(StringSpan span)
 		{
 			switch(span[2])
@@ -10155,7 +10155,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_sd(StringSpan span)
 		{
 			switch(span[2])
@@ -10184,7 +10184,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_se(StringSpan span)
 		{
 			switch(span[2])
@@ -10217,7 +10217,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_sf(StringSpan span)
 		{
 			switch(span[2])
@@ -10230,7 +10230,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_sg(StringSpan span)
 		{
 			switch(span[2])
@@ -10261,7 +10261,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_sh(StringSpan span)
 		{
 			switch(span[2])
@@ -10294,7 +10294,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_si(StringSpan span)
 		{
 			switch(span[2])
@@ -10326,7 +10326,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_sj(StringSpan span)
 		{
 			switch(span[2])
@@ -10350,7 +10350,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_sk(StringSpan span)
 		{
 			switch(span[2])
@@ -10383,7 +10383,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_sl(StringSpan span)
 		{
 			switch(span[2])
@@ -10413,7 +10413,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_sm(StringSpan span)
 		{
 			switch(span[2])
@@ -10445,7 +10445,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_sn(StringSpan span)
 		{
 			switch(span[2])
@@ -10476,7 +10476,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_so(StringSpan span)
 		{
 			switch(span[2])
@@ -10507,7 +10507,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_sp(StringSpan span)
 		{
 			switch(span[2])
@@ -10535,7 +10535,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_sq(StringSpan span)
 		{
 			switch(span[2])
@@ -10555,7 +10555,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_sr(StringSpan span)
 		{
 			switch(span[2])
@@ -10586,7 +10586,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ss(StringSpan span)
 		{
 			switch(span[2])
@@ -10619,7 +10619,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_st(StringSpan span)
 		{
 			switch(span[2])
@@ -10650,7 +10650,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_su(StringSpan span)
 		{
 			switch(span[2])
@@ -10677,7 +10677,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_sv(StringSpan span)
 		{
 			switch(span[2])
@@ -10694,7 +10694,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_sw(StringSpan span)
 		{
 			switch(span[2])
@@ -10724,7 +10724,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_sx(StringSpan span)
 		{
 			switch(span[2])
@@ -10745,7 +10745,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_sy(StringSpan span)
 		{
 			switch(span[2])
@@ -10768,7 +10768,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_sz(StringSpan span)
 		{
 			switch(span[2])
@@ -10789,7 +10789,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_t(StringSpan span)
 		{
 			switch(span[1])
@@ -10823,7 +10823,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ta(StringSpan span)
 		{
 			switch(span[2])
@@ -10854,7 +10854,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_tb(StringSpan span)
 		{
 			switch(span[2])
@@ -10888,7 +10888,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_tc(StringSpan span)
 		{
 			switch(span[2])
@@ -10919,7 +10919,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_td(StringSpan span)
 		{
 			switch(span[2])
@@ -10950,7 +10950,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_te(StringSpan span)
 		{
 			switch(span[2])
@@ -10982,7 +10982,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_tf(StringSpan span)
 		{
 			switch(span[2])
@@ -10995,7 +10995,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_tg(StringSpan span)
 		{
 			switch(span[2])
@@ -11026,7 +11026,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_th(StringSpan span)
 		{
 			switch(span[2])
@@ -11055,7 +11055,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ti(StringSpan span)
 		{
 			switch(span[2])
@@ -11087,7 +11087,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_tj(StringSpan span)
 		{
 			switch(span[2])
@@ -11107,7 +11107,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_tk(StringSpan span)
 		{
 			switch(span[2])
@@ -11135,7 +11135,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_tl(StringSpan span)
 		{
 			switch(span[2])
@@ -11167,7 +11167,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_tm(StringSpan span)
 		{
 			switch(span[2])
@@ -11200,7 +11200,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_tn(StringSpan span)
 		{
 			switch(span[2])
@@ -11233,7 +11233,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_to(StringSpan span)
 		{
 			switch(span[2])
@@ -11263,7 +11263,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_tp(StringSpan span)
 		{
 			switch(span[2])
@@ -11293,7 +11293,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_tq(StringSpan span)
 		{
 			switch(span[2])
@@ -11312,7 +11312,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_tr(StringSpan span)
 		{
 			switch(span[2])
@@ -11346,7 +11346,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ts(StringSpan span)
 		{
 			switch(span[2])
@@ -11378,7 +11378,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_tt(StringSpan span)
 		{
 			switch(span[2])
@@ -11411,7 +11411,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_tu(StringSpan span)
 		{
 			switch(span[2])
@@ -11443,7 +11443,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_tv(StringSpan span)
 		{
 			switch(span[2])
@@ -11465,7 +11465,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_tw(StringSpan span)
 		{
 			switch(span[2])
@@ -11493,7 +11493,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_tx(StringSpan span)
 		{
 			switch(span[2])
@@ -11519,7 +11519,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ty(StringSpan span)
 		{
 			switch(span[2])
@@ -11542,7 +11542,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_tz(StringSpan span)
 		{
 			switch(span[2])
@@ -11558,7 +11558,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_u(StringSpan span)
 		{
 			switch(span[1])
@@ -11589,7 +11589,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ua(StringSpan span)
 		{
 			switch(span[2])
@@ -11600,7 +11600,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ub(StringSpan span)
 		{
 			switch(span[2])
@@ -11614,7 +11614,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ud(StringSpan span)
 		{
 			switch(span[2])
@@ -11630,21 +11630,21 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ue(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 's')
 				return UESCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_uf(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'i')
 				return UFICache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_ug(StringSpan span)
 		{
 			switch(span[2])
@@ -11658,7 +11658,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_uh(StringSpan span)
 		{
 			switch(span[2])
@@ -11668,7 +11668,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ui(StringSpan span)
 		{
 			switch(span[2])
@@ -11678,14 +11678,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_uj(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'i')
 				return UJICache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_uk(StringSpan span)
 		{
 			switch(span[2])
@@ -11704,7 +11704,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ul(StringSpan span)
 		{
 			switch(span[2])
@@ -11724,7 +11724,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_um(StringSpan span)
 		{
 			switch(span[2])
@@ -11745,7 +11745,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_un(StringSpan span)
 		{
 			switch(span[2])
@@ -11765,14 +11765,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_uo(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'k')
 				return EMACache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_up(StringSpan span)
 		{
 			switch(span[2])
@@ -11782,7 +11782,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ur(StringSpan span)
 		{
 			switch(span[2])
@@ -11813,7 +11813,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_us(StringSpan span)
 		{
 			switch(span[2])
@@ -11828,7 +11828,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ut(StringSpan span)
 		{
 			switch(span[2])
@@ -11842,7 +11842,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_uu(StringSpan span)
 		{
 			switch(span[2])
@@ -11854,7 +11854,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_uv(StringSpan span)
 		{
 			switch(span[2])
@@ -11865,21 +11865,21 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_uw(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'a')
 				return UWACache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_uy(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'a')
 				return UYACache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_uz(StringSpan span)
 		{
 			switch(span[2])
@@ -11889,7 +11889,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_v(StringSpan span)
 		{
 			switch(span[1])
@@ -11912,7 +11912,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_va(StringSpan span)
 		{
 			switch(span[2])
@@ -11937,7 +11937,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_vb(StringSpan span)
 		{
 			switch(span[2])
@@ -11947,7 +11947,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ve(StringSpan span)
 		{
 			switch(span[2])
@@ -11962,7 +11962,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_vg(StringSpan span)
 		{
 			switch(span[2])
@@ -11972,7 +11972,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_vi(StringSpan span)
 		{
 			switch(span[2])
@@ -11989,7 +11989,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_vk(StringSpan span)
 		{
 			switch(span[2])
@@ -12007,7 +12007,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_vl(StringSpan span)
 		{
 			switch(span[2])
@@ -12017,7 +12017,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_vm(StringSpan span)
 		{
 			switch(span[2])
@@ -12048,7 +12048,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_vn(StringSpan span)
 		{
 			switch(span[2])
@@ -12059,7 +12059,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_vo(StringSpan span)
 		{
 			switch(span[2])
@@ -12069,7 +12069,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_vr(StringSpan span)
 		{
 			switch(span[2])
@@ -12081,7 +12081,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_vs(StringSpan span)
 		{
 			switch(span[2])
@@ -12092,14 +12092,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_vt(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'o')
 				return VTOCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_vu(StringSpan span)
 		{
 			switch(span[2])
@@ -12110,14 +12110,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_vw(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'a')
 				return VWACache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_w(StringSpan span)
 		{
 			switch(span[1])
@@ -12148,7 +12148,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_wa(StringSpan span)
 		{
 			switch(span[2])
@@ -12182,7 +12182,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_wb(StringSpan span)
 		{
 			switch(span[2])
@@ -12207,7 +12207,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_wc(StringSpan span)
 		{
 			switch(span[2])
@@ -12217,7 +12217,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_wd(StringSpan span)
 		{
 			switch(span[2])
@@ -12231,7 +12231,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_we(StringSpan span)
 		{
 			switch(span[2])
@@ -12254,14 +12254,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_wf(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'g')
 				return WFGCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_wg(StringSpan span)
 		{
 			switch(span[2])
@@ -12277,7 +12277,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_wh(StringSpan span)
 		{
 			switch(span[2])
@@ -12289,7 +12289,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_wi(StringSpan span)
 		{
 			switch(span[2])
@@ -12315,7 +12315,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_wj(StringSpan span)
 		{
 			switch(span[2])
@@ -12325,7 +12325,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_wk(StringSpan span)
 		{
 			switch(span[2])
@@ -12341,7 +12341,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_wl(StringSpan span)
 		{
 			switch(span[2])
@@ -12365,7 +12365,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_wm(StringSpan span)
 		{
 			switch(span[2])
@@ -12387,7 +12387,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_wn(StringSpan span)
 		{
 			switch(span[2])
@@ -12409,7 +12409,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_wo(StringSpan span)
 		{
 			switch(span[2])
@@ -12433,14 +12433,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_wp(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'c')
 				return WPCCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_wr(StringSpan span)
 		{
 			switch(span[2])
@@ -12468,7 +12468,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ws(StringSpan span)
 		{
 			switch(span[2])
@@ -12484,7 +12484,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_wt(StringSpan span)
 		{
 			switch(span[2])
@@ -12498,7 +12498,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_wu(StringSpan span)
 		{
 			switch(span[2])
@@ -12519,7 +12519,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ww(StringSpan span)
 		{
 			switch(span[2])
@@ -12532,7 +12532,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_wx(StringSpan span)
 		{
 			switch(span[2])
@@ -12542,7 +12542,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_wy(StringSpan span)
 		{
 			switch(span[2])
@@ -12556,7 +12556,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_x(StringSpan span)
 		{
 			switch(span[1])
@@ -12590,7 +12590,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xa(StringSpan span)
 		{
 			switch(span[2])
@@ -12620,7 +12620,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xb(StringSpan span)
 		{
 			switch(span[2])
@@ -12644,7 +12644,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xc(StringSpan span)
 		{
 			switch(span[2])
@@ -12667,7 +12667,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xd(StringSpan span)
 		{
 			switch(span[2])
@@ -12681,7 +12681,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xe(StringSpan span)
 		{
 			switch(span[2])
@@ -12699,14 +12699,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xf(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'a')
 				return XFACache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_xg(StringSpan span)
 		{
 			switch(span[2])
@@ -12726,7 +12726,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xh(StringSpan span)
 		{
 			switch(span[2])
@@ -12742,7 +12742,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xi(StringSpan span)
 		{
 			switch(span[2])
@@ -12760,7 +12760,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xj(StringSpan span)
 		{
 			switch(span[2])
@@ -12770,7 +12770,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xk(StringSpan span)
 		{
 			switch(span[2])
@@ -12803,7 +12803,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xl(StringSpan span)
 		{
 			switch(span[2])
@@ -12824,7 +12824,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xm(StringSpan span)
 		{
 			switch(span[2])
@@ -12857,7 +12857,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xn(StringSpan span)
 		{
 			switch(span[2])
@@ -12880,7 +12880,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xo(StringSpan span)
 		{
 			switch(span[2])
@@ -12899,7 +12899,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xp(StringSpan span)
 		{
 			switch(span[2])
@@ -12924,7 +12924,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xq(StringSpan span)
 		{
 			switch(span[2])
@@ -12934,7 +12934,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xr(StringSpan span)
 		{
 			switch(span[2])
@@ -12955,7 +12955,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xs(StringSpan span)
 		{
 			switch(span[2])
@@ -12982,7 +12982,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xt(StringSpan span)
 		{
 			switch(span[2])
@@ -13013,7 +13013,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xu(StringSpan span)
 		{
 			switch(span[2])
@@ -13034,7 +13034,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xv(StringSpan span)
 		{
 			switch(span[2])
@@ -13047,7 +13047,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xw(StringSpan span)
 		{
 			switch(span[2])
@@ -13067,7 +13067,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xx(StringSpan span)
 		{
 			switch(span[2])
@@ -13080,7 +13080,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xy(StringSpan span)
 		{
 			switch(span[2])
@@ -13095,7 +13095,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_xz(StringSpan span)
 		{
 			switch(span[2])
@@ -13106,7 +13106,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_y(StringSpan span)
 		{
 			switch(span[1])
@@ -13137,7 +13137,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ya(StringSpan span)
 		{
 			switch(span[2])
@@ -13171,7 +13171,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_yb(StringSpan span)
 		{
 			switch(span[2])
@@ -13193,7 +13193,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_yc(StringSpan span)
 		{
 			switch(span[2])
@@ -13205,7 +13205,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_yd(StringSpan span)
 		{
 			switch(span[2])
@@ -13219,7 +13219,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ye(StringSpan span)
 		{
 			switch(span[2])
@@ -13240,7 +13240,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_yg(StringSpan span)
 		{
 			switch(span[2])
@@ -13257,7 +13257,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_yh(StringSpan span)
 		{
 			switch(span[2])
@@ -13269,7 +13269,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_yi(StringSpan span)
 		{
 			switch(span[2])
@@ -13297,7 +13297,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_yk(StringSpan span)
 		{
 			switch(span[2])
@@ -13317,7 +13317,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_yl(StringSpan span)
 		{
 			switch(span[2])
@@ -13337,7 +13337,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ym(StringSpan span)
 		{
 			switch(span[2])
@@ -13365,7 +13365,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_yn(StringSpan span)
 		{
 			switch(span[2])
@@ -13385,7 +13385,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_yo(StringSpan span)
 		{
 			switch(span[2])
@@ -13404,7 +13404,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_yp(StringSpan span)
 		{
 			switch(span[2])
@@ -13422,7 +13422,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_yr(StringSpan span)
 		{
 			switch(span[2])
@@ -13442,7 +13442,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_ys(StringSpan span)
 		{
 			switch(span[2])
@@ -13460,7 +13460,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_yt(StringSpan span)
 		{
 			switch(span[2])
@@ -13473,7 +13473,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_yu(StringSpan span)
 		{
 			switch(span[2])
@@ -13503,7 +13503,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_yv(StringSpan span)
 		{
 			switch(span[2])
@@ -13513,7 +13513,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_yw(StringSpan span)
 		{
 			switch(span[2])
@@ -13530,7 +13530,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_yx(StringSpan span)
 		{
 			switch(span[2])
@@ -13544,7 +13544,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_yy(StringSpan span)
 		{
 			switch(span[2])
@@ -13555,7 +13555,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_yz(StringSpan span)
 		{
 			switch(span[2])
@@ -13565,7 +13565,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_z(StringSpan span)
 		{
 			switch(span[1])
@@ -13596,7 +13596,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_za(StringSpan span)
 		{
 			switch(span[2])
@@ -13629,7 +13629,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_zb(StringSpan span)
 		{
 			switch(span[2])
@@ -13642,7 +13642,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_zc(StringSpan span)
 		{
 			switch(span[2])
@@ -13652,14 +13652,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_zd(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'j')
 				return ZDJCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_ze(StringSpan span)
 		{
 			switch(span[2])
@@ -13671,7 +13671,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_zg(StringSpan span)
 		{
 			switch(span[2])
@@ -13685,7 +13685,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_zh(StringSpan span)
 		{
 			switch(span[2])
@@ -13699,7 +13699,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_zi(StringSpan span)
 		{
 			switch(span[2])
@@ -13716,7 +13716,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_zk(StringSpan span)
 		{
 			switch(span[2])
@@ -13738,7 +13738,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_zl(StringSpan span)
 		{
 			switch(span[2])
@@ -13753,7 +13753,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_zm(StringSpan span)
 		{
 			switch(span[2])
@@ -13787,7 +13787,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_zn(StringSpan span)
 		{
 			switch(span[2])
@@ -13801,7 +13801,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_zo(StringSpan span)
 		{
 			switch(span[2])
@@ -13816,7 +13816,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_zp(StringSpan span)
 		{
 			switch(span[2])
@@ -13850,14 +13850,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_zq(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'e')
 				return ZQECache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_zr(StringSpan span)
 		{
 			switch(span[2])
@@ -13871,7 +13871,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_zs(StringSpan span)
 		{
 			switch(span[2])
@@ -13885,7 +13885,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_zt(StringSpan span)
 		{
 			switch(span[2])
@@ -13905,7 +13905,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_zu(StringSpan span)
 		{
 			switch(span[2])
@@ -13918,21 +13918,21 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_zw(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'a')
 				return ZWACache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_zx(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'x')
 				return ZXXCache.Instance;
 			return null;
 		}
-
+		
 		private static Language? tryParse_L3_zy(StringSpan span)
 		{
 			switch(span[2])
@@ -13945,7 +13945,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Language? tryParse_L3_zz(StringSpan span)
 		{
 			switch(span[2])

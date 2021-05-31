@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 #pragma warning disable 618
 namespace NLanguageTag

@@ -14,7 +14,7 @@ namespace NLanguageTag.SourceCodeRenderer.SubtagRegistry
 		public List<string> Prefixes => _prefixes;
 		public string Subtag => _subtag;
 		public string Comments => _comments;
-		public string Deprecated => _deprecated;
+		public string? Deprecated => _deprecated;
 		public string PreferredValue => _preferredValue;
 
 		public VariantEntry(string[] body): base(EntryType.Variant, body)

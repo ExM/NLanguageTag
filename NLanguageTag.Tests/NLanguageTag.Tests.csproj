@@ -5,7 +5,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <IsTestProject>true</IsTestProject>
     <RootNamespace>NLanguageTag.Tests</RootNamespace>
-    <LangVersion>8</LangVersion>
+    <LangVersion>9</LangVersion>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
@@ -14,28 +14,6 @@
   <ItemGroup>
     <ProjectReference Include="..\NLanguageTag\NLanguageTag.csproj" />
     <ProjectReference Include="..\SourceCodeRenderer\SourceCodeRenderer.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="ExtLanguages.txt" />
-    <None Remove="Grandfathered.txt" />
-    <None Remove="GrandfatheredNotSupported.txt" />
-    <None Remove="Languages.txt" />
-    <None Remove="Regions.txt" />
-    <None Remove="Scripts.txt" />
-    <None Remove="Variants.txt" />
-    <None Update="LanguageTagTests.ctors.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>LanguageTagTests.ctors.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="LanguageTagTests.ctors.cs">
-      <DependentUpon>LanguageTagTests.ctors.tt</DependentUpon>
-    </Compile>
-    <Compile Update="TestContent.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>

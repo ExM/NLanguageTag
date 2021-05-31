@@ -1,5 +1,5 @@
 STORAGE: NONE
-RESTRICTION: || (== net50) (== netcoreapp3.1)
+RESTRICTION: == net50
 NUGET
   remote: https://www.nuget.org/api/v2
     BenchmarkDotNet (0.13)
@@ -264,7 +264,6 @@ NUGET
       System.Reflection (>= 4.3)
       System.Runtime (>= 4.3)
     System.Reflection.Metadata (5.0)
-      System.Collections.Immutable (>= 5.0) - restriction: || (&& (== net50) (>= net461)) (&& (== net50) (< netstandard1.1)) (&& (== net50) (< netstandard2.0)) (== netcoreapp3.1)
     System.Reflection.Primitives (4.3)
       Microsoft.NETCore.Platforms (>= 1.1)
       Microsoft.NETCore.Targets (>= 1.1)
@@ -313,7 +312,6 @@ NUGET
       System.Runtime (>= 4.3)
     System.Text.Encoding.CodePages (5.0)
       Microsoft.NETCore.Platforms (>= 5.0)
-      System.Runtime.CompilerServices.Unsafe (>= 5.0) - restriction: || (&& (== net50) (>= net461)) (&& (== net50) (< netcoreapp2.0)) (== netcoreapp3.1)
     System.Text.Encoding.Extensions (4.3)
       Microsoft.NETCore.Platforms (>= 1.1)
       Microsoft.NETCore.Targets (>= 1.1)

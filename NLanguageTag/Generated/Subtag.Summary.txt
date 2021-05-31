@@ -1,4 +1,3 @@
-﻿
 Total entries: 9088
 Types:
 * language - 8152

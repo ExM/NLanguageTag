@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 
 #pragma warning disable 618
@@ -16,12 +16,12 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L2(StringSpan span)
 		{
 			if ("qm" <= span && span <= "qz") return forPrivateUse(span.AsText());
 			if ("xa" <= span && span <= "xz") return forPrivateUse(span.AsText());
-
+		
 			switch(span[0])
 			{
 				case 'a': return tryParse_L2_a(span);
@@ -52,7 +52,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L2_a(StringSpan span)
 		{
 			switch(span[1])
@@ -79,7 +79,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L2_b(StringSpan span)
 		{
 			switch(span[1])
@@ -109,7 +109,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L2_c(StringSpan span)
 		{
 			switch(span[1])
@@ -138,7 +138,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L2_d(StringSpan span)
 		{
 			switch(span[1])
@@ -154,7 +154,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L2_e(StringSpan span)
 		{
 			switch(span[1])
@@ -172,7 +172,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L2_f(StringSpan span)
 		{
 			switch(span[1])
@@ -187,7 +187,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L2_g(StringSpan span)
 		{
 			switch(span[1])
@@ -214,7 +214,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L2_h(StringSpan span)
 		{
 			switch(span[1])
@@ -228,7 +228,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L2_i(StringSpan span)
 		{
 			switch(span[1])
@@ -247,7 +247,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L2_j(StringSpan span)
 		{
 			switch(span[1])
@@ -259,7 +259,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L2_k(StringSpan span)
 		{
 			switch(span[1])
@@ -278,7 +278,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L2_l(StringSpan span)
 		{
 			switch(span[1])
@@ -297,7 +297,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L2_m(StringSpan span)
 		{
 			switch(span[1])
@@ -328,7 +328,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L2_n(StringSpan span)
 		{
 			switch(span[1])
@@ -349,14 +349,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L2_o(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[1]) == 'm')
 				return OMCache.Instance;
 			return null;
 		}
-
+		
 		private static Region? tryParse_L2_p(StringSpan span)
 		{
 			switch(span[1])
@@ -378,14 +378,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L2_q(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[1]) == 'a')
 				return QACache.Instance;
 			return null;
 		}
-
+		
 		private static Region? tryParse_L2_r(StringSpan span)
 		{
 			switch(span[1])
@@ -398,7 +398,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L2_s(StringSpan span)
 		{
 			switch(span[1])
@@ -428,7 +428,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L2_t(StringSpan span)
 		{
 			switch(span[1])
@@ -454,7 +454,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L2_u(StringSpan span)
 		{
 			switch(span[1])
@@ -469,7 +469,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L2_v(StringSpan span)
 		{
 			switch(span[1])
@@ -484,7 +484,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L2_w(StringSpan span)
 		{
 			switch(span[1])
@@ -494,7 +494,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L2_y(StringSpan span)
 		{
 			switch(span[1])
@@ -506,7 +506,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L2_z(StringSpan span)
 		{
 			switch(span[1])
@@ -519,7 +519,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L3(StringSpan span)
 		{
 			switch(span[0])
@@ -531,7 +531,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L3_0(StringSpan span)
 		{
 			switch(span[1])
@@ -545,7 +545,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L3_00(StringSpan span)
 		{
 			switch(span[2])
@@ -558,7 +558,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L3_01(StringSpan span)
 		{
 			switch(span[2])
@@ -573,7 +573,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L3_02(StringSpan span)
 		{
 			switch(span[2])
@@ -583,7 +583,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L3_03(StringSpan span)
 		{
 			switch(span[2])
@@ -595,7 +595,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L3_05(StringSpan span)
 		{
 			switch(span[2])
@@ -606,14 +606,14 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L3_06(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == '1')
 				return M061Cache.Instance;
 			return null;
 		}
-
+		
 		private static Region? tryParse_L3_1(StringSpan span)
 		{
 			switch(span[1])
@@ -623,7 +623,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L3_14(StringSpan span)
 		{
 			switch(span[2])
@@ -634,7 +634,7 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L3_15(StringSpan span)
 		{
 			switch(span[2])
@@ -646,28 +646,28 @@ namespace NLanguageTag
 				default: return null;
 			}
 		}
-
+		
 		private static Region? tryParse_L3_2(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[1]) == '0')
 				return tryParse_L3_20(span);
 			return null;
 		}
-
+		
 		private static Region? tryParse_L3_20(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == '2')
 				return M202Cache.Instance;
 			return null;
 		}
-
+		
 		private static Region? tryParse_L3_4(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[1]) == '1')
 				return tryParse_L3_41(span);
 			return null;
 		}
-
+		
 		private static Region? tryParse_L3_41(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == '9')

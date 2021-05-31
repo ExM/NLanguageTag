@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using NLanguageTag.SourceCodeRenderer.SubtagRegistry;
 
 namespace NLanguageTag.SourceCodeRenderer
@@ -31,15 +30,42 @@ namespace NLanguageTag.SourceCodeRenderer
 					"Language.byCode",
 					"Language.extLang",
 					"Language.list",
+					"Language.parsing",
 					"LanguageCode",
+					"Region.byCode",
+					"Region.list",
+					"Region.parsing",
+					"RegionCode",
+					"Script.byCode",
+					"Script.list",
+					"Script.parsing",
+					"ScriptCode",
+					"Variant.byCode",
+					"Variant.list",
+					"Variant.parsing",
+					"VariantCode",
+
 					"LanguageTag.Ctors",
 					"LanguageTag.Take",
 				}
 				.Select(x => new Template(x, CodeTemplateManager.Read(x)))
 				.ToList();
 
+			AddTxt(templates, "Subtag.Summary");
+
 			if (registry.PrimaryLanguages.Count > FixedNumbers.LanguageCode.Count)
 				AddCsv(templates, "LanguageCode.newNumbers");
+
+			if (registry.Regions.Count > FixedNumbers.RegionCode.Count)
+				AddCsv(templates, "RegionCode.newNumbers");
+
+			if (registry.Scripts.Count > FixedNumbers.ScriptCode.Count)
+				AddCsv(templates, "ScriptCode.newNumbers");
+
+			if (registry.Variants.Count > FixedNumbers.VariantCode.Count)
+				AddCsv(templates, "VariantCode.newNumbers");
+
+
 
 			var assembly = Template.Emit(templates);
 
@@ -55,6 +81,12 @@ namespace NLanguageTag.SourceCodeRenderer
 		{
 			var content = CodeTemplateManager.Read(name);
 			templates.Add(new Template(name, content, "csv"));
+		}
+
+		private static void AddTxt(List<Template> templates, string name)
+		{
+			var content = CodeTemplateManager.Read(name);
+			templates.Add(new Template(name, content, "txt"));
 		}
 	}
 }

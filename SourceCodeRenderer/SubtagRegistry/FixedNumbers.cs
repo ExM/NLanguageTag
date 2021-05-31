@@ -9,10 +9,10 @@ namespace NLanguageTag.SourceCodeRenderer.SubtagRegistry
 	{
 		static FixedNumbers()
 		{
-			LanguageCode = new CodeMap("LanguageCode.fixedNumbers.csv");
-			RegionCode = new CodeMap("RegionCode.fixedNumbers.csv");
-			ScriptCode = new CodeMap("ScriptCode.fixedNumbers.csv");
-			VariantCode = new CodeMap("VariantCode.fixedNumbers.csv");
+			LanguageCode = new CodeMap("Language.csv");
+			RegionCode = new CodeMap("Region.csv");
+			ScriptCode = new CodeMap("Script.csv");
+			VariantCode = new CodeMap("Variant.csv");
 		}
 
 		public static CodeMap LanguageCode { get; }
@@ -38,7 +38,7 @@ namespace NLanguageTag.SourceCodeRenderer.SubtagRegistry
 			{
 				try
 				{
-					using var resourceStream = typeof(Registry).Assembly.GetManifestResourceStream("NLanguageTag.SourceCodeRenderer.SubtagRegistry." + fileName);
+					using var resourceStream = typeof(Registry).Assembly.GetManifestResourceStream("NLanguageTag.SourceCodeRenderer.SubtagRegistry.FixedEnumCodes." + fileName);
 					using var textReader = new StreamReader(resourceStream!, Encoding.UTF8);
 
 					_codeMap = new Dictionary<string, int>(StringComparer.Ordinal);

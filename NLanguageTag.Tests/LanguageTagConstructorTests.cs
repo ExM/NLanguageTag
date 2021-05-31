@@ -2,9 +2,9 @@
 
 namespace NLanguageTag.Tests
 {
-	public partial class LanguageTagTests
+	[TestFixture]
+	public class LanguageTagConstructorTests
 	{
-
 		[Test]
 		public void Constructor_Lang()
 		{
