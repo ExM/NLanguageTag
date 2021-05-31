@@ -373,6 +373,11 @@ namespace NLanguageTag
 		Pamaka = 73,
 
 		/// <summary>
+		/// code of <see cref="Variant.Peano"/>
+		/// </summary>
+		Peano = 102,
+
+		/// <summary>
 		/// code of <see cref="Variant.Petr1708"/>
 		/// </summary>
 		Petr1708 = 74,
@@ -461,6 +466,16 @@ namespace NLanguageTag
 		/// code of <see cref="Variant.Tarask"/>
 		/// </summary>
 		Tarask = 91,
+
+		/// <summary>
+		/// code of <see cref="Variant.Tongyong"/>
+		/// </summary>
+		Tongyong = 103,
+
+		/// <summary>
+		/// code of <see cref="Variant.Tunumiit"/>
+		/// </summary>
+		Tunumiit = 104,
 
 		/// <summary>
 		/// code of <see cref="Variant.Uccor"/>
