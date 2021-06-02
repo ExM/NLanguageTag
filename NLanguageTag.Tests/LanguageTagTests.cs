@@ -8,6 +8,43 @@ namespace NLanguageTag.Tests
 	[TestFixture]
 	public partial class LanguageTagTests
 	{
+		[Test]
+		public void Playground()
+		{
+			var en = Language.EN; // English language
+			var zh = Language.ZH; // Chinese language
+
+			var latn = Script.Latn; // Latin script
+			var hans = Script.Hans; // Han (Simplified variant)
+
+			var tw = Region.TW; // Taiwan, Province of China
+
+			// tag zh-Hans-TW
+			var tag1 = new LanguageTag(zh, hans, tw);
+
+			// tag zh-Latn-TW-Pinyin
+			var tag2 = new LanguageTag(zh, latn, tw, new []{ Variant.Pinyin });
+
+			// tag en-US-x-twain
+			var tag3 = new LanguageTag(en, Region.US, ExtensionSubtag.ForPrivateUse("twain"));
+			
+			// tag de-DE-u-co-phonebk
+			var tag4 = new LanguageTag(Language.DE, Region.DE, new []{ new ExtensionSubtag('u', "co", "phonebk") });
+
+			var tag5 = LanguageTag.Parse("ru");
+			var tag6 = LanguageTag.Parse("zh-Hans-TW");
+			var tag7 = LanguageTag.Parse("en-GB-scotland");
+			
+			Assert.True(tag1 == tag6);
+			
+			// zh-Hans-TW -> zh-Hans
+			var tag8 = tag6.Take(LanguageTag.Field.Language | LanguageTag.Field.Script);
+			
+			// zh-Hans is subset of zh-Hans-TW
+			Assert.True(tag8.IsSubsetOf(tag6));
+		}
+		
+		
 		[TestCaseSource(nameof(SimpleParseCases))]
 		public void SimpleParse(string text, Language langEx, Script scrEx, Region regionEx)
 		{

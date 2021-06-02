@@ -14,3 +14,4 @@ TestResult.xml
 /.vs
 /.idea
 /SourceCodeRenderer/CodeTemplates/*.cs
+/BenchmarkDotNet.Artifacts/*
