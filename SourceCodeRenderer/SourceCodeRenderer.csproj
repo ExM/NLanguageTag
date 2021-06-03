@@ -9,6 +9,10 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
     <ItemGroup>
+      <EmbeddedResource Include="CodeTemplates\LanguageTag.Summary.tt">
+        <Generator>TextTemplatingFilePreprocessor</Generator>
+        <LastGenOutput>LanguageTag.Summary.cs</LastGenOutput>
+      </EmbeddedResource>
       <EmbeddedResource Include="CodeTemplates\Script.byCode.tt">
         <Generator>TextTemplatingFilePreprocessor</Generator>
         <LastGenOutput>Script.byCode.cs</LastGenOutput>

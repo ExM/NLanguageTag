@@ -4,11 +4,6 @@ using System.Text;
 
 namespace NLanguageTag
 {
-	/// <summary>
-	/// Language tags are used to help identify languages, whether spoken, written, signed, or otherwise signaled, for the purpose of communication.
-	/// Language tag syntax is defined by the IETF's BCP 47 (https://tools.ietf.org/html/bcp47)
-	/// and corresponds to the IANA Language Subtag T4Tools (http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) of 2016-10-12
-	/// </summary>
 	public readonly partial struct LanguageTag : IEquatable<LanguageTag>
 	{
 		internal const char TagSeparator = '-';

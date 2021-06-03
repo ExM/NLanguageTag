@@ -4,15 +4,15 @@ namespace NLanguageTag.SourceCodeRenderer.SubtagRegistry
 {
 	public class GrandfatheredEntry : RegEntry
 	{
-		private string _comments;
-		private string _deprecated;
-		private string _preferredValue;
-		private string _tag;
-
-		public string Comments => _comments;
-		public string Deprecated => _deprecated;
-		public string PreferredValue => _preferredValue;
-		public string Tag => _tag;
+		private string? _comments;
+		private string? _deprecated;
+		private string? _preferredValue;
+		private string? _tag;
+		
+		public string? Comments => _comments;
+		public string? Deprecated => _deprecated;
+		public string? PreferredValue => _preferredValue;
+		public string? Tag => _tag;
 
 		public GrandfatheredEntry(string[] body) : base(EntryType.Grandfathered, body)
 		{

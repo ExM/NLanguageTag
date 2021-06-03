@@ -6,7 +6,7 @@ namespace NLanguageTag.SourceCodeRenderer.SubtagRegistry
 {
 	public static class RegEntryExtensions
 	{
-		public static (string minKey, string maxKey) AsInterval(this IHaveSubtag entry)
+		public static (string? minKey, string? maxKey) AsInterval(this IHaveSubtag entry)
 		{
 			var parts = entry.Subtag.Split(new string[] {".."}, StringSplitOptions.None);
 			if(parts.Length != 2)

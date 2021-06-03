@@ -2,6 +2,6 @@
 {
 	public interface IHaveSubtag
 	{
-		string Subtag { get; }
+		string? Subtag { get; }
 	}
 }

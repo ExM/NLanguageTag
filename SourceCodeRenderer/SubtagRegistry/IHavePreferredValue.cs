@@ -2,6 +2,6 @@
 {
 	public interface IHavePreferredValue
 	{
-		string PreferredValue { get; }
+		string? PreferredValue { get; }
 	}
 }

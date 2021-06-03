@@ -4,12 +4,12 @@ namespace NLanguageTag.SourceCodeRenderer.SubtagRegistry
 {
 	public class RegionEntry : RegEntry, IHaveSubtag, IHaveComments, IHavePreferredValue
 	{
-		private string _subtag;
-		private string _comments;
-		private string _deprecated;
-		private string _preferredValue;
+		private string? _subtag;
+		private string? _comments;
+		private string? _deprecated;
+		private string? _preferredValue;
 
-		public string Subtag => _subtag;
+		public string? Subtag => _subtag;
 		public string? Comments => _comments;
 		public string? Deprecated => _deprecated;
 		public string? PreferredValue => _preferredValue;

@@ -7,10 +7,10 @@ namespace NLanguageTag.SourceCodeRenderer.SubtagRegistry
 	public abstract class RegEntry
 	{
 		private readonly List<string> _descriptions = new List<string>();
-		private readonly string _added;
+		private readonly string? _added;
 
 		public List<string> Descriptions => _descriptions;
-		public string Added => _added;
+		public string? Added => _added;
 
 		public static RegEntry Create(string text)
 		{
@@ -80,7 +80,7 @@ namespace NLanguageTag.SourceCodeRenderer.SubtagRegistry
 			return true;
 		}
 
-		protected bool Set(string line, string prefix, ref string field)
+		protected bool Set(string line, string prefix, ref string? field)
 		{
 			if(!line.StartsWith(prefix))
 				return false;

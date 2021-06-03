@@ -4,15 +4,15 @@ namespace NLanguageTag.SourceCodeRenderer.SubtagRegistry
 {
 	public class LanguageEntry : RegEntry, IHaveSubtag, IHavePreferredValue, IHaveComments
 	{
-		private string _subtag;
-		private string _comments;
-		private string _suppressScript;
-		private string _scope;
-		private string _macrolanguage;
-		private string _deprecated;
-		private string _preferredValue;
+		private string? _subtag;
+		private string? _comments;
+		private string? _suppressScript;
+		private string? _scope;
+		private string? _macrolanguage;
+		private string? _deprecated;
+		private string? _preferredValue;
 
-		public string Subtag => _subtag;
+		public string? Subtag => _subtag;
 		public string? Comments => _comments;
 		public string? SuppressScript => _suppressScript;
 		public string? Scope => _scope;

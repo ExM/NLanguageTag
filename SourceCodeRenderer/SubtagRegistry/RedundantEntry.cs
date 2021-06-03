@@ -4,17 +4,16 @@ namespace NLanguageTag.SourceCodeRenderer.SubtagRegistry
 {
 	public class RedundantEntry : RegEntry
 	{
-		private string _deprecated;
-		private string _preferredValue;
-		private string _tag;
+		private string? _deprecated;
+		private string? _preferredValue;
+		private string? _tag;
 
-		public string Deprecated => _deprecated;
-		public string PreferredValue => _preferredValue;
-		public string Tag => _tag;
+		public string? Deprecated => _deprecated;
+		public string? PreferredValue => _preferredValue;
+		public string? Tag => _tag;
 
 		public RedundantEntry(string[] body): base(EntryType.Redundant, body)
 		{
-
 			if ((PreferredValue != null) && (Deprecated == null))
 				throw new FormatException($"PreferredValue without Deprecated");
 		}

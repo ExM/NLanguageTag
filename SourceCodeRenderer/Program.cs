@@ -45,6 +45,7 @@ namespace NLanguageTag.SourceCodeRenderer
 					"Variant.parsing",
 					"VariantCode",
 
+					"LanguageTag.Summary",
 					"LanguageTag.Ctors",
 					"LanguageTag.Take",
 				}

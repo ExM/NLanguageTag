@@ -4,11 +4,11 @@ namespace NLanguageTag.SourceCodeRenderer.SubtagRegistry
 {
 	public class ScriptEntry : RegEntry, IHaveSubtag, IHaveComments
 	{
-		private string _subtag;
-		private string _comments;
+		private string? _subtag;
+		private string? _comments;
 
-		public string Subtag => _subtag;
-		public string Comments => _comments;
+		public string? Subtag => _subtag;
+		public string? Comments => _comments;
 
 		public ScriptEntry(string[] body): base(EntryType.Script, body)
 		{

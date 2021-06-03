@@ -69,9 +69,9 @@ namespace NLanguageTag.SourceCodeRenderer
 			if (t == null)
 				throw new Exception($"type {typeName} not found");
 
-			var mi = t.GetMethod("TransformText");
+			var mi = t.GetMethod("TransformText")!;
 
-			var inst = Activator.CreateInstance(t);
+			var inst = Activator.CreateInstance(t)!;
 
 			if (_requiredRegistry)
 			{

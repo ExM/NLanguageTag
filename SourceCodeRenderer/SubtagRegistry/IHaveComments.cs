@@ -2,6 +2,6 @@
 {
 	public interface IHaveComments
 	{
-		string Comments { get; }
+		string? Comments { get; }
 	}
 }

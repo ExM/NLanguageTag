@@ -6,7 +6,7 @@ using System.Linq;
 namespace NLanguageTag.Tests
 {
 	[TestFixture]
-	public partial class LanguageTagTests
+	public class LanguageTagTests
 	{
 		[Test]
 		public void Playground()
@@ -43,7 +43,6 @@ namespace NLanguageTag.Tests
 			// zh-Hans is subset of zh-Hans-TW
 			Assert.True(tag8.IsSubsetOf(tag6));
 		}
-		
 		
 		[TestCaseSource(nameof(SimpleParseCases))]
 		public void SimpleParse(string text, Language langEx, Script scrEx, Region regionEx)

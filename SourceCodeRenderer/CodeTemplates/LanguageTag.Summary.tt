@@ -1,0 +1,19 @@
+﻿<#@ template language="C#"  inherits="NLanguageTag.SourceCodeRenderer.RegistryContainer" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="NLanguageTag.SourceCodeRenderer" #>
+<#@ import namespace="NLanguageTag.SourceCodeRenderer.SubtagRegistry" #>
+<#@ output extension=".cs" #>
+namespace NLanguageTag
+{
+	/// <summary>
+	/// Language tags are used to help identify languages, whether spoken, written, signed, or otherwise signaled, for the purpose of communication.
+	/// Language tag syntax is defined by the <a href="https://tools.ietf.org/html/bcp47">IETF's BCP 47</a>
+	/// and corresponds to the <a href="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">IANA Language Subtag</a> of <#= Registry.FileDate #>
+	/// </summary>
+	public readonly partial struct LanguageTag
+	{
+	}
+}
