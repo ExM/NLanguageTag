@@ -78,6 +78,11 @@ namespace NLanguageTag
 		Arevmda = 14,
 
 		/// <summary>
+		/// code of <see cref="Variant.Arkaika"/>
+		/// </summary>
+		Arkaika = 105,
+
+		/// <summary>
 		/// code of <see cref="Variant.Asante"/>
 		/// </summary>
 		Asante = 15,
@@ -511,6 +516,11 @@ namespace NLanguageTag
 		/// code of <see cref="Variant.Vallader"/>
 		/// </summary>
 		Vallader = 98,
+
+		/// <summary>
+		/// code of <see cref="Variant.Vecdruka"/>
+		/// </summary>
+		Vecdruka = 106,
 
 		/// <summary>
 		/// code of <see cref="Variant.Vivaraup"/>

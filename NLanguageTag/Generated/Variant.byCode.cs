@@ -27,6 +27,7 @@ namespace NLanguageTag
 				case VariantCode.Aranes: return AranesCache.Instance;
 				case VariantCode.Arevela: return ArevelaCache.Instance;
 				case VariantCode.Arevmda: return ArevmdaCache.Instance;
+				case VariantCode.Arkaika: return ArkaikaCache.Instance;
 				case VariantCode.Asante: return AsanteCache.Instance;
 				case VariantCode.Auvern: return AuvernCache.Instance;
 				case VariantCode.Baku1926: return Baku1926Cache.Instance;
@@ -114,6 +115,7 @@ namespace NLanguageTag
 				case VariantCode.Vaidika: return VaidikaCache.Instance;
 				case VariantCode.Valencia: return ValenciaCache.Instance;
 				case VariantCode.Vallader: return ValladerCache.Instance;
+				case VariantCode.Vecdruka: return VecdrukaCache.Instance;
 				case VariantCode.Vivaraup: return VivaraupCache.Instance;
 				case VariantCode.Wadegile: return WadegileCache.Instance;
 				case VariantCode.Xsistemo: return XsistemoCache.Instance;

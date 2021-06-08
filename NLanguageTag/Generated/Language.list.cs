@@ -6689,6 +6689,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Aninka
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language AQK => AQKCache.Instance;
+
+		private static class AQKCache
+		{
+			public static readonly Language Instance = new Language(
+                "aqk",
+                LanguageCode.AQK,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Algic languages
 		/// added: 2009-07-29
 		/// </summary>
@@ -14070,6 +14089,7 @@ namespace NLanguageTag
 		/// Bikaru
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("use bir, deprecated from 2021-02-20")]
 		public static Language BIC => BICCache.Instance;
 
 		private static class BICCache
@@ -14082,7 +14102,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -14163,8 +14183,10 @@ namespace NLanguageTag
 
 		/// <summary>
 		/// Vaghat-Ya-Bijim-Legeri
+		/// see dkg, jbm, tyy
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("see dkg, jbm, tyy, deprecated from 2021-02-20")]
 		public static Language BIJ => BIJCache.Instance;
 
 		private static class BIJCache
@@ -14177,7 +14199,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -15559,6 +15581,7 @@ namespace NLanguageTag
 		/// Balau
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("use iba, deprecated from 2021-02-20")]
 		public static Language BLG => BLGCache.Instance;
 
 		private static class BLGCache
@@ -15571,7 +15594,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -17435,6 +17458,25 @@ namespace NLanguageTag
 			public static readonly Language Instance = new Language(
                 "bpd",
                 LanguageCode.BPD,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Bauni
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language BPE => BPECache.Instance;
+
+		private static class BPECache
+		{
+			public static readonly Language Instance = new Language(
+                "bpe",
+                LanguageCode.BPE,
                 null,
                 null,
                 null,
@@ -28163,6 +28205,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Cambodian Sign Language
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language CSX => CSXCache.Instance;
+
+		private static class CSXCache
+		{
+			public static readonly Language Instance = new Language(
+                "csx",
+                LanguageCode.CSX,
+                null,
+                null,
+                null,
+                null,
+                Language.SGN,
+                false);
+		}
+
+		/// <summary>
 		/// Siyin Chin
 		/// added: 2009-07-29
 		/// </summary>
@@ -28458,6 +28519,25 @@ namespace NLanguageTag
 			public static readonly Language Instance = new Language(
                 "ctu",
                 LanguageCode.CTU,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Moundadan Chetty
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language CTY => CTYCache.Instance;
+
+		private static class CTYCache
+		{
+			public static readonly Language Instance = new Language(
+                "cty",
+                LanguageCode.CTY,
                 null,
                 null,
                 null,
@@ -32107,6 +32187,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Kadung
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language DKG => DKGCache.Instance;
+
+		private static class DKGCache
+		{
+			public static readonly Language Instance = new Language(
+                "dkg",
+                LanguageCode.DKG,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Dakka
 		/// added: 2009-07-29
 		/// </summary>
@@ -35531,6 +35630,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Miyakubo Sign Language
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language EHS => EHSCache.Instance;
+
+		private static class EHSCache
+		{
+			public static readonly Language Instance = new Language(
+                "ehs",
+                LanguageCode.EHS,
+                null,
+                null,
+                null,
+                null,
+                Language.SGN,
+                false);
+		}
+
+		/// <summary>
 		/// Ehueun
 		/// added: 2009-07-29
 		/// </summary>
@@ -36239,6 +36357,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Eastern Minyag
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language EMQ => EMQCache.Instance;
+
+		private static class EMQCache
+		{
+			public static readonly Language Instance = new Language(
+                "emq",
+                LanguageCode.EMQ,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Pacific Gulf Yupik
 		/// added: 2009-07-29
 		/// </summary>
@@ -36325,6 +36462,25 @@ namespace NLanguageTag
 			public static readonly Language Instance = new Language(
                 "emy",
                 LanguageCode.EMY,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Mbessa
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language EMZ => EMZCache.Instance;
+
+		private static class EMZCache
+		{
+			public static readonly Language Instance = new Language(
+                "emz",
+                LanguageCode.EMZ,
                 null,
                 null,
                 null,
@@ -42037,6 +42193,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Girirra
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language GII => GIICache.Instance;
+
+		private static class GIICache
+		{
+			public static readonly Language Instance = new Language(
+                "gii",
+                LanguageCode.GII,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Gilbertese
 		/// added: 2005-10-16
 		/// </summary>
@@ -42306,8 +42481,10 @@ namespace NLanguageTag
 
 		/// <summary>
 		/// Geji
+		/// see gyz, zbu
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("see gyz, zbu, deprecated from 2021-02-20")]
 		public static Language GJI => GJICache.Instance;
 
 		private static class GJICache
@@ -42320,7 +42497,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -42563,6 +42740,25 @@ namespace NLanguageTag
                 "gl",
                 LanguageCode.GL,
                 Script.Latn,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Belning
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language GLB => GLBCache.Instance;
+
+		private static class GLBCache
+		{
+			public static readonly Language Instance = new Language(
+                "glb",
+                LanguageCode.GLB,
+                null,
                 null,
                 null,
                 null,
@@ -46096,6 +46292,26 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Geji
+		/// Gyaazi
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language GYZ => GYZCache.Instance;
+
+		private static class GYZCache
+		{
+			public static readonly Language Instance = new Language(
+                "gyz",
+                LanguageCode.GYZ,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Ganza
 		/// added: 2009-07-29
 		/// </summary>
@@ -47418,6 +47634,26 @@ namespace NLanguageTag
 			public static readonly Language Instance = new Language(
                 "hke",
                 LanguageCode.HKE,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Khah
+		/// Poguli
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language HKH => HKHCache.Instance;
+
+		private static class HKHCache
+		{
+			public static readonly Language Instance = new Language(
+                "hkh",
+                LanguageCode.HKH,
                 null,
                 null,
                 null,
@@ -53993,6 +54229,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Bijim
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language JBM => JBMCache.Instance;
+
+		private static class JBMCache
+		{
+			public static readonly Language Instance = new Language(
+                "jbm",
+                LanguageCode.JBM,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Nafusi
 		/// added: 2009-07-29
 		/// </summary>
@@ -54603,7 +54858,7 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
-		/// Bu
+		/// Bu (Kaduna State)
 		/// added: 2009-07-29
 		/// </summary>
 		public static Language JID => JIDCache.Instance;
@@ -54982,6 +55237,25 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
+                false);
+		}
+
+		/// <summary>
+		/// Amami Koniya Sign Language
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language JKS => JKSCache.Instance;
+
+		private static class JKSCache
+		{
+			public static readonly Language Instance = new Language(
+                "jks",
+                LanguageCode.JKS,
+                null,
+                null,
+                null,
+                null,
+                Language.SGN,
                 false);
 		}
 
@@ -55632,7 +55906,7 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
-		/// Jorto
+		/// Jakattoe
 		/// added: 2009-07-29
 		/// </summary>
 		public static Language JRT => JRTCache.Instance;
@@ -63073,7 +63347,7 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
-		/// Kacipo-Balesi
+		/// Kacipo-Bale Suri
 		/// added: 2009-07-29
 		/// </summary>
 		public static Language KOE => KOECache.Instance;
@@ -74238,6 +74512,26 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Burundian Sign Language
+		/// Langue des Signes Burundaise
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language LSB => LSBCache.Instance;
+
+		private static class LSBCache
+		{
+			public static readonly Language Instance = new Language(
+                "lsb",
+                LanguageCode.LSB,
+                null,
+                null,
+                null,
+                null,
+                Language.SGN,
+                false);
+		}
+
+		/// <summary>
 		/// Lishana Deni
 		/// added: 2009-07-29
 		/// </summary>
@@ -75453,6 +75747,25 @@ namespace NLanguageTag
 			public static readonly Language Instance = new Language(
                 "lww",
                 LanguageCode.LWW,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Lakurumau
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language LXM => LXMCache.Instance;
+
+		private static class LXMCache
+		{
+			public static readonly Language Instance = new Language(
+                "lxm",
+                LanguageCode.LXM,
                 null,
                 null,
                 null,
@@ -85867,8 +86180,10 @@ namespace NLanguageTag
 
 		/// <summary>
 		/// Muya
+		/// see emq, wmg
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("see emq, wmg, deprecated from 2021-02-20")]
 		public static Language MVM => MVMCache.Instance;
 
 		private static class MVMCache
@@ -85881,7 +86196,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -90830,8 +91145,10 @@ namespace NLanguageTag
 
 		/// <summary>
 		/// Ngoni
+		/// see xnj, xnq
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("see xnj, xnq, deprecated from 2021-02-20")]
 		public static Language NGO => NGOCache.Instance;
 
 		private static class NGOCache
@@ -90844,7 +91161,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -94949,6 +95266,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Nteng
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language NQT => NQTCache.Instance;
+
+		private static class NQTCache
+		{
+			public static readonly Language Instance = new Language(
+                "nqt",
+                LanguageCode.NQT,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Akyaung Ari Naga
 		/// added: 2012-08-12
 		/// </summary>
@@ -98100,6 +98436,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Old Cham
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language OCM => OCMCache.Instance;
+
+		private static class OCMCache
+		{
+			public static readonly Language Instance = new Language(
+                "ocm",
+                LanguageCode.OCM,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Old Cornish
 		/// added: 2009-07-29
 		/// </summary>
@@ -98651,6 +99006,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Kobo
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language OKC => OKCCache.Instance;
+
+		private static class OKCCache
+		{
+			public static readonly Language Instance = new Language(
+                "okc",
+                LanguageCode.OKC,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Okodia
 		/// added: 2009-07-29
 		/// </summary>
@@ -98946,6 +99320,25 @@ namespace NLanguageTag
 			public static readonly Language Instance = new Language(
                 "okx",
                 LanguageCode.OKX,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Old Khmer
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language OKZ => OKZCache.Instance;
+
+		private static class OKZCache
+		{
+			public static readonly Language Instance = new Language(
+                "okz",
+                LanguageCode.OKZ,
                 null,
                 null,
                 null,
@@ -99479,6 +99872,25 @@ namespace NLanguageTag
 			public static readonly Language Instance = new Language(
                 "omx",
                 LanguageCode.OMX,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Old Malay
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language OMY => OMYCache.Instance;
+
+		private static class OMYCache
+		{
+			public static readonly Language Instance = new Language(
+                "omy",
+                LanguageCode.OMY,
                 null,
                 null,
                 null,
@@ -100394,6 +100806,25 @@ namespace NLanguageTag
 			public static readonly Language Instance = new Language(
                 "osi",
                 LanguageCode.OSI,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Old Sundanese
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language OSN => OSNCache.Instance;
+
+		private static class OSNCache
+		{
+			public static readonly Language Instance = new Language(
+                "osn",
+                LanguageCode.OSN,
                 null,
                 null,
                 null,
@@ -101475,6 +101906,7 @@ namespace NLanguageTag
 		/// Papitalai
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("use kxr, deprecated from 2021-02-20")]
 		public static Language PAT => PATCache.Instance;
 
 		private static class PATCache
@@ -101487,7 +101919,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -105094,6 +105526,7 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Pangu
 		/// Pongu
 		/// added: 2009-07-29
 		/// </summary>
@@ -112128,6 +112561,25 @@ namespace NLanguageTag
 			public static readonly Language Instance = new Language(
                 "rwk",
                 LanguageCode.RWK,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Ruwila
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language RWL => RWLCache.Instance;
+
+		private static class RWLCache
+		{
+			public static readonly Language Instance = new Language(
+                "rwl",
+                LanguageCode.RWL,
                 null,
                 null,
                 null,
@@ -119379,6 +119831,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Kufr Qassem Sign Language (KQSL)
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language SQX => SQXCache.Instance;
+
+		private static class SQXCache
+		{
+			public static readonly Language Instance = new Language(
+                "sqx",
+                LanguageCode.SQX,
+                null,
+                null,
+                null,
+                null,
+                Language.SGN,
+                false);
+		}
+
+		/// <summary>
 		/// Serbian
 		/// see cnr for Montenegrin
 		/// added: 2005-10-16
@@ -121001,6 +121472,26 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Bouni
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language SUO => SUOCache.Instance;
+
+		private static class SUOCache
+		{
+			public static readonly Language Instance = new Language(
+                "suo",
+                LanguageCode.SUO,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Tirmaga-Chai Suri
 		/// Suri
 		/// added: 2009-07-29
 		/// </summary>
@@ -132721,6 +133212,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Tiyaa
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language TYY => TYYCache.Instance;
+
+		private static class TYYCache
+		{
+			public static readonly Language Instance = new Language(
+                "tyy",
+                LanguageCode.TYY,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Tày
 		/// added: 2009-07-29
 		/// </summary>
@@ -134293,6 +134803,25 @@ namespace NLanguageTag
 			public static readonly Language Instance = new Language(
                 "ung",
                 LanguageCode.UNG,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Uni
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language UNI => UNICache.Instance;
+
+		private static class UNICache
+		{
+			public static readonly Language Instance = new Language(
+                "uni",
+                LanguageCode.UNI,
                 null,
                 null,
                 null,
@@ -136212,8 +136741,10 @@ namespace NLanguageTag
 
 		/// <summary>
 		/// Ija-Zuba
+		/// see vkn, vkz
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("see vkn, vkz, deprecated from 2021-02-20")]
 		public static Language VKI => VKICache.Instance;
 
 		private static class VKICache
@@ -136226,7 +136757,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -136306,6 +136837,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Koro Nulu
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language VKN => VKNCache.Instance;
+
+		private static class VKNCache
+		{
+			public static readonly Language Instance = new Language(
+                "vkn",
+                LanguageCode.VKN,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Kodeoha
 		/// added: 2009-07-29
 		/// </summary>
@@ -136373,6 +136923,25 @@ namespace NLanguageTag
 			public static readonly Language Instance = new Language(
                 "vku",
                 LanguageCode.VKU,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Koro Zuba
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language VKZ => VKZCache.Instance;
+
+		private static class VKZCache
+		{
+			public static readonly Language Instance = new Language(
+                "vkz",
+                LanguageCode.VKZ,
                 null,
                 null,
                 null,
@@ -137280,7 +137849,8 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
-		/// Wandamen
+		/// Wamesa
+		/// Wondama
 		/// added: 2009-07-29
 		/// </summary>
 		public static Language WAD => WADCache.Instance;
@@ -139687,6 +140257,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Western Minyag
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language WMG => WMGCache.Instance;
+
+		private static class WMGCache
+		{
+			public static readonly Language Instance = new Language(
+                "wmg",
+                LanguageCode.WMG,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Waima'a
 		/// added: 2009-07-29
 		/// </summary>
@@ -140469,8 +141058,10 @@ namespace NLanguageTag
 
 		/// <summary>
 		/// Warapu
+		/// see bpe, suo, uni
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("see bpe, suo, uni, deprecated from 2021-02-20")]
 		public static Language WRA => WRACache.Instance;
 
 		private static class WRACache
@@ -140483,7 +141074,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -144889,6 +145480,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Ngoni (Tanzania)
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language XNJ => XNJCache.Instance;
+
+		private static class XNJCache
+		{
+			public static readonly Language Instance = new Language(
+                "xnj",
+                LanguageCode.XNJ,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Nganakarti
 		/// added: 2013-09-10
 		/// </summary>
@@ -144956,6 +145566,25 @@ namespace NLanguageTag
 			public static readonly Language Instance = new Language(
                 "xno",
                 LanguageCode.XNO,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Ngoni (Mozambique)
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language XNQ => XNQCache.Instance;
+
+		private static class XNQCache
+		{
+			public static readonly Language Instance = new Language(
+                "xnq",
+                LanguageCode.XNQ,
                 null,
                 null,
                 null,
@@ -151376,6 +152005,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Myanmar Sign Language
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language YSM => YSMCache.Instance;
+
+		private static class YSMCache
+		{
+			public static readonly Language Instance = new Language(
+                "ysm",
+                LanguageCode.YSM,
+                null,
+                null,
+                null,
+                null,
+                Language.SGN,
+                false);
+		}
+
+		/// <summary>
 		/// Sani
 		/// added: 2009-07-29
 		/// </summary>
@@ -153019,6 +153667,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Bu (Bauchi State)
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language ZBU => ZBUCache.Instance;
+
+		private static class ZBUCache
+		{
+			public static readonly Language Instance = new Language(
+                "zbu",
+                LanguageCode.ZBU,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// West Berawan
 		/// added: 2009-07-29
 		/// </summary>
@@ -153847,6 +154514,25 @@ namespace NLanguageTag
 			public static readonly Language Instance = new Language(
                 "zkz",
                 LanguageCode.ZKZ,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Zula
+		/// added: 2021-02-20
+		/// </summary>
+		public static Language ZLA => ZLACache.Instance;
+
+		private static class ZLACache
+		{
+			public static readonly Language Instance = new Language(
+                "zla",
+                LanguageCode.ZLA,
                 null,
                 null,
                 null,

@@ -1520,9 +1520,12 @@ namespace NLanguageTag
 		
 		private static Variant? tryParse_L7_ar(StringSpan span)
 		{
-			if(Char.ToLowerInvariant(span[2]) == 'e')
-				return tryParse_L7_are(span);
-			return null;
+			switch(span[2])
+			{
+				case 'e': return tryParse_L7_are(span);
+				case 'k': return tryParse_L7_ark(span);
+				default: return null;
+			}
 		}
 		
 		private static Variant? tryParse_L7_are(StringSpan span)
@@ -1567,6 +1570,34 @@ namespace NLanguageTag
 		{
 			if(Char.ToLowerInvariant(span[6]) == 'a')
 				return ArevmdaCache.Instance;
+			return null;
+		}
+		
+		private static Variant? tryParse_L7_ark(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[3]) == 'a')
+				return tryParse_L7_arka(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L7_arka(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[4]) == 'i')
+				return tryParse_L7_arkai(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L7_arkai(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[5]) == 'k')
+				return tryParse_L7_arkaik(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L7_arkaik(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[6]) == 'a')
+				return ArkaikaCache.Instance;
 			return null;
 		}
 		
@@ -3541,6 +3572,7 @@ namespace NLanguageTag
 			switch(span[1])
 			{
 				case 'a': return tryParse_L8_va(span);
+				case 'e': return tryParse_L8_ve(span);
 				case 'i': return tryParse_L8_vi(span);
 				default: return null;
 			}
@@ -3616,6 +3648,48 @@ namespace NLanguageTag
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'r')
 				return ValladerCache.Instance;
+			return null;
+		}
+		
+		private static Variant? tryParse_L8_ve(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[2]) == 'c')
+				return tryParse_L8_vec(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L8_vec(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[3]) == 'd')
+				return tryParse_L8_vecd(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L8_vecd(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[4]) == 'r')
+				return tryParse_L8_vecdr(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L8_vecdr(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[5]) == 'u')
+				return tryParse_L8_vecdru(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L8_vecdru(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[6]) == 'k')
+				return tryParse_L8_vecdruk(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L8_vecdruk(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[7]) == 'a')
+				return VecdrukaCache.Instance;
 			return null;
 		}
 		
