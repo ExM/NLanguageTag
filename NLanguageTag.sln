@@ -13,11 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLanguageTag", "NLanguageTa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLanguageTag.Tests", "NLanguageTag.Tests\NLanguageTag.Tests.csproj", "{61855940-1B59-42CA-A570-73884CBA76FE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{EE453A37-89E9-4FE4-8AE8-F408C126F94E}"
-ProjectSection(SolutionItems) = preProject
-	doc\references.txt = doc\references.txt
-EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLanguageTag.Benchmark", "NLanguageTag.Benchmark\NLanguageTag.Benchmark.csproj", "{2F44D184-03DA-4C44-A88C-8067CBED7E5D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceCodeRenderer.Tests", "SourceCodeRenderer.Tests\SourceCodeRenderer.Tests.csproj", "{71D376AA-F63A-464E-AE6D-15C516B1859C}"
