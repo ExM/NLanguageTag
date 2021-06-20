@@ -1,0 +1,15 @@
+﻿<#@ template language="C#" inherits="NLanguageTag.SourceCodeRenderer.RenderContext" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="NLanguageTag.SourceCodeRenderer" #>
+<#@ import namespace="NLanguageTag.SourceCodeRenderer.SubtagRegistry" #>
+<# var types = new HashSet<string>(Registry.AllEntries.Select(_ => _.Type)); #>
+Total entries: <#= Registry.AllEntries.Count() #>
+Types:
+<#foreach(var type in types)
+{ #>
+* <#= type #> - <#= Registry.AllEntries.Count(_ => _.Type == type) #>
+<# } #>

@@ -4,11 +4,6 @@ using System.Text;
 
 namespace NLanguageTag
 {
-	/// <summary>
-	/// Language tags are used to help identify languages, whether spoken, written, signed, or otherwise signaled, for the purpose of communication.
-	/// Language tag syntax is defined by the IETF's BCP 47 (https://tools.ietf.org/html/bcp47)
-	/// and corresponds to the IANA Language Subtag Registry (http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) of 2016-10-12
-	/// </summary>
 	public readonly partial struct LanguageTag : IEquatable<LanguageTag>
 	{
 		internal const char TagSeparator = '-';
@@ -50,7 +45,7 @@ namespace NLanguageTag
 		/// Private use subtags are used to indicate distinctions in language
 		/// that are important in a given context by private agreement.
 		/// </summary>
-		public PrivateUseSubtags PrivateUse { get; }
+		public ExtensionSubtag PrivateUse { get; }
 
 		/// <summary>
 		/// Initializes new value of <see cref="LanguageTag"/>
@@ -61,12 +56,12 @@ namespace NLanguageTag
 			Region? region,
 			VariantCollection variants,
 			ExtensionSubtagCollection extensions,
-			PrivateUseSubtags privateUse)
+			ExtensionSubtag privateUse)
 		{
-			if (language.HasValue && script.HasValue)
+			if (language != null && script != null)
 			{
-				var suppressScript = language.Value.GetSuppressScript();
-				if (suppressScript.HasValue && suppressScript.Value == script.Value)
+				var suppressScript = language.SuppressScript;
+				if (suppressScript != null && suppressScript == script)
 				{
 					script = null;
 				}
@@ -80,15 +75,15 @@ namespace NLanguageTag
 			PrivateUse = privateUse;
 
 			var fields = Field.None;
-			if (language.HasValue)
+			if (language != null)
 			{
 				fields |= Field.Language;
 			}
-			if (script.HasValue)
+			if (script != null)
 			{
 				fields |= Field.Script;
 			}
-			if (region.HasValue)
+			if (region !=  null)
 			{
 				fields |= Field.Region;
 			}
@@ -102,6 +97,8 @@ namespace NLanguageTag
 			}
 			if (!privateUse.IsEmpty)
 			{
+				if(!privateUse.PrivateUse)
+					throw new ArgumentOutOfRangeException(nameof(privateUse), "must be a private use subtag");
 				fields |= Field.PrivateUse;
 			}
 
@@ -111,7 +108,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// Initializes new value of <see cref="LanguageTag"/>
 		/// </summary>
-		public LanguageTag(PrivateUseSubtags privateUseSubtags)
+		public LanguageTag(ExtensionSubtag privateUseSubtags)
 			: this(null, null, null, default, default, privateUseSubtags)
 		{
 		}
@@ -123,7 +120,7 @@ namespace NLanguageTag
 		/// <exception cref="FormatException">
 		/// the text was not a correct text representation of a language tag
 		/// </exception>
-		public static LanguageTag Parse(string text)
+		public static LanguageTag Parse(string? text)
 		{
 			if (TryParse(text, out var result))
 			{
@@ -139,14 +136,16 @@ namespace NLanguageTag
 		/// <param name="text">text representation of language tag</param>
 		/// <param name="result">parsed value</param>
 		/// <returns>true if parsing was successful, false otherwise</returns>
-		public static bool TryParse(string text, out LanguageTag result)
+		public static bool TryParse(string? text, out LanguageTag result)
 		{
+			if(text is null)
+				throw new ArgumentNullException(nameof(text));
 			var tokens = new TokenEnumerator(Grandfathered.GetPreferredValue(text) ?? text);
 
-			if (tokens.TokenIs(PrivateUseSubtags.Singleton))
+			if (tokens.TokenIsPrivateUseSingleton())
 			{
 				// This tag starts with private use subtags
-				var immediatePrivateUseResult = PrivateUseSubtags.Parse(tokens);
+				var immediatePrivateUseResult = ExtensionSubtag.Parse(tokens, true);
 
 				var error = immediatePrivateUseResult.NothingToParse || immediatePrivateUseResult.ErrorOccured ||
 					tokens.CurrentTokenAvailable;
@@ -163,7 +162,7 @@ namespace NLanguageTag
 			}
 
 			var language = tokens.TryParseLanguage();
-			if (!language.HasValue)
+			if (language is null)
 			{
 				// If language tag is not entirely private use subtags, it must contain language
 				result = default;
@@ -189,7 +188,7 @@ namespace NLanguageTag
 				return false;
 			}
 
-			var privateUseResult = PrivateUseSubtags.Parse(tokens);
+			var privateUseResult = ExtensionSubtag.Parse(tokens, true);
 			if (privateUseResult.ErrorOccured)
 			{
 				result = default;
@@ -216,7 +215,7 @@ namespace NLanguageTag
 		/// </summary>
 		/// <param name="text">text representation of language tag</param>
 		/// <returns>parsed value if parsing was successful, null otherwise</returns>
-		public static LanguageTag? TryParse(string text)
+		public static LanguageTag? TryParse(string? text)
 		{
 			return TryParse(text, out var result) ? result : (LanguageTag?)null;
 		}
@@ -227,13 +226,13 @@ namespace NLanguageTag
 		/// </summary>
 		public bool IsSubsetOf(LanguageTag other)
 		{
-			if (Language.HasValue && other.Language != Language)
+			if (Language != null && other.Language != Language)
 				return false;
 
-			if (Script.HasValue && other.Script != Script)
+			if (Script != null && other.Script != Script)
 				return false;
 
-			if (Region.HasValue && other.Region != Region)
+			if (Region!= null && other.Region != Region)
 				return false;
 
 			if (Variants.Except(other.Variants).Any())
@@ -252,17 +251,17 @@ namespace NLanguageTag
 		{
 			var result = new StringBuilder(16);
 
-			if (Language.HasValue)
-				appendSubtag(result, Language.Value.ToText());
+			if (Language != null)
+				appendSubtag(result, Language.TextCode);
 
-			if (Script.HasValue)
-				appendSubtag(result, Script.Value.ToText());
+			if (Script != null)
+				appendSubtag(result, Script.TextCode);
 
-			if (Region.HasValue)
-				appendSubtag(result, Region.Value.ToText());
+			if (Region != null)
+				appendSubtag(result, Region.TextCode);
 
 			foreach (var v in Variants)
-				appendSubtag(result, v.ToText());
+				appendSubtag(result, v.TextCode);
 
 			foreach (var ext in Extensions)
 				foreach (var subtag in ext.GetSubtagElements())
@@ -300,9 +299,9 @@ namespace NLanguageTag
 		/// </summary>
 		public override int GetHashCode()
 		{
-			return Language.GetHashCode() ^
-				Script.GetHashCode() ^
-				Region.GetHashCode() ^
+			return (Language is null ? 0 : Language.GetHashCode()) ^
+				(Script is null ? 0 : Script.GetHashCode()) ^
+				(Region is null ? 0 : Region.GetHashCode()) ^
 				Variants.GetHashCode() ^
 				Extensions.GetHashCode() ^
 				PrivateUse.GetHashCode();
@@ -331,5 +330,22 @@ namespace NLanguageTag
 
 			builder.Append(subtag);
 		}
+
+		/// <summary>
+		/// Contains is any private use subtags
+		/// </summary>
+		public bool ContainsPrivateUseSubtags =>
+			(Language != null && Language.PrivateUse)
+			|| (Script != null && Script.PrivateUse)
+			|| (Region != null && Region.PrivateUse)
+			|| !PrivateUse.IsEmpty;
+
+		/// <summary>
+		/// Contains is any deprecated subtags
+		/// </summary>
+		public bool ContainsDeprecatedSubtags =>
+			(Language != null && Language.Deprecated)
+			|| Variants.ContainsDeprecatedSubtags
+			|| (Region != null && Region.Deprecated);
 	}
 }

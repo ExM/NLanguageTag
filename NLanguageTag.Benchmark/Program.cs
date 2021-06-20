@@ -15,12 +15,15 @@ namespace NLanguageTag.Benchmark
 	[HtmlExporter]
 	[MinColumn, MaxColumn, MeanColumn, MedianColumn]
 	[InvocationCount(1000000, 1000)]
+	[MemoryDiagnoser]
 	public class Parse
 	{
 		private int _languageIndex = 0;
 		private int _regionIndex = 0;
 		private int _scriptIndex = 0;
-		private string _text = string.Empty;
+		private string _textL = string.Empty;
+		private string _textLSR = string.Empty;
+		private string _textLSRE = string.Empty;
 
 		[GlobalSetup]
 		public void GlobalSetup()
@@ -30,11 +33,15 @@ namespace NLanguageTag.Benchmark
 		[IterationSetup]
 		public void IterationSetup()
 		{
-			_text = string.Join(
+			_textL = SubtagSamples.Languages[_languageIndex];
+
+			_textLSR = string.Join(
 				"-",
 				SubtagSamples.Languages[_languageIndex],
 				SubtagSamples.Scripts[_scriptIndex],
 				SubtagSamples.Regions[_regionIndex]);
+
+			_textLSRE = _textLSR + "-a-aaa-bbb";
 
 			_languageIndex = (_languageIndex + 17) % SubtagSamples.Languages.Count;
 			_regionIndex = (_regionIndex + 19) % SubtagSamples.Regions.Count;
@@ -42,6 +49,12 @@ namespace NLanguageTag.Benchmark
 		}
 
 		[Benchmark]
-		public LanguageTag LanguageScriptAndRegion() => LanguageTag.Parse(_text);
+		public LanguageTag L() => LanguageTag.Parse(_textL);
+
+		[Benchmark]
+		public LanguageTag LSR() => LanguageTag.Parse(_textLSR);
+
+		[Benchmark]
+		public LanguageTag LSRE() => LanguageTag.Parse(_textLSRE);
 	}
 }

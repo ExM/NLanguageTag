@@ -1,0 +1,34 @@
+﻿<#@ template language="C#" inherits="NLanguageTag.SourceCodeRenderer.RenderContext" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="NLanguageTag.SourceCodeRenderer" #>
+<#@ import namespace="NLanguageTag.SourceCodeRenderer.SubtagRegistry" #>
+<#@ output extension=".cs" #>
+using System;
+
+namespace NLanguageTag
+{
+	/// <summary>
+	/// Enum code of <see cref="Script"/> to use as constants in C#
+	/// </summary>
+	public enum ScriptCode
+	{
+		/// <summary>
+		/// For private use
+		/// </summary>
+		PrivateUse = 0,
+
+<#
+   foreach(var entry in Registry.Scripts.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+	{ #>
+		/// <summary>
+		/// code of <see cref="Script.<#= entry.CSharp_Name() #>"/>
+		/// </summary>
+		<#= entry.CSharp_Name() #> = <#= ScriptCode.TryGet(entry.Subtag)?.ToString()??"#error code not found" #>,
+
+<# } #>
+	}
+}

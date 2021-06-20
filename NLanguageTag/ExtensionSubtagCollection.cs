@@ -33,6 +33,12 @@ namespace NLanguageTag
 			var i = 0;
 			foreach (var subtag in subtags)
 			{
+				if(subtag.IsEmpty)
+					throw new ArgumentException("subtag can't be empty");
+
+				if(subtag.PrivateUse)
+					throw new ArgumentException("subtag can't be private use");
+
 				collection[i] = subtag;
 				i++;
 			}
@@ -57,7 +63,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// Initializes new instance of <see cref="ExtensionSubtagCollection"/> with provided subtags
 		/// </summary>
-		public ExtensionSubtagCollection(IEnumerable<ExtensionSubtag> subtags)
+		public ExtensionSubtagCollection(IEnumerable<ExtensionSubtag>? subtags)
 			: this(safeConvert(subtags))
 		{
 		}
@@ -123,7 +129,7 @@ namespace NLanguageTag
 
 		internal static PartialParseResult<ExtensionSubtagCollection> Parse(TokenEnumerator tokens)
 		{
-			var subtagResult = ExtensionSubtag.Parse(tokens);
+			var subtagResult = ExtensionSubtag.Parse(tokens, false);
 
 			if (subtagResult.NothingToParse)
 				return PartialParseResult<ExtensionSubtagCollection>.Empty;
@@ -142,7 +148,7 @@ namespace NLanguageTag
 
 				usedSingletons[subtag.Singleton] = true;
 				resultCollection.Add(subtag);
-				subtagResult = ExtensionSubtag.Parse(tokens);
+				subtagResult = ExtensionSubtag.Parse(tokens, false);
 
 				if (subtagResult.NothingToParse)
 					return PartialParseResult<ExtensionSubtagCollection>.Success(

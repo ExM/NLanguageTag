@@ -1,0 +1,34 @@
+﻿<#@ template language="C#" inherits="NLanguageTag.SourceCodeRenderer.RenderContext" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="NLanguageTag.SourceCodeRenderer" #>
+<#@ import namespace="NLanguageTag.SourceCodeRenderer.SubtagRegistry" #>
+<#@ output extension=".cs" #>
+using System;
+using System.Globalization;
+
+#pragma warning disable 618
+namespace NLanguageTag
+{
+	public partial class Language
+	{
+<#
+var languageSelector = new PrefixTreeSelector("TryParse", "Language?",
+	Registry.PrimaryLanguages.ToDictionary(
+		_ => _.Subtag.ToLower(),
+		_ => _.CSharp_Preferred() + "Cache.Instance"));
+{
+	var (minKey, maxKey) = Registry.PrivateUsePrimaryLanguages.AsInterval();
+	languageSelector.AddInterval(minKey.ToLowerInvariant(), maxKey.ToLowerInvariant(), "forPrivateUse(span.AsText())");
+}
+#>
+
+<#foreach(var line in languageSelector.Render())
+{ #>
+		<#= line #>
+<# } #>
+	}
+}

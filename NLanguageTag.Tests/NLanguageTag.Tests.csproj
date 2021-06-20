@@ -2,47 +2,23 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <AssemblyName>NLanguageTag.Tests</AssemblyName>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <IsTestProject>true</IsTestProject>
     <RootNamespace>NLanguageTag.Tests</RootNamespace>
-    <LangVersion>8</LangVersion>
+    <LangVersion>9</LangVersion>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <OutputType>Library</OutputType>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="ExtLanguages.txt" />
-    <None Remove="Grandfathered.txt" />
-    <None Remove="GrandfatheredNotSupported.txt" />
-    <None Remove="Languages.txt" />
-    <None Remove="Regions.txt" />
-    <None Remove="Scripts.txt" />
-    <None Remove="Variants.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="ExtLanguages.txt">
-      <DependentUpon>TestContent.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Grandfathered.txt">
-      <DependentUpon>TestContent.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GrandfatheredNotSupported.txt">
-      <DependentUpon>TestContent.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Languages.txt">
-      <DependentUpon>TestContent.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Regions.txt">
-      <DependentUpon>TestContent.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Scripts.txt">
-      <DependentUpon>TestContent.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Variants.txt">
-      <DependentUpon>TestContent.tt</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\NLanguageTag\NLanguageTag.csproj" />
+    <ProjectReference Include="..\SourceCodeRenderer\SourceCodeRenderer.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\DataSources\language-subtag-registry">
+      <Link>language-subtag-registry</Link>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>

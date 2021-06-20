@@ -1,5 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace NLanguageTag.Tests
 {
@@ -7,18 +9,12 @@ namespace NLanguageTag.Tests
 	public class LanguageTests
 	{
 		[Test]
-		public void CheckSwitches()
+		public void CheckParseSwitches()
 		{
 			foreach (var text in TestContent.GetLanguages())
 			{
 				var lang = parseLanguage(text);
-
-				lang.GetSuppressScript();
-				lang.GetMacrolanguage();
-				lang.GetPrefix();
-				lang.GetScope();
-
-				Assert.NotNull(lang.ToText());
+				Assert.NotNull(lang);
 			}
 
 			foreach (var text in TestContent.GetExtLanguages())
@@ -26,38 +22,48 @@ namespace NLanguageTag.Tests
 				var lang = parseLanguage(text);
 				Assert.AreEqual(text, lang.ToExtLanguage());
 			}
-
-			Assert.IsFalse("xxx".TryParseFromExtLanguage((Language)(-1)).HasValue);
 		}
 
 		[Test]
-		public void ToTextFail()
+		public void CheckPublicCodes()
 		{
-			Assert.Throws<NotImplementedException>(() =>
+			foreach (var code in Enum.GetValues(typeof(LanguageCode)).Cast<LanguageCode>()
+				.Where(_ => _ != LanguageCode.PrivateUse))
 			{
-				var en = (Language)(-1);
-				en.ToText();
-			});
+				var lang = Language.ByCode(code);
+				Assert.IsFalse(lang.PrivateUse);
+				Assert.AreEqual(code, lang.EnumCode);
+			}
 		}
 
-		[TestCase("afb", Language.AFB)]
-		[TestCase("ar-afb", Language.AFB)]
-		[TestCase("yue", Language.YUE)]
-		[TestCase("zh-yue", Language.YUE)]
-		[TestCase("ccq", Language.RKI)]
-		[TestCase("iw", Language.HE)]
+		internal static IEnumerable<TestCaseData> parseFromLanguageCases()
+		{
+			yield return new TestCaseData("afb", Language.AFB);
+			yield return new TestCaseData("ar-afb", Language.AFB);
+			yield return new TestCaseData("yue", Language.YUE);
+			yield return new TestCaseData("zh-yue", Language.YUE);
+			yield return new TestCaseData("ccq", Language.RKI);
+			yield return new TestCaseData("iw", Language.HE);
+		}
+
+		[TestCaseSource(nameof(parseFromLanguageCases))]
 		public void ParseFromLanguage(string text, Language expected)
 		{
 			Assert.AreEqual(expected, parseLanguage(text));
 		}
 
-		[TestCase(Language.AFB, "afb")]
-		[TestCase(Language.YUE, "yue")]
-		[TestCase(Language.RKI, "rki")]
-		[TestCase(Language.HE, "he")]
-		public void ParseFromLanguage(Language lang, string expected)
+		internal static IEnumerable<TestCaseData> languageToStringCases()
 		{
-			Assert.AreEqual(expected, lang.ToText());
+			yield return new TestCaseData(Language.AFB, "afb");
+			yield return new TestCaseData(Language.YUE, "yue");
+			yield return new TestCaseData(Language.RKI, "rki");
+			yield return new TestCaseData(Language.HE, "he");
+		}
+
+		[TestCaseSource(nameof(languageToStringCases))]
+		public void LanguageToString(Language lang, string expected)
+		{
+			Assert.AreEqual(expected, lang.ToString());
 		}
 
 		[TestCase("")]
@@ -85,9 +91,28 @@ namespace NLanguageTag.Tests
 			Assert.Throws<FormatException>(() => parseLanguage(text));
 		}
 
-		[TestCase(Language.AFB, "ar-afb")]
-		[TestCase(Language.YUE, "zh-yue")]
-		[TestCase(Language.EN, "en")]
+		[TestCase("qaa")]
+		[TestCase("qtz")]
+		[TestCase("qba")]
+		[TestCase("qBa")]
+		[TestCase("Qba")]
+		public void ParsePrivateUse(string text)
+		{
+			var lang = Language.Parse(text);
+
+			Assert.IsTrue(lang.PrivateUse);
+			Assert.AreEqual(LanguageCode.PrivateUse, lang.EnumCode);
+			Assert.AreEqual(lang, Language.Parse(text));
+		}
+
+		internal static IEnumerable<TestCaseData> toExtLanguageCases()
+		{
+			yield return new TestCaseData(Language.AFB, "ar-afb");
+			yield return new TestCaseData(Language.YUE, "zh-yue");
+			yield return new TestCaseData(Language.EN, "en");
+		}
+
+		[TestCaseSource(nameof(toExtLanguageCases))]
 		public void ToExtLanguage(Language lang, string expExtLang)
 		{
 			Assert.AreEqual(expExtLang, lang.ToExtLanguage());
@@ -101,8 +126,8 @@ namespace NLanguageTag.Tests
 			if ((languageTag.Fields & ~LanguageTag.Field.Language) != 0)
 				throw new FormatException($"Tag contains more than just language `{text}'");
 
-			if (languageTag.Language.HasValue)
-				return languageTag.Language.Value;
+			if (languageTag.Language != null)
+				return languageTag.Language;
 
 			throw new FormatException($"Tag does not contain language `{text}'");
 		}

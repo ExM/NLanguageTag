@@ -1,1 +1,1 @@
-& dotnet paket pack ./Release
+dotnet paket pack --build-config Release ./packages

@@ -1,0 +1,41 @@
+﻿<#@ template language="C#" inherits="NLanguageTag.SourceCodeRenderer.RenderContext" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="NLanguageTag.SourceCodeRenderer" #>
+<#@ import namespace="NLanguageTag.SourceCodeRenderer.SubtagRegistry" #>
+<#@ output extension=".cs" #>
+using System;
+
+namespace NLanguageTag
+{
+	public partial class Variant
+	{
+<#foreach(var entry in Registry.Variants.OrderBy(_ => _.Subtag, StringComparer.OrdinalIgnoreCase))
+{
+	var tags = string.Join(", ", entry.Prefixes.Select(_ => "\"" + _ + "\""));
+
+	#>
+		/// <summary>
+<#foreach(var summaryLine in entry.CSharp_Summary())
+{ #>
+		/// <#= summaryLine #>
+<# } #>
+		/// </summary>
+<#if(entry.Deprecated != null)
+{ #>
+		[Obsolete("<#= entry.Comments #>, deprecated from <#= entry.Deprecated #>")]
+<# } #>
+		public static Variant <#= entry.CSharp_Name() #> => <#= entry.CSharp_Name() #>Cache.Instance;
+
+		private static class <#= entry.CSharp_Name() #>Cache
+		{
+			public static readonly Variant Instance = new Variant("<#= entry.Subtag #>", VariantCode.<#= entry.CSharp_Name() #>, new string[] { <#= tags #> }, <#= entry.Deprecated != null ? "true" : "false" #>);
+		}
+
+<# } #>
+	}
+}
+

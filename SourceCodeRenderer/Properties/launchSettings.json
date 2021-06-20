@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "render without updates": {
+      "commandName": "Project",
+      "commandLineArgs": "-i../../DataSources -o../../NLanguageTag/Generated"
+    },
+    "full update and render": {
+      "commandName": "Project",
+      "commandLineArgs": "-un -i../../DataSources -o../../NLanguageTag/Generated"
+    }
+  }
+}

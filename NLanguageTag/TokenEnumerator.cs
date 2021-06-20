@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace NLanguageTag
 {
@@ -6,11 +6,13 @@ namespace NLanguageTag
 	{
 		public TokenEnumerator(string text)
 		{
+			text = text.ToLowerInvariant();
 			_source = text;
+
+			_currentToken = new StringSpan(text);
 
 			if (string.IsNullOrEmpty(text))
 			{
-				_currentToken = null;
 				_nextTokenPosition = null;
 			}
 			else
@@ -20,41 +22,47 @@ namespace NLanguageTag
 			}
 		}
 
-		public string Token => _currentToken ?? throw new InvalidOperationException("Current token is not available");
-
 		public bool NextTokenAvailable => _nextTokenPosition.HasValue;
 
-		public bool CurrentTokenAvailable => _currentToken != null;
+		public bool CurrentTokenAvailable { get; private set; }
 
-		public bool TokenIs(string token)
+		public bool TokenIsPrivateUseSingleton()
 		{
-			return string.Equals(_currentToken, token, StringComparison.OrdinalIgnoreCase);
+			if(_currentToken.Length != 1)
+				return false;
+
+			return char.ToLowerInvariant(_currentToken[0]) == 'x';
 		}
 
 		public void ToNextToken()
 		{
 			if (!_nextTokenPosition.HasValue)
 			{
-				_currentToken = null;
+				_currentToken.Update(0, 0);
+				CurrentTokenAvailable = false;
 				return;
 			}
 
+			CurrentTokenAvailable = true;
 			var pos = _source.IndexOf(LanguageTag.TagSeparator, _nextTokenPosition.Value);
 
 			if (pos == -1)
 			{
-				_currentToken = _source.Substring(_nextTokenPosition.Value);
+				_currentToken.Update(_nextTokenPosition.Value, _source.Length - _nextTokenPosition.Value);
 				_nextTokenPosition = null;
 			}
 			else
 			{
-				_currentToken = _source.Substring(_nextTokenPosition.Value, pos - _nextTokenPosition.Value);
+				_currentToken.Update(_nextTokenPosition.Value, pos - _nextTokenPosition.Value);
 				_nextTokenPosition = pos + 1;
 			}
 		}
 
-		private string? _currentToken;
 		private int? _nextTokenPosition;
 		private readonly string _source;
+
+		private StringSpan _currentToken;
+
+		public StringSpan CurrentToken => _currentToken;
 	}
 }

@@ -1,4 +1,1 @@
-$ErrorActionPreference = "Stop"
-$mainFolder = Resolve-Path (Split-Path -Path $MyInvocation.MyCommand.Definition -Parent)
-
-& dotnet test $mainFolder/NLanguageTag.Tests/NLanguageTag.Tests.csproj -v d
+dotnet test ./NLanguageTag.Tests/NLanguageTag.Tests.csproj -v d

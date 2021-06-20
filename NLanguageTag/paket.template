@@ -1,10 +1,13 @@
 type project
 projectUrl https://github.com/ExM/NLanguageTag
-licenseUrl https://github.com/ExM/NLanguageTag/raw/master/LICENSE
 requireLicenseAcceptance false
+licenseExpression MIT
+licenseUrl https://licenses.nuget.org/MIT
+repositoryType Github
+repositoryUrl https://github.com/ExM/NLanguageTag
 include-pdbs true
-authors Anatoliy Koperin
-owners Anatoliy Koperin
+authors Anatoliy Koperin <a.koperin@gmail.com>
+owners Anatoliy Koperin <a.koperin@gmail.com>
 description
     Language tags are used to help identify languages, whether spoken, written, signed, or otherwise signaled, for the purpose of communication. Language tag syntax is defined by the IETF's BCP 47 (https://tools.ietf.org/html/bcp47)
 tags

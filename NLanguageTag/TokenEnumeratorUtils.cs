@@ -1,4 +1,4 @@
-namespace NLanguageTag
+﻿namespace NLanguageTag
 {
 	internal static class TokenEnumeratorUtils
 	{
@@ -7,42 +7,39 @@ namespace NLanguageTag
 			if (!tokens.NextTokenAvailable)
 			{
 				// No other tokens — try parsing current and return whatever we got
-				if (!tokens.CurrentTokenAvailable)
-					return null;
+				var result = Language.TryParse(tokens.CurrentToken);
 
-				var result = tokens.Token.TryParseLanguage();
-				if (result.HasValue)
+				if (result != null)
 					tokens.ToNextToken();
 
 				return result;
 			}
 
 			// Try parsing main language tag
-			var baseLanguage = tokens.Token.TryParseLanguage();
-			if (!baseLanguage.HasValue)
+
+			var baseLanguage = Language.TryParse(tokens.CurrentToken);
+
+			if (baseLanguage is null)
 				return null;
 
 			tokens.ToNextToken();
 
-			if (!baseLanguage.Value.ExtLanguageAvailable())
-				return baseLanguage.Value;
+			if (!baseLanguage.ExtLanguageAvailable)
+				return baseLanguage;
 
 			// There may be extlang subtag here
-			var correctedLanguage = tokens.Token.TryParseFromExtLanguage(baseLanguage.Value);
-			if (!correctedLanguage.HasValue)
-				return baseLanguage.Value;
+			var correctedLanguage = baseLanguage.TryParseExtLanguage(tokens.CurrentToken);
+			if (correctedLanguage is null)
+				return baseLanguage;
 
 			// There is, indeed, extlang subtag. Skip the reader over it and return proper language
 			tokens.ToNextToken();
-			return correctedLanguage.Value;
+			return correctedLanguage;
 		}
 
 		public static Script? TryParseScript(this TokenEnumerator tokens)
 		{
-			if (!tokens.CurrentTokenAvailable)
-				return null;
-
-			var script = tokens.Token.TryParseScript();
+			var script = Script.TryParse(tokens.CurrentToken);
 
 			if (script != null)
 				tokens.ToNextToken();
@@ -52,10 +49,7 @@ namespace NLanguageTag
 
 		public static Region? TryParseRegion(this TokenEnumerator tokens)
 		{
-			if (!tokens.CurrentTokenAvailable)
-				return null;
-
-			var region = tokens.Token.TryParseRegion();
+			var region = Region.TryParse(tokens.CurrentToken);
 
 			if (region != null)
 				tokens.ToNextToken();
@@ -65,10 +59,7 @@ namespace NLanguageTag
 
 		public static Variant? TryParseVariant(this TokenEnumerator tokens)
 		{
-			if (!tokens.CurrentTokenAvailable)
-				return null;
-
-			var variant = tokens.Token.TryParseVariant();
+			var variant = Variant.TryParse(tokens.CurrentToken);
 
 			if (variant != null)
 				tokens.ToNextToken();
