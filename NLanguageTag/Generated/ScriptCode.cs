@@ -668,6 +668,11 @@ namespace NLanguageTag
 		Osma = 131,
 
 		/// <summary>
+		/// code of <see cref="Script.Ougr"/>
+		/// </summary>
+		Ougr = 201,
+
+		/// <summary>
 		/// code of <see cref="Script.Palm"/>
 		/// </summary>
 		Palm = 132,
@@ -676,6 +681,16 @@ namespace NLanguageTag
 		/// code of <see cref="Script.Pauc"/>
 		/// </summary>
 		Pauc = 133,
+
+		/// <summary>
+		/// code of <see cref="Script.Pcun"/>
+		/// </summary>
+		Pcun = 202,
+
+		/// <summary>
+		/// code of <see cref="Script.Pelm"/>
+		/// </summary>
+		Pelm = 203,
 
 		/// <summary>
 		/// code of <see cref="Script.Perm"/>
@@ -721,6 +736,16 @@ namespace NLanguageTag
 		/// code of <see cref="Script.Prti"/>
 		/// </summary>
 		Prti = 142,
+
+		/// <summary>
+		/// code of <see cref="Script.Psin"/>
+		/// </summary>
+		Psin = 204,
+
+		/// <summary>
+		/// code of <see cref="Script.Ranj"/>
+		/// </summary>
+		Ranj = 205,
 
 		/// <summary>
 		/// code of <see cref="Script.Rjng"/>
@@ -923,6 +948,16 @@ namespace NLanguageTag
 		Tirh = 182,
 
 		/// <summary>
+		/// code of <see cref="Script.Tnsa"/>
+		/// </summary>
+		Tnsa = 206,
+
+		/// <summary>
+		/// code of <see cref="Script.Toto"/>
+		/// </summary>
+		Toto = 207,
+
+		/// <summary>
 		/// code of <see cref="Script.Ugar"/>
 		/// </summary>
 		Ugar = 183,
@@ -936,6 +971,11 @@ namespace NLanguageTag
 		/// code of <see cref="Script.Visp"/>
 		/// </summary>
 		Visp = 185,
+
+		/// <summary>
+		/// code of <see cref="Script.Vith"/>
+		/// </summary>
+		Vith = 208,
 
 		/// <summary>
 		/// code of <see cref="Script.Wara"/>

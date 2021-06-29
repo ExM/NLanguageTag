@@ -1492,6 +1492,17 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Old Uyghur
+		/// added: 2021-02-12
+		/// </summary>
+		public static Script Ougr => OugrCache.Instance;
+
+		private static class OugrCache
+		{
+			public static readonly Script Instance = new Script("Ougr", ScriptCode.Ougr);
+		}
+
+		/// <summary>
 		/// Palmyrene
 		/// added: 2010-04-10
 		/// </summary>
@@ -1511,6 +1522,28 @@ namespace NLanguageTag
 		private static class PaucCache
 		{
 			public static readonly Script Instance = new Script("Pauc", ScriptCode.Pauc);
+		}
+
+		/// <summary>
+		/// Proto-Cuneiform
+		/// added: 2021-02-12
+		/// </summary>
+		public static Script Pcun => PcunCache.Instance;
+
+		private static class PcunCache
+		{
+			public static readonly Script Instance = new Script("Pcun", ScriptCode.Pcun);
+		}
+
+		/// <summary>
+		/// Proto-Elamite
+		/// added: 2021-02-12
+		/// </summary>
+		public static Script Pelm => PelmCache.Instance;
+
+		private static class PelmCache
+		{
+			public static readonly Script Instance = new Script("Pelm", ScriptCode.Pelm);
 		}
 
 		/// <summary>
@@ -1611,6 +1644,28 @@ namespace NLanguageTag
 		private static class PrtiCache
 		{
 			public static readonly Script Instance = new Script("Prti", ScriptCode.Prti);
+		}
+
+		/// <summary>
+		/// Proto-Sinaitic
+		/// added: 2021-02-12
+		/// </summary>
+		public static Script Psin => PsinCache.Instance;
+
+		private static class PsinCache
+		{
+			public static readonly Script Instance = new Script("Psin", ScriptCode.Psin);
+		}
+
+		/// <summary>
+		/// Ranjana
+		/// added: 2021-02-12
+		/// </summary>
+		public static Script Ranj => RanjCache.Instance;
+
+		private static class RanjCache
+		{
+			public static readonly Script Instance = new Script("Ranj", ScriptCode.Ranj);
 		}
 
 		/// <summary>
@@ -2066,6 +2121,28 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Tangsa
+		/// added: 2021-03-05
+		/// </summary>
+		public static Script Tnsa => TnsaCache.Instance;
+
+		private static class TnsaCache
+		{
+			public static readonly Script Instance = new Script("Tnsa", ScriptCode.Tnsa);
+		}
+
+		/// <summary>
+		/// Toto
+		/// added: 2020-05-12
+		/// </summary>
+		public static Script Toto => TotoCache.Instance;
+
+		private static class TotoCache
+		{
+			public static readonly Script Instance = new Script("Toto", ScriptCode.Toto);
+		}
+
+		/// <summary>
 		/// Ugaritic
 		/// added: 2005-10-16
 		/// </summary>
@@ -2096,6 +2173,17 @@ namespace NLanguageTag
 		private static class VispCache
 		{
 			public static readonly Script Instance = new Script("Visp", ScriptCode.Visp);
+		}
+
+		/// <summary>
+		/// Vithkuqi
+		/// added: 2021-03-05
+		/// </summary>
+		public static Script Vith => VithCache.Instance;
+
+		private static class VithCache
+		{
+			public static readonly Script Instance = new Script("Vith", ScriptCode.Vith);
 		}
 
 		/// <summary>

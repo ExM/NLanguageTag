@@ -1559,6 +1559,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.AOH"/>
 		/// </summary>
+		[Obsolete("similarly Language.AOH")]
 		AOH = 492,
 
 		/// <summary>
@@ -1770,6 +1771,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.AQG"/>
 		/// </summary>
 		AQG = 534,
+
+		/// <summary>
+		/// code of <see cref="Language.AQK"/>
+		/// </summary>
+		AQK = 8152,
 
 		/// <summary>
 		/// code of <see cref="Language.AQL"/>
@@ -2607,6 +2613,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.AYY"/>
 		/// </summary>
+		[Obsolete("similarly Language.AYY")]
 		AYY = 697,
 
 		/// <summary>
@@ -2923,6 +2930,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.BBZ"/>
 		/// </summary>
+		[Obsolete("similarly Language.BBZ")]
 		BBZ = 758,
 
 		/// <summary>
@@ -3715,6 +3723,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.BIC"/>
 		/// </summary>
+		[Obsolete("similarly Language.BIC")]
 		BIC = 912,
 
 		/// <summary>
@@ -3740,6 +3749,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.BIJ"/>
 		/// </summary>
+		[Obsolete("similarly Language.BIJ")]
 		BIJ = 917,
 
 		/// <summary>
@@ -4108,6 +4118,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.BLG"/>
 		/// </summary>
+		[Obsolete("similarly Language.BLG")]
 		BLG = 990,
 
 		/// <summary>
@@ -4594,12 +4605,18 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.BPB"/>
 		/// </summary>
+		[Obsolete("similarly Language.BPB")]
 		BPB = 1084,
 
 		/// <summary>
 		/// code of <see cref="Language.BPD"/>
 		/// </summary>
 		BPD = 1085,
+
+		/// <summary>
+		/// code of <see cref="Language.BPE"/>
+		/// </summary>
+		BPE = 8153,
 
 		/// <summary>
 		/// code of <see cref="Language.BPG"/>
@@ -6200,6 +6217,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.CCA"/>
 		/// </summary>
+		[Obsolete("similarly Language.CCA")]
 		CCA = 1401,
 
 		/// <summary>
@@ -6301,6 +6319,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.CDG"/>
 		/// </summary>
+		[Obsolete("similarly Language.CDG")]
 		CDG = 1421,
 
 		/// <summary>
@@ -6696,6 +6715,11 @@ namespace NLanguageTag
 		CKL = 1497,
 
 		/// <summary>
+		/// code of <see cref="Language.CKM"/>
+		/// </summary>
+		CKM = 8154,
+
+		/// <summary>
 		/// code of <see cref="Language.CKN"/>
 		/// </summary>
 		CKN = 1498,
@@ -6935,6 +6959,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.CNO"/>
 		/// </summary>
 		CNO = 1545,
+
+		/// <summary>
+		/// code of <see cref="Language.CNP"/>
+		/// </summary>
+		CNP = 8155,
 
 		/// <summary>
 		/// code of <see cref="Language.CNR"/>
@@ -7374,6 +7403,11 @@ namespace NLanguageTag
 		CSO = 1629,
 
 		/// <summary>
+		/// code of <see cref="Language.CSP"/>
+		/// </summary>
+		CSP = 8156,
+
+		/// <summary>
 		/// code of <see cref="Language.CSQ"/>
 		/// </summary>
 		CSQ = 1630,
@@ -7407,6 +7441,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.CSW"/>
 		/// </summary>
 		CSW = 1636,
+
+		/// <summary>
+		/// code of <see cref="Language.CSX"/>
+		/// </summary>
+		CSX = 8157,
 
 		/// <summary>
 		/// code of <see cref="Language.CSY"/>
@@ -7487,6 +7526,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.CTU"/>
 		/// </summary>
 		CTU = 1652,
+
+		/// <summary>
+		/// code of <see cref="Language.CTY"/>
+		/// </summary>
+		CTY = 8158,
 
 		/// <summary>
 		/// code of <see cref="Language.CTZ"/>
@@ -8149,6 +8193,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.DGU"/>
 		/// </summary>
+		[Obsolete("similarly Language.DGU")]
 		DGU = 1779,
 
 		/// <summary>
@@ -8445,6 +8490,11 @@ namespace NLanguageTag
 		DKA = 1837,
 
 		/// <summary>
+		/// code of <see cref="Language.DKG"/>
+		/// </summary>
+		DKG = 8159,
+
+		/// <summary>
 		/// code of <see cref="Language.DKK"/>
 		/// </summary>
 		DKK = 1838,
@@ -8514,6 +8564,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.DME"/>
 		/// </summary>
 		DME = 1851,
+
+		/// <summary>
+		/// code of <see cref="Language.DMF"/>
+		/// </summary>
+		DMF = 8160,
 
 		/// <summary>
 		/// code of <see cref="Language.DMG"/>
@@ -8829,6 +8884,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.DRR"/>
 		/// </summary>
+		[Obsolete("similarly Language.DRR")]
 		DRR = 1914,
 
 		/// <summary>
@@ -9115,6 +9171,11 @@ namespace NLanguageTag
 		DWA = 1969,
 
 		/// <summary>
+		/// code of <see cref="Language.DWK"/>
+		/// </summary>
+		DWK = 8161,
+
+		/// <summary>
 		/// code of <see cref="Language.DWL"/>
 		/// </summary>
 		[Obsolete("similarly Language.DWL")]
@@ -9242,6 +9303,11 @@ namespace NLanguageTag
 		EAA = 1993,
 
 		/// <summary>
+		/// code of <see cref="Language.EBC"/>
+		/// </summary>
+		EBC = 8162,
+
+		/// <summary>
 		/// code of <see cref="Language.EBG"/>
 		/// </summary>
 		EBG = 1994,
@@ -9332,6 +9398,11 @@ namespace NLanguageTag
 		EGY = 2010,
 
 		/// <summary>
+		/// code of <see cref="Language.EHS"/>
+		/// </summary>
+		EHS = 8163,
+
+		/// <summary>
 		/// code of <see cref="Language.EHU"/>
 		/// </summary>
 		EHU = 2011,
@@ -9364,6 +9435,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.EKC"/>
 		/// </summary>
+		[Obsolete("similarly Language.EKC")]
 		EKC = 2017,
 
 		/// <summary>
@@ -9519,6 +9591,11 @@ namespace NLanguageTag
 		EMP = 2046,
 
 		/// <summary>
+		/// code of <see cref="Language.EMQ"/>
+		/// </summary>
+		EMQ = 8164,
+
+		/// <summary>
 		/// code of <see cref="Language.EMS"/>
 		/// </summary>
 		EMS = 2047,
@@ -9542,6 +9619,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.EMY"/>
 		/// </summary>
 		EMY = 2051,
+
+		/// <summary>
+		/// code of <see cref="Language.EMZ"/>
+		/// </summary>
+		EMZ = 8165,
 
 		/// <summary>
 		/// code of <see cref="Language.EN"/>
@@ -10032,6 +10114,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.FIE"/>
 		/// </summary>
 		FIE = 2141,
+
+		/// <summary>
+		/// code of <see cref="Language.FIF"/>
+		/// </summary>
+		FIF = 8166,
 
 		/// <summary>
 		/// code of <see cref="Language.FIL"/>
@@ -10791,6 +10878,11 @@ namespace NLanguageTag
 		GED = 2286,
 
 		/// <summary>
+		/// code of <see cref="Language.GEF"/>
+		/// </summary>
+		GEF = 8167,
+
+		/// <summary>
 		/// code of <see cref="Language.GEG"/>
 		/// </summary>
 		GEG = 2287,
@@ -11035,6 +11127,11 @@ namespace NLanguageTag
 		GIH = 2334,
 
 		/// <summary>
+		/// code of <see cref="Language.GII"/>
+		/// </summary>
+		GII = 8168,
+
+		/// <summary>
 		/// code of <see cref="Language.GIL"/>
 		/// </summary>
 		GIL = 2335,
@@ -11108,6 +11205,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.GJI"/>
 		/// </summary>
+		[Obsolete("similarly Language.GJI")]
 		GJI = 2349,
 
 		/// <summary>
@@ -11176,6 +11274,11 @@ namespace NLanguageTag
 		GL = 52,
 
 		/// <summary>
+		/// code of <see cref="Language.GLB"/>
+		/// </summary>
+		GLB = 8169,
+
+		/// <summary>
 		/// code of <see cref="Language.GLC"/>
 		/// </summary>
 		GLC = 2362,
@@ -11193,6 +11296,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.GLI"/>
 		/// </summary>
+		[Obsolete("similarly Language.GLI")]
 		GLI = 2365,
 
 		/// <summary>
@@ -11284,6 +11388,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.GMQ"/>
 		/// </summary>
 		GMQ = 2383,
+
+		/// <summary>
+		/// code of <see cref="Language.GMR"/>
+		/// </summary>
+		GMR = 8170,
 
 		/// <summary>
 		/// code of <see cref="Language.GMU"/>
@@ -12098,6 +12207,11 @@ namespace NLanguageTag
 		GYY = 2542,
 
 		/// <summary>
+		/// code of <see cref="Language.GYZ"/>
+		/// </summary>
+		GYZ = 8171,
+
+		/// <summary>
 		/// code of <see cref="Language.GZA"/>
 		/// </summary>
 		GZA = 2543,
@@ -12448,6 +12562,11 @@ namespace NLanguageTag
 		HKE = 2609,
 
 		/// <summary>
+		/// code of <see cref="Language.HKH"/>
+		/// </summary>
+		HKH = 8172,
+
+		/// <summary>
 		/// code of <see cref="Language.HKK"/>
 		/// </summary>
 		HKK = 2610,
@@ -12631,6 +12750,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.HNE"/>
 		/// </summary>
 		HNE = 2646,
+
+		/// <summary>
+		/// code of <see cref="Language.HNG"/>
+		/// </summary>
+		HNG = 8173,
 
 		/// <summary>
 		/// code of <see cref="Language.HNH"/>
@@ -14168,6 +14292,11 @@ namespace NLanguageTag
 		JBK = 2932,
 
 		/// <summary>
+		/// code of <see cref="Language.JBM"/>
+		/// </summary>
+		JBM = 8174,
+
+		/// <summary>
 		/// code of <see cref="Language.JBN"/>
 		/// </summary>
 		JBN = 2933,
@@ -14428,6 +14557,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.JKR"/>
 		/// </summary>
 		JKR = 2983,
+
+		/// <summary>
+		/// code of <see cref="Language.JKS"/>
+		/// </summary>
+		JKS = 8175,
 
 		/// <summary>
 		/// code of <see cref="Language.JKU"/>
@@ -15903,6 +16037,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.KJF"/>
 		/// </summary>
+		[Obsolete("similarly Language.KJF")]
 		KJF = 3271,
 
 		/// <summary>
@@ -17756,6 +17891,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.KXL"/>
 		/// </summary>
+		[Obsolete("similarly Language.KXL")]
 		KXL = 3630,
 
 		/// <summary>
@@ -17801,6 +17937,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.KXU"/>
 		/// </summary>
+		[Obsolete("similarly Language.KXU")]
 		KXU = 3639,
 
 		/// <summary>
@@ -19184,6 +19321,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.LMZ"/>
 		/// </summary>
+		[Obsolete("similarly Language.LMZ")]
 		LMZ = 3909,
 
 		/// <summary>
@@ -19495,6 +19633,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.LSA"/>
 		/// </summary>
 		LSA = 3969,
+
+		/// <summary>
+		/// code of <see cref="Language.LSB"/>
+		/// </summary>
+		LSB = 8176,
 
 		/// <summary>
 		/// code of <see cref="Language.LSD"/>
@@ -19816,6 +19959,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.LWW"/>
 		/// </summary>
 		LWW = 4030,
+
+		/// <summary>
+		/// code of <see cref="Language.LXM"/>
+		/// </summary>
+		LXM = 8177,
 
 		/// <summary>
 		/// code of <see cref="Language.LYA"/>
@@ -22559,6 +22707,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.MVM"/>
 		/// </summary>
+		[Obsolete("similarly Language.MVM")]
 		MVM = 4567,
 
 		/// <summary>
@@ -23871,6 +24020,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.NGO"/>
 		/// </summary>
+		[Obsolete("similarly Language.NGO")]
 		NGO = 4821,
 
 		/// <summary>
@@ -24954,6 +25104,11 @@ namespace NLanguageTag
 		NQQ = 5033,
 
 		/// <summary>
+		/// code of <see cref="Language.NQT"/>
+		/// </summary>
+		NQT = 8178,
+
+		/// <summary>
 		/// code of <see cref="Language.NQY"/>
 		/// </summary>
 		NQY = 5034,
@@ -25052,6 +25207,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.NSA"/>
 		/// </summary>
 		NSA = 5052,
+
+		/// <summary>
+		/// code of <see cref="Language.NSB"/>
+		/// </summary>
+		NSB = 8179,
 
 		/// <summary>
 		/// code of <see cref="Language.NSC"/>
@@ -25517,6 +25677,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.NXU"/>
 		/// </summary>
+		[Obsolete("similarly Language.NXU")]
 		NXU = 5144,
 
 		/// <summary>
@@ -25775,6 +25936,11 @@ namespace NLanguageTag
 		OCH = 5193,
 
 		/// <summary>
+		/// code of <see cref="Language.OCM"/>
+		/// </summary>
+		OCM = 8180,
+
+		/// <summary>
 		/// code of <see cref="Language.OCO"/>
 		/// </summary>
 		OCO = 5194,
@@ -25920,6 +26086,11 @@ namespace NLanguageTag
 		OKB = 5221,
 
 		/// <summary>
+		/// code of <see cref="Language.OKC"/>
+		/// </summary>
+		OKC = 8181,
+
+		/// <summary>
 		/// code of <see cref="Language.OKD"/>
 		/// </summary>
 		OKD = 5222,
@@ -25998,6 +26169,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.OKX"/>
 		/// </summary>
 		OKX = 5237,
+
+		/// <summary>
+		/// code of <see cref="Language.OKZ"/>
+		/// </summary>
+		OKZ = 8182,
 
 		/// <summary>
 		/// code of <see cref="Language.OLA"/>
@@ -26139,6 +26315,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.OMX"/>
 		/// </summary>
 		OMX = 5264,
+
+		/// <summary>
+		/// code of <see cref="Language.OMY"/>
+		/// </summary>
+		OMY = 8183,
 
 		/// <summary>
 		/// code of <see cref="Language.ONA"/>
@@ -26379,6 +26560,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.OSI"/>
 		/// </summary>
 		OSI = 5310,
+
+		/// <summary>
+		/// code of <see cref="Language.OSN"/>
+		/// </summary>
+		OSN = 8184,
 
 		/// <summary>
 		/// code of <see cref="Language.OSO"/>
@@ -26664,6 +26850,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.PAT"/>
 		/// </summary>
+		[Obsolete("similarly Language.PAT")]
 		PAT = 5366,
 
 		/// <summary>
@@ -27427,6 +27614,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.PLP"/>
 		/// </summary>
+		[Obsolete("similarly Language.PLP")]
 		PLP = 5516,
 
 		/// <summary>
@@ -29473,6 +29661,11 @@ namespace NLanguageTag
 		RWK = 5914,
 
 		/// <summary>
+		/// code of <see cref="Language.RWL"/>
+		/// </summary>
+		RWL = 8185,
+
+		/// <summary>
 		/// code of <see cref="Language.RWM"/>
 		/// </summary>
 		RWM = 5915,
@@ -29932,6 +30125,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.SDM"/>
 		/// </summary>
+		[Obsolete("similarly Language.SDM")]
 		SDM = 6003,
 
 		/// <summary>
@@ -29948,6 +30142,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.SDP"/>
 		/// </summary>
 		SDP = 6006,
+
+		/// <summary>
+		/// code of <see cref="Language.SDQ"/>
+		/// </summary>
+		SDQ = 8186,
 
 		/// <summary>
 		/// code of <see cref="Language.SDR"/>
@@ -31374,6 +31573,11 @@ namespace NLanguageTag
 		SQU = 6280,
 
 		/// <summary>
+		/// code of <see cref="Language.SQX"/>
+		/// </summary>
+		SQX = 8187,
+
+		/// <summary>
 		/// code of <see cref="Language.SR"/>
 		/// </summary>
 		SR = 156,
@@ -31799,6 +32003,11 @@ namespace NLanguageTag
 		/// </summary>
 		[Obsolete("similarly Language.SUM")]
 		SUM = 6361,
+
+		/// <summary>
+		/// code of <see cref="Language.SUO"/>
+		/// </summary>
+		SUO = 8188,
 
 		/// <summary>
 		/// code of <see cref="Language.SUQ"/>
@@ -32344,6 +32553,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.TBB"/>
 		/// </summary>
+		[Obsolete("similarly Language.TBB")]
 		TBB = 6467,
 
 		/// <summary>
@@ -33062,6 +33272,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.THW"/>
 		/// </summary>
+		[Obsolete("similarly Language.THW")]
 		THW = 6607,
 
 		/// <summary>
@@ -34890,6 +35101,11 @@ namespace NLanguageTag
 		TYX = 6960,
 
 		/// <summary>
+		/// code of <see cref="Language.TYY"/>
+		/// </summary>
+		TYY = 8189,
+
+		/// <summary>
 		/// code of <see cref="Language.TYZ"/>
 		/// </summary>
 		TYZ = 6961,
@@ -35110,6 +35326,11 @@ namespace NLanguageTag
 		UKH = 7002,
 
 		/// <summary>
+		/// code of <see cref="Language.UKI"/>
+		/// </summary>
+		UKI = 8190,
+
+		/// <summary>
 		/// code of <see cref="Language.UKK"/>
 		/// </summary>
 		UKK = 7003,
@@ -35138,6 +35359,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.UKU"/>
 		/// </summary>
 		UKU = 7008,
+
+		/// <summary>
+		/// code of <see cref="Language.UKV"/>
+		/// </summary>
+		UKV = 8191,
 
 		/// <summary>
 		/// code of <see cref="Language.UKW"/>
@@ -35293,6 +35519,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.UNG"/>
 		/// </summary>
 		UNG = 7039,
+
+		/// <summary>
+		/// code of <see cref="Language.UNI"/>
+		/// </summary>
+		UNI = 8192,
 
 		/// <summary>
 		/// code of <see cref="Language.UNK"/>
@@ -35799,6 +36030,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.VKI"/>
 		/// </summary>
+		[Obsolete("similarly Language.VKI")]
 		VKI = 7136,
 
 		/// <summary>
@@ -35822,6 +36054,11 @@ namespace NLanguageTag
 		VKM = 7140,
 
 		/// <summary>
+		/// code of <see cref="Language.VKN"/>
+		/// </summary>
+		VKN = 8193,
+
+		/// <summary>
 		/// code of <see cref="Language.VKO"/>
 		/// </summary>
 		VKO = 7141,
@@ -35840,6 +36077,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.VKU"/>
 		/// </summary>
 		VKU = 7144,
+
+		/// <summary>
+		/// code of <see cref="Language.VKZ"/>
+		/// </summary>
+		VKZ = 8194,
 
 		/// <summary>
 		/// code of <see cref="Language.VLP"/>
@@ -36620,6 +36862,11 @@ namespace NLanguageTag
 		WLG = 7297,
 
 		/// <summary>
+		/// code of <see cref="Language.WLH"/>
+		/// </summary>
+		WLH = 8195,
+
+		/// <summary>
 		/// code of <see cref="Language.WLI"/>
 		/// </summary>
 		WLI = 7298,
@@ -36703,6 +36950,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.WME"/>
 		/// </summary>
 		WME = 7314,
+
+		/// <summary>
+		/// code of <see cref="Language.WMG"/>
+		/// </summary>
+		WMG = 8196,
 
 		/// <summary>
 		/// code of <see cref="Language.WMH"/>
@@ -36912,6 +37164,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.WRA"/>
 		/// </summary>
+		[Obsolete("similarly Language.WRA")]
 		WRA = 7355,
 
 		/// <summary>
@@ -38075,9 +38328,19 @@ namespace NLanguageTag
 		XNI = 7585,
 
 		/// <summary>
+		/// code of <see cref="Language.XNJ"/>
+		/// </summary>
+		XNJ = 8197,
+
+		/// <summary>
 		/// code of <see cref="Language.XNK"/>
 		/// </summary>
 		XNK = 7586,
+
+		/// <summary>
+		/// code of <see cref="Language.XNM"/>
+		/// </summary>
+		XNM = 8198,
 
 		/// <summary>
 		/// code of <see cref="Language.XNN"/>
@@ -38088,6 +38351,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.XNO"/>
 		/// </summary>
 		XNO = 7588,
+
+		/// <summary>
+		/// code of <see cref="Language.XNQ"/>
+		/// </summary>
+		XNQ = 8199,
 
 		/// <summary>
 		/// code of <see cref="Language.XNR"/>
@@ -38180,9 +38448,19 @@ namespace NLanguageTag
 		XPA = 7606,
 
 		/// <summary>
+		/// code of <see cref="Language.XPB"/>
+		/// </summary>
+		XPB = 8200,
+
+		/// <summary>
 		/// code of <see cref="Language.XPC"/>
 		/// </summary>
 		XPC = 7607,
+
+		/// <summary>
+		/// code of <see cref="Language.XPD"/>
+		/// </summary>
+		XPD = 8201,
 
 		/// <summary>
 		/// code of <see cref="Language.XPE"/>
@@ -38190,9 +38468,19 @@ namespace NLanguageTag
 		XPE = 7608,
 
 		/// <summary>
+		/// code of <see cref="Language.XPF"/>
+		/// </summary>
+		XPF = 8202,
+
+		/// <summary>
 		/// code of <see cref="Language.XPG"/>
 		/// </summary>
 		XPG = 7609,
+
+		/// <summary>
+		/// code of <see cref="Language.XPH"/>
+		/// </summary>
+		XPH = 8203,
 
 		/// <summary>
 		/// code of <see cref="Language.XPI"/>
@@ -38208,6 +38496,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.XPK"/>
 		/// </summary>
 		XPK = 7612,
+
+		/// <summary>
+		/// code of <see cref="Language.XPL"/>
+		/// </summary>
+		XPL = 8204,
 
 		/// <summary>
 		/// code of <see cref="Language.XPM"/>
@@ -38255,9 +38548,29 @@ namespace NLanguageTag
 		XPU = 7621,
 
 		/// <summary>
+		/// code of <see cref="Language.XPV"/>
+		/// </summary>
+		XPV = 8205,
+
+		/// <summary>
+		/// code of <see cref="Language.XPW"/>
+		/// </summary>
+		XPW = 8206,
+
+		/// <summary>
+		/// code of <see cref="Language.XPX"/>
+		/// </summary>
+		XPX = 8207,
+
+		/// <summary>
 		/// code of <see cref="Language.XPY"/>
 		/// </summary>
 		XPY = 7622,
+
+		/// <summary>
+		/// code of <see cref="Language.XPZ"/>
+		/// </summary>
+		XPZ = 8208,
 
 		/// <summary>
 		/// code of <see cref="Language.XQA"/>
@@ -38312,6 +38625,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.XRQ"/>
 		/// </summary>
+		[Obsolete("similarly Language.XRQ")]
 		XRQ = 7633,
 
 		/// <summary>
@@ -38542,6 +38856,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.XTZ"/>
 		/// </summary>
+		[Obsolete("similarly Language.XTZ")]
 		XTZ = 7679,
 
 		/// <summary>
@@ -39734,6 +40049,11 @@ namespace NLanguageTag
 		YSL = 7913,
 
 		/// <summary>
+		/// code of <see cref="Language.YSM"/>
+		/// </summary>
+		YSM = 8209,
+
+		/// <summary>
 		/// code of <see cref="Language.YSN"/>
 		/// </summary>
 		YSN = 7914,
@@ -40140,6 +40460,11 @@ namespace NLanguageTag
 		ZAZ = 7993,
 
 		/// <summary>
+		/// code of <see cref="Language.ZBA"/>
+		/// </summary>
+		ZBA = 8210,
+
+		/// <summary>
 		/// code of <see cref="Language.ZBC"/>
 		/// </summary>
 		ZBC = 7994,
@@ -40158,6 +40483,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.ZBT"/>
 		/// </summary>
 		ZBT = 7997,
+
+		/// <summary>
+		/// code of <see cref="Language.ZBU"/>
+		/// </summary>
+		ZBU = 8211,
 
 		/// <summary>
 		/// code of <see cref="Language.ZBW"/>
@@ -40297,6 +40627,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.ZIR"/>
 		/// </summary>
+		[Obsolete("similarly Language.ZIR")]
 		ZIR = 8024,
 
 		/// <summary>
@@ -40378,6 +40709,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.ZKZ"/>
 		/// </summary>
 		ZKZ = 8040,
+
+		/// <summary>
+		/// code of <see cref="Language.ZLA"/>
+		/// </summary>
+		ZLA = 8212,
 
 		/// <summary>
 		/// code of <see cref="Language.ZLE"/>

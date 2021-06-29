@@ -172,6 +172,19 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Arcaicam Esperantom
+		/// Arkaika Esperanto
+		/// Archaic Esperanto variant devised by Manuel Halvelik
+		/// added: 2020-12-17
+		/// </summary>
+		public static Variant Arkaika => ArkaikaCache.Instance;
+
+		private static class ArkaikaCache
+		{
+			public static readonly Variant Instance = new Variant("arkaika", VariantCode.Arkaika, new string[] { "eo" }, false);
+		}
+
+		/// <summary>
 		/// Asante Twi
 		/// Ashanti Twi
 		/// added: 2017-06-05
@@ -472,7 +485,7 @@ namespace NLanguageTag
 
 		private static class GrclassCache
 		{
-			public static readonly Variant Instance = new Variant("grclass", VariantCode.Grclass, new string[] { "oc" }, false);
+			public static readonly Variant Instance = new Variant("grclass", VariantCode.Grclass, new string[] { "oc", "oc-aranes", "oc-auvern", "oc-cisaup", "oc-creiss", "oc-gascon", "oc-lemosin", "oc-lengadoc", "oc-nicard", "oc-provenc", "oc-vivaraup" }, false);
 		}
 
 		/// <summary>
@@ -483,7 +496,7 @@ namespace NLanguageTag
 
 		private static class GritalCache
 		{
-			public static readonly Variant Instance = new Variant("grital", VariantCode.Grital, new string[] { "oc" }, false);
+			public static readonly Variant Instance = new Variant("grital", VariantCode.Grital, new string[] { "oc", "oc-cisaup", "oc-nicard", "oc-provenc" }, false);
 		}
 
 		/// <summary>
@@ -495,7 +508,7 @@ namespace NLanguageTag
 
 		private static class GrmistrCache
 		{
-			public static readonly Variant Instance = new Variant("grmistr", VariantCode.Grmistr, new string[] { "oc" }, false);
+			public static readonly Variant Instance = new Variant("grmistr", VariantCode.Grmistr, new string[] { "oc", "oc-aranes", "oc-auvern", "oc-cisaup", "oc-creiss", "oc-gascon", "oc-lemosin", "oc-lengadoc", "oc-nicard", "oc-provenc", "oc-vivaraup" }, false);
 		}
 
 		/// <summary>
@@ -869,6 +882,20 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Latino Sine Flexione
+		/// Interlingua de API
+		/// Interlingua de Peano
+		/// Peano’s Interlingua, created in 1903 by Giuseppe Peano as an international auxiliary language
+		/// added: 2020-03-12
+		/// </summary>
+		public static Variant Peano => PeanoCache.Instance;
+
+		private static class PeanoCache
+		{
+			public static readonly Variant Instance = new Variant("peano", VariantCode.Peano, new string[] { "la" }, false);
+		}
+
+		/// <summary>
 		/// Petrine orthography
 		/// Russian orthography from the Petrine orthographic reforms of 1708 to the 1917 orthographic reform
 		/// added: 2010-10-10
@@ -1085,6 +1112,32 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Tongyong Pinyin romanization
+		/// Former official transcription standard for Mandarin Chinese in Taiwan.
+		/// added: 2020-06-08
+		/// </summary>
+		public static Variant Tongyong => TongyongCache.Instance;
+
+		private static class TongyongCache
+		{
+			public static readonly Variant Instance = new Variant("tongyong", VariantCode.Tongyong, new string[] { "zh-Latn" }, false);
+		}
+
+		/// <summary>
+		/// Tunumiisiut
+		/// East Greenlandic
+		/// Østgrønlandsk
+		/// Also known as Tunumiit oraasiat
+		/// added: 2020-07-16
+		/// </summary>
+		public static Variant Tunumiit => TunumiitCache.Instance;
+
+		private static class TunumiitCache
+		{
+			public static readonly Variant Instance = new Variant("tunumiit", VariantCode.Tunumiit, new string[] { "kl" }, false);
+		}
+
+		/// <summary>
 		/// Unified Cornish orthography of Revived Cornish
 		/// added: 2008-10-14
 		/// </summary>
@@ -1162,6 +1215,18 @@ namespace NLanguageTag
 		private static class ValladerCache
 		{
 			public static readonly Variant Instance = new Variant("vallader", VariantCode.Vallader, new string[] { "rm" }, false);
+		}
+
+		/// <summary>
+		/// Latvian orthography used before 1920s ("vecā druka")
+		/// The subtag represents the old orthography of the Latvian language used during c. 1600s–1920s.
+		/// added: 2020-09-26
+		/// </summary>
+		public static Variant Vecdruka => VecdrukaCache.Instance;
+
+		private static class VecdrukaCache
+		{
+			public static readonly Variant Instance = new Variant("vecdruka", VariantCode.Vecdruka, new string[] { "lv" }, false);
 		}
 
 		/// <summary>

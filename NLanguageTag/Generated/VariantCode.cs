@@ -78,6 +78,11 @@ namespace NLanguageTag
 		Arevmda = 14,
 
 		/// <summary>
+		/// code of <see cref="Variant.Arkaika"/>
+		/// </summary>
+		Arkaika = 102,
+
+		/// <summary>
 		/// code of <see cref="Variant.Asante"/>
 		/// </summary>
 		Asante = 15,
@@ -373,6 +378,11 @@ namespace NLanguageTag
 		Pamaka = 73,
 
 		/// <summary>
+		/// code of <see cref="Variant.Peano"/>
+		/// </summary>
+		Peano = 103,
+
+		/// <summary>
 		/// code of <see cref="Variant.Petr1708"/>
 		/// </summary>
 		Petr1708 = 74,
@@ -463,6 +473,16 @@ namespace NLanguageTag
 		Tarask = 91,
 
 		/// <summary>
+		/// code of <see cref="Variant.Tongyong"/>
+		/// </summary>
+		Tongyong = 104,
+
+		/// <summary>
+		/// code of <see cref="Variant.Tunumiit"/>
+		/// </summary>
+		Tunumiit = 105,
+
+		/// <summary>
 		/// code of <see cref="Variant.Uccor"/>
 		/// </summary>
 		Uccor = 92,
@@ -496,6 +516,11 @@ namespace NLanguageTag
 		/// code of <see cref="Variant.Vallader"/>
 		/// </summary>
 		Vallader = 98,
+
+		/// <summary>
+		/// code of <see cref="Variant.Vecdruka"/>
+		/// </summary>
+		Vecdruka = 106,
 
 		/// <summary>
 		/// code of <see cref="Variant.Vivaraup"/>
