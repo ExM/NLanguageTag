@@ -52,6 +52,7 @@ namespace NLanguageTag
 				case VariantCode.Fonnapa: return FonnapaCache.Instance;
 				case VariantCode.Fonupa: return FonupaCache.Instance;
 				case VariantCode.Fonxsamp: return FonxsampCache.Instance;
+				case VariantCode.Gallo: return GalloCache.Instance;
 				case VariantCode.Gascon: return GasconCache.Instance;
 				case VariantCode.Grclass: return GrclassCache.Instance;
 				case VariantCode.Grital: return GritalCache.Instance;
@@ -105,6 +106,7 @@ namespace NLanguageTag
 				case VariantCode.Surmiran: return SurmiranCache.Instance;
 				case VariantCode.Sursilv: return SursilvCache.Instance;
 				case VariantCode.Sutsilv: return SutsilvCache.Instance;
+				case VariantCode.Synnejyl: return SynnejylCache.Instance;
 				case VariantCode.Tarask: return TaraskCache.Instance;
 				case VariantCode.Tongyong: return TongyongCache.Instance;
 				case VariantCode.Tunumiit: return TunumiitCache.Instance;

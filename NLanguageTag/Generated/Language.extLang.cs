@@ -255,6 +255,7 @@ namespace NLanguageTag
 				case 'd': return tryParseFromExtLanguage_SGN_L3_ad(span);
 				case 'e': return tryParseFromExtLanguage_SGN_L3_ae(span);
 				case 'f': return tryParseFromExtLanguage_SGN_L3_af(span);
+				case 'j': return tryParseFromExtLanguage_SGN_L3_aj(span);
 				case 's': return tryParseFromExtLanguage_SGN_L3_as(span);
 				default: return null;
 			}
@@ -281,6 +282,13 @@ namespace NLanguageTag
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'g')
 				return Language.AFG;
+			return null;
+		}
+		
+		private static Language? tryParseFromExtLanguage_SGN_L3_aj(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[2]) == 's')
+				return Language.AJS;
 			return null;
 		}
 		
@@ -409,6 +417,7 @@ namespace NLanguageTag
 			{
 				case 'e': return Language.DSE;
 				case 'l': return Language.DSL;
+				case 'z': return Language.DSZ;
 				default: return null;
 			}
 		}
@@ -758,6 +767,7 @@ namespace NLanguageTag
 			switch(span[2])
 			{
 				case 'b': return Language.LSB;
+				case 'c': return Language.LSC;
 				case 'g': return Language.LSG;
 				case 'l': return Language.LSL;
 				case 'n': return Language.LSN;
@@ -765,6 +775,7 @@ namespace NLanguageTag
 				case 'p': return Language.LSP;
 				case 't': return Language.LST;
 				case 'v': return Language.LSV;
+				case 'w': return Language.LSW;
 				case 'y': return Language.LSY;
 				default: return null;
 			}
@@ -954,16 +965,32 @@ namespace NLanguageTag
 		{
 			switch(span[1])
 			{
+				case 'i': return tryParseFromExtLanguage_SGN_L3_ri(span);
 				case 'm': return tryParseFromExtLanguage_SGN_L3_rm(span);
+				case 'n': return tryParseFromExtLanguage_SGN_L3_rn(span);
 				case 's': return tryParseFromExtLanguage_SGN_L3_rs(span);
 				default: return null;
 			}
+		}
+		
+		private static Language? tryParseFromExtLanguage_SGN_L3_ri(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[2]) == 'b')
+				return Language.RIB;
+			return null;
 		}
 		
 		private static Language? tryParseFromExtLanguage_SGN_L3_rm(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 's')
 				return Language.RMS;
+			return null;
+		}
+		
+		private static Language? tryParseFromExtLanguage_SGN_L3_rn(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[2]) == 'b')
+				return Language.RNB;
 			return null;
 		}
 		
@@ -974,6 +1001,7 @@ namespace NLanguageTag
 				case 'i': return Language.RSI;
 				case 'l': return Language.RSL;
 				case 'm': return Language.RSM;
+				case 'n': return Language.RSN;
 				default: return null;
 			}
 		}

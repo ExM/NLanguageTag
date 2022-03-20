@@ -858,6 +858,17 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Kawi
+		/// added: 2021-12-24
+		/// </summary>
+		public static Script Kawi => KawiCache.Instance;
+
+		private static class KawiCache
+		{
+			public static readonly Script Instance = new Script("Kawi", ScriptCode.Kawi);
+		}
+
+		/// <summary>
 		/// Kharoshthi
 		/// added: 2005-10-16
 		/// </summary>
@@ -1320,6 +1331,17 @@ namespace NLanguageTag
 		private static class MymrCache
 		{
 			public static readonly Script Instance = new Script("Mymr", ScriptCode.Mymr);
+		}
+
+		/// <summary>
+		/// Nag Mundari
+		/// added: 2021-12-24
+		/// </summary>
+		public static Script Nagm => NagmCache.Instance;
+
+		private static class NagmCache
+		{
+			public static readonly Script Instance = new Script("Nagm", ScriptCode.Nagm);
 		}
 
 		/// <summary>
@@ -1893,6 +1915,17 @@ namespace NLanguageTag
 		private static class SundCache
 		{
 			public static readonly Script Instance = new Script("Sund", ScriptCode.Sund);
+		}
+
+		/// <summary>
+		/// Sunuwar
+		/// added: 2021-12-24
+		/// </summary>
+		public static Script Sunu => SunuCache.Instance;
+
+		private static class SunuCache
+		{
+			public static readonly Script Instance = new Script("Sunu", ScriptCode.Sunu);
 		}
 
 		/// <summary>

@@ -68,6 +68,7 @@ namespace NLanguageTag
 				case 'a': return tryParse_L5_a(span);
 				case 'b': return tryParse_L5_b(span);
 				case 'c': return tryParse_L5_c(span);
+				case 'g': return tryParse_L5_g(span);
 				case 'j': return tryParse_L5_j(span);
 				case 'k': return tryParse_L5_k(span);
 				case 'l': return tryParse_L5_l(span);
@@ -208,6 +209,34 @@ namespace NLanguageTag
 		{
 			if(Char.ToLowerInvariant(span[4]) == 'u')
 				return CornuCache.Instance;
+			return null;
+		}
+		
+		private static Variant? tryParse_L5_g(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[1]) == 'a')
+				return tryParse_L5_ga(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L5_ga(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[2]) == 'l')
+				return tryParse_L5_gal(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L5_gal(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[3]) == 'l')
+				return tryParse_L5_gall(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L5_gall(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[4]) == 'o')
+				return GalloCache.Instance;
 			return null;
 		}
 		
@@ -3343,6 +3372,7 @@ namespace NLanguageTag
 				case 'c': return tryParse_L8_sc(span);
 				case 'p': return tryParse_L8_sp(span);
 				case 'u': return tryParse_L8_su(span);
+				case 'y': return tryParse_L8_sy(span);
 				default: return null;
 			}
 		}
@@ -3470,6 +3500,48 @@ namespace NLanguageTag
 		{
 			if(Char.ToLowerInvariant(span[7]) == 'n')
 				return SurmiranCache.Instance;
+			return null;
+		}
+		
+		private static Variant? tryParse_L8_sy(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[2]) == 'n')
+				return tryParse_L8_syn(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L8_syn(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[3]) == 'n')
+				return tryParse_L8_synn(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L8_synn(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[4]) == 'e')
+				return tryParse_L8_synne(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L8_synne(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[5]) == 'j')
+				return tryParse_L8_synnej(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L8_synnej(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[6]) == 'y')
+				return tryParse_L8_synnejy(span);
+			return null;
+		}
+		
+		private static Variant? tryParse_L8_synnejy(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[7]) == 'l')
+				return SynnejylCache.Instance;
 			return null;
 		}
 		

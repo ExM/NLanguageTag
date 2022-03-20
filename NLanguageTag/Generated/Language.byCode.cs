@@ -208,6 +208,7 @@ namespace NLanguageTag
 				case LanguageCode.AJI: return AJICache.Instance;
 				case LanguageCode.AJN: return AJNCache.Instance;
 				case LanguageCode.AJP: return AJPCache.Instance;
+				case LanguageCode.AJS: return AJSCache.Instance;
 				case LanguageCode.AJT: return AJTCache.Instance;
 				case LanguageCode.AJU: return AJUCache.Instance;
 				case LanguageCode.AJW: return AJWCache.Instance;
@@ -928,6 +929,7 @@ namespace NLanguageTag
 				case LanguageCode.BOZ: return BOZCache.Instance;
 				case LanguageCode.BPA: return BPACache.Instance;
 				case LanguageCode.BPB: return BPBCache.Instance;
+				case LanguageCode.BPC: return BPCCache.Instance;
 				case LanguageCode.BPD: return BPDCache.Instance;
 				case LanguageCode.BPE: return BPECache.Instance;
 				case LanguageCode.BPG: return BPGCache.Instance;
@@ -1397,6 +1399,7 @@ namespace NLanguageTag
 				case LanguageCode.CNL: return CNLCache.Instance;
 				case LanguageCode.CNO: return CNOCache.Instance;
 				case LanguageCode.CNP: return CNPCache.Instance;
+				case LanguageCode.CNQ: return CNQCache.Instance;
 				case LanguageCode.CNR: return CNRCache.Instance;
 				case LanguageCode.CNS: return CNSCache.Instance;
 				case LanguageCode.CNT: return CNTCache.Instance;
@@ -1792,6 +1795,7 @@ namespace NLanguageTag
 				case LanguageCode.DSN: return DSNCache.Instance;
 				case LanguageCode.DSO: return DSOCache.Instance;
 				case LanguageCode.DSQ: return DSQCache.Instance;
+				case LanguageCode.DSZ: return DSZCache.Instance;
 				case LanguageCode.DTA: return DTACache.Instance;
 				case LanguageCode.DTB: return DTBCache.Instance;
 				case LanguageCode.DTD: return DTDCache.Instance;
@@ -1877,6 +1881,7 @@ namespace NLanguageTag
 				case LanguageCode.EFI: return EFICache.Instance;
 				case LanguageCode.EGA: return EGACache.Instance;
 				case LanguageCode.EGL: return EGLCache.Instance;
+				case LanguageCode.EGM: return EGMCache.Instance;
 				case LanguageCode.EGO: return EGOCache.Instance;
 				case LanguageCode.EGX: return EGXCache.Instance;
 				case LanguageCode.EGY: return EGYCache.Instance;
@@ -2325,6 +2330,7 @@ namespace NLanguageTag
 				case LanguageCode.GOS: return GOSCache.Instance;
 				case LanguageCode.GOT: return GOTCache.Instance;
 				case LanguageCode.GOU: return GOUCache.Instance;
+				case LanguageCode.GOV: return GOVCache.Instance;
 				case LanguageCode.GOW: return GOWCache.Instance;
 				case LanguageCode.GOX: return GOXCache.Instance;
 				case LanguageCode.GOY: return GOYCache.Instance;
@@ -2742,6 +2748,7 @@ namespace NLanguageTag
 				case LanguageCode.IMO: return IMOCache.Instance;
 				case LanguageCode.IMR: return IMRCache.Instance;
 				case LanguageCode.IMS: return IMSCache.Instance;
+				case LanguageCode.IMT: return IMTCache.Instance;
 				case LanguageCode.IMY: return IMYCache.Instance;
 				case LanguageCode.IN: return INCache.Instance;
 				case LanguageCode.INB: return INBCache.Instance;
@@ -3748,6 +3755,7 @@ namespace NLanguageTag
 				case LanguageCode.LGL: return LGLCache.Instance;
 				case LanguageCode.LGM: return LGMCache.Instance;
 				case LanguageCode.LGN: return LGNCache.Instance;
+				case LanguageCode.LGO: return LGOCache.Instance;
 				case LanguageCode.LGQ: return LGQCache.Instance;
 				case LanguageCode.LGR: return LGRCache.Instance;
 				case LanguageCode.LGT: return LGTCache.Instance;
@@ -3902,6 +3910,7 @@ namespace NLanguageTag
 				case LanguageCode.LPN: return LPNCache.Instance;
 				case LanguageCode.LPO: return LPOCache.Instance;
 				case LanguageCode.LPX: return LPXCache.Instance;
+				case LanguageCode.LQR: return LQRCache.Instance;
 				case LanguageCode.LRA: return LRACache.Instance;
 				case LanguageCode.LRC: return LRCCache.Instance;
 				case LanguageCode.LRE: return LRECache.Instance;
@@ -3918,6 +3927,7 @@ namespace NLanguageTag
 				case LanguageCode.LRZ: return LRZCache.Instance;
 				case LanguageCode.LSA: return LSACache.Instance;
 				case LanguageCode.LSB: return LSBCache.Instance;
+				case LanguageCode.LSC: return LSCCache.Instance;
 				case LanguageCode.LSD: return LSDCache.Instance;
 				case LanguageCode.LSE: return LSECache.Instance;
 				case LanguageCode.LSG: return LSGCache.Instance;
@@ -3932,6 +3942,7 @@ namespace NLanguageTag
 				case LanguageCode.LSS: return LSSCache.Instance;
 				case LanguageCode.LST: return LSTCache.Instance;
 				case LanguageCode.LSV: return LSVCache.Instance;
+				case LanguageCode.LSW: return LSWCache.Instance;
 				case LanguageCode.LSY: return LSYCache.Instance;
 				case LanguageCode.LT: return LTCache.Instance;
 				case LanguageCode.LTC: return LTCCache.Instance;
@@ -5105,6 +5116,7 @@ namespace NLanguageTag
 				case LanguageCode.NWM: return NWMCache.Instance;
 				case LanguageCode.NWO: return NWOCache.Instance;
 				case LanguageCode.NWR: return NWRCache.Instance;
+				case LanguageCode.NWW: return NWWCache.Instance;
 				case LanguageCode.NWX: return NWXCache.Instance;
 				case LanguageCode.NWY: return NWYCache.Instance;
 				case LanguageCode.NXA: return NXACache.Instance;
@@ -5190,6 +5202,7 @@ namespace NLanguageTag
 				case LanguageCode.OHT: return OHTCache.Instance;
 				case LanguageCode.OHU: return OHUCache.Instance;
 				case LanguageCode.OIA: return OIACache.Instance;
+				case LanguageCode.OIE: return OIECache.Instance;
 				case LanguageCode.OIN: return OINCache.Instance;
 				case LanguageCode.OJ: return OJCache.Instance;
 				case LanguageCode.OJB: return OJBCache.Instance;
@@ -5442,6 +5455,7 @@ namespace NLanguageTag
 				case LanguageCode.PHG: return PHGCache.Instance;
 				case LanguageCode.PHH: return PHHCache.Instance;
 				case LanguageCode.PHI: return PHICache.Instance;
+				case LanguageCode.PHJ: return PHJCache.Instance;
 				case LanguageCode.PHK: return PHKCache.Instance;
 				case LanguageCode.PHL: return PHLCache.Instance;
 				case LanguageCode.PHM: return PHMCache.Instance;
@@ -5697,6 +5711,7 @@ namespace NLanguageTag
 				case LanguageCode.PYU: return PYUCache.Instance;
 				case LanguageCode.PYX: return PYXCache.Instance;
 				case LanguageCode.PYY: return PYYCache.Instance;
+				case LanguageCode.PZH: return PZHCache.Instance;
 				case LanguageCode.PZN: return PZNCache.Instance;
 				case LanguageCode.QU: return QUCache.Instance;
 				case LanguageCode.QUA: return QUACache.Instance;
@@ -5811,6 +5826,7 @@ namespace NLanguageTag
 				case LanguageCode.RHG: return RHGCache.Instance;
 				case LanguageCode.RHP: return RHPCache.Instance;
 				case LanguageCode.RIA: return RIACache.Instance;
+				case LanguageCode.RIB: return RIBCache.Instance;
 				case LanguageCode.RIE: return RIECache.Instance;
 				case LanguageCode.RIF: return RIFCache.Instance;
 				case LanguageCode.RIL: return RILCache.Instance;
@@ -5857,6 +5873,7 @@ namespace NLanguageTag
 				case LanguageCode.RMZ: return RMZCache.Instance;
 				case LanguageCode.RN: return RNCache.Instance;
 				case LanguageCode.RNA: return RNACache.Instance;
+				case LanguageCode.RNB: return RNBCache.Instance;
 				case LanguageCode.RND: return RNDCache.Instance;
 				case LanguageCode.RNG: return RNGCache.Instance;
 				case LanguageCode.RNL: return RNLCache.Instance;
@@ -5886,8 +5903,10 @@ namespace NLanguageTag
 				case LanguageCode.RRT: return RRTCache.Instance;
 				case LanguageCode.RSB: return RSBCache.Instance;
 				case LanguageCode.RSI: return RSICache.Instance;
+				case LanguageCode.RSK: return RSKCache.Instance;
 				case LanguageCode.RSL: return RSLCache.Instance;
 				case LanguageCode.RSM: return RSMCache.Instance;
+				case LanguageCode.RSN: return RSNCache.Instance;
 				case LanguageCode.RTC: return RTCCache.Instance;
 				case LanguageCode.RTH: return RTHCache.Instance;
 				case LanguageCode.RTM: return RTMCache.Instance;
@@ -6779,6 +6798,7 @@ namespace NLanguageTag
 				case LanguageCode.TOH: return TOHCache.Instance;
 				case LanguageCode.TOI: return TOICache.Instance;
 				case LanguageCode.TOJ: return TOJCache.Instance;
+				case LanguageCode.TOK: return TOKCache.Instance;
 				case LanguageCode.TOL: return TOLCache.Instance;
 				case LanguageCode.TOM: return TOMCache.Instance;
 				case LanguageCode.TOO: return TOOCache.Instance;
@@ -7028,6 +7048,7 @@ namespace NLanguageTag
 				case LanguageCode.UGA: return UGACache.Instance;
 				case LanguageCode.UGB: return UGBCache.Instance;
 				case LanguageCode.UGE: return UGECache.Instance;
+				case LanguageCode.UGH: return UGHCache.Instance;
 				case LanguageCode.UGN: return UGNCache.Instance;
 				case LanguageCode.UGO: return UGOCache.Instance;
 				case LanguageCode.UGY: return UGYCache.Instance;
@@ -7089,6 +7110,7 @@ namespace NLanguageTag
 				case LanguageCode.UNX: return UNXCache.Instance;
 				case LanguageCode.UNZ: return UNZCache.Instance;
 				case LanguageCode.UOK: return UOKCache.Instance;
+				case LanguageCode.UON: return UONCache.Instance;
 				case LanguageCode.UPI: return UPICache.Instance;
 				case LanguageCode.UPV: return UPVCache.Instance;
 				case LanguageCode.UR: return URCache.Instance;
@@ -7284,6 +7306,7 @@ namespace NLanguageTag
 				case LanguageCode.WDG: return WDGCache.Instance;
 				case LanguageCode.WDJ: return WDJCache.Instance;
 				case LanguageCode.WDK: return WDKCache.Instance;
+				case LanguageCode.WDT: return WDTCache.Instance;
 				case LanguageCode.WDU: return WDUCache.Instance;
 				case LanguageCode.WDY: return WDYCache.Instance;
 				case LanguageCode.WEA: return WEACache.Instance;
@@ -7464,6 +7487,7 @@ namespace NLanguageTag
 				case LanguageCode.WYB: return WYBCache.Instance;
 				case LanguageCode.WYI: return WYICache.Instance;
 				case LanguageCode.WYM: return WYMCache.Instance;
+				case LanguageCode.WYN: return WYNCache.Instance;
 				case LanguageCode.WYR: return WYRCache.Instance;
 				case LanguageCode.WYY: return WYYCache.Instance;
 				case LanguageCode.XAA: return XAACache.Instance;
@@ -7524,6 +7548,7 @@ namespace NLanguageTag
 				case LanguageCode.XDK: return XDKCache.Instance;
 				case LanguageCode.XDM: return XDMCache.Instance;
 				case LanguageCode.XDO: return XDOCache.Instance;
+				case LanguageCode.XDQ: return XDQCache.Instance;
 				case LanguageCode.XDY: return XDYCache.Instance;
 				case LanguageCode.XEB: return XEBCache.Instance;
 				case LanguageCode.XED: return XEDCache.Instance;
@@ -7553,6 +7578,7 @@ namespace NLanguageTag
 				case LanguageCode.XHC: return XHCCache.Instance;
 				case LanguageCode.XHD: return XHDCache.Instance;
 				case LanguageCode.XHE: return XHECache.Instance;
+				case LanguageCode.XHM: return XHMCache.Instance;
 				case LanguageCode.XHR: return XHRCache.Instance;
 				case LanguageCode.XHT: return XHTCache.Instance;
 				case LanguageCode.XHU: return XHUCache.Instance;
@@ -8070,6 +8096,7 @@ namespace NLanguageTag
 				case LanguageCode.ZBU: return ZBUCache.Instance;
 				case LanguageCode.ZBW: return ZBWCache.Instance;
 				case LanguageCode.ZCA: return ZCACache.Instance;
+				case LanguageCode.ZCD: return ZCDCache.Instance;
 				case LanguageCode.ZCH: return ZCHCache.Instance;
 				case LanguageCode.ZDJ: return ZDJCache.Instance;
 				case LanguageCode.ZEA: return ZEACache.Instance;

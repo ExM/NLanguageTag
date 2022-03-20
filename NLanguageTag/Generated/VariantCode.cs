@@ -203,6 +203,11 @@ namespace NLanguageTag
 		Fonxsamp = 38,
 
 		/// <summary>
+		/// code of <see cref="Variant.Gallo"/>
+		/// </summary>
+		Gallo = 107,
+
+		/// <summary>
 		/// code of <see cref="Variant.Gascon"/>
 		/// </summary>
 		Gascon = 39,
@@ -466,6 +471,11 @@ namespace NLanguageTag
 		/// code of <see cref="Variant.Sutsilv"/>
 		/// </summary>
 		Sutsilv = 90,
+
+		/// <summary>
+		/// code of <see cref="Variant.Synnejyl"/>
+		/// </summary>
+		Synnejyl = 108,
 
 		/// <summary>
 		/// code of <see cref="Variant.Tarask"/>

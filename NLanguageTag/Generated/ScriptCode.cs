@@ -393,6 +393,11 @@ namespace NLanguageTag
 		Kana = 76,
 
 		/// <summary>
+		/// code of <see cref="Script.Kawi"/>
+		/// </summary>
+		Kawi = 209,
+
+		/// <summary>
 		/// code of <see cref="Script.Khar"/>
 		/// </summary>
 		Khar = 77,
@@ -596,6 +601,11 @@ namespace NLanguageTag
 		/// code of <see cref="Script.Mymr"/>
 		/// </summary>
 		Mymr = 117,
+
+		/// <summary>
+		/// code of <see cref="Script.Nagm"/>
+		/// </summary>
+		Nagm = 210,
 
 		/// <summary>
 		/// code of <see cref="Script.Nand"/>
@@ -846,6 +856,11 @@ namespace NLanguageTag
 		/// code of <see cref="Script.Sund"/>
 		/// </summary>
 		Sund = 162,
+
+		/// <summary>
+		/// code of <see cref="Script.Sunu"/>
+		/// </summary>
+		Sunu = 211,
 
 		/// <summary>
 		/// code of <see cref="Script.Sylo"/>

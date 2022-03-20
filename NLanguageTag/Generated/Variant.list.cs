@@ -465,6 +465,17 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Gallo
+		/// added: 2021-08-05
+		/// </summary>
+		public static Variant Gallo => GalloCache.Instance;
+
+		private static class GalloCache
+		{
+			public static readonly Variant Instance = new Variant("gallo", VariantCode.Gallo, new string[] { "fr" }, false);
+		}
+
+		/// <summary>
 		/// Gascon
 		/// Occitan variant spoken in Gascony
 		/// added: 2018-04-22
@@ -1097,6 +1108,18 @@ namespace NLanguageTag
 		private static class SutsilvCache
 		{
 			public static readonly Variant Instance = new Variant("sutsilv", VariantCode.Sutsilv, new string[] { "rm" }, false);
+		}
+
+		/// <summary>
+		/// Synnejysk
+		/// South Jutish
+		/// added: 2021-07-17
+		/// </summary>
+		public static Variant Synnejyl => SynnejylCache.Instance;
+
+		private static class SynnejylCache
+		{
+			public static readonly Variant Instance = new Variant("synnejyl", VariantCode.Synnejyl, new string[] { "da" }, false);
 		}
 
 		/// <summary>

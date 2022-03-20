@@ -89,6 +89,7 @@ namespace NLanguageTag
 				case ScriptCode.Jurc: return JurcCache.Instance;
 				case ScriptCode.Kali: return KaliCache.Instance;
 				case ScriptCode.Kana: return KanaCache.Instance;
+				case ScriptCode.Kawi: return KawiCache.Instance;
 				case ScriptCode.Khar: return KharCache.Instance;
 				case ScriptCode.Khmr: return KhmrCache.Instance;
 				case ScriptCode.Khoj: return KhojCache.Instance;
@@ -130,6 +131,7 @@ namespace NLanguageTag
 				case ScriptCode.Mtei: return MteiCache.Instance;
 				case ScriptCode.Mult: return MultCache.Instance;
 				case ScriptCode.Mymr: return MymrCache.Instance;
+				case ScriptCode.Nagm: return NagmCache.Instance;
 				case ScriptCode.Nand: return NandCache.Instance;
 				case ScriptCode.Narb: return NarbCache.Instance;
 				case ScriptCode.Nbat: return NbatCache.Instance;
@@ -180,6 +182,7 @@ namespace NLanguageTag
 				case ScriptCode.Sora: return SoraCache.Instance;
 				case ScriptCode.Soyo: return SoyoCache.Instance;
 				case ScriptCode.Sund: return SundCache.Instance;
+				case ScriptCode.Sunu: return SunuCache.Instance;
 				case ScriptCode.Sylo: return SyloCache.Instance;
 				case ScriptCode.Syrc: return SyrcCache.Instance;
 				case ScriptCode.Syre: return SyreCache.Instance;
