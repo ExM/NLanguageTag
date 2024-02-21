@@ -14,7 +14,7 @@ namespace NLanguageTag.Tests
 			foreach (var code in Enum.GetValues(typeof(VariantCode)).Cast<VariantCode>())
 			{
 				var variant = Variant.ByCode(code);
-				Assert.AreEqual(code, variant.EnumCode);
+				Assert.That(variant.EnumCode, Is.EqualTo(code));
 			}
 		}
 
@@ -24,14 +24,14 @@ namespace NLanguageTag.Tests
 			foreach (var text in TestContent.GetVariants())
 			{
 				var variant = text.TryParseVariant();
-				Assert.NotNull(variant);
+				Assert.That(variant, Is.Not.Null);
 			}
 		}
 
 		[TestCaseSource(nameof(parseCases))]
 		public void ParseFromVariant(string text, Variant expected)
 		{
-			Assert.AreEqual(expected, text.TryParseVariant());
+			Assert.That(text.TryParseVariant(), Is.EqualTo(expected));
 		}
 
 		internal static IEnumerable<TestCaseData> parseCases()
@@ -88,20 +88,20 @@ namespace NLanguageTag.Tests
 
 			var vc5 = VariantCollection.Create(null, null, new[] { Variant.Alalc97 });
 
-			Assert.IsFalse(vc1.Equals(null));
-			Assert.IsTrue(vc1.Equals((object)vc2));
-			Assert.AreEqual(vc1, vc1);
-			Assert.AreEqual(vc1, vc2);
-			Assert.AreNotEqual(vc1, vc3);
-			Assert.AreEqual(vc3, vc3);
-			Assert.AreEqual(vc3, vc4);
-			Assert.AreNotEqual(vc4, vc5);
+			Assert.That(vc1.Equals(null), Is.False);
+			Assert.That(vc1.Equals((object)vc2), Is.True);
+			Assert.That(vc1, Is.EqualTo(vc1));
+			Assert.That(vc2, Is.EqualTo(vc1));
+			Assert.That(vc3, Is.Not.EqualTo(vc1));
+			Assert.That(vc3, Is.EqualTo(vc3));
+			Assert.That(vc4, Is.EqualTo(vc3));
+			Assert.That(vc5, Is.Not.EqualTo(vc4));
 
-			Assert.IsTrue(vc1 == vc2);
-			Assert.IsFalse(vc1 != vc2);
+			Assert.That(vc1 == vc2, Is.True);
+			Assert.That(vc1 != vc2, Is.False);
 
-			Assert.IsTrue(vc3 != vc5);
-			Assert.IsFalse(vc3 == vc5);
+			Assert.That(vc3 != vc5, Is.True);
+			Assert.That(vc3 == vc5, Is.False);
 		}
 
 		[TestCaseSource(nameof(containsCases))]

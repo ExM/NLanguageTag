@@ -14,8 +14,8 @@ namespace NLanguageTag.Tests
 			foreach (var text in TestContent.GetRegions())
 			{
 				var region = text.TryParseRegion();
-				Assert.NotNull(region);
-				Assert.IsFalse(region!.PrivateUse);
+				Assert.That(region, Is.Not.Null);
+				Assert.That(region!.PrivateUse, Is.False);
 			}
 		}
 
@@ -26,14 +26,14 @@ namespace NLanguageTag.Tests
 				.Where(_ => _ != RegionCode.PrivateUse))
 			{
 				var region = Region.ByCode(code);
-				Assert.AreEqual(code, region.EnumCode);
+				Assert.That(region.EnumCode, Is.EqualTo(code));
 			}
 		}
 
 		[TestCaseSource(nameof(parseCases))]
 		public void Parse(string text, Region expected)
 		{
-			Assert.AreEqual(expected, text.TryParseRegion());
+			Assert.That(text.TryParseRegion(), Is.EqualTo(expected));
 		}
 
 		[TestCase("XB")]
@@ -46,9 +46,9 @@ namespace NLanguageTag.Tests
 		{
 			var region = text.TryParseRegion();
 
-			Assert.IsTrue(region!.PrivateUse);
-			Assert.AreEqual(RegionCode.PrivateUse, region.EnumCode);
-			Assert.AreEqual(region, text.TryParseRegion());
+			Assert.That(region!.PrivateUse, Is.True);
+			Assert.That(region.EnumCode, Is.EqualTo(RegionCode.PrivateUse));
+			Assert.That(text.TryParseRegion(), Is.EqualTo(region));
 		}
 
 		internal static IEnumerable<TestCaseData> parseCases()

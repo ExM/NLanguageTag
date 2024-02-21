@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <IsPackable>false</IsPackable>
     <AssemblyName>NLanguageTag.SourceCodeRenderer.Tests</AssemblyName>
     <RootNamespace>NLanguageTag.SourceCodeRenderer</RootNamespace>
@@ -12,6 +12,11 @@
     <ProjectReference Include="..\SourceCodeRenderer\SourceCodeRenderer.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="NUnit" />
+    <PackageReference Include="NUnit3TestAdapter" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="registries\2019-09-16" />
     <EmbeddedResource Include="registries\2020-07-17" />
   </ItemGroup>
@@ -20,5 +25,4 @@
       <Link>registries/language-subtag-registry</Link>
     </EmbeddedResource>
   </ItemGroup>
-  <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>

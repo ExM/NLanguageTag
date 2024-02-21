@@ -1,1 +1,0 @@
-dotnet run -p ./SourceCodeRenderer/SourceCodeRenderer.csproj -- -i./DataSources -o./NLanguageTag/Generated

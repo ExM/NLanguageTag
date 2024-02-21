@@ -2,23 +2,27 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <AssemblyName>NLanguageTag.Tests</AssemblyName>
-    <TargetFramework>net5.0</TargetFramework>
     <IsTestProject>true</IsTestProject>
     <RootNamespace>NLanguageTag.Tests</RootNamespace>
-    <LangVersion>9</LangVersion>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
     <OutputType>Library</OutputType>
+    <LangVersion>12</LangVersion>
+    <TargetFrameworks>net8.0;net6.0;net7.0</TargetFrameworks>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\NLanguageTag\NLanguageTag.csproj" />
     <ProjectReference Include="..\SourceCodeRenderer\SourceCodeRenderer.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="NUnit" />
+    <PackageReference Include="NUnit3TestAdapter" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="..\DataSources\language-subtag-registry">
       <Link>language-subtag-registry</Link>
     </EmbeddedResource>
   </ItemGroup>
-  <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>

@@ -3,11 +3,11 @@
   "profiles": {
     "render without updates": {
       "commandName": "Project",
-      "commandLineArgs": "-i../../DataSources -o../../NLanguageTag/Generated"
+      "commandLineArgs": "-i ../../DataSources -o ../../NLanguageTag/Generated"
     },
     "full update and render": {
       "commandName": "Project",
-      "commandLineArgs": "-un -i../../DataSources -o../../NLanguageTag/Generated"
+      "commandLineArgs": "-un -i ../../DataSources -o ../../NLanguageTag/Generated"
     }
   }
 }

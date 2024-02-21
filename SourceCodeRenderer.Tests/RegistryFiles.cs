@@ -31,7 +31,7 @@ namespace NLanguageTag.SourceCodeRenderer
 		[Test]
 		public void KnownRegistriesCount()
 		{
-			Assert.AreEqual(3, AllRevisions.Count);
+			Assert.That(AllRevisions.Count, Is.EqualTo(3));
 		}
 	}
 }

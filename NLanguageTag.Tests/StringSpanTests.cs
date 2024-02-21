@@ -12,10 +12,10 @@ namespace NLanguageTag.Tests
 			var span = new StringSpan(spanText);
 			Assert.Multiple(() =>
 			{
-				Assert.IsTrue(span <= text);
-				Assert.IsFalse(text <= span);
-				Assert.IsFalse(span >= text);
-				Assert.IsTrue(text >= span);
+				Assert.That(span <= text, Is.True);
+				Assert.That(text <= span, Is.False);
+				Assert.That(span >= text, Is.False);
+				Assert.That(text >= span, Is.True);
 			});
 		}
 	}

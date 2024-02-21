@@ -12,7 +12,7 @@ namespace NLanguageTag.SourceCodeRenderer
 		public void FileDate(string fileName, string date)
 		{
 			var reg = Registry.Read(RegistryFiles.Read(fileName)!);
-			Assert.AreEqual(date, reg.FileDate);
+			Assert.That(date, Is.EqualTo(reg.FileDate));
 		}
 
 		public static IReadOnlyList<string> GetAllRevisions() => RegistryFiles.AllRevisions;

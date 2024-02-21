@@ -7,19 +7,25 @@ namespace NLanguageTag.Tests
 	[TestFixture]
 	public class ExtensionSubtagTests
 	{
-		[TestCase(null)]
-		[TestCase((object)(new string[0]))]
-		public void EmptyCtor(string[] sequence)
+		[Test]
+		public void CtorWithEmptyArgs()
 		{
-			Assert.Throws<FormatException>(() => new ExtensionSubtag('a', sequence));
+			Assert.Throws<FormatException>(() => new ExtensionSubtag('a'));
+		}
+		
+		[Test]
+		public void CtorWithNull()
+		{
+			string[] args = null!;
+			Assert.Throws<FormatException>(() => new ExtensionSubtag('a', args));
 		}
 
 		[Test]
 		public void Empty()
 		{
 			var empty = new ExtensionSubtag();
-			Assert.IsTrue(empty.IsEmpty);
-			Assert.AreEqual("", empty.ToString());
+			Assert.That(empty.IsEmpty, Is.True);
+			Assert.That(empty.ToString(), Is.EqualTo(""));
 			Assert.That(empty.ToArray(), Is.Empty);
 			Assert.Throws<InvalidOperationException>(() => empty.Singleton.GetHashCode());
 		}
@@ -35,7 +41,7 @@ namespace NLanguageTag.Tests
 		public void TryParse(string text, char singleton, string[] subtags)
 		{
 			var pu1 = ExtensionSubtag.TryParse(text);
-			Assert.IsTrue(pu1.HasValue);
+			Assert.That(pu1.HasValue, Is.True);
 			Assert.That(pu1!.Value.Singleton, Is.EqualTo(singleton));
 			Assert.That(pu1, Is.EquivalentTo(subtags));
 
@@ -48,16 +54,12 @@ namespace NLanguageTag.Tests
 			foreach (var language in TestContent.GetLanguages())
 			{
 				var languageTag = LanguageTag.TryParse($"{language}-{text}");
-				Assert.IsNotNull(languageTag);
+				Assert.That(languageTag, Is.Not.Null);
 
 				if (singleton == 'x')
-					Assert.AreEqual(
-						languageTag!.Value.PrivateUse,
-						new ExtensionSubtag(singleton, subtags));
+					Assert.That(new ExtensionSubtag(singleton, subtags), Is.EqualTo(languageTag!.Value.PrivateUse));
 				else
-					CollectionAssert.AreEqual(
-						languageTag!.Value.Extensions,
-						new[] { new ExtensionSubtag(singleton, subtags) });
+					Assert.That(new[] { new ExtensionSubtag(singleton, subtags) }, Is.EqualTo(languageTag!.Value.Extensions));
 			}
 		}
 
@@ -97,7 +99,7 @@ namespace NLanguageTag.Tests
 				var languageTag = LanguageTag.TryParse($"{language}-{text}");
 				if (languageTag.HasValue)
 				{
-					CollectionAssert.IsEmpty(languageTag.Value.Extensions);
+					Assert.That(languageTag.Value.Extensions, Is.Empty);
 				}
 			}
 		}
@@ -108,14 +110,14 @@ namespace NLanguageTag.Tests
 		public void ToString(char singleton, string[] subtags, string expected)
 		{
 			var ext = new ExtensionSubtag(singleton, subtags);
-			Assert.AreEqual(expected, ext.ToString());
+			Assert.That(ext.ToString(), Is.EqualTo(expected));
 		}
 
 		[Test]
 		public void PrivateUse()
 		{
 			var ext = ExtensionSubtag.ForPrivateUse("aaa");
-			Assert.IsTrue(ext.PrivateUse);
+			Assert.That(ext.PrivateUse, Is.True);
 		}
 
 		[TestCase((object)new[] { "aaa" })]
@@ -138,18 +140,18 @@ namespace NLanguageTag.Tests
 			var ext3 = new ExtensionSubtag('b', "aaa");
 			var ext4 = new ExtensionSubtag('x', "bbb");
 
-			Assert.IsFalse(e1.Equals(null));
-			Assert.IsTrue(e1.Equals(e2));
-			Assert.AreEqual(e1, e1);
-			Assert.AreNotEqual(e1, ext1);
+			Assert.That(e1.Equals(null), Is.False);
+			Assert.That(e1.Equals(e2), Is.True);
+			Assert.That(e1, Is.EqualTo(e1));
+			Assert.That(ext1, Is.Not.EqualTo(e1));
 
-			Assert.IsTrue(ext1.Equals(ext1));
-			Assert.IsTrue(ext1.Equals(ext2));
-			Assert.IsFalse(ext2.Equals(ext3));
-			Assert.IsFalse(ext3.Equals(ext4));
+			Assert.That(ext1.Equals(ext1), Is.True);
+			Assert.That(ext1.Equals(ext2), Is.True);
+			Assert.That(ext2.Equals(ext3), Is.False);
+			Assert.That(ext3.Equals(ext4), Is.False);
 
-			Assert.IsTrue(ext1 != ext3);
-			Assert.IsFalse(ext1 == ext3);
+			Assert.That(ext1 != ext3, Is.True);
+			Assert.That(ext1 == ext3, Is.False);
 		}
 
 		[TestCase(null, "aaa", false)]

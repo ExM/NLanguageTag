@@ -34,7 +34,8 @@ namespace NLanguageTag.SourceCodeRenderer
 				ctx.ScriptCode = _scriptCode!;
 			});
 
-			Console.WriteLine(content);
+			Assert.That(content, Is.Not.Empty);
+			//Console.WriteLine(content);
 		}
 
 		public class CodeMapStub : ICodeMap

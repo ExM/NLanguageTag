@@ -4,23 +4,33 @@
     <Version>3.2.0</Version>
     <AssemblyTitle>NLanguageTag</AssemblyTitle>
     <AssemblyName>NLanguageTag</AssemblyName>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Company>ExM</Company>
     <Authors>Anatoliy Koperin &lt;a.koperin@gmail.com&gt;</Authors>
     <PackageProjectUrl>https://github.com/ExM/NLanguageTag</PackageProjectUrl>
-    <Copyright>Anatoliy Koperin &lt;a.koperin@gmail.com&gt;</Copyright>
+    <Copyright>MIT Copyright © 2024 Anatoliy Koperin &lt;a.koperin@gmail.com&gt;</Copyright>
     <RepositoryUrl>https://github.com/ExM/NLanguageTag</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>Github</RepositoryType>
     <RootNamespace>NLanguageTag</RootNamespace>
-    <LangVersion>8</LangVersion>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <PackageTags>bcp47 languagetag iso639</PackageTags>
-    <Description>Language tags are used to help identify languages, whether spoken, written, signed, or otherwise signaled, for the purpose of communication. Language tag syntax is defined by the IETF's BCP 47 (https://tools.ietf.org/html/bcp47)</Description>
+    <PackageTags>bcp47 languagetag iso639 language rfc5646</PackageTags>
+    <Description>Language tags are used to help identify languages, whether spoken, written, signed, or otherwise signaled, for the purpose of communication.
+      Language tag syntax is defined by the IETF's BCP 47 (https://tools.ietf.org/html/bcp47) or RFC 5646 (https://datatracker.ietf.org/doc/html/rfc5646)</Description>
     <Nullable>enable</Nullable>
     <AssemblyVersion>$(Version)</AssemblyVersion>
     <FileVersion>$(Version)</FileVersion>
     <PackageVersion>$(Version)</PackageVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\">
+      <Link>README.md</Link>
+    </None>
+  </ItemGroup>
 </Project>

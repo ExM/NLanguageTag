@@ -16,20 +16,20 @@ namespace NLanguageTag.Tests
 
 			var ext5 = new ExtensionSubtagCollection(new ExtensionSubtag('a', "aaa"), new ExtensionSubtag('b', "aaa"));
 
-			Assert.IsFalse(ext1.Equals(null));
-			Assert.IsTrue(ext1.Equals((object)ext2));
-			Assert.AreEqual(ext1, ext1);
-			Assert.AreEqual(ext1, ext2);
-			Assert.AreNotEqual(ext1, ext3);
-			Assert.AreEqual(ext3, ext3);
-			Assert.AreEqual(ext3, ext4);
-			Assert.AreNotEqual(ext4, ext5);
+			Assert.That(ext1.Equals(null), Is.False);
+			Assert.That(ext1.Equals((object)ext2), Is.True);
+			Assert.That(ext1, Is.EqualTo(ext1));
+			Assert.That(ext2, Is.EqualTo(ext1));
+			Assert.That(ext3, Is.Not.EqualTo(ext1));
+			Assert.That(ext3, Is.EqualTo(ext3));
+			Assert.That(ext4, Is.EqualTo(ext3));
+			Assert.That(ext5, Is.Not.EqualTo(ext4));
 
-			Assert.IsTrue(ext1 == ext2);
-			Assert.IsFalse(ext1 != ext2);
+			Assert.That(ext1 == ext2, Is.True);
+			Assert.That(ext1 != ext2, Is.False);
 
-			Assert.IsTrue(ext3 != ext5);
-			Assert.IsFalse(ext3 == ext5);
+			Assert.That(ext3 != ext5, Is.True);
+			Assert.That(ext3 == ext5, Is.False);
 		}
 	}
 }

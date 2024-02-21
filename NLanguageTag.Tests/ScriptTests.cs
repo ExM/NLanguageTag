@@ -14,7 +14,7 @@ namespace NLanguageTag.Tests
 			foreach (var text in TestContent.GetScripts())
 			{
 				var script = text.TryParseScript();
-				Assert.NotNull(script);
+				Assert.That(script, Is.Not.Null);
 			}
 		}
 
@@ -25,15 +25,15 @@ namespace NLanguageTag.Tests
 				.Where(_ => _ != ScriptCode.PrivateUse))
 			{
 				var script = Script.ByCode(code);
-				Assert.IsFalse(script.PrivateUse);
-				Assert.AreEqual(code, script.EnumCode);
+				Assert.That(script.PrivateUse, Is.False);
+				Assert.That(script.EnumCode, Is.EqualTo(code));
 			}
 		}
 
 		[TestCaseSource(nameof(parseCases))]
 		public void ParseFromScript(string text, Script expected)
 		{
-			Assert.AreEqual(expected, text.TryParseScript());
+			Assert.That(text.TryParseScript(), Is.EqualTo(expected));
 		}
 
 		internal static IEnumerable<TestCaseData> parseCases()
@@ -52,9 +52,9 @@ namespace NLanguageTag.Tests
 		{
 			var script = text.TryParseScript();
 
-			Assert.IsTrue(script!.PrivateUse);
-			Assert.AreEqual(ScriptCode.PrivateUse, script.EnumCode);
-			Assert.AreEqual(script, text.TryParseScript());
+			Assert.That(script!.PrivateUse, Is.True);
+			Assert.That(script.EnumCode, Is.EqualTo(ScriptCode.PrivateUse));
+			Assert.That(text.TryParseScript(), Is.EqualTo(script));
 		}
 	}
 }

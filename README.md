@@ -1,7 +1,7 @@
 # LanguageTag
 Language tags are used to help identify languages, whether spoken, written, signed, or otherwise signaled, for the purpose of communication. Language tag syntax is defined by the IETF's BCP 47
 
-This library implements all subtags from the [BCP47](http://www.w3.org/International/articles/bcp47) specification.
+This library implements all subtags from the [BCP47](http://www.w3.org/International/articles/bcp47) ([RFC 5646](https://datatracker.ietf.org/doc/html/rfc5646)) specification.
 Subtag enumerations are generated using code generation from the [IANA Language Subtag Registry](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry).
 Updating the subtag registry does not break the backward binary compatibility of this library. 
 
@@ -69,20 +69,10 @@ Assert.True(tag8.IsSubsetOf(tag6));
 ```
 
 ## Links to main documentation 
-* Tags for Identifying Languages: https://tools.ietf.org/html/bcp47 (http://www.rfc-editor.org/rfc/bcp/bcp47.txt)
+* Tags for Identifying Languages: [BCP 47](https://www.rfc-editor.org/info/bcp47), [RFC 5646](https://datatracker.ietf.org/doc/html/rfc5646)
 * Language tags in HTML and XML: http://www.w3.org/International/articles/language-tags
 * Choosing a Language Tag: http://www.w3.org/International/questions/qa-choosing-language-tags
 * Understanding the New Language Tags: http://www.w3.org/International/articles/bcp47
 * IANA Language Subtag Registry: http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry                       
 
-## Development
-Generate source code by saved language-subtag-registry
-```
-dotnet run -p ./SourceCodeRenderer/SourceCodeRenderer.csproj -- -i./DataSources -o./NLanguageTag/Generated
-```
-
-Update language-subtag-registry and generate source code
-```
-dotnet run -p ./SourceCodeRenderer/SourceCodeRenderer.csproj -- -un -i./DataSources -o./NLanguageTag/Generated
-```
 

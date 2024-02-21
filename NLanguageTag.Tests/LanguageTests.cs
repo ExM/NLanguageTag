@@ -14,13 +14,13 @@ namespace NLanguageTag.Tests
 			foreach (var text in TestContent.GetLanguages())
 			{
 				var lang = parseLanguage(text);
-				Assert.NotNull(lang);
+				Assert.That(lang, Is.Not.Null);
 			}
 
 			foreach (var text in TestContent.GetExtLanguages())
 			{
 				var lang = parseLanguage(text);
-				Assert.AreEqual(text, lang.ToExtLanguage());
+				Assert.That(lang.ToExtLanguage(), Is.EqualTo(text));
 			}
 		}
 
@@ -31,8 +31,8 @@ namespace NLanguageTag.Tests
 				.Where(_ => _ != LanguageCode.PrivateUse))
 			{
 				var lang = Language.ByCode(code);
-				Assert.IsFalse(lang.PrivateUse);
-				Assert.AreEqual(code, lang.EnumCode);
+				Assert.That(lang.PrivateUse, Is.False);
+				Assert.That(lang.EnumCode, Is.EqualTo(code));
 			}
 		}
 
@@ -49,7 +49,7 @@ namespace NLanguageTag.Tests
 		[TestCaseSource(nameof(parseFromLanguageCases))]
 		public void ParseFromLanguage(string text, Language expected)
 		{
-			Assert.AreEqual(expected, parseLanguage(text));
+			Assert.That(parseLanguage(text), Is.EqualTo(expected));
 		}
 
 		internal static IEnumerable<TestCaseData> languageToStringCases()
@@ -63,7 +63,7 @@ namespace NLanguageTag.Tests
 		[TestCaseSource(nameof(languageToStringCases))]
 		public void LanguageToString(Language lang, string expected)
 		{
-			Assert.AreEqual(expected, lang.ToString());
+			Assert.That(lang.ToString(), Is.EqualTo(expected));
 		}
 
 		[TestCase("")]
@@ -100,9 +100,9 @@ namespace NLanguageTag.Tests
 		{
 			var lang = Language.Parse(text);
 
-			Assert.IsTrue(lang.PrivateUse);
-			Assert.AreEqual(LanguageCode.PrivateUse, lang.EnumCode);
-			Assert.AreEqual(lang, Language.Parse(text));
+			Assert.That(lang.PrivateUse, Is.True);
+			Assert.That(lang.EnumCode, Is.EqualTo(LanguageCode.PrivateUse));
+			Assert.That(Language.Parse(text), Is.EqualTo(lang));
 		}
 
 		internal static IEnumerable<TestCaseData> toExtLanguageCases()
@@ -115,7 +115,7 @@ namespace NLanguageTag.Tests
 		[TestCaseSource(nameof(toExtLanguageCases))]
 		public void ToExtLanguage(Language lang, string expExtLang)
 		{
-			Assert.AreEqual(expExtLang, lang.ToExtLanguage());
+			Assert.That(lang.ToExtLanguage(), Is.EqualTo(expExtLang));
 		}
 
 		private static Language parseLanguage(string text)

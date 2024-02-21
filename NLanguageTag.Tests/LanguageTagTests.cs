@@ -35,13 +35,13 @@ namespace NLanguageTag.Tests
 			var tag6 = LanguageTag.Parse("zh-Hans-TW");
 			var tag7 = LanguageTag.Parse("en-GB-scotland");
 			
-			Assert.True(tag1 == tag6);
+			Assert.That(tag1 == tag6, Is.True);
 			
 			// zh-Hans-TW -> zh-Hans
 			var tag8 = tag6.Take(LanguageTag.Field.Language | LanguageTag.Field.Script);
 			
 			// zh-Hans is subset of zh-Hans-TW
-			Assert.True(tag8.IsSubsetOf(tag6));
+			Assert.That(tag8.IsSubsetOf(tag6), Is.True);
 		}
 		
 		[TestCaseSource(nameof(SimpleParseCases))]
@@ -307,13 +307,13 @@ namespace NLanguageTag.Tests
 		[TestCase("zh-CHT", "zh-Hant")]
 		public void ParseAdditionalGrandfathered(string text, string expected)
 		{
-			Assert.AreEqual(LanguageTag.Parse(expected), LanguageTag.Parse(text));
+			Assert.That(LanguageTag.Parse(text), Is.EqualTo(LanguageTag.Parse(expected)));
 		}
 
 		[TestCaseSource(typeof(TestContent), nameof(TestContent.GetGrandfathered))]
 		public void ParseGrandfathered(string grandfathered)
 		{
-			Assert.IsNotNull(LanguageTag.Parse(grandfathered).Language);
+			Assert.That(LanguageTag.Parse(grandfathered).Language, Is.Not.Null);
 		}
 
 		[TestCaseSource(typeof(TestContent), nameof(TestContent.GetGrandfatheredNotSupported))]
@@ -336,7 +336,7 @@ namespace NLanguageTag.Tests
 		[TestCase("X-AaA", "x-aaa")]
 		public void ToString(string source, string expected)
 		{
-			Assert.AreEqual(expected, LanguageTag.Parse(source).ToString());
+			Assert.That(LanguageTag.Parse(source).ToString(), Is.EqualTo(expected));
 		}
 
 		[Test]

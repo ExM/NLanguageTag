@@ -59,13 +59,15 @@ namespace NLanguageTag
 		}
 
 		/// <inheritdoc />
-		public int CompareTo(Variant other)
+		public int CompareTo(Variant? other)
 		{
+			if (other is null)
+				throw new ArgumentNullException(nameof(other));
 			return StringComparer.OrdinalIgnoreCase.Compare(_tag, other._tag);
 		}
 
 		/// <inheritdoc />
-		public override bool Equals(object obj)
+		public override bool Equals(object? obj)
 		{
 			return ReferenceEquals(this, obj);
 		}

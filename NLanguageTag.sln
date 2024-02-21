@@ -3,12 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{83F5FEDC-8CD7-47C9-B580-F52D9BDFC802}"
-	ProjectSection(SolutionItems) = preProject
-		paket.dependencies = paket.dependencies
-		paket.lock = paket.lock
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLanguageTag", "NLanguageTag\NLanguageTag.csproj", "{004A2936-19F5-4569-9866-DBC0685E89C5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLanguageTag.Tests", "NLanguageTag.Tests\NLanguageTag.Tests.csproj", "{61855940-1B59-42CA-A570-73884CBA76FE}"
@@ -21,13 +15,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceCodeRenderer", "Sourc
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data sources", "data sources", "{731C9BDE-D44A-488F-B9B0-933AFE05171B}"
 ProjectSection(SolutionItems) = preProject
-	README.md = README.md
 	DataSources\language-subtag-registry = DataSources\language-subtag-registry
 	DataSources\LanguageCodes.csv = DataSources\LanguageCodes.csv
 	DataSources\RegionCodes.csv = DataSources\RegionCodes.csv
 	DataSources\ScriptCodes.csv = DataSources\ScriptCodes.csv
 	DataSources\VariantCodes.csv = DataSources\VariantCodes.csv
 EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{0B2240B6-8DEB-40B7-91D3-2E38FF311168}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		DEVELOP.md = DEVELOP.md
+		Directory.Packages.props = Directory.Packages.props
+		LICENSE = LICENSE
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
