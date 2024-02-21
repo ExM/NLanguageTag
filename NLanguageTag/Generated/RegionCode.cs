@@ -435,6 +435,11 @@ namespace NLanguageTag
 		CP = 53,
 
 		/// <summary>
+		/// code of <see cref="Region.CQ"/>
+		/// </summary>
+		CQ = 301,
+
+		/// <summary>
 		/// code of <see cref="Region.CR"/>
 		/// </summary>
 		CR = 54,

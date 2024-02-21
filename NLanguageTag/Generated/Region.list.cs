@@ -935,6 +935,17 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Sark
+		/// added: 2023-02-07
+		/// </summary>
+		public static Region CQ => CQCache.Instance;
+
+		private static class CQCache
+		{
+			public static readonly Region Instance = new Region("CQ",  RegionCode.CQ, false);
+		}
+
+		/// <summary>
 		/// Costa Rica
 		/// added: 2005-10-16
 		/// </summary>
@@ -3004,6 +3015,7 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Türkiye
 		/// Turkey
 		/// added: 2005-10-16
 		/// </summary>

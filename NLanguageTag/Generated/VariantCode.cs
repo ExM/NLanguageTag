@@ -118,6 +118,16 @@ namespace NLanguageTag
 		Bauddha = 21,
 
 		/// <summary>
+		/// code of <see cref="Variant.Bciav"/>
+		/// </summary>
+		Bciav = 109,
+
+		/// <summary>
+		/// code of <see cref="Variant.Bcizbl"/>
+		/// </summary>
+		Bcizbl = 110,
+
+		/// <summary>
 		/// code of <see cref="Variant.Biscayan"/>
 		/// </summary>
 		Biscayan = 22,
@@ -126,6 +136,11 @@ namespace NLanguageTag
 		/// code of <see cref="Variant.Biske"/>
 		/// </summary>
 		Biske = 23,
+
+		/// <summary>
+		/// code of <see cref="Variant.Blasl"/>
+		/// </summary>
+		Blasl = 111,
 
 		/// <summary>
 		/// code of <see cref="Variant.Bohoric"/>
@@ -306,6 +321,16 @@ namespace NLanguageTag
 		/// code of <see cref="Variant.Lipaw"/>
 		/// </summary>
 		Lipaw = 58,
+
+		/// <summary>
+		/// code of <see cref="Variant.Ltg1929"/>
+		/// </summary>
+		Ltg1929 = 112,
+
+		/// <summary>
+		/// code of <see cref="Variant.Ltg2007"/>
+		/// </summary>
+		Ltg2007 = 113,
 
 		/// <summary>
 		/// code of <see cref="Variant.Luna1918"/>

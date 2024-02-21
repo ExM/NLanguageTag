@@ -143,6 +143,11 @@ namespace NLanguageTag
 		Cher = 26,
 
 		/// <summary>
+		/// code of <see cref="Script.Chis"/>
+		/// </summary>
+		Chis = 212,
+
+		/// <summary>
 		/// code of <see cref="Script.Chrs"/>
 		/// </summary>
 		Chrs = 27,
@@ -233,6 +238,11 @@ namespace NLanguageTag
 		Ethi = 44,
 
 		/// <summary>
+		/// code of <see cref="Script.Gara"/>
+		/// </summary>
+		Gara = 213,
+
+		/// <summary>
 		/// code of <see cref="Script.Geok"/>
 		/// </summary>
 		Geok = 45,
@@ -276,6 +286,11 @@ namespace NLanguageTag
 		/// code of <see cref="Script.Gujr"/>
 		/// </summary>
 		Gujr = 53,
+
+		/// <summary>
+		/// code of <see cref="Script.Gukh"/>
+		/// </summary>
+		Gukh = 214,
 
 		/// <summary>
 		/// code of <see cref="Script.Guru"/>
@@ -436,6 +451,11 @@ namespace NLanguageTag
 		/// code of <see cref="Script.Kpel"/>
 		/// </summary>
 		Kpel = 84,
+
+		/// <summary>
+		/// code of <see cref="Script.Krai"/>
+		/// </summary>
+		Krai = 215,
 
 		/// <summary>
 		/// code of <see cref="Script.Kthi"/>
@@ -658,6 +678,11 @@ namespace NLanguageTag
 		Olck = 127,
 
 		/// <summary>
+		/// code of <see cref="Script.Onao"/>
+		/// </summary>
+		Onao = 216,
+
+		/// <summary>
 		/// code of <see cref="Script.Orkh"/>
 		/// </summary>
 		Orkh = 128,
@@ -823,6 +848,11 @@ namespace NLanguageTag
 		Sidd = 155,
 
 		/// <summary>
+		/// code of <see cref="Script.Sidt"/>
+		/// </summary>
+		Sidt = 217,
+
+		/// <summary>
 		/// code of <see cref="Script.Sind"/>
 		/// </summary>
 		Sind = 156,
@@ -923,6 +953,11 @@ namespace NLanguageTag
 		Tavt = 174,
 
 		/// <summary>
+		/// code of <see cref="Script.Tayo"/>
+		/// </summary>
+		Tayo = 218,
+
+		/// <summary>
 		/// code of <see cref="Script.Telu"/>
 		/// </summary>
 		Telu = 175,
@@ -968,9 +1003,24 @@ namespace NLanguageTag
 		Tnsa = 206,
 
 		/// <summary>
+		/// code of <see cref="Script.Todr"/>
+		/// </summary>
+		Todr = 219,
+
+		/// <summary>
+		/// code of <see cref="Script.Tols"/>
+		/// </summary>
+		Tols = 220,
+
+		/// <summary>
 		/// code of <see cref="Script.Toto"/>
 		/// </summary>
 		Toto = 207,
+
+		/// <summary>
+		/// code of <see cref="Script.Tutg"/>
+		/// </summary>
+		Tutg = 221,
 
 		/// <summary>
 		/// code of <see cref="Script.Ugar"/>

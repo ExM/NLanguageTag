@@ -365,6 +365,7 @@ namespace NLanguageTag
 			{
 				case 'a': return tryParse_L4_cha(span);
 				case 'e': return tryParse_L4_che(span);
+				case 'i': return tryParse_L4_chi(span);
 				case 'r': return tryParse_L4_chr(span);
 				default: return null;
 			}
@@ -381,6 +382,13 @@ namespace NLanguageTag
 		{
 			if(Char.ToLowerInvariant(span[3]) == 'r')
 				return CherCache.Instance;
+			return null;
+		}
+		
+		private static Script? tryParse_L4_chi(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[3]) == 's')
+				return ChisCache.Instance;
 			return null;
 		}
 		
@@ -614,6 +622,7 @@ namespace NLanguageTag
 		{
 			switch(span[1])
 			{
+				case 'a': return tryParse_L4_ga(span);
 				case 'e': return tryParse_L4_ge(span);
 				case 'l': return tryParse_L4_gl(span);
 				case 'o': return tryParse_L4_go(span);
@@ -621,6 +630,20 @@ namespace NLanguageTag
 				case 'u': return tryParse_L4_gu(span);
 				default: return null;
 			}
+		}
+		
+		private static Script? tryParse_L4_ga(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[2]) == 'r')
+				return tryParse_L4_gar(span);
+			return null;
+		}
+		
+		private static Script? tryParse_L4_gar(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[3]) == 'a')
+				return GaraCache.Instance;
+			return null;
 		}
 		
 		private static Script? tryParse_L4_ge(StringSpan span)
@@ -710,6 +733,7 @@ namespace NLanguageTag
 			switch(span[2])
 			{
 				case 'j': return tryParse_L4_guj(span);
+				case 'k': return tryParse_L4_guk(span);
 				case 'r': return tryParse_L4_gur(span);
 				default: return null;
 			}
@@ -719,6 +743,13 @@ namespace NLanguageTag
 		{
 			if(Char.ToLowerInvariant(span[3]) == 'r')
 				return GujrCache.Instance;
+			return null;
+		}
+		
+		private static Script? tryParse_L4_guk(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[3]) == 'h')
+				return GukhCache.Instance;
 			return null;
 		}
 		
@@ -973,6 +1004,7 @@ namespace NLanguageTag
 				case 'n': return tryParse_L4_kn(span);
 				case 'o': return tryParse_L4_ko(span);
 				case 'p': return tryParse_L4_kp(span);
+				case 'r': return tryParse_L4_kr(span);
 				case 't': return tryParse_L4_kt(span);
 				default: return null;
 			}
@@ -1098,6 +1130,20 @@ namespace NLanguageTag
 		{
 			if(Char.ToLowerInvariant(span[3]) == 'l')
 				return KpelCache.Instance;
+			return null;
+		}
+		
+		private static Script? tryParse_L4_kr(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[2]) == 'a')
+				return tryParse_L4_kra(span);
+			return null;
+		}
+		
+		private static Script? tryParse_L4_kra(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[3]) == 'i')
+				return KraiCache.Instance;
 			return null;
 		}
 		
@@ -1590,6 +1636,7 @@ namespace NLanguageTag
 			{
 				case 'g': return tryParse_L4_og(span);
 				case 'l': return tryParse_L4_ol(span);
+				case 'n': return tryParse_L4_on(span);
 				case 'r': return tryParse_L4_or(span);
 				case 's': return tryParse_L4_os(span);
 				case 'u': return tryParse_L4_ou(span);
@@ -1622,6 +1669,20 @@ namespace NLanguageTag
 		{
 			if(Char.ToLowerInvariant(span[3]) == 'k')
 				return OlckCache.Instance;
+			return null;
+		}
+		
+		private static Script? tryParse_L4_on(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[2]) == 'a')
+				return tryParse_L4_ona(span);
+			return null;
+		}
+		
+		private static Script? tryParse_L4_ona(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[3]) == 'o')
+				return OnaoCache.Instance;
 			return null;
 		}
 		
@@ -2043,9 +2104,12 @@ namespace NLanguageTag
 		
 		private static Script? tryParse_L4_sid(StringSpan span)
 		{
-			if(Char.ToLowerInvariant(span[3]) == 'd')
-				return SiddCache.Instance;
-			return null;
+			switch(span[3])
+			{
+				case 'd': return SiddCache.Instance;
+				case 't': return SidtCache.Instance;
+				default: return null;
+			}
 		}
 		
 		private static Script? tryParse_L4_sin(StringSpan span)
@@ -2151,6 +2215,7 @@ namespace NLanguageTag
 				case 'i': return tryParse_L4_ti(span);
 				case 'n': return tryParse_L4_tn(span);
 				case 'o': return tryParse_L4_to(span);
+				case 'u': return tryParse_L4_tu(span);
 				default: return null;
 			}
 		}
@@ -2165,6 +2230,7 @@ namespace NLanguageTag
 				case 'm': return tryParse_L4_tam(span);
 				case 'n': return tryParse_L4_tan(span);
 				case 'v': return tryParse_L4_tav(span);
+				case 'y': return tryParse_L4_tay(span);
 				default: return null;
 			}
 		}
@@ -2211,6 +2277,13 @@ namespace NLanguageTag
 		{
 			if(Char.ToLowerInvariant(span[3]) == 't')
 				return TavtCache.Instance;
+			return null;
+		}
+		
+		private static Script? tryParse_L4_tay(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[3]) == 'o')
+				return TayoCache.Instance;
 			return null;
 		}
 		
@@ -2323,8 +2396,26 @@ namespace NLanguageTag
 		
 		private static Script? tryParse_L4_to(StringSpan span)
 		{
-			if(Char.ToLowerInvariant(span[2]) == 't')
-				return tryParse_L4_tot(span);
+			switch(span[2])
+			{
+				case 'd': return tryParse_L4_tod(span);
+				case 'l': return tryParse_L4_tol(span);
+				case 't': return tryParse_L4_tot(span);
+				default: return null;
+			}
+		}
+		
+		private static Script? tryParse_L4_tod(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[3]) == 'r')
+				return TodrCache.Instance;
+			return null;
+		}
+		
+		private static Script? tryParse_L4_tol(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[3]) == 's')
+				return TolsCache.Instance;
 			return null;
 		}
 		
@@ -2332,6 +2423,20 @@ namespace NLanguageTag
 		{
 			if(Char.ToLowerInvariant(span[3]) == 'o')
 				return TotoCache.Instance;
+			return null;
+		}
+		
+		private static Script? tryParse_L4_tu(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[2]) == 't')
+				return tryParse_L4_tut(span);
+			return null;
+		}
+		
+		private static Script? tryParse_L4_tut(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[3]) == 'g')
+				return TutgCache.Instance;
 			return null;
 		}
 		

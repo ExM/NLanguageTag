@@ -35,8 +35,11 @@ namespace NLanguageTag
 				case VariantCode.Barla: return BarlaCache.Instance;
 				case VariantCode.Basiceng: return BasicengCache.Instance;
 				case VariantCode.Bauddha: return BauddhaCache.Instance;
+				case VariantCode.Bciav: return BciavCache.Instance;
+				case VariantCode.Bcizbl: return BcizblCache.Instance;
 				case VariantCode.Biscayan: return BiscayanCache.Instance;
 				case VariantCode.Biske: return BiskeCache.Instance;
+				case VariantCode.Blasl: return BlaslCache.Instance;
 				case VariantCode.Bohoric: return BohoricCache.Instance;
 				case VariantCode.Boont: return BoontCache.Instance;
 				case VariantCode.Bornholm: return BornholmCache.Instance;
@@ -73,6 +76,8 @@ namespace NLanguageTag
 				case VariantCode.Lemosin: return LemosinCache.Instance;
 				case VariantCode.Lengadoc: return LengadocCache.Instance;
 				case VariantCode.Lipaw: return LipawCache.Instance;
+				case VariantCode.Ltg1929: return Ltg1929Cache.Instance;
+				case VariantCode.Ltg2007: return Ltg2007Cache.Instance;
 				case VariantCode.Luna1918: return Luna1918Cache.Instance;
 				case VariantCode.Metelko: return MetelkoCache.Instance;
 				case VariantCode.Monoton: return MonotonCache.Instance;

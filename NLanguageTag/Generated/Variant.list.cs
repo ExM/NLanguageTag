@@ -267,6 +267,30 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// BCI Blissymbolics AV
+		/// Name given to a subset of the variety of Blissymbolics curated by Blissymbolics Communication International, as represented by entries in the BCI Authorized Vocabulary
+		/// added: 2023-05-11
+		/// </summary>
+		public static Variant Bciav => BciavCache.Instance;
+
+		private static class BciavCache
+		{
+			public static readonly Variant Instance = new Variant("bciav", VariantCode.Bciav, new string[] { "zbl" }, false);
+		}
+
+		/// <summary>
+		/// BCI Blissymbolics
+		/// Name given to the variety of Blissymbolics curated by Blissymbolics Communication International
+		/// added: 2023-05-11
+		/// </summary>
+		public static Variant Bcizbl => BcizblCache.Instance;
+
+		private static class BcizblCache
+		{
+			public static readonly Variant Instance = new Variant("bcizbl", VariantCode.Bcizbl, new string[] { "zbl" }, false);
+		}
+
+		/// <summary>
 		/// Biscayan dialect of Basque
 		/// added: 2010-04-13
 		/// </summary>
@@ -288,6 +312,18 @@ namespace NLanguageTag
 		private static class BiskeCache
 		{
 			public static readonly Variant Instance = new Variant("biske", VariantCode.Biske, new string[] { "sl-rozaj" }, false);
+		}
+
+		/// <summary>
+		/// Black American Sign Language dialect
+		/// Black American Sign Language (BASL) or Black Sign Variation (BSV) is a dialect of American Sign Language (ASL)
+		/// added: 2023-07-31
+		/// </summary>
+		public static Variant Blasl => BlaslCache.Instance;
+
+		private static class BlaslCache
+		{
+			public static readonly Variant Instance = new Variant("blasl", VariantCode.Blasl, new string[] { "ase", "sgn-ase" }, false);
 		}
 
 		/// <summary>
@@ -708,6 +744,28 @@ namespace NLanguageTag
 		private static class LipawCache
 		{
 			public static readonly Variant Instance = new Variant("lipaw", VariantCode.Lipaw, new string[] { "sl-rozaj" }, false);
+		}
+
+		/// <summary>
+		/// The Latgalian language orthography codified in 1929
+		/// added: 2022-08-05
+		/// </summary>
+		public static Variant Ltg1929 => Ltg1929Cache.Instance;
+
+		private static class Ltg1929Cache
+		{
+			public static readonly Variant Instance = new Variant("ltg1929", VariantCode.Ltg1929, new string[] { "ltg" }, false);
+		}
+
+		/// <summary>
+		/// The Latgalian language orthography codified in the language law in 2007
+		/// added: 2022-06-23
+		/// </summary>
+		public static Variant Ltg2007 => Ltg2007Cache.Instance;
+
+		private static class Ltg2007Cache
+		{
+			public static readonly Variant Instance = new Variant("ltg2007", VariantCode.Ltg2007, new string[] { "ltg" }, false);
 		}
 
 		/// <summary>

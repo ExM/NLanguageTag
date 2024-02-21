@@ -97,6 +97,7 @@ namespace NLanguageTag
 				case RegionCode.CN: return CNCache.Instance;
 				case RegionCode.CO: return COCache.Instance;
 				case RegionCode.CP: return CPCache.Instance;
+				case RegionCode.CQ: return CQCache.Instance;
 				case RegionCode.CR: return CRCache.Instance;
 				case RegionCode.CS: return CSCache.Instance;
 				case RegionCode.CU: return CUCache.Instance;

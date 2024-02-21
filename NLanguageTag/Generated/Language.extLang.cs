@@ -741,6 +741,7 @@ namespace NLanguageTag
 			switch(span[1])
 			{
 				case 'b': return tryParseFromExtLanguage_SGN_L3_lb(span);
+				case 'g': return tryParseFromExtLanguage_SGN_L3_lg(span);
 				case 'l': return tryParseFromExtLanguage_SGN_L3_ll(span);
 				case 's': return tryParseFromExtLanguage_SGN_L3_ls(span);
 				case 'w': return tryParseFromExtLanguage_SGN_L3_lw(span);
@@ -752,6 +753,13 @@ namespace NLanguageTag
 		{
 			if(Char.ToLowerInvariant(span[2]) == 's')
 				return Language.LBS;
+			return null;
+		}
+		
+		private static Language? tryParseFromExtLanguage_SGN_L3_lg(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[2]) == 's')
+				return Language.LGS;
 			return null;
 		}
 		

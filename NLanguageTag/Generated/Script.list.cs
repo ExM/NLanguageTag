@@ -293,6 +293,17 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Chisoi
+		/// added: 2023-10-16
+		/// </summary>
+		public static Script Chis => ChisCache.Instance;
+
+		private static class ChisCache
+		{
+			public static readonly Script Instance = new Script("Chis", ScriptCode.Chis);
+		}
+
+		/// <summary>
 		/// Chorasmian
 		/// added: 2019-09-11
 		/// </summary>
@@ -496,6 +507,17 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Garay
+		/// added: 2023-10-16
+		/// </summary>
+		public static Script Gara => GaraCache.Instance;
+
+		private static class GaraCache
+		{
+			public static readonly Script Instance = new Script("Gara", ScriptCode.Gara);
+		}
+
+		/// <summary>
 		/// Khutsuri (Asomtavruli and Nuskhuri)
 		/// added: 2005-10-16
 		/// </summary>
@@ -592,6 +614,17 @@ namespace NLanguageTag
 		private static class GujrCache
 		{
 			public static readonly Script Instance = new Script("Gujr", ScriptCode.Gujr);
+		}
+
+		/// <summary>
+		/// Gurung Khema
+		/// added: 2023-10-16
+		/// </summary>
+		public static Script Gukh => GukhCache.Instance;
+
+		private static class GukhCache
+		{
+			public static readonly Script Instance = new Script("Gukh", ScriptCode.Gukh);
 		}
 
 		/// <summary>
@@ -954,6 +987,17 @@ namespace NLanguageTag
 		private static class KpelCache
 		{
 			public static readonly Script Instance = new Script("Kpel", ScriptCode.Kpel);
+		}
+
+		/// <summary>
+		/// Kirat Rai
+		/// added: 2023-10-16
+		/// </summary>
+		public static Script Krai => KraiCache.Instance;
+
+		private static class KraiCache
+		{
+			public static readonly Script Instance = new Script("Krai", ScriptCode.Krai);
 		}
 
 		/// <summary>
@@ -1468,6 +1512,17 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Ol Onal
+		/// added: 2023-10-16
+		/// </summary>
+		public static Script Onao => OnaoCache.Instance;
+
+		private static class OnaoCache
+		{
+			public static readonly Script Instance = new Script("Onao", ScriptCode.Onao);
+		}
+
+		/// <summary>
 		/// Old Turkic
 		/// Orkhon Runic
 		/// added: 2009-07-30
@@ -1840,6 +1895,17 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Sidetic
+		/// added: 2023-10-16
+		/// </summary>
+		public static Script Sidt => SidtCache.Instance;
+
+		private static class SidtCache
+		{
+			public static readonly Script Instance = new Script("Sidt", ScriptCode.Sidt);
+		}
+
+		/// <summary>
 		/// Khudawadi
 		/// Sindhi
 		/// added: 2010-08-16
@@ -2063,6 +2129,17 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Tai Yo
+		/// added: 2023-10-16
+		/// </summary>
+		public static Script Tayo => TayoCache.Instance;
+
+		private static class TayoCache
+		{
+			public static readonly Script Instance = new Script("Tayo", ScriptCode.Tayo);
+		}
+
+		/// <summary>
 		/// Telugu
 		/// added: 2005-10-16
 		/// </summary>
@@ -2165,6 +2242,28 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Todhri
+		/// added: 2023-10-16
+		/// </summary>
+		public static Script Todr => TodrCache.Instance;
+
+		private static class TodrCache
+		{
+			public static readonly Script Instance = new Script("Todr", ScriptCode.Todr);
+		}
+
+		/// <summary>
+		/// Tolong Siki
+		/// added: 2023-10-16
+		/// </summary>
+		public static Script Tols => TolsCache.Instance;
+
+		private static class TolsCache
+		{
+			public static readonly Script Instance = new Script("Tols", ScriptCode.Tols);
+		}
+
+		/// <summary>
 		/// Toto
 		/// added: 2020-05-12
 		/// </summary>
@@ -2173,6 +2272,17 @@ namespace NLanguageTag
 		private static class TotoCache
 		{
 			public static readonly Script Instance = new Script("Toto", ScriptCode.Toto);
+		}
+
+		/// <summary>
+		/// Tulu-Tigalari
+		/// added: 2023-10-16
+		/// </summary>
+		public static Script Tutg => TutgCache.Instance;
+
+		private static class TutgCache
+		{
+			public static readonly Script Instance = new Script("Tutg", ScriptCode.Tutg);
 		}
 
 		/// <summary>

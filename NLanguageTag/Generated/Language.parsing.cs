@@ -781,7 +781,7 @@ namespace NLanguageTag
 				case 'g': return AJGCache.Instance;
 				case 'i': return AJICache.Instance;
 				case 'n': return AJNCache.Instance;
-				case 'p': return AJPCache.Instance;
+				case 'p': return APCCache.Instance;
 				case 's': return AJSCache.Instance;
 				case 't': return AEBCache.Instance;
 				case 'u': return AJUCache.Instance;
@@ -2160,6 +2160,7 @@ namespace NLanguageTag
 				case 'u': return tryParse_L3_cu(span);
 				case 'v': return tryParse_L3_cv(span);
 				case 'w': return tryParse_L3_cw(span);
+				case 'x': return tryParse_L3_cx(span);
 				case 'y': return tryParse_L3_cy(span);
 				case 'z': return tryParse_L3_cz(span);
 				default: return null;
@@ -2684,6 +2685,13 @@ namespace NLanguageTag
 			}
 		}
 		
+		private static Language? tryParse_L3_cx(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[2]) == 'h')
+				return CXHCache.Instance;
+			return null;
+		}
+		
 		private static Language? tryParse_L3_cy(StringSpan span)
 		{
 			switch(span[2])
@@ -3104,6 +3112,7 @@ namespace NLanguageTag
 				case 'e': return DSECache.Instance;
 				case 'h': return DSHCache.Instance;
 				case 'i': return DSICache.Instance;
+				case 'k': return DSKCache.Instance;
 				case 'l': return DSLCache.Instance;
 				case 'n': return DSNCache.Instance;
 				case 'o': return DSOCache.Instance;
@@ -3205,6 +3214,7 @@ namespace NLanguageTag
 				case 'm': return DYMCache.Instance;
 				case 'n': return DYNCache.Instance;
 				case 'o': return DYOCache.Instance;
+				case 'r': return DYRCache.Instance;
 				case 'u': return DYUCache.Instance;
 				case 'y': return DYYCache.Instance;
 				default: return null;
@@ -3510,9 +3520,12 @@ namespace NLanguageTag
 		
 		private static Language? tryParse_L3_eu(StringSpan span)
 		{
-			if(Char.ToLowerInvariant(span[2]) == 'q')
-				return EUQCache.Instance;
-			return null;
+			switch(span[2])
+			{
+				case 'd': return EUDCache.Instance;
+				case 'q': return EUQCache.Instance;
+				default: return null;
+			}
 		}
 		
 		private static Language? tryParse_L3_ev(StringSpan span)
@@ -4967,6 +4980,7 @@ namespace NLanguageTag
 			switch(span[2])
 			{
 				case 'e': return IKECache.Instance;
+				case 'h': return IKHCache.Instance;
 				case 'i': return IKICache.Instance;
 				case 'k': return IKKCache.Instance;
 				case 'l': return IKLCache.Instance;
@@ -5197,6 +5211,7 @@ namespace NLanguageTag
 			{
 				case 'h': return IZHCache.Instance;
 				case 'i': return IZICache.Instance;
+				case 'm': return IZMCache.Instance;
 				case 'r': return IZRCache.Instance;
 				case 'z': return IZZCache.Instance;
 				default: return null;
@@ -5788,7 +5803,7 @@ namespace NLanguageTag
 				case 'j': return KGJCache.Instance;
 				case 'k': return KGKCache.Instance;
 				case 'l': return KGLCache.Instance;
-				case 'm': return KGMCache.Instance;
+				case 'm': return PLUCache.Instance;
 				case 'n': return KGNCache.Instance;
 				case 'o': return KGOCache.Instance;
 				case 'p': return KGPCache.Instance;
@@ -6632,6 +6647,7 @@ namespace NLanguageTag
 				case 'o': return LGOCache.Instance;
 				case 'q': return LGQCache.Instance;
 				case 'r': return LGRCache.Instance;
+				case 's': return LGSCache.Instance;
 				case 't': return LGTCache.Instance;
 				case 'u': return LGUCache.Instance;
 				case 'z': return LGZCache.Instance;
@@ -6966,6 +6982,7 @@ namespace NLanguageTag
 				case 'a': return LVACache.Instance;
 				case 'i': return LVICache.Instance;
 				case 'k': return LVKCache.Instance;
+				case 'l': return LVLCache.Instance;
 				case 's': return LVSCache.Instance;
 				case 'u': return LVUCache.Instance;
 				default: return null;
@@ -8378,7 +8395,7 @@ namespace NLanguageTag
 				case 'j': return NOJCache.Instance;
 				case 'k': return NOKCache.Instance;
 				case 'l': return NOLCache.Instance;
-				case 'm': return NOMCache.Instance;
+				case 'm': return CBRCache.Instance;
 				case 'n': return NONCache.Instance;
 				case 'o': return NOOCache.Instance;
 				case 'p': return NOPCache.Instance;
@@ -8642,6 +8659,7 @@ namespace NLanguageTag
 				case 'i': return NZICache.Instance;
 				case 'k': return NZKCache.Instance;
 				case 'm': return NZMCache.Instance;
+				case 'r': return NZRCache.Instance;
 				case 's': return NZSCache.Instance;
 				case 'u': return NZUCache.Instance;
 				case 'y': return NZYCache.Instance;
@@ -9354,7 +9372,7 @@ namespace NLanguageTag
 				case 'h': return PMHCache.Instance;
 				case 'i': return PMICache.Instance;
 				case 'j': return PMJCache.Instance;
-				case 'k': return PMKCache.Instance;
+				case 'k': return CRRCache.Instance;
 				case 'l': return PMLCache.Instance;
 				case 'm': return PMMCache.Instance;
 				case 'n': return PMNCache.Instance;
@@ -9485,7 +9503,7 @@ namespace NLanguageTag
 				case 'm': return PRMCache.Instance;
 				case 'n': return PRNCache.Instance;
 				case 'o': return PROCache.Instance;
-				case 'p': return PRPCache.Instance;
+				case 'p': return GUCache.Instance;
 				case 'q': return PRQCache.Instance;
 				case 'r': return PRRCache.Instance;
 				case 's': return PRSCache.Instance;
@@ -9619,6 +9637,7 @@ namespace NLanguageTag
 		{
 			switch(span[2])
 			{
+				case 'e': return PZECache.Instance;
 				case 'h': return PZHCache.Instance;
 				case 'n': return PZNCache.Instance;
 				default: return null;
@@ -10018,6 +10037,7 @@ namespace NLanguageTag
 				case 'l': return RSLCache.Instance;
 				case 'm': return RSMCache.Instance;
 				case 'n': return RSNCache.Instance;
+				case 'w': return RSWCache.Instance;
 				default: return null;
 			}
 		}
@@ -10850,7 +10870,7 @@ namespace NLanguageTag
 				case 'a': return SZACache.Instance;
 				case 'b': return SZBCache.Instance;
 				case 'c': return SZCCache.Instance;
-				case 'd': return SZDCache.Instance;
+				case 'd': return UMICache.Instance;
 				case 'e': return SZECache.Instance;
 				case 'g': return SZGCache.Instance;
 				case 'l': return SZLCache.Instance;
@@ -11256,7 +11276,7 @@ namespace NLanguageTag
 				case 'h': return TMHCache.Instance;
 				case 'i': return TMICache.Instance;
 				case 'j': return TMJCache.Instance;
-				case 'k': return TMKCache.Instance;
+				case 'k': return TDGCache.Instance;
 				case 'l': return TMLCache.Instance;
 				case 'm': return TMMCache.Instance;
 				case 'n': return TMNCache.Instance;
@@ -11361,7 +11381,7 @@ namespace NLanguageTag
 				case 't': return TPTCache.Instance;
 				case 'u': return TPUCache.Instance;
 				case 'v': return TPVCache.Instance;
-				case 'w': return TPWCache.Instance;
+				case 'w': return TPNCache.Instance;
 				case 'x': return TPXCache.Instance;
 				case 'y': return TPYCache.Instance;
 				case 'z': return TPZCache.Instance;
@@ -11526,6 +11546,7 @@ namespace NLanguageTag
 				case 'a': return TVACache.Instance;
 				case 'd': return TVDCache.Instance;
 				case 'e': return TVECache.Instance;
+				case 'i': return TVICache.Instance;
 				case 'k': return TVKCache.Instance;
 				case 'l': return TVLCache.Instance;
 				case 'm': return TVMCache.Instance;
@@ -11800,6 +11821,7 @@ namespace NLanguageTag
 				case 'n': return ULNCache.Instance;
 				case 'u': return ULUCache.Instance;
 				case 'w': return ULWCache.Instance;
+				case 'y': return ULYCache.Instance;
 				default: return null;
 			}
 		}
@@ -11982,6 +12004,7 @@ namespace NLanguageTag
 				case 'e': return tryParse_L3_ve(span);
 				case 'g': return tryParse_L3_vg(span);
 				case 'i': return tryParse_L3_vi(span);
+				case 'j': return tryParse_L3_vj(span);
 				case 'k': return tryParse_L3_vk(span);
 				case 'l': return tryParse_L3_vl(span);
 				case 'm': return tryParse_L3_vm(span);
@@ -12071,6 +12094,13 @@ namespace NLanguageTag
 				case 'v': return VIVCache.Instance;
 				default: return null;
 			}
+		}
+		
+		private static Language? tryParse_L3_vj(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[2]) == 'k')
+				return VJKCache.Instance;
+			return null;
 		}
 		
 		private static Language? tryParse_L3_vk(StringSpan span)
@@ -12577,6 +12607,7 @@ namespace NLanguageTag
 		{
 			switch(span[2])
 			{
+				case 'b': return WTBCache.Instance;
 				case 'f': return WTFCache.Instance;
 				case 'h': return WTHCache.Instance;
 				case 'i': return WTICache.Instance;
@@ -13078,7 +13109,7 @@ namespace NLanguageTag
 				case 'p': return XSPCache.Instance;
 				case 'q': return XSQCache.Instance;
 				case 'r': return XSRCache.Instance;
-				case 's': return XSSCache.Instance;
+				case 's': return ZKOCache.Instance;
 				case 'u': return XSUCache.Instance;
 				case 'v': return XSVCache.Instance;
 				case 'y': return XSYCache.Instance;
@@ -13305,6 +13336,7 @@ namespace NLanguageTag
 				case 'l': return YCLCache.Instance;
 				case 'n': return YCNCache.Instance;
 				case 'p': return YCPCache.Instance;
+				case 'r': return YCRCache.Instance;
 				default: return null;
 			}
 		}
@@ -13407,6 +13439,7 @@ namespace NLanguageTag
 			{
 				case 'a': return YKACache.Instance;
 				case 'g': return YKGCache.Instance;
+				case 'h': return YKHCache.Instance;
 				case 'i': return YKICache.Instance;
 				case 'k': return YKKCache.Instance;
 				case 'l': return YKLCache.Instance;
@@ -13774,6 +13807,7 @@ namespace NLanguageTag
 				case 'a': return ZEACache.Instance;
 				case 'g': return ZEGCache.Instance;
 				case 'h': return ZEHCache.Instance;
+				case 'm': return ZEMCache.Instance;
 				case 'n': return ZENCache.Instance;
 				default: return null;
 			}
@@ -13829,7 +13863,7 @@ namespace NLanguageTag
 			switch(span[2])
 			{
 				case 'a': return ZKACache.Instance;
-				case 'b': return ZKBCache.Instance;
+				case 'b': return KJHCache.Instance;
 				case 'd': return ZKDCache.Instance;
 				case 'g': return ZKGCache.Instance;
 				case 'h': return ZKHCache.Instance;
@@ -13857,6 +13891,7 @@ namespace NLanguageTag
 				case 'n': return ZLNCache.Instance;
 				case 'q': return ZLQCache.Instance;
 				case 's': return ZLSCache.Instance;
+				case 'u': return ZLUCache.Instance;
 				case 'w': return ZLWCache.Instance;
 				default: return null;
 			}

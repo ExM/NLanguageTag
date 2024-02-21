@@ -127,6 +127,7 @@ namespace NLanguageTag
 				case 'n': return CNCache.Instance;
 				case 'o': return COCache.Instance;
 				case 'p': return CPCache.Instance;
+				case 'q': return CQCache.Instance;
 				case 'r': return CRCache.Instance;
 				case 's': return CSCache.Instance;
 				case 'u': return CUCache.Instance;
