@@ -6,7 +6,8 @@ namespace NLanguageTag.SourceCodeRenderer
 {
 	public class RegistryParsingTest
 	{
-		[TestCase("language-subtag-registry", "2023-10-16")]
+		[TestCase("language-subtag-registry", "2025-03-10")]
+		[TestCase("2023-10-16", "2023-10-16")]
 		[TestCase("2019-09-16", "2019-09-16")]
 		[TestCase("2020-07-17", "2020-07-17")]
 		public void FileDate(string fileName, string date)

@@ -27,6 +27,7 @@ namespace NLanguageTag
 				case ScriptCode.Bass: return BassCache.Instance;
 				case ScriptCode.Batk: return BatkCache.Instance;
 				case ScriptCode.Beng: return BengCache.Instance;
+				case ScriptCode.Berf: return BerfCache.Instance;
 				case ScriptCode.Bhks: return BhksCache.Instance;
 				case ScriptCode.Blis: return BlisCache.Instance;
 				case ScriptCode.Bopo: return BopoCache.Instance;

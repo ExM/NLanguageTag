@@ -1708,6 +1708,7 @@ namespace NLanguageTag
 				case 'l': return tryParseFromExtLanguage_ZH_L3_l(span);
 				case 'm': return tryParseFromExtLanguage_ZH_L3_m(span);
 				case 'n': return tryParseFromExtLanguage_ZH_L3_n(span);
+				case 's': return tryParseFromExtLanguage_ZH_L3_s(span);
 				case 'w': return tryParseFromExtLanguage_ZH_L3_w(span);
 				case 'y': return tryParseFromExtLanguage_ZH_L3_y(span);
 				default: return null;
@@ -1800,6 +1801,7 @@ namespace NLanguageTag
 			switch(span[1])
 			{
 				case 'a': return tryParseFromExtLanguage_ZH_L3_ha(span);
+				case 'n': return tryParseFromExtLanguage_ZH_L3_hn(span);
 				case 's': return tryParseFromExtLanguage_ZH_L3_hs(span);
 				default: return null;
 			}
@@ -1812,6 +1814,13 @@ namespace NLanguageTag
 			return null;
 		}
 		
+		private static Language? tryParseFromExtLanguage_ZH_L3_hn(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[2]) == 'm')
+				return Language.HNM;
+			return null;
+		}
+		
 		private static Language? tryParseFromExtLanguage_ZH_L3_hs(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'n')
@@ -1821,8 +1830,18 @@ namespace NLanguageTag
 		
 		private static Language? tryParseFromExtLanguage_ZH_L3_l(StringSpan span)
 		{
-			if(Char.ToLowerInvariant(span[1]) == 'z')
-				return tryParseFromExtLanguage_ZH_L3_lz(span);
+			switch(span[1])
+			{
+				case 'u': return tryParseFromExtLanguage_ZH_L3_lu(span);
+				case 'z': return tryParseFromExtLanguage_ZH_L3_lz(span);
+				default: return null;
+			}
+		}
+		
+		private static Language? tryParseFromExtLanguage_ZH_L3_lu(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[2]) == 'h')
+				return Language.LUH;
 			return null;
 		}
 		
@@ -1858,6 +1877,20 @@ namespace NLanguageTag
 		{
 			if(Char.ToLowerInvariant(span[2]) == 'n')
 				return Language.NAN;
+			return null;
+		}
+		
+		private static Language? tryParseFromExtLanguage_ZH_L3_s(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[1]) == 'j')
+				return tryParseFromExtLanguage_ZH_L3_sj(span);
+			return null;
+		}
+		
+		private static Language? tryParseFromExtLanguage_ZH_L3_sj(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[2]) == 'c')
+				return Language.SJC;
 			return null;
 		}
 		

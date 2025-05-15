@@ -18098,6 +18098,7 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Karian
 		/// Bilakura
 		/// added: 2009-07-29
 		/// </summary>
@@ -25916,6 +25917,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Classical Sanskrit
+		/// added: 2024-03-04
+		/// </summary>
+		public static Language CLS => CLSCache.Instance;
+
+		private static class CLSCache
+		{
+			public static readonly Language Instance = new Language(
+                "cls",
+                LanguageCode.CLS,
+                null,
+                Language.SA,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Lautu Chin
 		/// added: 2012-08-12
 		/// </summary>
@@ -29858,6 +29878,7 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Moi-Wadea
 		/// Dao
 		/// added: 2009-07-29
 		/// </summary>
@@ -30659,6 +30680,7 @@ namespace NLanguageTag
 		/// Dek
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("use sqm, deprecated from 2024-12-12")]
 		public static Language DEK => DEKCache.Instance;
 
 		private static class DEKCache
@@ -30671,7 +30693,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -31075,6 +31097,7 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Tlicho
 		/// Dogrib
 		/// Tłı̨chǫ
 		/// added: 2005-10-16
@@ -48655,6 +48678,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Hainanese
+		/// added: 2024-12-12
+		/// </summary>
+		public static Language HNM => HNMCache.Instance;
+
+		private static class HNMCache
+		{
+			public static readonly Language Instance = new Language(
+                "hnm",
+                LanguageCode.HNM,
+                null,
+                Language.ZH,
+                null,
+                null,
+                Language.ZH,
+                false);
+		}
+
+		/// <summary>
 		/// Hanunoo
 		/// added: 2009-07-29
 		/// </summary>
@@ -53268,6 +53310,25 @@ namespace NLanguageTag
 			public static readonly Language Instance = new Language(
                 "isu",
                 LanguageCode.ISU,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Interslavic
+		/// added: 2024-05-15
+		/// </summary>
+		public static Language ISV => ISVCache.Instance;
+
+		private static class ISVCache
+		{
+			public static readonly Language Instance = new Language(
+                "isv",
+                LanguageCode.ISV,
                 null,
                 null,
                 null,
@@ -75465,6 +75526,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Leizhou Chinese
+		/// added: 2024-12-12
+		/// </summary>
+		public static Language LUH => LUHCache.Instance;
+
+		private static class LUHCache
+		{
+			public static readonly Language Instance = new Language(
+                "luh",
+                LanguageCode.LUH,
+                null,
+                Language.ZH,
+                null,
+                null,
+                Language.ZH,
+                false);
+		}
+
+		/// <summary>
 		/// Luiseno
 		/// added: 2005-10-16
 		/// </summary>
@@ -82172,6 +82252,8 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Hember Avu
+		/// Amben
 		/// Musar
 		/// added: 2009-07-29
 		/// </summary>
@@ -96526,6 +96608,7 @@ namespace NLanguageTag
 		/// Nathembo
 		/// added: 2009-07-29
 		/// </summary>
+		[Obsolete("use eko, deprecated from 2024-12-12")]
 		public static Language NTE => NTECache.Instance;
 
 		private static class NTECache
@@ -96538,7 +96621,7 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
-                false);
+                true);
 		}
 
 		/// <summary>
@@ -112535,6 +112618,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Moriori
+		/// added: 2024-03-04
+		/// </summary>
+		public static Language RRM => RRMCache.Instance;
+
+		private static class RRMCache
+		{
+			public static readonly Language Instance = new Language(
+                "rrm",
+                LanguageCode.RRM,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Waima
 		/// added: 2009-07-29
 		/// </summary>
@@ -113369,7 +113471,7 @@ namespace NLanguageTag
                 LanguageCode.SA,
                 null,
                 null,
-                null,
+                LanguageScope.Macrolanguage,
                 null,
                 null,
                 false);
@@ -117205,6 +117307,25 @@ namespace NLanguageTag
                 null,
                 null,
                 null,
+                false);
+		}
+
+		/// <summary>
+		/// Shaojiang Chinese
+		/// added: 2024-12-12
+		/// </summary>
+		public static Language SJC => SJCCache.Instance;
+
+		private static class SJCCache
+		{
+			public static readonly Language Instance = new Language(
+                "sjc",
+                LanguageCode.SJC,
+                null,
+                Language.ZH,
+                null,
+                null,
+                Language.ZH,
                 false);
 		}
 
@@ -138378,6 +138499,25 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Vedic Sanskrit
+		/// added: 2024-03-04
+		/// </summary>
+		public static Language VSN => VSNCache.Instance;
+
+		private static class VSNCache
+		{
+			public static readonly Language Instance = new Language(
+                "vsn",
+                LanguageCode.VSN,
+                null,
+                Language.SA,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
 		/// Valencian Sign Language
 		/// Llengua de signes valenciana
 		/// added: 2009-07-29
@@ -151921,6 +152061,25 @@ namespace NLanguageTag
 			public static readonly Language Instance = new Language(
                 "yna",
                 LanguageCode.YNA,
+                null,
+                null,
+                null,
+                null,
+                null,
+                false);
+		}
+
+		/// <summary>
+		/// Yamben
+		/// added: 2025-02-06
+		/// </summary>
+		public static Language YNB => YNBCache.Instance;
+
+		private static class YNBCache
+		{
+			public static readonly Language Instance = new Language(
+                "ynb",
+                LanguageCode.YNB,
                 null,
                 null,
                 null,

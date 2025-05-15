@@ -218,15 +218,25 @@ namespace NLanguageTag
 		
 		private static Script? tryParse_L4_be(StringSpan span)
 		{
-			if(Char.ToLowerInvariant(span[2]) == 'n')
-				return tryParse_L4_ben(span);
-			return null;
+			switch(span[2])
+			{
+				case 'n': return tryParse_L4_ben(span);
+				case 'r': return tryParse_L4_ber(span);
+				default: return null;
+			}
 		}
 		
 		private static Script? tryParse_L4_ben(StringSpan span)
 		{
 			if(Char.ToLowerInvariant(span[3]) == 'g')
 				return BengCache.Instance;
+			return null;
+		}
+		
+		private static Script? tryParse_L4_ber(StringSpan span)
+		{
+			if(Char.ToLowerInvariant(span[3]) == 'f')
+				return BerfCache.Instance;
 			return null;
 		}
 		

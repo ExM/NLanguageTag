@@ -58,6 +58,11 @@ namespace NLanguageTag
 		Aluku = 9,
 
 		/// <summary>
+		/// code of <see cref="Variant.Anpezo"/>
+		/// </summary>
+		Anpezo = 114,
+
+		/// <summary>
 		/// code of <see cref="Variant.Ao1990"/>
 		/// </summary>
 		Ao1990 = 11,
@@ -193,6 +198,16 @@ namespace NLanguageTag
 		Emodeng = 33,
 
 		/// <summary>
+		/// code of <see cref="Variant.Fascia"/>
+		/// </summary>
+		Fascia = 115,
+
+		/// <summary>
+		/// code of <see cref="Variant.Fodom"/>
+		/// </summary>
+		Fodom = 116,
+
+		/// <summary>
 		/// code of <see cref="Variant.Fonipa"/>
 		/// </summary>
 		Fonipa = 34,
@@ -228,6 +243,11 @@ namespace NLanguageTag
 		Gascon = 39,
 
 		/// <summary>
+		/// code of <see cref="Variant.Gherd"/>
+		/// </summary>
+		Gherd = 117,
+
+		/// <summary>
 		/// code of <see cref="Variant.Grclass"/>
 		/// </summary>
 		Grclass = 40,
@@ -241,6 +261,11 @@ namespace NLanguageTag
 		/// code of <see cref="Variant.Grmistr"/>
 		/// </summary>
 		Grmistr = 42,
+
+		/// <summary>
+		/// code of <see cref="Variant.Hanoi"/>
+		/// </summary>
+		Hanoi = 121,
 
 		/// <summary>
 		/// code of <see cref="Variant.Hepburn"/>
@@ -261,6 +286,11 @@ namespace NLanguageTag
 		/// code of <see cref="Variant.Hsistemo"/>
 		/// </summary>
 		Hsistemo = 46,
+
+		/// <summary>
+		/// code of <see cref="Variant.Huett"/>
+		/// </summary>
+		Huett = 122,
 
 		/// <summary>
 		/// code of <see cref="Variant.Ijekavsk"/>
@@ -293,6 +323,11 @@ namespace NLanguageTag
 		Kkcor = 52,
 
 		/// <summary>
+		/// code of <see cref="Variant.Kleinsch"/>
+		/// </summary>
+		Kleinsch = 123,
+
+		/// <summary>
 		/// code of <see cref="Variant.Kociewie"/>
 		/// </summary>
 		Kociewie = 53,
@@ -306,6 +341,11 @@ namespace NLanguageTag
 		/// code of <see cref="Variant.Laukika"/>
 		/// </summary>
 		Laukika = 55,
+
+		/// <summary>
+		/// code of <see cref="Variant.Leidentr"/>
+		/// </summary>
+		Leidentr = 124,
 
 		/// <summary>
 		/// code of <see cref="Variant.Lemosin"/>
@@ -336,6 +376,16 @@ namespace NLanguageTag
 		/// code of <see cref="Variant.Luna1918"/>
 		/// </summary>
 		Luna1918 = 59,
+
+		/// <summary>
+		/// code of <see cref="Variant.Mdcegyp"/>
+		/// </summary>
+		Mdcegyp = 125,
+
+		/// <summary>
+		/// code of <see cref="Variant.Mdctrans"/>
+		/// </summary>
+		Mdctrans = 126,
 
 		/// <summary>
 		/// code of <see cref="Variant.Metelko"/>
@@ -413,6 +463,11 @@ namespace NLanguageTag
 		Peano = 103,
 
 		/// <summary>
+		/// code of <see cref="Variant.Pehoeji"/>
+		/// </summary>
+		Pehoeji = 118,
+
+		/// <summary>
 		/// code of <see cref="Variant.Petr1708"/>
 		/// </summary>
 		Petr1708 = 74,
@@ -451,6 +506,11 @@ namespace NLanguageTag
 		/// code of <see cref="Variant.Rumgr"/>
 		/// </summary>
 		Rumgr = 81,
+
+		/// <summary>
+		/// code of <see cref="Variant.Saigon"/>
+		/// </summary>
+		Saigon = 127,
 
 		/// <summary>
 		/// code of <see cref="Variant.Scotland"/>
@@ -503,6 +563,11 @@ namespace NLanguageTag
 		Synnejyl = 108,
 
 		/// <summary>
+		/// code of <see cref="Variant.Tailo"/>
+		/// </summary>
+		Tailo = 119,
+
+		/// <summary>
 		/// code of <see cref="Variant.Tarask"/>
 		/// </summary>
 		Tarask = 91,
@@ -541,6 +606,11 @@ namespace NLanguageTag
 		/// code of <see cref="Variant.Vaidika"/>
 		/// </summary>
 		Vaidika = 96,
+
+		/// <summary>
+		/// code of <see cref="Variant.Valbadia"/>
+		/// </summary>
+		Valbadia = 120,
 
 		/// <summary>
 		/// code of <see cref="Variant.Valencia"/>

@@ -122,6 +122,18 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Anpezo standard of Ladin
+		/// Represents the standard written form of Ladin in Anpezo
+		/// added: 2024-03-04
+		/// </summary>
+		public static Variant Anpezo => AnpezoCache.Instance;
+
+		private static class AnpezoCache
+		{
+			public static readonly Variant Instance = new Variant("anpezo", VariantCode.Anpezo, new string[] { "lld" }, false);
+		}
+
+		/// <summary>
 		/// Portuguese Language Orthographic Agreement of 1990 (Acordo Ortográfico da Língua Portuguesa de 1990)
 		/// Portuguese orthography conventions established in 1990 but not brought into effect until 2009
 		/// added: 2015-05-06
@@ -444,6 +456,30 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Fascia standard of Ladin
+		/// Represents the standard written form of Ladin in Fascia which unified the three subvarieties Cazet, Brach and Moenat
+		/// added: 2024-03-04
+		/// </summary>
+		public static Variant Fascia => FasciaCache.Instance;
+
+		private static class FasciaCache
+		{
+			public static readonly Variant Instance = new Variant("fascia", VariantCode.Fascia, new string[] { "lld" }, false);
+		}
+
+		/// <summary>
+		/// Fodom standard of Ladin
+		/// Represents the standard written form of Ladin in Livinallongo and Colle Santa Lucia
+		/// added: 2024-03-04
+		/// </summary>
+		public static Variant Fodom => FodomCache.Instance;
+
+		private static class FodomCache
+		{
+			public static readonly Variant Instance = new Variant("fodom", VariantCode.Fodom, new string[] { "lld" }, false);
+		}
+
+		/// <summary>
 		/// International Phonetic Alphabet
 		/// added: 2006-12-11
 		/// </summary>
@@ -524,6 +560,18 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Gherdëina standard of Ladin
+		/// Represents the standard written form of Ladin in Gherdëina
+		/// added: 2024-03-04
+		/// </summary>
+		public static Variant Gherd => GherdCache.Instance;
+
+		private static class GherdCache
+		{
+			public static readonly Variant Instance = new Variant("gherd", VariantCode.Gherd, new string[] { "lld" }, false);
+		}
+
+		/// <summary>
 		/// Classical Occitan orthography
 		/// Classical written standard for Occitan developed in 1935 by Alibèrt
 		/// added: 2018-04-22
@@ -556,6 +604,17 @@ namespace NLanguageTag
 		private static class GrmistrCache
 		{
 			public static readonly Variant Instance = new Variant("grmistr", VariantCode.Grmistr, new string[] { "oc", "oc-aranes", "oc-auvern", "oc-cisaup", "oc-creiss", "oc-gascon", "oc-lemosin", "oc-lengadoc", "oc-nicard", "oc-provenc", "oc-vivaraup" }, false);
+		}
+
+		/// <summary>
+		/// The Hà Nội variant of Vietnamese
+		/// added: 2025-03-10
+		/// </summary>
+		public static Variant Hanoi => HanoiCache.Instance;
+
+		private static class HanoiCache
+		{
+			public static readonly Variant Instance = new Variant("hanoi", VariantCode.Hanoi, new string[] { "vi" }, false);
 		}
 
 		/// <summary>
@@ -603,6 +662,17 @@ namespace NLanguageTag
 		private static class HsistemoCache
 		{
 			public static readonly Variant Instance = new Variant("hsistemo", VariantCode.Hsistemo, new string[] { "eo" }, false);
+		}
+
+		/// <summary>
+		/// The Huế (province Thừa Thiên) variant of Vietnamese
+		/// added: 2025-03-10
+		/// </summary>
+		public static Variant Huett => HuettCache.Instance;
+
+		private static class HuettCache
+		{
+			public static readonly Variant Instance = new Variant("huett", VariantCode.Huett, new string[] { "vi" }, false);
 		}
 
 		/// <summary>
@@ -675,6 +745,19 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Kleinschmidt orthography
+		/// Allattaasitaamut
+		/// Orthography for Greenlandic designed by Samuel Kleinschmidt, used from 1851 to 1973.
+		/// added: 2024-07-20
+		/// </summary>
+		public static Variant Kleinsch => KleinschCache.Instance;
+
+		private static class KleinschCache
+		{
+			public static readonly Variant Instance = new Variant("kleinsch", VariantCode.Kleinsch, new string[] { "kl", "kl-tunumiit" }, false);
+		}
+
+		/// <summary>
 		/// The Kociewie dialect of Polish
 		/// The dialect of Kociewie is spoken in the region around Starogard Gdański, Tczew and Świecie in northern Poland.
 		/// added: 2014-11-27
@@ -700,13 +783,27 @@ namespace NLanguageTag
 
 		/// <summary>
 		/// Classical Sanskrit
+		/// Preferred tag is cls
 		/// added: 2010-07-28
 		/// </summary>
+		[Obsolete("Preferred tag is cls, deprecated from 2024-06-08")]
 		public static Variant Laukika => LaukikaCache.Instance;
 
 		private static class LaukikaCache
 		{
-			public static readonly Variant Instance = new Variant("laukika", VariantCode.Laukika, new string[] { "sa" }, false);
+			public static readonly Variant Instance = new Variant("laukika", VariantCode.Laukika, new string[] { "sa" }, true);
+		}
+
+		/// <summary>
+		/// Ancient Egyptian in Leiden Unified Transliteration
+		/// Recommended by the International Association of Egyptologists
+		/// added: 2025-02-06
+		/// </summary>
+		public static Variant Leidentr => LeidentrCache.Instance;
+
+		private static class LeidentrCache
+		{
+			public static readonly Variant Instance = new Variant("leidentr", VariantCode.Leidentr, new string[] { "egy" }, false);
 		}
 
 		/// <summary>
@@ -778,6 +875,28 @@ namespace NLanguageTag
 		private static class Luna1918Cache
 		{
 			public static readonly Variant Instance = new Variant("luna1918", VariantCode.Luna1918, new string[] { "ru" }, false);
+		}
+
+		/// <summary>
+		/// Ancient Egyptian hieroglyphs encoded in Manuel de Codage
+		/// added: 2025-02-06
+		/// </summary>
+		public static Variant Mdcegyp => MdcegypCache.Instance;
+
+		private static class MdcegypCache
+		{
+			public static readonly Variant Instance = new Variant("mdcegyp", VariantCode.Mdcegyp, new string[] { "egy" }, false);
+		}
+
+		/// <summary>
+		/// Ancient Egyptian transliteration encoded in Manuel de Codage
+		/// added: 2025-02-06
+		/// </summary>
+		public static Variant Mdctrans => MdctransCache.Instance;
+
+		private static class MdctransCache
+		{
+			public static readonly Variant Instance = new Variant("mdctrans", VariantCode.Mdctrans, new string[] { "egy" }, false);
 		}
 
 		/// <summary>
@@ -965,6 +1084,19 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Hokkien Vernacular Romanization System
+		/// Pe̍h-ōe-jī orthography/romanization
+		/// Modern Hokkien Vernacular Romanization System, evolved from the New Dictionary in the Amoy by John Van Nest Talmage in 1894
+		/// added: 2024-03-04
+		/// </summary>
+		public static Variant Pehoeji => PehoejiCache.Instance;
+
+		private static class PehoejiCache
+		{
+			public static readonly Variant Instance = new Variant("pehoeji", VariantCode.Pehoeji, new string[] { "nan-Latn" }, false);
+		}
+
+		/// <summary>
 		/// Petrine orthography
 		/// Russian orthography from the Petrine orthographic reforms of 1708 to the 1917 orthographic reform
 		/// added: 2010-10-10
@@ -1059,6 +1191,17 @@ namespace NLanguageTag
 		private static class RumgrCache
 		{
 			public static readonly Variant Instance = new Variant("rumgr", VariantCode.Rumgr, new string[] { "rm" }, false);
+		}
+
+		/// <summary>
+		/// The Sài Gòn variant of Vietnamese
+		/// added: 2025-03-10
+		/// </summary>
+		public static Variant Saigon => SaigonCache.Instance;
+
+		private static class SaigonCache
+		{
+			public static readonly Variant Instance = new Variant("saigon", VariantCode.Saigon, new string[] { "vi" }, false);
 		}
 
 		/// <summary>
@@ -1181,6 +1324,19 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Taiwanese Hokkien Romanization System for Hokkien languages
+		/// Tâi-lô orthography/romanization
+		/// Taiwanese Hokkien Romanization System (Tâi-lô) published in 2006 by the Taiwan Ministry of Education
+		/// added: 2024-03-04
+		/// </summary>
+		public static Variant Tailo => TailoCache.Instance;
+
+		private static class TailoCache
+		{
+			public static readonly Variant Instance = new Variant("tailo", VariantCode.Tailo, new string[] { "nan-Latn" }, false);
+		}
+
+		/// <summary>
 		/// Belarusian in Taraskievica orthography
 		/// The subtag represents Branislau Taraskievic's Belarusian orthography as published in "Bielaruski klasycny pravapis" by Juras Buslakou, Vincuk Viacorka, Zmicier Sanko, and Zmicier Sauka (Vilnia- Miensk 2005).
 		/// added: 2007-04-27
@@ -1264,14 +1420,27 @@ namespace NLanguageTag
 
 		/// <summary>
 		/// Vedic Sanskrit
-		/// The most ancient dialect of Sanskrit used in verse and prose composed until about the 4th century B.C.E.
+		/// The most ancient dialect of Sanskrit used in verse and prose composed until about the 4th century B.C.E. Preferred tag is vsn
 		/// added: 2010-07-28
 		/// </summary>
+		[Obsolete("The most ancient dialect of Sanskrit used in verse and prose composed until about the 4th century B.C.E. Preferred tag is vsn, deprecated from 2024-06-08")]
 		public static Variant Vaidika => VaidikaCache.Instance;
 
 		private static class VaidikaCache
 		{
-			public static readonly Variant Instance = new Variant("vaidika", VariantCode.Vaidika, new string[] { "sa" }, false);
+			public static readonly Variant Instance = new Variant("vaidika", VariantCode.Vaidika, new string[] { "sa" }, true);
+		}
+
+		/// <summary>
+		/// Val Badia standard of Ladin
+		/// Represents the standard written form of Ladin in the Val Badia, unifying the three variants Marô, Mesaval and Badiot spoken in this valley
+		/// added: 2024-03-04
+		/// </summary>
+		public static Variant Valbadia => ValbadiaCache.Instance;
+
+		private static class ValbadiaCache
+		{
+			public static readonly Variant Instance = new Variant("valbadia", VariantCode.Valbadia, new string[] { "lld" }, false);
 		}
 
 		/// <summary>

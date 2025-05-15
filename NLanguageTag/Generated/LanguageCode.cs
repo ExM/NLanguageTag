@@ -6842,6 +6842,11 @@ namespace NLanguageTag
 		CLO = 1519,
 
 		/// <summary>
+		/// code of <see cref="Language.CLS"/>
+		/// </summary>
+		CLS = 8259,
+
+		/// <summary>
 		/// code of <see cref="Language.CLT"/>
 		/// </summary>
 		CLT = 1520,
@@ -8091,6 +8096,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.DEK"/>
 		/// </summary>
+		[Obsolete("similarly Language.DEK")]
 		DEK = 1754,
 
 		/// <summary>
@@ -12824,6 +12830,11 @@ namespace NLanguageTag
 		HNJ = 2649,
 
 		/// <summary>
+		/// code of <see cref="Language.HNM"/>
+		/// </summary>
+		HNM = 8263,
+
+		/// <summary>
 		/// code of <see cref="Language.HNN"/>
 		/// </summary>
 		HNN = 2650,
@@ -14039,6 +14050,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.ISU"/>
 		/// </summary>
 		ISU = 2874,
+
+		/// <summary>
+		/// code of <see cref="Language.ISV"/>
+		/// </summary>
+		ISV = 8260,
 
 		/// <summary>
 		/// code of <see cref="Language.IT"/>
@@ -19887,6 +19903,11 @@ namespace NLanguageTag
 		LUF = 3997,
 
 		/// <summary>
+		/// code of <see cref="Language.LUH"/>
+		/// </summary>
+		LUH = 8264,
+
+		/// <summary>
 		/// code of <see cref="Language.LUI"/>
 		/// </summary>
 		LUI = 3998,
@@ -25438,6 +25459,7 @@ namespace NLanguageTag
 		/// <summary>
 		/// code of <see cref="Language.NTE"/>
 		/// </summary>
+		[Obsolete("similarly Language.NTE")]
 		NTE = 5077,
 
 		/// <summary>
@@ -29656,6 +29678,11 @@ namespace NLanguageTag
 		RRI = 5886,
 
 		/// <summary>
+		/// code of <see cref="Language.RRM"/>
+		/// </summary>
+		RRM = 8261,
+
+		/// <summary>
 		/// code of <see cref="Language.RRO"/>
 		/// </summary>
 		RRO = 5887,
@@ -30885,6 +30912,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.SJB"/>
 		/// </summary>
 		SJB = 6117,
+
+		/// <summary>
+		/// code of <see cref="Language.SJC"/>
+		/// </summary>
+		SJC = 8265,
 
 		/// <summary>
 		/// code of <see cref="Language.SJD"/>
@@ -36467,6 +36499,11 @@ namespace NLanguageTag
 		VSL = 7180,
 
 		/// <summary>
+		/// code of <see cref="Language.VSN"/>
+		/// </summary>
+		VSN = 8262,
+
+		/// <summary>
 		/// code of <see cref="Language.VSV"/>
 		/// </summary>
 		VSV = 7181,
@@ -40035,6 +40072,11 @@ namespace NLanguageTag
 		/// code of <see cref="Language.YNA"/>
 		/// </summary>
 		YNA = 7865,
+
+		/// <summary>
+		/// code of <see cref="Language.YNB"/>
+		/// </summary>
+		YNB = 8266,
 
 		/// <summary>
 		/// code of <see cref="Language.YND"/>

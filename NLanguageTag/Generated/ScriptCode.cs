@@ -83,6 +83,11 @@ namespace NLanguageTag
 		Beng = 14,
 
 		/// <summary>
+		/// code of <see cref="Script.Berf"/>
+		/// </summary>
+		Berf = 222,
+
+		/// <summary>
 		/// code of <see cref="Script.Bhks"/>
 		/// </summary>
 		Bhks = 15,

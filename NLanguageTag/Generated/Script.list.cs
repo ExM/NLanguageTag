@@ -161,6 +161,17 @@ namespace NLanguageTag
 		}
 
 		/// <summary>
+		/// Beria Erfe
+		/// added: 2025-02-06
+		/// </summary>
+		public static Script Berf => BerfCache.Instance;
+
+		private static class BerfCache
+		{
+			public static readonly Script Instance = new Script("Berf", ScriptCode.Berf);
+		}
+
+		/// <summary>
 		/// Bhaiksuki
 		/// added: 2015-07-24
 		/// </summary>

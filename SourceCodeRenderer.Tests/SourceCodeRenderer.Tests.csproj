@@ -19,6 +19,7 @@
   <ItemGroup>
     <EmbeddedResource Include="registries\2019-09-16" />
     <EmbeddedResource Include="registries\2020-07-17" />
+    <EmbeddedResource Include="registries\2023-10-16" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="..\DataSources\language-subtag-registry">
