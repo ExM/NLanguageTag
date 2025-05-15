@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace NLanguageTag.SourceCodeRenderer.SubtagRegistry
 {
@@ -12,7 +13,8 @@ namespace NLanguageTag.SourceCodeRenderer.SubtagRegistry
 		public VariantEntry(Terms terms) : base(EntryType.Variant, terms)
 		{
 			Subtag = terms.Single("Subtag");
-			Comments = terms.OptionSingle("Comments");
+			var commentList = terms.OptionList("Comments");
+			Comments = commentList.Any() ? string.Join(" ", commentList) : null;
 			Prefixes = terms.OptionList("Prefix");
 		}
 

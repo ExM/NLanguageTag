@@ -70,6 +70,22 @@ Comments: Occitan variant spoken in northeastern Occitania");
 				Assert.That(entry.IsPrivateUse, Is.False);
 			});
 		}
+		
+		[Test]
+		public void Variant_with_many_comments()
+		{
+			var entry = parse<VariantEntry>(@"Type: variant
+Subtag: vaidika
+Description: Vedic Sanskrit
+Added: 2010-07-28
+Deprecated: 2024-06-08
+Prefix: sa
+Comments: The most ancient dialect of Sanskrit used in verse and prose
+  composed until about the 4th century B.C.E.
+Comments: Preferred tag is vsn");
+
+			Assert.That(entry.Comments, Is.EqualTo("The most ancient dialect of Sanskrit used in verse and prose composed until about the 4th century B.C.E. Preferred tag is vsn"));
+		}
 
 		[Test]
 		public void Region()
